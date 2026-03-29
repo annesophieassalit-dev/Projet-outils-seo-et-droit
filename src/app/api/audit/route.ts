@@ -77,15 +77,15 @@ export async function POST(request: NextRequest) {
     const auditsUsed = profile?.audits_used_this_month || 0;
     const limits: Record<string, number> = {
       gratuit: 1,
-      essentiel: 10, // ancien plan
-      pro: -1, // illimité
+      essentiel: 3, // ancien plan
+      pro: 3,
     };
     const limit = limits[plan] ?? 1;
 
     if (limit !== -1 && auditsUsed >= limit) {
       return NextResponse.json(
         {
-          error: `Limite de diagnostics atteinte pour votre plan ${plan}. Passez au plan Pro pour continuer.`,
+          error: `Vous avez utilisé vos ${limit} diagnostics ce mois-ci. Revenez le mois prochain ou passez au plan Pro.`,
           limitReached: true,
         },
         { status: 403 }

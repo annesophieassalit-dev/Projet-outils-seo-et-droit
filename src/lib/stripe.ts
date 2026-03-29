@@ -9,7 +9,7 @@ export const PLANS = {
   pro: {
     name: "Pro",
     priceId: process.env.STRIPE_PRICE_PRO!,
-    price: 14,
+    price: 19,
     description: "Accès complet à tous les outils",
     features: [
       "Diagnostics illimités",

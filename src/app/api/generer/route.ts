@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
   if (plan === "gratuit") {
     return NextResponse.json(
-      { error: "Le générateur de contenus est disponible à partir du plan Pro (14€/mois).", upgradeRequired: true },
+      { error: "Le générateur de contenus est disponible à partir du plan Pro (19€/mois).", upgradeRequired: true },
       { status: 403 }
     );
   }

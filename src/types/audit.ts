@@ -126,19 +126,21 @@ export interface UserSubscription {
 
 export const PLAN_LIMITS: Record<
   SubscriptionPlan,
-  { auditsPerMonth: number; seoAudit: boolean; legalAudit: boolean; aiAnalysis: boolean; pdfExport: boolean; contentGenerator: boolean; history: number }
+  { auditsPerMonth: number; scansPerMonth: number; seoAudit: boolean; legalAudit: boolean; aiAnalysis: boolean; pdfExport: boolean; contentGenerator: boolean; history: number }
 > = {
   gratuit: {
     auditsPerMonth: 1,
+    scansPerMonth: 5,
     seoAudit: true,
-    legalAudit: true, // diagnostic de conformité inclus dans le gratuit
+    legalAudit: true,
     aiAnalysis: false,
     pdfExport: false,
     contentGenerator: false,
     history: 1,
   },
   essentiel: { // ancien plan, conservé pour compatibilité BDD
-    auditsPerMonth: 10,
+    auditsPerMonth: 3,
+    scansPerMonth: 20,
     seoAudit: true,
     legalAudit: true,
     aiAnalysis: false,
@@ -147,7 +149,8 @@ export const PLAN_LIMITS: Record<
     history: 30,
   },
   pro: {
-    auditsPerMonth: -1, // illimité
+    auditsPerMonth: 3,
+    scansPerMonth: -1, // illimité
     seoAudit: true,
     legalAudit: true,
     aiAnalysis: true,

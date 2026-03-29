@@ -314,11 +314,11 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm text-gray-600 mb-8">
                 {[
                   { label: "1 diagnostic par mois", ok: true },
-                  { label: "Diagnostic SEO complet", ok: true },
-                  { label: "Diagnostic de conformité juridique", ok: true },
-                  { label: "Scanner de texte (sans IA)", ok: true },
+                  { label: "5 scans de texte par mois", ok: true },
+                  { label: "Diagnostic SEO + conformité", ok: true },
                   { label: "Bibliothèque de formulations", ok: true },
-                  { label: "Génération de contenus IA", ok: false },
+                  { label: "Scanner avec analyse IA", ok: false },
+                  { label: "Générateur de contenus", ok: false },
                   { label: "Export PDF", ok: false },
                 ].map((f) => (
                   <li key={f.label} className="flex items-center gap-2">
@@ -350,17 +350,15 @@ export default function LandingPage() {
               </h3>
               <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
               <div className="text-4xl font-bold mb-1">
-                14 €<span className="text-lg font-normal text-gray-500">/mois</span>
+                19 €<span className="text-lg font-normal text-gray-500">/mois</span>
               </div>
               <p className="text-xs text-gray-400 mb-6">Sans engagement</p>
               <ul className="space-y-2 text-sm text-gray-600 mb-8">
                 {[
-                  "Diagnostics illimités",
-                  "Diagnostic SEO complet",
-                  "Diagnostic de conformité juridique",
-                  "Scanner de texte avec analyse IA",
-                  "Générateur de contenus safe",
-                  "Bibliothèque de formulations",
+                  "3 diagnostics par mois (SEO + conformité)",
+                  "Scans de texte illimités avec IA",
+                  "Générateur de contenus safe illimité",
+                  "Bibliothèque de formulations complète",
                   "Export PDF des rapports",
                   "Historique illimité",
                 ].map((f) => (

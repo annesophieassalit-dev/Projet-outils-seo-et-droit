@@ -8,6 +8,12 @@ const schema = z.object({
   useAI: z.boolean().default(false),
 });
 
+const SCAN_LIMITS: Record<string, number> = {
+  gratuit: 5,
+  essentiel: 20,
+  pro: -1, // illimité
+};
+
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -26,16 +32,51 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, profession")
+    .select("plan, profession, scans_used_this_month, audits_reset_date")
     .eq("id", user.id)
     .single();
 
   const plan = profile?.plan || "gratuit";
+  const limit = SCAN_LIMITS[plan] ?? 5;
+  const scansUsed = profile?.scans_used_this_month || 0;
+
+  // Réinitialisation mensuelle (même date que les audits)
+  const now = new Date();
+  const resetDate = profile?.audits_reset_date ? new Date(profile.audits_reset_date) : null;
+  if (resetDate && now > resetDate) {
+    await supabase
+      .from("profiles")
+      .update({
+        scans_used_this_month: 0,
+        audits_reset_date: new Date(now.getFullYear(), now.getMonth() + 1, 1).toISOString(),
+      })
+      .eq("id", user.id);
+  }
+
+  // Vérification limite
+  if (limit !== -1 && scansUsed >= limit) {
+    return NextResponse.json(
+      {
+        error: `Vous avez utilisé vos ${limit} scans gratuits ce mois-ci. Passez au plan Pro pour des scans illimités.`,
+        limitReached: true,
+        scansUsed,
+        limit,
+      },
+      { status: 403 }
+    );
+  }
+
   const canUseAI = plan === "pro" && useAI;
 
   const result = canUseAI
     ? await scanTextWithAI(text, profile?.profession || "")
     : scanTextBasic(text);
 
-  return NextResponse.json({ result });
+  // Incrémenter le compteur
+  await supabase
+    .from("profiles")
+    .update({ scans_used_this_month: scansUsed + 1 })
+    .eq("id", user.id);
+
+  return NextResponse.json({ result, scansUsed: scansUsed + 1, limit });
 }
