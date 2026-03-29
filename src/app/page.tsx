@@ -11,6 +11,8 @@ import {
   FileText,
   TrendingUp,
   Lock,
+  ScanText,
+  BookOpen,
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -92,7 +94,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
-              1 audit gratuit sans carte bancaire
+              1 diagnostic gratuit sans carte bancaire
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -165,7 +167,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Un audit double : SEO + Juridique
+              Tous les outils pour communiquer en toute sécurité
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
               ConformiWeb est le seul outil pensé spécifiquement pour les praticiens
@@ -174,12 +176,12 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* SEO */}
+            {/* Diagnostic SEO */}
             <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
                 <TrendingUp className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Audit SEO</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnostic SEO</h3>
               <ul className="space-y-2.5 text-sm text-gray-600">
                 {[
                   "Balises title et meta description",
@@ -187,10 +189,10 @@ export default function LandingPage() {
                   "Images sans texte alternatif",
                   "Compatibilité mobile (viewport)",
                   "Sécurité HTTPS",
-                  "Liens canoniques",
+                  "Maillage interne",
+                  "Sémantique et positionnement",
                   "Données structurées Schema.org",
                   "Open Graph pour les réseaux sociaux",
-                  "Densité et longueur du contenu",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
@@ -200,12 +202,12 @@ export default function LandingPage() {
               </ul>
             </div>
 
-            {/* Juridique */}
+            {/* Diagnostic de conformité */}
             <div className="rounded-2xl border border-green-200 bg-green-50/30 p-8 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-5">
                 <ShieldCheck className="h-6 w-6 text-green-700" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Audit juridique</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnostic de conformité</h3>
               <ul className="space-y-2.5 text-sm text-gray-600">
                 {[
                   "Termes médicaux interdits (guérir, soigner, diagnostiquer...)",
@@ -213,9 +215,9 @@ export default function LandingPage() {
                   "Confusion avec professions de santé réglementées",
                   "Présence des mentions légales (LCEN)",
                   "Conformité RGPD et politique de confidentialité",
-                  "Affichage des prix TTC",
-                  "Droit de rétractation (14 jours)",
                   "Publicité mensongère et allégations non prouvées",
+                  "Scanner de texte avec alertes colorées",
+                  "Reformulations validées proposées",
                   "Analyse nuancée par IA (plan Pro)",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
@@ -224,6 +226,33 @@ export default function LandingPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Scanner de texte */}
+            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-5">
+                <ScanText className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Scanner de texte</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Collez n&apos;importe quel texte — bio Instagram, post, page de site —
+                et détectez instantanément les formulations à risque avec alertes
+                colorées 🔴🟠🟡 et reformulations validées.
+              </p>
+            </div>
+
+            {/* Générateur + Bibliothèque */}
+            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
+                <BookOpen className="h-6 w-6 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bibliothèque & Générateur</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Accédez à une bibliothèque de formulations validées par thème
+                (stress, sommeil, émotions...). Le plan Pro débloque la génération
+                automatique de bio Instagram, posts LinkedIn, descriptions de programmes
+                et plus — tous juridiquement sûrs.
+              </p>
             </div>
           </div>
         </div>
@@ -268,7 +297,7 @@ export default function LandingPage() {
 
       {/* ─── Tarifs ─────────────────────────────────────────────────────── */}
       <section id="tarifs" className="py-24 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Des tarifs adaptés à votre activité
@@ -276,7 +305,7 @@ export default function LandingPage() {
             <p className="text-gray-600">Sans engagement · Résiliable à tout moment</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Gratuit */}
             <div className="border border-gray-200 rounded-2xl p-8">
               <h3 className="font-bold text-xl mb-1">Gratuit</h3>
@@ -284,14 +313,21 @@ export default function LandingPage() {
               <div className="text-4xl font-bold mb-6">0 €</div>
               <ul className="space-y-2 text-sm text-gray-600 mb-8">
                 {[
-                  "1 audit par mois",
-                  "Audit SEO complet",
-                  "Pas d'audit juridique",
-                  "Pas d'export PDF",
+                  { label: "1 diagnostic par mois", ok: true },
+                  { label: "Diagnostic SEO complet", ok: true },
+                  { label: "Diagnostic de conformité juridique", ok: true },
+                  { label: "Scanner de texte (sans IA)", ok: true },
+                  { label: "Bibliothèque de formulations", ok: true },
+                  { label: "Génération de contenus IA", ok: false },
+                  { label: "Export PDF", ok: false },
                 ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-gray-400 shrink-0" />
-                    {f}
+                  <li key={f.label} className="flex items-center gap-2">
+                    {f.ok ? (
+                      <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                    ) : (
+                      <div className="h-4 w-4 shrink-0 rounded-full border-2 border-gray-200" />
+                    )}
+                    <span className={f.ok ? "" : "text-gray-400"}>{f.label}</span>
                   </li>
                 ))}
               </ul>
@@ -303,24 +339,30 @@ export default function LandingPage() {
               </Link>
             </div>
 
-            {/* Essentiel */}
+            {/* Pro */}
             <div className="border-2 border-green-600 rounded-2xl p-8 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">
                 Recommandé
               </div>
-              <h3 className="font-bold text-xl mb-1">Essentiel</h3>
-              <p className="text-gray-500 text-sm mb-4">Pour une conformité complète</p>
+              <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
+                Pro
+                <Sparkles className="h-4 w-4 text-amber-500" />
+              </h3>
+              <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
               <div className="text-4xl font-bold mb-1">
-                29 €<span className="text-lg font-normal text-gray-500">/mois</span>
+                14 €<span className="text-lg font-normal text-gray-500">/mois</span>
               </div>
-              <p className="text-xs text-gray-400 mb-6">HT · exonéré TVA si applicable</p>
+              <p className="text-xs text-gray-400 mb-6">Sans engagement</p>
               <ul className="space-y-2 text-sm text-gray-600 mb-8">
                 {[
-                  "10 audits par mois",
-                  "Audit SEO complet",
-                  "Audit juridique (termes interdits + mentions)",
-                  "Historique 30 jours",
-                  "Support par email",
+                  "Diagnostics illimités",
+                  "Diagnostic SEO complet",
+                  "Diagnostic de conformité juridique",
+                  "Scanner de texte avec analyse IA",
+                  "Générateur de contenus safe",
+                  "Bibliothèque de formulations",
+                  "Export PDF des rapports",
+                  "Historique illimité",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
@@ -329,43 +371,10 @@ export default function LandingPage() {
                 ))}
               </ul>
               <Link
-                href="/inscription?plan=essentiel"
+                href="/inscription?plan=pro"
                 className="block text-center bg-green-700 text-white py-3 rounded-xl hover:bg-green-800 transition-colors font-semibold"
               >
                 Démarrer l&apos;essai
-              </Link>
-            </div>
-
-            {/* Pro */}
-            <div className="border border-gray-200 rounded-2xl p-8 bg-gray-900 text-white">
-              <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
-                Pro <Sparkles className="h-4 w-4 text-yellow-400" />
-              </h3>
-              <p className="text-gray-400 text-sm mb-4">Pour les professionnels actifs</p>
-              <div className="text-4xl font-bold mb-1 text-white">
-                59 €<span className="text-lg font-normal text-gray-400">/mois</span>
-              </div>
-              <p className="text-xs text-gray-500 mb-6">HT</p>
-              <ul className="space-y-2 text-sm text-gray-300 mb-8">
-                {[
-                  "Audits illimités",
-                  "Audit SEO + juridique complet",
-                  "Analyse nuancée par IA (Claude)",
-                  "Export PDF des rapports",
-                  "Historique illimité",
-                  "Support prioritaire",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-yellow-400 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/inscription?plan=pro"
-                className="block text-center bg-white text-gray-900 py-3 rounded-xl hover:bg-gray-100 transition-colors font-semibold"
-              >
-                Essayer Pro
               </Link>
             </div>
           </div>
@@ -380,7 +389,7 @@ export default function LandingPage() {
             Protégez votre activité aujourd&apos;hui
           </h2>
           <p className="text-green-100 mb-8 text-lg">
-            Un audit gratuit, aucune carte bancaire requise.
+            Un diagnostic gratuit, aucune carte bancaire requise.
             Découvrez en 2 minutes les risques de votre site actuel.
           </p>
           <Link

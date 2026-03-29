@@ -10,6 +10,8 @@ import {
   CreditCard,
   Settings,
   Sparkles,
+  ScanText,
+  BookOpen,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,8 +23,23 @@ const navItems = [
   },
   {
     href: "/audit/nouveau",
-    label: "Nouvel audit",
+    label: "Nouveau diagnostic",
     icon: Search,
+  },
+  {
+    href: "/scanner",
+    label: "Scanner de texte",
+    icon: ScanText,
+  },
+  {
+    href: "/generateur",
+    label: "Générateur",
+    icon: Sparkles,
+  },
+  {
+    href: "/bibliotheque",
+    label: "Bibliothèque",
+    icon: BookOpen,
   },
   {
     href: "/rapports",

@@ -107,7 +107,7 @@ export interface AuditResult {
 
 // ─── SUBSCRIPTION ─────────────────────────────────────────────────────────────
 
-export type SubscriptionPlan = "gratuit" | "essentiel" | "pro";
+export type SubscriptionPlan = "gratuit" | "essentiel" | "pro"; // "essentiel" gardé pour compatibilité BDD
 export type SubscriptionStatus =
   | "active"
   | "canceled"
@@ -126,22 +126,24 @@ export interface UserSubscription {
 
 export const PLAN_LIMITS: Record<
   SubscriptionPlan,
-  { auditsPerMonth: number; seoAudit: boolean; legalAudit: boolean; aiAnalysis: boolean; pdfExport: boolean; history: number }
+  { auditsPerMonth: number; seoAudit: boolean; legalAudit: boolean; aiAnalysis: boolean; pdfExport: boolean; contentGenerator: boolean; history: number }
 > = {
   gratuit: {
     auditsPerMonth: 1,
     seoAudit: true,
-    legalAudit: false,
+    legalAudit: true, // diagnostic de conformité inclus dans le gratuit
     aiAnalysis: false,
     pdfExport: false,
+    contentGenerator: false,
     history: 1,
   },
-  essentiel: {
+  essentiel: { // ancien plan, conservé pour compatibilité BDD
     auditsPerMonth: 10,
     seoAudit: true,
     legalAudit: true,
     aiAnalysis: false,
     pdfExport: false,
+    contentGenerator: false,
     history: 30,
   },
   pro: {
@@ -150,6 +152,7 @@ export const PLAN_LIMITS: Record<
     legalAudit: true,
     aiAnalysis: true,
     pdfExport: true,
+    contentGenerator: true,
     history: -1,
   },
 };

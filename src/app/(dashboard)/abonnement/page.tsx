@@ -11,39 +11,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const plans = [
-  {
-    id: "essentiel",
-    name: "Essentiel",
-    price: 29,
-    description: "Pour une conformité complète",
-    recommended: true,
-    features: [
-      "10 audits par mois",
-      "Audit SEO complet",
-      "Audit juridique (termes interdits + mentions)",
-      "Historique 30 jours",
-      "Support par email",
-    ],
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    price: 59,
-    description: "Pour les professionnels actifs",
-    recommended: false,
-    features: [
-      "Audits illimités",
-      "Audit SEO complet",
-      "Audit juridique avancé",
-      "Analyse nuancée par IA (Claude)",
-      "Export PDF des rapports",
-      "Historique illimité",
-      "Support prioritaire",
-    ],
-  },
-];
-
 export default function AbonnementPage() {
   const searchParams = useSearchParams();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
@@ -52,10 +19,7 @@ export default function AbonnementPage() {
 
   useEffect(() => {
     if (searchParams.get("checkout") === "success") {
-      const plan = searchParams.get("plan");
-      setSuccessMessage(
-        `Bienvenue dans le plan ${plan} ! Votre abonnement est actif.`
-      );
+      setSuccessMessage("Bienvenue dans le plan Pro ! Votre abonnement est actif.");
     }
   }, [searchParams]);
 
@@ -90,7 +54,7 @@ export default function AbonnementPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-3xl mx-auto space-y-8">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Abonnement</h1>
         <p className="text-gray-500 text-sm mt-1">
@@ -107,6 +71,7 @@ export default function AbonnementPage() {
 
       {/* Plans */}
       <div className="grid md:grid-cols-2 gap-6">
+
         {/* Gratuit */}
         <div className="border border-gray-200 rounded-2xl p-6 bg-white">
           <h3 className="font-bold text-lg mb-1">Gratuit</h3>
@@ -114,10 +79,12 @@ export default function AbonnementPage() {
           <div className="text-3xl font-bold mb-5">0 €</div>
           <ul className="space-y-2 text-sm text-gray-600 mb-6">
             {[
-              { label: "1 audit par mois", ok: true },
-              { label: "Audit SEO complet", ok: true },
-              { label: "Audit juridique", ok: false },
-              { label: "Analyse IA", ok: false },
+              { label: "1 diagnostic par mois", ok: true },
+              { label: "Diagnostic SEO", ok: true },
+              { label: "Diagnostic de conformité juridique", ok: true },
+              { label: "Scanner de texte (sans IA)", ok: true },
+              { label: "Bibliothèque de formulations", ok: true },
+              { label: "Analyse IA et contenus générés", ok: false },
               { label: "Export PDF", ok: false },
             ].map((f) => (
               <li key={f.label} className="flex items-center gap-2">
@@ -131,92 +98,56 @@ export default function AbonnementPage() {
             ))}
           </ul>
           <div className="text-center text-sm text-gray-400 py-2 border border-gray-100 rounded-lg">
-            Plan actuel gratuit
+            Plan actuel
           </div>
         </div>
 
-        {plans.map((plan) => (
-          <div
-            key={plan.id}
-            className={`rounded-2xl p-6 border-2 ${
-              plan.recommended
-                ? "border-green-600 bg-white"
-                : "border-gray-800 bg-gray-900 text-white"
-            } relative`}
-          >
-            {plan.recommended && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                Recommandé
-              </div>
-            )}
-            <h3
-              className={`font-bold text-lg mb-1 flex items-center gap-2 ${
-                plan.id === "pro" ? "text-white" : ""
-              }`}
-            >
-              {plan.name}
-              {plan.id === "pro" && (
-                <Sparkles className="h-4 w-4 text-yellow-400" />
-              )}
-            </h3>
-            <p
-              className={`text-sm mb-4 ${
-                plan.id === "pro" ? "text-gray-400" : "text-gray-400"
-              }`}
-            >
-              {plan.description}
-            </p>
-            <div
-              className={`text-3xl font-bold mb-5 ${
-                plan.id === "pro" ? "text-white" : ""
-              }`}
-            >
-              {plan.price} €
-              <span
-                className={`text-base font-normal ${
-                  plan.id === "pro" ? "text-gray-400" : "text-gray-500"
-                }`}
-              >
-                /mois
-              </span>
-            </div>
-            <ul className="space-y-2 text-sm mb-6">
-              {plan.features.map((f) => (
-                <li
-                  key={f}
-                  className={`flex items-center gap-2 ${
-                    plan.id === "pro" ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
-                  <CheckCircle2
-                    className={`h-4 w-4 shrink-0 ${
-                      plan.id === "pro" ? "text-yellow-400" : "text-green-600"
-                    }`}
-                  />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={() => subscribe(plan.id)}
-              disabled={loadingPlan === plan.id}
-              className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 ${
-                plan.id === "pro"
-                  ? "bg-white text-gray-900 hover:bg-gray-100"
-                  : "bg-green-700 text-white hover:bg-green-800"
-              }`}
-            >
-              {loadingPlan === plan.id ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <>
-                  <CreditCard className="h-4 w-4" />
-                  S&apos;abonner au plan {plan.name}
-                </>
-              )}
-            </button>
+        {/* Pro */}
+        <div className="border-2 border-green-600 rounded-2xl p-6 bg-white relative">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+            Recommandé
           </div>
-        ))}
+          <h3 className="font-bold text-lg mb-1 flex items-center gap-2">
+            Pro
+            <Sparkles className="h-4 w-4 text-amber-500" />
+          </h3>
+          <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
+          <div className="text-3xl font-bold mb-5">
+            14 €
+            <span className="text-base font-normal text-gray-500">/mois</span>
+          </div>
+          <ul className="space-y-2 text-sm text-gray-600 mb-6">
+            {[
+              "Diagnostics illimités",
+              "Diagnostic SEO complet",
+              "Diagnostic de conformité juridique",
+              "Scanner de texte avec analyse IA",
+              "Générateur de contenus safe",
+              "Bibliothèque de formulations",
+              "Export PDF des rapports",
+              "Historique illimité",
+            ].map((f) => (
+              <li key={f} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={() => subscribe("pro")}
+            disabled={loadingPlan === "pro"}
+            className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 bg-green-700 text-white hover:bg-green-800"
+          >
+            {loadingPlan === "pro" ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <>
+                <CreditCard className="h-4 w-4" />
+                Passer au plan Pro
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Gestion abonnement existant */}

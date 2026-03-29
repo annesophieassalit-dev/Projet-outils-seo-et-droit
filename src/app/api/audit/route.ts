@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
     const auditsUsed = profile?.audits_used_this_month || 0;
     const limits: Record<string, number> = {
       gratuit: 1,
-      essentiel: 10,
+      essentiel: 10, // ancien plan
       pro: -1, // illimité
     };
     const limit = limits[plan] ?? 1;
@@ -85,15 +85,15 @@ export async function POST(request: NextRequest) {
     if (limit !== -1 && auditsUsed >= limit) {
       return NextResponse.json(
         {
-          error: `Limite d'audits atteinte pour votre plan ${plan}. Passez à un plan supérieur pour continuer.`,
+          error: `Limite de diagnostics atteinte pour votre plan ${plan}. Passez au plan Pro pour continuer.`,
           limitReached: true,
         },
         { status: 403 }
       );
     }
 
-    // Plan gratuit : SEO seulement
-    const canDoLegal = plan !== "gratuit";
+    // Tous les plans incluent SEO + diagnostic de conformité juridique
+    const canDoLegal = true;
     const canDoAI = plan === "pro";
 
     // Créer l'audit en BDD (status: running)
