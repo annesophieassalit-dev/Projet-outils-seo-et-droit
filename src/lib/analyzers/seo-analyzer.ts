@@ -7,54 +7,46 @@ import type {
 } from "@/types/audit";
 import { scoreToGrade } from "@/lib/utils";
 
-// ─── Fetch avec timeout ───────────────────────────────────────────────────────
+// ─── Fetch ────────────────────────────────────────────────────────────────────
 
-async function fetchPage(url: string): Promise<string> {
+async function fetchPage(url: string): Promise<{ html: string; loadTimeMs: number }> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
+  const start = Date.now();
   try {
     const res = await fetch(url, {
       signal: controller.signal,
       headers: {
-        "User-Agent":
-          "ConformiWeb-Bot/1.0 (+https://conformiweb.fr/bot)",
+        "User-Agent": "ConformiWeb-Bot/1.0",
         Accept: "text/html,application/xhtml+xml",
-        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
+        "Accept-Language": "fr-FR,fr;q=0.9",
       },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.text();
+    const html = await res.text();
+    return { html, loadTimeMs: Date.now() - start };
   } finally {
     clearTimeout(timeout);
   }
 }
 
-// ─── Extraction meta ─────────────────────────────────────────────────────────
+// ─── Extraction meta ──────────────────────────────────────────────────────────
 
-function extractMeta($: cheerio.CheerioAPI, baseUrl: string): SeoMetaResult {
+function extractMeta($: cheerio.CheerioAPI): SeoMetaResult {
   const titleTag = $("title").first().text().trim() || null;
-  const metaDescription =
-    $('meta[name="description"]').attr("content")?.trim() || null;
-  const canonicalUrl =
-    $('link[rel="canonical"]').attr("href")?.trim() || null;
-  const robotsMeta =
-    $('meta[name="robots"]').attr("content")?.trim() || null;
-  const ogTitle =
-    $('meta[property="og:title"]').attr("content")?.trim() || null;
-  const ogDescription =
-    $('meta[property="og:description"]').attr("content")?.trim() || null;
-  const ogImage =
-    $('meta[property="og:image"]').attr("content")?.trim() || null;
+  const metaDescription = $('meta[name="description"]').attr("content")?.trim() || null;
+  const canonicalUrl = $('link[rel="canonical"]').attr("href")?.trim() || null;
+  const robotsMeta = $('meta[name="robots"]').attr("content")?.trim() || null;
+  const ogTitle = $('meta[property="og:title"]').attr("content")?.trim() || null;
+  const ogDescription = $('meta[property="og:description"]').attr("content")?.trim() || null;
+  const ogImage = $('meta[property="og:image"]').attr("content")?.trim() || null;
 
-  // Détecter les schemas JSON-LD
   const schemaMarkup: string[] = [];
   $('script[type="application/ld+json"]').each((_, el) => {
     try {
       const json = JSON.parse($(el).html() || "{}");
       if (json["@type"]) schemaMarkup.push(json["@type"]);
-    } catch {
-      // JSON mal formé, on ignore
-    }
+    } catch { /* ignore */ }
   });
 
   return {
@@ -73,11 +65,7 @@ function extractMeta($: cheerio.CheerioAPI, baseUrl: string): SeoMetaResult {
 
 // ─── Extraction contenu ───────────────────────────────────────────────────────
 
-function extractContent(
-  $: cheerio.CheerioAPI,
-  url: string
-): SeoContentResult {
-  const h1 = $("h1");
+function extractContent($: cheerio.CheerioAPI, url: string): SeoContentResult {
   const bodyText = $("body").text().replace(/\s+/g, " ").trim();
   const words = bodyText.split(" ").filter((w) => w.length > 2);
 
@@ -91,27 +79,22 @@ function extractContent(
 
   let internalLinks = 0;
   let externalLinks = 0;
-  const parsedUrl = new URL(url);
+  const parsedBase = new URL(url);
   $("a[href]").each((_, el) => {
     const href = $(el).attr("href") || "";
     try {
       const linkUrl = new URL(href, url);
-      if (linkUrl.hostname === parsedUrl.hostname) internalLinks++;
+      if (linkUrl.hostname === parsedBase.hostname) internalLinks++;
       else externalLinks++;
-    } catch {
-      // lien relatif ou invalide
-    }
+    } catch { /* ignore */ }
   });
 
   const hasMobileViewport =
     $('meta[name="viewport"]').attr("content")?.includes("width=device-width") ?? false;
 
   return {
-    h1Count: h1.length,
-    h1Text: h1
-      .map((_, el) => $(el).text().trim())
-      .get()
-      .slice(0, 5),
+    h1Count: $("h1").length,
+    h1Text: $("h1").map((_, el) => $(el).text().trim()).get().slice(0, 5),
     h2Count: $("h2").length,
     h3Count: $("h3").length,
     wordCount: words.length,
@@ -124,249 +107,404 @@ function extractContent(
   };
 }
 
-// ─── Génération des problèmes ─────────────────────────────────────────────────
+// ─── Analyse sémantique ───────────────────────────────────────────────────────
 
-function generateSeoIssues(
+interface SemanticAnalysis {
+  hasLocalKeyword: boolean;
+  hasActivityKeyword: boolean;
+  mainTopics: string[];
+  missingKeywordSuggestions: string[];
+}
+
+const ACTIVITY_KEYWORDS = [
+  "naturopathe", "naturopathie", "coach", "coaching", "hypnothérapeute", "hypnose",
+  "sophrologie", "sophrologue", "réflexologue", "réflexologie", "reiki", "énergéticien",
+  "kinésiologue", "kinésiologie", "bien-être", "bien être", "holistique", "accompagnement",
+  "praticien", "praticienne", "aromathérapie",
+];
+
+const LOCAL_SIGNALS = [
+  /\b(paris|lyon|marseille|bordeaux|toulouse|nantes|lille|strasbourg|nice|rennes)\b/i,
+  /\b\d{5}\b/, // code postal
+  /\b(rue|avenue|boulevard|allée|chemin|place)\b/i,
+];
+
+function analyzeSemantics($: cheerio.CheerioAPI, meta: SeoMetaResult): SemanticAnalysis {
+  const allText = ($("title").text() + " " + $("body").text()).toLowerCase();
+  const titleAndH1 = ($("title").text() + " " + $("h1").text()).toLowerCase();
+
+  const hasActivityKeyword = ACTIVITY_KEYWORDS.some((kw) => allText.includes(kw));
+  const hasLocalKeyword = LOCAL_SIGNALS.some((pattern) => pattern.test(allText));
+
+  // Détecter les thèmes principaux depuis H2
+  const mainTopics: string[] = [];
+  $("h2").each((_, el) => {
+    const text = $(el).text().trim();
+    if (text.length > 3 && text.length < 80) mainTopics.push(text);
+  });
+
+  const missingKeywordSuggestions: string[] = [];
+  if (!hasActivityKeyword) {
+    missingKeywordSuggestions.push("votre spécialité (naturopathe, coach, hypnothérapeute…)");
+  }
+  if (!hasLocalKeyword) {
+    missingKeywordSuggestions.push("votre ville ou zone géographique");
+  }
+  if (!titleAndH1.match(/accompagnement|bien.être|holistique|séance|consultation/)) {
+    missingKeywordSuggestions.push("votre approche principale (accompagnement, bien-être…)");
+  }
+
+  return { hasLocalKeyword, hasActivityKeyword, mainTopics, missingKeywordSuggestions };
+}
+
+// ─── Analyse maillage interne ─────────────────────────────────────────────────
+
+interface InternalLinkingAnalysis {
+  internalLinkCount: number;
+  hasFooterLinks: boolean;
+  hasNavigationMenu: boolean;
+  orphanRisk: boolean; // peu de liens internes = pages orphelines
+  anchorTexts: string[];
+}
+
+function analyzeInternalLinking($: cheerio.CheerioAPI, url: string): InternalLinkingAnalysis {
+  const base = new URL(url);
+  let internalLinkCount = 0;
+  const anchorTexts: string[] = [];
+
+  $("a[href]").each((_, el) => {
+    const href = $(el).attr("href") || "";
+    try {
+      const linkUrl = new URL(href, url);
+      if (linkUrl.hostname === base.hostname) {
+        internalLinkCount++;
+        const text = $(el).text().trim();
+        if (text.length > 2 && text.length < 50) anchorTexts.push(text);
+      }
+    } catch { /* ignore */ }
+  });
+
+  const hasFooterLinks = $("footer a").length > 0;
+  const hasNavigationMenu = $("nav a, header a, [role=navigation] a").length > 0;
+  const orphanRisk = internalLinkCount < 3;
+
+  return {
+    internalLinkCount,
+    hasFooterLinks,
+    hasNavigationMenu,
+    orphanRisk,
+    anchorTexts: anchorTexts.slice(0, 10),
+  };
+}
+
+// ─── Suggestion structure Hn ──────────────────────────────────────────────────
+
+interface HnStructureSuggestion {
+  current: { level: string; text: string }[];
+  suggestion: { level: string; text: string; note: string }[];
+}
+
+function analyzeHnStructure($: cheerio.CheerioAPI, profession: string): HnStructureSuggestion {
+  const current: { level: string; text: string }[] = [];
+
+  (["h1", "h2", "h3"] as const).forEach((level) => {
+    $(level).each((_, el) => {
+      current.push({ level: level.toUpperCase(), text: $(el).text().trim().slice(0, 80) });
+    });
+  });
+
+  // Suggestion d'une structure idéale type pour un praticien bien-être
+  const suggestion = [
+    {
+      level: "H1",
+      text: `[Votre prénom] — [Spécialité] à [Ville]`,
+      note: "Un seul H1, votre identité professionnelle + localisation",
+    },
+    {
+      level: "H2",
+      text: "Mon approche de l'accompagnement",
+      note: "Décrivez ce que vous faites sans termes médicaux",
+    },
+    {
+      level: "H2",
+      text: "Pour qui ?",
+      note: "Décrivez les situations (pas les pathologies) que vous accompagnez",
+    },
+    {
+      level: "H2",
+      text: "Mes séances",
+      note: "Format, durée, déroulement — concret et rassurant",
+    },
+    {
+      level: "H2",
+      text: "Questions fréquentes",
+      note: "Excellent pour le SEO et pour rassurer les visiteurs",
+    },
+    {
+      level: "H3",
+      text: "Sous-thèmes selon votre spécialité",
+      note: "Ex : « La naturopathie, c'est quoi ? », « Combien de séances ? »",
+    },
+  ];
+
+  return { current, suggestion };
+}
+
+// ─── Génération des issues ────────────────────────────────────────────────────
+
+function generateIssues(
   meta: SeoMetaResult,
   content: SeoContentResult,
+  semantic: SemanticAnalysis,
+  linking: InternalLinkingAnalysis,
+  loadTimeMs: number,
   url: string
 ): AuditIssue[] {
   const issues: AuditIssue[] = [];
   let i = 0;
   const id = () => `seo-${++i}`;
 
-  // HTTPS
+  // ── TECHNIQUE ──────────────────────────────────────────────────────────────
   if (!content.hasHttps) {
     issues.push({
-      id: id(),
-      category: "Sécurité",
-      severity: "error",
+      id: id(), category: "Technique", severity: "error",
       title: "Site non sécurisé (HTTP)",
-      description:
-        "Votre site n'utilise pas HTTPS. Google pénalise les sites non sécurisés dans son classement.",
-      recommendation:
-        "Activez un certificat SSL/TLS (gratuit avec Let's Encrypt). Contactez votre hébergeur.",
+      description: "Google pénalise les sites sans HTTPS dans son classement.",
+      recommendation: "Activez un certificat SSL (gratuit avec Let's Encrypt via votre hébergeur).",
       url,
     });
   }
 
-  // Balise title
+  if (!content.hasMobileViewport) {
+    issues.push({
+      id: id(), category: "Technique", severity: "error",
+      title: "Non optimisé pour mobile",
+      description: "Google indexe en priorité la version mobile de votre site.",
+      recommendation: 'Ajoutez <meta name="viewport" content="width=device-width, initial-scale=1"> dans le <head>.',
+      url,
+    });
+  }
+
+  if (loadTimeMs > 3000) {
+    issues.push({
+      id: id(), category: "Technique", severity: "warning",
+      title: `Chargement lent (${(loadTimeMs / 1000).toFixed(1)}s)`,
+      description: "Un site qui met plus de 3s à charger perd 40% de ses visiteurs.",
+      recommendation: "Compressez vos images (outil gratuit : Squoosh.app), réduisez les plugins inutiles.",
+      url,
+    });
+  }
+
+  // ── BALISES ────────────────────────────────────────────────────────────────
   if (!meta.titleTag) {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "error",
-      title: "Balise <title> manquante",
-      description:
-        "Votre page n'a pas de balise title. C'est le critère SEO le plus important.",
-      recommendation:
-        "Ajoutez une balise <title> entre 50 et 60 caractères décrivant précisément votre activité et localisation.",
+      id: id(), category: "Balises", severity: "error",
+      title: "Titre de page manquant",
+      description: "La balise title est le signal SEO le plus important. Google l'affiche dans les résultats.",
+      recommendation: "Rédigez un titre de 50–60 caractères : « [Votre prénom] — [Spécialité] à [Ville] »",
       url,
     });
   } else if (meta.titleLength < 30) {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "warning",
-      title: "Balise <title> trop courte",
-      description: `Votre title ne fait que ${meta.titleLength} caractères. Il manque probablement votre spécialité ou localisation.`,
-      recommendation:
-        "Visez 50–60 caractères. Exemple : « Naturopathe à Lyon | Marie Dupont – Bien-être naturel »",
-      excerpt: meta.titleTag,
-      url,
+      id: id(), category: "Balises", severity: "warning",
+      title: "Titre trop court",
+      description: `Votre titre (${meta.titleLength} caractères) ne dit pas assez. Il manque probablement votre spécialité ou ville.`,
+      recommendation: "Visez 50–60 caractères. Exemple : « Marie Dupont – Naturopathe à Lyon »",
+      excerpt: meta.titleTag, url,
     });
   } else if (meta.titleLength > 60) {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "warning",
-      title: "Balise <title> trop longue",
-      description: `Votre title fait ${meta.titleLength} caractères. Google tronque au-delà de 60 caractères dans les résultats de recherche.`,
-      recommendation: "Raccourcissez à 50–60 caractères en priorisant les mots-clés principaux.",
-      excerpt: meta.titleTag,
-      url,
+      id: id(), category: "Balises", severity: "warning",
+      title: "Titre trop long",
+      description: `Votre titre (${meta.titleLength} caractères) sera tronqué par Google au-delà de 60 caractères.`,
+      recommendation: "Raccourcissez en gardant : prénom, spécialité, ville.",
+      excerpt: meta.titleTag, url,
     });
   } else {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "success",
-      title: "Balise <title> bien optimisée",
-      description: `Votre title fait ${meta.titleLength} caractères, dans la plage idéale.`,
+      id: id(), category: "Balises", severity: "success",
+      title: "Titre bien optimisé",
+      description: `${meta.titleLength} caractères — parfait.`,
+      excerpt: meta.titleTag, url,
       recommendation: "",
-      excerpt: meta.titleTag,
-      url,
     });
   }
 
-  // Meta description
   if (!meta.metaDescription) {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "error",
-      title: "Meta description manquante",
-      description:
-        "Aucune meta description trouvée. Google génère alors lui-même un extrait, souvent peu engageant.",
-      recommendation:
-        "Ajoutez une meta description de 150–160 caractères avec un appel à l'action et vos mots-clés.",
-      url,
-    });
-  } else if (meta.metaDescriptionLength < 100) {
-    issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "warning",
-      title: "Meta description trop courte",
-      description: `Votre meta description ne fait que ${meta.metaDescriptionLength} caractères.`,
-      recommendation: "Visez 150–160 caractères pour maximiser l'espace dans les résultats Google.",
-      excerpt: meta.metaDescription,
+      id: id(), category: "Balises", severity: "error",
+      title: "Description manquante",
+      description: "La meta description apparaît sous votre titre dans Google. Elle influence le taux de clic.",
+      recommendation: "Rédigez 150–160 caractères : qui vous êtes, ce que vous proposez, et un appel à l'action. Ex : « Naturopathe certifiée à Lyon, j'accompagne les personnes en recherche d'équilibre naturel. Prenez rendez-vous en ligne. »",
       url,
     });
   } else if (meta.metaDescriptionLength > 160) {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "warning",
-      title: "Meta description trop longue",
-      description: `Votre meta description fait ${meta.metaDescriptionLength} caractères et sera tronquée par Google.`,
-      recommendation: "Raccourcissez à 150–160 caractères en conservant les informations essentielles.",
-      excerpt: meta.metaDescription,
-      url,
+      id: id(), category: "Balises", severity: "warning",
+      title: "Description trop longue",
+      description: `${meta.metaDescriptionLength} caractères — tronquée dans les résultats.`,
+      recommendation: "Raccourcissez à 150–160 caractères.",
+      excerpt: meta.metaDescription, url,
     });
   } else {
     issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "success",
-      title: "Meta description bien optimisée",
-      description: `Votre meta description fait ${meta.metaDescriptionLength} caractères.`,
+      id: id(), category: "Balises", severity: "success",
+      title: "Description bien optimisée",
+      description: `${meta.metaDescriptionLength} caractères — idéal.`,
+      excerpt: meta.metaDescription, url,
       recommendation: "",
-      excerpt: meta.metaDescription,
-      url,
     });
   }
 
-  // H1
+  // ── STRUCTURE Hn ──────────────────────────────────────────────────────────
   if (content.h1Count === 0) {
     issues.push({
-      id: id(),
-      category: "Structure de contenu",
-      severity: "error",
-      title: "Aucune balise H1",
-      description:
-        "Votre page n'a pas de titre principal H1. C'est un signal fort pour Google sur le sujet de la page.",
-      recommendation:
-        "Ajoutez un seul H1 décrivant clairement votre activité principale. Ex : « Naturopathe certifiée à Bordeaux »",
+      id: id(), category: "Structure Hn", severity: "error",
+      title: "Aucun titre H1",
+      description: "Le H1 est votre titre principal — signal clé pour Google sur le sujet de la page.",
+      recommendation: "Ajoutez un H1 unique : votre prénom + spécialité + ville. Ex : « Marie Dupont — Naturopathe à Bordeaux »",
       url,
     });
   } else if (content.h1Count > 1) {
     issues.push({
-      id: id(),
-      category: "Structure de contenu",
-      severity: "warning",
-      title: `${content.h1Count} balises H1 détectées`,
-      description:
-        "Une page doit avoir un seul H1. Plusieurs H1 diluent le signal SEO et désorienten la hiérarchie.",
-      recommendation: "Conservez un seul H1 et transformez les autres en H2 ou H3.",
-      excerpt: content.h1Text.join(" | "),
+      id: id(), category: "Structure Hn", severity: "warning",
+      title: `${content.h1Count} H1 détectés`,
+      description: "Une seule page = un seul H1. Plusieurs H1 dispersent le signal SEO.",
+      recommendation: "Gardez un seul H1, transformez les autres en H2.",
+      excerpt: content.h1Text.join(" | "), url,
+    });
+  } else {
+    issues.push({
+      id: id(), category: "Structure Hn", severity: "success",
+      title: "Un seul H1 — correct",
+      description: `« ${content.h1Text[0]} »`,
+      recommendation: "", url,
+    });
+  }
+
+  if (content.h2Count === 0) {
+    issues.push({
+      id: id(), category: "Structure Hn", severity: "warning",
+      title: "Aucun titre H2",
+      description: "Les H2 organisent votre contenu et aident Google à comprendre les thèmes de votre page.",
+      recommendation: "Ajoutez des H2 pour chaque section : « Mon approche », « Pour qui ? », « Mes séances », « Questions fréquentes »",
+      url,
+    });
+  } else if (content.h2Count < 3) {
+    issues.push({
+      id: id(), category: "Structure Hn", severity: "info",
+      title: `Seulement ${content.h2Count} H2`,
+      description: "Votre page manque de structure. Une page bien organisée = meilleure lisibilité et meilleur SEO.",
+      recommendation: "Visez 4–6 H2 pour structurer votre page d'accueil.",
+      url,
+    });
+  }
+
+  // ── SÉMANTIQUE & POSITIONNEMENT ───────────────────────────────────────────
+  if (!semantic.hasActivityKeyword) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "error",
+      title: "Votre activité n'est pas mentionnée",
+      description: "Google ne peut pas savoir ce que vous faites si votre spécialité (naturopathe, coach, sophrologue…) n'apparaît pas clairement.",
+      recommendation: "Mentionnez votre spécialité dans le titre, le H1 et les premiers paragraphes.",
+      url,
+    });
+  }
+
+  if (!semantic.hasLocalKeyword) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "warning",
+      title: "Localisation absente",
+      description: "Vos futurs clients cherchent « naturopathe Lyon » ou « coach Paris ». Sans localisation, vous êtes invisible sur ces recherches.",
+      recommendation: "Ajoutez votre ville dans le titre, le H1 et la meta description. Si vous pratiquez en ligne, mentionnez-le aussi.",
+      url,
+    });
+  }
+
+  if (semantic.missingKeywordSuggestions.length > 0 && semantic.hasActivityKeyword) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "info",
+      title: "Positionnement à préciser",
+      description: "Votre page pourrait mieux communiquer votre approche spécifique.",
+      recommendation: `Pensez à intégrer : ${semantic.missingKeywordSuggestions.join(", ")}.`,
+      url,
+    });
+  }
+
+  if (content.wordCount < 300) {
+    issues.push({
+      id: id(), category: "Contenu", severity: "warning",
+      title: "Contenu trop court",
+      description: `${content.wordCount} mots — insuffisant. Google privilégie les pages qui répondent vraiment aux questions des internautes.`,
+      recommendation: "Visez 500–800 mots sur votre page d'accueil. Décrivez votre approche, vos séances, ce que vous accompagnez.",
+      url,
+    });
+  } else if (content.wordCount >= 500) {
+    issues.push({
+      id: id(), category: "Contenu", severity: "success",
+      title: `Bon volume de contenu (${content.wordCount} mots)`,
+      description: "Votre page a suffisamment de contenu pour être bien indexée.",
+      recommendation: "", url,
+    });
+  }
+
+  // ── MAILLAGE INTERNE ──────────────────────────────────────────────────────
+  if (linking.orphanRisk) {
+    issues.push({
+      id: id(), category: "Maillage interne", severity: "warning",
+      title: "Peu de liens internes",
+      description: `Seulement ${linking.internalLinkCount} lien(s) interne(s) détecté(s). Un bon maillage aide Google à explorer votre site et renforce les pages importantes.`,
+      recommendation: "Ajoutez des liens vers vos pages clés : séances, tarifs, à propos, contact. Minimum 5–8 liens internes sur la page d'accueil.",
       url,
     });
   } else {
     issues.push({
-      id: id(),
-      category: "Structure de contenu",
-      severity: "success",
-      title: "Un seul H1 — correct",
-      description: `H1 : « ${content.h1Text[0]} »`,
-      recommendation: "",
+      id: id(), category: "Maillage interne", severity: "success",
+      title: `Maillage interne correct (${linking.internalLinkCount} liens)`,
+      description: "Votre page est bien reliée au reste de votre site.",
+      recommendation: "", url,
+    });
+  }
+
+  if (!linking.hasNavigationMenu) {
+    issues.push({
+      id: id(), category: "Maillage interne", severity: "warning",
+      title: "Menu de navigation non détecté",
+      description: "Un menu clair aide vos visiteurs et Google à naviguer sur votre site.",
+      recommendation: "Assurez-vous d'avoir un menu principal avec au minimum : Accueil, Séances/Prestations, À propos, Contact.",
       url,
     });
   }
 
-  // Images sans alt
+  // ── IMAGES ────────────────────────────────────────────────────────────────
   if (content.imagesWithoutAlt > 0) {
     issues.push({
-      id: id(),
-      category: "Accessibilité & SEO",
-      severity: content.imagesWithoutAlt > 3 ? "error" : "warning",
-      title: `${content.imagesWithoutAlt} image(s) sans attribut alt`,
-      description: `${content.imagesWithoutAlt} de vos ${content.totalImages} images n'ont pas de description alt. Google ne peut pas les indexer.`,
-      recommendation:
-        "Ajoutez un attribut alt descriptif à chaque image. Ex : alt=\"consultation naturopathie bien-être Paris\"",
+      id: id(), category: "Images", severity: "warning",
+      title: `${content.imagesWithoutAlt} image(s) sans description`,
+      description: `Google ne peut pas « lire » les images sans texte alternatif. Ces images sont invisibles pour les moteurs de recherche.`,
+      recommendation: 'Ajoutez un attribut alt à chaque image. Ex : alt="consultation naturopathie lyon marie dupont"',
       url,
     });
   }
 
-  // Viewport mobile
-  if (!content.hasMobileViewport) {
-    issues.push({
-      id: id(),
-      category: "Mobile",
-      severity: "error",
-      title: "Site non optimisé pour mobile",
-      description:
-        "La balise viewport est manquante. Google indexe en priorité la version mobile (Mobile-First Indexing).",
-      recommendation:
-        'Ajoutez <meta name="viewport" content="width=device-width, initial-scale=1"> dans le <head>.',
-      url,
-    });
-  }
-
-  // Open Graph
-  if (!meta.ogTitle || !meta.ogDescription || !meta.ogImage) {
-    issues.push({
-      id: id(),
-      category: "Réseaux sociaux",
-      severity: "info",
-      title: "Balises Open Graph incomplètes",
-      description:
-        "Les balises Open Graph sont utilisées par Facebook, Instagram, LinkedIn pour afficher un aperçu de votre page. Il en manque.",
-      recommendation:
-        "Ajoutez og:title, og:description et og:image pour contrôler l'affichage de vos partages sociaux.",
-      url,
-    });
-  }
-
-  // Schema markup
+  // ── DONNÉES STRUCTURÉES ───────────────────────────────────────────────────
   if (meta.schemaMarkup.length === 0) {
     issues.push({
-      id: id(),
-      category: "Données structurées",
-      severity: "info",
-      title: "Pas de données structurées (Schema.org)",
-      description:
-        "Les données structurées permettent à Google d'afficher des rich snippets dans les résultats : avis, horaires, localisation.",
-      recommendation:
-        "Ajoutez au minimum un schema LocalBusiness ou HealthAndBeautyBusiness avec votre nom, adresse, téléphone et horaires.",
+      id: id(), category: "Données structurées", severity: "info",
+      title: "Pas de données structurées",
+      description: "Les données structurées permettent à Google d'afficher votre nom, adresse, téléphone et horaires directement dans les résultats.",
+      recommendation: "Ajoutez un schema LocalBusiness avec votre nom, adresse, téléphone et activité. Votre développeur ou votre CMS peut le faire facilement.",
       url,
     });
   }
 
-  // Contenu
-  if (content.wordCount < 300) {
+  // ── OPEN GRAPH ────────────────────────────────────────────────────────────
+  if (!meta.ogImage) {
     issues.push({
-      id: id(),
-      category: "Contenu",
-      severity: "warning",
-      title: "Page trop courte en contenu",
-      description: `Votre page ne contient que ${content.wordCount} mots. Google privilégie les pages avec un contenu substantiel.`,
-      recommendation:
-        "Visez minimum 500 mots par page importante. Décrivez votre approche, vos prestations, vos bénéfices.",
-      url,
-    });
-  }
-
-  // Canonical
-  if (!meta.canonicalUrl) {
-    issues.push({
-      id: id(),
-      category: "Balises meta",
-      severity: "info",
-      title: "URL canonique non définie",
-      description:
-        "L'absence d'URL canonique peut entraîner du contenu dupliqué si votre page est accessible via plusieurs URLs.",
-      recommendation: "Ajoutez une balise <link rel=\"canonical\" href=\"URL-principale\"> dans le <head>.",
+      id: id(), category: "Réseaux sociaux", severity: "info",
+      title: "Pas d'image de partage (Open Graph)",
+      description: "Quand quelqu'un partage votre site sur Facebook ou LinkedIn, aucune image ne s'affiche.",
+      recommendation: "Ajoutez une balise og:image avec une belle photo de vous ou de votre cabinet (1200×630px).",
       url,
     });
   }
@@ -374,9 +512,9 @@ function generateSeoIssues(
   return issues;
 }
 
-// ─── Score SEO ────────────────────────────────────────────────────────────────
+// ─── Score ────────────────────────────────────────────────────────────────────
 
-function calculateSeoScore(issues: AuditIssue[]): number {
+function calculateScore(issues: AuditIssue[]): number {
   let score = 100;
   for (const issue of issues) {
     if (issue.severity === "error") score -= 15;
@@ -386,16 +524,23 @@ function calculateSeoScore(issues: AuditIssue[]): number {
   return Math.max(0, Math.min(100, score));
 }
 
-// ─── Export principal ─────────────────────────────────────────────────────────
+// ─── Export ───────────────────────────────────────────────────────────────────
 
-export async function analyzeSeo(url: string): Promise<SeoScore> {
-  const html = await fetchPage(url);
+export async function analyzeSeo(url: string, profession = ""): Promise<SeoScore & {
+  hnStructure: HnStructureSuggestion;
+  semantic: SemanticAnalysis;
+  linking: InternalLinkingAnalysis;
+}> {
+  const { html, loadTimeMs } = await fetchPage(url);
   const $ = cheerio.load(html);
 
-  const meta = extractMeta($, url);
+  const meta = extractMeta($);
   const content = extractContent($, url);
-  const issues = generateSeoIssues(meta, content, url);
-  const score = calculateSeoScore(issues);
+  const semantic = analyzeSemantics($, meta);
+  const linking = analyzeInternalLinking($, url);
+  const hnStructure = analyzeHnStructure($, profession);
+  const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url);
+  const score = calculateScore(issues);
 
   return {
     score,
@@ -403,5 +548,8 @@ export async function analyzeSeo(url: string): Promise<SeoScore> {
     issues,
     meta,
     content,
+    hnStructure,
+    semantic,
+    linking,
   };
 }
