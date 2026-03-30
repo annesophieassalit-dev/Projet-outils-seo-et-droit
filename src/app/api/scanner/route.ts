@@ -72,11 +72,11 @@ export async function POST(request: NextRequest) {
     ? await scanTextWithAI(text, profile?.profession || "")
     : scanTextBasic(text);
 
-  // Incrémenter le compteur
-  await supabase
-    .from("profiles")
-    .update({ scans_used_this_month: scansUsed + 1 })
-    .eq("id", user.id);
+  // Incrémenter le compteur + enregistrer l'événement
+  await Promise.all([
+    supabase.from("profiles").update({ scans_used_this_month: scansUsed + 1 }).eq("id", user.id),
+    supabase.from("usage_events").insert({ user_id: user.id, type: "scan" }),
+  ]);
 
   return NextResponse.json({ result, scansUsed: scansUsed + 1, limit });
 }

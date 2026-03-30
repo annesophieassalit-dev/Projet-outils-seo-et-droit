@@ -84,11 +84,11 @@ export async function POST(request: NextRequest) {
 
   const result = await generateContent(input);
 
-  // Incrémenter le compteur mensuel
-  await supabase
-    .from("profiles")
-    .update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 })
-    .eq("id", user.id);
+  // Incrémenter le compteur mensuel + enregistrer l'événement
+  await Promise.all([
+    supabase.from("profiles").update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 }).eq("id", user.id),
+    supabase.from("usage_events").insert({ user_id: user.id, type: "post" }),
+  ]);
 
   return NextResponse.json({ result });
 }

@@ -112,11 +112,11 @@ export async function POST(request: NextRequest) {
       throw new Error("Impossible de créer l'audit en base de données.");
     }
 
-    // Incrémenter le compteur
-    await supabase
-      .from("profiles")
-      .update({ audits_used_this_month: auditsUsed + 1 })
-      .eq("id", user.id);
+    // Incrémenter le compteur + enregistrer l'événement
+    await Promise.all([
+      supabase.from("profiles").update({ audits_used_this_month: auditsUsed + 1 }).eq("id", user.id),
+      supabase.from("usage_events").insert({ user_id: user.id, type: "diagnostic" }),
+    ]);
 
     // ── Lancement des analyses ──
     const [seoResult, legalResult] = await Promise.allSettled([
