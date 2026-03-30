@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Schéma initial
+-- LexZen — Schéma initial
 -- Migration 001 : Tables principales
 -- ============================================================
 

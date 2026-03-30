@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Règles juridiques en base de données
+-- LexZen — Règles juridiques en base de données
 -- Migration 002 : Table legal_rules (modifiable sans redéploiement)
 -- Permet à la juriste de mettre à jour les règles via une interface admin
 -- ============================================================

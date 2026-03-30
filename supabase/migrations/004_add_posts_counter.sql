@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Migration 004
+-- LexZen — Migration 004
 -- Ajout compteur posts générés (total depuis l'inscription)
 -- ============================================================
 

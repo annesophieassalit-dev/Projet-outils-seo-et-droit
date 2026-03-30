@@ -358,6 +358,11 @@ export default function GenerateurPage() {
         les termes médicaux et les formulations commerciales agressives. L'objectif est une communication
         crédible et professionnelle, pas du marketing impactant.
       </div>
+
+      {/* Disclaimer juridique */}
+      <p className="text-xs text-gray-400 text-center">
+        LexZen ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
+      </p>
     </div>
   );
 }

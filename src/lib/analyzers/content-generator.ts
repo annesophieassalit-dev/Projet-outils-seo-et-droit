@@ -1,35 +1,33 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { GeneratorInput, GeneratedContent, ContentType } from "@/types/scanner";
 
-// ─── Prompt système — les règles de fond immuables ────────────────────────────
-// Ces règles ne changent jamais, quelle que soit la demande de personnalisation
+// ─── Prompt système — règles immuables ───────────────────────────────────────
 
 const SYSTEM_PROMPT = `Tu es une assistante spécialisée en communication pour les praticiens du bien-être non réglementés en France (naturopathes, coachs, hypnothérapeutes, sophrologues, réflexologues, etc.).
 
-Ta mission : aider ces praticiens à écrire des contenus visibles, crédibles et juridiquement sûrs.
+Ta mission : aider ces praticiens à écrire des contenus à la fois visibles, performants sur les réseaux sociaux, et juridiquement sûrs.
 
 ## Règles absolues (ne jamais enfreindre)
 
 INTERDITS dans tous les contenus :
-- Termes d'actes médicaux : soigner, traiter, diagnostiquer, guérir, prescrire, ordonnance
-- Titres protégés : docteur, médecin, infirmier, psychologue clinicien, psychothérapeute
+- Termes d'actes médicaux : soigner, traiter, diagnostiquer, guérir, prescrire, ordonnance, rééduquer, rétablir
+- Titres protégés : docteur, médecin, infirmier, psychologue clinicien, psychothérapeute, clinicien, expert médical
 - Lieux médicaux : clinique, cabinet médical, centre de soins
-- Pathologies avec promesse d'action : "je traite la dépression", "soulage le diabète"
-- Promesses de résultats : "résultats garantis", "100% efficace", "prouvé scientifiquement"
-- Superlatifs non prouvés : "le meilleur", "révolutionnaire", "unique en France"
-- Urgence artificielle ou pression commerciale : "dernières places", "offre limitée"
-- Témoignages mis en avant comme preuves médicales
+- Pathologies avec promesse d'action : "je traite la dépression", "soulage le diabète", "élimine l'anxiété"
+- Promesses de résultats : "résultats garantis", "100% efficace", "prouvé scientifiquement", "immédiat", "définitif", "radical"
+- Allégations : "miracle", "révolutionnaire", "remède", "je garantis"
+- Superlatifs non prouvés : "le meilleur", "unique en France"
+- Pression commerciale : "dernières places", "offre limitée", urgence artificielle
 
 TOUJOURS utiliser :
-- Accompagnement, soutien, exploration, chemin, espace
-- "personnes qui traversent / vivent / rencontrent [situation]" (pas "patients atteints de")
-- Nuances : "peut contribuer à", "favorise", "soutient", "selon les personnes"
-- Précision du rôle : "praticien(ne) bien-être", "accompagnateur(trice)", jamais "thérapeute" seul
-- Disclaimer implicite via le ton : jamais de certitude absolue sur les résultats
+- Accompagnement, soutien, exploration, chemin, espace, présence
+- "personnes qui traversent / vivent / rencontrent [situation]" (jamais "patients atteints de")
+- Nuances : "peut contribuer à", "favorise", "soutient", "selon les personnes", "à votre rythme"
+- Précision du rôle : "praticien(ne) bien-être", "accompagnateur(trice)"
+- Ton posé et crédible — jamais clinique ni vendeur agressif
 
 ## Ton par défaut
-Posé, professionnel, humain, crédible. Jamais clinique ni vendeur agressif.
-Le contenu doit inspirer confiance, pas l'urgence d'acheter.`;
+Posé, professionnel, humain, crédible. Le contenu doit inspirer confiance, pas l'urgence d'acheter.`;
 
 // ─── Prompts par type de contenu ──────────────────────────────────────────────
 
@@ -46,42 +44,100 @@ function buildPrompt(input: GeneratorInput): string {
   const themesText = themes.length > 0 ? themes.join(", ") : "bien-être général";
 
   const contentInstructions: Record<ContentType, string> = {
-    bio_instagram: `Rédige une bio Instagram pour ${profession}.
-Contraintes : 150 caractères maximum, une accroche + ce qu'on accompagne + un lien d'action.
-Ne pas utiliser d'emojis de coeur ou d'étoile.
-Exemple de structure : [Ce que tu fais en 5 mots] · [Pour qui] · [Call to action sobre]`,
+    bio_instagram: `Rédige une bio Instagram percutante pour ${profession}.
+
+Contraintes strictes :
+- 150 caractères maximum (compter espaces et emojis)
+- Structure : [Ce que tu fais · Pour qui · Lien d'action]
+- 1 à 2 emojis maximum, choisis sobrement
+- Accroche immédiate : les 3 premiers mots doivent retenir l'attention
+- Call-to-action sobre en fin (ex : "→ lien en bio", "Prendre rdv ↓")
+- Ton : ${toneInstruction}
+
+Objectif performance : une bio Instagram efficace doit dire en un coup d'œil QUI tu es, POUR QUI tu travailles, et QUOI faire ensuite.`,
 
     presentation_activite: `Rédige un texte de présentation d'activité pour ${profession}.
-Longueur : 150–200 mots.
-Structure : 1 paragraphe sur l'approche, 1 paragraphe sur les situations accompagnées (avec les thèmes : ${themesText}), 1 phrase d'invitation sobre.
-Éviter tout ton publicitaire.`,
 
-    description_programme: `Rédige une description de programme/forfait pour ${profession}.
-Thèmes : ${themesText}.
-Longueur : 100–150 mots.
-Inclure : ce que la personne va explorer, le format, la durée, sans promettre de résultats précis.`,
+Structure et longueur :
+- 150–200 mots
+- §1 : l'approche (comment tu travailles, pas ce que tu "guéris")
+- §2 : les situations accompagnées, thèmes : ${themesText}
+- §3 : une phrase d'invitation sobre (pas de pression)
 
-    post_linkedin: `Rédige un post LinkedIn pour ${profession}.
-Thèmes : ${themesText}.
-Longueur : 200–300 mots.
-Structure : accroche en 1 ligne (sans point d'exclamation), développement en 3–5 courts paragraphes, invitation sobre en fin.
-Ton : ${toneInstruction}.
-Ne pas commencer par "Je" ni par une question rhétorique aguicheuse.`,
+Optimisation SEO + clarté :
+- Utiliser naturellement des mots-clés de la profession (ex: naturopathe, accompagnement, bien-être)
+- Phrases courtes, lisibles, sans jargon
+- Ton : ${toneInstruction}`,
 
-    fiche_google: `Rédige la description courte pour une fiche Google My Business pour ${profession}.
-Longueur : 250–300 caractères maximum.
-Inclure : spécialité, approche, public accompagné (thèmes : ${themesText}), localisation si mentionnée.`,
+    description_programme: `Rédige une description de programme ou forfait pour ${profession}.
+
+Thèmes : ${themesText}
+Longueur : 100–150 mots
+
+Structure performante :
+- Titre accrocheur sobre (pas de majuscules excessives)
+- Ce que la personne va explorer / développer (pas "obtenir")
+- Format et durée
+- À qui c'est destiné (situation, pas pathologie)
+- Invitation à passer à l'action, sans pression
+
+Ton : ${toneInstruction}`,
+
+    post_linkedin: `Rédige un post LinkedIn optimisé pour la portée organique, pour ${profession}.
+
+Thèmes : ${themesText}
+Longueur : 200–280 mots
+
+Structure optimisée pour l'algorithme LinkedIn :
+- Ligne 1 (accroche) : affirmation courte ou observation, sans point d'exclamation, sans question rhétorique — doit donner envie de cliquer "voir plus"
+- Ne PAS commencer par "Je"
+- Ligne 2 : saut de ligne (espace vide intentionnel)
+- Développement : 4–6 paragraphes courts (2–3 lignes max chacun), espacés
+- Avant-dernière ligne : question ouverte sobre pour encourager les commentaires
+- Dernière ligne : call-to-action discret (ex : "Lien en commentaire." ou "En savoir plus dans ma bio.")
+- Pas de hashtags dans le corps — 3 hashtags maximum à la toute fin
+
+Ton : ${toneInstruction}`,
+
+    fiche_google: `Rédige la description pour une fiche Google My Business pour ${profession}.
+
+Longueur : 250 caractères maximum (Google tronque au-delà)
+
+Optimisation locale :
+- Mentionner la spécialité + l'approche + le public accompagné (thèmes : ${themesText})
+- Si des informations de localisation sont fournies, les inclure naturellement
+- Mots-clés locaux en priorité (ville + activité)
+- Finir par un appel à l'action simple (ex : "Prenez rendez-vous.")
+
+Objectif : apparaître dans les recherches locales + donner envie de cliquer.`,
 
     post_instagram: `Rédige un post Instagram pour ${profession}.
-Thèmes : ${themesText}.
-Longueur : 150–200 mots + 5 hashtags pertinents en fin (pas de hashtag médical).
-Ton : ${toneInstruction}.
-Pas d'emojis excessifs (max 3 dans tout le post).`,
+
+Thèmes : ${themesText}
+Longueur : 150–220 mots (caption) + éléments de performance
+
+Structure optimisée pour Instagram :
+- Ligne 1 (accroche) : 1 phrase courte et percutante, visible avant "voir plus" — déclaration, chiffre, ou observation concrète
+- Corps : 3–4 paragraphes courts (2–3 lignes), espacés, lisibles sur mobile
+- 2–3 emojis maximum, placés avec intention (pas décoratifs)
+- Appel à l'action final sobre : question courte ou invitation
+- 5 hashtags en fin, séparés du texte par un saut de ligne :
+  * 2 hashtags de niche (ex: #naturopathie #accompagnementbienetre)
+  * 2 hashtags de situation (liés aux thèmes)
+  * 1 hashtag local si pertinent
+
+Ton : ${toneInstruction}`,
 
     accroche_site: `Rédige une accroche de page d'accueil pour ${profession}.
-Longueur : 1 phrase H1 (60 caractères max) + 2–3 phrases de sous-titre.
-La H1 doit être claire sur le rôle sans termes médicaux.
-Le sous-titre présente brièvement l'approche et les personnes accompagnées.`,
+
+Structure :
+- H1 : 1 phrase, 50–65 caractères maximum (Google affiche ~60 caractères), claire sur le rôle
+- Sous-titre : 2–3 phrases, 100–150 mots, présente l'approche + les personnes accompagnées + la promesse d'accompagnement (pas de résultat)
+
+Optimisation SEO :
+- H1 : inclure naturellement le mot-clé principal (ex: "naturopathe à [ville]" ou "accompagnement bien-être")
+- Sous-titre : phrases lisibles, mot-clés secondaires inclus naturellement
+- Ton : ${toneInstruction}`,
   };
 
   const specificitesText = specificites
@@ -91,7 +147,7 @@ Le sous-titre présente brièvement l'approche et les personnes accompagnées.`,
   return `${contentInstructions[contentType]}${specificitesText}
 
 Après le contenu, ajoute sur une nouvelle ligne séparée par "---" :
-Une note de conformité en 1–2 phrases expliquant pourquoi ce contenu est safe juridiquement (invisible pour les visiteurs, destinée au praticien).`;
+Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;
 }
 
 // ─── Générateur principal ─────────────────────────────────────────────────────
@@ -101,31 +157,20 @@ export async function generateContent(input: GeneratorInput): Promise<GeneratedC
 
   const message = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 1000,
+    max_tokens: 1200,
     system: SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: buildPrompt(input),
-      },
-    ],
+    messages: [{ role: "user", content: buildPrompt(input) }],
   });
 
   const raw = (message.content[0] as { type: "text"; text: string }).text;
-
-  // Séparer le contenu de la note de conformité
   const parts = raw.split("---");
   const content = parts[0].trim();
   const complianceNote = parts[1]?.trim() || "Contenu rédigé en respectant les règles applicables aux praticiens du bien-être non réglementés.";
 
-  return {
-    contentType: input.contentType,
-    content,
-    complianceNote,
-  };
+  return { contentType: input.contentType, content, complianceNote };
 }
 
-// ─── Variante (reformulation du même contenu) ─────────────────────────────────
+// ─── Variante ─────────────────────────────────────────────────────────────────
 
 export async function generateVariant(
   original: string,
@@ -136,21 +181,20 @@ export async function generateVariant(
 
   const message = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 800,
+    max_tokens: 1000,
     system: SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `Propose une variante de ce contenu (${contentType}) pour ${profession}.
-Garde le même sens et les mêmes informations mais avec un angle ou une tournure différente.
+    messages: [{
+      role: "user",
+      content: `Propose une variante de ce contenu (${contentType}) pour ${profession}.
+Même sens, même informations — angle ou tournure différente.
+Si c'est un post réseau social, adapte aussi la structure et l'accroche.
 Respecte toutes les règles de communication prudente.
 
 Contenu original :
 ${original}
 
 Variante :`,
-      },
-    ],
+    }],
   });
 
   return (message.content[0] as { type: "text"; text: string }).text.trim();

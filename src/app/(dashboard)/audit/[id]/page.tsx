@@ -520,12 +520,9 @@ export default async function AuditResultPage({
       )}
 
       {/* Note de bas de page */}
-      <div className="text-xs text-gray-400 bg-gray-50 rounded-lg p-4 border border-gray-100">
-        <strong>Avertissement :</strong> Ce rapport est fourni à titre indicatif
-        et ne constitue pas un avis juridique. Les résultats reflètent une analyse
-        automatisée basée sur des règles générales. Pour toute décision juridique,
-        consultez un professionnel du droit.
-      </div>
+      <p className="text-xs text-gray-400 text-center">
+        LexZen ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
+      </p>
     </div>
   );
 }

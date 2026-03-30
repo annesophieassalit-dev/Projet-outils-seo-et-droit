@@ -66,7 +66,7 @@ export default function Sidebar({ plan }: SidebarProps) {
       <div className="h-16 flex items-center px-5 border-b border-gray-100">
         <Link href="/dashboard" className="flex items-center gap-2">
           <ShieldCheck className="h-7 w-7 text-green-700" />
-          <span className="font-bold text-gray-900">ConformiWeb</span>
+          <span className="font-bold text-gray-900">LexZen</span>
         </Link>
       </div>
 

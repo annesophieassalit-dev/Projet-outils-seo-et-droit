@@ -1,4 +1,4 @@
-# Supabase — ConformiWeb
+# Supabase — LexZen
 
 ## Configuration
 

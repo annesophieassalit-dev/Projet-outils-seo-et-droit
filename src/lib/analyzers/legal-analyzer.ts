@@ -22,7 +22,7 @@ async function fetchPage(url: string): Promise<string> {
     const res = await fetch(url, {
       signal: controller.signal,
       headers: {
-        "User-Agent": "ConformiWeb-Bot/1.0",
+        "User-Agent": "LexZen-Bot/1.0",
         Accept: "text/html,application/xhtml+xml",
         "Accept-Language": "fr-FR,fr;q=0.9",
       },

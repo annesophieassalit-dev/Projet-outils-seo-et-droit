@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Migration 006
+-- LexZen — Migration 006
 -- Table usage_events : historique de toutes les actions
 -- Permet les stats sur n'importe quelle période
 -- ============================================================

@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Migration 005
+-- LexZen — Migration 005
 -- Renommage compteur posts : total → mensuel
 -- ============================================================
 

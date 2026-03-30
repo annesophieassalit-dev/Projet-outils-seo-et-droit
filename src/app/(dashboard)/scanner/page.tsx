@@ -355,7 +355,7 @@ Exemples : bio Instagram, présentation de vos séances, texte de votre site, de
 
       {/* Note de bas de page */}
       <p className="text-xs text-gray-400 text-center">
-        L'analyse est indicative. Elle ne remplace pas un avis juridique professionnel.
+        LexZen ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
       </p>
     </div>
   );

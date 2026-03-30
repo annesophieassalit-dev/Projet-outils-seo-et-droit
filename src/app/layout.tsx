@@ -3,24 +3,24 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "ConformiWeb — Audit SEO & Conformité juridique",
-    template: "%s | ConformiWeb",
+    default: "LexZen — Conformité éditoriale pour praticiens bien-être",
+    template: "%s | LexZen",
   },
   description:
-    "Vérifiez la conformité SEO et juridique de votre site de praticien bien-être. Évitez le risque d'exercice illégal de la médecine et optimisez votre visibilité sur Google.",
+    "LexZen analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique. Conçu pour les praticiens du bien-être non réglementés en France.",
   keywords: [
-    "audit seo naturopathe",
     "conformité juridique bien-être",
-    "exercice illégal médecine",
+    "risque exercice illégal médecine",
+    "naturopathe communication",
     "mentions légales thérapeute",
-    "naturopathe",
-    "coach bien-être",
-    "hypnothérapeute",
+    "seo naturopathe",
+    "coach bien-être communication",
+    "hypnothérapeute site internet",
   ],
   openGraph: {
-    title: "ConformiWeb — Audit SEO & Conformité juridique",
+    title: "LexZen — Conformité éditoriale pour praticiens bien-être",
     description:
-      "L'outil d'audit conçu pour les praticiens du bien-être non réglementés.",
+      "Analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique.",
     type: "website",
     locale: "fr_FR",
   },

@@ -1,5 +1,5 @@
 -- ============================================================
--- ConformiWeb — Migration 003
+-- LexZen — Migration 003
 -- Ajout compteur scans mensuels + mise à jour limites
 -- ============================================================
 

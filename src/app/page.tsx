@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-7 w-7 text-sage-600" style={{ color: "#3a6e3a" }} />
-            <span className="font-bold text-xl text-gray-900">ConformiWeb</span>
+            <span className="font-bold text-xl text-gray-900">LexZen</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#fonctionnalites" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
@@ -62,16 +62,19 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Votre site de praticien bien-être :
+            Réduire les risques juridiques
             <span className="text-green-700 block mt-1">
-              visible, conforme et protégé
+              liés à votre communication
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Vérifiez en quelques minutes si votre site respecte les règles Google (SEO)
-            <strong> et </strong>
-            les règles juridiques applicables aux professionnels du bien-être non réglementés.
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
+            LexZen analyse vos contenus pour repérer certaines formulations
+            pouvant présenter un risque juridique — site internet, réseaux sociaux, descriptions de programmes.
+          </p>
+
+          <p className="text-sm text-gray-400 max-w-xl mx-auto mb-8">
+            Outil de conformité éditoriale orienté prévention du risque. Ne constitue pas une consultation juridique.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -79,7 +82,7 @@ export default function LandingPage() {
               href="/inscription"
               className="bg-green-700 text-white px-8 py-4 rounded-xl hover:bg-green-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
             >
-              Analyser mon site gratuitement
+              Analyser mes contenus gratuitement
               <ArrowRight className="h-5 w-5" />
             </Link>
             <a
@@ -90,11 +93,10 @@ export default function LandingPage() {
             </a>
           </div>
 
-          {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
-              1 diagnostic gratuit sans carte bancaire
+              1 diagnostic gratuit, sans carte bancaire
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -102,57 +104,56 @@ export default function LandingPage() {
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
-              Règles mises à jour régulièrement
+              Règles actualisées régulièrement
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── Pourquoi c'est important ──────────────────────────────────── */}
-      <section id="pourquoi" className="py-20 bg-amber-50 border-y border-amber-100 px-4 sm:px-6">
+      {/* ─── Ce que LexZen repère ─────────────────────────────────────── */}
+      <section id="pourquoi" className="py-20 bg-gray-50 border-y border-gray-100 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-8 justify-center">
-            <AlertTriangle className="h-8 w-8 text-amber-600" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Savez-vous ce que vous risquez ?
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+              Les types de risques que LexZen aide à repérer
             </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              Sans sur-promettre — LexZen identifie des zones de vigilance, pas des certitudes juridiques.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 icon: Scale,
-                title: "Exercice illégal de la médecine",
-                desc: "Certains termes sur votre site peuvent constituer une infraction pénale (Art. L4161-1 du Code de la santé publique) : \"soigner\", \"guérir\", \"diagnostiquer\", \"traiter\"...",
+                title: "Confusion sur la qualification",
+                desc: "Usage de termes pouvant laisser penser à un statut réglementé : « thérapeute », « Dr », « clinicien », « psychothérapeute ».",
                 color: "text-red-600",
                 bg: "bg-red-50 border-red-200",
               },
               {
-                icon: FileText,
-                title: "Mentions obligatoires manquantes",
-                desc: "Tout site professionnel doit avoir des mentions légales, une politique de confidentialité RGPD et vos informations d'identification (SIRET, adresse).",
-                color: "text-orange-600",
-                bg: "bg-orange-50 border-orange-200",
-              },
-              {
                 icon: AlertTriangle,
-                title: "Publicité mensongère",
-                desc: "\"Résultats garantis\", \"méthode révolutionnaire\", \"guérit l'anxiété\"... ces affirmations peuvent vous exposer à des poursuites pour pratiques commerciales trompeuses.",
+                title: "Promesses pouvant être interprétées comme trompeuses",
+                desc: "Angle Code de la consommation : « résultats garantis », « immédiat », « radical », « miracle » — allégations invérifiables.",
                 color: "text-amber-600",
                 bg: "bg-amber-50 border-amber-200",
               },
               {
+                icon: FileText,
+                title: "Vocabulaire créant une ambiguïté médicale",
+                desc: "Termes associés au domaine médical : soigner, traiter, guérir, diagnostiquer, soulager, rétablir, pathologie, symptôme...",
+                color: "text-orange-600",
+                bg: "bg-orange-50 border-orange-200",
+              },
+              {
                 icon: Search,
-                title: "Invisible sur Google",
-                desc: "Un site sans balise title optimisée, sans meta description, sans structure H1/H2 cohérente ne sera jamais trouvé par vos futurs clients sur Google.",
+                title: "Manque de clarté sur le positionnement réel",
+                desc: "Problème fréquent en SEO aussi : un praticien mal positionné dans ses textes n'est ni visible sur Google ni compris par ses visiteurs.",
                 color: "text-blue-600",
                 bg: "bg-blue-50 border-blue-200",
               },
             ].map((item) => (
-              <div
-                key={item.title}
-                className={`p-6 rounded-xl border ${item.bg}`}
-              >
+              <div key={item.title} className={`p-6 rounded-xl border ${item.bg}`}>
                 <item.icon className={`h-7 w-7 ${item.color} mb-3`} />
                 <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
@@ -170,7 +171,7 @@ export default function LandingPage() {
               Tous les outils pour communiquer en toute sécurité
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              ConformiWeb est le seul outil pensé spécifiquement pour les praticiens
+              LexZen est le seul outil pensé spécifiquement pour les praticiens
               du bien-être non réglementés, avec des règles juridiques adaptées à votre secteur.
             </p>
           </div>
@@ -265,7 +266,7 @@ export default function LandingPage() {
             Fait pour vous si vous êtes…
           </h2>
           <p className="text-gray-500 mb-10">
-            ConformiWeb s&apos;adresse aux praticiens du bien-être non réglementés en France
+            LexZen s&apos;adresse aux praticiens du bien-être non réglementés en France
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -405,10 +406,10 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-green-700" />
-            <span className="font-bold text-gray-900">ConformiWeb</span>
+            <span className="font-bold text-gray-900">LexZen</span>
           </div>
           <p className="text-sm text-gray-400">
-            © 2024 ConformiWeb · Cet outil ne constitue pas un avis juridique.
+            © 2024 LexZen · Cet outil ne constitue pas un avis juridique.
             Les résultats sont indicatifs et ne se substituent pas à une consultation juridique.
           </p>
           <div className="flex gap-4 text-sm text-gray-500">
