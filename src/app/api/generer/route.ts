@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, profession")
+    .select("plan, profession, posts_generated_total")
     .eq("id", user.id)
     .single();
 
@@ -72,5 +72,12 @@ export async function POST(request: NextRequest) {
   };
 
   const result = await generateContent(input);
+
+  // Incrémenter le compteur total de posts générés
+  await supabase
+    .from("profiles")
+    .update({ posts_generated_total: (profile?.posts_generated_total || 0) + 1 })
+    .eq("id", user.id);
+
   return NextResponse.json({ result });
 }

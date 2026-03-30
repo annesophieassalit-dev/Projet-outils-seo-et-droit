@@ -11,49 +11,52 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Accès non autorisé" }, { status: 403 });
   }
 
-  // ── Statistiques utilisateurs ──────────────────────────────────────────────
+  // ── Utilisateurs ───────────────────────────────────────────────────────────
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, email, full_name, profession, plan, subscription_status, audits_used_this_month, scans_used_this_month, created_at")
+    .select("id, full_name, profession, plan, audits_used_this_month, scans_used_this_month, posts_generated_total, created_at")
     .order("created_at", { ascending: false });
 
   const total = profiles?.length || 0;
   const gratuit = profiles?.filter(p => p.plan === "gratuit").length || 0;
   const pro = profiles?.filter(p => p.plan === "pro").length || 0;
-  const actifs30j = profiles?.filter(p => {
-    const d = new Date(p.created_at);
-    return Date.now() - d.getTime() < 30 * 24 * 60 * 60 * 1000;
-  }).length || 0;
 
-  // ── Statistiques audits ────────────────────────────────────────────────────
+  const startOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString();
+  const nouveauxCeMois = profiles?.filter(p => p.created_at >= startOfMonth).length || 0;
+
+  // ── Audits ─────────────────────────────────────────────────────────────────
   const { count: totalAudits } = await supabase
     .from("audits")
     .select("*", { count: "exact", head: true });
 
-  const startOfMonth = new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString();
   const { count: auditsThisMonth } = await supabase
     .from("audits")
     .select("*", { count: "exact", head: true })
     .gte("created_at", startOfMonth);
 
-  // ── Revenus estimés ────────────────────────────────────────────────────────
+  // ── Usage agrégé ───────────────────────────────────────────────────────────
+  const totalScans = profiles?.reduce((acc, p) => acc + (p.scans_used_this_month || 0), 0) || 0;
+  const totalPosts = profiles?.reduce((acc, p) => acc + (p.posts_generated_total || 0), 0) || 0;
+
+  // ── Revenus ────────────────────────────────────────────────────────────────
   const mrr = pro * 19;
 
+  // ── Derniers inscrits (sans email — RGPD) ─────────────────────────────────
+  const recent = profiles?.slice(0, 20).map(p => ({
+    id: p.id,
+    fullName: p.full_name || "Anonyme",
+    profession: p.profession || "—",
+    plan: p.plan,
+    auditsThisMonth: p.audits_used_this_month || 0,
+    scansThisMonth: p.scans_used_this_month || 0,
+    postsTotal: p.posts_generated_total || 0,
+    createdAt: p.created_at,
+  })) || [];
+
   return NextResponse.json({
-    users: {
-      total,
-      gratuit,
-      pro,
-      actifs30j,
-      recent: profiles?.slice(0, 20) || [],
-    },
-    audits: {
-      total: totalAudits || 0,
-      thisMonth: auditsThisMonth || 0,
-    },
-    revenue: {
-      mrr,
-      arr: mrr * 12,
-    },
+    users: { total, gratuit, pro, nouveauxCeMois, recent },
+    audits: { total: totalAudits || 0, thisMonth: auditsThisMonth || 0 },
+    usage: { scansThisMonth: totalScans, postsTotal: totalPosts },
+    revenue: { mrr, arr: mrr * 12 },
   });
 }
