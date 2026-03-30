@@ -19,12 +19,12 @@ interface AdminStats {
       plan: string;
       auditsThisMonth: number;
       scansThisMonth: number;
-      postsTotal: number;
+      postsThisMonth: number;
       createdAt: string;
     }>;
   };
   audits: { total: number; thisMonth: number };
-  usage: { scansThisMonth: number; postsTotal: number };
+  usage: { scansThisMonth: number; postsThisMonth: number };
   revenue: { mrr: number; arr: number };
 }
 
@@ -124,8 +124,7 @@ export default function AdminPage() {
         <StatCard icon={Search} label="Diagnostics ce mois" value={stats.audits.thisMonth}
           sub={`${stats.audits.total} au total`} />
         <StatCard icon={ScanText} label="Scans de texte ce mois" value={stats.usage.scansThisMonth} />
-        <StatCard icon={FileText} label="Posts générés (total)" value={stats.usage.postsTotal}
-          sub="depuis le lancement" />
+        <StatCard icon={FileText} label="Posts générés ce mois" value={stats.usage.postsThisMonth} />
       </div>
 
       {/* Répartition plans */}
@@ -192,7 +191,7 @@ export default function AdminPage() {
                   </td>
                   <td className="px-5 py-3 text-right text-gray-600">{u.auditsThisMonth}</td>
                   <td className="px-5 py-3 text-right text-gray-600">{u.scansThisMonth}</td>
-                  <td className="px-5 py-3 text-right text-gray-600">{u.postsTotal}</td>
+                  <td className="px-5 py-3 text-right text-gray-600">{u.postsThisMonth}</td>
                   <td className="px-5 py-3 text-right text-gray-400 text-xs">
                     {new Date(u.createdAt).toLocaleDateString("fr-FR")}
                   </td>

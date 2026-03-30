@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
   // ── Utilisateurs ───────────────────────────────────────────────────────────
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, full_name, profession, plan, audits_used_this_month, scans_used_this_month, posts_generated_total, created_at")
+    .select("id, full_name, profession, plan, audits_used_this_month, scans_used_this_month, posts_generated_this_month, created_at")
     .order("created_at", { ascending: false });
 
   const total = profiles?.length || 0;
@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
 
   // ── Usage agrégé ───────────────────────────────────────────────────────────
   const totalScans = profiles?.reduce((acc, p) => acc + (p.scans_used_this_month || 0), 0) || 0;
-  const totalPosts = profiles?.reduce((acc, p) => acc + (p.posts_generated_total || 0), 0) || 0;
+  const postsThisMonth = profiles?.reduce((acc, p) => acc + (p.posts_generated_this_month || 0), 0) || 0;
 
   // ── Revenus ────────────────────────────────────────────────────────────────
   const mrr = pro * 19;
@@ -49,14 +49,14 @@ export async function GET(request: NextRequest) {
     plan: p.plan,
     auditsThisMonth: p.audits_used_this_month || 0,
     scansThisMonth: p.scans_used_this_month || 0,
-    postsTotal: p.posts_generated_total || 0,
+    postsThisMonth: p.posts_generated_this_month || 0,
     createdAt: p.created_at,
   })) || [];
 
   return NextResponse.json({
     users: { total, gratuit, pro, nouveauxCeMois, recent },
     audits: { total: totalAudits || 0, thisMonth: auditsThisMonth || 0 },
-    usage: { scansThisMonth: totalScans, postsTotal: totalPosts },
+    usage: { scansThisMonth: totalScans, postsThisMonth },
     revenue: { mrr, arr: mrr * 12 },
   });
 }

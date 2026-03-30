@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, profession, posts_generated_total")
+    .select("plan, profession, posts_generated_this_month, audits_reset_date")
     .eq("id", user.id)
     .single();
 
@@ -41,6 +41,19 @@ export async function POST(request: NextRequest) {
       { error: "Le générateur de contenus est disponible à partir du plan Pro (19€/mois).", upgradeRequired: true },
       { status: 403 }
     );
+  }
+
+  // Réinitialisation mensuelle (même date que les autres compteurs)
+  const now = new Date();
+  const resetDate = profile?.audits_reset_date ? new Date(profile.audits_reset_date) : null;
+  if (resetDate && now > resetDate) {
+    await supabase
+      .from("profiles")
+      .update({
+        posts_generated_this_month: 0,
+        audits_reset_date: new Date(now.getFullYear(), now.getMonth() + 1, 1).toISOString(),
+      })
+      .eq("id", user.id);
   }
 
   const body = await request.json();
@@ -59,13 +72,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ variant });
   }
 
-  // Génération principale
   const parsed = generateSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.errors[0].message }, { status: 400 });
   }
 
-  // Utiliser la profession du profil si non fournie
   const input = {
     ...parsed.data,
     profession: parsed.data.profession || profile?.profession || "praticien bien-être",
@@ -73,10 +84,10 @@ export async function POST(request: NextRequest) {
 
   const result = await generateContent(input);
 
-  // Incrémenter le compteur total de posts générés
+  // Incrémenter le compteur mensuel
   await supabase
     .from("profiles")
-    .update({ posts_generated_total: (profile?.posts_generated_total || 0) + 1 })
+    .update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 })
     .eq("id", user.id);
 
   return NextResponse.json({ result });
