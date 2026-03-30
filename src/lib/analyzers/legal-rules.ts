@@ -105,6 +105,91 @@ export const EXERCICE_ILLEGAL_RULES: LegalRule[] = [
       "Associer votre pratique à la disparition de pathologies médicales reconnues est une allégation mensongère. Restez sur le domaine du bien-être général.",
     legalReference: "Art. L121-2 Code de la consommation",
   },
+  // ── Verbes médicaux manquants du Kit Visible & Conforme™ ──────────────────
+  {
+    id: "EI-009",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(soulage[rz]?|soulagement)\b/gi,
+    term: "soulager / soulagement",
+    recommendation:
+      "« Soulager » implique un effet médical. Préférez « apporter un mieux-être », « favoriser la détente », « aider à traverser ».",
+    legalReference: "Art. L4161-1 CSP",
+    falsePositiveCheck: (ctx) =>
+      /soulagement\s+(émotionnel|intérieur|psychologique)/i.test(ctx),
+  },
+  {
+    id: "EI-010",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(préven[a-z]+|prévention)\s+(de\s+la\s+|du\s+|des\s+)?(maladie|cancer|diabète|dépression|burn.?out|obésité|hypertension|rechute)/gi,
+    term: "prévenir [maladie]",
+    recommendation:
+      "La prévention médicale est du ressort des professionnels de santé. Utilisez « prendre soin de soi », « développer ses ressources naturelles ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "EI-011",
+    category: "exercice_illegal",
+    severity: "error",
+    pattern: /\b(réédu[a-z]+|rééducation)\b/gi,
+    term: "rééduquer / rééducation",
+    recommendation:
+      "La rééducation est un acte paramédical réglementé (kinésithérapeute, orthophoniste...). Utilisez « retrouver », « réapprendre à », « développer ».",
+    legalReference: "Art. L4321-1 CSP — acte de kinésithérapie",
+  },
+  {
+    id: "EI-012",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(rétabli[a-z]*|rétablissement)\b/gi,
+    term: "rétablir / rétablissement",
+    recommendation:
+      "« Rétablir » suggère un retour à la santé après maladie. Préférez « retrouver son équilibre », « restaurer sa vitalité ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "EI-013",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(élimine[rz]?|élimination)\b/gi,
+    term: "éliminer / élimination",
+    recommendation:
+      "Dans un contexte bien-être, « éliminer » peut être perçu comme une allégation médicale. Préférez « libérer », « lâcher prise sur », « alléger ».",
+    legalReference: "Art. L121-1 Code de la consommation",
+  },
+  {
+    id: "EI-014",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(vaincre?|vaincre\s+(le|la|les|votre|son))/gi,
+    term: "vaincre [problème de santé]",
+    recommendation:
+      "« Vaincre » implique un résultat garanti. Préférez « traverser », « dépasser », « apprendre à vivre avec ».",
+    legalReference: "Art. L121-2 Code de la consommation",
+  },
+  {
+    id: "EI-015",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(combattre?|combattre\s+(le|la|les|votre|son))/gi,
+    term: "combattre [problème de santé]",
+    recommendation:
+      "« Combattre » suggère une action thérapeutique. Préférez « traverser », « accompagner », « faire face à ».",
+    legalReference: "Art. L121-2 Code de la consommation",
+  },
+  {
+    id: "EI-016",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(répar[a-z]+|corriger?\s+(le|la|les|votre|son)|remédi[a-z]+)\b/gi,
+    term: "réparer / corriger / remédier à",
+    recommendation:
+      "Ces termes impliquent une action corrective médicale. Préférez « rééquilibrer », « harmoniser », « accompagner vers ».",
+    legalReference: "Art. L4161-1 CSP",
+    falsePositiveCheck: (ctx) =>
+      /(corriger|réparer)\s+(un\s+)?(texte|document|erreur|faute)/i.test(ctx),
+  },
 ];
 
 // ─── Confusion professionnelle ────────────────────────────────────────────────
@@ -162,6 +247,70 @@ export const CONFUSION_RULES: LegalRule[] = [
       "Ces titres sont strictement protégés. Si vous exercez une pratique similaire non réglementée, précisez votre titre exact et ajoutez un avertissement clair.",
     legalReference: "Art. L4311-1 et suivants CSP",
   },
+  // ── Titres protégés manquants du Kit Visible & Conforme™ ─────────────────
+  {
+    id: "CP-006",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\b(spécialiste)\s+(en|de|du|des)\s+\w+/gi,
+    term: "spécialiste en [domaine]",
+    recommendation:
+      "« Spécialiste » associé à un domaine de santé crée une confusion avec un titre médical. Préférez « praticienne spécialisée dans l'accompagnement de... ».",
+    legalReference: "Art. 433-17 Code pénal — usurpation de titre",
+  },
+  {
+    id: "CP-007",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\b(psychothérapeute)\b/gi,
+    term: "psychothérapeute",
+    recommendation:
+      "Le titre de psychothérapeute est réglementé depuis 2010 (décret n°2010-534). Sans enregistrement ARS, son usage est une infraction. Indiquez votre titre exact.",
+    legalReference: "Art. 52 Loi 2004-806 + Décret 2010-534",
+  },
+  {
+    id: "CP-008",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\bthérapeute\b(?!\s+(de|en\s+danse|familiale?|de\s+couple))/gi,
+    term: "thérapeute (seul, sans précision)",
+    recommendation:
+      "« Thérapeute » seul est ambigu et peut être confondu avec un professionnel de santé. Précisez toujours : « praticienne bien-être », « accompagnatrice en naturopathie »...",
+    legalReference: "Recommandation DGCCRF 2021",
+  },
+  {
+    id: "CP-009",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\b(expert\s+médical|professionnel\s+de\s+santé|clinicien)\b/gi,
+    term: "expert médical / professionnel de santé / clinicien",
+    recommendation:
+      "Ces titres désignent des professionnels de santé réglementés. Leur usage par un praticien bien-être non réglementé constitue une usurpation de titre.",
+    legalReference: "Art. 433-17 Code pénal",
+  },
+  // ── Termes médicaux zona grise — Kit Cat. 5 ───────────────────────────────
+  {
+    id: "CP-010",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\b(consultation)\b/gi,
+    term: "consultation",
+    recommendation:
+      "« Consultation » est fortement associé au vocabulaire médical. Préférez « séance », « rendez-vous », « entretien », « accompagnement ».",
+    legalReference: "Recommandation DGCCRF — clarté de l'offre",
+    falsePositiveCheck: (ctx) =>
+      /consultation\s+(gratuite|en\s+ligne|découverte|offerte)/i.test(ctx),
+  },
+  {
+    id: "CP-011",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\b(symptôme[s]?|pathologie[s]?|maladie[s]?)\b/gi,
+    term: "symptôme / pathologie / maladie",
+    recommendation:
+      "Ces termes appartiennent au vocabulaire médical. Si vous devez les utiliser, cadrez toujours : « personnes traversant... », « situations de... ». Évitez de prétendre agir sur ces conditions.",
+    legalReference: "Art. L4161-1 CSP",
+  },
 ];
 
 // ─── Mentions obligatoires ────────────────────────────────────────────────────
@@ -186,6 +335,132 @@ export const MENTIONS_RULES: LegalRule[] = [
     recommendation:
       "Toute collecte de données personnelles (formulaire de contact, newsletter, analytics) nécessite une politique de confidentialité conforme au RGPD.",
     legalReference: "RGPD Art. 13 + Art. L33-4-1 Code des postes",
+  },
+];
+
+// ─── Pathologies médicales — zones de vigilance (Kit Cat. 3) ─────────────────
+// Mentionner ces pathologies n'est pas interdit mais nécessite un cadrage strict
+
+export const PATHOLOGIES_RULES: LegalRule[] = [
+  {
+    id: "PA-001",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(dépression|dépressif|dépressive|dépressivité)\b/gi,
+    term: "dépression",
+    recommendation:
+      "Vous pouvez évoquer ce vécu, mais jamais prétendre le traiter. Formulez : « personnes traversant une période difficile », « moment de baisse d'énergie ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-002",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(burn.?out|épuisement\s+professionnel)\b/gi,
+    term: "burn-out",
+    recommendation:
+      "Utilisez : « personnes en situation d'épuisement », « période de surmenage ». N'affirmez jamais traiter ou guérir un burn-out.",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-003",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(anxiété|anxieux|anxieuse|crise\s+d'anxiété)\b/gi,
+    term: "anxiété",
+    recommendation:
+      "Préférez : « tension intérieure », « période d'inquiétude », « agitation mentale ». Cadrez toujours avec « personnes qui traversent... ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-004",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(insomnie[s]?|trouble[s]?\s+du\s+sommeil)\b/gi,
+    term: "insomnie / troubles du sommeil",
+    recommendation:
+      "Utilisez : « personnes rencontrant des difficultés de sommeil », « nuits difficiles ». Ne prétendez jamais traiter l'insomnie.",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-005",
+    category: "exercice_illegal",
+    severity: "error",
+    pattern: /\b(diabète|diabétique)\b/gi,
+    term: "diabète",
+    recommendation:
+      "Le diabète est une pathologie médicale grave. Votre pratique ne peut en aucun cas prétendre agir dessus. Retirez toute référence directe.",
+    legalReference: "Art. L4161-1 CSP + Art. L121-1 Code de la consommation",
+  },
+  {
+    id: "PA-006",
+    category: "exercice_illegal",
+    severity: "error",
+    pattern: /\b(cancer[s]?|oncologie|tumeur[s]?|chimiothérapie)\b/gi,
+    term: "cancer / tumeur",
+    recommendation:
+      "Toute référence à la prise en charge du cancer par une pratique non médicale est extrêmement risquée juridiquement. Retirez cette mention.",
+    legalReference: "Art. L4161-1 CSP + Art. L121-1 Code de la consommation",
+  },
+  {
+    id: "PA-007",
+    category: "exercice_illegal",
+    severity: "error",
+    pattern: /\b(hypertension|tension\s+artérielle|hypotension)\b/gi,
+    term: "hypertension / tension artérielle",
+    recommendation:
+      "Pathologie cardiovasculaire médicale. Ne jamais prétendre agir sur la tension artérielle. Retirez ou reformulez sans référence médicale.",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-008",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(migraine[s]?|céphalée[s]?)\b/gi,
+    term: "migraine / céphalée",
+    recommendation:
+      "Utilisez : « personnes sujettes aux tensions crâniennes », « maux de tête ». Ne prétendez pas traiter les migraines.",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-009",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(arthrose|arthrite|rhumatisme[s]?)\b/gi,
+    term: "arthrose / arthrite / rhumatisme",
+    recommendation:
+      "Pathologies rhumatologiques médicales. Utilisez : « personnes ressentant des inconforts articulaires », « tensions musculaires ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-010",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(eczéma|psoriasis|dermatite|urticaire)\b/gi,
+    term: "eczéma / psoriasis",
+    recommendation:
+      "Affections cutanées médicalement reconnues. Ne prétendez pas les traiter. Utilisez : « personnes souffrant d'inconforts cutanés ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-011",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(asthme|bronchite\s+chronique|BPCO)\b/gi,
+    term: "asthme",
+    recommendation:
+      "Pathologie respiratoire médicale. Évitez toute référence directe. Utilisez : « personnes souhaitant retrouver une respiration plus libre ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PA-012",
+    category: "exercice_illegal",
+    severity: "warning",
+    pattern: /\b(obésité|surpoids\s+médical|IMC)\b/gi,
+    term: "obésité",
+    recommendation:
+      "L'obésité est une pathologie médicale. Utilisez : « personnes souhaitant prendre soin de leur équilibre corporel », « rapport apaisé au corps ».",
+    legalReference: "Art. L4161-1 CSP",
   },
 ];
 
@@ -232,6 +507,39 @@ export const PUBLICITE_MENSONGERE_RULES: LegalRule[] = [
       "Si vous affichez des avis clients comme « vérifiés », ils doivent l'être via une plateforme certifiée NF Z74-501. Sinon, retirez cette mention.",
     legalReference: "Décret 2017-1436 relatif aux avis en ligne",
   },
+  // ── Promesses thérapeutiques manquantes du Kit Visible & Conforme™ ─────────
+  {
+    id: "PM-005",
+    category: "publicite_mensongere",
+    severity: "error",
+    pattern: /\b(miracle|miraculeux|miraculeuse|remède[s]?)\b/gi,
+    term: "miracle / remède",
+    recommendation:
+      "Ces termes sont des allégations thérapeutiques illicites. Ils promettent un effet médical sans preuve. Supprimez-les entièrement.",
+    legalReference: "Art. L121-1 Code de la consommation + Art. L5122-1 CSP",
+  },
+  {
+    id: "PM-006",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(résultat[s]?\s+immédiats?|effet\s+immédiat|soulagement\s+immédiat|changement\s+définitif|résultat[s]?\s+définitif[s]?|action\s+radicale?|résultat[s]?\s+radical[s]?)\b/gi,
+    term: "immédiat / définitif / radical",
+    recommendation:
+      "Ces promesses de résultats rapides ou permanents sont des allégations invérifiables. Utilisez : « à votre rythme », « progressivement », « selon votre parcours ».",
+    legalReference: "Art. L121-2 Code de la consommation",
+  },
+  {
+    id: "PM-007",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(je\s+)?garanti[st]?\b/gi,
+    term: "garantir / je garantis",
+    recommendation:
+      "Garantir un résultat en matière de bien-être est une promesse illicite. Préférez : « j'accompagne vers », « mon approche vise à », « selon votre engagement ».",
+    legalReference: "Art. L121-1 Code de la consommation",
+    falsePositiveCheck: (ctx) =>
+      /garanti[st]?\s+(sans\s+engagement|satisfait|remboursé)/i.test(ctx),
+  },
 ];
 
 // ─── Protection consommateur ──────────────────────────────────────────────────
@@ -264,6 +572,7 @@ export const PROTECTION_CONSO_RULES: LegalRule[] = [
 export const ALL_LEGAL_RULES: LegalRule[] = [
   ...EXERCICE_ILLEGAL_RULES,
   ...CONFUSION_RULES,
+  ...PATHOLOGIES_RULES,
   ...MENTIONS_RULES,
   ...PROTECTION_CONSO_RULES,
   ...PUBLICITE_MENSONGERE_RULES,

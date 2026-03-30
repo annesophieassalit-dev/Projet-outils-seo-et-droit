@@ -116,6 +116,47 @@ const STATIC_REFORMULATIONS: Record<string, ReformulationSuggestion> = {
     safe: "accompagner les personnes traversant des périodes de mal-être ou de baisse d'énergie",
     explanation: "La dépression est une pathologie médicale qui ne peut être traitée que par un médecin.",
   },
+  // ── Cat. 1 — Verbes médicaux manquants ────────────────────────────────────
+  "soulager": { original: "soulager", safe: "apporter un mieux-être", explanation: "« Soulager » implique un effet médical." },
+  "prévenir": { original: "prévenir", safe: "prendre soin de soi", explanation: "La prévention médicale relève des professionnels de santé." },
+  "rééduquer": { original: "rééduquer", safe: "retrouver ses appuis", explanation: "La rééducation est un acte paramédical réglementé." },
+  "rééducation": { original: "rééducation", safe: "accompagnement au mouvement", explanation: "Préférez « remise en mouvement »." },
+  "rétablir": { original: "rétablir", safe: "retrouver son équilibre", explanation: "« Rétablir » suggère un retour à la santé après maladie." },
+  "rétablissement": { original: "rétablissement", safe: "retour à l'équilibre", explanation: "Préférez « retrouver sa vitalité »." },
+  "éliminer": { original: "éliminer", safe: "libérer", explanation: "Peut être perçu comme une allégation médicale." },
+  "vaincre": { original: "vaincre", safe: "traverser", explanation: "Implique un résultat garanti." },
+  "combattre": { original: "combattre", safe: "faire face à", explanation: "Suggère une action thérapeutique." },
+  "réparer": { original: "réparer", safe: "rééquilibrer", explanation: "« Réparer » implique une action corrective médicale." },
+  "corriger": { original: "corriger", safe: "harmoniser", explanation: "Dans un contexte corporel, préférez « rééquilibrer »." },
+  "remédier": { original: "remédier", safe: "accompagner vers", explanation: "Connotation médicale curative." },
+  // ── Cat. 2 — Titres protégés manquants ────────────────────────────────────
+  "psychothérapeute": { original: "psychothérapeute", safe: "praticien(ne) en accompagnement psycho-émotionnel", explanation: "Titre réglementé depuis 2010 (décret n°2010-534)." },
+  "clinicien": { original: "clinicien", safe: "praticien(ne)", explanation: "Désigne un professionnel de santé réglementé." },
+  // ── Cat. 3 — Pathologies médicales ────────────────────────────────────────
+  "dépression": { original: "dépression", safe: "période de mal-être ou de baisse d'énergie", explanation: "Pathologie médicale. Utilisez des formulations descriptives du vécu." },
+  "burn-out": { original: "burn-out", safe: "situation d'épuisement professionnel", explanation: "Cadrez avec « personnes traversant une période d'épuisement »." },
+  "burn out": { original: "burn out", safe: "situation d'épuisement", explanation: "Préférez « personnes en surmenage »." },
+  "anxiété": { original: "anxiété", safe: "tension intérieure ou période d'inquiétude", explanation: "Cadrez avec « personnes traversant des périodes de tension »." },
+  "insomnie": { original: "insomnie", safe: "difficultés de sommeil", explanation: "Utilisez « personnes rencontrant des difficultés de sommeil »." },
+  "migraine": { original: "migraine", safe: "tensions crâniennes", explanation: "Utilisez « maux de tête » ou « tensions crâniennes »." },
+  "arthrose": { original: "arthrose", safe: "inconforts articulaires", explanation: "Utilisez « personnes ressentant des inconforts articulaires »." },
+  "eczéma": { original: "eczéma", safe: "inconforts cutanés", explanation: "Ne prétendez pas traiter une affection dermatologique." },
+  "asthme": { original: "asthme", safe: "personnes souhaitant retrouver une respiration plus libre", explanation: "Pathologie respiratoire médicale." },
+  "obésité": { original: "obésité", safe: "rapport apaisé au corps et à l'alimentation", explanation: "Pathologie médicale." },
+  // ── Cat. 4 — Promesses thérapeutiques manquantes ──────────────────────────
+  "miracle": { original: "miracle", safe: "résultats progressifs selon votre parcours", explanation: "Allégation thérapeutique illicite." },
+  "miraculeux": { original: "miraculeux", safe: "remarquable", explanation: "Supprimez tout qualificatif de type « miraculeux »." },
+  "remède": { original: "remède", safe: "approche naturelle", explanation: "Implique une action curative médicale." },
+  "immédiat": { original: "immédiat", safe: "progressif et à votre rythme", explanation: "Promettre des résultats immédiats est une allégation invérifiable." },
+  "définitif": { original: "définitif", safe: "durable", explanation: "Aucun résultat ne peut être garanti comme définitif." },
+  "radical": { original: "radical", safe: "profond", explanation: "« Radical » promet un résultat extrême invérifiable." },
+  "garantir": { original: "garantir", safe: "viser à accompagner vers", explanation: "Garantir un résultat en bien-être est une promesse illicite." },
+  // ── Cat. 5 — Zones grises manquantes ──────────────────────────────────────
+  "consultation": { original: "consultation", safe: "séance", explanation: "Fortement associé au vocabulaire médical." },
+  "symptôme": { original: "symptôme", safe: "manifestation", explanation: "Préférez « manifestation », « signal », « ressenti »." },
+  "symptômes": { original: "symptômes", safe: "manifestations", explanation: "Préférez « signaux du corps », « ressentis »." },
+  "pathologie": { original: "pathologie", safe: "situation", explanation: "Terme médical. Utilisez « situation », « vécu », « difficulté »." },
+  "maladie": { original: "maladie", safe: "condition de santé", explanation: "Utilisez « personnes vivant avec... » sans prétendre agir dessus." },
 };
 
 // ─── Mapping catégories → labels lisibles ─────────────────────────────────────
