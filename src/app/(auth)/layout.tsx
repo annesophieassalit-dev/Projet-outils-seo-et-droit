@@ -12,7 +12,7 @@ export default function AuthLayout({
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="py-4 px-6 border-b border-gray-100 bg-white">
         <Link href="/" className="inline-flex items-center gap-2">
-          <ShieldCheck className="h-6 w-6 text-green-700" />
+          <ShieldCheck className="h-6 w-6 text-zen-700" />
           <span className="font-bold text-gray-900">LexZen</span>
         </Link>
       </header>

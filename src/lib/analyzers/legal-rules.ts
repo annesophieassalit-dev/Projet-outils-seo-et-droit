@@ -241,7 +241,7 @@ export const CONFUSION_RULES: LegalRule[] = [
     id: "CP-005",
     category: "confusion_professionnelle",
     severity: "warning",
-    pattern: /\b(infirmier|sage-femme|kinésithérapeute|psychologue\s+clinicien)\b/gi,
+    pattern: /\b(infirmier|zen-femme|kinésithérapeute|psychologue\s+clinicien)\b/gi,
     term: "professions paramédicales réglementées",
     recommendation:
       "Ces titres sont strictement protégés. Si vous exercez une pratique similaire non réglementée, précisez votre titre exact et ajoutez un avertissement clair.",

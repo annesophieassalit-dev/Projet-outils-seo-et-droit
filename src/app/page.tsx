@@ -22,7 +22,7 @@ export default function LandingPage() {
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-7 w-7 text-sage-600" style={{ color: "#3a6e3a" }} />
+            <ShieldCheck className="h-7 w-7 text-zen-600" style={{ color: "#3a6e3a" }} />
             <span className="font-bold text-xl text-gray-900">LexZen</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
@@ -45,7 +45,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/inscription"
-              className="bg-green-700 text-white text-sm px-4 py-2 rounded-lg hover:bg-green-800 transition-colors font-medium"
+              className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-coral-600 transition-colors font-medium"
             >
               Essai gratuit
             </Link>
@@ -56,14 +56,14 @@ export default function LandingPage() {
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-50 text-green-800 text-sm px-4 py-1.5 rounded-full mb-6 border border-green-200">
+          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-6 border border-zen-200">
             <Leaf className="h-4 w-4" />
             Conçu par une juriste spécialisée en bien-être
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
             Réduire les risques juridiques
-            <span className="text-green-700 block mt-1">
+            <span className="text-zen-700 block mt-1">
               liés à votre communication
             </span>
           </h1>
@@ -80,7 +80,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link
               href="/inscription"
-              className="bg-green-700 text-white px-8 py-4 rounded-xl hover:bg-green-800 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+              className="bg-coral-500 text-white px-8 py-4 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
             >
               Analyser mes contenus gratuitement
               <ArrowRight className="h-5 w-5" />
@@ -95,15 +95,15 @@ export default function LandingPage() {
 
           <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
+              <CheckCircle2 className="h-4 w-4 text-zen-600" />
               1 diagnostic gratuit, sans carte bancaire
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
+              <CheckCircle2 className="h-4 w-4 text-zen-600" />
               Résultats en moins de 2 minutes
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
+              <CheckCircle2 className="h-4 w-4 text-zen-600" />
               Règles actualisées régulièrement
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function LandingPage() {
                   "Open Graph pour les réseaux sociaux",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -204,9 +204,9 @@ export default function LandingPage() {
             </div>
 
             {/* Diagnostic de conformité */}
-            <div className="rounded-2xl border border-green-200 bg-green-50/30 p-8 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-5">
-                <ShieldCheck className="h-6 w-6 text-green-700" />
+            <div className="rounded-2xl border border-zen-200 bg-zen-50/30 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
+                <ShieldCheck className="h-6 w-6 text-zen-700" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnostic de conformité</h3>
               <ul className="space-y-2.5 text-sm text-gray-600">
@@ -222,7 +222,7 @@ export default function LandingPage() {
                   "Analyse nuancée par IA (plan Pro)",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -324,7 +324,7 @@ export default function LandingPage() {
                 ].map((f) => (
                   <li key={f.label} className="flex items-center gap-2">
                     {f.ok ? (
-                      <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                     ) : (
                       <div className="h-4 w-4 shrink-0 rounded-full border-2 border-gray-200" />
                     )}
@@ -341,8 +341,8 @@ export default function LandingPage() {
             </div>
 
             {/* Pro */}
-            <div className="border-2 border-green-600 rounded-2xl p-8 relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+            <div className="border-2 border-zen-600 rounded-2xl p-8 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-600 text-white text-xs px-3 py-1 rounded-full font-medium">
                 Recommandé
               </div>
               <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
@@ -364,14 +364,14 @@ export default function LandingPage() {
                   "Historique illimité",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/inscription?plan=pro"
-                className="block text-center bg-green-700 text-white py-3 rounded-xl hover:bg-green-800 transition-colors font-semibold"
+                className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
               >
                 Démarrer l&apos;essai
               </Link>
@@ -381,19 +381,19 @@ export default function LandingPage() {
       </section>
 
       {/* ─── CTA final ──────────────────────────────────────────────────── */}
-      <section className="py-20 bg-green-700 px-4 sm:px-6">
+      <section className="py-20 bg-coral-500 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <Lock className="h-10 w-10 text-green-200 mx-auto mb-4" />
+          <Lock className="h-10 w-10 text-coral-100 mx-auto mb-4" />
           <h2 className="text-3xl font-bold text-white mb-4">
             Protégez votre activité aujourd&apos;hui
           </h2>
-          <p className="text-green-100 mb-8 text-lg">
+          <p className="text-coral-100 mb-8 text-lg">
             Un diagnostic gratuit, aucune carte bancaire requise.
             Découvrez en 2 minutes les risques de votre site actuel.
           </p>
           <Link
             href="/inscription"
-            className="inline-flex items-center gap-2 bg-white text-green-800 px-8 py-4 rounded-xl hover:bg-green-50 transition-colors font-bold text-lg"
+            className="inline-flex items-center gap-2 bg-white text-coral-700 px-8 py-4 rounded-xl hover:bg-coral-50 transition-colors font-bold text-lg"
           >
             Analyser mon site maintenant
             <ArrowRight className="h-5 w-5" />
@@ -405,7 +405,7 @@ export default function LandingPage() {
       <footer className="border-t border-gray-100 py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-green-700" />
+            <ShieldCheck className="h-5 w-5 text-zen-700" />
             <span className="font-bold text-gray-900">LexZen</span>
           </div>
           <p className="text-sm text-gray-400">

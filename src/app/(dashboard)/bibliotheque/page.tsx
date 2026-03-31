@@ -51,10 +51,10 @@ function EntryCard({ entry }: { entry: FormulationEntry }) {
 
         {/* Formulation safe */}
         <div className="flex items-start gap-2.5">
-          <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0 mt-0.5" />
+          <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
           <div>
-            <span className="text-xs text-green-700 font-medium uppercase tracking-wide">Formulation validée</span>
-            <p className="text-sm text-green-800 font-medium mt-0.5">
+            <span className="text-xs text-zen-700 font-medium uppercase tracking-wide">Formulation validée</span>
+            <p className="text-sm text-zen-800 font-medium mt-0.5">
               « {entry.safe} »
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function BibliothequeePage() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-          <BookOpen className="h-6 w-6 text-green-700" />
+          <BookOpen className="h-6 w-6 text-zen-700" />
           Bibliothèque de formulations
         </h1>
         <p className="text-gray-500 text-sm mt-1">
@@ -128,8 +128,8 @@ export default function BibliothequeePage() {
               onClick={() => setActiveTheme(theme)}
               className={`px-3 py-1.5 rounded-full text-sm border transition-colors flex items-center gap-1.5 ${
                 activeTheme === theme
-                  ? "bg-green-700 text-white border-green-700"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-green-400"
+                  ? "bg-zen-700 text-white border-zen-700"
+                  : "bg-white text-gray-600 border-gray-200 hover:border-zen-400"
               }`}
             >
               <span>{THEME_ICONS[theme]}</span>
@@ -144,8 +144,8 @@ export default function BibliothequeePage() {
 
       {/* Résultats */}
       {activeTheme !== "all" && (
-        <div className="bg-green-50 border border-green-100 rounded-xl px-4 py-3">
-          <p className="text-sm text-green-800">
+        <div className="bg-zen-50 border border-zen-100 rounded-xl px-4 py-3">
+          <p className="text-sm text-zen-800">
             <strong>{THEME_ICONS[activeTheme]} {THEME_LABELS[activeTheme]}</strong>
             {" "}— {entries.length} formulation{entries.length > 1 ? "s" : ""} validée{entries.length > 1 ? "s" : ""}
           </p>

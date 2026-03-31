@@ -86,7 +86,7 @@ function ResultCard({
           </button>
           <button
             onClick={copy}
-            className="text-xs flex items-center gap-1 text-green-700 hover:text-green-900"
+            className="text-xs flex items-center gap-1 text-zen-700 hover:text-zen-900"
           >
             {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
             {copied ? "Copié !" : "Copier"}
@@ -101,8 +101,8 @@ function ResultCard({
       </div>
 
       {showNote && (
-        <div className="px-5 py-3 bg-green-50 border-t border-green-100">
-          <p className="text-xs text-green-700">
+        <div className="px-5 py-3 bg-zen-50 border-t border-zen-100">
+          <p className="text-xs text-zen-700">
             <strong>Note de conformité :</strong> {result.complianceNote}
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function GenerateurPage() {
           </p>
           <Link
             href="/abonnement"
-            className="inline-flex items-center gap-2 bg-green-700 text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-green-800 transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-coral-500 text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-coral-600 transition-colors text-sm"
           >
             Passer au plan Pro
             <ArrowRight className="h-4 w-4" />
@@ -246,7 +246,7 @@ export default function GenerateurPage() {
                   onClick={() => setContentType(type)}
                   className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                     contentType === type
-                      ? "bg-green-100 text-green-900 font-medium"
+                      ? "bg-zen-100 text-zen-900 font-medium"
                       : "text-gray-600 hover:bg-gray-50"
                   }`}
                 >
@@ -264,7 +264,7 @@ export default function GenerateurPage() {
               value={profession}
               onChange={(e) => setProfession(e.target.value)}
               placeholder="Ex : Naturopathe, Coach de vie, Sophrologue…"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600"
             />
           </div>
         </div>
@@ -285,8 +285,8 @@ export default function GenerateurPage() {
                   onClick={() => toggleTheme(theme.id)}
                   className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
                     selectedThemes.includes(theme.id)
-                      ? "bg-green-700 text-white border-green-700"
-                      : "bg-white text-gray-600 border-gray-200 hover:border-green-400"
+                      ? "bg-zen-700 text-white border-zen-700"
+                      : "bg-white text-gray-600 border-gray-200 hover:border-zen-400"
                   }`}
                 >
                   {theme.label}
@@ -305,7 +305,7 @@ export default function GenerateurPage() {
                   onClick={() => setTone(t.id)}
                   className={`p-3 rounded-xl border text-center transition-colors ${
                     tone === t.id
-                      ? "border-green-600 bg-green-50 text-green-900"
+                      ? "border-zen-600 bg-zen-50 text-zen-900"
                       : "border-gray-200 text-gray-600 hover:border-gray-300"
                   }`}
                 >
@@ -326,7 +326,7 @@ export default function GenerateurPage() {
                   onClick={() => setIntention(i.id)}
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border text-sm transition-colors ${
                     intention === i.id
-                      ? "border-green-600 bg-green-50 text-green-900 font-medium"
+                      ? "border-zen-600 bg-zen-50 text-zen-900 font-medium"
                       : "border-gray-200 text-gray-600 hover:border-gray-300"
                   }`}
                 >
@@ -348,7 +348,7 @@ export default function GenerateurPage() {
               onChange={(e) => setSpecificites(e.target.value)}
               rows={3}
               placeholder="Ex : je travaille principalement avec des femmes, j'ai une approche corporelle, je propose des séances en ligne et à Lyon, je suis certifiée IRNHE..."
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 resize-none"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 resize-none"
             />
           </div>
 
@@ -356,7 +356,7 @@ export default function GenerateurPage() {
           <button
             onClick={generate}
             disabled={loading}
-            className="w-full bg-green-700 text-white py-3.5 rounded-xl font-semibold hover:bg-green-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-zen-700 text-white py-3.5 rounded-xl font-semibold hover:bg-zen-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading ? (
               <><Loader2 className="h-4 w-4 animate-spin" />Génération en cours…</>

@@ -160,8 +160,8 @@ export default function AdminPage() {
               onClick={() => applyPreset(i)}
               className={`px-3 py-1.5 rounded-lg text-sm border transition-colors ${
                 !useCustom && selectedPreset === i
-                  ? "bg-green-700 text-white border-green-700"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-green-400"
+                  ? "bg-zen-700 text-white border-zen-700"
+                  : "bg-white text-gray-600 border-gray-200 hover:border-zen-400"
               }`}
             >
               {p.label}
@@ -204,9 +204,9 @@ export default function AdminPage() {
             <StatCard icon={Users} label="Utilisateurs total" value={stats.users.total}
               sub={`${stats.users.nouveauxSurPeriode} nouveaux sur la période`} />
             <StatCard icon={Sparkles} label="Abonnés Pro" value={stats.users.pro}
-              sub={`${conversionRate}% de conversion`} color="text-green-700" />
+              sub={`${conversionRate}% de conversion`} color="text-zen-700" />
             <StatCard icon={Euro} label="MRR" value={`${stats.revenue.mrr} €`}
-              sub={`${stats.revenue.arr} €/an estimé`} color="text-green-700" />
+              sub={`${stats.revenue.arr} €/an estimé`} color="text-zen-700" />
             <StatCard icon={TrendingUp} label="Taux de conversion" value={`${conversionRate}%`}
               sub={`${stats.users.gratuit} en gratuit`} />
           </div>
@@ -243,10 +243,10 @@ export default function AdminPage() {
               <div>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-gray-600">Pro — 19€/mois</span>
-                  <span className="font-medium text-green-700">{stats.users.pro} abonnés</span>
+                  <span className="font-medium text-zen-700">{stats.users.pro} abonnés</span>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-green-600 rounded-full"
+                  <div className="h-full bg-zen-600 rounded-full"
                     style={{ width: stats.users.total > 0 ? `${(stats.users.pro / stats.users.total) * 100}%` : "0%" }} />
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function AdminPage() {
                       <td className="px-5 py-3 text-gray-600">{u.profession}</td>
                       <td className="px-5 py-3">
                         <span className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full font-medium ${
-                          u.plan === "pro" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"
+                          u.plan === "pro" ? "bg-zen-100 text-zen-800" : "bg-gray-100 text-gray-600"
                         }`}>
                           {u.plan === "pro" && <Sparkles className="h-3 w-3" />}
                           {u.plan}

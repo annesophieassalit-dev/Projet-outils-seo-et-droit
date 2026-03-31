@@ -39,7 +39,7 @@ export default function TopBar({ user }: TopBarProps) {
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors"
         >
-          <div className="w-8 h-8 bg-green-100 text-green-800 rounded-full flex items-center justify-center text-xs font-bold">
+          <div className="w-8 h-8 bg-zen-100 text-zen-800 rounded-full flex items-center justify-center text-xs font-bold">
             {initials || <User className="h-4 w-4" />}
           </div>
           <span className="hidden sm:block max-w-[150px] truncate">

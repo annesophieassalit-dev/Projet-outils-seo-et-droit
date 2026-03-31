@@ -63,7 +63,7 @@ export default function AbonnementPage() {
       </div>
 
       {successMessage && (
-        <div className="bg-green-50 border border-green-200 text-green-800 px-5 py-4 rounded-xl flex items-center gap-3">
+        <div className="bg-zen-50 border border-zen-200 text-zen-800 px-5 py-4 rounded-xl flex items-center gap-3">
           <CheckCircle2 className="h-5 w-5 shrink-0" />
           {successMessage}
         </div>
@@ -89,7 +89,7 @@ export default function AbonnementPage() {
             ].map((f) => (
               <li key={f.label} className="flex items-center gap-2">
                 {f.ok ? (
-                  <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                 ) : (
                   <div className="h-4 w-4 shrink-0 rounded-full border-2 border-gray-200" />
                 )}
@@ -103,8 +103,8 @@ export default function AbonnementPage() {
         </div>
 
         {/* Pro */}
-        <div className="border-2 border-green-600 rounded-2xl p-6 bg-white relative">
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-xs px-3 py-1 rounded-full font-medium">
+        <div className="border-2 border-zen-600 rounded-2xl p-6 bg-white relative">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-600 text-white text-xs px-3 py-1 rounded-full font-medium">
             Recommandé
           </div>
           <h3 className="font-bold text-lg mb-1 flex items-center gap-2">
@@ -126,7 +126,7 @@ export default function AbonnementPage() {
               "Historique illimité",
             ].map((f) => (
               <li key={f} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
                 {f}
               </li>
             ))}
@@ -134,7 +134,7 @@ export default function AbonnementPage() {
           <button
             onClick={() => subscribe("pro")}
             disabled={loadingPlan === "pro"}
-            className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 bg-green-700 text-white hover:bg-green-800"
+            className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 bg-coral-500 text-white hover:bg-coral-600"
           >
             {loadingPlan === "pro" ? (
               <Loader2 className="h-4 w-4 animate-spin" />

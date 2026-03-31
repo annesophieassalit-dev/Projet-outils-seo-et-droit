@@ -94,7 +94,7 @@ export default function InscriptionPage() {
     return (
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
-          <CheckCircle2 className="h-14 w-14 text-green-600 mx-auto mb-4" />
+          <CheckCircle2 className="h-14 w-14 text-zen-600 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             Compte créé !
           </h1>
@@ -108,7 +108,7 @@ export default function InscriptionPage() {
           </p>
           <Link
             href="/connexion"
-            className="block w-full bg-green-700 text-white py-2.5 rounded-lg font-medium hover:bg-green-800 transition-colors text-center"
+            className="block w-full bg-zen-700 text-white py-2.5 rounded-lg font-medium hover:bg-zen-800 transition-colors text-center"
           >
             Aller à la connexion
           </Link>
@@ -121,7 +121,7 @@ export default function InscriptionPage() {
     <div className="w-full max-w-md">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
         <div className="flex flex-col items-center mb-6">
-          <ShieldCheck className="h-10 w-10 text-green-700 mb-2" />
+          <ShieldCheck className="h-10 w-10 text-zen-700 mb-2" />
           <h1 className="text-2xl font-bold text-gray-900">Créer un compte</h1>
           <p className="text-gray-500 text-sm mt-1">
             {initialPlan !== "gratuit"
@@ -150,7 +150,7 @@ export default function InscriptionPage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent"
               placeholder="Marie Dupont"
             />
           </div>
@@ -167,7 +167,7 @@ export default function InscriptionPage() {
               value={profession}
               onChange={(e) => setProfession(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent bg-white"
             >
               <option value="">Sélectionnez votre activité</option>
               {PROFESSIONS.map((p) => (
@@ -192,7 +192,7 @@ export default function InscriptionPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent"
               placeholder="vous@exemple.fr"
             />
           </div>
@@ -212,7 +212,7 @@ export default function InscriptionPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={8}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent pr-10"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent pr-10"
                 placeholder="Minimum 8 caractères"
               />
               <button
@@ -231,11 +231,11 @@ export default function InscriptionPage() {
 
           <p className="text-xs text-gray-400">
             En créant un compte, vous acceptez nos{" "}
-            <Link href="/cgv" className="text-green-700 hover:underline">
+            <Link href="/cgv" className="text-zen-700 hover:underline">
               CGV
             </Link>{" "}
             et notre{" "}
-            <Link href="/confidentialite" className="text-green-700 hover:underline">
+            <Link href="/confidentialite" className="text-zen-700 hover:underline">
               politique de confidentialité
             </Link>
             .
@@ -244,7 +244,7 @@ export default function InscriptionPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-green-700 text-white py-2.5 rounded-lg font-medium hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-zen-700 text-white py-2.5 rounded-lg font-medium hover:bg-zen-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading && <Loader2 className="h-4 w-4 animate-spin" />}
             Créer mon compte
@@ -255,7 +255,7 @@ export default function InscriptionPage() {
           Déjà un compte ?{" "}
           <Link
             href="/connexion"
-            className="text-green-700 font-medium hover:text-green-800"
+            className="text-zen-700 font-medium hover:text-zen-800"
           >
             Se connecter
           </Link>

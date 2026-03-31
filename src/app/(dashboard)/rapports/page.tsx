@@ -14,7 +14,7 @@ function ScorePill({ score, icon: Icon }: { score: number | null; icon: React.El
   if (score === null) return null;
   const color =
     score >= 80
-      ? "text-green-700 bg-green-100"
+      ? "text-zen-700 bg-zen-100"
       : score >= 60
       ? "text-amber-700 bg-amber-100"
       : "text-red-700 bg-red-100";
@@ -48,7 +48,7 @@ export default async function RapportsPage() {
     critique: "Risque critique",
   };
   const riskColors: Record<string, string> = {
-    faible: "text-green-700 bg-green-100",
+    faible: "text-zen-700 bg-zen-100",
     modere: "text-amber-700 bg-amber-100",
     eleve: "text-orange-700 bg-orange-100",
     critique: "text-red-700 bg-red-100",
@@ -65,7 +65,7 @@ export default async function RapportsPage() {
         </div>
         <Link
           href="/audit/nouveau"
-          className="flex items-center gap-2 bg-green-700 text-white px-4 py-2.5 rounded-xl hover:bg-green-800 transition-colors text-sm font-semibold"
+          className="flex items-center gap-2 bg-zen-700 text-white px-4 py-2.5 rounded-xl hover:bg-zen-800 transition-colors text-sm font-semibold"
         >
           <Search className="h-4 w-4" />
           Nouvel audit
@@ -79,7 +79,7 @@ export default async function RapportsPage() {
             <p className="text-gray-500">Aucun audit pour le moment</p>
             <Link
               href="/audit/nouveau"
-              className="inline-flex items-center gap-1.5 mt-4 text-sm text-green-700 font-medium hover:text-green-800"
+              className="inline-flex items-center gap-1.5 mt-4 text-sm text-zen-700 font-medium hover:text-zen-800"
             >
               Lancer votre premier audit
               <ArrowRight className="h-4 w-4" />

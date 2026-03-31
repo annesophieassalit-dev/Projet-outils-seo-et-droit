@@ -14,7 +14,7 @@ export default function MentionsLegalesPage() {
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-green-700" />
+            <ShieldCheck className="h-6 w-6 text-zen-700" />
             <span className="font-bold text-gray-900">LexZen</span>
           </Link>
           <Link
@@ -57,7 +57,7 @@ export default function MentionsLegalesPage() {
             <p className="font-medium text-gray-800">[Nom ou raison sociale]</p>
             <p>[Adresse]</p>
             <p>[SIRET / numéro d'immatriculation]</p>
-            <p>Contact : <a href="mailto:contact@lexzen.fr" className="text-green-700 hover:underline">contact@lexzen.fr</a></p>
+            <p>Contact : <a href="mailto:contact@lexzen.fr" className="text-zen-700 hover:underline">contact@lexzen.fr</a></p>
           </div>
         </section>
 
@@ -99,12 +99,12 @@ export default function MentionsLegalesPage() {
             <p>
               Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de
               suppression de vos données. Pour exercer ces droits :{" "}
-              <a href="mailto:contact@lexzen.fr" className="text-green-700 hover:underline">
+              <a href="mailto:contact@lexzen.fr" className="text-zen-700 hover:underline">
                 contact@lexzen.fr
               </a>
             </p>
             <p>
-              <Link href="/confidentialite" className="text-green-700 hover:underline">
+              <Link href="/confidentialite" className="text-zen-700 hover:underline">
                 Consulter la politique de confidentialité complète →
               </Link>
             </p>

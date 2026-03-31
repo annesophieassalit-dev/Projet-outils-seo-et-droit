@@ -15,7 +15,7 @@ function ScoreBadge({ score }: { score: number | null }) {
   if (score === null) return <span className="text-gray-400 text-sm">—</span>;
   const color =
     score >= 80
-      ? "text-green-700 bg-green-100"
+      ? "text-zen-700 bg-zen-100"
       : score >= 60
       ? "text-amber-700 bg-amber-100"
       : score >= 40
@@ -31,7 +31,7 @@ function ScoreBadge({ score }: { score: number | null }) {
 function RiskBadge({ level }: { level: string | null }) {
   if (!level) return null;
   const styles: Record<string, string> = {
-    faible: "text-green-700 bg-green-100",
+    faible: "text-zen-700 bg-zen-100",
     modere: "text-amber-700 bg-amber-100",
     eleve: "text-orange-700 bg-orange-100",
     critique: "text-red-700 bg-red-100",
@@ -107,7 +107,7 @@ export default async function DashboardPage() {
         </div>
         <Link
           href="/audit/nouveau"
-          className="flex items-center gap-2 bg-green-700 text-white px-4 py-2.5 rounded-xl hover:bg-green-800 transition-colors text-sm font-semibold"
+          className="flex items-center gap-2 bg-zen-700 text-white px-4 py-2.5 rounded-xl hover:bg-zen-800 transition-colors text-sm font-semibold"
         >
           <Search className="h-4 w-4" />
           Nouvel audit
@@ -163,19 +163,19 @@ export default async function DashboardPage() {
 
       {/* Upgrade banner */}
       {plan === "gratuit" && (
-        <div className="bg-gradient-to-r from-green-700 to-green-600 rounded-xl p-5 flex items-center justify-between text-white">
+        <div className="bg-gradient-to-r from-zen-700 to-zen-600 rounded-xl p-5 flex items-center justify-between text-white">
           <div>
             <p className="font-semibold flex items-center gap-2">
               <ShieldCheck className="h-5 w-5" />
               Activez l&apos;audit juridique
             </p>
-            <p className="text-green-100 text-sm mt-0.5">
+            <p className="text-zen-100 text-sm mt-0.5">
               Détectez les risques d&apos;exercice illégal et les mentions manquantes sur votre site.
             </p>
           </div>
           <Link
             href="/abonnement"
-            className="shrink-0 bg-white text-green-800 font-semibold text-sm px-4 py-2 rounded-lg hover:bg-green-50 transition-colors flex items-center gap-1"
+            className="shrink-0 bg-white text-zen-800 font-semibold text-sm px-4 py-2 rounded-lg hover:bg-zen-50 transition-colors flex items-center gap-1"
           >
             Voir les plans
             <ArrowRight className="h-4 w-4" />
@@ -211,7 +211,7 @@ export default async function DashboardPage() {
           <h2 className="font-semibold text-gray-900">Derniers audits</h2>
           <Link
             href="/rapports"
-            className="text-xs text-green-700 hover:text-green-800 font-medium flex items-center gap-1"
+            className="text-xs text-zen-700 hover:text-zen-800 font-medium flex items-center gap-1"
           >
             Voir tout
             <ArrowRight className="h-3 w-3" />
@@ -224,7 +224,7 @@ export default async function DashboardPage() {
             <p className="text-gray-500 text-sm">Aucun audit pour le moment</p>
             <Link
               href="/audit/nouveau"
-              className="inline-flex items-center gap-1.5 mt-3 text-sm text-green-700 font-medium hover:text-green-800"
+              className="inline-flex items-center gap-1.5 mt-3 text-sm text-zen-700 font-medium hover:text-zen-800"
             >
               Lancer votre premier audit
               <ArrowRight className="h-4 w-4" />

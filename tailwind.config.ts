@@ -10,29 +10,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
+        // Vert sauge moderne — confiance, conformité, positif
+        zen: {
+          50:  "#eef9f4",
+          100: "#d1f0e3",
+          200: "#a3e1c7",
+          300: "#6dcfaa",
+          400: "#45bc8e",
+          500: "#3aaa78",
+          600: "#2e8f63",
+          700: "#247551",
+          800: "#1c5c40",
+          900: "#144330",
         },
-        sage: {
-          50: "#f8faf8",
-          100: "#eef3ee",
-          200: "#d5e8d5",
-          300: "#aacfaa",
-          400: "#77b077",
-          500: "#4e8e4e",
-          600: "#3a6e3a",
-          700: "#2f572f",
-          800: "#274427",
-          900: "#1f361f",
+        // Corail rosé — CTAs, inscription, upgrade
+        coral: {
+          50:  "#fef2f3",
+          100: "#fde0e2",
+          200: "#fbc4c8",
+          300: "#f79ca3",
+          400: "#f07b84",
+          500: "#e86870",
+          600: "#d44f59",
+          700: "#b33c46",
+          800: "#93333b",
+          900: "#7a2d34",
         },
       },
       fontFamily: {

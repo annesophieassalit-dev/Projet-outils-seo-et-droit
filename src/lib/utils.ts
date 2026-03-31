@@ -23,7 +23,7 @@ export function severityColor(severity: Severity): string {
     case "info":
       return "text-blue-600 bg-blue-50 border-blue-200";
     case "success":
-      return "text-green-600 bg-green-50 border-green-200";
+      return "text-zen-600 bg-zen-50 border-zen-200";
   }
 }
 
@@ -60,7 +60,7 @@ export function riskLevelColor(
 ): string {
   switch (level) {
     case "faible":
-      return "text-green-700 bg-green-100";
+      return "text-zen-700 bg-zen-100";
     case "modere":
       return "text-amber-700 bg-amber-100";
     case "eleve":

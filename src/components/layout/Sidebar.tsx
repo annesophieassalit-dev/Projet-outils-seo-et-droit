@@ -65,7 +65,7 @@ export default function Sidebar({ plan }: SidebarProps) {
       {/* Logo */}
       <div className="h-16 flex items-center px-5 border-b border-gray-100">
         <Link href="/dashboard" className="flex items-center gap-2">
-          <ShieldCheck className="h-7 w-7 text-green-700" />
+          <ShieldCheck className="h-7 w-7 text-zen-700" />
           <span className="font-bold text-gray-900">LexZen</span>
         </Link>
       </div>
@@ -78,7 +78,7 @@ export default function Sidebar({ plan }: SidebarProps) {
               "inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium",
               plan === "pro"
                 ? "bg-gray-900 text-yellow-300"
-                : "bg-green-100 text-green-800"
+                : "bg-zen-100 text-zen-800"
             )}
           >
             {plan === "pro" && <Sparkles className="h-3 w-3" />}
@@ -102,14 +102,14 @@ export default function Sidebar({ plan }: SidebarProps) {
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-green-50 text-green-800"
+                  ? "bg-zen-50 text-zen-800"
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
               )}
             >
               <item.icon
                 className={cn(
                   "h-4 w-4 shrink-0",
-                  isActive ? "text-green-700" : "text-gray-400"
+                  isActive ? "text-zen-700" : "text-gray-400"
                 )}
               />
               {item.label}
@@ -125,7 +125,7 @@ export default function Sidebar({ plan }: SidebarProps) {
           className={cn(
             "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
             pathname === "/compte"
-              ? "bg-green-50 text-green-800"
+              ? "bg-zen-50 text-zen-800"
               : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
           )}
         >

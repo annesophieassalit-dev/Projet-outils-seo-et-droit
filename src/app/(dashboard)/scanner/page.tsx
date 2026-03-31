@@ -33,7 +33,7 @@ function riskColors(level: RiskLevel) {
     case "critique": return "bg-red-50 border-red-200 text-red-800";
     case "vigilance": return "bg-orange-50 border-orange-200 text-orange-800";
     case "neutre": return "bg-yellow-50 border-yellow-200 text-yellow-700";
-    case "conforme": return "bg-green-50 border-green-200 text-green-800";
+    case "conforme": return "bg-zen-50 border-zen-200 text-zen-800";
   }
 }
 
@@ -42,7 +42,7 @@ function globalBannerColors(level: RiskLevel) {
     case "critique": return "bg-red-600 text-white";
     case "vigilance": return "bg-orange-500 text-white";
     case "neutre": return "bg-yellow-500 text-white";
-    case "conforme": return "bg-green-600 text-white";
+    case "conforme": return "bg-zen-600 text-white";
   }
 }
 
@@ -98,8 +98,8 @@ function ReformulationCard({ original, safe, explanation }: {
         <span className="line-through text-gray-400">{original}</span>
       </div>
       <div className="flex items-start gap-2 text-sm">
-        <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0 mt-0.5" />
-        <span className="text-green-800 font-medium">{safe}</span>
+        <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
+        <span className="text-zen-800 font-medium">{safe}</span>
       </div>
       <p className="text-xs text-gray-500 pl-6">{explanation}</p>
     </div>
@@ -169,7 +169,7 @@ export default function ScannerPage() {
           placeholder="Collez ici votre texte à analyser…
 
 Exemples : bio Instagram, présentation de vos séances, texte de votre site, description d'un programme, post LinkedIn..."
-          className="w-full text-sm text-gray-800 placeholder-gray-400 border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-600 resize-none"
+          className="w-full text-sm text-gray-800 placeholder-gray-400 border border-gray-200 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-zen-600 resize-none"
         />
 
         <div className="flex items-center justify-between">
@@ -177,7 +177,7 @@ Exemples : bio Instagram, présentation de vos séances, texte de votre site, de
           <button
             onClick={handleScan}
             disabled={loading || text.trim().length < 10}
-            className="bg-green-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-green-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+            className="bg-zen-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-zen-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <AlertTriangle className="h-4 w-4" />}
             {loading ? "Analyse en cours…" : "Analyser ce texte"}
@@ -320,21 +320,21 @@ Exemples : bio Instagram, présentation de vos séances, texte de votre site, de
 
           {/* Texte corrigé (si IA) */}
           {result.cleanedText && (
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-5 space-y-3">
+            <div className="bg-zen-50 border border-zen-200 rounded-2xl p-5 space-y-3">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-green-900 flex items-center gap-2">
+                <p className="font-semibold text-zen-900 flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-amber-500" />
                   Version corrigée par l'IA
                 </p>
                 <button
                   onClick={() => copyText(result.cleanedText!)}
-                  className="text-xs flex items-center gap-1 text-green-700 hover:text-green-900"
+                  className="text-xs flex items-center gap-1 text-zen-700 hover:text-zen-900"
                 >
                   {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                   {copied ? "Copié !" : "Copier"}
                 </button>
               </div>
-              <p className="text-sm text-green-800 leading-relaxed whitespace-pre-line">
+              <p className="text-sm text-zen-800 leading-relaxed whitespace-pre-line">
                 {result.cleanedText}
               </p>
             </div>
@@ -344,10 +344,10 @@ Exemples : bio Instagram, présentation de vos séances, texte de votre site, de
 
       {/* Texte conforme */}
       {result && result.alerts.length === 0 && (
-        <div className="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
-          <CheckCircle2 className="h-12 w-12 text-green-600 mx-auto mb-3" />
-          <p className="font-semibold text-green-900">Texte conforme</p>
-          <p className="text-green-700 text-sm mt-1">
+        <div className="bg-zen-50 border border-zen-200 rounded-2xl p-6 text-center">
+          <CheckCircle2 className="h-12 w-12 text-zen-600 mx-auto mb-3" />
+          <p className="font-semibold text-zen-900">Texte conforme</p>
+          <p className="text-zen-700 text-sm mt-1">
             Aucun terme problématique détecté. Ce texte adopte une communication prudente.
           </p>
         </div>

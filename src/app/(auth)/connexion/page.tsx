@@ -44,7 +44,7 @@ export default function ConnexionPage() {
     <div className="w-full max-w-md">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
         <div className="flex flex-col items-center mb-6">
-          <ShieldCheck className="h-10 w-10 text-green-700 mb-2" />
+          <ShieldCheck className="h-10 w-10 text-zen-700 mb-2" />
           <h1 className="text-2xl font-bold text-gray-900">Connexion</h1>
           <p className="text-gray-500 text-sm mt-1">
             Bienvenue sur LexZen
@@ -72,7 +72,7 @@ export default function ConnexionPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent"
               placeholder="vous@exemple.fr"
             />
           </div>
@@ -92,7 +92,7 @@ export default function ConnexionPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 autoComplete="current-password"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent pr-10"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600 focus:border-transparent pr-10"
                 placeholder="••••••••"
               />
               <button
@@ -112,7 +112,7 @@ export default function ConnexionPage() {
           <div className="flex justify-end">
             <Link
               href="/mot-de-passe-oublie"
-              className="text-xs text-green-700 hover:text-green-800"
+              className="text-xs text-zen-700 hover:text-zen-800"
             >
               Mot de passe oublié ?
             </Link>
@@ -121,7 +121,7 @@ export default function ConnexionPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-green-700 text-white py-2.5 rounded-lg font-medium hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-zen-700 text-white py-2.5 rounded-lg font-medium hover:bg-zen-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading && <Loader2 className="h-4 w-4 animate-spin" />}
             Se connecter
@@ -132,7 +132,7 @@ export default function ConnexionPage() {
           Pas encore de compte ?{" "}
           <Link
             href="/inscription"
-            className="text-green-700 font-medium hover:text-green-800"
+            className="text-zen-700 font-medium hover:text-zen-800"
           >
             Créer un compte gratuit
           </Link>

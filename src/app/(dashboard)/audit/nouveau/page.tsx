@@ -93,10 +93,10 @@ export default function NouvelAuditPage() {
             <li>· Données structurées</li>
           </ul>
         </div>
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-          <ShieldCheck className="h-6 w-6 text-green-700 mb-2" />
-          <h3 className="font-semibold text-green-900 text-sm mb-1">Audit juridique</h3>
-          <ul className="text-xs text-green-700 space-y-0.5">
+        <div className="bg-zen-50 border border-zen-200 rounded-xl p-4">
+          <ShieldCheck className="h-6 w-6 text-zen-700 mb-2" />
+          <h3 className="font-semibold text-zen-900 text-sm mb-1">Audit juridique</h3>
+          <ul className="text-xs text-zen-700 space-y-0.5">
             <li>· Termes médicaux interdits</li>
             <li>· Mentions légales, RGPD</li>
             <li>· Confusion professionnelle</li>
@@ -115,7 +115,7 @@ export default function NouvelAuditPage() {
             >
               URL du site à analyser
             </label>
-            <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-green-600 focus-within:border-transparent">
+            <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-zen-600 focus-within:border-transparent">
               <div className="pl-4 pr-2 shrink-0">
                 <Globe className="h-4 w-4 text-gray-400" />
               </div>
@@ -152,7 +152,7 @@ export default function NouvelAuditPage() {
           <button
             type="submit"
             disabled={loading || !url.trim()}
-            className="w-full bg-green-700 text-white py-3.5 rounded-xl font-semibold hover:bg-green-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm"
+            className="w-full bg-zen-700 text-white py-3.5 rounded-xl font-semibold hover:bg-zen-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm"
           >
             {loading ? (
               <>

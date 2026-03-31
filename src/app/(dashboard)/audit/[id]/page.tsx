@@ -57,7 +57,7 @@ function SeverityIcon({ severity }: { severity: string }) {
     case "warning":
       return <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />;
     case "success":
-      return <CheckCircle2 className="h-4 w-4 text-green-600 shrink-0 mt-0.5" />;
+      return <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />;
     default:
       return <Info className="h-4 w-4 text-blue-500 shrink-0 mt-0.5" />;
   }
@@ -67,7 +67,7 @@ function SeverityBadge({ severity }: { severity: string }) {
   const styles: Record<string, string> = {
     error: "bg-red-100 text-red-700",
     warning: "bg-amber-100 text-amber-700",
-    success: "bg-green-100 text-green-700",
+    success: "bg-zen-100 text-zen-700",
     info: "bg-blue-100 text-blue-700",
   };
   const labels: Record<string, string> = {
@@ -86,7 +86,7 @@ function SeverityBadge({ severity }: { severity: string }) {
 function IssueCard({ issue }: { issue: AuditIssue }) {
   if (issue.severity === "success") {
     return (
-      <div className="flex items-start gap-3 py-3 px-4 bg-green-50/50 rounded-lg border border-green-100">
+      <div className="flex items-start gap-3 py-3 px-4 bg-zen-50/50 rounded-lg border border-zen-100">
         <SeverityIcon severity={issue.severity} />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-gray-900">{issue.title}</p>
@@ -123,7 +123,7 @@ function IssueCard({ issue }: { issue: AuditIssue }) {
       )}
 
       {issue.recommendation && (
-        <div className="bg-green-50 rounded-lg px-3 py-2 text-xs text-green-800 border border-green-100">
+        <div className="bg-zen-50 rounded-lg px-3 py-2 text-xs text-zen-800 border border-zen-100">
           <strong>Comment corriger :</strong> {issue.recommendation}
         </div>
       )}
@@ -161,7 +161,7 @@ function LegalMatchCard({ match }: { match: LegalRuleMatch }) {
         {match.context}
       </div>
 
-      <div className="bg-green-50 rounded-lg px-3 py-2 text-xs text-green-800 border border-green-100">
+      <div className="bg-zen-50 rounded-lg px-3 py-2 text-xs text-zen-800 border border-zen-100">
         <strong>Recommandation :</strong> {match.recommendation}
       </div>
 
@@ -258,7 +258,7 @@ export default async function AuditResultPage({
               href={audit.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-green-700 hover:text-green-800 flex items-center gap-1 mt-1"
+              className="text-sm text-zen-700 hover:text-zen-800 flex items-center gap-1 mt-1"
             >
               {audit.url}
               <ExternalLink className="h-3 w-3" />
@@ -394,7 +394,7 @@ export default async function AuditResultPage({
       {legal ? (
         <section className="space-y-3">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-green-700" />
+            <ShieldCheck className="h-5 w-5 text-zen-700" />
             <h2 className="text-lg font-bold text-gray-900">
               Audit juridique
             </h2>
@@ -422,7 +422,7 @@ export default async function AuditResultPage({
                   key={item.label}
                   className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium border ${
                     item.ok
-                      ? "bg-green-50 border-green-200 text-green-800"
+                      ? "bg-zen-50 border-zen-200 text-zen-800"
                       : "bg-red-50 border-red-200 text-red-700"
                   }`}
                 >
@@ -495,7 +495,7 @@ export default async function AuditResultPage({
                 </p>
                 <Link
                   href="/abonnement"
-                  className="inline-flex items-center gap-2 bg-green-700 text-white text-sm px-5 py-2 rounded-lg font-medium hover:bg-green-800 transition-colors"
+                  className="inline-flex items-center gap-2 bg-coral-500 text-white text-sm px-5 py-2 rounded-lg font-medium hover:bg-coral-600 transition-colors"
                 >
                   Voir le rapport complet
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -540,8 +540,8 @@ export default async function AuditResultPage({
         </section>
       ) : (
         /* Plan gratuit → teaser juridique */
-        <section className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-          <ShieldCheck className="h-12 w-12 text-green-600 mx-auto mb-4" />
+        <section className="bg-zen-50 border border-zen-200 rounded-2xl p-8 text-center">
+          <ShieldCheck className="h-12 w-12 text-zen-600 mx-auto mb-4" />
           <h2 className="text-xl font-bold text-gray-900 mb-2">
             Audit juridique non inclus
           </h2>
@@ -554,7 +554,7 @@ export default async function AuditResultPage({
           </p>
           <Link
             href="/abonnement"
-            className="inline-flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-800 transition-colors"
+            className="inline-flex items-center gap-2 bg-coral-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-coral-600 transition-colors"
           >
             Voir les plans
             <ArrowRight className="h-4 w-4" />
