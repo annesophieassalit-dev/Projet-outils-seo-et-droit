@@ -12,6 +12,7 @@ import {
   ExternalLink,
   Sparkles,
   ArrowRight,
+  Lock,
 } from "lucide-react";
 import { formatDate, riskLevelColor, riskLevelLabel } from "@/lib/utils";
 import type { AuditIssue, LegalRuleMatch, SeoScore, LegalScore } from "@/types/audit";
@@ -221,6 +222,18 @@ export default async function AuditResultPage({
       )
     : [];
 
+  // Freemium : limiter à 7 points visibles pour les non-Pro
+  const FREE_LIMIT = 7;
+  const allIssues = [...seoErrors, ...seoWarnings, ...legalErrors, ...legalWarnings, ...uniqueMatches];
+  const totalIssues = allIssues.length;
+  const hiddenCount = plan !== "pro" ? Math.max(0, totalIssues - FREE_LIMIT) : 0;
+  let shownSoFar = 0;
+  function canShow(): boolean {
+    if (plan === "pro") return true;
+    if (shownSoFar < FREE_LIMIT) { shownSoFar++; return true; }
+    return false;
+  }
+
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
@@ -345,7 +358,7 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
                 Points critiques
               </h3>
-              {seoErrors.map((issue) => (
+              {seoErrors.filter(() => canShow()).map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
             </div>
@@ -357,7 +370,7 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
                 Améliorations recommandées
               </h3>
-              {seoWarnings.map((issue) => (
+              {seoWarnings.filter(() => canShow()).map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
             </div>
@@ -430,7 +443,7 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
                 Termes à risque détectés ({uniqueMatches.length})
               </h3>
-              {uniqueMatches.map((match) => (
+              {uniqueMatches.filter(() => canShow()).map((match) => (
                 <LegalMatchCard key={match.ruleId} match={match} />
               ))}
             </div>
@@ -444,6 +457,7 @@ export default async function AuditResultPage({
               </h3>
               {legalErrors
                 .filter((i) => !i.id.startsWith("legal-EI") && !i.id.startsWith("legal-CP"))
+                .filter(() => canShow())
                 .map((issue) => (
                   <IssueCard key={issue.id} issue={issue} />
                 ))}
@@ -455,9 +469,38 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
                 Points à améliorer
               </h3>
-              {legalWarnings.map((issue) => (
+              {legalWarnings.filter(() => canShow()).map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
+            </div>
+          )}
+
+          {/* Bloc verrouillé — freemium */}
+          {hiddenCount > 0 && (
+            <div className="relative">
+              {/* Cartes fantômes floutées */}
+              <div className="space-y-2 blur-sm pointer-events-none select-none" aria-hidden>
+                {Array.from({ length: Math.min(hiddenCount, 3) }).map((_, i) => (
+                  <div key={i} className="border border-gray-200 rounded-xl p-4 bg-white h-20" />
+                ))}
+              </div>
+              {/* CTA par-dessus */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200">
+                <Lock className="h-6 w-6 text-gray-400 mb-2" />
+                <p className="text-sm font-semibold text-gray-800 mb-1">
+                  {hiddenCount} point{hiddenCount > 1 ? "s" : ""} supplémentaire{hiddenCount > 1 ? "s" : ""} identifié{hiddenCount > 1 ? "s" : ""}
+                </p>
+                <p className="text-xs text-gray-500 mb-4 text-center px-6">
+                  Accédez au rapport complet avec le plan Pro
+                </p>
+                <Link
+                  href="/abonnement"
+                  className="inline-flex items-center gap-2 bg-green-700 text-white text-sm px-5 py-2 rounded-lg font-medium hover:bg-green-800 transition-colors"
+                >
+                  Voir le rapport complet
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
             </div>
           )}
 

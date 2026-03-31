@@ -113,10 +113,19 @@ function ResultCard({
 
 // ─── Page principale ──────────────────────────────────────────────────────────
 
+const INTENTIONS = [
+  { id: "faire_connaitre", label: "Faire connaître mon approche", emoji: "🌱" },
+  { id: "inviter_contact", label: "Inviter à me contacter", emoji: "✉️" },
+  { id: "expliquer", label: "Expliquer ce que je propose", emoji: "💡" },
+] as const;
+
+type Intention = typeof INTENTIONS[number]["id"];
+
 export default function GenerateurPage() {
   const [contentType, setContentType] = useState<ContentType>("post_instagram");
   const [selectedThemes, setSelectedThemes] = useState<string[]>([]);
   const [tone, setTone] = useState<"chaleureux" | "professionnel" | "sobre">("chaleureux");
+  const [intention, setIntention] = useState<Intention>("faire_connaitre");
   const [specificites, setSpecificites] = useState("");
   const [profession, setProfession] = useState("");
   const [loading, setLoading] = useState(false);
@@ -146,6 +155,7 @@ export default function GenerateurPage() {
           profession,
           themes: selectedThemes,
           tone,
+          intention,
           specificites: specificites || undefined,
         }),
       });
@@ -301,6 +311,27 @@ export default function GenerateurPage() {
                 >
                   <p className="text-sm font-medium">{t.label}</p>
                   <p className="text-xs text-gray-400 mt-0.5">{t.description}</p>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Intention */}
+          <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-3">
+            <h3 className="text-sm font-semibold text-gray-700">Ce contenu doit surtout…</h3>
+            <div className="space-y-2">
+              {INTENTIONS.map((i) => (
+                <button
+                  key={i.id}
+                  onClick={() => setIntention(i.id)}
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border text-sm transition-colors ${
+                    intention === i.id
+                      ? "border-green-600 bg-green-50 text-green-900 font-medium"
+                      : "border-gray-200 text-gray-600 hover:border-gray-300"
+                  }`}
+                >
+                  <span>{i.emoji}</span>
+                  {i.label}
                 </button>
               ))}
             </div>

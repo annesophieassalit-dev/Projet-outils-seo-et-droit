@@ -32,7 +32,7 @@ Posé, professionnel, humain, crédible. Le contenu doit inspirer confiance, pas
 // ─── Prompts par type de contenu ──────────────────────────────────────────────
 
 function buildPrompt(input: GeneratorInput): string {
-  const { contentType, profession, themes, specificites, tone } = input;
+  const { contentType, profession, themes, specificites, tone, intention } = input;
 
   const toneDescriptions: Record<string, string> = {
     professionnel: "professionnel et posé, sobre, inspire la crédibilité",
@@ -40,7 +40,14 @@ function buildPrompt(input: GeneratorInput): string {
     sobre: "sobre et minimaliste, épuré, va à l'essentiel",
   };
 
+  const intentionInstructions: Record<string, string> = {
+    faire_connaitre: "L'objectif de ce contenu est de faire découvrir l'approche et l'univers du praticien. Privilégie la narration, le partage de vision, le 'pourquoi'. Aucun appel à l'action direct.",
+    inviter_contact: "L'objectif de ce contenu est d'inciter doucement à prendre contact ou à réserver une séance. Termine par une invitation naturelle, sans pression ni urgence artificielle.",
+    expliquer: "L'objectif de ce contenu est d'expliquer clairement ce que le praticien propose : son approche, son déroulé, pour qui c'est fait. Sois pédagogique et rassurant.",
+  };
+
   const toneInstruction = toneDescriptions[tone || "chaleureux"];
+  const intentionInstruction = intentionInstructions[intention || "faire_connaitre"];
   const themesText = themes.length > 0 ? themes.join(", ") : "bien-être général";
 
   const contentInstructions: Record<ContentType, string> = {
@@ -144,7 +151,9 @@ Optimisation SEO :
     ? `\n\nInformations supplémentaires fournies par le praticien : ${specificites}`
     : "";
 
-  return `${contentInstructions[contentType]}${specificitesText}
+  return `${contentInstructions[contentType]}
+
+Intention : ${intentionInstruction}${specificitesText}
 
 Après le contenu, ajoute sur une nouvelle ligne séparée par "---" :
 Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;

@@ -44,6 +44,7 @@ export interface GeneratorInput {
   themes: string[];       // ex: ["stress", "sommeil", "émotions"]
   specificites?: string;  // infos supplémentaires libres
   tone?: "professionnel" | "chaleureux" | "sobre";
+  intention?: "faire_connaitre" | "inviter_contact" | "expliquer";
 }
 
 export interface GeneratedContent {

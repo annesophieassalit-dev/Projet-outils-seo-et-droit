@@ -12,6 +12,7 @@ const generateSchema = z.object({
   themes: z.array(z.string()).default([]),
   specificites: z.string().max(500).optional(),
   tone: z.enum(["professionnel", "chaleureux", "sobre"]).default("chaleureux"),
+  intention: z.enum(["faire_connaitre", "inviter_contact", "expliquer"]).default("faire_connaitre"),
 });
 
 const variantSchema = z.object({
