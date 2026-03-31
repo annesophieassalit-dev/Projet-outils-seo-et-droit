@@ -222,17 +222,17 @@ export default async function AuditResultPage({
       )
     : [];
 
-  // Freemium : limiter à 7 points visibles pour les non-Pro
-  const FREE_LIMIT = 7;
-  const allIssues = [...seoErrors, ...seoWarnings, ...legalErrors, ...legalWarnings, ...uniqueMatches];
-  const totalIssues = allIssues.length;
-  const hiddenCount = plan !== "pro" ? Math.max(0, totalIssues - FREE_LIMIT) : 0;
-  let shownSoFar = 0;
-  function canShow(): boolean {
-    if (plan === "pro") return true;
-    if (shownSoFar < FREE_LIMIT) { shownSoFar++; return true; }
-    return false;
-  }
+  // Freemium : SEO entièrement visible, juridique limité à 3 points
+  const LEGAL_FREE_LIMIT = 3;
+  const isPro = plan === "pro";
+
+  const legalAllItems = [...uniqueMatches, ...legalErrors, ...legalWarnings];
+  const legalVisibleItems = isPro ? legalAllItems : legalAllItems.slice(0, LEGAL_FREE_LIMIT);
+  const legalHiddenCount = isPro ? 0 : Math.max(0, legalAllItems.length - LEGAL_FREE_LIMIT);
+
+  // Répartir les items visibles par catégorie pour l'affichage
+  const visibleMatchIds = new Set(legalVisibleItems.filter((i): i is typeof uniqueMatches[number] => "ruleId" in i).map((i) => i.ruleId));
+  const visibleIssueIds = new Set(legalVisibleItems.filter((i): i is typeof legalErrors[number] => "id" in i).map((i) => i.id));
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -358,7 +358,7 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
                 Points critiques
               </h3>
-              {seoErrors.filter(() => canShow()).map((issue) => (
+              {seoErrors.map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
             </div>
@@ -370,7 +370,7 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
                 Améliorations recommandées
               </h3>
-              {seoWarnings.filter(() => canShow()).map((issue) => (
+              {seoWarnings.map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
               ))}
             </div>
@@ -443,9 +443,11 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
                 Termes à risque détectés ({uniqueMatches.length})
               </h3>
-              {uniqueMatches.filter(() => canShow()).map((match) => (
-                <LegalMatchCard key={match.ruleId} match={match} />
-              ))}
+              {uniqueMatches
+                .filter((m) => isPro || visibleMatchIds.has(m.ruleId))
+                .map((match) => (
+                  <LegalMatchCard key={match.ruleId} match={match} />
+                ))}
             </div>
           )}
 
@@ -457,7 +459,7 @@ export default async function AuditResultPage({
               </h3>
               {legalErrors
                 .filter((i) => !i.id.startsWith("legal-EI") && !i.id.startsWith("legal-CP"))
-                .filter(() => canShow())
+                .filter((i) => isPro || visibleIssueIds.has(i.id))
                 .map((issue) => (
                   <IssueCard key={issue.id} issue={issue} />
                 ))}
@@ -469,18 +471,20 @@ export default async function AuditResultPage({
               <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide">
                 Points à améliorer
               </h3>
-              {legalWarnings.filter(() => canShow()).map((issue) => (
-                <IssueCard key={issue.id} issue={issue} />
-              ))}
+              {legalWarnings
+                .filter((i) => isPro || visibleIssueIds.has(i.id))
+                .map((issue) => (
+                  <IssueCard key={issue.id} issue={issue} />
+                ))}
             </div>
           )}
 
-          {/* Bloc verrouillé — freemium */}
-          {hiddenCount > 0 && (
+          {/* Bloc verrouillé — freemium juridique */}
+          {legalHiddenCount > 0 && (
             <div className="relative">
               {/* Cartes fantômes floutées */}
               <div className="space-y-2 blur-sm pointer-events-none select-none" aria-hidden>
-                {Array.from({ length: Math.min(hiddenCount, 3) }).map((_, i) => (
+                {Array.from({ length: Math.min(legalHiddenCount, 3) }).map((_, i) => (
                   <div key={i} className="border border-gray-200 rounded-xl p-4 bg-white h-20" />
                 ))}
               </div>
@@ -488,10 +492,10 @@ export default async function AuditResultPage({
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200">
                 <Lock className="h-6 w-6 text-gray-400 mb-2" />
                 <p className="text-sm font-semibold text-gray-800 mb-1">
-                  {hiddenCount} point{hiddenCount > 1 ? "s" : ""} supplémentaire{hiddenCount > 1 ? "s" : ""} identifié{hiddenCount > 1 ? "s" : ""}
+                  {legalHiddenCount} point{legalHiddenCount > 1 ? "s" : ""} juridique{legalHiddenCount > 1 ? "s" : ""} supplémentaire{legalHiddenCount > 1 ? "s" : ""} identifié{legalHiddenCount > 1 ? "s" : ""}
                 </p>
                 <p className="text-xs text-gray-500 mb-4 text-center px-6">
-                  Accédez au rapport complet avec le plan Pro
+                  Accédez au rapport juridique complet avec le plan Pro
                 </p>
                 <Link
                   href="/abonnement"
