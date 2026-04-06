@@ -6,7 +6,8 @@ import { generateContent, generateVariant } from "@/lib/analyzers/content-genera
 const generateSchema = z.object({
   contentType: z.enum([
     "bio_instagram", "presentation_activite", "description_programme",
-    "post_linkedin", "fiche_google", "post_instagram", "accroche_site",
+    "post_linkedin", "post_instagram", "post_facebook", "post_tiktok", "post_threads",
+    "fiche_google", "accroche_site",
   ]),
   profession: z.string().min(1),
   themes: z.array(z.string()).default([]),

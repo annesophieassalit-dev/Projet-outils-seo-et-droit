@@ -12,7 +12,7 @@ export default function LegalDisclaimer({ className }: LegalDisclaimerProps) {
         className
       )}
     >
-      LexZen ne constitue pas une consultation juridique, un avis juridique
+      Visible & Conforme ne constitue pas une consultation juridique, un avis juridique
       personnalisé, ni une garantie d&apos;absence de risque.
     </p>
   );

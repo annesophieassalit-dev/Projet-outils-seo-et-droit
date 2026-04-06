@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales de LexZen — outil d'analyse éditoriale pour praticiens du bien-être.",
+  description: "Mentions légales de Visible & Conforme — outil d'analyse éditoriale pour praticiens du bien-être.",
 };
 
 export default function MentionsLegalesPage() {
@@ -15,7 +15,7 @@ export default function MentionsLegalesPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-6 w-6 text-zen-700" />
-            <span className="font-bold text-gray-900">LexZen</span>
+            <span className="font-bold text-gray-900">Visible & Conforme</span>
           </Link>
           <Link
             href="/"
@@ -36,7 +36,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Nature et objet de l&apos;outil</h2>
           <div className="prose prose-sm text-gray-600 space-y-3">
             <p>
-              LexZen analyse vos contenus (site, fiche Google, posts) pour repérer certaines formulations
+              Visible & Conforme analyse vos contenus (site, fiche Google, posts) pour repérer certaines formulations
               pouvant créer une ambiguïté sur votre rôle, votre qualification ou la nature de votre accompagnement.
             </p>
             <p>
@@ -44,7 +44,7 @@ export default function MentionsLegalesPage() {
               certains risques juridiques liés à la communication.
             </p>
             <p className="font-medium text-gray-700">
-              LexZen ne remplace pas un conseil juridique personnalisé.
+              Visible & Conforme ne remplace pas un conseil juridique personnalisé.
             </p>
           </div>
         </section>
@@ -53,11 +53,11 @@ export default function MentionsLegalesPage() {
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Éditeur du service</h2>
           <div className="text-sm text-gray-600 space-y-1">
-            <p>LexZen est édité par :</p>
+            <p>Visible & Conforme est édité par :</p>
             <p className="font-medium text-gray-800">[Nom ou raison sociale]</p>
             <p>[Adresse]</p>
             <p>[SIRET / numéro d'immatriculation]</p>
-            <p>Contact : <a href="mailto:contact@lexzen.fr" className="text-zen-700 hover:underline">contact@lexzen.fr</a></p>
+            <p>Contact : <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">contact@visibleetconforme.fr</a></p>
           </div>
         </section>
 
@@ -76,12 +76,12 @@ export default function MentionsLegalesPage() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Limitation de responsabilité</h2>
           <div className="text-sm text-gray-600 space-y-3">
             <p>
-              Les analyses produites par LexZen sont générées automatiquement à partir de règles éditoriales
+              Les analyses produites par Visible & Conforme sont générées automatiquement à partir de règles éditoriales
               générales. Elles sont fournies à titre indicatif et ne constituent pas une consultation juridique,
               un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
             </p>
             <p>
-              LexZen ne saurait être tenu responsable des décisions prises sur la base des analyses fournies.
+              Visible & Conforme ne saurait être tenu responsable des décisions prises sur la base des analyses fournies.
               Pour toute situation nécessitant une analyse juridique approfondie, nous recommandons de consulter
               un professionnel du droit qualifié.
             </p>
@@ -99,8 +99,8 @@ export default function MentionsLegalesPage() {
             <p>
               Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de
               suppression de vos données. Pour exercer ces droits :{" "}
-              <a href="mailto:contact@lexzen.fr" className="text-zen-700 hover:underline">
-                contact@lexzen.fr
+              <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
+                contact@visibleetconforme.fr
               </a>
             </p>
             <p>
@@ -115,7 +115,7 @@ export default function MentionsLegalesPage() {
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Propriété intellectuelle</h2>
           <p className="text-sm text-gray-600">
-            L&apos;ensemble des éléments composant LexZen (interface, règles, contenus, marque) est protégé
+            L&apos;ensemble des éléments composant Visible & Conforme (interface, règles, contenus, marque) est protégé
             par le droit de la propriété intellectuelle. Toute reproduction ou utilisation sans autorisation
             est interdite.
           </p>
@@ -125,7 +125,7 @@ export default function MentionsLegalesPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center text-sm text-gray-400">
-          © 2025 LexZen · LexZen ne constitue pas un avis juridique.
+          © 2025 Visible & Conforme · Visible & Conforme ne constitue pas un avis juridique.
         </div>
       </footer>
     </div>

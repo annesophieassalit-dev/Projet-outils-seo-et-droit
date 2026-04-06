@@ -145,6 +145,43 @@ Optimisation SEO :
 - H1 : inclure naturellement le mot-clé principal (ex: "naturopathe à [ville]" ou "accompagnement bien-être")
 - Sous-titre : phrases lisibles, mot-clés secondaires inclus naturellement
 - Ton : ${toneInstruction}`,
+
+    post_facebook: `Rédige un post Facebook pour ${profession} sur les thèmes : ${themesText}.
+
+Format Facebook :
+- Ton communautaire et chaleureux — Facebook = lien humain, proximité, partage
+- Longueur idéale : 80–150 mots (le texte complet est visible sans "voir plus")
+- Commence par une question ou une observation du quotidien qui parle directement à ta communauté
+- 1 à 2 sauts de ligne pour aérer
+- Termine par une question simple qui invite les commentaires (l'algorithme Facebook valorise les échanges)
+- Maximum 2 hashtags, placés en fin de post — les hashtags ont peu d'impact sur Facebook
+- Pas d'emojis excessifs : 1 à 3 maximum, naturels
+- Ton : ${toneInstruction}`,
+
+    post_tiktok: `Rédige un script de vidéo courte TikTok pour ${profession} sur les thèmes : ${themesText}.
+
+Format script TikTok (60 à 90 secondes) :
+- Structure en 3 temps clairement marqués :
+  [0–5 sec] ACCROCHE : 1 phrase choc ou question qui stoppe le scroll — doit créer une curiosité immédiate
+  [5–55 sec] CONTENU : 3 à 4 points courts, énoncés simplement, parlés naturellement — pas de jargon
+  [55–90 sec] FIN : message fort + invitation douce à s'abonner ou découvrir le lien en bio
+- Écris comme on parle, pas comme on écrit
+- Chaque phrase = maximum 10 mots — le montage TikTok est rapide
+- Indique entre crochets les intentions visuelles si pertinent : [sourire], [montrer les mains], [texte à l'écran]
+- Suggestion de 3 hashtags niche en fin : 1 activité + 1 thème + 1 local ou situation
+- Ton : ${toneInstruction}`,
+
+    post_threads: `Rédige un post Threads pour ${profession} sur les thèmes : ${themesText}.
+
+Format Threads :
+- 500 caractères maximum — chaque mot compte
+- Ton direct, authentique, légèrement personnel — Threads = micro-blog conversationnel
+- 1 seule idée par post, exprimée avec clarté et impact
+- Peut commencer par une affirmation courte, une question, ou une observation tranchée
+- Pas de hashtags (inutiles sur Threads)
+- Pas d'emojis ou 1 maximum — la force vient des mots, pas de la mise en forme
+- Se termine par une phrase ouverte ou une invitation à réagir, jamais par un lien direct
+- Ton : ${toneInstruction}`,
   };
 
   const specificitesText = specificites

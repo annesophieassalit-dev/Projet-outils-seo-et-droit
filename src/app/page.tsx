@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-7 w-7 text-zen-600" style={{ color: "#3a6e3a" }} />
-            <span className="font-bold text-xl text-gray-900">LexZen</span>
+            <span className="font-bold text-xl text-gray-900">Visible & Conforme</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#fonctionnalites" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
@@ -69,7 +69,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-            LexZen analyse vos contenus pour repérer certaines formulations
+            Visible & Conforme analyse vos contenus pour repérer certaines formulations
             pouvant présenter un risque juridique — site internet, réseaux sociaux, descriptions de programmes.
           </p>
 
@@ -110,15 +110,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ─── Ce que LexZen repère ─────────────────────────────────────── */}
+      {/* ─── Ce que Visible & Conforme repère ─────────────────────────────────────── */}
       <section id="pourquoi" className="py-20 bg-gray-50 border-y border-gray-100 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-              Les types de risques que LexZen aide à repérer
+              Les types de risques que Visible & Conforme aide à repérer
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Sans sur-promettre — LexZen identifie des zones de vigilance, pas des certitudes juridiques.
+              Sans sur-promettre — Visible & Conforme identifie des zones de vigilance, pas des certitudes juridiques.
             </p>
           </div>
 
@@ -171,7 +171,7 @@ export default function LandingPage() {
               Tous les outils pour communiquer en toute sécurité
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              LexZen est le seul outil pensé spécifiquement pour les praticiens
+              Visible & Conforme est le seul outil pensé spécifiquement pour les praticiens
               du bien-être non réglementés, avec des règles juridiques adaptées à votre secteur.
             </p>
           </div>
@@ -266,7 +266,7 @@ export default function LandingPage() {
             Fait pour vous si vous êtes…
           </h2>
           <p className="text-gray-500 mb-10">
-            LexZen s&apos;adresse aux praticiens du bien-être non réglementés en France
+            Visible & Conforme s&apos;adresse aux praticiens du bien-être non réglementés en France
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -406,10 +406,10 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-zen-700" />
-            <span className="font-bold text-gray-900">LexZen</span>
+            <span className="font-bold text-gray-900">Visible & Conforme</span>
           </div>
           <p className="text-sm text-gray-400">
-            © 2024 LexZen · Cet outil ne constitue pas un avis juridique.
+            © 2025 Visible & Conforme · Cet outil ne constitue pas un avis juridique.
             Les résultats sont indicatifs et ne se substituent pas à une consultation juridique.
           </p>
           <div className="flex gap-4 text-sm text-gray-500">

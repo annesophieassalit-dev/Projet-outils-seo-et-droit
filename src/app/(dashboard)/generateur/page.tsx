@@ -12,9 +12,12 @@ import Link from "next/link";
 // ─── Constantes ───────────────────────────────────────────────────────────────
 
 const CONTENT_TYPES: ContentType[] = [
-  "bio_instagram",
   "post_instagram",
   "post_linkedin",
+  "post_facebook",
+  "post_tiktok",
+  "post_threads",
+  "bio_instagram",
   "presentation_activite",
   "description_programme",
   "fiche_google",
@@ -392,7 +395,7 @@ export default function GenerateurPage() {
 
       {/* Disclaimer juridique */}
       <p className="text-xs text-gray-400 text-center">
-        LexZen ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
+        Visible & Conforme ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
       </p>
     </div>
   );

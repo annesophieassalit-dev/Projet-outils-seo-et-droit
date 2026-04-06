@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "LexZen — Conformité éditoriale pour praticiens bien-être",
-    template: "%s | LexZen",
+    default: "Visible & Conforme — Conformité éditoriale pour praticiens bien-être",
+    template: "%s | Visible & Conforme",
   },
   description:
-    "LexZen analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique. Conçu pour les praticiens du bien-être non réglementés en France.",
+    "Visible & Conforme analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique. Conçu pour les praticiens du bien-être non réglementés en France.",
   keywords: [
     "conformité juridique bien-être",
     "risque exercice illégal médecine",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "hypnothérapeute site internet",
   ],
   openGraph: {
-    title: "LexZen — Conformité éditoriale pour praticiens bien-être",
+    title: "Visible & Conforme — Conformité éditoriale pour praticiens bien-être",
     description:
       "Analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique.",
     type: "website",

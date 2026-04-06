@@ -34,8 +34,11 @@ export type ContentType =
   | "presentation_activite"
   | "description_programme"
   | "post_linkedin"
-  | "fiche_google"
   | "post_instagram"
+  | "post_facebook"
+  | "post_tiktok"
+  | "post_threads"
+  | "fiche_google"
   | "accroche_site";
 
 export interface GeneratorInput {
@@ -80,8 +83,11 @@ export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
   presentation_activite: "Présentation activité",
   description_programme: "Description programme",
   post_linkedin: "Post LinkedIn",
-  fiche_google: "Fiche Google My Business",
   post_instagram: "Post Instagram",
+  post_facebook: "Post Facebook",
+  post_tiktok: "Script TikTok",
+  post_threads: "Post Threads",
+  fiche_google: "Fiche Google My Business",
   accroche_site: "Accroche site web",
 };
 

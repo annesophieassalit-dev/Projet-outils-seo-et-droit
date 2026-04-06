@@ -568,7 +568,7 @@ export default async function AuditResultPage({
 
       {/* Note de bas de page */}
       <p className="text-xs text-gray-400 text-center">
-        LexZen ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
+        Visible & Conforme ne constitue pas une consultation juridique, un avis juridique personnalisé, ni une garantie d&apos;absence de risque.
       </p>
     </div>
   );
