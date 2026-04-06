@@ -64,9 +64,12 @@ export default function Sidebar({ plan }: SidebarProps) {
     <aside className="w-60 bg-white border-r border-gray-100 flex flex-col shrink-0">
       {/* Logo */}
       <div className="h-16 flex items-center px-5 border-b border-gray-100">
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <ShieldCheck className="h-7 w-7 text-zen-700" />
-          <span className="font-bold text-gray-900">Visible & Conforme</span>
+        <Link href="/dashboard" className="flex flex-col">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-6 w-6 text-zen-700" />
+            <span className="font-bold text-gray-900 text-sm">Visible & Conforme</span>
+          </div>
+          <span className="text-xs text-gray-400 ml-8">Analysez. Ajustez. Communiquez.</span>
         </Link>
       </div>
 

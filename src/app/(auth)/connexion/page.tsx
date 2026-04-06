@@ -47,7 +47,7 @@ export default function ConnexionPage() {
           <ShieldCheck className="h-10 w-10 text-zen-700 mb-2" />
           <h1 className="text-2xl font-bold text-gray-900">Connexion</h1>
           <p className="text-gray-500 text-sm mt-1">
-            Bienvenue sur Visible & Conforme
+            Analysez. Ajustez. Communiquez.
           </p>
         </div>
 
