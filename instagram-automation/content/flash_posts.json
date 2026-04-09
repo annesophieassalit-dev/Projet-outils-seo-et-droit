@@ -1,32 +1,130 @@
 [
   {
     "id": 1,
-    "text": "Vos avis Google. Vous pensez pouvoir en faire ce que vous voulez. Voici ce que la loi dit vraiment.",
-    "caption": "Surpris(e) ? La loi encadre strictement la gestion des avis en ligne. 👉 Likez si vous voulez en savoir plus.\n\n#avocatnumérique #droitnumérique #RGPD #avocatfrance #conforme"
+    "week": 1,
+    "main_text": "Votre site est peut-être visible.\nMais est-il sécurisé ?\nCe n'est pas la même question.",
+    "pill_text": "Site visible ≠ Site sécurisé",
+    "label": "Visible et Conforme",
+    "caption": "Votre site est peut-être visible. Mais est-il sécurisé ?\nCe n'est pas la même question. Ce n'est pas le même enjeu.\nSite visible ≠ Site sécurisé\n\n#SEOlocal #RGPD #visibleetconforme #bien-être #avocatnumérique"
   },
   {
     "id": 2,
-    "text": "Votre site web peut vous coûter cher. Pas à cause du prestataire. À cause de ce qui manque dedans.",
-    "caption": "Mentions légales, RGPD, cookies… Les obligations légales d'un site pro sont nombreuses — et méconnues.\n\n#droitduweb #RGPD #mentionslegales #avocatnumérique #conforme"
+    "week": 2,
+    "main_text": "Un mot.\nC'est souvent tout ce qu'il faut pour créer une confusion sur ce que vous faites vraiment.",
+    "pill_text": "Un mot ≠ Anodin",
+    "label": "Visible et Conforme",
+    "caption": "Pas un long discours. Pas une promesse évidente.\nUn mot. Celui que vous utilisez depuis des années. Celui que tout le monde utilise.\nUn mot ≠ Anodin\n\n#sémantique #DGCCRF #conformité #visibleetconforme #praticiensbienêtre"
   },
   {
     "id": 3,
-    "text": "Non, supprimer un avis Google négatif n'est pas un droit. Voici ce que vous pouvez faire.",
-    "caption": "Beaucoup de professionnels l'ignorent. Voici vos vrais droits.\n\n#avisGoogle #droitnumérique #avocatnumérique #ereputation #conforme"
+    "week": 3,
+    "main_text": "Votre site peut vous exposer.\nPas parce que vous avez menti.\nParce que personne ne vous a donné le référentiel.",
+    "pill_text": "Flou artistique ≠ Protection",
+    "label": "Visible et Conforme",
+    "caption": "Votre site peut vous exposer. Pas parce que vous avez menti.\nParce que personne ne vous a donné le référentiel pour savoir ce que vos mots disent légalement.\nFlou artistique ≠ Protection\n\n#droitnumérique #conformité #visibleetconforme #bien-être"
   },
   {
     "id": 4,
-    "text": "Être premier sur Google ne sert à rien si votre site n'est pas en règle avec la loi.",
-    "caption": "SEO + conformité : les deux sont indissociables pour un site professionnel solide.\n\n#SEO #RGPD #droitnumérique #visibleetconforme #avocat"
+    "week": 4,
+    "main_text": "Votre site ne vous protège pas parce qu'il est sincère.\nLa loi n'évalue pas votre sincérité.\nElle évalue l'effet produit.",
+    "pill_text": "Sincérité ≠ Protection",
+    "label": "Visible et Conforme",
+    "caption": "La sincérité est une qualité. Ce n'est pas un bouclier juridique.\nLe bouclier — c'est la précision sémantique.\nSincérité ≠ Protection\n\n#DGCCRF #conformité #visibleetconforme #praticiens #SEO"
   },
   {
     "id": 5,
-    "text": "Ce que la CNIL peut faire si votre site n'est pas conforme RGPD. C'est plus sérieux qu'on ne le croit.",
-    "caption": "Les sanctions RGPD sont réelles et en augmentation. Vérifiez votre conformité.\n\n#CNIL #RGPD #droitnumérique #avocatnumérique #conforme"
+    "week": 5,
+    "main_text": "Sophrologue —\nVotre formation vous a appris votre pratique.\nPas comment en parler sans vous exposer.\nCe n'est pas un reproche. C'est un angle mort du secteur.",
+    "pill_text": "Formation ≠ Référentiel communication",
+    "label": "Visible et Conforme",
+    "caption": "Les formations en sophrologie n'enseignent pas la conformité sémantique.\nCe n'est pas un reproche. C'est un angle mort du secteur entier.\nFormation ≠ Référentiel communication\n\n#sophrologie #conformité #visibleetconforme #SEOlocal"
   },
   {
     "id": 6,
-    "text": "Votre fiche Google Business Profile. Vous croyez qu'elle est optimisée. Est-elle vraiment conforme ?",
-    "caption": "GBP bien rempli = plus de visibilité. GBP conforme = moins de risques légaux.\n\n#GoogleBusinessProfile #SEOlocal #RGPD #conforme #visibleetconforme"
+    "week": 6,
+    "main_text": "Votre concurrent est peut-être plus visible que vous.\nIl est peut-être aussi plus exposé.\nLes deux ne s'excluent pas.",
+    "pill_text": "Visible ≠ Protégé",
+    "label": "Visible et Conforme",
+    "caption": "Copier la stratégie de votre concurrent — c'est copier ses zones de risque.\nConstruire votre visibilité à partir de votre cadre — c'est ce qui dure.\nVisible ≠ Protégé\n\n#SEOlocal #conformité #visibleetconforme #bien-être"
+  },
+  {
+    "id": 7,
+    "week": 7,
+    "main_text": "'Thérapeute.'\nCe n'est pas un titre protégé.\nC'est un mot qui crée une attente. Souvent plus que ce que vous proposez.",
+    "pill_text": "Titre libre ≠ Communication libre",
+    "label": "Visible et Conforme",
+    "caption": "'Thérapeute' — pas un titre protégé. Un mot qui crée une attente.\nLa liberté du titre demande d'autant plus de rigueur sur ce que vous revendiquez.\nTitre libre ≠ Communication libre\n\n#thérapeute #conformité #visibleetconforme #droitnumérique"
+  },
+  {
+    "id": 8,
+    "week": 8,
+    "main_text": "Vous publiez sur Instagram dans l'élan.\nC'est ce qui rend votre contenu vivant.\nC'est aussi là que les glissements se produisent le plus souvent.",
+    "pill_text": "Spontané ≠ Sans cadre",
+    "label": "Visible et Conforme",
+    "caption": "Sur Instagram vous publiez vite. Sans la relecture que vous faites sur votre site.\nEt tout ça est public. Permanent dans certains cas.\nSponané ≠ Sans cadre\n\n#Instagram #conformité #visibleetconforme #bien-être"
+  },
+  {
+    "id": 9,
+    "week": 9,
+    "main_text": "Google ne lit pas juste vos mots-clés.\nIl lit votre champ sémantique global.\nEt vous avez peut-être le mauvais champ.",
+    "pill_text": "Référencement ≠ Promesse",
+    "label": "Visible et Conforme",
+    "caption": "Un praticien qui utilise soins, traitement, thérapie — Google le classe dans un champ médical.\nIl attire des recherches médicales. Pas ses vrais clients.\nRéférencement ≠ Promesse\n\n#SEO #sémantique #visibleetconforme #bien-être"
+  },
+  {
+    "id": 10,
+    "week": 10,
+    "main_text": "Votre fiche Google.\n750 caractères. Rédigés dans l'enthousiasme. Jamais relus.\nC'est la première chose que lit votre futur client.",
+    "pill_text": "Description ≠ Promesse",
+    "label": "Visible et Conforme",
+    "caption": "750 caractères. C'est tout ce que Google vous donne pour vous présenter.\nEt la plupart du temps — ces 750 caractères n'ont pas été relus depuis l'ouverture du cabinet.\nDescription ≠ Promesse\n\n#GoogleBusinessProfile #SEOlocal #visibleetconforme #conformité"
+  },
+  {
+    "id": 11,
+    "week": 11,
+    "main_text": "Votre blog bien-être.\nC'est peut-être votre risque le plus invisible.\nParce que c'est là que vous écrivez le plus librement.",
+    "pill_text": "Blog ≠ Zone libre",
+    "label": "Visible et Conforme",
+    "caption": "Le blog est l'espace où vous vous exprimez le plus librement.\nEt c'est souvent là que les glissements s'accumulent. Article par article. Sans que personne ne relit.\nBlog ≠ Zone libre\n\n#blog #conformité #visibleetconforme #SEO"
+  },
+  {
+    "id": 12,
+    "week": 12,
+    "main_text": "Votre concurrent mieux référencé.\nAvant de le copier — regardez pourquoi il l'est.\nIl est peut-être mieux référencé pour de mauvaises raisons.",
+    "pill_text": "Copier ≠ Se protéger",
+    "label": "Visible et Conforme",
+    "caption": "Votre concurrent est peut-être plus visible aujourd'hui. Et plus fragile juridiquement demain.\nCopier sa stratégie — c'est copier ses zones de risque.\nCopier ≠ Se protéger\n\n#SEO #conformité #visibleetconforme #DGCCRF"
+  },
+  {
+    "id": 13,
+    "week": 13,
+    "main_text": "La DGCCRF n'évalue pas votre intention.\nElle évalue l'effet produit sur le consommateur ordinaire.\nCe n'est pas la même chose.",
+    "pill_text": "Intention ≠ Interprétation",
+    "label": "Visible et Conforme",
+    "caption": "Vous avez écrit votre site avec une intention claire.\nEt pourtant — un lecteur peut y lire autre chose.\nParce que la loi ne juge pas votre intention.\nIntention ≠ Interprétation\n\n#DGCCRF #conformité #visibleetconforme #droitnumérique"
+  },
+  {
+    "id": 14,
+    "week": 14,
+    "main_text": "Votre client vous dit 'j'ai guéri grâce à vous.'\nVous voulez le partager.\nAttendez.\nUn avis que vous relayez — vous l'endossez.",
+    "pill_text": "Ressenti ≠ Résultat médical",
+    "label": "Visible et Conforme",
+    "caption": "Un avis que vous relayez — vous l'endossez.\nMême si c'est votre client qui l'a écrit. Même si c'est vrai.\nRessenti ≠ Résultat médical\n\n#avisGoogle #RGPD #visibleetconforme #conformité"
+  },
+  {
+    "id": 15,
+    "week": 15,
+    "main_text": "Soulager. Apaiser. Libérer.\nCes trois mots sont partout dans le bien-être.\nTout dépend de ce qui les suit.",
+    "pill_text": "Effet ressenti ≠ Résultat garanti",
+    "label": "Visible et Conforme",
+    "caption": "Soulager + ressenti général — prudent. Soulager + pathologie médicale — risqué.\nL'objet du verbe change tout. Pas le verbe lui-même.\nEffet ressenti ≠ Résultat garanti\n\n#sémantique #conformité #visibleetconforme #bien-être"
+  },
+  {
+    "id": 16,
+    "week": 16,
+    "main_text": "La conformité n'est pas un frein à votre visibilité.\nC'est son fondement.\nCe que 4 mois de terrain confirment.",
+    "pill_text": "Conforme ≠ Invisible",
+    "label": "Visible et Conforme",
+    "caption": "La conformité et la visibilité ne s'opposent pas.\nCe sont le même objectif. Pas deux directions opposées. La même direction.\nConforme ≠ Invisible\n\n#SEOlocal #RGPD #visibleetconforme #conformité #bien-être"
   }
 ]

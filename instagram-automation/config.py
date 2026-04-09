@@ -47,13 +47,32 @@ BRAND_VISIBLE   = "VISIBLE ET"
 BRAND_CONFORME  = "CONFORME"
 BRAND_AUTHOR    = "Anne-Sophie Assalit"
 
-# ─── Calendrier de publication ─────────────────────────────────────────────────
-# Format : (heure, minute)
-SCHEDULE_STORY    = (8, 30)    # Lun–Sam
-SCHEDULE_CAROUSEL = (9, 0)     # Lun + Jeu
-SCHEDULE_FLASH    = (10, 0)    # Sam
+# ─── Palette exacte (tous les formats) ───────────────────────────────────────
+# Fond dégradé radial (centre blanc → bords rose) — utilisé partout
+GRAD_CENTER  = (255, 255, 255)      # #ffffff  centre blanc
+GRAD_EDGE    = (207, 144, 144)      # #cf9090  bords rose
 
-# Jours de la semaine (0=lun … 6=dim)
-STORY_DAYS    = [0, 1, 2, 3, 4, 5]   # Lun–Sam
-CAROUSEL_DAYS = [0, 3]               # Lun + Jeu
-FLASH_DAYS    = [5]                  # Sam
+# Texte principal sur fond rose
+BRAND_BLUE   = (30,  78,  121)      # #1e4e79  bleu foncé
+
+# Pilules dégradées (CTA stories, flash posts "phrase design")
+PILL_LEFT    = (148, 185, 255)      # #94b9ff  bleu ciel
+PILL_RIGHT   = (232, 148, 255)      # #e894ff  violet/lilas
+
+# Bandeau jaune (slide 3 stories, accents carousels)
+YELLOW_LEFT  = (255, 255, 218)      # #ffffda  jaune pâle
+YELLOW_RIGHT = (255, 250, 120)      # #fffa78  jaune vif
+YELLOW_TEXT  = (30,  78,  121)      # #1e4e79  bleu foncé sur jaune
+
+# ─── Calendrier de publication — Planning complet 16 semaines ─────────────────
+# Format : (heure, minute)
+SCHEDULE_STORY           = (8, 30)   # Lun–Dim (7 semaines, 50 stories)
+SCHEDULE_CAROUSEL_SEO    = (9, 0)    # Lun      (semaines 1–8)
+SCHEDULE_CAROUSEL_RGPD   = (9, 0)    # Jeu      (semaines 3–16)
+SCHEDULE_FLASH           = (10, 0)   # Sam      (semaines 1–16)
+
+# Jours de la semaine APScheduler (0=lun … 6=dim)
+STORY_DAYS    = [0, 1, 2, 3, 4, 5, 6]  # Lun–Dim (7j/7)
+CAROUSEL_SEO_DAY  = 0                  # Lundi
+CAROUSEL_RGPD_DAY = 3                  # Jeudi
+FLASH_DAYS    = [5]                     # Samedi
