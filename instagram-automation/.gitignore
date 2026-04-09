@@ -1,0 +1,19 @@
+# Environnement
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Images générées (temporaires)
+output/
+
+# Logs et base de données du scheduler
+logs/
+
+# Polices (téléchargées par setup.py)
+assets/fonts/*.ttf
+
+# Stickers personnalisés (non versionnés)
+assets/stickers/

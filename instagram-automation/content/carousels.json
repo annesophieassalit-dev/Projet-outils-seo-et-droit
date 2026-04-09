@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "cover": "Vos avis Google. Vous pensez pouvoir en faire ce que vous voulez. Voici ce que la loi dit vraiment.",
+    "caption": "Les avis Google sont encadrés par la loi — et beaucoup de pros l'ignorent. Sauvegardez ce post !\n\n#droitnumérique #avocatnumérique #RGPD #SEO #avocatfrance #droitduweb #conforme #visibleetconforme",
+    "slides": [
+      "Vous NE pouvez PAS supprimer un avis négatif simplement parce qu'il vous déplaît.",
+      "Vous POUVEZ signaler un avis faux, diffamatoire ou hors sujet à Google via le formulaire dédié.",
+      "Répondre publiquement à chaque avis (même négatif) améliore votre référencement local.",
+      "Un avis diffamatoire peut faire l'objet d'une action en justice. Conservez les preuves.",
+      "Acheter de faux avis est illégal et sanctionné par la DGCCRF : jusqu'à 300 000 € d'amende."
+    ],
+    "cta": "Sauvegardez ce post pour vous en souvenir !\n\nDes questions ? Contactez-moi."
+  },
+  {
+    "id": 2,
+    "cover": "5 erreurs qui rendent votre site illégal sans que vous le sachiez.",
+    "caption": "Ces erreurs coûtent cher — et elles sont très faciles à corriger. Sauvegardez !\n\n#droitnumérique #RGPD #mentionslegales #siteinternet #conforme #avocatnumérique",
+    "slides": [
+      "Erreur n°1 : Pas de mentions légales. Obligatoires pour tout site pro en France.",
+      "Erreur n°2 : Formulaire de contact sans mention RGPD. Collecte illégale de données.",
+      "Erreur n°3 : Bandeau cookies sans option de refus claire. Illégal depuis 2021.",
+      "Erreur n°4 : CGV absentes ou non conformes pour un site e-commerce.",
+      "Erreur n°5 : Politique de confidentialité copiée d'un autre site. Non conforme et risquée."
+    ],
+    "cta": "Vous avez une de ces erreurs sur votre site ?\n\nDM-moi, je vous aide à y remédier."
+  },
+  {
+    "id": 3,
+    "cover": "SEO + conformité juridique : le duo gagnant pour votre visibilité en ligne.",
+    "caption": "Être visible en ligne, c'est bien. Être visible ET conforme, c'est mieux.\n\n#SEO #RGPD #droitnumérique #avocat #conforme #visibleetconforme",
+    "slides": [
+      "Un site bien référencé attire des clients. Un site non conforme les fait fuir (et vous expose à des amendes).",
+      "Google favorise les sites qui inspirent confiance : mentions légales, HTTPS, politique de confidentialité.",
+      "La conformité RGPD améliore votre image de marque et la confiance de vos visiteurs.",
+      "Un audit juridique + SEO de votre site vous permet de corriger les deux en même temps.",
+      "Visible ET conforme : c'est ma méthode pour aider les professionnels comme vous."
+    ],
+    "cta": "Prêt(e) à rendre votre site visible et conforme ?\n\nContactez-moi pour un audit."
+  }
+]

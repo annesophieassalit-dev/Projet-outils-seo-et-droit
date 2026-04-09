@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "sticker1": "❓❓❓❓",
+    "question": "Votre formulaire de contact a-t-il une mention RGPD ?",
+    "sticker2": "💡",
+    "info": "Un formulaire sans mention RGPD collecte des données personnelles sans base légale.",
+    "pill1": "Formulaire",
+    "pill2": "# Conformité automatique"
+  },
+  {
+    "id": 2,
+    "sticker1": "❓❓❓❓",
+    "question": "Votre site web a-t-il une politique de confidentialité à jour ?",
+    "sticker2": "💡",
+    "info": "Sans politique de confidentialité, vous risquez une amende pouvant atteindre 4 % de votre chiffre d'affaires mondial.",
+    "pill1": "Politique de confidentialité",
+    "pill2": "# RGPD obligatoire"
+  },
+  {
+    "id": 3,
+    "sticker1": "❓❓❓❓",
+    "question": "Vos cookies sont-ils correctement gérés selon le RGPD ?",
+    "sticker2": "💡",
+    "info": "Un bandeau cookies sans vrai choix de refus est illégal depuis 2021. La CNIL peut sanctionner.",
+    "pill1": "Cookies & RGPD",
+    "pill2": "# Consentement valide"
+  },
+  {
+    "id": 4,
+    "sticker1": "❓❓❓❓",
+    "question": "Votre site apparaît-il dans les résultats Google de vos clients ?",
+    "sticker2": "💡",
+    "info": "80 % des internautes cherchent un professionnel en ligne avant de le contacter. Être visible, c'est être choisi.",
+    "pill1": "SEO local",
+    "pill2": "# Visible et conforme"
+  },
+  {
+    "id": 5,
+    "sticker1": "❓❓❓❓",
+    "question": "Savez-vous ce que dit la loi sur les mentions légales de votre site ?",
+    "sticker2": "💡",
+    "info": "Les mentions légales sont obligatoires pour tout site professionnel en France. Leur absence est une infraction.",
+    "pill1": "Mentions légales",
+    "pill2": "# Obligation légale"
+  },
+  {
+    "id": 6,
+    "sticker1": "❓❓❓❓",
+    "question": "Votre fiche Google Business Profile est-elle optimisée ?",
+    "sticker2": "💡",
+    "info": "Une fiche GBP complète et active génère 7× plus de clics vers votre site qu'une fiche incomplète.",
+    "pill1": "Google Business Profile",
+    "pill2": "# SEO local"
+  }
+]
