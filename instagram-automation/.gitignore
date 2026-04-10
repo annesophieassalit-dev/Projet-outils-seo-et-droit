@@ -15,5 +15,5 @@ logs/
 # Polices (téléchargées par setup.py)
 assets/fonts/*.ttf
 
-# Stickers personnalisés (non versionnés)
-assets/stickers/
+# Stickers (versionnés pour être disponibles partout)
+# assets/stickers/ est maintenant suivi par git
