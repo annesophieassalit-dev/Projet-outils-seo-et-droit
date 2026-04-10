@@ -36,11 +36,16 @@ FLASH_ARROW  = (160, 118,  8)       # #A07608  doré
 # ─── Typographie ──────────────────────────────────────────────────────────────
 FONT_DIR = "assets/fonts"
 
-FONT_BLACK   = f"{FONT_DIR}/Poppins-Black.ttf"
-FONT_BOLD    = f"{FONT_DIR}/Poppins-Bold.ttf"
-FONT_REGULAR = f"{FONT_DIR}/Poppins-Regular.ttf"
-FONT_LIGHT   = f"{FONT_DIR}/Poppins-Light.ttf"
-FONT_LIGHT_I = f"{FONT_DIR}/Poppins-LightItalic.ttf"
+# Police principale — Montserrat
+FONT_BLACK   = f"{FONT_DIR}/Montserrat-Black.ttf"
+FONT_BOLD    = f"{FONT_DIR}/Montserrat-Bold.ttf"
+FONT_REGULAR = f"{FONT_DIR}/Montserrat-Regular.ttf"
+FONT_LIGHT   = f"{FONT_DIR}/Montserrat-Light.ttf"
+FONT_LIGHT_I = f"{FONT_DIR}/Montserrat-LightItalic.ttf"
+
+# Polices spéciales (bandeau slide 3)
+FONT_ARIMO   = f"{FONT_DIR}/Arimo-Regular.ttf"      # haut du bandeau
+FONT_SERIF_I = f"{FONT_DIR}/Cormorant-Italic.ttf"   # signature bas bandeau (serif élégant)
 
 # ─── Textes fixes (branding) ───────────────────────────────────────────────────
 BRAND_VISIBLE   = "VISIBLE ET"

@@ -18,16 +18,23 @@ from pathlib import Path
 
 FONTS_DIR = Path("assets/fonts")
 FONTS = {
-    "Poppins-Black.ttf":
-        "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Black.ttf",
-    "Poppins-Bold.ttf":
-        "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Bold.ttf",
-    "Poppins-Regular.ttf":
-        "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Regular.ttf",
-    "Poppins-Light.ttf":
-        "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-Light.ttf",
-    "Poppins-LightItalic.ttf":
-        "https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-LightItalic.ttf",
+    # Montserrat — police principale
+    "Montserrat-Black.ttf":
+        "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-Black.ttf",
+    "Montserrat-Bold.ttf":
+        "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-Bold.ttf",
+    "Montserrat-Regular.ttf":
+        "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-Regular.ttf",
+    "Montserrat-Light.ttf":
+        "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-Light.ttf",
+    "Montserrat-LightItalic.ttf":
+        "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-LightItalic.ttf",
+    # Arimo — haut du bandeau (slide 3)
+    "Arimo-Regular.ttf":
+        "https://github.com/googlefonts/Arimo/raw/main/fonts/ttf/Arimo-Regular.ttf",
+    # Cormorant Italic — signature bas du bandeau (slide 3, serif élégant)
+    "Cormorant-Italic.ttf":
+        "https://github.com/CatharsisFonts/Cormorant/raw/master/fonts/ttf/Cormorant-Italic.ttf",
 }
 
 DIRS = [
