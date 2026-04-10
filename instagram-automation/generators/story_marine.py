@@ -9,6 +9,7 @@ Structure d'une story (3 slides) :
 """
 
 import os
+from typing import Optional
 import numpy as np
 from PIL import Image, ImageDraw
 
@@ -42,7 +43,7 @@ def _brand_top(draw: ImageDraw.Draw, y: int = 80) -> None:
     draw.text(((STORY_W - w) / 2, y), text, font=font, fill=BRAND_BLUE)
 
 
-def _author_footer(draw: ImageDraw.Draw, y: int | None = None) -> None:
+def _author_footer(draw: ImageDraw.Draw, y: Optional[int] = None) -> None:
     if y is None:
         y = STORY_H - 130
     font = load_font(FONT_LIGHT, 40)
@@ -117,7 +118,7 @@ def _draw_blue_pill(img: Image.Image,
 
 def generate_marine_poll_slide(
         poll_question: str,
-        poll_options: list | None = None,
+        poll_options: Optional[list] = None,
         output_path: str = "output/stories/poll.png",
 ) -> str:
     if poll_options is None:

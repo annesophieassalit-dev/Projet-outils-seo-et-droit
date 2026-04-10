@@ -8,6 +8,7 @@ Prérequis :
 """
 
 import os
+from typing import Optional
 import cloudinary
 import cloudinary.uploader
 from dotenv import load_dotenv
@@ -30,7 +31,7 @@ def _configure() -> None:
     _configured = True
 
 
-def upload_image(local_path: str, public_id: str | None = None) -> str:
+def upload_image(local_path: str, public_id: Optional[str] = None) -> str:
     """
     Upload une image locale vers Cloudinary.
 
