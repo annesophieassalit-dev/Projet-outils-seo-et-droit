@@ -3,12 +3,10 @@ Générateur de stories — 1080 × 1920 px (9:16).
 
 Fond commun à toutes les slides : dégradé RADIAL rose (blanc → #cf9090).
 
-Slide 1 — Poll    : header glow blanc + carte semi-transparente (42%) +
-                    4 stickers « ? » cream style papier collé + question en #1e4e79
-Slide 2 — Info    : header glow blanc + carte semi-transparente (42%) + texte #1e4e79
-Slide 3 — Bandeau : fond rose + pilules bleu-violet (#94b9ff → #e894ff) +
-                    flèche calligraphique courbe papier collé +
-                    glow fin « VISIBLE ET CONFORME » + signature #1e4e79 en bas
+Slide 1 — Poll    : header glow blanc + carte blanche + 4 stickers « ? » + question noire
+Slide 2 — Info    : header glow blanc + carte blanche + texte noir
+Slide 3 — Bandeau : fond rose + pilules bleu-violet + flèche calligraphique ρ +
+                    glow « VISIBLE ET / CONFORME » très grand en bas + signature
 """
 
 import os
@@ -21,6 +19,7 @@ from config import (
     STORY_W, STORY_H,
     GRAD_CENTER, GRAD_EDGE,
     BRAND_BLUE,
+    CARD_TEXT,
     PILL_LEFT, PILL_RIGHT, PILL_TEXT,
     FONT_BLACK, FONT_BOLD, FONT_REGULAR, FONT_LIGHT, FONT_LIGHT_I,
     FONT_ARIMO, FONT_SERIF_I,
@@ -31,11 +30,11 @@ from generators.base import (
     make_radial_gradient, draw_gradient_pill,
 )
 
-# Rayon des pilules slide 3 (moins arrondies qu'une capsule complète)
 _PILL_RADIUS = 22
+_CARD_TEXT   = (35, 35, 35)    # proche-noir pour texte carte
 
 
-# ─── Fond rose radial (commun) ───────────────────────────────────────────────
+# ─── Fond rose radial ────────────────────────────────────────────────────────
 
 def _rose_base() -> tuple:
     img  = make_radial_gradient(STORY_W, STORY_H,
@@ -48,21 +47,20 @@ def _rose_base() -> tuple:
 
 def _draw_header_glow(img: Image.Image, y_start: int = 110) -> tuple:
     """
-    En-tête « VISIBLE ET / CONFORME » avec halo lumineux blanc.
-    3 passes de flou gaussien décroissant + texte net en blanc.
+    « VISIBLE ET » (thin italic) + « CONFORME » (black bold) avec halo blanc.
     Retourne (img, draw, y_after).
     """
-    font_sub  = load_font(FONT_LIGHT_I, 40)
-    font_main = load_font(FONT_BLACK,  108)
+    font_sub  = load_font(FONT_LIGHT_I, 44)
+    font_main = load_font(FONT_BLACK,  120)
 
     temp   = ImageDraw.Draw(img)
     sub_w  = temp.textlength(BRAND_VISIBLE,  font=font_sub)
     main_w = temp.textlength(BRAND_CONFORME, font=font_main)
-    y_main = y_start + 54
+    y_main = y_start + 58
 
     img_rgba = img.convert("RGBA")
 
-    for blur_r, alpha in [(30, 160), (15, 140), (6, 110)]:
+    for blur_r, alpha in [(34, 170), (17, 145), (7, 115)]:
         layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
         d     = ImageDraw.Draw(layer)
         d.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,
@@ -79,58 +77,57 @@ def _draw_header_glow(img: Image.Image, y_start: int = 110) -> tuple:
     draw.text(((STORY_W - main_w) / 2, y_main),  BRAND_CONFORME,
               font=font_main, fill=(255, 255, 255))
 
-    y_after = y_main + 130
+    y_after = y_main + 145
     return img, draw, y_after
 
 
-# ─── Carte semi-transparente 42 % (slides 1 & 2) ─────────────────────────────
+# ─── Carte blanche chaude (slides 1 & 2) ─────────────────────────────────────
 
-def _draw_transparent_card(img: Image.Image,
-                            x1: int, y1: int, x2: int, y2: int,
-                            radius: int = 50) -> tuple:
+def _draw_card(img: Image.Image,
+               x1: int, y1: int, x2: int, y2: int,
+               radius: int = 46) -> tuple:
     """
-    Carte blanche à 42 % d'opacité (alpha = 107/255) avec ombre portée douce.
+    Carte blanche chaude légèrement transparente, avec ombre douce.
     """
     img_rgba = img.convert("RGBA")
 
-    # Ombre douce
+    # Ombre portée douce
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     sd     = ImageDraw.Draw(shadow)
-    sd.rounded_rectangle([x1 + 10, y1 + 10, x2 + 10, y2 + 10],
-                          radius=radius, fill=(180, 155, 155, 80))
-    shadow   = shadow.filter(ImageFilter.GaussianBlur(radius=8))
+    sd.rounded_rectangle([x1 + 12, y1 + 12, x2 + 12, y2 + 12],
+                          radius=radius, fill=(180, 145, 145, 70))
+    shadow   = shadow.filter(ImageFilter.GaussianBlur(radius=10))
     img_rgba = Image.alpha_composite(img_rgba, shadow)
 
-    # Carte blanche semi-transparente
+    # Carte blanc chaud
     card = Image.new("RGBA", img.size, (0, 0, 0, 0))
     cd   = ImageDraw.Draw(card)
     cd.rounded_rectangle([x1, y1, x2, y2],
-                          radius=radius, fill=(255, 255, 255, 210))
+                          radius=radius, fill=(252, 248, 244, 230))
     img_rgba = Image.alpha_composite(img_rgba, card)
 
     img = img_rgba.convert("RGB")
     return img, ImageDraw.Draw(img)
 
 
-# ─── 4 stickers « ? » cream style papier collé (slide 1) ────────────────────
+# ─── Stickers « ? » papier collé (slide 1) ───────────────────────────────────
 
 def _draw_sticker_questions(img: Image.Image,
                              card_x1: int, card_y1: int) -> tuple:
     """
-    4 stickers individuels : fond cream arrondi + « ? » FONT_BLACK 72,
-    légèrement inclinés, centrés horizontalement au-dessus du bord de la carte.
+    4 stickers cream inclinés avec « ? » en noir, centrés sur le bord haut de la carte.
     """
-    stk_w, stk_h = 130, 130
-    gap     = 14
-    angles  = [-7, 6, -4, 8]   # inclinaisons en degrés
+    stk_w, stk_h = 148, 148
+    gap     = 10
+    angles  = [-8, 5, -4, 9]
     n       = 4
     total_w = n * stk_w + (n - 1) * gap
     start_x = (STORY_W - total_w) // 2
-    center_y = card_y1 - 30    # chevauchement léger sur le bord supérieur de la carte
+    center_y = card_y1 - 20    # légèrement au-dessus du bord de la carte
 
-    cream    = (243, 233, 212, 245)
-    dark     = (18, 18, 18)
-    font_q   = load_font(FONT_BLACK, 72)
+    cream    = (242, 232, 210, 248)
+    dark     = (22, 22, 22)
+    font_q   = load_font(FONT_BLACK, 80)
     img_rgba = img.convert("RGBA")
 
     for i, angle in enumerate(angles):
@@ -140,17 +137,14 @@ def _draw_sticker_questions(img: Image.Image,
         stk      = Image.new("RGBA", img.size, (0, 0, 0, 0))
         stk_draw = ImageDraw.Draw(stk)
 
-        # Fond cream arrondi
         stk_draw.rounded_rectangle([sx, sy, sx + stk_w, sy + stk_h],
-                                    radius=18, fill=cream)
+                                    radius=20, fill=cream)
 
-        # « ? » centré sur le sticker
         qw = stk_draw.textlength("?", font=font_q)
         qx = sx + (stk_w - qw) / 2
-        qy = sy + (stk_h - font_q.size) / 2 - 4
+        qy = sy + (stk_h - font_q.size) / 2 - 6
         stk_draw.text((qx, qy), "?", font=font_q, fill=dark)
 
-        # Rotation autour du centre du sticker
         cx = sx + stk_w // 2
         cy = sy + stk_h // 2
         stk_rot  = stk.rotate(-angle, center=(cx, cy), expand=False,
@@ -161,70 +155,71 @@ def _draw_sticker_questions(img: Image.Image,
     return img, ImageDraw.Draw(img)
 
 
-# ─── Flèche calligraphique courbe papier collé (slide 3) ─────────────────────
+# ─── Flèche calligraphique ρ (slide 3) ────────────────────────────────────────
 
-def _draw_curved_arrow_sticker(img: Image.Image,
-                                cx: int, cy: int) -> tuple:
+def _draw_rho_arrow_sticker(img: Image.Image,
+                             cx: int, cy: int) -> tuple:
     """
-    Flèche courbe style calligraphique sur fond cream, posée comme un sticker.
-    (cx, cy) = centre de pose du sticker.
+    Flèche style calligraphique ρ (boucle + queue + tête de flèche) sur fond cream.
+    (cx, cy) = centre du sticker dans l'image.
     """
-    stk      = 210
+    stk      = 180
     img_rgba = img.convert("RGBA")
-
-    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    ld    = ImageDraw.Draw(layer)
+    layer    = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ld       = ImageDraw.Draw(layer)
 
     x0 = cx - stk // 2
     y0 = cy - stk // 2
 
-    # Fond cream arrondi
-    ld.rounded_rectangle([x0 + 8, y0 + 8, x0 + stk - 8, y0 + stk - 8],
-                          radius=24, fill=(243, 233, 212, 235))
+    # Fond cream polygonal (forme légèrement irrégulière)
+    pts = [
+        (x0 + 14, y0 + 10),
+        (x0 + stk - 8,  y0 + 4),
+        (x0 + stk - 4,  y0 + stk - 12),
+        (x0 + 10, y0 + stk - 6),
+    ]
+    ld.polygon(pts, fill=(241, 228, 205, 240))
 
-    arrow_col = (60, 40, 30, 235)   # encre brun foncé
+    col = (20, 15, 10, 245)   # encre brun quasi-noir
 
-    # ── Arc quasi-circulaire (≈ 280° de boucle, ouverture en bas-gauche)
-    margin  = 28
-    arc_box = [x0 + margin, y0 + margin,
-               x0 + stk - margin, y0 + stk - margin]
+    # ── Boucle (arc ≈ 300°, s'ouvre en bas-droit) ────────────────────────────
+    lp_cx = x0 + 82   # centre de la boucle dans le sticker
+    lp_cy = y0 + 72
+    lp_r  = 46        # rayon
 
-    # PIL angles : 0 = droite (3h), sens horaire
-    # Arc de 60° à 340° (clockwise) ≈ 280° de cercle
-    arc_start, arc_end = 60, 340
-    ld.arc(arc_box, start=arc_start, end=arc_end, fill=arrow_col, width=9)
+    # Arc : de 110° à 100° en sens horaire (PIL) = 350° de boucle
+    lp_box = [lp_cx - lp_r, lp_cy - lp_r, lp_cx + lp_r, lp_cy + lp_r]
+    arc_s, arc_e = 110, 100
+    ld.arc(lp_box, start=arc_s, end=arc_e, fill=col, width=11)
 
-    # Centres et rayons de l'arc
-    arc_cx = (arc_box[0] + arc_box[2]) / 2
-    arc_cy = (arc_box[1] + arc_box[3]) / 2
-    arc_rx = (arc_box[2] - arc_box[0]) / 2
-    arc_ry = (arc_box[3] - arc_box[1]) / 2
+    # ── Queue : du bas de la boucle vers bas-droit ────────────────────────────
+    # Point au bout de l'arc (arc_e = 100° en PIL)
+    e_rad = math.radians(arc_e)
+    qx0   = int(lp_cx + lp_r * math.cos(e_rad))
+    qy0   = int(lp_cy + lp_r * math.sin(e_rad))
+    # Destination de la queue
+    qx1   = x0 + stk - 28
+    qy1   = y0 + stk - 24
+    ld.line([(qx0, qy0), (qx1, qy1)], fill=col, width=11)
 
-    # ── Queue (petit trait depuis le début de l'arc à 60°)
-    t_rad = math.radians(arc_start)
-    tail_x = int(arc_cx + arc_rx * math.cos(t_rad))
-    tail_y = int(arc_cy + arc_ry * math.sin(t_rad))
-    ld.line([(tail_x, tail_y), (tail_x - 20, tail_y + 26)],
-            fill=arrow_col, width=9)
+    # ── Tête de flèche à la fin de la queue ──────────────────────────────────
+    dx  = qx1 - qx0
+    dy  = qy1 - qy0
+    ln  = math.hypot(dx, dy)
+    if ln > 0:
+        ux, uy = dx / ln, dy / ln   # vecteur unitaire direction
+        px, py = -uy, ux             # perpendiculaire
+        hw = 14
+        ld.polygon([
+            (qx1, qy1),
+            (int(qx1 - ux * hw * 1.8 + px * hw), int(qy1 - uy * hw * 1.8 + py * hw)),
+            (int(qx1 - ux * hw * 1.8 - px * hw), int(qy1 - uy * hw * 1.8 - py * hw)),
+        ], fill=col)
 
-    # ── Tête de flèche à la fin de l'arc (340°)
-    e_rad  = math.radians(arc_end)
-    head_x = int(arc_cx + arc_rx * math.cos(e_rad))
-    head_y = int(arc_cy + arc_ry * math.sin(e_rad))
-    hw     = 16
-    ld.polygon([
-        (head_x, head_y),
-        (int(head_x + hw * math.cos(math.radians(arc_end + 135))),
-         int(head_y + hw * math.sin(math.radians(arc_end + 135)))),
-        (int(head_x + hw * math.cos(math.radians(arc_end - 135))),
-         int(head_y + hw * math.sin(math.radians(arc_end - 135)))),
-    ], fill=arrow_col)
-
-    # Rotation du sticker (-14°)
-    layer_rot = layer.rotate(14, center=(cx, cy), expand=False,
+    # Légère rotation du sticker entier
+    layer_rot = layer.rotate(12, center=(cx, cy), expand=False,
                               resample=Image.BICUBIC)
     img_rgba  = Image.alpha_composite(img_rgba, layer_rot)
-
     img = img_rgba.convert("RGB")
     return img, ImageDraw.Draw(img)
 
@@ -237,15 +232,11 @@ def _draw_tilted_gradient_pill(img: Image.Image,
                                 font,
                                 pill_radius: int = _PILL_RADIUS,
                                 angle: float = -3.0) -> tuple:
-    """
-    Pilule dégradée bleu-violet légèrement inclinée (angle en degrés).
-    Utilise un layer RGBA plein-format pour la rotation.
-    """
+    """Pilule dégradée bleu-violet légèrement inclinée."""
     w = x2 - x1
     h = y2 - y1
     r = h // 2 if pill_radius < 0 else pill_radius
 
-    # Dégradé horizontal bleu-violet
     pill_arr = np.zeros((h, w, 3), dtype=np.uint8)
     for px in range(w):
         t = px / max(w - 1, 1)
@@ -255,28 +246,23 @@ def _draw_tilted_gradient_pill(img: Image.Image,
         ]
     pill_img = Image.fromarray(pill_arr, "RGB")
 
-    # Masque arrondi
     mask      = Image.new("L", (w, h), 0)
     mask_draw = ImageDraw.Draw(mask)
     mask_draw.rounded_rectangle([0, 0, w - 1, h - 1], radius=r, fill=255)
 
-    # Pilule RGBA
     pill_rgba = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     pill_rgba.paste(pill_img, (0, 0))
     pill_rgba.putalpha(mask)
 
-    # Layer plein-format
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     layer.paste(pill_rgba, (x1, y1), pill_rgba)
 
-    # Texte sur le layer
     ld = ImageDraw.Draw(layer)
     tw = ld.textlength(text, font=font)
     tx = x1 + (w - tw) / 2
     ty = y1 + (h - font.size) / 2 - 4
     ld.text((tx, ty), text, font=font, fill=(*PILL_TEXT, 255))
 
-    # Rotation autour du centre de la pilule
     pcx = (x1 + x2) // 2
     pcy = (y1 + y2) // 2
     layer_rot = layer.rotate(angle, center=(pcx, pcy), expand=False,
@@ -284,7 +270,6 @@ def _draw_tilted_gradient_pill(img: Image.Image,
 
     img_rgba = img.convert("RGBA")
     img_rgba = Image.alpha_composite(img_rgba, layer_rot)
-
     img = img_rgba.convert("RGB")
     return img, ImageDraw.Draw(img)
 
@@ -293,34 +278,38 @@ def _draw_tilted_gradient_pill(img: Image.Image,
 
 def _author_footer(draw: ImageDraw.ImageDraw,
                    y: Optional[int] = None,
-                   color: Optional[tuple] = None) -> None:
+                   color: Optional[tuple] = None,
+                   font_path: Optional[str] = None,
+                   size: int = 42) -> None:
     if y is None:
         y = STORY_H - 130
     if color is None:
         color = BRAND_BLUE
-    font = load_font(FONT_LIGHT, 40)
+    if font_path is None:
+        font_path = FONT_LIGHT
+    font = load_font(font_path, size)
     w    = draw.textlength(BRAND_AUTHOR, font=font)
     draw.text(((STORY_W - w) / 2, y), BRAND_AUTHOR, font=font, fill=color)
 
 
-# ─── Glow fin « VISIBLE ET CONFORME » (slide 3) ──────────────────────────────
+# ─── Glow « VISIBLE ET / CONFORME » grand (slide 3 bas) ──────────────────────
 
-def _draw_brand_glow(img: Image.Image, y_start: int) -> tuple:
+def _draw_brand_glow_large(img: Image.Image, y_start: int) -> tuple:
     """
-    Effet lumineux « text-shadow blanc » : 3 passes de flou décroissant,
-    puis texte net en blanc. Police légère pour un rendu fin et lumineux.
+    Version grande : CONFORME en FONT_BLACK 150 pour l'effet très grand en bas
+    du bandeau slide 3. Avec halo lumineux multi-passes.
     """
-    font_sub  = load_font(FONT_LIGHT_I, 32)
-    font_main = load_font(FONT_BOLD,    65)
+    font_sub  = load_font(FONT_LIGHT_I, 46)
+    font_main = load_font(FONT_BLACK,   150)
 
     temp   = ImageDraw.Draw(img)
     sub_w  = temp.textlength(BRAND_VISIBLE,  font=font_sub)
     main_w = temp.textlength(BRAND_CONFORME, font=font_main)
-    y_main = y_start + 44
+    y_main = y_start + 58
 
     img_rgba = img.convert("RGBA")
 
-    for blur_r, alpha in [(28, 155), (14, 130), (6, 100)]:
+    for blur_r, alpha in [(40, 185), (20, 155), (8, 120)]:
         layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
         d     = ImageDraw.Draw(layer)
         d.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,
@@ -355,27 +344,25 @@ def generate_marine_poll_slide(
     # En-tête "VISIBLE ET / CONFORME" avec halo lumineux
     img, draw, y_after = _draw_header_glow(img, y_start=110)
 
-    # Carte semi-transparente centrée (42%)
-    card_x1 = 55
-    card_x2 = STORY_W - 55
-    card_y1 = 560
-    card_y2 = 1580
-    img, draw = _draw_transparent_card(img, card_x1, card_y1, card_x2, card_y2, radius=50)
+    # Carte blanche chaude
+    card_x1, card_x2 = 55, STORY_W - 55
+    card_y1, card_y2 = 520, 1590
+    img, draw = _draw_card(img, card_x1, card_y1, card_x2, card_y2, radius=46)
 
-    # 4 stickers « ? » papier collé au-dessus / sur le bord de la carte
+    # 4 stickers « ? » papier collé sur le bord haut de la carte
     img, draw = _draw_sticker_questions(img, card_x1, card_y1)
 
-    # Question en BRAND_BLUE dans la partie basse de la carte
-    font_q  = load_font(FONT_BOLD, 72)
-    text_y1 = card_y1 + 120    # sous le chevauchement des stickers
-    text_y2 = card_y2 - 65
+    # Question — noir, regular, grande taille
+    font_q  = load_font(FONT_REGULAR, 74)
+    text_y1 = card_y1 + 150   # sous les stickers
+    text_y2 = card_y2 - 60
     draw_multiline_centered(
-        draw, poll_question, font_q, BRAND_BLUE,
-        card_x1 + 55, text_y1, card_x2 - 55, text_y2,
+        draw, poll_question, font_q, _CARD_TEXT,
+        card_x1 + 60, text_y1, card_x2 - 60, text_y2,
         line_spacing=1.42,
     )
 
-    _author_footer(draw)
+    _author_footer(draw, y=STORY_H - 120, color=BRAND_BLUE, font_path=FONT_LIGHT, size=42)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
@@ -392,20 +379,19 @@ def generate_marine_info_slide(
 
     img, draw, y_after = _draw_header_glow(img, y_start=110)
 
-    card_x1 = 55
-    card_x2 = STORY_W - 55
-    card_y1 = 560
-    card_y2 = 1580
-    img, draw = _draw_transparent_card(img, card_x1, card_y1, card_x2, card_y2, radius=50)
+    card_x1, card_x2 = 55, STORY_W - 55
+    card_y1, card_y2 = 520, 1590
+    img, draw = _draw_card(img, card_x1, card_y1, card_x2, card_y2, radius=46)
 
-    font = load_font(FONT_BOLD, 76)
+    # Texte info — noir, regular
+    font = load_font(FONT_REGULAR, 76)
     draw_multiline_centered(
-        draw, info_text, font, BRAND_BLUE,
-        card_x1 + 55, card_y1 + 70, card_x2 - 55, card_y2 - 70,
+        draw, info_text, font, _CARD_TEXT,
+        card_x1 + 60, card_y1 + 80, card_x2 - 60, card_y2 - 60,
         line_spacing=1.45,
     )
 
-    _author_footer(draw)
+    _author_footer(draw, y=STORY_H - 120, color=BRAND_BLUE, font_path=FONT_LIGHT, size=42)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
@@ -419,14 +405,13 @@ def generate_marine_banner_slide(
         output_path: str = "output/stories/banner.png",
 ) -> str:
     """
-    Fond rose radial + pilules bleu-violet (#94b9ff → #e894ff) +
-    flèche calligraphique courbe papier collé + glow « VISIBLE ET CONFORME » +
-    signature bleue. La 2ème pilule est légèrement inclinée (-3°).
+    Fond rose radial + pilules bleu-violet + flèche ρ calligraphique +
+    VISIBLE ET / CONFORME grand en bas + signature.
     """
     img, draw = _rose_base()
 
-    # "Anne-Sophie Assalit" en haut — Arimo (#1e4e79)
-    font_top = load_font(FONT_ARIMO, 40)
+    # "Anne-Sophie Assalit" en haut — Arimo
+    font_top = load_font(FONT_ARIMO, 42)
     w_top    = draw.textlength(BRAND_AUTHOR, font=font_top)
     draw.text(((STORY_W - w_top) / 2, 80), BRAND_AUTHOR,
               font=font_top, fill=BRAND_BLUE)
@@ -447,13 +432,13 @@ def generate_marine_banner_slide(
 
     n_pills = 2 if line2 else 1
     total_h = pill_h * n_pills
-    y_start = (STORY_H - total_h) // 2   # pilules centrées verticalement
+    y_start = (STORY_H - total_h) // 2 - 60   # légèrement au-dessus du centre
 
-    # Flèche calligraphique courbe au-dessus à gauche des pilules
-    img, draw = _draw_curved_arrow_sticker(
+    # Flèche calligraphique ρ au-dessus-gauche des pilules
+    img, draw = _draw_rho_arrow_sticker(
         img,
-        cx=pill_x1 + 148,
-        cy=y_start - 140,
+        cx=pill_x1 + 138,
+        cy=y_start - 130,
     )
 
     # Pilule 1
@@ -464,31 +449,25 @@ def generate_marine_banner_slide(
 
     if line2:
         y2 = y_start + pill_h
-
-        # Ombre fine à la jonction des deux pilules
         draw = ImageDraw.Draw(img)
-        draw.rectangle([pill_x1 + 10, y2 - 5, pill_x2 - 10, y2 + 5],
-                        fill=(120, 100, 160))
-
-        # Pilule 2 légèrement inclinée (-3°)
-        font2 = load_font(FONT_LIGHT_I, 74)
+        draw.rectangle([pill_x1 + 10, y2 - 4, pill_x2 - 10, y2 + 4],
+                        fill=(110, 90, 155))
+        font2 = load_font(FONT_LIGHT_I, 62)
         img, draw = _draw_tilted_gradient_pill(
-            img,
-            pill_x1, y2, pill_x2, y2 + pill_h,
-            line2, font2,
-            pill_radius=_PILL_RADIUS,
-            angle=-3.0,
+            img, pill_x1, y2, pill_x2, y2 + pill_h,
+            line2, font2, pill_radius=_PILL_RADIUS, angle=-3.0,
         )
 
-    # ── "VISIBLE ET CONFORME" glow fin et lumineux ───────────────────────────
-    y_glow = STORY_H - 430
-    img, draw = _draw_brand_glow(img, y_glow)
+    # ── « VISIBLE ET / CONFORME » grand avec glow ────────────────────────────
+    y_glow = STORY_H - 500    # ≈ 1420
+    img, draw = _draw_brand_glow_large(img, y_glow)
 
-    # "Anne-Sophie Assalit" en bas — serif italique (#1e4e79)
-    font_bot = load_font(FONT_SERIF_I, 42)
-    w_bot    = draw.textlength(BRAND_AUTHOR, font=font_bot)
-    draw.text(((STORY_W - w_bot) / 2, STORY_H - 145), BRAND_AUTHOR,
-              font=font_bot, fill=BRAND_BLUE)
+    # "Anne-Sophie Assalit" en bas — Cormorant Italic
+    _author_footer(draw,
+                   y=STORY_H - 100,
+                   color=(255, 255, 255),
+                   font_path=FONT_SERIF_I,
+                   size=46)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
@@ -507,7 +486,7 @@ def generate_marine_story_set(story: dict, output_dir: str = "output/stories") -
         "poll_question": "...",
         "poll_options": ["Oui", "Non"],
         "info_text": "...",
-        "banner_text": "Site ancien ≠ Site conforme"
+        "banner_text": "Site visible ≠ Site conforme"
     }
     """
     sid = story.get("id", "x")
