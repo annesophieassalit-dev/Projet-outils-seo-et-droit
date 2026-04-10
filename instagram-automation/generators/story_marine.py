@@ -105,7 +105,7 @@ def _draw_transparent_card(img: Image.Image,
     card = Image.new("RGBA", img.size, (0, 0, 0, 0))
     cd   = ImageDraw.Draw(card)
     cd.rounded_rectangle([x1, y1, x2, y2],
-                          radius=radius, fill=(255, 255, 255, 107))
+                          radius=radius, fill=(255, 255, 255, 210))
     img_rgba = Image.alpha_composite(img_rgba, card)
 
     img = img_rgba.convert("RGB")
