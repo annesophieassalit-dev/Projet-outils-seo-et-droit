@@ -12,8 +12,63 @@ Slide 3 — Bandeau : fond rose + pilules bleu-violet + flèche calligraphique �
 import os
 import math
 import numpy as np
+from pathlib import Path
 from typing import Optional
 from PIL import Image, ImageDraw, ImageFilter
+
+_STICKER_DIR = Path("assets/stickers")
+
+
+def _load_sticker_png(filename: str,
+                       target_w: int, target_h: int) -> Optional[Image.Image]:
+    """
+    Charge un sticker PNG depuis assets/stickers/, supprime le fond blanc
+    (seuil ≥ 245 sur R, G, B) et redimensionne en conservant le ratio.
+    Retourne une image RGBA ou None si le fichier est absent.
+    """
+    path = _STICKER_DIR / filename
+    if not path.exists():
+        return None
+    try:
+        img = Image.open(path).convert("RGBA")
+        # Suppression du fond blanc
+        data = np.array(img)
+        r, g, b, a = data[:, :, 0], data[:, :, 1], data[:, :, 2], data[:, :, 3]
+        white_mask = (r >= 245) & (g >= 245) & (b >= 245)
+        data[white_mask, 3] = 0        # rendre transparent
+        img = Image.fromarray(data, "RGBA")
+        # Recadrage sur la zone non-transparente
+        bbox = img.getbbox()
+        if bbox:
+            img = img.crop(bbox)
+        # Redimensionnement en conservant le ratio
+        ow, oh = img.size
+        scale = min(target_w / ow, target_h / oh)
+        nw = int(ow * scale)
+        nh = int(oh * scale)
+        img = img.resize((nw, nh), Image.LANCZOS)
+        return img
+    except Exception:
+        return None
+
+
+def _paste_sticker(base: Image.Image,
+                   sticker: Image.Image,
+                   cx: int, cy: int,
+                   angle: float = 0.0) -> Image.Image:
+    """
+    Colle un sticker RGBA centré en (cx, cy) avec rotation optionnelle.
+    """
+    if angle != 0.0:
+        sticker = sticker.rotate(-angle, expand=True, resample=Image.BICUBIC)
+    sw, sh = sticker.size
+    x = cx - sw // 2
+    y = cy - sh // 2
+    base_rgba = base.convert("RGBA")
+    layer = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    layer.paste(sticker, (x, y), sticker)
+    base_rgba = Image.alpha_composite(base_rgba, layer)
+    return base_rgba.convert("RGB")
 
 from config import (
     STORY_W, STORY_H,
@@ -115,16 +170,24 @@ def _draw_card(img: Image.Image,
 def _draw_sticker_questions(img: Image.Image,
                              card_x1: int, card_y1: int) -> tuple:
     """
-    4 stickers cream inclinés avec « ? » en noir, centrés sur le bord haut de la carte.
+    Utilise l'image assets/stickers/stickers_questions.png si disponible,
+    sinon dessine 4 stickers cream approximatifs.
     """
-    stk_w, stk_h = 148, 148
-    gap     = 10
-    angles  = [-8, 5, -4, 9]
-    n       = 4
-    total_w = n * stk_w + (n - 1) * gap
-    start_x = (STORY_W - total_w) // 2
-    center_y = card_y1 - 20    # légèrement au-dessus du bord de la carte
+    center_y = card_y1 - 10
+    target_w = STORY_W - 180   # largeur cible ≈ toute la largeur de la carte
 
+    sticker = _load_sticker_png("stickers_questions.png", target_w, 180)
+    if sticker is not None:
+        img = _paste_sticker(img, sticker, STORY_W // 2, center_y)
+        return img, ImageDraw.Draw(img)
+
+    # ── Fallback PIL ──────────────────────────────────────────────────────────
+    stk_w, stk_h = 148, 148
+    gap      = 10
+    angles   = [-8, 5, -4, 9]
+    n        = 4
+    total_w  = n * stk_w + (n - 1) * gap
+    start_x  = (STORY_W - total_w) // 2
     cream    = (242, 232, 210, 248)
     dark     = (22, 22, 22)
     font_q   = load_font(FONT_BLACK, 80)
@@ -133,25 +196,35 @@ def _draw_sticker_questions(img: Image.Image,
     for i, angle in enumerate(angles):
         sx = start_x + i * (stk_w + gap)
         sy = center_y - stk_h // 2
-
         stk      = Image.new("RGBA", img.size, (0, 0, 0, 0))
         stk_draw = ImageDraw.Draw(stk)
-
         stk_draw.rounded_rectangle([sx, sy, sx + stk_w, sy + stk_h],
                                     radius=20, fill=cream)
-
         qw = stk_draw.textlength("?", font=font_q)
         qx = sx + (stk_w - qw) / 2
         qy = sy + (stk_h - font_q.size) / 2 - 6
         stk_draw.text((qx, qy), "?", font=font_q, fill=dark)
-
-        cx = sx + stk_w // 2
-        cy = sy + stk_h // 2
-        stk_rot  = stk.rotate(-angle, center=(cx, cy), expand=False,
+        cx_s = sx + stk_w // 2
+        cy_s = sy + stk_h // 2
+        stk_rot  = stk.rotate(-angle, center=(cx_s, cy_s), expand=False,
                                resample=Image.BICUBIC)
         img_rgba = Image.alpha_composite(img_rgba, stk_rot)
 
     img = img_rgba.convert("RGB")
+    return img, ImageDraw.Draw(img)
+
+
+# ─── Sticker ampoule (slide 2) ───────────────────────────────────────────────
+
+def _draw_sticker_lightbulb(img: Image.Image,
+                              cx: int, cy: int) -> tuple:
+    """
+    Utilise assets/stickers/sticker_lightbulb.png si disponible.
+    Sinon, ne dessine rien (pas de fallback PIL pour l'ampoule).
+    """
+    sticker = _load_sticker_png("sticker_lightbulb.png", 200, 200)
+    if sticker is not None:
+        img = _paste_sticker(img, sticker, cx, cy, angle=0.0)
     return img, ImageDraw.Draw(img)
 
 
@@ -160,9 +233,15 @@ def _draw_sticker_questions(img: Image.Image,
 def _draw_rho_arrow_sticker(img: Image.Image,
                              cx: int, cy: int) -> tuple:
     """
-    Flèche style calligraphique ρ (boucle + queue + tête de flèche) sur fond cream.
-    (cx, cy) = centre du sticker dans l'image.
+    Utilise assets/stickers/sticker_arrow.png si disponible,
+    sinon dessine la flèche ρ calligraphique en PIL.
     """
+    sticker = _load_sticker_png("sticker_arrow.png", 200, 220)
+    if sticker is not None:
+        img = _paste_sticker(img, sticker, cx, cy, angle=0.0)
+        return img, ImageDraw.Draw(img)
+
+    # ── Fallback PIL ──────────────────────────────────────────────────────────
     stk      = 180
     img_rgba = img.convert("RGBA")
     layer    = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -382,6 +461,9 @@ def generate_marine_info_slide(
     card_x1, card_x2 = 55, STORY_W - 55
     card_y1, card_y2 = 520, 1590
     img, draw = _draw_card(img, card_x1, card_y1, card_x2, card_y2, radius=46)
+
+    # Sticker ampoule centré sur le bord haut de la carte
+    img, draw = _draw_sticker_lightbulb(img, STORY_W // 2, card_y1 - 10)
 
     # Texte info — noir, regular
     font = load_font(FONT_REGULAR, 76)
