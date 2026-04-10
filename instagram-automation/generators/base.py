@@ -195,10 +195,13 @@ def draw_card(draw: ImageDraw.ImageDraw,
 def draw_gradient_pill(img: Image.Image, draw: ImageDraw.ImageDraw,
                        x1: int, y1: int, x2: int, y2: int,
                        text: str, font: ImageFont.FreeTypeFont,
-                       italic: bool = False) -> None:
-    """Pilule avec dégradé horizontal bleu ciel → lavande."""
+                       italic: bool = False, pill_radius: int = -1) -> None:
+    """Pilule avec dégradé horizontal bleu ciel → lavande (#94b9ff → #e894ff).
+    pill_radius=-1 → rayon automatique h//2 (capsule complète).
+    """
     w = x2 - x1
     h = y2 - y1
+    r = h // 2 if pill_radius < 0 else pill_radius
 
     pill_arr = np.zeros((h, w, 3), dtype=np.uint8)
     for x in range(w):
@@ -211,8 +214,7 @@ def draw_gradient_pill(img: Image.Image, draw: ImageDraw.ImageDraw,
 
     mask = Image.new("L", (w, h), 0)
     mask_draw = ImageDraw.Draw(mask)
-    radius = h // 2
-    mask_draw.rounded_rectangle([0, 0, w - 1, h - 1], radius=radius, fill=255)
+    mask_draw.rounded_rectangle([0, 0, w - 1, h - 1], radius=r, fill=255)
 
     img.paste(pill_img, (x1, y1), mask)
 

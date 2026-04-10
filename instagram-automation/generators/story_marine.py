@@ -1,10 +1,14 @@
 """
-Générateur de stories — fond dégradé linéaire, header blanc, carte blanche.
-Dimensions : 1080 × 1920 px (9:16).
+Générateur de stories — 1080 × 1920 px (9:16).
 
-Slide 1 — Poll    : gradient rose + header blanc + carte blanche + "?" déco + question bleue
-Slide 2 — Info    : gradient rose + header blanc + carte blanche + texte bleu
-Slide 3 — Bandeau : gradient bleu-violet + pilules jaunes accolées + glow "VISIBLE ET CONFORME"
+Fond commun à toutes les slides : dégradé RADIAL rose (blanc → #cf9090).
+
+Slide 1 — Poll    : header blanc + carte blanche centrée (réduite) + cluster « ? »
+                    de style papier collé + question en #1e4e79
+Slide 2 — Info    : header blanc + carte blanche centrée (réduite) + texte #1e4e79
+Slide 3 — Bandeau : fond rose + pilules bleu-violet (#94b9ff → #e894ff) +
+                    flèche ↙ papier collé + glow fin « VISIBLE ET CONFORME »
+                    + signature #1e4e79 en bas
 """
 
 import os
@@ -13,19 +17,28 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from config import (
     STORY_W, STORY_H,
+    GRAD_CENTER, GRAD_EDGE,
     BRAND_BLUE,
-    PILL_LEFT, PILL_RIGHT,
-    FONT_BLACK, FONT_BOLD, FONT_LIGHT, FONT_LIGHT_I,
+    FONT_BLACK, FONT_BOLD, FONT_REGULAR, FONT_LIGHT, FONT_LIGHT_I,
     BRAND_VISIBLE, BRAND_CONFORME, BRAND_AUTHOR,
 )
 from generators.base import (
     load_font, draw_multiline_centered,
-    make_gradient, draw_header, draw_card,
-    draw_yellow_pill,
+    make_radial_gradient, draw_header, draw_card,
+    draw_gradient_pill,
 )
 
-# ─── Pilule moins arrondie (slide 3) ─────────────────────────────────────────
-_PILL_RADIUS = 22   # coins plus carrés que le rayon plein (h//2 ≈ 83)
+# Rayon des pilules slide 3 (moins arrondies qu'une capsule complète)
+_PILL_RADIUS = 22
+
+
+# ─── Fond rose radial (commun) ───────────────────────────────────────────────
+
+def _rose_base() -> tuple:
+    img  = make_radial_gradient(STORY_W, STORY_H,
+                                center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
+    draw = ImageDraw.Draw(img)
+    return img, draw
 
 
 # ─── Signature auteure ────────────────────────────────────────────────────────
@@ -42,37 +55,90 @@ def _author_footer(draw: ImageDraw.Draw,
     draw.text(((STORY_W - w) / 2, y), BRAND_AUTHOR, font=font, fill=color)
 
 
-# ─── Glow "VISIBLE ET CONFORME" (bas slide 3) ────────────────────────────────
+# ─── Cluster de « ? » style papier collé (slide 1) ──────────────────────────
+
+def _draw_question_cluster(draw: ImageDraw.Draw,
+                            card_x1: int, card_y1: int) -> None:
+    """
+    5 points d'interrogation de tailles variées, serrés ensemble,
+    avec ombre portée pour l'effet papier collé/froissé.
+    """
+    items = [
+        # (offset_x, offset_y, font_size, rose_color)
+        (60,  52, 140, (205, 172, 176)),
+        (198, 44, 102, (218, 190, 193)),
+        (328, 66, 132, (208, 176, 180)),
+        (496, 46, 100, (215, 185, 188)),
+        (654, 56, 118, (210, 180, 184)),
+    ]
+    shadow = (168, 134, 140)
+    for ox, oy, size, color in items:
+        font_d = load_font(FONT_BLACK, size)
+        x, y   = card_x1 + ox, card_y1 + oy
+        # Ombre portée (sticker effect)
+        draw.text((x + 4, y + 4), "?", font=font_d, fill=shadow)
+        # Corps rose
+        draw.text((x, y), "?", font=font_d, fill=color)
+
+
+# ─── Flèche ↙ papier collé (slide 3) ────────────────────────────────────────
+
+def _draw_collage_arrow(draw: ImageDraw.Draw,
+                         tip_x: int, tip_y: int,
+                         size: int = 72) -> None:
+    """
+    Flèche diagonale ↙ dessinée géométriquement, style sticker.
+    (tip_x, tip_y) = coin supérieur-droit de la flèche.
+    """
+    ex = tip_x - size     # extrémité basse-gauche du shaft
+    ey = tip_y + size
+    hw = size // 3        # largeur de la tête de flèche
+
+    # Ombre portée
+    for off in [(4, 4)]:
+        ox, oy = off
+        draw.line([(tip_x + ox, tip_y + oy), (ex + ox, ey + oy)],
+                  fill=(100, 75, 80), width=10)
+        draw.polygon([
+            (ex + ox,      ey + oy),
+            (ex + ox + hw, ey + oy),
+            (ex + ox,      ey + oy - hw),
+        ], fill=(100, 75, 80))
+
+    # Trait principal (blanc)
+    draw.line([(tip_x, tip_y), (ex, ey)], fill=(255, 255, 255), width=10)
+    draw.polygon([
+        (ex,      ey),
+        (ex + hw, ey),
+        (ex,      ey - hw),
+    ], fill=(255, 255, 255))
+
+
+# ─── Glow fin « VISIBLE ET CONFORME » (slide 3) ──────────────────────────────
 
 def _draw_brand_glow(img: Image.Image, y_start: int) -> tuple:
     """
-    Dessine 'VISIBLE ET / CONFORME' avec halo blanc flou en bas de slide.
-    Retourne (img_mis_à_jour, draw_mis_à_jour).
+    Effet lumineux « text-shadow blanc » : 3 passes de flou décroissant,
+    puis texte net en blanc. Police légère (pas FONT_BLACK) pour un rendu fin.
     """
-    font_sub  = load_font(FONT_LIGHT_I, 40)
-    font_main = load_font(FONT_BLACK,   110)
+    font_sub  = load_font(FONT_LIGHT_I, 32)
+    font_main = load_font(FONT_BOLD,    65)   # Bold (pas Black) = fin et lisible
 
-    temp = ImageDraw.Draw(img)
+    temp   = ImageDraw.Draw(img)
     sub_w  = temp.textlength(BRAND_VISIBLE,  font=font_sub)
     main_w = temp.textlength(BRAND_CONFORME, font=font_main)
-    y_main = y_start + 52
+    y_main = y_start + 44
 
-    # Couche RGBA pour le halo flou
     img_rgba = img.convert("RGBA")
-    glow     = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    g        = ImageDraw.Draw(glow)
-    g.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,  font=font_sub,  fill=(255, 255, 255, 200))
-    g.text(((STORY_W - main_w) / 2, y_main),  BRAND_CONFORME, font=font_main, fill=(255, 255, 255, 200))
-    glow_blurred = glow.filter(ImageFilter.GaussianBlur(radius=18))
-    img_rgba = Image.alpha_composite(img_rgba, glow_blurred)
 
-    # Deuxième passe (halo plus étroit)
-    glow2 = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    g2    = ImageDraw.Draw(glow2)
-    g2.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,  font=font_sub,  fill=(255, 255, 255, 160))
-    g2.text(((STORY_W - main_w) / 2, y_main),  BRAND_CONFORME, font=font_main, fill=(255, 255, 255, 160))
-    glow2 = glow2.filter(ImageFilter.GaussianBlur(radius=7))
-    img_rgba = Image.alpha_composite(img_rgba, glow2)
+    # Trois passes de glow de plus en plus serrées
+    for blur_r, alpha in [(28, 155), (14, 130), (6, 100)]:
+        layer  = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        d      = ImageDraw.Draw(layer)
+        d.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,  font=font_sub,  fill=(255, 255, 255, alpha))
+        d.text(((STORY_W - main_w) / 2, y_main),  BRAND_CONFORME, font=font_main, fill=(255, 255, 255, alpha))
+        layer  = layer.filter(ImageFilter.GaussianBlur(radius=blur_r))
+        img_rgba = Image.alpha_composite(img_rgba, layer)
 
     img  = img_rgba.convert("RGB")
     draw = ImageDraw.Draw(img)
@@ -94,36 +160,24 @@ def generate_marine_poll_slide(
     if poll_options is None:
         poll_options = ["Oui", "Non"]
 
-    # Fond dégradé linéaire rose
-    img  = make_gradient(STORY_W, STORY_H)
-    draw = ImageDraw.Draw(img)
+    img, draw = _rose_base()
 
     # En-tête "VISIBLE ET / CONFORME" en blanc
     y_after = draw_header(draw, STORY_W, y_start=110, color=(255, 255, 255))
 
-    # Carte blanche arrondie — légèrement plus compacte
+    # Carte blanche centrée — plus petite que la hauteur totale
     card_x1 = 55
     card_x2 = STORY_W - 55
-    card_y1 = y_after + 22
-    card_y2 = STORY_H - 268
+    card_y1 = 540          # espace rose visible entre header et carte
+    card_y2 = STORY_H - 390  # = 1530  espace rose visible sous la carte
     draw_card(draw, card_x1, card_y1, card_x2, card_y2, radius=50)
 
-    # ── Points d'interrogation décoratifs "papier collé" ─────────────────────
-    font_deco = load_font(FONT_BLACK, 155)
-    deco_positions = [
-        (card_x1 + 68,  card_y1 + 48),
-        (card_x1 + 360, card_y1 + 30),
-        (card_x2 - 240, card_y1 + 55),
-    ]
-    for dx, dy in deco_positions:
-        # Ombre portée (effet papier collé)
-        draw.text((dx + 4, dy + 4), "?", font=font_deco, fill=(178, 148, 152))
-        # Corps de la pastille
-        draw.text((dx, dy), "?", font=font_deco, fill=(215, 182, 186))
+    # Cluster « ? » papier collé dans la partie haute de la carte
+    _draw_question_cluster(draw, card_x1, card_y1)
 
-    # Question en BRAND_BLUE dans la moitié basse de la carte
+    # Question en BRAND_BLUE dans la partie basse de la carte
     font_q  = load_font(FONT_BOLD, 72)
-    text_y1 = card_y1 + 360
+    text_y1 = card_y1 + 270    # sous les « ? »
     text_y2 = card_y2 - 65
     draw_multiline_centered(
         draw, poll_question, font_q, BRAND_BLUE,
@@ -144,21 +198,17 @@ def generate_marine_info_slide(
         info_text: str,
         output_path: str = "output/stories/info.png",
 ) -> str:
-    # Fond dégradé linéaire rose
-    img  = make_gradient(STORY_W, STORY_H)
-    draw = ImageDraw.Draw(img)
+    img, draw = _rose_base()
 
-    # En-tête "VISIBLE ET / CONFORME" en blanc
     y_after = draw_header(draw, STORY_W, y_start=110, color=(255, 255, 255))
 
-    # Carte blanche arrondie
+    # Même carte centrée, sans cluster « ? »
     card_x1 = 55
     card_x2 = STORY_W - 55
-    card_y1 = y_after + 22
-    card_y2 = STORY_H - 268
+    card_y1 = 540
+    card_y2 = STORY_H - 390   # = 1530
     draw_card(draw, card_x1, card_y1, card_x2, card_y2, radius=50)
 
-    # Texte informatif en BRAND_BLUE, centré dans la carte
     font = load_font(FONT_BOLD, 76)
     draw_multiline_centered(
         draw, info_text, font, BRAND_BLUE,
@@ -173,28 +223,24 @@ def generate_marine_info_slide(
     return os.path.abspath(output_path)
 
 
-# ─── Slide 3 : Bandeau bleu-violet + pilules jaunes ──────────────────────────
+# ─── Slide 3 : Bandeau bleu-violet sur fond rose ─────────────────────────────
 
 def generate_marine_banner_slide(
         banner_text: str,
         output_path: str = "output/stories/banner.png",
 ) -> str:
     """
-    Slide bandeau :
-    - Fond dégradé bleu-violet (PILL_LEFT → PILL_RIGHT, vertical)
-    - Deux pilules jaunes accolées (radius=22, légère ombre entre elles)
-    - "VISIBLE ET CONFORME" en glow blanc en bas
+    Fond rose radial + pilules bleu-violet (#94b9ff → #e894ff) +
+    flèche ↙ papier collé + glow « VISIBLE ET CONFORME » + signature bleue.
     """
-    # Fond dégradé bleu → violet
-    img  = make_gradient(STORY_W, STORY_H, top=PILL_LEFT, bottom=PILL_RIGHT)
-    draw = ImageDraw.Draw(img)
+    img, draw = _rose_base()
 
-    # "Anne-Sophie Assalit" en haut
+    # "Anne-Sophie Assalit" en haut (#1e4e79)
     font_top = load_font(FONT_LIGHT_I, 38)
     w_top    = draw.textlength(BRAND_AUTHOR, font=font_top)
-    draw.text(((STORY_W - w_top) / 2, 80), BRAND_AUTHOR, font=font_top, fill=(255, 255, 255))
+    draw.text(((STORY_W - w_top) / 2, 80), BRAND_AUTHOR, font=font_top, fill=BRAND_BLUE)
 
-    # ── Pilules ──────────────────────────────────────────────────────────────
+    # ── Pilules bleu-violet ───────────────────────────────────────────────────
     pill_h  = 166
     pill_mx = 58
     pill_x1 = pill_mx
@@ -209,27 +255,39 @@ def generate_marine_banner_slide(
         line2 = None
 
     n_pills = 2 if line2 else 1
-    total_h = pill_h * n_pills          # Pas d'espace entre les pilules
-    y_start = (STORY_H - total_h) // 2
+    total_h = pill_h * n_pills
+    y_start = (STORY_H - total_h) // 2   # pilules centrées verticalement
 
-    # Pilule 1
+    # Flèche ↙ papier collé au-dessus à gauche des pilules
+    _draw_collage_arrow(draw,
+                        tip_x=pill_x1 + 130,
+                        tip_y=y_start  - 118,
+                        size=72)
+
+    # Pilule 1 (bleu-violet, coins peu arrondis)
     font1 = load_font(FONT_BLACK, 82)
-    draw_yellow_pill(img, pill_x1, y_start, pill_x2, y_start + pill_h,
-                     line1, font1, pill_radius=_PILL_RADIUS)
+    draw_gradient_pill(img, draw,
+                       pill_x1, y_start, pill_x2, y_start + pill_h,
+                       line1, font1, pill_radius=_PILL_RADIUS)
 
     if line2:
         y2 = y_start + pill_h
-        # Ombre fine entre les deux pilules (avant de dessiner la pilule 2)
+        # Ombre fine à la jonction des deux pilules
         draw = ImageDraw.Draw(img)
-        draw.rectangle([pill_x1 + 8, y2 - 5, pill_x2 - 8, y2 + 5],
-                        fill=(188, 162, 78))
+        draw.rectangle([pill_x1 + 10, y2 - 5, pill_x2 - 10, y2 + 5],
+                        fill=(120, 100, 160))   # mauve foncé entre les pilules
+        # Pilule 2 accolée
         font2 = load_font(FONT_LIGHT_I, 74)
-        draw_yellow_pill(img, pill_x1, y2, pill_x2, y2 + pill_h,
-                         line2, font2, pill_radius=_PILL_RADIUS)
+        draw_gradient_pill(img, draw,
+                           pill_x1, y2, pill_x2, y2 + pill_h,
+                           line2, font2, pill_radius=_PILL_RADIUS)
 
-    # ── "VISIBLE ET CONFORME" en glow blanc en bas ───────────────────────────
-    y_glow = STORY_H - 420
+    # ── "VISIBLE ET CONFORME" glow fin et lumineux ───────────────────────────
+    y_glow = STORY_H - 430   # = 1490
     img, draw = _draw_brand_glow(img, y_glow)
+
+    # "Anne-Sophie Assalit" en bas (#1e4e79)
+    _author_footer(draw, y=STORY_H - 145, color=BRAND_BLUE)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
