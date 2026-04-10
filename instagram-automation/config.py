@@ -76,3 +76,6 @@ STORY_DAYS    = [0, 1, 2, 3, 4, 5, 6]  # Lun–Dim (7j/7)
 CAROUSEL_SEO_DAY  = 0                  # Lundi
 CAROUSEL_RGPD_DAY = 3                  # Jeudi
 FLASH_DAYS    = [5]                     # Samedi
+
+# ─── Tagline auteure ──────────────────────────────────────────────────────────
+BRAND_TAGLINE = "L'alliance du SEO local et de la rigueur juridique pour une visibilité conforme et maîtrisée."

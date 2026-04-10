@@ -4,12 +4,11 @@ Format 1080×1080.
 
 Structure d'un carousel :
   Slide 0 — Photo    : photo auteure (ou placeholder) + texte d'accroche
-  Slides 1…N — Content : contenu numéroté
-  Dernière slide — CTA : question + branding
+  Slides 1…N — Content : contenu textuel, texte depuis le haut
+  Dernière slide — CTA : petit header blanc + question + signature
 """
 
 import os
-import numpy as np
 from pathlib import Path
 from PIL import Image, ImageDraw
 
@@ -17,9 +16,9 @@ from config import (
     FEED_W, FEED_H,
     GRAD_CENTER, GRAD_EDGE,
     BRAND_BLUE,
-    YELLOW_LEFT, YELLOW_RIGHT, YELLOW_TEXT,
+    YELLOW_RIGHT,
     FONT_BLACK, FONT_BOLD, FONT_LIGHT, FONT_LIGHT_I,
-    BRAND_AUTHOR,
+    BRAND_AUTHOR, BRAND_VISIBLE, BRAND_CONFORME,
 )
 from generators.base import load_font, draw_multiline_centered, make_radial_gradient
 
@@ -34,35 +33,23 @@ def _rose_sq_base() -> tuple:
     return img, draw
 
 
-# ─── Flèche jaune dégradée bas-droite ───────────────────────────────────────
+# ─── Flèche jaune bas-droite ─────────────────────────────────────────────────
 
 def _yellow_arrow(img: Image.Image, draw: ImageDraw.Draw,
                   x: int, y: int, size: int = 58) -> None:
-    """Dessine → en jaune (couleur unie YELLOW_RIGHT)."""
     tip_x  = x + size
     shaft  = int(size * 0.62)
     half_h = int(size * 0.14)
     head_h = int(size * 0.36)
-    arrow_color = YELLOW_RIGHT
-    draw.rectangle([x, y - half_h, x + shaft, y + half_h], fill=arrow_color)
+    draw.rectangle([x, y - half_h, x + shaft, y + half_h], fill=YELLOW_RIGHT)
     draw.polygon([
         (x + shaft, y - head_h),
         (tip_x,     y),
         (x + shaft, y + head_h),
-    ], fill=arrow_color)
+    ], fill=YELLOW_RIGHT)
 
 
-# ─── Numéro slide (bleu semi-transparent) ───────────────────────────────────
-
-def _slide_number(draw: ImageDraw.Draw, number: int) -> None:
-    font_n = load_font(FONT_BLACK, 110)
-    n_str  = str(number)
-    n_w    = draw.textlength(n_str, font=font_n)
-    draw.text((FEED_W - n_w - 40, 20), n_str,
-              font=font_n, fill=(*BRAND_BLUE, 130))
-
-
-# ─── Signature auteure ───────────────────────────────────────────────────────
+# ─── Signature auteure centrée ───────────────────────────────────────────────
 
 def _author_foot(draw: ImageDraw.Draw) -> None:
     font = load_font(FONT_LIGHT, 32)
@@ -84,7 +71,6 @@ def generate_marine_photo_slide(
             photo = Image.open(AUTHOR_PHOTO).convert("RGB")
             photo = photo.resize((FEED_W, FEED_H), Image.LANCZOS)
             img.paste(photo, (0, 0))
-            # Dégradé blanc en bas pour lisibilité
             overlay = Image.new("RGBA", (FEED_W, FEED_H), (0, 0, 0, 0))
             ov_draw = ImageDraw.Draw(overlay)
             for y_px in range(FEED_H // 2, FEED_H):
@@ -98,7 +84,6 @@ def generate_marine_photo_slide(
         except Exception:
             pass
     else:
-        # Placeholder
         font_ph = load_font(FONT_LIGHT, 34)
         ph_txt  = "VOTRE PHOTO ICI"
         ph_w    = draw.textlength(ph_txt, font=font_ph)
@@ -107,7 +92,6 @@ def generate_marine_photo_slide(
         draw.rounded_rectangle([40, 40, FEED_W - 40, FEED_H // 2 - 40],
                                 radius=20, outline=BRAND_BLUE, width=2)
 
-    # Accroche en bas
     font_h = load_font(FONT_BOLD, 66)
     draw_multiline_centered(
         draw, hook_text, font_h, BRAND_BLUE,
@@ -120,7 +104,7 @@ def generate_marine_photo_slide(
     return os.path.abspath(output_path)
 
 
-# ─── Slide contenu numéroté ──────────────────────────────────────────────────
+# ─── Slide contenu ───────────────────────────────────────────────────────────
 
 def generate_marine_content_slide(
         number: int,
@@ -129,13 +113,12 @@ def generate_marine_content_slide(
 ) -> str:
     img, draw = _rose_sq_base()
 
-    _slide_number(draw, number)
-
     font_t = load_font(FONT_BOLD, 64)
     draw_multiline_centered(
         draw, text, font_t, BRAND_BLUE,
-        65, 150, FEED_W - 65, FEED_H - 130,
+        65, 80, FEED_W - 65, FEED_H - 130,
         line_spacing=1.42,
+        top_aligned=True,
     )
 
     _yellow_arrow(img, draw, FEED_W - 148, FEED_H - 72)
@@ -154,13 +137,25 @@ def generate_marine_cta_slide(
 ) -> str:
     img, draw = _rose_sq_base()
 
-    # Barre jaune en haut
-    draw.rectangle([0, 0, FEED_W, 10], fill=YELLOW_RIGHT)
+    # Petit en-tête "VISIBLE ET / CONFORME" en blanc
+    font_sub  = load_font(FONT_LIGHT_I, 36)
+    font_main = load_font(FONT_BLACK,   80)
 
+    sub_w = draw.textlength(BRAND_VISIBLE, font=font_sub)
+    draw.text(((FEED_W - sub_w) / 2, 55), BRAND_VISIBLE,
+              font=font_sub, fill=(255, 255, 255))
+
+    main_w = draw.textlength(BRAND_CONFORME, font=font_main)
+    draw.text(((FEED_W - main_w) / 2, 97), BRAND_CONFORME,
+              font=font_main, fill=(255, 255, 255))
+
+    y_after = 190
+
+    # Texte CTA en bleu
     font = load_font(FONT_BOLD, 64)
     draw_multiline_centered(
         draw, cta_text, font, BRAND_BLUE,
-        65, 70, FEED_W - 65, FEED_H - 130,
+        65, y_after, FEED_W - 65, FEED_H - 70,
         line_spacing=1.42,
     )
 
@@ -176,7 +171,7 @@ def generate_marine_cta_slide(
 def generate_marine_carousel_set(
         carousel: dict,
         output_dir: str = "output/carousels",
-) -> list[str]:
+) -> list:
     """
     Génère toutes les slides d'un carousel.
 
