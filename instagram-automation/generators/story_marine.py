@@ -375,11 +375,11 @@ def _author_footer(draw: ImageDraw.ImageDraw,
 
 def _draw_brand_glow_large(img: Image.Image, y_start: int) -> tuple:
     """
-    Version grande : CONFORME en FONT_BLACK 150 pour l'effet très grand en bas
-    du bandeau slide 3. Avec halo lumineux multi-passes.
+    Version grande élégante : CONFORME en FONT_BOLD 128 (plus fin, plus petit)
+    avec halo lumineux intense multi-passes pour un effet brillant/élégant.
     """
     font_sub  = load_font(FONT_LIGHT_I, 46)
-    font_main = load_font(FONT_BLACK,   150)
+    font_main = load_font(FONT_BOLD,   128)
 
     temp   = ImageDraw.Draw(img)
     sub_w  = temp.textlength(BRAND_VISIBLE,  font=font_sub)
@@ -388,7 +388,8 @@ def _draw_brand_glow_large(img: Image.Image, y_start: int) -> tuple:
 
     img_rgba = img.convert("RGBA")
 
-    for blur_r, alpha in [(40, 185), (20, 155), (8, 120)]:
+    # Glow intense : 4 passes avec alphas élevés pour effet éclatant
+    for blur_r, alpha in [(55, 210), (30, 190), (14, 165), (5, 140)]:
         layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
         d     = ImageDraw.Draw(layer)
         d.text(((STORY_W - sub_w)  / 2, y_start), BRAND_VISIBLE,
@@ -433,7 +434,7 @@ def generate_marine_poll_slide(
 
     # Question — noir, regular, grande taille
     font_q  = load_font(FONT_REGULAR, 74)
-    text_y1 = card_y1 + 150   # sous les stickers
+    text_y1 = card_y1 + 80   # sous les stickers
     text_y2 = card_y2 - 60
     draw_multiline_centered(
         draw, poll_question, font_q, _CARD_TEXT,
@@ -492,12 +493,6 @@ def generate_marine_banner_slide(
     """
     img, draw = _rose_base()
 
-    # "Anne-Sophie Assalit" en haut — Arimo
-    font_top = load_font(FONT_ARIMO, 42)
-    w_top    = draw.textlength(BRAND_AUTHOR, font=font_top)
-    draw.text(((STORY_W - w_top) / 2, 80), BRAND_AUTHOR,
-              font=font_top, fill=BRAND_BLUE)
-
     # ── Pilules bleu-violet ───────────────────────────────────────────────────
     pill_h  = 166
     pill_mx = 58
@@ -523,22 +518,22 @@ def generate_marine_banner_slide(
         cy=y_start - 130,
     )
 
-    # Pilule 1
+    # Pilules : pilule 2 dessinée en premier (derrière), pilule 1 par-dessus
     font1 = load_font(FONT_BLACK, 82)
-    draw_gradient_pill(img, draw,
-                       pill_x1, y_start, pill_x2, y_start + pill_h,
-                       line1, font1, pill_radius=_PILL_RADIUS)
 
     if line2:
-        y2 = y_start + pill_h
-        draw = ImageDraw.Draw(img)
-        draw.rectangle([pill_x1 + 10, y2 - 4, pill_x2 - 10, y2 + 4],
-                        fill=(110, 90, 155))
+        # Pilule 2 en premier (légèrement derrière pilule 1)
+        y2    = y_start + pill_h - 12   # chevauchement à peine visible
         font2 = load_font(FONT_LIGHT_I, 62)
         img, draw = _draw_tilted_gradient_pill(
             img, pill_x1, y2, pill_x2, y2 + pill_h,
-            line2, font2, pill_radius=_PILL_RADIUS, angle=-3.0,
+            line2, font2, pill_radius=_PILL_RADIUS, angle=+3.0,
         )
+
+    # Pilule 1 par-dessus (devant)
+    draw_gradient_pill(img, draw,
+                       pill_x1, y_start, pill_x2, y_start + pill_h,
+                       line1, font1, pill_radius=_PILL_RADIUS)
 
     # ── « VISIBLE ET / CONFORME » grand avec glow ────────────────────────────
     y_glow = STORY_H - 500    # ≈ 1420
