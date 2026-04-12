@@ -60,9 +60,9 @@ def cmd_test(content_type: str) -> None:
         posts = json.loads((content_dir / "flash_posts.json").read_text())
         post  = posts[0]
         path  = generate_phrase_design_post(
-            main_text=post["main_text"],
-            pill_text=post["pill_text"],
             label=post.get("label", "Visible et Conforme"),
+            pill_text=post["pill_text"],
+            variant="yellow",
         )
         log.info(f"✓ Flash post généré : {path}")
 

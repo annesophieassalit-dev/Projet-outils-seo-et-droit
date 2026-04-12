@@ -188,10 +188,11 @@ def job_flash() -> None:
         flash_posts = _load_json("flash_posts.json")
         post, next_idx = _next_item(flash_posts, state["flash_index"])
 
+        variant = "yellow" if state["flash_index"] % 2 == 0 else "blue"
         path = generate_phrase_design_post(
-            main_text=post["main_text"],
-            pill_text=post["pill_text"],
             label=post.get("label", "Visible et Conforme"),
+            pill_text=post["pill_text"],
+            variant=variant,
             output_path=f"output/flash_posts/flash_{post['id']}.png",
         )
         log.info(f"  ✓ Image générée : {path}")
