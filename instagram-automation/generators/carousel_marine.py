@@ -170,11 +170,13 @@ def generate_marine_hook_slide(
         output_path: str = "output/carousels/c_hook.png",
 ) -> str:
     """
-    Slide d'accroche : 1re ligne = titre bold (grand), reste = sous-titre regular.
-    Tout est centré verticalement sur fond rose. Pas de photo, pas de cadre.
-    Si le texte n'a pas de saut de ligne, tout est rendu en titre bold.
+    Slide d'accroche : header "VISIBLE ET / CONFORME" avec glow en haut,
+    puis titre bold (1re ligne) + sous-titre regular centré dans l'espace restant.
     """
     img, draw = _rose_sq_base()
+
+    # Header glow identique à la slide CTA et aux flash posts
+    img, draw, y_top = _draw_cta_header_glow(img, draw, y_sub=48)
 
     max_w = FEED_W - 2 * _MARGIN_X
 
@@ -186,16 +188,16 @@ def generate_marine_hook_slide(
         title    = hook_text.strip()
         subtitle = ""
 
-    font_title = load_font(FONT_BOLD,    82)
-    font_sub   = load_font(FONT_REGULAR, 52)
+    font_title = load_font(FONT_BOLD,    72)
+    font_sub   = load_font(FONT_REGULAR, 46)
 
     title_h = _block_height(draw, title, font_title, max_w, 1.25)
     sub_h   = _block_height(draw, subtitle, font_sub, max_w, 1.4) if subtitle else 0
-    gap     = 30 if subtitle else 0
+    gap     = 26 if subtitle else 0
     total_h = title_h + gap + sub_h
 
-    usable_h = _USABLE_Y2 - _TOP_Y
-    y = _TOP_Y + (usable_h - total_h) / 2
+    usable_h = _USABLE_Y2 - y_top
+    y = y_top + (usable_h - total_h) / 2
 
     _draw_lines_centered(draw, title, font_title, BRAND_BLUE,
                          _MARGIN_X, y, max_w, 1.25)
