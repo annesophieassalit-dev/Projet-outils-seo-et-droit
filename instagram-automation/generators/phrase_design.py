@@ -1,15 +1,16 @@
 """
 Générateur de posts "phrase design".
-Format 1080×1080, fond rose dégradé radial.
 
-Deux variantes alternées :
-  - "yellow" : pilules jaune (#ffffda → #fffa78), texte bleu foncé
-  - "blue"   : pilules bleu-violet (#94b9ff → #e894ff), texte blanc
+Deux designs distincts alternés :
 
-Layout :
-  Fond rose radial → badge label centré ("SEO conforme") → Pilule 1 (bold,
-  légèrement inclinée, au premier plan) → Pilule 2 (italic élégant, inclinée
-  dans l'autre sens, légèrement DERRIÈRE Pilule 1) → badge auteure blanc en bas.
+  Design A ("yellow") — 1080 × 1080
+    Fond rose radial · badge label · pilules JAUNES INCLINÉES (+3° / -5°)
+    · badge auteure blanc centré en bas.
+
+  Design B ("blue")  — 1080 × 1350 portrait
+    Fond rose radial · badge label · pilules BLEU-VIOLET DROITES très larges
+    (pilule 2 déborde légèrement à gauche) · auteure italic + tagline sur fond
+    blanc arrondi en bas.
 """
 
 import os
@@ -27,61 +28,51 @@ from config import (
 )
 from generators.base import load_font, draw_multiline_centered, make_radial_gradient
 
-# ─── Constantes de mise en page ──────────────────────────────────────────────
-_PILL_H  = 192     # hauteur des pilules
-_PILL_MX = 52      # marge gauche/droite
-_PILL_R  = 22      # rayon des coins
-_OVERLAP = 18      # Pilule 2 commence OVERLAP px avant la fin de Pilule 1
 
-_BADGE_H = 56      # hauteur du badge label
-_BADGE_Y = 292     # position Y du badge label
+# ══════════════════════════════════════════════════════════════════════════════
+#  DESIGN A — 1080 × 1080  ·  pilules jaunes inclinées
+# ══════════════════════════════════════════════════════════════════════════════
 
-_P1_Y    = _BADGE_Y + _BADGE_H + 22              # y top Pilule 1
-_P2_Y    = _P1_Y + _PILL_H - _OVERLAP            # y top Pilule 2 (derrière P1)
+_A_W, _A_H   = FEED_W, FEED_H   # 1080 × 1080
 
-_FOOT_Y  = _P2_Y + _PILL_H + 44                  # y top badge auteure
-_FOOT_H  = 136                                    # hauteur badge auteure
+_A_PILL_H    = 180
+_A_PILL_MX   = 52     # marge gauche/droite des pilules
+_A_PILL_R    = 22     # rayon des coins
+_A_OVERLAP   = 22     # chevauchement pilule 2 sous pilule 1
 
+_A_BADGE_H   = 56
+_A_BADGE_Y   = 340
+_A_P1_Y      = _A_BADGE_Y + _A_BADGE_H + 24       # 420
+_A_P2_Y      = _A_P1_Y + _A_PILL_H - _A_OVERLAP   # 578
+_A_FOOT_Y    = _A_P2_Y + _A_PILL_H + 60            # 818
+_A_FOOT_H    = 128
 
-# ─── Pilule dégradée inclinée ─────────────────────────────────────────────────
 
 def _draw_tilted_pill(img: Image.Image,
                       x1: int, y1: int, x2: int, y2: int,
-                      text: str,
-                      font,
-                      color_left: tuple,
-                      color_right: tuple,
-                      text_color: tuple,
-                      angle: float = 0.0) -> tuple:
+                      text: str, font,
+                      color_left: tuple, color_right: tuple, text_color: tuple,
+                      angle: float = 0.0,
+                      pill_r: int = _A_PILL_R) -> tuple:
     """
-    Dessine une pilule dégradée inclinée sur img.
+    Pilule dégradée inclinée (Design A).
     Retourne (img_résultat, draw).
     """
-    w = x2 - x1
-    h = y2 - y1
+    w, h = x2 - x1, y2 - y1
 
-    # Dégradé horizontal
     arr = np.zeros((h, w, 3), dtype=np.uint8)
     for px in range(w):
         t = px / max(w - 1, 1)
-        arr[:, px] = [
-            int(color_left[i] * (1 - t) + color_right[i] * t)
-            for i in range(3)
-        ]
+        arr[:, px] = [int(color_left[i] * (1 - t) + color_right[i] * t) for i in range(3)]
     pill_img = Image.fromarray(arr, "RGB")
 
-    # Masque arrondi
     mask = Image.new("L", (w, h), 0)
-    ImageDraw.Draw(mask).rounded_rectangle(
-        [0, 0, w - 1, h - 1], radius=_PILL_R, fill=255
-    )
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], radius=pill_r, fill=255)
 
-    # Pilule RGBA
     pill_rgba = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     pill_rgba.paste(pill_img, (0, 0))
     pill_rgba.putalpha(mask)
 
-    # Layer pleine image + texte
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     layer.paste(pill_rgba, (x1, y1), pill_rgba)
 
@@ -91,45 +82,29 @@ def _draw_tilted_pill(img: Image.Image,
     ty = y1 + (h - font.size) / 2 - 4
     ld.text((tx, ty), text, font=font, fill=(*text_color, 255))
 
-    # Rotation autour du centre de la pilule
-    pcx = (x1 + x2) // 2
-    pcy = (y1 + y2) // 2
-    layer_rot = layer.rotate(angle, center=(pcx, pcy),
-                              expand=False, resample=Image.BICUBIC)
+    pcx, pcy = (x1 + x2) // 2, (y1 + y2) // 2
+    layer_rot = layer.rotate(angle, center=(pcx, pcy), expand=False, resample=Image.BICUBIC)
 
     result_rgba = Image.alpha_composite(img.convert("RGBA"), layer_rot)
-    result      = result_rgba.convert("RGB")
+    result = result_rgba.convert("RGB")
     return result, ImageDraw.Draw(result)
 
 
-# ─── Générateur principal ─────────────────────────────────────────────────────
-
-def generate_phrase_design_post(
+def generate_phrase_design_yellow(
         label: str,
         pill_text: str,
-        variant: str = "yellow",
-        output_path: str = "output/flash_posts/phrase.png",
+        output_path: str = "output/flash_posts/phrase_a.png",
 ) -> str:
     """
-    Génère un post phrase design.
-
-    Args:
-        label      : Badge au-dessus des pilules (ex : "SEO conforme").
-        pill_text  : Texte des pilules (ex : "Site visible ≠ Site sécurisé").
-        variant    : "yellow" | "blue"
-        output_path: Chemin de sauvegarde.
+    Design A — 1080 × 1080, pilules jaunes inclinées.
+    Badge auteure blanc centré en bas.
     """
-    img  = make_radial_gradient(FEED_W, FEED_H,
-                                center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
+    img  = make_radial_gradient(_A_W, _A_H, center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
     draw = ImageDraw.Draw(img)
 
-    # ── Couleurs selon la variante ─────────────────────────────────────────────
-    if variant == "blue":
-        cl, cr, tc = PILL_LEFT, PILL_RIGHT, tuple(PILL_TEXT)
-    else:
-        cl, cr, tc = YELLOW_LEFT, YELLOW_RIGHT, tuple(YELLOW_TEXT)
+    cl, cr, tc = YELLOW_LEFT, YELLOW_RIGHT, tuple(YELLOW_TEXT)
 
-    # ── Découpage du texte pilules ─────────────────────────────────────────────
+    # Split sur "≠"
     if "≠" in pill_text:
         parts = pill_text.split("≠", 1)
         line1 = parts[0].strip()
@@ -138,62 +113,233 @@ def generate_phrase_design_post(
         line1 = pill_text
         line2 = None
 
-    # ── Badge label centré ─────────────────────────────────────────────────────
+    # ── Badge label centré ───────────────────────────────────────────────────
     font_lbl = load_font(FONT_BOLD, 34)
     lbl_w    = int(draw.textlength(label, font=font_lbl)) + 54
-    lbl_x    = (FEED_W - lbl_w) // 2
+    lbl_x    = (_A_W - lbl_w) // 2
     draw.rounded_rectangle(
-        [lbl_x, _BADGE_Y, lbl_x + lbl_w, _BADGE_Y + _BADGE_H],
-        radius=_BADGE_H // 2, fill=(255, 255, 255),
+        [lbl_x, _A_BADGE_Y, lbl_x + lbl_w, _A_BADGE_Y + _A_BADGE_H],
+        radius=_A_BADGE_H // 2, fill=(255, 255, 255),
     )
     tw = draw.textlength(label, font=font_lbl)
     draw.text(
-        (lbl_x + (lbl_w - tw) / 2, _BADGE_Y + (_BADGE_H - 34) // 2),
+        (lbl_x + (lbl_w - tw) / 2, _A_BADGE_Y + (_A_BADGE_H - 34) // 2),
         label, font=font_lbl, fill=BRAND_BLUE,
     )
 
-    # ── Pilules (Pilule 2 dessinée EN PREMIER = derrière Pilule 1) ────────────
-    px1    = _PILL_MX
-    px2    = FEED_W - _PILL_MX
-    font1  = load_font(FONT_BLACK,   108)   # gros, bold
-    font2  = load_font(FONT_SERIF_I,  84)   # élégant, italic
+    # ── Pilules (pilule 2 derrière, pilule 1 devant) ─────────────────────────
+    px1, px2 = _A_PILL_MX, _A_W - _A_PILL_MX
+    font1 = load_font(FONT_BLACK,  110)   # gros bold
+    font2 = load_font(FONT_SERIF_I, 86)   # italic élégant
 
-    if line2:
-        # Pilule 2 derrière
+    if line2:                             # pilule 2 EN PREMIER (derrière)
         img, draw = _draw_tilted_pill(
-            img, px1, _P2_Y, px2, _P2_Y + _PILL_H,
+            img, px1, _A_P2_Y, px2, _A_P2_Y + _A_PILL_H,
             line2, font2, cl, cr, tc, angle=-5.0,
         )
-
-    # Pilule 1 au premier plan
-    img, draw = _draw_tilted_pill(
-        img, px1, _P1_Y, px2, _P1_Y + _PILL_H,
+    img, draw = _draw_tilted_pill(        # pilule 1 EN SECOND (devant)
+        img, px1, _A_P1_Y, px2, _A_P1_Y + _A_PILL_H,
         line1, font1, cl, cr, tc, angle=+3.0,
     )
 
-    # ── Badge auteure blanc en bas ─────────────────────────────────────────────
-    bx1, bx2 = 58, FEED_W - 58
+    # ── Badge auteure blanc centré en bas ────────────────────────────────────
+    bx1, bx2 = 58, _A_W - 58
     draw.rounded_rectangle(
-        [bx1, _FOOT_Y, bx2, _FOOT_Y + _FOOT_H],
+        [bx1, _A_FOOT_Y, bx2, _A_FOOT_Y + _A_FOOT_H],
         radius=22, fill=(255, 255, 255),
     )
-
-    # Prénom italic
     font_auth = load_font(FONT_LIGHT_I, 36)
     aw = draw.textlength(BRAND_AUTHOR, font=font_auth)
     draw.text(
-        ((FEED_W - aw) / 2, _FOOT_Y + 20),
+        ((_A_W - aw) / 2, _A_FOOT_Y + 18),
         BRAND_AUTHOR, font=font_auth, fill=BRAND_BLUE,
     )
-
-    # Tagline bold
     font_tag = load_font(FONT_BOLD, 26)
     draw_multiline_centered(
         draw, BRAND_TAGLINE, font_tag, BRAND_BLUE,
-        bx1 + 26, _FOOT_Y + 68, bx2 - 26, _FOOT_Y + _FOOT_H - 10,
+        bx1 + 26, _A_FOOT_Y + 62, bx2 - 26, _A_FOOT_Y + _A_FOOT_H - 8,
         line_spacing=1.26,
     )
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
     return os.path.abspath(output_path)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  DESIGN B — 1080 × 1350 portrait  ·  pilules bleu-violet droites
+# ══════════════════════════════════════════════════════════════════════════════
+
+_B_W, _B_H   = 1080, 1350
+
+_B_PILL_H    = 235
+_B_PILL_MX   = 45     # marge pour la pilule 1
+_B_P2_LEFT   = -22    # pilule 2 déborde de 22 px à gauche du canvas
+_B_PILL_R    = 18
+_B_OVERLAP   = 23
+
+_B_BADGE_H   = 58
+_B_BADGE_Y   = 415
+_B_P1_Y      = _B_BADGE_Y + _B_BADGE_H + 22       # 495
+_B_P2_Y      = _B_P1_Y + _B_PILL_H - _B_OVERLAP   # 707
+_B_AUTH_Y    = 1068
+_B_TAG_Y     = 1120
+_B_TAG_H     = 158
+
+
+def _draw_straight_pill(img: Image.Image,
+                        x1: int, y1: int, x2: int, y2: int,
+                        text: str, font,
+                        color_left: tuple, color_right: tuple, text_color: tuple,
+                        pill_r: int = _B_PILL_R) -> tuple:
+    """
+    Pilule dégradée droite (Design B).
+    x1 peut être négatif : la pilule déborde alors à gauche du canvas.
+    Retourne (img_résultat, draw).
+    """
+    w, h = x2 - x1, y2 - y1
+
+    arr = np.zeros((h, w, 3), dtype=np.uint8)
+    for px in range(w):
+        t = px / max(w - 1, 1)
+        arr[:, px] = [int(color_left[i] * (1 - t) + color_right[i] * t) for i in range(3)]
+    pill_img = Image.fromarray(arr, "RGB")
+
+    mask = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], radius=pill_r, fill=255)
+
+    pill_rgba = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    pill_rgba.paste(pill_img, (0, 0))
+    pill_rgba.putalpha(mask)
+
+    # Couche pleine image
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    if x1 < 0:
+        # La pilule dépasse à gauche : on coupe et on colle à x=0
+        crop_x = -x1
+        cropped = pill_rgba.crop((crop_x, 0, w, h))
+        layer.paste(cropped, (0, y1), cropped)
+    else:
+        layer.paste(pill_rgba, (x1, y1), pill_rgba)
+
+    # Texte centré dans les bornes théoriques (même si x1 < 0)
+    ld = ImageDraw.Draw(layer)
+    tw = ld.textlength(text, font=font)
+    tx = max(8, x1 + (w - tw) / 2)
+    ty = y1 + (h - font.size) / 2 - 4
+    ld.text((tx, ty), text, font=font, fill=(*text_color, 255))
+
+    result_rgba = Image.alpha_composite(img.convert("RGBA"), layer)
+    result = result_rgba.convert("RGB")
+    return result, ImageDraw.Draw(result)
+
+
+def generate_phrase_design_blue(
+        label: str,
+        pill_text: str,
+        output_path: str = "output/flash_posts/phrase_b.png",
+) -> str:
+    """
+    Design B — 1080 × 1350 portrait.
+    Pilules bleu-violet DROITES très larges (pilule 2 déborde à gauche).
+    Auteure italic + tagline sur fond blanc arrondi en bas.
+    """
+    img  = make_radial_gradient(_B_W, _B_H, center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
+    draw = ImageDraw.Draw(img)
+
+    cl, cr, tc = PILL_LEFT, PILL_RIGHT, tuple(PILL_TEXT)
+
+    # Split sur "≠"
+    if "≠" in pill_text:
+        parts = pill_text.split("≠", 1)
+        line1 = parts[0].strip()
+        line2 = "≠ " + parts[1].strip()
+    else:
+        line1 = pill_text
+        line2 = None
+
+    # ── Badge label centré ───────────────────────────────────────────────────
+    font_lbl = load_font(FONT_BOLD, 34)
+    lbl_w    = int(draw.textlength(label, font=font_lbl)) + 54
+    lbl_x    = (_B_W - lbl_w) // 2
+    draw.rounded_rectangle(
+        [lbl_x, _B_BADGE_Y, lbl_x + lbl_w, _B_BADGE_Y + _B_BADGE_H],
+        radius=_B_BADGE_H // 2, fill=(255, 255, 255),
+    )
+    tw = draw.textlength(label, font=font_lbl)
+    draw.text(
+        (lbl_x + (lbl_w - tw) / 2, _B_BADGE_Y + (_B_BADGE_H - 34) // 2),
+        label, font=font_lbl, fill=BRAND_BLUE,
+    )
+
+    # ── Pilules droites (pilule 2 derrière, pilule 1 devant) ─────────────────
+    p1x1 = _B_PILL_MX
+    p1x2 = _B_W - _B_PILL_MX
+    p2x1 = _B_P2_LEFT                  # déborde à gauche
+    p2x2 = _B_W - _B_PILL_MX + 10     # légèrement plus large à droite
+
+    font1 = load_font(FONT_BLACK,   120)   # grand bold
+    font2 = load_font(FONT_SERIF_I,  96)   # grand italic élégant
+
+    if line2:                              # pilule 2 EN PREMIER (derrière)
+        img, draw = _draw_straight_pill(
+            img, p2x1, _B_P2_Y, p2x2, _B_P2_Y + _B_PILL_H,
+            line2, font2, cl, cr, tc,
+        )
+    img, draw = _draw_straight_pill(       # pilule 1 EN SECOND (devant)
+        img, p1x1, _B_P1_Y, p1x2, _B_P1_Y + _B_PILL_H,
+        line1, font1, cl, cr, tc,
+    )
+
+    # ── Auteure italic (sans fond) ───────────────────────────────────────────
+    font_auth = load_font(FONT_LIGHT_I, 40)
+    aw = draw.textlength(BRAND_AUTHOR, font=font_auth)
+    draw.text(
+        ((_B_W - aw) / 2, _B_AUTH_Y),
+        BRAND_AUTHOR, font=font_auth, fill=BRAND_BLUE,
+    )
+
+    # ── Tagline sur fond blanc arrondi ───────────────────────────────────────
+    tx1, tx2 = 58, _B_W - 58
+    draw.rounded_rectangle(
+        [tx1, _B_TAG_Y, tx2, _B_TAG_Y + _B_TAG_H],
+        radius=22, fill=(252, 248, 244),
+    )
+    font_tag = load_font(FONT_BOLD, 26)
+    draw_multiline_centered(
+        draw, BRAND_TAGLINE, font_tag, BRAND_BLUE,
+        tx1 + 22, _B_TAG_Y + 12, tx2 - 22, _B_TAG_Y + _B_TAG_H - 12,
+        line_spacing=1.35,
+    )
+
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+    img.save(output_path, "PNG", optimize=True)
+    return os.path.abspath(output_path)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  DISPATCHER
+# ══════════════════════════════════════════════════════════════════════════════
+
+def generate_phrase_design_post(
+        label: str,
+        pill_text: str,
+        variant: str = "yellow",
+        output_path: str = None,
+) -> str:
+    """
+    Génère un post phrase design.
+
+    Args:
+        label      : Badge label (ex : "SEO conforme").
+        pill_text  : Texte des pilules avec "≠" comme séparateur.
+        variant    : "yellow" → Design A (1080×1080, incliné)
+                     "blue"   → Design B (1080×1350, portrait, droit)
+        output_path: Chemin de sauvegarde (auto si None).
+    """
+    if variant == "blue":
+        p = output_path or "output/flash_posts/phrase_b.png"
+        return generate_phrase_design_blue(label, pill_text, p)
+    else:
+        p = output_path or "output/flash_posts/phrase_a.png"
+        return generate_phrase_design_yellow(label, pill_text, p)
