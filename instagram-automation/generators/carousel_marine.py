@@ -282,7 +282,7 @@ def generate_marine_bullet_slide(
     return os.path.abspath(output_path)
 
 
-# ─── Slide texte : titre + paragraphes (ou texte simple) ─────────────────────
+# ─── Slide texte : grande carte blanche + titre + paragraphes ────────────────
 
 def generate_marine_text_slide(
         title: str,
@@ -290,41 +290,59 @@ def generate_marine_text_slide(
         output_path: str = "output/carousels/c_text.png",
 ) -> str:
     """
-    Slide avec titre optionnel + paragraphes centrés verticalement.
-    La taille de police s'adapte au volume de texte pour éviter le débordement.
+    Slide avec UNE grande carte blanche arrondie (+ ombre) centrée verticalement.
+    Le titre (optionnel) et les paragraphes sont dessinés à l'intérieur.
+    La taille de police du corps s'adapte pour que tout rentre dans la carte.
     """
     img, draw = _rose_sq_base()
 
-    max_w = FEED_W - 2 * _MARGIN_X
+    card_x1 = _MARGIN_X
+    card_x2 = FEED_W - _MARGIN_X
+    card_w  = card_x2 - card_x1
 
-    # Taille de police adaptive pour le corps
-    font_title = load_font(FONT_BOLD, 54)
-    full_text  = "\n".join(paragraphs)
-    for body_size in (42, 38, 34, 30):
-        font_body = load_font(FONT_BOLD, body_size)
-        para_heights = [_block_height(draw, p, font_body, max_w, 1.35) for p in paragraphs]
-        title_h   = _block_height(draw, title, font_title, max_w, 1.25) if title else 0
-        TITLE_BODY_GAP = 40
-        PARA_GAP       = 24
-        total_h = (title_h
-                   + (TITLE_BODY_GAP if title else 0)
-                   + sum(para_heights)
-                   + PARA_GAP * (len(paragraphs) - 1))
-        usable_h = _USABLE_Y2 - _TOP_Y
-        if total_h <= usable_h:
+    _TEXT_PAD_X = _CARD_PAD_X       # 32 px padding horizontal intérieur
+    _TEXT_PAD_Y = 38                 # padding vertical intérieur (plus grand que les bulles)
+    max_text_w  = card_w - 2 * _TEXT_PAD_X
+
+    font_title = load_font(FONT_BOLD, 50) if title else None
+    usable_h   = _USABLE_Y2 - _TOP_Y
+
+    TITLE_BODY_GAP = 28
+    PARA_GAP       = 18
+
+    # Taille de police adaptive — on réduit jusqu'à ce que tout rentre
+    for body_size in (42, 38, 34, 30, 26):
+        font_body    = load_font(FONT_BOLD, body_size)
+        title_h      = _block_height(draw, title, font_title, max_text_w, 1.25) if title else 0
+        para_heights = [_block_height(draw, p, font_body, max_text_w, 1.35)
+                        for p in paragraphs]
+        content_h = (title_h
+                     + (TITLE_BODY_GAP if title else 0)
+                     + sum(para_heights)
+                     + PARA_GAP * max(len(paragraphs) - 1, 0))
+        card_h = content_h + 2 * _TEXT_PAD_Y
+        if card_h <= usable_h - 20:
             break
 
-    y = _TOP_Y + (usable_h - total_h) / 2
+    # Centrage vertical de la carte
+    card_y = int(_TOP_Y + (usable_h - card_h) / 2)
+
+    # Carte blanche avec ombre
+    _draw_bubble(draw, card_x1, card_y, card_x2, int(card_h))
+
+    # Contenu à l'intérieur de la carte
+    y    = card_y + _TEXT_PAD_Y
+    tx1  = card_x1 + _TEXT_PAD_X
 
     if title:
         _draw_lines_centered(draw, title, font_title, BRAND_BLUE,
-                             _MARGIN_X, y, max_w, 1.25)
+                             tx1, y, max_text_w, 1.25)
         y += title_h + TITLE_BODY_GAP
 
-    for para, para_h in zip(paragraphs, para_heights):
+    for para, ph in zip(paragraphs, para_heights):
         _draw_lines_centered(draw, para, font_body, BRAND_BLUE,
-                             _MARGIN_X, y, max_w, 1.35)
-        y += para_h + PARA_GAP
+                             tx1, y, max_text_w, 1.35)
+        y += ph + PARA_GAP
 
     _yellow_arrow(img, draw, FEED_W - 148, FEED_H - 72)
     _author_foot(draw)

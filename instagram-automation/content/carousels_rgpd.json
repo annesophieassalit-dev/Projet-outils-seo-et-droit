@@ -4,10 +4,40 @@
     "week": 3,
     "hook_text": "Vous reprenez un avis Google sur votre site ou votre Instagram. Vous pensez que c'est libre de droit. Ce n'est pas aussi simple.",
     "slides": [
-      "Un avis Google contient des données personnelles.\nUn prénom. Parfois une photo. Un retour d'expérience identifiable.\nCe sont des données protégées par le RGPD.",
-      "Ce que beaucoup font sans le savoir —\nReprendre un avis sans accord écrit du client concerné.\nPublier son prénom et sa photo sans consentement explicite.\nLaisser le témoignage en ligne sans durée définie.",
-      "Ce n'est pas une question de bonne foi.\nC'est une question de conformité.\nEt en cas de contrôle — la bonne foi ne suffit pas.",
-      "Un témoignage conforme — ça se prépare avant de le demander. Pas après l'avoir publié."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Un avis Google contient des données personnelles.",
+          "Un prénom. Parfois une photo. Un retour d'expérience identifiable.",
+          "Ce sont des données protégées par le RGPD."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que beaucoup font sans le savoir",
+        "bullets": [
+          "Reprendre un avis sans accord écrit du client concerné.",
+          "Publier son prénom et sa photo sans consentement explicite.",
+          "Laisser le témoignage en ligne sans durée définie."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Ce n'est pas une question de bonne foi.",
+          "C'est une question de conformité.",
+          "Et en cas de contrôle — la bonne foi ne suffit pas."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Un témoignage conforme — ça se prépare avant de le demander. Pas après l'avoir publié."
+        ]
+      }
     ],
     "cta": "Vous publiez des témoignages clients sur votre site ou vos réseaux ?\nOui ou non en commentaire.",
     "caption": "Reprendre un avis Google — ce n'est pas libre de droit.\nUn prénom. Une expérience identifiable. Ce sont des données personnelles protégées.\nVous le saviez ? Oui ou non en commentaire.\n\n#RGPD #conformité #visibleetconforme #praticiensbienêtre"
@@ -17,10 +47,37 @@
     "week": 4,
     "hook_text": "Sophrologue, naturopathe, coach bien-être — vous avez une newsletter. Voici ce que la majorité fait sans le savoir.",
     "slides": [
-      "Une case précochée sur votre formulaire d'inscription.\nCe n'est pas un consentement valable.\nDepuis 2018 et le RGPD — la case doit être cochée activement par l'utilisateur. Pas par défaut.",
-      "Ce que ça veut dire concrètement —\nVotre liste email actuelle contient peut-être des contacts qui n'ont jamais donné un consentement valable.",
-      "Ce n'est pas anodin.\nEn cas de plainte d'un abonné — vous ne pouvez pas prouver qu'il a consenti correctement.",
-      "Ce que vous devez avoir —\nUne case à cocher active. Non précochée. Une mention claire sur l'usage des données. Un lien de désinscription fonctionnel dans chaque email."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Une case précochée sur votre formulaire d'inscription.",
+          "Ce n'est pas un consentement valable.",
+          "Depuis 2018 et le RGPD — la case doit être cochée activement par l'utilisateur. Pas par défaut."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que ça veut dire concrètement",
+        "paragraphs": [
+          "Votre liste email actuelle contient peut-être des contacts qui n'ont jamais donné un consentement valable."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Ce n'est pas anodin.",
+          "En cas de plainte d'un abonné — vous ne pouvez pas prouver qu'il a consenti correctement."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que vous devez avoir",
+        "paragraphs": [
+          "Une case à cocher active. Non précochée. Une mention claire sur l'usage des données. Un lien de désinscription fonctionnel dans chaque email."
+        ]
+      }
     ],
     "cta": "Votre formulaire d'inscription newsletter — il a une case à cocher active ?\nOui ou non en commentaire.",
     "caption": "Une case précochée sur votre newsletter — ce n'est pas un consentement valable.\nVous le saviez ? Oui ou non en commentaire.\n\n#RGPD #newsletter #visibleetconforme #conformité"
@@ -30,10 +87,36 @@
     "week": 5,
     "hook_text": "Vous avez Google Analytics sur votre site. Vous pensez être en règle parce que vous avez un bandeau cookie. Peut-être pas.",
     "slides": [
-      "Un bandeau cookie qui dit 'En continuant à naviguer, vous acceptez les cookies' —\nCe n'est pas un consentement valable.",
-      "Ce que la loi exige —\nUn consentement actif. Avant le dépôt des cookies. Pas après la navigation.\nLe visiteur doit pouvoir refuser aussi facilement qu'il accepte.",
-      "Ce que beaucoup de praticiens font sans le savoir —\nGoogle Analytics dépose des cookies de tracking dès l'arrivée sur le site.\nSans consentement préalable — c'est une infraction.",
-      "La CNIL contrôle. Elle sanctionne. Y compris les petits cabinets."
+      {
+        "type": "text",
+        "title": "Un bandeau cookie qui dit 'En continuant à naviguer, vous acceptez les cookies'",
+        "paragraphs": [
+          "Ce n'est pas un consentement valable."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que la loi exige",
+        "bullets": [
+          "Un consentement actif. Avant le dépôt des cookies. Pas après la navigation.",
+          "Le visiteur doit pouvoir refuser aussi facilement qu'il accepte."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que beaucoup de praticiens font sans le savoir",
+        "bullets": [
+          "Google Analytics dépose des cookies de tracking dès l'arrivée sur le site.",
+          "Sans consentement préalable — c'est une infraction."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "La CNIL contrôle. Elle sanctionne. Y compris les petits cabinets."
+        ]
+      }
     ],
     "cta": "Votre bandeau cookie — il demande un consentement actif avant le dépôt ?\nOui ou non en commentaire.",
     "caption": "Votre bandeau cookie dit 'En continuant à naviguer vous acceptez les cookies.'\nCe n'est pas un consentement valable.\nVous le saviez ? Oui ou non en commentaire.\n\n#RGPD #cookies #CNIL #visibleetconforme #conformité"
@@ -43,10 +126,36 @@
     "week": 6,
     "hook_text": "Votre formulaire de contact. La plupart des praticiens bien-être en ont un. La plupart ne sont pas conformes.",
     "slides": [
-      "Ce qu'un formulaire de contact collecte obligatoirement —\nUn prénom. Un email. Parfois un numéro de téléphone. Un message.\nCe sont des données personnelles.",
-      "Ce que vous devez avoir sous le bouton 'envoyer' —\nUne case à cocher active. Une mention d'information claire. Ce que vous faites de ces données. Combien de temps vous les conservez.",
-      "Ce que la majorité des sites de praticiens bien-être ont —\nUn formulaire. Un bouton envoyer. Rien d'autre.",
-      "En cas de contrôle ou de plainte — l'absence de mention d'information est une non-conformité.\nImmédiate. Documentée. Difficile à justifier."
+      {
+        "type": "bullets",
+        "title": "Ce qu'un formulaire de contact collecte obligatoirement",
+        "bullets": [
+          "Un prénom. Un email. Parfois un numéro de téléphone. Un message.",
+          "Ce sont des données personnelles."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que vous devez avoir sous le bouton 'envoyer'",
+        "paragraphs": [
+          "Une case à cocher active. Une mention d'information claire. Ce que vous faites de ces données. Combien de temps vous les conservez."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des sites de praticiens bien-être ont",
+        "paragraphs": [
+          "Un formulaire. Un bouton envoyer. Rien d'autre."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "En cas de contrôle ou de plainte — l'absence de mention d'information est une non-conformité.",
+          "Immédiate. Documentée. Difficile à justifier."
+        ]
+      }
     ],
     "cta": "Votre formulaire de contact — il a une mention RGPD ?\nOui ou non en commentaire.",
     "caption": "Votre formulaire de contact. Un prénom. Un email. Un message.\nCe sont des données personnelles. Et votre formulaire a probablement une non-conformité invisible.\nOui ou non en commentaire.\n\n#RGPD #formulaire #visibleetconforme #conformité"
@@ -56,10 +165,37 @@
     "week": 7,
     "hook_text": "Vous publiez des photos de vos clients sur Instagram. Avec leur accord verbal. Ce n'est pas suffisant.",
     "slides": [
-      "Le droit à l'image —\nToute personne a le droit de contrôler l'utilisation de son image.\nUn accord verbal ne prouve rien. Un accord écrit — oui.",
-      "Ce que vous devez avoir —\nUn consentement écrit. Avant la publication. Qui précise le support. Et la durée d'utilisation.",
-      "Ce que ça veut dire pour vos publications Instagram —\nLa photo de votre cliente après sa séance. Le groupe de participants à votre atelier.\nChacun nécessite un accord écrit individuel.",
-      "Ce n'est pas une formalité.\nC'est une protection — pour eux et pour vous."
+      {
+        "type": "bullets",
+        "title": "Le droit à l'image",
+        "bullets": [
+          "Toute personne a le droit de contrôler l'utilisation de son image.",
+          "Un accord verbal ne prouve rien. Un accord écrit — oui."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que vous devez avoir",
+        "paragraphs": [
+          "Un consentement écrit. Avant la publication. Qui précise le support. Et la durée d'utilisation."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que ça veut dire pour vos publications Instagram",
+        "bullets": [
+          "La photo de votre cliente après sa séance. Le groupe de participants à votre atelier.",
+          "Chacun nécessite un accord écrit individuel."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Ce n'est pas une formalité.",
+          "C'est une protection — pour eux et pour vous."
+        ]
+      }
     ],
     "cta": "Vous publiez des photos impliquant vos clients ?\nOui ou non en commentaire.",
     "caption": "Un accord verbal pour publier la photo d'un client — ce n'est pas suffisant.\nLe droit à l'image exige un accord écrit.\nVous le saviez ? Oui ou non en commentaire.\n\n#RGPD #droitàlimage #visibleetconforme #Instagram"
@@ -69,10 +205,36 @@
     "week": 8,
     "hook_text": "Votre site bien-être n'a peut-être pas toutes les mentions légales obligatoires. Et c'est une infraction.",
     "slides": [
-      "Ce que la loi exige sur tout site professionnel —\nVotre nom ou raison sociale. Votre adresse professionnelle. Votre numéro SIRET. Vos coordonnées de contact. Le nom de votre hébergeur.",
-      "Ce que la majorité des sites de praticiens bien-être ont —\nUn 'À propos' bien rédigé. Des pages de services soignées. Des mentions légales copiées sur un autre site. Ou absentes.",
-      "Le problème avec les mentions légales copiées —\nElles ne correspondent pas à votre situation réelle. Votre statut juridique. Votre numéro SIRET. Votre hébergeur.\nCe sont des mentions fausses. C'est pire qu'une absence.",
-      "En cas de contrôle — l'absence de mentions légales est sanctionnable.\nEn cas de litige avec un client — des mentions légales incorrectes fragilisent votre position."
+      {
+        "type": "text",
+        "title": "Ce que la loi exige sur tout site professionnel",
+        "paragraphs": [
+          "Votre nom ou raison sociale. Votre adresse professionnelle. Votre numéro SIRET. Vos coordonnées de contact. Le nom de votre hébergeur."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des sites de praticiens bien-être ont",
+        "paragraphs": [
+          "Un 'À propos' bien rédigé. Des pages de services soignées. Des mentions légales copiées sur un autre site. Ou absentes."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Le problème avec les mentions légales copiées",
+        "bullets": [
+          "Elles ne correspondent pas à votre situation réelle. Votre statut juridique. Votre numéro SIRET. Votre hébergeur.",
+          "Ce sont des mentions fausses. C'est pire qu'une absence."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "En cas de contrôle — l'absence de mentions légales est sanctionnable.",
+          "En cas de litige avec un client — des mentions légales incorrectes fragilisent votre position."
+        ]
+      }
     ],
     "cta": "Vos mentions légales — elles sont complètes et exactes ?\nOui ou non en commentaire.",
     "caption": "Des mentions légales copiées sur un autre site — ce sont des mentions fausses.\nC'est pire qu'une absence.\nLes vôtres sont exactes ? Oui ou non en commentaire.\n\n#RGPD #mentionslegales #visibleetconforme #conformité"
@@ -82,10 +244,36 @@
     "week": 9,
     "hook_text": "Vous collectez des données sur votre site. Formulaire de contact. Newsletter. Google Analytics. Vous avez une politique de confidentialité ?",
     "slides": [
-      "La politique de confidentialité — ce n'est pas un document optionnel.\nDès que vous collectez une donnée personnelle — email, prénom, téléphone — vous êtes obligé d'en avoir une.",
-      "Ce qu'elle doit contenir —\nQuelles données vous collectez. Pourquoi vous les collectez. Combien de temps vous les conservez. Avec qui vous les partagez. Comment vos visiteurs peuvent exercer leurs droits.",
-      "Ce que la majorité des politiques de confidentialité sur les sites de praticiens bien-être contiennent —\nDu texte générique. Copié sur un modèle. Qui ne correspond pas à leur situation réelle.",
-      "Une politique de confidentialité générique et inexacte ne vous protège pas.\nElle crée une fausse sécurité."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "La politique de confidentialité — ce n'est pas un document optionnel.",
+          "Dès que vous collectez une donnée personnelle — email, prénom, téléphone — vous êtes obligé d'en avoir une."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce qu'elle doit contenir",
+        "paragraphs": [
+          "Quelles données vous collectez. Pourquoi vous les collectez. Combien de temps vous les conservez. Avec qui vous les partagez. Comment vos visiteurs peuvent exercer leurs droits."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des politiques de confidentialité sur les sites de praticiens bien-être contiennent",
+        "paragraphs": [
+          "Du texte générique. Copié sur un modèle. Qui ne correspond pas à leur situation réelle."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Une politique de confidentialité générique et inexacte ne vous protège pas.",
+          "Elle crée une fausse sécurité."
+        ]
+      }
     ],
     "cta": "Votre politique de confidentialité — elle correspond exactement à ce que vous faites sur votre site ?\nOui ou non en commentaire.",
     "caption": "Une politique de confidentialité copiée sur un modèle — ça ne vous protège pas.\nElle crée une fausse sécurité.\nLa vôtre correspond à votre réalité ? Oui ou non en commentaire.\n\n#RGPD #confidentialité #visibleetconforme #conformité"
@@ -95,10 +283,36 @@
     "week": 10,
     "hook_text": "Vous remplissez une fiche avec vos clients au début du suivi. Prénom. Âge. Motif. Parfois des informations de santé. Voici ce que vous devez savoir.",
     "slides": [
-      "Ces informations — ce sont des données personnelles.\nParfois des données de santé. Ce sont les données les plus protégées par le RGPD.",
-      "Ce que vous devez faire avant de collecter ces informations —\nInformer votre client de ce que vous collectez. Pourquoi vous le collectez. Combien de temps vous le conservez. Comment il peut demander la suppression de ses données.",
-      "Ce que la majorité des praticiens bien-être font —\nUne fiche papier. Rangée dans un classeur. Sans information préalable au client. Sans durée de conservation définie. Sans procédure de suppression.",
-      "En cas de demande d'un client d'accès ou de suppression de ses données —\nVous avez 30 jours pour répondre.\nSi vous n'avez pas de procédure — vous êtes en difficulté."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Ces informations — ce sont des données personnelles.",
+          "Parfois des données de santé. Ce sont les données les plus protégées par le RGPD."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que vous devez faire avant de collecter ces informations",
+        "paragraphs": [
+          "Informer votre client de ce que vous collectez. Pourquoi vous le collectez. Combien de temps vous le conservez. Comment il peut demander la suppression de ses données."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des praticiens bien-être font",
+        "paragraphs": [
+          "Une fiche papier. Rangée dans un classeur. Sans information préalable au client. Sans durée de conservation définie. Sans procédure de suppression."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "En cas de demande d'un client d'accès ou de suppression de ses données",
+        "bullets": [
+          "Vous avez 30 jours pour répondre.",
+          "Si vous n'avez pas de procédure — vous êtes en difficulté."
+        ]
+      }
     ],
     "cta": "Vous avez une procédure pour gérer les données de vos fiches clients ?\nOui ou non en commentaire.",
     "caption": "Votre fiche client en cabinet. Prénom. Âge. Motif. Santé.\nCe sont des données personnelles parmi les plus protégées par le RGPD.\nVous avez une procédure ? En commentaire.\n\n#RGPD #données #visibleetconforme #conformité"
@@ -106,12 +320,43 @@
   {
     "id": 9,
     "week": 11,
-    "hook_text": "Vos avis Google. Vous pensez pouvoir en faire ce que vous voulez. Voici ce que la loi dit vraiment.",
+    "hook_text": "Vos avis Google.\nVous pensez pouvoir en faire ce que vous voulez. Voici ce que la loi dit vraiment.",
     "slides": [
-      "Ce que vous ne pouvez pas faire —\nModifier un avis Google. Le supprimer sans raison valable. Le reprendre sur votre site sans accord de son auteur. Le publier en story sans vérifier son contenu.",
-      "Ce que vous pouvez faire —\nY répondre publiquement. Signaler un avis manifestement faux. Demander la suppression d'un avis injurieux ou diffamatoire via Google.",
-      "Sur la reprise d'un avis sur votre site ou Instagram —\nC'est une donnée personnelle. Le prénom de votre client. Son retour d'expérience identifiable.\nVous avez besoin de son accord pour le reprendre ailleurs que sur Google.",
-      "Et sur le contenu de l'avis —\nUn avis qui dit 'elle m'a guéri' relayé par vous — c'est une promesse thérapeutique que vous endossez.\nDeux problèmes en un. RGPD et sémantique."
+      {
+        "type": "bullets",
+        "title": "Ce que vous ne pouvez pas faire",
+        "bullets": [
+          "Modifier un avis Google.",
+          "Le supprimer sans raison valable.",
+          "Le reprendre sur votre site sans accord de son auteur.",
+          "Le publier en story sans vérifier son contenu."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que vous pouvez faire",
+        "bullets": [
+          "Y répondre publiquement.",
+          "Signaler un avis manifestement faux.",
+          "Demander la suppression d'un avis injurieux ou diffamatoire via Google."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Sur la reprise d'un avis sur votre site ou Instagram",
+        "bullets": [
+          "C'est une donnée personnelle. Le prénom de votre client. Son retour d'expérience identifiable.",
+          "Vous avez besoin de son accord pour le reprendre ailleurs que sur Google."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Et sur le contenu de l'avis",
+        "bullets": [
+          "Un avis qui dit 'elle m'a guéri' relayé par vous — c'est une promesse thérapeutique que vous endossez.",
+          "Deux problèmes en un. RGPD et sémantique."
+        ]
+      }
     ],
     "cta": "Vous relayez vos avis Google sur votre site ou Instagram ?\nOui ou non en commentaire.",
     "caption": "Vos avis Google — vous ne pouvez pas en faire ce que vous voulez.\nEt les relayer sans filtre — c'est un double problème. RGPD et sémantique.\nVous le saviez ? Oui ou non en commentaire.\n\n#RGPD #avisGoogle #visibleetconforme #conformité"
@@ -121,10 +366,37 @@
     "week": 12,
     "hook_text": "Un ancien client vous contacte. 'Je veux que vous supprimiez toutes mes données.' Vous avez 30 jours pour agir.",
     "slides": [
-      "Le droit à l'effacement — c'est un droit garanti par le RGPD.\nTout individu peut demander la suppression de ses données personnelles.\nÀ tout moment. Sans avoir à se justifier.",
-      "Ce que ça veut dire pour vous concrètement —\nSa fiche client supprimée. Ses emails effacés de votre liste. Ses données de paiement supprimées.\nSon témoignage retiré de votre site.",
-      "Ce que la majorité des praticiens bien-être font quand ils reçoivent cette demande —\nIls ne savent pas quoi faire. Ils n'ont pas de procédure. Ils dépassent le délai de 30 jours.",
-      "En cas de non-respect du droit à l'effacement —\nPlainte possible auprès de la CNIL. Sanction possible. Et surtout — une relation client définitivement abîmée."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Le droit à l'effacement — c'est un droit garanti par le RGPD.",
+          "Tout individu peut demander la suppression de ses données personnelles.",
+          "À tout moment. Sans avoir à se justifier."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que ça veut dire pour vous concrètement",
+        "bullets": [
+          "Sa fiche client supprimée. Ses emails effacés de votre liste. Ses données de paiement supprimées.",
+          "Son témoignage retiré de votre site."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des praticiens bien-être font quand ils reçoivent cette demande",
+        "paragraphs": [
+          "Ils ne savent pas quoi faire. Ils n'ont pas de procédure. Ils dépassent le délai de 30 jours."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "En cas de non-respect du droit à l'effacement",
+        "paragraphs": [
+          "Plainte possible auprès de la CNIL. Sanction possible. Et surtout — une relation client définitivement abîmée."
+        ]
+      }
     ],
     "cta": "Vous avez une procédure pour répondre à une demande d'effacement de données ?\nOui ou non en commentaire.",
     "caption": "Un client demande la suppression de toutes ses données.\nVous avez 30 jours pour répondre.\nVous avez une procédure ? Oui ou non en commentaire.\n\n#RGPD #effacement #visibleetconforme #conformité"
@@ -134,10 +406,37 @@
     "week": 13,
     "hook_text": "Vous envoyez des emails à vos clients et prospects. Newsletters. Rappels de séance. Offres. Voici ce que vous devez vérifier.",
     "slides": [
-      "Ce que beaucoup de praticiens font sans le savoir —\nEnvoyer une newsletter à d'anciens clients qui n'ont pas consenti à la recevoir.",
-      "Un client qui vous a donné son email pour prendre rendez-vous — n'a pas consenti à recevoir votre newsletter.\nCe sont deux consentements distincts. Pour deux usages distincts.",
-      "Ce que vous devez avoir —\nUn consentement explicite pour chaque usage. Prise de rendez-vous d'un côté. Newsletter de l'autre.\nDeux cases. Deux accords.",
-      "Ce que vous pouvez faire pour régulariser —\nEnvoyer un email de reconfirmation à votre liste existante. Supprimer ceux qui ne répondent pas.\nOui — vous allez perdre des contacts. Non — vous n'avez pas le choix."
+      {
+        "type": "text",
+        "title": "Ce que beaucoup de praticiens font sans le savoir",
+        "paragraphs": [
+          "Envoyer une newsletter à d'anciens clients qui n'ont pas consenti à la recevoir."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Un client qui vous a donné son email pour prendre rendez-vous — n'a pas consenti à recevoir votre newsletter.",
+          "Ce sont deux consentements distincts. Pour deux usages distincts."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que vous devez avoir",
+        "bullets": [
+          "Un consentement explicite pour chaque usage. Prise de rendez-vous d'un côté. Newsletter de l'autre.",
+          "Deux cases. Deux accords."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que vous pouvez faire pour régulariser",
+        "bullets": [
+          "Envoyer un email de reconfirmation à votre liste existante. Supprimer ceux qui ne répondent pas.",
+          "Oui — vous allez perdre des contacts. Non — vous n'avez pas le choix."
+        ]
+      }
     ],
     "cta": "Votre liste email — elle est constituée de consentements explicites ?\nOui ou non en commentaire.",
     "caption": "Un client qui prend rendez-vous n'a pas consenti à votre newsletter.\nCe sont deux accords distincts. Pour deux usages distincts.\nVotre liste est conforme ? Oui ou non en commentaire.\n\n#RGPD #newsletter #email #visibleetconforme #conformité"
@@ -147,10 +446,35 @@
     "week": 14,
     "hook_text": "Vous utilisez des outils pour gérer votre cabinet. Calendly. Mailchimp. Google Workspace. Doctolib. Vous avez une obligation que vous ignorez peut-être.",
     "slides": [
-      "Quand vous utilisez un outil tiers qui traite des données de vos clients —\nCet outil est un sous-traitant.\nEt vous devez vérifier qu'il est conforme RGPD.",
-      "Ce que vous devez vérifier —\nOù sont stockées les données de vos clients. En Europe ou hors Europe. Combien de temps l'outil les conserve. Si l'outil propose un accord de sous-traitance RGPD.",
-      "Ce que la majorité des praticiens font —\nIls utilisent l'outil. Ils ne vérifient rien. Ils ne savent pas où sont stockées les données de leurs clients.",
-      "En cas de fuite de données chez votre sous-traitant —\nVous êtes responsable vis-à-vis de vos clients. Même si c'est l'outil qui a failli."
+      {
+        "type": "bullets",
+        "title": "Quand vous utilisez un outil tiers qui traite des données de vos clients",
+        "bullets": [
+          "Cet outil est un sous-traitant.",
+          "Et vous devez vérifier qu'il est conforme RGPD."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que vous devez vérifier",
+        "paragraphs": [
+          "Où sont stockées les données de vos clients. En Europe ou hors Europe. Combien de temps l'outil les conserve. Si l'outil propose un accord de sous-traitance RGPD."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la majorité des praticiens font",
+        "paragraphs": [
+          "Ils utilisent l'outil. Ils ne vérifient rien. Ils ne savent pas où sont stockées les données de leurs clients."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "En cas de fuite de données chez votre sous-traitant",
+        "paragraphs": [
+          "Vous êtes responsable vis-à-vis de vos clients. Même si c'est l'outil qui a failli."
+        ]
+      }
     ],
     "cta": "Vous savez où sont stockées les données de vos clients dans vos outils ?\nOui ou non en commentaire.",
     "caption": "Calendly. Mailchimp. Google Workspace.\nChacun traite des données de vos clients. Chacun est votre responsabilité.\nVous savez où vont ces données ? Oui ou non en commentaire.\n\n#RGPD #soustraitant #visibleetconforme #conformité"
@@ -160,10 +484,38 @@
     "week": 15,
     "hook_text": "15 semaines à parler RGPD. Voici l'audit rapide pour savoir où vous en êtes.",
     "slides": [
-      "Mentions légales — complètes et exactes ?\nPolitique de confidentialité — adaptée à votre situation réelle ?",
-      "Bandeau cookie — consentement actif avant dépôt ?\nFormulaire de contact — mention RGPD présente ?",
-      "Newsletter — consentement explicite pour chaque abonné ?\nTémoignages — accord écrit de chaque client ?",
-      "Fiche client — procédure de conservation et de suppression définie ?\nPhotos sur Instagram — accord écrit individuel ?"
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Mentions légales — complètes et exactes ?",
+          "Politique de confidentialité — adaptée à votre situation réelle ?"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Bandeau cookie — consentement actif avant dépôt ?",
+          "Formulaire de contact — mention RGPD présente ?"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Newsletter — consentement explicite pour chaque abonné ?",
+          "Témoignages — accord écrit de chaque client ?"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "Fiche client — procédure de conservation et de suppression définie ?",
+          "Photos sur Instagram — accord écrit individuel ?"
+        ]
+      }
     ],
     "cta": "Vous avez combien de oui ?\nUn chiffre en commentaire. Je lis ce soir.",
     "caption": "15 semaines de RGPD.\nL'audit rapide en 8 questions. Combien de oui vous avez ?\nUn chiffre en commentaire.\n\n#RGPD #audit #visibleetconforme #conformité"
@@ -173,10 +525,36 @@
     "week": 16,
     "hook_text": "La CNIL. Vous pensez qu'elle ne contrôle que les grandes entreprises. Ce n'est plus vrai.",
     "slides": [
-      "La CNIL contrôle depuis 2018 tous les acteurs qui traitent des données personnelles.\nY compris les indépendants. Y compris les petits cabinets. Y compris vous.",
-      "Ce qui déclenche un contrôle —\nUne plainte d'un client. Un signalement anonyme. Une vérification sectorielle. Une actualité qui attire l'attention sur un secteur spécifique.",
-      "Ce que la CNIL vérifie sur un site de praticien bien-être —\nLe bandeau cookie. Les mentions légales. La politique de confidentialité. Le formulaire de contact. La newsletter et ses consentements.",
-      "Ce que vous croyez qui vous protège —\n'Je suis trop petit pour être contrôlé.' 'Personne ne va me signaler.' 'Je n'ai rien à cacher.'\nAucune de ces phrases n'est une protection juridique."
+      {
+        "type": "text",
+        "title": "",
+        "paragraphs": [
+          "La CNIL contrôle depuis 2018 tous les acteurs qui traitent des données personnelles.",
+          "Y compris les indépendants. Y compris les petits cabinets. Y compris vous."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce qui déclenche un contrôle",
+        "paragraphs": [
+          "Une plainte d'un client. Un signalement anonyme. Une vérification sectorielle. Une actualité qui attire l'attention sur un secteur spécifique."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Ce que la CNIL vérifie sur un site de praticien bien-être",
+        "paragraphs": [
+          "Le bandeau cookie. Les mentions légales. La politique de confidentialité. Le formulaire de contact. La newsletter et ses consentements."
+        ]
+      },
+      {
+        "type": "bullets",
+        "title": "Ce que vous croyez qui vous protège",
+        "bullets": [
+          "'Je suis trop petit pour être contrôlé.' 'Personne ne va me signaler.' 'Je n'ai rien à cacher.'",
+          "Aucune de ces phrases n'est une protection juridique."
+        ]
+      }
     ],
     "cta": "Vous avez déjà pensé à ce que la CNIL verrait sur votre site ?\nOui ou non en commentaire.",
     "caption": "'Je suis trop petit pour être contrôlée.'\nCe n'est pas une protection juridique.\nLa CNIL contrôle aussi les indépendants. Vous le saviez ? Oui ou non en commentaire.\n\n#RGPD #CNIL #visibleetconforme #conformité"
