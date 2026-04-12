@@ -37,14 +37,18 @@ _W, _H      = FEED_W, FEED_H   # 1080 × 1080
 _PILL_H     = 112     # hauteur des pilules
 _PILL_MX    = 46      # marge gauche/droite
 _PILL_R     = 14      # rayon des coins
-_OVERLAP    = 12      # chevauchement P2 sous P1
+_OVERLAP    = 24      # chevauchement P2 sous P1
+
+# Inclinaison des pilules (légère, comme sur l'original Canva)
+_TILT1      = -3.0    # P1 — légèrement contre-horaire
+_TILT2      = +3.0    # P2 — légèrement horaire (croisement en dessous)
 
 # Positions verticales (y_after header glow ≈ 189)
 _LBL_Y      = 206     # badge label
 _LBL_H      = 42      # hauteur badge
 _P1_Y       = 268     # = 206 + 42 + 20
-_P2_Y       = _P1_Y + _PILL_H - _OVERLAP   # 368
-_FOOT_Y     = 700     # badge auteure (signature basse)
+_P2_Y       = _P1_Y + _PILL_H - _OVERLAP   # 356
+_FOOT_Y     = 800     # badge auteure (signature basse)
 _FOOT_H     = 132
 
 
@@ -144,10 +148,29 @@ def _straight_pill_glow(w: int, h: int, cl, cr, radius: int,
 
 
 def _paste_pill(img: Image.Image, pill: Image.Image, x: int, y: int) -> tuple:
-    """Colle une pilule RGBA sur img. Retourne (img, draw)."""
+    """Colle une pilule RGBA sur img (sans rotation). Retourne (img, draw)."""
     W, H  = img.size
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     layer.paste(pill, (x, y), pill)
+    out = Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+    return out, ImageDraw.Draw(out)
+
+
+def _paste_pill_rotated(img: Image.Image, pill: Image.Image,
+                        angle: float, cy: int) -> tuple:
+    """Colle une pilule RGBA inclinée, centrée horizontalement sur _W.
+
+    cy = coordonnée Y du centre visuel de la pilule.
+    angle en degrés (positif = anti-horaire sous PIL).
+    """
+    W, H     = img.size
+    rotated  = pill.rotate(angle, expand=True, resample=Image.BICUBIC)
+    rw, rh   = rotated.size
+    x        = (W - rw) // 2           # centrage horizontal
+    y        = cy - rh // 2            # centrage vertical sur cy
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    layer.paste(rotated, (x, y), rotated)
     out = Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
     return out, ImageDraw.Draw(out)
 
@@ -208,20 +231,22 @@ def generate_phrase_design_yellow(
     else:
         line1, line2 = pill_text, None
 
-    px1 = _PILL_MX
     pw  = _W - 2 * _PILL_MX
     cl, cr, tc = YELLOW_LEFT, YELLOW_RIGHT, tuple(YELLOW_TEXT)
 
     font1 = load_font(FONT_BOLD,    74)
     font2 = load_font(FONT_SERIF_I, 66)
 
+    cy1 = _P1_Y + _PILL_H // 2
+    cy2 = _P2_Y + _PILL_H // 2
+
     # P2 en premier (derrière), P1 en second (devant)
     if line2:
         pill2 = _straight_pill_plain(pw, _PILL_H, cl, cr, _PILL_R, line2, font2, tc)
-        img, draw = _paste_pill(img, pill2, px1, _P2_Y)
+        img, draw = _paste_pill_rotated(img, pill2, _TILT2, cy2)
 
     pill1 = _straight_pill_plain(pw, _PILL_H, cl, cr, _PILL_R, line1, font1, tc)
-    img, draw = _paste_pill(img, pill1, px1, _P1_Y)
+    img, draw = _paste_pill_rotated(img, pill1, _TILT1, cy1)
 
     # Badge auteure
     _footer_badge(draw)
@@ -256,20 +281,22 @@ def generate_phrase_design_blue(
     else:
         line1, line2 = pill_text, None
 
-    px1 = _PILL_MX
     pw  = _W - 2 * _PILL_MX
     cl, cr = PILL_LEFT, PILL_RIGHT
 
     font1 = load_font(FONT_BOLD,    74)
     font2 = load_font(FONT_SERIF_I, 66)
 
+    cy1 = _P1_Y + _PILL_H // 2
+    cy2 = _P2_Y + _PILL_H // 2
+
     # P2 en premier (derrière), P1 en second (devant)
     if line2:
         pill2 = _straight_pill_glow(pw, _PILL_H, cl, cr, _PILL_R, line2, font2)
-        img, draw = _paste_pill(img, pill2, px1, _P2_Y)
+        img, draw = _paste_pill_rotated(img, pill2, _TILT2, cy2)
 
     pill1 = _straight_pill_glow(pw, _PILL_H, cl, cr, _PILL_R, line1, font1)
-    img, draw = _paste_pill(img, pill1, px1, _P1_Y)
+    img, draw = _paste_pill_rotated(img, pill1, _TILT1, cy1)
 
     # Badge auteure
     _footer_badge(draw)
