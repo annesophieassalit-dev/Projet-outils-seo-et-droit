@@ -3,23 +3,23 @@ Générateur de carousels — fond rose dégradé radial, texte bleu #1e4e79.
 Format 1080×1080.
 
 Structure d'un carousel :
-  Slide 0 — Hook     : texte d'accroche centré verticalement sur fond rose (pas de photo)
+  Slide 0 — Hook     : titre bold (1re ligne) + sous-titre regular (reste), centré
   Slides 1…N — Content :
-    - dict {"type": "bullets", "title": "...", "bullets": [...]}  → titre + cartes blanches
+    - dict {"type": "bullets", "title": "...", "bullets": [...]}  → titre serif + cartes blanches
     - dict {"type": "text",    "title": "...", "paragraphs": [...]} → titre + texte centré
-    - str  "..."   (compat ancienne version)   → texte centré (sans titre)
-  Dernière slide — CTA : petit header blanc + question + signature
+    - str  "..."   (compat ancienne version) → texte centré sans titre
+  Dernière slide — CTA : header "VISIBLE ET / CONFORME" avec glow + question + signature
 """
 
 import os
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 from config import (
     FEED_W, FEED_H,
     GRAD_CENTER, GRAD_EDGE,
     BRAND_BLUE,
     YELLOW_RIGHT,
-    FONT_BLACK, FONT_BOLD, FONT_LIGHT, FONT_LIGHT_I,
+    FONT_BLACK, FONT_BOLD, FONT_REGULAR, FONT_LIGHT, FONT_LIGHT_I, FONT_SERIF_I,
     BRAND_AUTHOR, BRAND_VISIBLE, BRAND_CONFORME,
 )
 from generators.base import load_font, draw_multiline_centered, make_radial_gradient
@@ -27,7 +27,7 @@ from generators.base import load_font, draw_multiline_centered, make_radial_grad
 # ─── Constantes de mise en page ───────────────────────────────────────────────
 _MARGIN_X    = 55      # marge gauche/droite
 _CARD_PAD_X  = 32      # padding horizontal intérieur des bulles
-_CARD_PAD_Y  = 22      # padding vertical intérieur des bulles
+_CARD_PAD_Y  = 24      # padding vertical intérieur des bulles
 _CARD_RADIUS = 28      # rayon des coins des bulles
 _CARD_GAP    = 20      # espace vertical entre bulles
 _TOP_Y       = 60      # espace réservé en haut
@@ -64,6 +64,38 @@ def _yellow_arrow(img: Image.Image, draw: ImageDraw.Draw,
 def _author_foot(draw: ImageDraw.Draw) -> None:
     font = load_font(FONT_LIGHT, 32)
     draw.text((_MARGIN_X, FEED_H - 52), BRAND_AUTHOR, font=font, fill=BRAND_BLUE)
+
+
+# ─── Header "VISIBLE ET / CONFORME" avec glow (slide CTA) ───────────────────
+
+def _draw_cta_header_glow(img: Image.Image, draw: ImageDraw.Draw,
+                           y_sub: int = 48) -> tuple:
+    """Dessine 'VISIBLE ET / CONFORME' en blanc avec halo lumineux."""
+    font_sub  = load_font(FONT_LIGHT_I, 34)
+    font_main = load_font(FONT_BLACK,   76)
+
+    sub_w  = draw.textlength(BRAND_VISIBLE,  font=font_sub)
+    main_w = draw.textlength(BRAND_CONFORME, font=font_main)
+    y_main = y_sub + 46
+
+    img_rgba = img.convert("RGBA")
+    for blur_r, alpha in [(24, 175), (12, 148), (5, 115)]:
+        layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        d     = ImageDraw.Draw(layer)
+        d.text(((FEED_W - sub_w)  / 2, y_sub),  BRAND_VISIBLE,
+               font=font_sub,  fill=(255, 255, 255, alpha))
+        d.text(((FEED_W - main_w) / 2, y_main), BRAND_CONFORME,
+               font=font_main, fill=(255, 255, 255, alpha))
+        layer    = layer.filter(ImageFilter.GaussianBlur(radius=blur_r))
+        img_rgba = Image.alpha_composite(img_rgba, layer)
+
+    img  = img_rgba.convert("RGB")
+    draw = ImageDraw.Draw(img)
+    draw.text(((FEED_W - sub_w)  / 2, y_sub),  BRAND_VISIBLE,
+              font=font_sub,  fill=(255, 255, 255))
+    draw.text(((FEED_W - main_w) / 2, y_main), BRAND_CONFORME,
+              font=font_main, fill=(255, 255, 255))
+    return img, draw, y_main + 95   # y après le header
 
 
 # ─── Utilitaires texte ────────────────────────────────────────────────────────
@@ -103,8 +135,8 @@ def _draw_lines_centered(draw: ImageDraw.Draw, text: str, font, color: tuple,
                          x1: int, y: float, max_w: int,
                          line_spacing: float = 1.3) -> float:
     """
-    Dessine le texte enveloppé, centré horizontalement dans [x1, x1+max_w].
-    Retourne la coordonnée Y après le dernier ligne.
+    Dessine le texte enveloppé centré horizontalement dans [x1, x1+max_w].
+    Retourne la coordonnée Y après la dernière ligne.
     """
     lines = _wrap_lines(draw, text, font, max_w)
     bbox  = draw.textbbox((0, 0), "Ag", font=font)
@@ -117,27 +149,61 @@ def _draw_lines_centered(draw: ImageDraw.Draw, text: str, font, color: tuple,
     return y + lh * len(lines)
 
 
-# ─── Slide 0 : Accroche texte centré verticalement ──────────────────────────
+def _draw_bubble(draw: ImageDraw.Draw, x1: int, y: int, x2: int, h: int) -> None:
+    """Dessine une carte blanche avec légère ombre portée."""
+    # Ombre douce (décalage +4px, couleur rosée)
+    draw.rounded_rectangle(
+        [x1 + 4, y + 4, x2 + 4, y + h + 4],
+        radius=_CARD_RADIUS, fill=(195, 168, 165),
+    )
+    # Carte blanc chaud
+    draw.rounded_rectangle(
+        [x1, y, x2, y + h],
+        radius=_CARD_RADIUS, fill=(252, 248, 244),
+    )
+
+
+# ─── Slide 0 : Accroche — titre bold + sous-titre regular ───────────────────
 
 def generate_marine_hook_slide(
         hook_text: str,
         output_path: str = "output/carousels/c_hook.png",
 ) -> str:
     """
-    Slide d'accroche : texte grand centré verticalement sur fond rose.
-    Pas de photo, pas de cadre.
+    Slide d'accroche : 1re ligne = titre bold (grand), reste = sous-titre regular.
+    Tout est centré verticalement sur fond rose. Pas de photo, pas de cadre.
+    Si le texte n'a pas de saut de ligne, tout est rendu en titre bold.
     """
     img, draw = _rose_sq_base()
 
-    font  = load_font(FONT_BOLD, 70)
     max_w = FEED_W - 2 * _MARGIN_X
 
-    draw_multiline_centered(
-        draw, hook_text, font, BRAND_BLUE,
-        _MARGIN_X, _TOP_Y, FEED_W - _MARGIN_X, _USABLE_Y2,
-        line_spacing=1.4,
-        top_aligned=False,
-    )
+    if "\n" in hook_text:
+        title, subtitle = hook_text.split("\n", 1)
+        title    = title.strip()
+        subtitle = subtitle.strip()
+    else:
+        title    = hook_text.strip()
+        subtitle = ""
+
+    font_title = load_font(FONT_BOLD,    82)
+    font_sub   = load_font(FONT_REGULAR, 52)
+
+    title_h = _block_height(draw, title, font_title, max_w, 1.25)
+    sub_h   = _block_height(draw, subtitle, font_sub, max_w, 1.4) if subtitle else 0
+    gap     = 30 if subtitle else 0
+    total_h = title_h + gap + sub_h
+
+    usable_h = _USABLE_Y2 - _TOP_Y
+    y = _TOP_Y + (usable_h - total_h) / 2
+
+    _draw_lines_centered(draw, title, font_title, BRAND_BLUE,
+                         _MARGIN_X, y, max_w, 1.25)
+    y += title_h + gap
+
+    if subtitle:
+        _draw_lines_centered(draw, subtitle, font_sub, BRAND_BLUE,
+                             _MARGIN_X, y, max_w, 1.4)
 
     _yellow_arrow(img, draw, FEED_W - 148, FEED_H - 72)
     _author_foot(draw)
@@ -151,7 +217,7 @@ def generate_marine_hook_slide(
 generate_marine_photo_slide = generate_marine_hook_slide
 
 
-# ─── Slide bullet : titre + cartes blanches ──────────────────────────────────
+# ─── Slide bullet : titre serif italic + cartes blanches ─────────────────────
 
 def generate_marine_bullet_slide(
         title: str,
@@ -159,49 +225,44 @@ def generate_marine_bullet_slide(
         output_path: str = "output/carousels/c_bullet.png",
 ) -> str:
     """
-    Slide avec titre + cartes blanches arrondies pour chaque point.
+    Slide avec titre en serif italique + cartes blanches arrondies par point.
     L'ensemble (titre + cartes) est centré verticalement.
     """
     img, draw = _rose_sq_base()
 
-    font_title = load_font(FONT_BOLD, 56)
-    font_item  = load_font(FONT_BOLD, 40)
+    font_title = load_font(FONT_SERIF_I, 72)   # Cormorant Italic — élégant, style Playfair
+    font_item  = load_font(FONT_BOLD,    38)
     max_w      = FEED_W - 2 * _MARGIN_X
     text_w     = max_w - 2 * _CARD_PAD_X
 
-    # Hauteur du titre
-    title_h = _block_height(draw, title, font_title, max_w, 1.25)
+    # Hauteur du titre (espace-ligne condensé pour serif)
+    title_h = _block_height(draw, title, font_title, max_w, 1.2)
 
-    # Hauteurs des bulles (dynamique selon contenu)
-    item_bbox  = draw.textbbox((0, 0), "Ag", font=font_item)
-    item_lh    = (item_bbox[3] - item_bbox[1]) * 1.3
+    # Hauteurs des bulles
+    item_bbox = draw.textbbox((0, 0), "Ag", font=font_item)
+    item_lh   = (item_bbox[3] - item_bbox[1]) * 1.3
     card_heights = []
     for bullet in bullets:
         lines = _wrap_lines(draw, bullet, font_item, text_w)
         card_heights.append(int(item_lh * len(lines) + 2 * _CARD_PAD_Y))
 
-    TITLE_CARD_GAP = 36
+    TITLE_CARD_GAP = 40
     total_h = (title_h + TITLE_CARD_GAP
                + sum(card_heights)
                + _CARD_GAP * (len(bullets) - 1))
 
-    # Centrage vertical dans la zone utilisable
     usable_h = _USABLE_Y2 - _TOP_Y
     y = _TOP_Y + (usable_h - total_h) / 2
 
-    # Titre
+    # Titre en serif italic
     _draw_lines_centered(draw, title, font_title, BRAND_BLUE,
-                         _MARGIN_X, y, max_w, 1.25)
+                         _MARGIN_X, y, max_w, 1.2)
     y += title_h + TITLE_CARD_GAP
 
-    # Bulles
+    # Bulles avec ombre
     for card_h, bullet in zip(card_heights, bullets):
-        # Fond blanc chaud arrondi
-        draw.rounded_rectangle(
-            [_MARGIN_X, y, FEED_W - _MARGIN_X, y + card_h],
-            radius=_CARD_RADIUS, fill=(252, 248, 244),
-        )
-        # Texte centré dans la carte
+        _draw_bubble(draw, _MARGIN_X, int(y), FEED_W - _MARGIN_X, card_h)
+
         lines        = _wrap_lines(draw, bullet, font_item, text_w)
         text_block_h = int(item_lh * len(lines))
         text_y       = y + (card_h - text_block_h) / 2
@@ -230,26 +291,29 @@ def generate_marine_text_slide(
 ) -> str:
     """
     Slide avec titre optionnel + paragraphes centrés verticalement.
-    Si title="", le texte seul est centré (compat ancienne version).
+    La taille de police s'adapte au volume de texte pour éviter le débordement.
     """
     img, draw = _rose_sq_base()
 
-    font_title = load_font(FONT_BOLD, 56)
-    font_body  = load_font(FONT_BOLD, 46)
-    max_w      = FEED_W - 2 * _MARGIN_X
+    max_w = FEED_W - 2 * _MARGIN_X
 
-    TITLE_BODY_GAP = 44
-    PARA_GAP       = 28
+    # Taille de police adaptive pour le corps
+    font_title = load_font(FONT_BOLD, 54)
+    full_text  = "\n".join(paragraphs)
+    for body_size in (42, 38, 34, 30):
+        font_body = load_font(FONT_BOLD, body_size)
+        para_heights = [_block_height(draw, p, font_body, max_w, 1.35) for p in paragraphs]
+        title_h   = _block_height(draw, title, font_title, max_w, 1.25) if title else 0
+        TITLE_BODY_GAP = 40
+        PARA_GAP       = 24
+        total_h = (title_h
+                   + (TITLE_BODY_GAP if title else 0)
+                   + sum(para_heights)
+                   + PARA_GAP * (len(paragraphs) - 1))
+        usable_h = _USABLE_Y2 - _TOP_Y
+        if total_h <= usable_h:
+            break
 
-    # Hauteur totale du bloc
-    title_h   = _block_height(draw, title, font_title, max_w, 1.25) if title else 0
-    para_heights = [_block_height(draw, p, font_body, max_w, 1.3) for p in paragraphs]
-    total_h = (title_h
-               + (TITLE_BODY_GAP if title else 0)
-               + sum(para_heights)
-               + PARA_GAP * (len(paragraphs) - 1))
-
-    usable_h = _USABLE_Y2 - _TOP_Y
     y = _TOP_Y + (usable_h - total_h) / 2
 
     if title:
@@ -257,9 +321,9 @@ def generate_marine_text_slide(
                              _MARGIN_X, y, max_w, 1.25)
         y += title_h + TITLE_BODY_GAP
 
-    for i, (para, para_h) in enumerate(zip(paragraphs, para_heights)):
+    for para, para_h in zip(paragraphs, para_heights):
         _draw_lines_centered(draw, para, font_body, BRAND_BLUE,
-                             _MARGIN_X, y, max_w, 1.3)
+                             _MARGIN_X, y, max_w, 1.35)
         y += para_h + PARA_GAP
 
     _yellow_arrow(img, draw, FEED_W - 148, FEED_H - 72)
@@ -276,35 +340,31 @@ def generate_marine_content_slide(number: int, text: str,
     return generate_marine_text_slide("", [text], output_path=output_path)
 
 
-# ─── Slide CTA ───────────────────────────────────────────────────────────────
+# ─── Slide CTA — header glow + question centrée + signature ──────────────────
 
 def generate_marine_cta_slide(
         cta_text: str,
         output_path: str = "output/carousels/c_cta.png",
 ) -> str:
+    """
+    Dernière slide : 'VISIBLE ET / CONFORME' avec halo lumineux, puis texte CTA.
+    Pas de flèche jaune sur cette slide.
+    """
     img, draw = _rose_sq_base()
 
-    # Petit en-tête "VISIBLE ET / CONFORME" en blanc
-    font_sub  = load_font(FONT_LIGHT_I, 36)
-    font_main = load_font(FONT_BLACK,   80)
-
-    sub_w  = draw.textlength(BRAND_VISIBLE,  font=font_sub)
-    main_w = draw.textlength(BRAND_CONFORME, font=font_main)
-
-    draw.text(((FEED_W - sub_w)  / 2, 55), BRAND_VISIBLE,
-              font=font_sub,  fill=(255, 255, 255))
-    draw.text(((FEED_W - main_w) / 2, 97), BRAND_CONFORME,
-              font=font_main, fill=(255, 255, 255))
+    # Header avec glow
+    img, draw, y_after = _draw_cta_header_glow(img, draw, y_sub=48)
 
     # Texte CTA en bleu, centré dans l'espace restant
-    font = load_font(FONT_BOLD, 62)
+    font = load_font(FONT_BOLD, 60)
     draw_multiline_centered(
         draw, cta_text, font, BRAND_BLUE,
-        _MARGIN_X, 210, FEED_W - _MARGIN_X, _USABLE_Y2,
+        _MARGIN_X, y_after, FEED_W - _MARGIN_X, _USABLE_Y2,
         line_spacing=1.42,
         top_aligned=False,
     )
 
+    # Pas de flèche sur la dernière slide
     _author_foot(draw)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
@@ -324,7 +384,7 @@ def generate_marine_carousel_set(
     Format du dictionnaire attendu :
     {
         "id": 1,
-        "hook_text": "...",            # ou "cover" (alias)
+        "hook_text": "Titre accroche\nSous-titre explicatif",   # ou "cover" (alias)
         "slides": [
             {
                 "type": "bullets",
@@ -336,7 +396,7 @@ def generate_marine_carousel_set(
                 "title": "Sur la reprise d'un avis...",
                 "paragraphs": ["...", "...", "..."]
             },
-            "Texte simple (compat)"    # rendu comme slide texte centré
+            "Texte simple (compat)"    # rendu comme slide texte centré sans titre
         ],
         "cta": "...",
         "caption": "..."
@@ -365,7 +425,6 @@ def generate_marine_carousel_set(
                     output_path=out,
                 ))
             else:
-                # type "text" ou inconnu
                 paths.append(generate_marine_text_slide(
                     title=slide.get("title", ""),
                     paragraphs=slide.get("paragraphs", [slide.get("text", "")]),
@@ -379,7 +438,7 @@ def generate_marine_carousel_set(
                 output_path=out,
             ))
 
-    # Slide CTA
+    # Slide CTA (sans flèche)
     paths.append(generate_marine_cta_slide(
         cta_text=carousel.get("cta", ""),
         output_path=f"{output_dir}/c_m{cid}_s{len(carousel.get('slides', [])) + 1}.png",
