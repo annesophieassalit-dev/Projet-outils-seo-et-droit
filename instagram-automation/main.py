@@ -59,12 +59,15 @@ def cmd_test(content_type: str) -> None:
     elif content_type == "flash":
         posts = json.loads((content_dir / "flash_posts.json").read_text())
         post  = posts[0]
-        path  = generate_phrase_design_post(
-            label=post.get("label", "Visible et Conforme"),
-            pill_text=post["pill_text"],
-            variant="yellow",
-        )
-        log.info(f"✓ Flash post généré : {path}")
+        for variant in ("yellow", "blue"):
+            suffix = "a" if variant == "yellow" else "b"
+            path = generate_phrase_design_post(
+                label=post.get("label", "Visible et Conforme"),
+                pill_text=post["pill_text"],
+                variant=variant,
+                output_path=f"output/flash_posts/phrase_{suffix}.png",
+            )
+            log.info(f"✓ Flash post {variant} généré : {path}")
 
     else:
         log.error(f"Type inconnu : {content_type}. Choisissez : story, carousel-seo, carousel-rgpd, flash")

@@ -31,18 +31,19 @@ from generators.base import load_font, make_radial_gradient
 _W, _H   = FEED_W, 1350    # 1080 × 1350
 
 # ── Pilules ──────────────────────────────────────────────────────────────────
-_PILL_W  = _W - 60          # 1020 px (30 px marge de chaque côté)
-_PILL_H  = 195              # hauteur des pilules
-_PILL_R  = 18               # rayon des coins
-_TILT    = -3.5             # même inclinaison pour P1 et P2 (horaire visuellement)
-_OVERLAP = 35               # px que P2 passe derrière P1
+_PILL_W  = _W - 80          # 1000 px (40 px marge de chaque côté)
+_PILL_H  = 152              # hauteur des pilules (réduite)
+_PILL_R  = 16               # rayon des coins
+_TILT1   = 0.0              # P1 — droite (horizontale)
+_TILT2   = +3.5             # P2 — penchée dans l'autre sens (anti-horaire visuellement)
+_OVERLAP = 30               # px que P2 passe derrière P1
 
 # ── Positions verticales ─────────────────────────────────────────────────────
-_LBL_Y   = 430              # badge label y
+_LBL_Y   = 440              # badge label y
 _LBL_H   = 46
 
-_P1_CY   = 618              # centre y pilule 1
-_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 618 + 195 - 35 = 778
+_P1_CY   = 610              # centre y pilule 1
+_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 610 + 152 - 30 = 732
 
 _FOOT_Y  = 1090             # badge auteure
 _FOOT_H  = 160
@@ -211,16 +212,16 @@ def generate_phrase_design_yellow(
         line1, line2 = pill_text, None
 
     cl, cr, tc = YELLOW_LEFT, YELLOW_RIGHT, tuple(YELLOW_TEXT)
-    font1 = load_font(FONT_BOLD,    88)
-    font2 = load_font(FONT_SERIF_I, 76)
+    font1 = load_font(FONT_BOLD,    76)
+    font2 = load_font(FONT_SERIF_I, 64)
 
     # P2 d'abord (derrière), P1 ensuite (devant)
     if line2:
         pill2 = _make_pill_plain(_PILL_W, _PILL_H, cl, cr, _PILL_R, line2, font2, tc)
-        img, draw = _paste_pill_tilted(img, pill2, _TILT, _P2_CY)
+        img, draw = _paste_pill_tilted(img, pill2, _TILT2, _P2_CY)
 
     pill1 = _make_pill_plain(_PILL_W, _PILL_H, cl, cr, _PILL_R, line1, font1, tc)
-    img, draw = _paste_pill_tilted(img, pill1, _TILT, _P1_CY)
+    img, draw = _paste_pill_tilted(img, pill1, _TILT1, _P1_CY)
 
     _footer_badge(draw)
 
@@ -251,16 +252,16 @@ def generate_phrase_design_blue(
         line1, line2 = pill_text, None
 
     cl, cr = PILL_LEFT, PILL_RIGHT
-    font1 = load_font(FONT_BOLD,    88)
-    font2 = load_font(FONT_SERIF_I, 76)
+    font1 = load_font(FONT_BOLD,    76)
+    font2 = load_font(FONT_SERIF_I, 64)
 
     # P2 d'abord (derrière), P1 ensuite (devant)
     if line2:
         pill2 = _make_pill_glow(_PILL_W, _PILL_H, cl, cr, _PILL_R, line2, font2)
-        img, draw = _paste_pill_tilted(img, pill2, _TILT, _P2_CY)
+        img, draw = _paste_pill_tilted(img, pill2, _TILT2, _P2_CY)
 
     pill1 = _make_pill_glow(_PILL_W, _PILL_H, cl, cr, _PILL_R, line1, font1)
-    img, draw = _paste_pill_tilted(img, pill1, _TILT, _P1_CY)
+    img, draw = _paste_pill_tilted(img, pill1, _TILT1, _P1_CY)
 
     _footer_badge(draw)
 
