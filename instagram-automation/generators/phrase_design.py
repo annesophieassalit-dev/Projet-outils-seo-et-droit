@@ -32,20 +32,17 @@ _W, _H   = FEED_W, 1350    # 1080 × 1350
 
 # ── Pilules ──────────────────────────────────────────────────────────────────
 _PILL_W  = _W - 80          # 1000 px (40 px marge de chaque côté)
-_PILL_H  = 152              # hauteur des pilules (réduite)
+_PILL_H  = 128              # hauteur des pilules
 _PILL_R  = 16               # rayon des coins
 _TILT1   = 0.0              # P1 — droite (horizontale)
-_TILT2   = +3.5             # P2 — penchée dans l'autre sens (anti-horaire visuellement)
-_OVERLAP = 30               # px que P2 passe derrière P1
+_TILT2   = +3.5             # P2 — penchée dans l'autre sens
+_OVERLAP = 26               # px que P2 passe derrière P1
 
 # ── Positions verticales ─────────────────────────────────────────────────────
-_LBL_Y   = 440              # badge label y
-_LBL_H   = 46
+_P1_CY   = 575              # centre y pilule 1 (centré dans l'espace header→footer)
+_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 575 + 128 - 26 = 677
 
-_P1_CY   = 610              # centre y pilule 1
-_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 610 + 152 - 30 = 732
-
-_FOOT_Y  = 1090             # badge auteure
+_FOOT_Y  = 1095             # badge auteure
 _FOOT_H  = 160
 
 
@@ -146,16 +143,29 @@ def _make_pill_glow(w: int, h: int, cl, cr, radius: int,
 
 def _paste_pill_tilted(img: Image.Image, pill: Image.Image,
                        angle: float, cy: int) -> tuple:
-    """Colle une pilule inclinée, centrée horizontalement, centrée verticalement sur cy."""
+    """Colle une pilule inclinée avec ombre portée douce, centrée sur cy."""
     W, H    = img.size
     rotated = pill.rotate(angle, expand=True, resample=Image.BICUBIC)
     rw, rh  = rotated.size
-    x       = (W - rw) // 2      # centrage horizontal
-    y       = cy - rh // 2       # centrage vertical
+    x       = (W - rw) // 2
+    y       = cy - rh // 2
 
+    base = img.convert("RGBA")
+
+    # Ombre portée
+    r_arr  = np.array(rotated)
+    alpha  = Image.fromarray(r_arr[:, :, 3])
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    dark   = Image.new("RGBA", rotated.size, (30, 15, 50, 60))
+    dark.putalpha(alpha)
+    shadow.paste(dark, (x + 7, y + 11), dark)
+    shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+    base   = Image.alpha_composite(base, shadow)
+
+    # Pilule
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     layer.paste(rotated, (x, y), rotated)
-    out = Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+    out = Image.alpha_composite(base, layer).convert("RGB")
     return out, ImageDraw.Draw(out)
 
 
@@ -203,7 +213,6 @@ def generate_phrase_design_yellow(
     img = make_radial_gradient(_W, _H, center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
 
     img, draw = _draw_brand_glow(img)
-    _label_badge(draw, label, load_font(FONT_REGULAR, 30), 30, _LBL_Y, _LBL_H)
 
     if "≠" in pill_text:
         p = pill_text.split("≠", 1)
@@ -243,7 +252,6 @@ def generate_phrase_design_blue(
     img = make_radial_gradient(_W, _H, center_color=GRAD_CENTER, edge_color=GRAD_EDGE)
 
     img, draw = _draw_brand_glow(img)
-    _label_badge(draw, label, load_font(FONT_REGULAR, 30), 30, _LBL_Y, _LBL_H)
 
     if "≠" in pill_text:
         p = pill_text.split("≠", 1)
