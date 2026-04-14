@@ -557,28 +557,55 @@ def generate_marine_story_set(story: dict, output_dir: str = "output/stories") -
     """
     Génère les 3 slides d'une story.
 
-    Format du dictionnaire attendu :
+    Format du dictionnaire :
     {
         "id": 1,
-        "poll_question": "...",
-        "poll_options": ["Oui", "Non"],
-        "info_text": "...",
-        "banner_text": "Site visible ≠ Site conforme"
+        "slide1_type": "question_box" | "poll" | "phrase_design",
+        "poll_question": "...",           # question_box / poll
+        "poll_options": ["Oui", "Non"],   # poll uniquement
+        "phrase_text": "X ≠ Y",           # phrase_design uniquement
+        "info_text": "...",               # slide 2 (toujours)
+        "slide3_type": "bandeau" | "poll",# défaut "bandeau"
+        "banner_text": "...",             # bandeau
+        "slide3_poll_question": "...",    # poll (slide 3)
+        "slide3_poll_options": ["..."]    # poll (slide 3)
     }
     """
-    sid = story.get("id", "x")
-    return [
-        generate_marine_poll_slide(
+    sid         = story.get("id", "x")
+    slide1_type = story.get("slide1_type", "poll")
+    slide3_type = story.get("slide3_type", "bandeau")
+
+    # ── Slide 1 ──────────────────────────────────────────────────────────────
+    if slide1_type == "phrase_design":
+        s1 = generate_marine_banner_slide(
+            banner_text=story["phrase_text"],
+            output_path=f"{output_dir}/story_m{sid}_s1.png",
+        )
+    else:
+        # "question_box" ou "poll" — même rendu visuel (sticker Instagram côté app)
+        s1 = generate_marine_poll_slide(
             poll_question=story["poll_question"],
             poll_options=story.get("poll_options", ["Oui", "Non"]),
             output_path=f"{output_dir}/story_m{sid}_s1.png",
-        ),
-        generate_marine_info_slide(
-            info_text=story["info_text"],
-            output_path=f"{output_dir}/story_m{sid}_s2.png",
-        ),
-        generate_marine_banner_slide(
+        )
+
+    # ── Slide 2 — Info ───────────────────────────────────────────────────────
+    s2 = generate_marine_info_slide(
+        info_text=story["info_text"],
+        output_path=f"{output_dir}/story_m{sid}_s2.png",
+    )
+
+    # ── Slide 3 ──────────────────────────────────────────────────────────────
+    if slide3_type == "poll":
+        s3 = generate_marine_poll_slide(
+            poll_question=story["slide3_poll_question"],
+            poll_options=story.get("slide3_poll_options", ["Oui", "Non"]),
+            output_path=f"{output_dir}/story_m{sid}_s3.png",
+        )
+    else:
+        s3 = generate_marine_banner_slide(
             banner_text=story["banner_text"],
             output_path=f"{output_dir}/story_m{sid}_s3.png",
-        ),
-    ]
+        )
+
+    return [s1, s2, s3]

@@ -1,52 +1,1869 @@
 [
-  {"id":1,"poll_question":"Votre site a été rédigé il y a plus de 2 ans sans relecture ?","poll_options":["Oui","Non"],"info_text":"Ce que vous avez écrit en 2024 est peut-être devenu un problème en 2026. La réglementation, elle, n'a pas attendu.","banner_text":"Site ancien ≠ Site conforme"},
-  {"id":2,"poll_question":"Votre page À propos parle de résultats obtenus par vos clients ?","poll_options":["Oui","Non"],"info_text":"Ce que vous avez accompli avec vos clients ne vous appartient pas à revendiquer. C'est leur vécu. Pas votre méthode.","banner_text":"Résultat client ≠ Preuve de méthode"},
-  {"id":3,"poll_question":"Vous avez utilisé le mot 'soigner' sur votre site ?","poll_options":["Oui","Non"],"info_text":"'Soigner' appartient au champ médical. Sur votre site bien-être — il crée une confusion sur votre statut.","banner_text":"Soigner ≠ Accompagner"},
-  {"id":4,"poll_question":"Un rédacteur web a rédigé votre site sans connaître votre cadre réglementaire ?","poll_options":["Oui","Non"],"info_text":"Il a soigné votre style. Pas votre conformité. Ces deux compétences ne se recoupent pas.","banner_text":"Bien rédigé ≠ Sans risque"},
-  {"id":5,"poll_question":"Vous avez des témoignages clients publiés sans accord écrit ?","poll_options":["Oui","Non"],"info_text":"Un prénom. Une expérience identifiable. Ce sont des données personnelles protégées. La bonne foi ne suffit pas.","banner_text":"Témoignage ≠ Liberté totale"},
-  {"id":6,"poll_question":"Votre page tarifs contient des intitulés orientés vers le résultat du client ?","poll_options":["Oui","Non"],"info_text":"Séance anti-stress. Pack libération. Vous venez d'associer un prix à un effet promis.","banner_text":"Intitulé ≠ Promesse"},
-  {"id":7,"poll_question":"Vous avez déjà eu un mauvais pressentiment en relisant votre site ?","poll_options":["Oui","Non"],"info_text":"Ce pressentiment est rarement sans fondement. Et il est corrigeable. Toujours.","banner_text":"Pressentiment ≠ Certitude"},
-  {"id":8,"poll_question":"Votre site a été relu par quelqu'un qui connaît votre cadre réglementaire ?","poll_options":["Oui","Non"],"info_text":"Pas votre rédacteur web. Pas votre amie. Quelqu'un qui connaît votre cadre juridique et SEO.","banner_text":"Relecture ≠ Relecture conforme"},
-  {"id":9,"poll_question":"Vous avez une page dédiée à votre localisation sur votre site ?","poll_options":["Oui","Non"],"info_text":"C'est votre ancre SEO locale. La page que Google cherche pour vous classer dans votre ville.","banner_text":"Présent en ligne ≠ Visible localement"},
-  {"id":10,"poll_question":"Votre site utilise le mot 'guérir' ou 'traiter' ?","poll_options":["Oui","Non"],"info_text":"Ces mots appartiennent au champ médical. Sur votre site bien-être — ils ne vous appartiennent pas.","banner_text":"Guérir ≠ Accompagner"},
-  {"id":11,"poll_question":"Votre description Google n'a pas été relue depuis plus d'un an ?","poll_options":["Oui","Non"],"info_text":"C'est la première chose que lit votre futur client. Avant votre site. Avant tout.","banner_text":"Ancienne description ≠ Description conforme"},
-  {"id":12,"poll_question":"Vous avez des avis Google que vous relayez en story sans les filtrer ?","poll_options":["Oui","Non"],"info_text":"Un avis que vous relayez — vous l'endossez. Même si c'est votre client qui l'a écrit.","banner_text":"Relayer ≠ Endosser sans filtre"},
-  {"id":13,"poll_question":"Votre fiche Google contient le mot 'soin' ou 'thérapie' ?","poll_options":["Oui","Non"],"info_text":"Ces mots vous placent dans un champ sémantique médical. Pas dans celui de vos vrais clients.","banner_text":"Soin ≠ Bien-être"},
-  {"id":14,"poll_question":"Vous avez répondu à tous vos avis Google publiquement ?","poll_options":["Oui","Non"],"info_text":"Chaque réponse publique est une prise de parole professionnelle. Elle dit quelque chose sur vous.","banner_text":"Répondre ≠ Se défendre"},
-  {"id":15,"poll_question":"Votre description Google a été rédigée à l'ouverture de votre cabinet ?","poll_options":["Oui","Non"],"info_text":"Vous avez évolué. Votre pratique aussi. Votre description Google — peut-être pas.","banner_text":"Ouverture du cabinet ≠ Date de validité"},
-  {"id":16,"poll_question":"Votre bio Instagram contient une promesse de résultat ?","poll_options":["Oui","Non"],"info_text":"150 caractères. Suffisant pour créer une attente que vous ne pouvez pas porter.","banner_text":"Bio ≠ Promesse"},
-  {"id":17,"poll_question":"Vous publiez sur Instagram sans relire vos formulations ?","poll_options":["Oui","Non"],"info_text":"C'est là que les glissements se produisent le plus souvent. Dans l'élan. Sans relecture.","banner_text":"Spontané ≠ Sans cadre"},
-  {"id":18,"poll_question":"Vous avez publié un témoignage de guérison en story ?","poll_options":["Oui","Non"],"info_text":"Une story capturée existe légalement. Ce que vous avez publié a existé. Même si vous ne le voyez plus.","banner_text":"Story ≠ Éphémère"},
-  {"id":19,"poll_question":"Vos hashtags vous classent dans un champ médical sans le vouloir ?","poll_options":["Oui","Non"],"info_text":"Vos hashtags vous classent dans un champ sémantique. Vous choisissez lequel.","banner_text":"Hashtag ≠ Anodin"},
-  {"id":20,"poll_question":"Vous utilisez l'IA pour rédiger vos posts Instagram ?","poll_options":["Oui","Non"],"info_text":"Elle optimise pour l'attractivité. Pas pour votre conformité. Le filtre reste de votre responsabilité.","banner_text":"IA ≠ Conformité automatique"},
-  {"id":21,"poll_question":"Vous avez déjà publié un avant/après avec un client ?","poll_options":["Oui","Non"],"info_text":"Le avant/après attribue un résultat directement à votre méthode. C'est une promesse implicite.","banner_text":"Avant/Après ≠ Preuve"},
-  {"id":22,"poll_question":"Votre bio Instagram n'a pas été relue depuis plus de 6 mois ?","poll_options":["Oui","Non"],"info_text":"C'est le premier texte lu sur vous. Avant vos posts. Avant votre site.","banner_text":"Bio ancienne ≠ Bio conforme"},
-  {"id":23,"poll_question":"Votre site a un bandeau cookie qui demande un consentement actif ?","poll_options":["Oui","Non"],"info_text":"En continuant à naviguer vous acceptez les cookies — ce n'est pas un consentement valable.","banner_text":"Naviguer ≠ Consentir"},
-  {"id":24,"poll_question":"Votre formulaire de contact a une mention RGPD ?","poll_options":["Oui","Non"],"info_text":"Un formulaire sans mention RGPD collecte des données personnelles sans base légale.","banner_text":"Formulaire ≠ Conformité automatique"},
-  {"id":25,"poll_question":"Votre newsletter a été constituée avec des consentements explicites ?","poll_options":["Oui","Non"],"info_text":"Un client qui prend rendez-vous n'a pas consenti à votre newsletter. Ce sont deux accords distincts.","banner_text":"Rendez-vous ≠ Consentement newsletter"},
-  {"id":26,"poll_question":"Vous avez une politique de confidentialité sur votre site ?","poll_options":["Oui","Non"],"info_text":"Dès que vous collectez un email — vous êtes obligé d'en avoir une. Pas optionnel.","banner_text":"Collecte de données ≠ Sans obligation"},
-  {"id":27,"poll_question":"Vos mentions légales sont complètes et exactes ?","poll_options":["Oui","Non"],"info_text":"Des mentions légales copiées sur un autre site — ce sont des mentions fausses.","banner_text":"Copier ≠ Se conformer"},
-  {"id":28,"poll_question":"Vous savez où sont stockées les données de vos clients ?","poll_options":["Oui","Non"],"info_text":"Vos outils stockent peut-être les données de vos clients hors Europe.","banner_text":"Utiliser un outil ≠ Connaître ses obligations"},
-  {"id":29,"poll_question":"Vous avez un accord écrit pour chaque témoignage publié ?","poll_options":["Oui","Non"],"info_text":"Un accord verbal ne prouve rien. Un accord écrit — oui. C'est la différence qui protège.","banner_text":"Accord verbal ≠ Accord valable"},
-  {"id":30,"poll_question":"Vous avez une procédure pour répondre à une demande d'effacement ?","poll_options":["Oui","Non"],"info_text":"Vous avez 30 jours pour répondre. Sans procédure — vous dépasserez ce délai.","banner_text":"Bonne intention ≠ Procédure"},
-  {"id":31,"poll_question":"Vos fiches clients ont une durée de conservation définie ?","poll_options":["Oui","Non"],"info_text":"Conserver des données indéfiniment — c'est une non-conformité. Même si vous n'en faites rien.","banner_text":"Conserver ≠ Protéger"},
-  {"id":32,"poll_question":"Vous avez déjà vérifié la conformité RGPD de vos outils ?","poll_options":["Oui","Non"],"info_text":"Calendly. Mailchimp. Google Workspace. Chacun traite des données de vos clients. Chacun est votre responsabilité.","banner_text":"Utiliser ≠ Vérifier"},
-  {"id":33,"poll_question":"Vous utilisez l'IA avec des données réelles de clients ?","poll_options":["Oui","Non"],"info_text":"Copier des informations client dans un prompt IA — c'est transmettre des données sensibles hors de votre contrôle.","banner_text":"Prompt IA ≠ Espace confidentiel"},
-  {"id":34,"poll_question":"Vous vous êtes déjà censuré par peur de mal dire ?","poll_options":["Oui","Non"],"info_text":"La peur des mots vous rend invisible. Pas protégé.","banner_text":"Peur ≠ Protection"},
-  {"id":35,"poll_question":"Vous pensez que la conformité nuit à votre visibilité ?","poll_options":["Oui","Non"],"info_text":"Le vocabulaire conforme est aussi le vocabulaire SEO-efficace. Ce ne sont pas deux objectifs opposés.","banner_text":"Conformité ≠ Invisibilité"},
-  {"id":36,"poll_question":"Vous avez copié des formulations de sites concurrents ?","poll_options":["Oui","Non"],"info_text":"Copier la stratégie de votre concurrent — c'est copier ses zones de risque.","banner_text":"Copier ≠ Se protéger"},
-  {"id":37,"poll_question":"Vous avez déjà hésité avant de recommander votre URL ?","poll_options":["Oui","Non"],"info_text":"Cette hésitation dit quelque chose. Elle dit que vous savez que quelque chose cloche.","banner_text":"Hésitation ≠ Paranoia"},
-  {"id":38,"poll_question":"Vous pensez que la DGCCRF ne contrôle que les grandes structures ?","poll_options":["Oui","Non"],"info_text":"Elle peut contrôler n'importe quel professionnel. Sur signalement. Sur plainte. Par veille.","banner_text":"Petit cabinet ≠ Invisible aux contrôles"},
-  {"id":39,"poll_question":"Votre formation vous a appris à communiquer de façon conforme ?","poll_options":["Oui","Non"],"info_text":"Les formations en sophrologie, naturopathie, coaching — n'enseignent pas la conformité sémantique.","banner_text":"Formation ≠ Référentiel communication"},
-  {"id":40,"poll_question":"Vous avez déjà changé une formulation parce qu'elle vous semblait risquée ?","poll_options":["Oui","Non"],"info_text":"Vous avez le bon instinct. Il vous manque juste le référentiel pour aller au bout.","banner_text":"Instinct ≠ Référentiel"},
-  {"id":41,"poll_question":"Vous connaissez la différence entre allégation et description ?","poll_options":["Oui","Non"],"info_text":"Description — vous parlez de ce que vous faites. Allégation — vous parlez de ce que le client obtiendra. Ce n'est pas le même cadre juridique.","banner_text":"Décrire ≠ Promettre"},
-  {"id":42,"poll_question":"Vous portez une peur diffuse sur votre communication ?","poll_options":["Oui","Non"],"info_text":"Cette peur existe parce que le doute existe. Et le doute mérite une réponse claire.","banner_text":"Peur diffuse ≠ Peur sans fondement"},
-  {"id":43,"poll_question":"Vous avez déjà reçu un avis négatif que vous trouviez injuste ?","poll_options":["Oui","Non"],"info_text":"Avant de répondre — quelle est votre posture dans cet échange public ?","banner_text":"Avis négatif ≠ Diffamation"},
-  {"id":44,"poll_question":"Vous avez déjà publié quelque chose et regretté la formulation ?","poll_options":["Oui","Non"],"info_text":"Ce regret arrive après la publication. Le référentiel arrive avant. C'est toute la différence.","banner_text":"Après coup ≠ Avant publication"},
-  {"id":45,"poll_question":"Vous pensez que votre concurrent est mieux protégé que vous ?","poll_options":["Oui","Non"],"info_text":"Il est peut-être plus visible. Il est peut-être aussi plus exposé. Les deux ne s'excluent pas.","banner_text":"Visible ≠ Protégé"},
-  {"id":46,"poll_question":"Vous avez déjà utilisé le mot 'détox' sur votre site ou Instagram ?","poll_options":["Oui","Non"],"info_text":"Ce mot appartient au champ médical. Sur votre site bien-être — il crée une confusion sur votre périmètre.","banner_text":"Détox ≠ Bien-être"},
-  {"id":47,"poll_question":"Vous pensez que votre site est conforme aujourd'hui ?","poll_options":["Oui","Non"],"info_text":"La plupart des praticiens qui pensent que oui trouvent entre 3 et 8 problèmes au premier audit.","banner_text":"Penser ≠ Savoir"},
-  {"id":48,"poll_question":"Vous avez déjà relu votre site avec un regard de conformité ?","poll_options":["Oui","Non"],"info_text":"Pas un regard de relecture. Un regard de conformité. Ce n'est pas le même filtre.","banner_text":"Relire ≠ Auditer"},
-  {"id":49,"poll_question":"Vous êtes prêt pour les contrôles qui arrivent en 2026 ?","poll_options":["Oui","Non"],"info_text":"Le secteur bien-être grossit. L'attention réglementaire grossit avec lui.","banner_text":"Croissance du secteur ≠ Moins de contrôles"},
-  {"id":50,"poll_question":"Vous savez exactement ce que votre site dit de vous — légalement ?","poll_options":["Oui","Non"],"info_text":"Pas ce que vous avez voulu dire. Ce qu'un tiers peut y lire. Ce n'est pas la même chose.","banner_text":"Intention ≠ Interprétation"}
+  {
+    "id": 1,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez publié quelque chose sur votre site ou vos réseaux en vous disant 'j'espère que personne ne va regarder ça de trop près.' C'était quoi ?",
+    "info_text": "Ce sentiment existe parce que quelque chose cloche. Un praticien serein avec sa communication n'a pas cette pensée. Le mauvais pressentiment est rarement sans fondement.",
+    "slide3_type": "bandeau",
+    "banner_text": "Pressentiment ≠ Paranoia"
+  },
+  {
+    "id": 2,
+    "slide1_type": "poll",
+    "poll_question": "La DGCCRF peut-elle contrôler votre site si vous n'êtes pas un commerçant ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Oui. Dès que vous proposez une prestation contre rémunération — vous entrez dans le champ des pratiques commerciales. Même en tant qu'indépendant. Même avec un petit cabinet.",
+    "slide3_type": "bandeau",
+    "banner_text": "Praticien indépendant ≠ Hors champ DGCCRF"
+  },
+  {
+    "id": 3,
+    "slide1_type": "question_box",
+    "poll_question": "Quel mot avez-vous supprimé de votre site récemment parce qu'il vous semblait risqué ?",
+    "info_text": "Ce réflexe est juste. Mais supprimer sans remplacer par la bonne formulation — c'est devenir vague. Et le vague n'est pas une protection. C'est une absence.",
+    "slide3_type": "bandeau",
+    "banner_text": "Supprimer ≠ Corriger"
+  },
+  {
+    "id": 4,
+    "slide1_type": "poll",
+    "poll_question": "Sur 381 praticiens bien-être contrôlés par la DGCCRF en 2021 — combien présentaient un manquement ?",
+    "poll_options": [
+      "Moins de 30%",
+      "Entre 30 et 50%",
+      "Plus de 60%"
+    ],
+    "info_text": "261. Soit 68%. Sophrologues, naturopathes, réflexologues. La plupart ne savaient pas. Ça n'a rien changé au résultat.",
+    "slide3_type": "bandeau",
+    "banner_text": "Ignorance ≠ Protection juridique"
+  },
+  {
+    "id": 5,
+    "slide1_type": "question_box",
+    "poll_question": "Votre IA vient de rédiger votre description Google. Comment vous vérifiez qu'elle n'a pas dépassé votre cadre ?",
+    "info_text": "L'IA génère pour l'attractivité. Pas pour votre conformité. Elle ne connaît pas votre profession. Ce qu'elle produit — vous en êtes responsable.",
+    "slide3_type": "bandeau",
+    "banner_text": "IA ≠ Juriste SEO"
+  },
+  {
+    "id": 6,
+    "slide1_type": "poll",
+    "poll_question": "Votre concurrent est premier sur Google. Son site contient des formulations que vous n'osez pas utiliser. Vous pensez qu'il a raison ?",
+    "poll_options": [
+      "Oui il sait quelque chose",
+      "Non il prend un risque",
+      "Je ne sais pas"
+    ],
+    "info_text": "Il est peut-être en avance sur la sanction. Pas à l'abri. Copier ses formulations — c'est copier ses zones de risque.",
+    "slide3_type": "bandeau",
+    "banner_text": "Premier sur Google ≠ Dans le droit"
+  },
+  {
+    "id": 7,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez répondu à un avis Google cette semaine. Vous avez mentionné quoi exactement ?",
+    "info_text": "Ce que votre client choisit de dire ne vous autorise pas à le confirmer. Même si l'information est déjà publique — votre responsabilité reste engagée dès que vous la reprenez.",
+    "slide3_type": "bandeau",
+    "banner_text": "Répondre à un avis ≠ Valider un suivi"
+  },
+  {
+    "id": 8,
+    "slide1_type": "poll",
+    "poll_question": "Un praticien bien-être condamné pour exercice illégal de la médecine. La peine maximale encourue c'est :",
+    "poll_options": [
+      "6 mois",
+      "1 an",
+      "2 ans et 30 000€"
+    ],
+    "info_text": "2 ans d'emprisonnement et 30 000€ d'amende. Des peines complémentaires peuvent s'ajouter. Pour des mots sur un site.",
+    "slide3_type": "bandeau",
+    "banner_text": "Mots sur un site ≠ Sans conséquence pénale"
+  },
+  {
+    "id": 9,
+    "slide1_type": "question_box",
+    "poll_question": "Votre fiche Google existe. Vous ne l'avez pas créée. Que faites-vous ?",
+    "info_text": "Google peut créer une fiche à votre nom sans votre accord. Une professionnelle de santé a dû aller en justice pour faire supprimer la sienne. Des années de procédure. Revendiquez votre fiche maintenant.",
+    "slide3_type": "bandeau",
+    "banner_text": "Fiche non réclamée ≠ Fiche inexistante"
+  },
+  {
+    "id": 10,
+    "slide1_type": "poll",
+    "poll_question": "Google AI génère maintenant un résumé de votre activité avant les résultats de recherche. Vous savez ce qu'il dit de vous ?",
+    "poll_options": [
+      "Oui je viens de vérifier",
+      "Non jamais regardé",
+      "Je ne savais pas"
+    ],
+    "info_text": "Ce résumé est construit depuis votre site, votre fiche, vos avis. Si vos contenus contiennent des formulations risquées — l'IA les amplifie. Et vous en êtes responsable.",
+    "slide3_type": "bandeau",
+    "banner_text": "Résumé IA ≠ Hors de votre responsabilité"
+  },
+  {
+    "id": 11,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez déjà été tenté de mettre le nom d'un concurrent dans votre contenu pour capter ses recherches. Vous l'avez fait ?",
+    "info_text": "Utiliser le nom d'un concurrent pour générer du trafic peut constituer un acte de concurrence déloyale. Article 1240 du Code civil. Et Google vous classera toujours derrière lui sur son propre nom.",
+    "slide3_type": "bandeau",
+    "banner_text": "Trafic emprunté ≠ Clients gagnés"
+  },
+  {
+    "id": 12,
+    "slide1_type": "poll",
+    "poll_question": "Qui peut vous signaler à la DGCCRF ?",
+    "poll_options": [
+      "Un client mécontent",
+      "Un concurrent",
+      "Les deux",
+      "N'importe qui"
+    ],
+    "info_text": "Les deux. Votre concurrent qui vous voit mieux classé que lui. Un client qui relit votre site après une expérience décevante. Vous ne contrôlez pas qui signale. Vous contrôlez ce qui est écrit.",
+    "slide3_type": "bandeau",
+    "banner_text": "Signalement DGCCRF ≠ Toujours inattendu"
+  },
+  {
+    "id": 13,
+    "slide1_type": "question_box",
+    "poll_question": "Votre webmaster a rédigé votre site. Vous lui avez posé une question sur votre cadre réglementaire. Il a su répondre ?",
+    "info_text": "Un rédacteur web soigne votre style. Il ne connaît pas votre cadre juridique. Ces deux compétences ne se recoupent pas. Et personne ne vous le dit avant que le problème arrive.",
+    "slide3_type": "bandeau",
+    "banner_text": "Rédacteur web ≠ Expert de votre cadre"
+  },
+  {
+    "id": 14,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez mis 'résultats garantis' ou une formulation proche sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je vérifie maintenant"
+    ],
+    "info_text": "Aucun praticien bien-être ne peut légalement garantir un résultat. Cette formulation crée une promesse contractuelle implicite. Si le résultat n'est pas là — votre client a un levier juridique.",
+    "slide3_type": "bandeau",
+    "banner_text": "Garantie de résultat ≠ Argument marketing neutre"
+  },
+  {
+    "id": 15,
+    "slide1_type": "question_box",
+    "poll_question": "Vous utilisez ChatGPT pour rédiger vos posts. Il a produit une formulation que vous n'avez pas osé publier. C'était quoi ?",
+    "info_text": "L'IA ne sait pas ce que vous avez le droit de revendiquer. Elle sait ce qui attire. Ce qui attire et ce qui est conforme — c'est rarement la même chose dans votre secteur.",
+    "slide3_type": "bandeau",
+    "banner_text": "Ce qui attire ≠ Ce qui est conforme"
+  },
+  {
+    "id": 16,
+    "slide1_type": "poll",
+    "poll_question": "Un avis Google qui dit 'elle m'a aidé à retrouver le sommeil' publié sur votre site. Vous pensez que ça vous engage ?",
+    "poll_options": [
+      "Oui c'est mon risque",
+      "Non c'est le client qui a écrit",
+      "Je ne sais pas"
+    ],
+    "info_text": "Oui. En publiant cet avis sur votre site — vous choisissez, vous valorisez, vous assumez. Ce n'est plus le mot du client. C'est votre communication.",
+    "slide3_type": "bandeau",
+    "banner_text": "Publier un avis ≠ Simple relais"
+  },
+  {
+    "id": 17,
+    "slide1_type": "question_box",
+    "poll_question": "La DGCCRF a lancé des campagnes sur le secteur bien-être en 2018, 2021, 2023. Vous étiez au courant ?",
+    "info_text": "2018 — 675 praticiens contrôlés. Deux tiers en infraction. 2021 — 50 disciplines bien-être. 261 sur 381 rappelés à l'ordre. Ces campagnes sont planifiées. Méthodiques.",
+    "slide3_type": "bandeau",
+    "banner_text": "Campagne DGCCRF ≠ Hasard"
+  },
+  {
+    "id": 18,
+    "slide1_type": "poll",
+    "poll_question": "Votre site dit 'je traite' ou 'je soigne' ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "J'ai vérifié et non"
+    ],
+    "info_text": "'Soigner' et 'traiter' — ce sont des actes médicaux réglementés. La DGCCRF liste explicitement ces termes comme problématiques dans ses rapports de contrôle.",
+    "slide3_type": "bandeau",
+    "banner_text": "Soigner ≠ Accompagner"
+  },
+  {
+    "id": 19,
+    "slide1_type": "question_box",
+    "poll_question": "Une 'vétérinaire' explique sur vidéo que certains produits sont dangereux. Elle n'existe pas — c'est une IA. Vous avez vu ce type de contenu ?",
+    "info_text": "Utiliser l'apparence d'un professionnel pour influencer une décision — c'est une pratique commerciale trompeuse. La qualité invoquée doit être réelle, vérifiable et loyale.",
+    "slide3_type": "bandeau",
+    "banner_text": "Apparence d'autorité ≠ Autorité réelle"
+  },
+  {
+    "id": 20,
+    "slide1_type": "poll",
+    "poll_question": "Votre fiche Google contient le mot 'meilleur' ou 'spécialiste' ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "'Meilleur' — allégation non vérifiable. 'Spécialiste' — titre utilisé à tort par la plupart des praticiens bien-être. Google peut suspendre votre fiche. Les deux simultanément.",
+    "slide3_type": "bandeau",
+    "banner_text": "Spécialiste ≠ Titre libre pour tous"
+  },
+  {
+    "id": 21,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez relu votre site comme si vous étiez un inspecteur DGCCRF. La première chose qui vous a choqué — c'était quoi ?",
+    "info_text": "Cet exercice est le plus utile que vous pouvez faire aujourd'hui. Pas besoin d'un expert pour commencer. Juste ce regard extérieur sur votre propre communication.",
+    "slide3_type": "bandeau",
+    "banner_text": "Relire son site ≠ Exercice anodin"
+  },
+  {
+    "id": 22,
+    "slide1_type": "poll",
+    "poll_question": "Votre contenu Instagram est rédigé avec la même rigueur que votre site web ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Moins de rigueur sur les réseaux"
+    ],
+    "info_text": "Les réseaux ne sont pas une zone franche. Une story capturée existe légalement. Un reel enthousiaste est une prise de parole professionnelle. Le cadre légal ne change pas parce que le format est vertical.",
+    "slide3_type": "bandeau",
+    "banner_text": "Réseaux sociaux ≠ Zone sans règles"
+  },
+  {
+    "id": 23,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'accompagnement burn-out' sur votre site. Vous saviez que c'était risqué avant de lire ça ?",
+    "info_text": "Le burn-out est un syndrome médical reconnu. Associer votre pratique à cette condition médicale précise — peut être qualifié de pratique trompeuse. Même avec le mot 'accompagnement' devant.",
+    "slide3_type": "bandeau",
+    "banner_text": "Accompagnement burn-out ≠ Formulation neutre"
+  },
+  {
+    "id": 24,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez optimisé votre SEO sans vérifier la conformité juridique de vos contenus ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne savais pas que les deux étaient liés"
+    ],
+    "info_text": "Optimiser sans filtrage juridique — c'est construire une visibilité qui peut devenir difficile à soutenir si elle est questionnée. La stratégie éditoriale est une question de responsabilité autant que de visibilité.",
+    "slide3_type": "bandeau",
+    "banner_text": "SEO efficace ≠ SEO irréprochable automatiquement"
+  },
+  {
+    "id": 25,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez une promesse sur votre site ou vos réseaux que vous ne seriez pas capable de défendre devant un contrôleur. Laquelle ?",
+    "info_text": "La visibilité amplifie tout. Ce qui rassure vos clients aujourd'hui peut devenir ce qui vous expose demain. Un mot change tout. Sur Google. Et sur le plan juridique.",
+    "slide3_type": "bandeau",
+    "banner_text": "Ce qui rassure ≠ Toujours conforme"
+  },
+  {
+    "id": 26,
+    "slide1_type": "poll",
+    "poll_question": "Être trouvé sur Google — c'est déjà faire de la publicité ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Non. La publicité promet. La visibilité répond à une recherche qui existe déjà. Quelqu'un cherche un sophrologue dans votre ville. Être là pour cette personne — ce n'est pas s'imposer.",
+    "slide3_type": "bandeau",
+    "banner_text": "Visibilité locale ≠ Publicité agressive"
+  },
+  {
+    "id": 27,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez utilisé l'IA pour rédiger du contenu professionnel. Elle a produit une formulation que vous avez dû corriger. C'était quoi ?",
+    "info_text": "L'IA ne sait pas ce que vous avez le droit de revendiquer. Elle sait ce qui attire. Ce qui attire et ce qui est conforme — c'est rarement la même chose dans votre secteur.",
+    "slide3_type": "bandeau",
+    "banner_text": "IA enthousiaste ≠ IA conforme"
+  },
+  {
+    "id": 28,
+    "slide1_type": "poll",
+    "poll_question": "Google peut-il indexer une ancienne version de votre site après que vous l'avez corrigée ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Oui. Les archives, les caches, les extraits continuent d'exister même après vos corrections. Ce que vous avez écrit un jour peut continuer à parler pour vous. Longtemps après.",
+    "slide3_type": "bandeau",
+    "banner_text": "Corriger son site ≠ Effacer ses traces"
+  },
+  {
+    "id": 29,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je vous aide à retrouver le sommeil' sur votre site. Vous saviez que c'est une promesse ?",
+    "info_text": "Même formulées avec bienveillance — 'retrouver le sommeil', 'réduire votre anxiété', 'aller mieux' sont des promesses de résultat. Ce qui est permis — décrire votre approche et votre méthode. Pas ce que le client obtiendra.",
+    "slide3_type": "bandeau",
+    "banner_text": "Formulé avec douceur ≠ Sans risque juridique"
+  },
+  {
+    "id": 30,
+    "slide1_type": "poll",
+    "poll_question": "Si la DGCCRF contrôlait votre site demain — vous seriez serein ?",
+    "poll_options": [
+      "Oui totalement",
+      "Pas vraiment",
+      "Non pas du tout"
+    ],
+    "info_text": "La sérénité éditoriale est un résultat concret. Un praticien qui sait que son site est propre recommande son URL sans hésiter. Publie sans se demander si ça pose un problème.",
+    "slide3_type": "bandeau",
+    "banner_text": "Visible & Conforme ≠ Incompatible"
+  },
+  {
+    "id": 31,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Bien rédigé ≠ Conforme",
+    "info_text": "Un rédacteur web soigne votre style. Il ne connaît pas votre cadre juridique. Ces deux compétences ne se recoupent pas. Un site peut être élégant, fluide, convaincant — et quand même vous exposer.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Votre site a été relu avec un regard juridique ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non"
+    ]
+  },
+  {
+    "id": 32,
+    "slide1_type": "question_box",
+    "poll_question": "'Guérir', 'soigner', 'traiter.' Lequel de ces trois mots apparaît sur votre site en ce moment ?",
+    "info_text": "La DGCCRF cite explicitement ces termes dans ses rapports de contrôle. Ce ne sont pas des interprétations. Ce sont des mots listés comme problématiques pour les praticiens bien-être.",
+    "slide3_type": "bandeau",
+    "banner_text": "Mots courants ≠ Mots autorisés partout"
+  },
+  {
+    "id": 33,
+    "slide1_type": "poll",
+    "poll_question": "Votre formulaire de contact contient un champ message libre ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Vos clients décrivent spontanément leur situation dans ce champ. Leur état de santé. Leur vécu. Ces informations sont des données sensibles. Un formulaire de contact n'est pas un questionnaire médical.",
+    "slide3_type": "bandeau",
+    "banner_text": "Champ message libre ≠ Zone neutre RGPD"
+  },
+  {
+    "id": 34,
+    "slide1_type": "question_box",
+    "poll_question": "Votre description Google a été rédigée à l'ouverture de votre activité. Vous savez ce qu'elle dit encore ?",
+    "info_text": "Votre pratique a évolué. La réglementation aussi. Votre description Google, elle — elle dit peut-être encore ce que vous pensiez il y a 3 ans. Google AI la lit et vous résume dessus.",
+    "slide3_type": "bandeau",
+    "banner_text": "Description ancienne ≠ Description conforme aujourd'hui"
+  },
+  {
+    "id": 35,
+    "slide1_type": "poll",
+    "poll_question": "Vos hashtags vous classent dans un champ médical sans que vous le vouliez ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Jamais pensé à ça"
+    ],
+    "info_text": "#guerison #soin #traitement — vous positionnent dans un champ que vous ne pouvez peut-être pas revendiquer. Vos hashtags vous classent dans un champ sémantique. Vous choisissez lequel.",
+    "slide3_type": "bandeau",
+    "banner_text": "Hashtag ≠ Anodin"
+  },
+  {
+    "id": 36,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez une blouse blanche sur vos photos de profil ou de site. Vous saviez que c'était risqué ?",
+    "info_text": "La blouse blanche est un code visuel médical. L'afficher quand vous n'exercez pas une profession de santé réglementée — crée une confusion sur vos qualifications. Même si c'est juste une photo.",
+    "slide3_type": "bandeau",
+    "banner_text": "Photo professionnelle ≠ Costume médical"
+  },
+  {
+    "id": 37,
+    "slide1_type": "poll",
+    "poll_question": "Votre fiche Google a une catégorie principale qui correspond exactement à votre activité réelle ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que c'est"
+    ],
+    "info_text": "Google vous classe principalement sur votre catégorie principale. La plus précise bat toujours la plus large. Une catégorie inexacte — c'est aussi une information trompeuse pour vos futurs clients.",
+    "slide3_type": "bandeau",
+    "banner_text": "Catégorie large ≠ Plus grande visibilité"
+  },
+  {
+    "id": 38,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 10% de réduction à offrir contre un avis Google. Vous saviez que c'est illégal ?",
+    "info_text": "Offrir un avantage en échange d'un avis — c'est interdit. Article R511-12 du Code de la consommation. Même si vous ne demandez pas 5 étoiles. Google peut supprimer vos avis. Et suspendre votre fiche.",
+    "slide3_type": "bandeau",
+    "banner_text": "Réduction contre avis ≠ Stratégie marketing"
+  },
+  {
+    "id": 39,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez copié les mentions légales d'un confrère ou d'un template pour votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Des mentions légales copiées — ce sont des mentions fausses. Votre SIRET, votre hébergeur, votre statut juridique — rien ne correspond. C'est pire qu'une absence.",
+    "slide3_type": "bandeau",
+    "banner_text": "Copier-coller ≠ Conformité juridique"
+  },
+  {
+    "id": 40,
+    "slide1_type": "question_box",
+    "poll_question": "Polygraphe — vous connaissez cet outil ? Il sert à quoi selon vous ?",
+    "info_text": "C'est l'outil de l'État français pour détecter les faux avis. La DGCCRF l'utilise pour identifier les avis rédigés en série, les profils artificiels, l'achat d'avis. Les faux avis entrent dans le champ du droit de la consommation.",
+    "slide3_type": "bandeau",
+    "banner_text": "Faux avis ≠ Infraction mineure"
+  },
+  {
+    "id": 41,
+    "slide1_type": "poll",
+    "poll_question": "Votre site est en HTTPS ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "HTTP non sécurisé — signal négatif pour Google depuis 2014. Votre navigateur affiche 'Non sécurisé' avant même que vos futurs clients lisent votre contenu. Et Google vous classe moins bien.",
+    "slide3_type": "bandeau",
+    "banner_text": "HTTP ≠ Signal de confiance"
+  },
+  {
+    "id": 42,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez un chatbot sur votre site. Quelqu'un lui a posé une question sur votre pratique. Il a répondu quoi ?",
+    "info_text": "Un chatbot sur votre site est une extension de votre communication. Si il décrit votre pratique avec des termes médicaux — vous en êtes responsable. Même si c'est l'IA qui a parlé.",
+    "slide3_type": "bandeau",
+    "banner_text": "Chatbot ≠ Zone de non-responsabilité"
+  },
+  {
+    "id": 43,
+    "slide1_type": "poll",
+    "poll_question": "Votre site charge en moins de 3 secondes ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "La vitesse de chargement est un critère de ranking officiel de Google. Un site lent = mauvais classement. Testez sur PageSpeed Insights. Gratuit. 2 minutes. Résultat immédiat.",
+    "slide3_type": "bandeau",
+    "banner_text": "Site lent ≠ Bien classé"
+  },
+  {
+    "id": 44,
+    "slide1_type": "question_box",
+    "poll_question": "Vous êtes en cabinet avec d'autres praticiens. Combien de fiches Google existent à votre adresse ?",
+    "info_text": "Une fiche par établissement physique. Pas une fiche par praticien au même endroit. Si plusieurs fiches existent pour la même adresse — Google peut les suspendre toutes.",
+    "slide3_type": "bandeau",
+    "banner_text": "Cabinet partagé ≠ Fiches Google multiples"
+  },
+  {
+    "id": 45,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez un outil de prise de RDV hébergé aux États-Unis ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas où il est hébergé"
+    ],
+    "info_text": "Calendly, Acuity, SimplyBook — souvent hébergés hors Europe. Les données de vos clients aussi. Vous avez besoin d'un accord de sous-traitance RGPD avec votre outil.",
+    "slide3_type": "bandeau",
+    "banner_text": "Outil pratique ≠ Conforme automatiquement"
+  },
+  {
+    "id": 46,
+    "slide1_type": "question_box",
+    "poll_question": "Votre newsletter — vos abonnés ont tous explicitement consenti à la recevoir ? Comment vous pouvez le prouver ?",
+    "info_text": "Un client qui prend rendez-vous n'a pas consenti à votre newsletter. Ce sont deux consentements distincts. Pour deux usages distincts. La bonne intention ne suffit pas.",
+    "slide3_type": "bandeau",
+    "banner_text": "Prise de RDV ≠ Abonnement newsletter"
+  },
+  {
+    "id": 47,
+    "slide1_type": "poll",
+    "poll_question": "Votre bio Instagram contient une promesse de résultat ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je vérifie"
+    ],
+    "info_text": "150 caractères. Suffisant pour créer une attente que vous ne pouvez pas porter. 'J'accompagne les personnes qui traversent des périodes de stress' — c'est une description. 'Je réduis votre anxiété' — c'est une promesse.",
+    "slide3_type": "bandeau",
+    "banner_text": "Bio Instagram ≠ Slogan commercial"
+  },
+  {
+    "id": 48,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez partagé une étude scientifique sur vos réseaux pour montrer que votre pratique est validée. Vous saviez que ça vous engage ?",
+    "info_text": "Partager une étude comme validation de votre pratique — vous créez une association implicite. Votre pratique produirait les mêmes effets que l'étude. C'est une allégation de santé.",
+    "slide3_type": "bandeau",
+    "banner_text": "Étude partagée ≠ Validation de votre méthode"
+  },
+  {
+    "id": 49,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez Google Analytics sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Google Analytics dépose des cookies dès l'arrivée du visiteur. Sans consentement préalable — c'est une infraction. La CNIL contrôle. Elle a déjà sanctionné des indépendants.",
+    "slide3_type": "bandeau",
+    "banner_text": "Analytics ≠ Outil neutre sans obligations"
+  },
+  {
+    "id": 50,
+    "slide1_type": "question_box",
+    "poll_question": "Votre bandeau cookie dit 'En continuant à naviguer vous acceptez.' Vous saviez que ce n'est pas valable ?",
+    "info_text": "La loi exige un consentement actif. Avant le dépôt des cookies. Pas après la navigation. Le bouton 'Tout refuser' doit être aussi visible que 'Tout accepter.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Continuer à naviguer ≠ Consentement RGPD"
+  },
+  {
+    "id": 51,
+    "slide1_type": "poll",
+    "poll_question": "Votre site mobile s'affiche correctement sur tous les écrans ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne l'ai jamais vérifié"
+    ],
+    "info_text": "Google indexe en mobile-first depuis 2019. Il examine votre site d'abord en version mobile. Si votre site mobile est mal optimisé — Google vous classe moins bien. Même si votre version bureau est parfaite.",
+    "slide3_type": "bandeau",
+    "banner_text": "Bureau parfait ≠ Mobile optimisé"
+  },
+  {
+    "id": 52,
+    "slide1_type": "question_box",
+    "poll_question": "Un client vous a laissé un avis avec le mot 'guéri.' Vous l'avez partagé en story. Vous saviez que ça vous engageait ?",
+    "info_text": "Un avis que vous relayez — vous l'endossez. Même si c'est votre client qui l'a écrit. Même si c'est vrai. Ce sont vos standards de communication que cet avis représente.",
+    "slide3_type": "bandeau",
+    "banner_text": "Relayer un avis ≠ Sans responsabilité"
+  },
+  {
+    "id": 53,
+    "slide1_type": "poll",
+    "poll_question": "'Certifié' sur votre site. Vous avez précisé par qui ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "'Certifié' sans précision — ça semble solide. Ça crée une confusion. Certifié par qui, selon quel référentiel, avec quelle durée de formation — ce sont des informations vérifiables. Elles protègent mieux que l'imprécision.",
+    "slide3_type": "bandeau",
+    "banner_text": "Certifié ≠ Diplômé d'État"
+  },
+  {
+    "id": 54,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez répondu à un avis négatif en expliquant ce que vous avez fait pour ce client. Vous avez cité des détails sur sa situation ?",
+    "info_text": "Donner des détails sur la situation d'un client dans une réponse publique — c'est divulguer des informations confidentielles. Même si c'est votre client qui a commencé. La réponse conforme — ni détails, ni justification.",
+    "slide3_type": "bandeau",
+    "banner_text": "Se défendre publiquement ≠ Sans conséquence"
+  },
+  {
+    "id": 55,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez une page 'Résultats' ou 'Témoignages' sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Une page témoignages bien construite — c'est votre meilleur outil de confiance. Une page témoignages avec 'guéri', 'soigné', 'ma pathologie a disparu' — c'est votre exposition principale. La nuance protège tout.",
+    "slide3_type": "bandeau",
+    "banner_text": "Témoignage authentique ≠ Libre de tout risque"
+  },
+  {
+    "id": 56,
+    "slide1_type": "question_box",
+    "poll_question": "Votre nom de fiche Google — vous y avez ajouté des mots-clés ? Lesquels ?",
+    "info_text": "Google interdit les mots-clés dans les noms de fiches. Le nom doit être le nom réel de votre établissement. Les fiches avec du keyword stuffing dans le nom sont suspendues.",
+    "slide3_type": "bandeau",
+    "banner_text": "Nom de fiche bourré ≠ Meilleur classement"
+  },
+  {
+    "id": 57,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez un blog sur votre site ?",
+    "poll_options": [
+      "Oui actif",
+      "Oui mais peu de posts",
+      "Non"
+    ],
+    "info_text": "Un article de blog avec 'guérir' ou 'traiter' dans le titre — c'est une promesse thérapeutique dès le titre. Le blog peut être votre meilleur outil SEO. Ou votre risque le plus invisible.",
+    "slide3_type": "bandeau",
+    "banner_text": "Blog professionnel ≠ Zone libre"
+  },
+  {
+    "id": 58,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez accepté d'être référencé dans un annuaire professionnel sans lire les conditions. Vous savez ce qu'elles disent ?",
+    "info_text": "Avant d'accepter un référencement — trois questions. Qui sélectionne et comment ? Payez-vous pour apparaître directement ou non ? Quel discours tient l'annuaire sur vous ?",
+    "slide3_type": "bandeau",
+    "banner_text": "Annuaire ≠ Vitrine neutre"
+  },
+  {
+    "id": 59,
+    "slide1_type": "poll",
+    "poll_question": "Votre page d'accueil répond à cette question en 5 secondes — 'Que faites-vous et comment vous joindre ?'",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne suis pas sûr"
+    ],
+    "info_text": "Google envoie des visiteurs. Votre site les laisse repartir ? Ce n'est pas un problème de trafic. C'est un problème de confiance. La première question — un visiteur saurait-il en 5 secondes ce que vous faites ?",
+    "slide3_type": "bandeau",
+    "banner_text": "Trafic ≠ Conversion"
+  },
+  {
+    "id": 60,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez une offre de première séance gratuite. Vous saviez que ça pouvait vous exposer juridiquement ?",
+    "info_text": "L'article L.121-2 du Code de la consommation s'applique à tous. Si la gratuité masque une captation abusive de clientèle — vous entrez dans ce périmètre. Ce qui est possible — un tarif découverte réduit.",
+    "slide3_type": "bandeau",
+    "banner_text": "Première séance gratuite ≠ Sans risque"
+  },
+  {
+    "id": 61,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Vague ≠ Prudent",
+    "info_text": "Rester flou par peur du mot de trop — ce n'est pas une protection. Un site vague n'attire personne. Il ne rassure personne. Et il ne vous protège pas non plus. La précision — dans votre cadre — est votre meilleur atout.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez simplifié votre communication par excès de prudence ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Parfois"
+    ]
+  },
+  {
+    "id": 62,
+    "slide1_type": "question_box",
+    "poll_question": "Votre politique de confidentialité a été copiée sur un template générique. Vous l'avez adaptée à votre situation réelle ?",
+    "info_text": "Vos outils, vos données, vos durées de conservation — rien de cela n'est dans un template générique. Une politique copiée crée une fausse sécurité. Elle ne vous protège pas.",
+    "slide3_type": "bandeau",
+    "banner_text": "Template générique ≠ Conformité réelle"
+  },
+  {
+    "id": 63,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez un disclaimer sous chaque post santé ou bien-être ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Parfois"
+    ],
+    "info_text": "Un disclaimer ne neutralise pas une allégation qui précède. Si votre post promet un résultat et que votre disclaimer dit 'les résultats varient' — la promesse principale reste. Le fond doit être conforme.",
+    "slide3_type": "bandeau",
+    "banner_text": "Disclaimer ≠ Protection automatique"
+  },
+  {
+    "id": 64,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client menace de mettre un avis 1 étoile si vous ne le remboursez pas. Vous cédez ?",
+    "info_text": "Céder à une menace d'avis — c'est valider un chantage. Et créer un précédent. D'autres clients mécontents feront pareil. Vous ne négociez pas sous la pression d'un avis.",
+    "slide3_type": "bandeau",
+    "banner_text": "Céder à la menace ≠ Acheter la paix"
+  },
+  {
+    "id": 65,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des images sur votre site avec des balises ALT remplies ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "C'est quoi ?"
+    ],
+    "info_text": "Les balises ALT décrivent vos images pour les moteurs de recherche. Une image sans balise ALT — c'est une opportunité SEO manquée. Et un défaut d'accessibilité. Deux problèmes en un.",
+    "slide3_type": "bandeau",
+    "banner_text": "Image sans balise ALT ≠ Optimisée pour Google"
+  },
+  {
+    "id": 66,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez des diplômes étrangers affichés sur votre site. Vous avez précisé leur équivalence française ?",
+    "info_text": "Afficher des diplômes étrangers sans préciser leur équivalence — ça impressionne. Ça peut être considéré comme trompeur. Précisez l'organisme, le pays. La transparence protège mieux que l'ambiguïté.",
+    "slide3_type": "bandeau",
+    "banner_text": "Diplôme étranger ≠ Équivalent automatique"
+  },
+  {
+    "id": 67,
+    "slide1_type": "poll",
+    "poll_question": "Votre fiche Google affiche des attributs que vous n'avez pas choisis ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je n'ai pas vérifié"
+    ],
+    "info_text": "Google génère parfois des attributs sur votre fiche automatiquement. 'Certifié', 'Spécialiste.' Si ces attributs ne correspondent pas à votre qualification réelle — vous en êtes responsable. Vérifiez et corrigez.",
+    "slide3_type": "bandeau",
+    "banner_text": "Attribut auto-généré ≠ Validé par vous"
+  },
+  {
+    "id": 68,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez mis 'consultation' sur votre site sans être médecin. Vous saviez que ça pouvait créer une confusion ?",
+    "info_text": "'Consultation' dans le sens médical — c'est un acte clinique par un médecin. 'Séance', 'entretien', 'rendez-vous' — ces mots décrivent votre pratique sans créer de confusion sur votre statut.",
+    "slide3_type": "bandeau",
+    "banner_text": "Consultation ≠ Séance bien-être"
+  },
+  {
+    "id": 69,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des photos de clients sur votre site avec leur accord verbal. Vous saviez que ce n'est pas suffisant ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Le droit à l'image exige un accord écrit. Avant la publication. Qui précise le support. Et la durée d'utilisation. Un accord verbal ne prouve rien si votre client change d'avis.",
+    "slide3_type": "bandeau",
+    "banner_text": "Accord verbal ≠ Accord légalement valable"
+  },
+  {
+    "id": 70,
+    "slide1_type": "question_box",
+    "poll_question": "Votre FAQ répond à des questions sur des pathologies médicales. Comment vous formulez vos réponses ?",
+    "info_text": "'La sophrologie peut-elle traiter la dépression ?' Si vous répondez 'oui' — vous venez de valider une indication médicale. La réponse conforme — 'la sophrologie accompagne les personnes qui traversent des périodes difficiles. Elle ne remplace pas un suivi médical.'",
+    "slide3_type": "bandeau",
+    "banner_text": "FAQ ≠ Validation d'indications médicales"
+  },
+  {
+    "id": 71,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Mots-clés larges ≠ Clients qualifiés",
+    "info_text": "'Sophrologie' — concurrence écrasante. Client qui ne sait pas encore ce qu'il cherche. 'Sophrologie gestion anxiété avant accouchement' — zéro concurrence. Cliente qui sait exactement ce dont elle a besoin. Laquelle prend rendez-vous ?",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous ciblez des mots-clés larges ou des mots-clés précis ?",
+    "slide3_poll_options": [
+      "Larges",
+      "Précis",
+      "Les deux"
+    ]
+  },
+  {
+    "id": 72,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez un concurrent qui utilise 'je soigne' et qui est mieux classé que vous. Qu'est-ce que vous faites ?",
+    "info_text": "La tentation de copier est forte. Mais il est peut-être en avance sur la sanction. La visibilité conforme est la seule qui dure. Votre concurrent visible et fragile — ça peut changer du jour au lendemain.",
+    "slide3_type": "bandeau",
+    "banner_text": "Concurrent visible ≠ Concurrent protégé"
+  },
+  {
+    "id": 73,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a une page dédiée à votre localisation avec votre adresse et une carte ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "La page de localisation est votre ancre SEO locale. Elle dit clairement à Google — ici, dans cette ville, cette rue. C'est la page que les praticiens créent rarement. Et pourtant la plus efficace.",
+    "slide3_type": "bandeau",
+    "banner_text": "Présent en ligne ≠ Visible localement"
+  },
+  {
+    "id": 74,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez partagé un avis Google sur votre site sans accord écrit de votre client. Vous saviez que c'est risqué ?",
+    "info_text": "Sur votre fiche Google — ce sont les mots de vos clients. Sur votre site — vous avez cliqué sur 'publier.' Vous choisissez. Vous assumez. Vous avez besoin de son accord RGPD.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avis sur fiche Google ≠ Avis utilisable partout"
+  },
+  {
+    "id": 75,
+    "slide1_type": "poll",
+    "poll_question": "Votre outil de RDV en ligne a un accord de sous-traitance RGPD avec vous ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que c'est"
+    ],
+    "info_text": "Quand vous utilisez un outil tiers qui traite les données de vos clients — cet outil est un sous-traitant. Vous devez vérifier qu'il propose un accord de sous-traitance RGPD. Et où sont hébergées les données.",
+    "slide3_type": "bandeau",
+    "banner_text": "Utiliser un outil ≠ Déléguer sa responsabilité RGPD"
+  },
+  {
+    "id": 76,
+    "slide1_type": "question_box",
+    "poll_question": "'Je préviens le diabète par l'alimentation.' Sur votre site de naturopathe. Vous saviez que c'était risqué ?",
+    "info_text": "'Prévenir une pathologie' — c'est un acte médical protégé. La traduction sécurisée — 'j'accompagne l'équilibre glycémique par l'hygiène de vie.' Même intention de recherche. Même visibilité. Vous dormez la nuit.",
+    "slide3_type": "bandeau",
+    "banner_text": "Prévenir une pathologie ≠ Accompagner un mode de vie"
+  },
+  {
+    "id": 77,
+    "slide1_type": "poll",
+    "poll_question": "Vous affichez vos tarifs sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Partiellement"
+    ],
+    "info_text": "Ne pas afficher ses tarifs — ça semble discret. C'est un frein. Un visiteur qui ne trouve pas vos prix passe au praticien d'après. Et pour certaines professions réglementées — c'est une obligation légale.",
+    "slide3_type": "bandeau",
+    "banner_text": "Discrétion sur les tarifs ≠ Stratégie"
+  },
+  {
+    "id": 78,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez hésité avant de publier un post cette semaine parce que vous n'étiez pas sûr que la formulation était ok. C'était sur quel sujet ?",
+    "info_text": "L'hésitation avant publication — c'est votre instinct qui travaille. Il identifie une zone grise. Un cadre clair transforme cette hésitation en décision rapide.",
+    "slide3_type": "bandeau",
+    "banner_text": "Hésitation avant publication ≠ Inévitable"
+  },
+  {
+    "id": 79,
+    "slide1_type": "poll",
+    "poll_question": "Votre logo ou votre identité visuelle ressemble aux codes visuels médicaux ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Croix médicale, caducée, couleurs et typographies hospitalières — ces codes appartiennent aux professions médicales. Les utiliser quand vous n'en faites pas partie crée une confusion sur votre statut.",
+    "slide3_type": "bandeau",
+    "banner_text": "Codes visuels médicaux ≠ Crédibilité bien-être"
+  },
+  {
+    "id": 80,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'méthode exclusive' sur votre site. Vous pouvez prouver l'exclusivité ?",
+    "info_text": "'Méthode exclusive' — ça différencie. Ça doit se prouver. Si vous ne pouvez pas démontrer l'exclusivité de votre approche — c'est une allégation non vérifiable. Et ça vous expose.",
+    "slide3_type": "bandeau",
+    "banner_text": "Exclusif ≠ Non vérifiable"
+  },
+  {
+    "id": 81,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Ignorer les avis ≠ Stratégie de réputation",
+    "info_text": "8 clients sur 10 consultent les avis Google avant de prendre rendez-vous. Un avis sans réponse depuis 6 mois — Google le lit. L'IA l'utilise pour vous décrire. C'est ça que vos futurs clients voient en premier.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez des avis Google sans réponse depuis plus de 6 mois ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non"
+    ]
+  },
+  {
+    "id": 82,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez le caducée ou une croix médicale sur votre site ou vos visuels. Vous saviez que c'est une usurpation ?",
+    "info_text": "Le caducée est réservé aux professions médicales et paramédicales. L'afficher sur votre site bien-être — crée une confusion visuelle sur votre statut. Même si c'est juste un choix esthétique.",
+    "slide3_type": "bandeau",
+    "banner_text": "Caducée ≠ Symbole bien-être"
+  },
+  {
+    "id": 83,
+    "slide1_type": "poll",
+    "poll_question": "Votre description Google contient votre nom de ville plus de 3 fois ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je vérifie"
+    ],
+    "info_text": "Le keyword stuffing dans votre description — Google le pénalise. Vous perdez en visibilité au lieu d'en gagner. Une description naturelle et précise positionne toujours mieux qu'une liste de mots-clés répétés.",
+    "slide3_type": "bandeau",
+    "banner_text": "Répétition de mots-clés ≠ Meilleur classement"
+  },
+  {
+    "id": 84,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'thérapeute' sur votre site ou vos réseaux. Vous avez vérifié que ce titre correspond à votre pratique réelle ?",
+    "info_text": "'Thérapeute' seul — c'est un mot qui crée une attente. Souvent médicale. Souvent plus que ce que vous proposez. La précision protège autant que la compétence.",
+    "slide3_type": "bandeau",
+    "banner_text": "Thérapeute seul ≠ Titre précis"
+  },
+  {
+    "id": 85,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez revendiqué et optimisé votre fiche Google ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que ça veut dire"
+    ],
+    "info_text": "Une fiche non revendiquée — Google la gère à votre place. Il peut y générer des attributs inexacts. Des informations erronées. Des résumés IA qui ne vous ressemblent pas. Revendiquez maintenant.",
+    "slide3_type": "bandeau",
+    "banner_text": "Fiche non revendiquée ≠ Sans problème"
+  },
+  {
+    "id": 86,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je vous aide à sortir du burn-out' dans votre bio Instagram. Vous saviez que c'était risqué ?",
+    "info_text": "'Burn-out' est un syndrome médical reconnu. 'Sortir du burn-out' — c'est une promesse médicale implicite. Alternative conforme — 'j'accompagne les professionnels en période d'épuisement.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Sortir du burn-out ≠ Formulation neutre"
+  },
+  {
+    "id": 87,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a une politique de confidentialité ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que c'est"
+    ],
+    "info_text": "Dès que vous collectez un email — vous êtes obligé d'en avoir une. Elle doit expliquer quelles données vous collectez, pourquoi, combien de temps, avec qui vous les partagez.",
+    "slide3_type": "bandeau",
+    "banner_text": "Collecter un email ≠ Sans obligation RGPD"
+  },
+  {
+    "id": 88,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez répondu à un avis positif en citant le type de séance réalisée avec ce client. Vous saviez que ça vous engageait ?",
+    "info_text": "Même une réponse à un avis positif peut créer un problème. Citer la séance réalisée — c'est confirmer publiquement des informations sur ce client. La réponse sobre et chaleureuse protège mieux.",
+    "slide3_type": "bandeau",
+    "banner_text": "Réponse à un avis positif ≠ Sans risque"
+  },
+  {
+    "id": 89,
+    "slide1_type": "poll",
+    "poll_question": "Vous ciblez des villes où vous n'exercez pas pour attirer plus de trafic ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Google Maps détecte l'incohérence entre votre adresse réelle et vos mots-clés géographiques. Fiche pénalisée ou suspendue. Et l'article L121-2 du Code de la consommation — une pratique trompeuse sur la localisation.",
+    "slide3_type": "bandeau",
+    "banner_text": "Cibler d'autres villes ≠ Élargir sa zone"
+  },
+  {
+    "id": 90,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client vous demande de supprimer ses données. Vous avez une procédure ?",
+    "info_text": "Le droit à l'effacement est garanti par le RGPD. Vous avez 30 jours pour répondre. Fiche client, emails, témoignages — tout doit être supprimé. Sans procédure définie — vous dépasserez ce délai.",
+    "slide3_type": "bandeau",
+    "banner_text": "Bonne intention ≠ Procédure RGPD"
+  },
+  {
+    "id": 91,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Visible sur Google ≠ Texte légal",
+    "info_text": "Vous montez dans les résultats. Votre fiche s'affiche. Vos futurs clients cliquent. Et ils lisent des formulations qui vous exposent. La visibilité amplifie tout. Votre expertise. Et vos vulnérabilités.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez optimisé votre SEO avant de vérifier vos formulations ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non"
+    ]
+  },
+  {
+    "id": 92,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'naturel' ou 'sans médicament' sur votre fiche Google. Vous saviez que c'est une allégation ?",
+    "info_text": "'Naturel' dans un contexte de santé — c'est une allégation. Elle implique que votre approche est sans risque. 'Sans médicament' — c'est une comparaison non étayée. Ces deux mots vous exposent.",
+    "slide3_type": "bandeau",
+    "banner_text": "Naturel ≠ Sans implication juridique"
+  },
+  {
+    "id": 93,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des fiches sur des annuaires en ligne que vous ne gérez plus ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas combien"
+    ],
+    "info_text": "Un annuaire peut vous référencer avec de fausses informations. Et ces informations impactent la cohérence de votre présence en ligne. Google tient compte de la cohérence entre votre nom, adresse et téléphone sur tous les supports.",
+    "slide3_type": "bandeau",
+    "banner_text": "Annuaire oublié ≠ Sans impact SEO"
+  },
+  {
+    "id": 94,
+    "slide1_type": "question_box",
+    "poll_question": "Votre concurrent a acheté des avis. Vous le savez. Qu'est-ce que vous faites ?",
+    "info_text": "Ce que vous pouvez faire — signaler à Google et à la DGCCRF via SignalConso. Ce que vous ne pouvez pas faire — publier un post qui l'accuse nommément. Même avec des preuves. C'est du dénigrement.",
+    "slide3_type": "bandeau",
+    "banner_text": "Signaler ≠ Dénoncer publiquement"
+  },
+  {
+    "id": 95,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez publié du contenu IA sans filtre de conformité ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Parfois"
+    ],
+    "info_text": "L'IA peut écrire 'guérir', 'traiter', 'soigner' sans savoir que vous n'avez pas le droit d'utiliser ces termes dans votre contexte. L'IA génère. Vous validez. Le filtre de conformité reste humain.",
+    "slide3_type": "bandeau",
+    "banner_text": "Contenu IA ≠ Conforme automatiquement"
+  },
+  {
+    "id": 96,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site dit 'accompagnement anxiété.' Votre client cherchait 'traiter l'anxiété.' Vous pensez que vous perdez du trafic ?",
+    "info_text": "Non. Les recherches précises convertissent mieux. 'Traiter l'anxiété' attire quelqu'un qui cherche un médecin. 'Accompagnement en période d'anxiété' attire quelqu'un qui cherche exactement ce que vous proposez.",
+    "slide3_type": "bandeau",
+    "banner_text": "Mot conforme ≠ Mot qui perd du trafic"
+  },
+  {
+    "id": 97,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez hésité à recommander votre URL à un confrère parce que vous n'étiez pas sûr de ce qu'il allait y trouver ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Cette hésitation dit quelque chose. Un praticien serein avec sa communication recommande son URL sans réfléchir. La sérénité éditoriale est un résultat mesurable. Pas un concept.",
+    "slide3_type": "bandeau",
+    "banner_text": "Hésiter à partager son URL ≠ Normal"
+  },
+  {
+    "id": 98,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je soulage vos douleurs' sur votre site. Vous saviez que c'est une promesse ?",
+    "info_text": "'Soulager' associé à 'vos douleurs' — c'est affirmer un effet sur une condition médicale. Ce qui est permis — 'mon approche est orientée vers le mieux-être et le confort corporel.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Soulager vos douleurs ≠ Formulation neutre"
+  },
+  {
+    "id": 99,
+    "slide1_type": "poll",
+    "poll_question": "Votre site charge en combien de secondes ?",
+    "poll_options": [
+      "Moins de 3",
+      "Entre 3 et 6",
+      "Plus de 6",
+      "Je ne sais pas"
+    ],
+    "info_text": "Chaque seconde de chargement supplémentaire fait baisser votre taux de conversion. Google Core Web Vitals — votre vitesse impacte directement votre classement dans les résultats.",
+    "slide3_type": "bandeau",
+    "banner_text": "Chargement lent ≠ Problème mineur"
+  },
+  {
+    "id": 100,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez partagé en story un témoignage de client avec le mot 'efficace.' Vous saviez que ça vous engage ?",
+    "info_text": "'Efficace' associé à votre pratique — c'est une allégation d'efficacité. Dans le secteur bien-être, l'efficacité doit être démontrée et vérifiable. La formulation neutre — 'j'ai apprécié l'accompagnement.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Témoignage d'efficacité ≠ Sans implication"
+  },
+  {
+    "id": 101,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Fiche complète ≠ Fiche performante",
+    "info_text": "Photos. Horaires. Description. Tout rempli. Et pourtant certaines fiches restent invisibles. La différence se joue sur la cohérence entre votre vocabulaire, votre catégorie principale, et la régularité de vos avis.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Votre fiche Google est complète ET visible ?",
+    "slide3_poll_options": [
+      "Oui les deux",
+      "Complète mais peu visible",
+      "Je ne sais pas"
+    ]
+  },
+  {
+    "id": 102,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site a une page 'à propos.' Elle parle de vous ou de ce que vos clients obtiendront ?",
+    "info_text": "La page à propos raconte qui vous êtes et ce que vous faites. Pas ce que vos clients obtiendront. C'est la distinction qui protège votre posture. Et qui évite la promesse implicite.",
+    "slide3_type": "bandeau",
+    "banner_text": "À propos ≠ Promesse de résultat"
+  },
+  {
+    "id": 103,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez 'consultation' dans vos intitulés de séance ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "'Consultation' dans le sens médical — c'est un acte clinique par un médecin. 'Séance', 'entretien', 'accompagnement' — ces mots décrivent votre pratique sans frôler le vocabulaire médical.",
+    "slide3_type": "bandeau",
+    "banner_text": "Consultation ≠ Séance bien-être"
+  },
+  {
+    "id": 104,
+    "slide1_type": "question_box",
+    "poll_question": "Votre concurrent affiche 'urgences 24h/24' sur sa fiche Google. Vous pouvez faire pareil ?",
+    "info_text": "Non si vous ne l'assurez pas réellement. Un horaire affiché sur votre fiche Google — c'est un engagement contractuel. Un client se déplace sur la foi de vos horaires affichés. Porte fermée = plainte possible.",
+    "slide3_type": "bandeau",
+    "banner_text": "Horaire affiché ≠ Indication anodine"
+  },
+  {
+    "id": 105,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez relu votre site dans les 6 derniers mois ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Jamais depuis le lancement"
+    ],
+    "info_text": "Ce que vous avez écrit en 2022 est peut-être devenu un problème en 2025. La réglementation n'attend pas que vous mettiez à jour votre site. Elle évolue sans vous prévenir.",
+    "slide3_type": "bandeau",
+    "banner_text": "Site non relu ≠ Site conforme"
+  },
+  {
+    "id": 106,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'détox' sur votre site de naturopathe. Vous saviez que c'était un mot à risque ?",
+    "info_text": "'Détox' appartient au champ médical. Sur votre site bien-être — ce mot crée une confusion sur votre périmètre d'action. Alternative — 'soutien des fonctions naturelles', 'hygiène de vie et vitalité.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Détox ≠ Mot bien-être neutre"
+  },
+  {
+    "id": 107,
+    "slide1_type": "poll",
+    "poll_question": "Votre recherche vocale — vos clients vous trouvent en parlant sur leur téléphone ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Vos clients cherchent avec leurs mots. Pas les vôtres. Votre travail n'est pas de copier leur langage. C'est de le traduire dans votre cadre. Même sens perçu pour eux. Sérénité éditoriale pour vous.",
+    "slide3_type": "bandeau",
+    "banner_text": "Copier le langage client ≠ SEO conforme"
+  },
+  {
+    "id": 108,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez mis en ligne une page 'avant/après' sur votre site. Vous saviez que c'est risqué ?",
+    "info_text": "Une page avant/après attribue un résultat directement à votre méthode. C'est une allégation thérapeutique implicite. Elle peut être qualifiée de promesse de résultat.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avant/Après ≠ Preuve sociale neutre"
+  },
+  {
+    "id": 109,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a une structure en H1, H2, H3 correctement hiérarchisée ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "C'est quoi ?"
+    ],
+    "info_text": "Les balises H1, H2, H3 — c'est la structure que Google lit pour comprendre votre contenu. Un H1 qui contient 'je soigne' — c'est votre formulation la plus visible aux yeux de Google. Et aux yeux de la DGCCRF.",
+    "slide3_type": "bandeau",
+    "banner_text": "H1 de votre site ≠ Juste un titre"
+  },
+  {
+    "id": 110,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client a laissé un avis avec des détails sur sa vie privée. Vous l'avez laissé visible. Vous saviez que ça vous exposait ?",
+    "info_text": "Un avis qui mentionne une condition de santé de votre client — c'est une donnée sensible publiée. La plus protégée par le RGPD. Vous pouvez signaler à Google pour le faire retirer.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avis 5 étoiles ≠ Sans risque RGPD"
+  },
+  {
+    "id": 111,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Être trouvé ≠ Se vendre",
+    "info_text": "La publicité s'impose. La visibilité répond. Quelqu'un cherche un naturopathe dans votre ville. Vous êtes là. Vous répondez à sa recherche. Ce n'est pas de la publicité. C'est une réponse à un besoin qui existe.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez l'impression que développer votre visibilité c'est devenir commercial ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Parfois"
+    ]
+  },
+  {
+    "id": 112,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'programme de transformation' sur votre site. Vous saviez que 'transformation' peut être problématique ?",
+    "info_text": "'Transformation' associé à un résultat personnel — c'est une promesse de changement. Si ce changement concerne la santé physique ou mentale — c'est une allégation thérapeutique implicite.",
+    "slide3_type": "bandeau",
+    "banner_text": "Programme de transformation ≠ Formulation neutre"
+  },
+  {
+    "id": 113,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des URLs de pages avec des mots-clés propres et descriptives ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "C'est quoi une URL propre ?"
+    ],
+    "info_text": "Votre URL est aussi un signal SEO. /sophrologie-gestion-stress-lyon — c'est clair pour Google et pour vos visiteurs. /page-1 ou /p=243 — c'est invisible pour les deux.",
+    "slide3_type": "bandeau",
+    "banner_text": "URL propre ≠ Détail technique mineur"
+  },
+  {
+    "id": 114,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site dit 'je libère vos blocages.' Vous saviez que 'libérer' peut poser problème ?",
+    "info_text": "'Libérer vos blocages' — c'est affirmer un effet sur un état psychologique. Ce qui est permis — 'j'accompagne les personnes qui souhaitent explorer leurs ressources internes.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Libérer vos blocages ≠ Formulation conforme"
+  },
+  {
+    "id": 115,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez mis en place une stratégie pour obtenir des avis Google de façon régulière ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je demande mais pas de façon structurée"
+    ],
+    "info_text": "8 clients sur 10 consultent les avis Google avant de prendre rendez-vous. Votre fiche avec 3 avis datant de 2022 — contre 47 avis récents chez votre voisin. Vos clients satisfaits existent. Ils ont juste besoin qu'on leur demande.",
+    "slide3_type": "bandeau",
+    "banner_text": "Pas d'avis ≠ Pas de confiance"
+  },
+  {
+    "id": 116,
+    "slide1_type": "question_box",
+    "poll_question": "Votre concurrent se catégorise 'Centre médical' sur Google alors qu'il fait du bien-être. Ça marche pour lui. Vous faites pareil ?",
+    "info_text": "Non. Une catégorie inexacte — c'est aussi une information trompeuse pour vos futurs clients. Et Google peut pénaliser les fiches avec des catégories incohérentes.",
+    "slide3_type": "bandeau",
+    "banner_text": "Catégorie gonflée ≠ Plus grande visibilité"
+  },
+  {
+    "id": 117,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des liens brisés sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Un lien brisé — c'est une frustration pour vos visiteurs. Et un signal négatif pour Google. Il existe des outils gratuits pour les détecter en quelques minutes. Google Search Console. Screaming Frog.",
+    "slide3_type": "bandeau",
+    "banner_text": "Lien brisé ≠ Problème invisible pour Google"
+  },
+  {
+    "id": 118,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client vous a envoyé un message WhatsApp avec des informations sur sa santé. Vous l'avez stocké où ?",
+    "info_text": "WhatsApp est hébergé aux États-Unis. Les données que vous y recevez — les informations de santé de vos clients — sont soumises au RGPD. Où sont-elles stockées ? Combien de temps ? Qui y a accès ?",
+    "slide3_type": "bandeau",
+    "banner_text": "WhatsApp professionnel ≠ Espace confidentiel RGPD"
+  },
+  {
+    "id": 119,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez un lien vers votre site dans votre bio Instagram ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Ce lien est votre pont entre votre visibilité sociale et votre site. Si votre site contient des formulations problématiques — chaque post Instagram qui drive du trafic amplifie l'exposition.",
+    "slide3_type": "bandeau",
+    "banner_text": "Trafic Instagram vers site ≠ Toujours bénéfique"
+  },
+  {
+    "id": 120,
+    "slide1_type": "question_box",
+    "poll_question": "La DGCCRF surveille votre secteur. Vous savez comment elle identifie les sites à contrôler ?",
+    "info_text": "Elle lance des campagnes thématiques. Elle reçoit des signalements. Elle fait de la veille sur les mots-clés sensibles. Votre site peut apparaître dans une veille automatisée sur 'soigner', 'guérir', 'traiter.' Sans que personne vous signale.",
+    "slide3_type": "bandeau",
+    "banner_text": "Pas de signalement ≠ Pas de contrôle possible"
+  },
+  {
+    "id": 121,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Formation ≠ Référentiel communication",
+    "info_text": "Votre formation vous a appris votre pratique. Elle ne vous a pas appris comment en parler sans vous exposer. Ce n'est pas un reproche. C'est un angle mort du secteur entier.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Votre formation vous a parlé de communication conforme ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Vaguement"
+    ]
+  },
+  {
+    "id": 122,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez utilisé 'patient' sur votre site ou vos réseaux. Vous saviez que ça pouvait créer une confusion ?",
+    "info_text": "'Patient' est le vocabulaire des professionnels de santé réglementés. Sur votre site bien-être — 'client', 'personne accompagnée', 'participant' décrivent votre réalité sans créer de confusion sur votre statut.",
+    "slide3_type": "bandeau",
+    "banner_text": "Patient ≠ Terme bien-être universel"
+  },
+  {
+    "id": 123,
+    "slide1_type": "poll",
+    "poll_question": "Votre fiche Google a été relue dans les 3 derniers mois ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "20 minutes. Une fois par trimestre. Vérifiez chaque information. Horaires. Téléphone. Site web. Description. Catégorie. Attributs. Chaque information inexacte — c'est une information trompeuse pour vos futurs clients.",
+    "slide3_type": "bandeau",
+    "banner_text": "Fiche relue ≠ Tâche optionnelle"
+  },
+  {
+    "id": 124,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'accompagnement holistique' sur votre site. Vous savez comment ce terme est perçu par les autorités de contrôle ?",
+    "info_text": "'Holistique' seul — peu de problèmes. Associé à une condition médicale — 'accompagnement holistique du cancer', 'holistique pour la dépression' — vous entrez dans un champ qui vous expose.",
+    "slide3_type": "bandeau",
+    "banner_text": "Holistique ≠ Toujours neutre"
+  },
+  {
+    "id": 125,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des avis Google qui mentionnent une condition de santé de votre client ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je n'ai pas vérifié"
+    ],
+    "info_text": "Un avis qui associe le nom de votre client à une condition de santé — c'est une donnée sensible publiée. Vous pouvez contacter votre client pour lui demander de reformuler. 9 fois sur 10 — il comprend.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avis positif avec diagnostic ≠ Bonne publicité"
+  },
+  {
+    "id": 126,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site a une page tarifs. Vous avez mis des intitulés de séances orientés vers l'effet promis. Quel exemple ?",
+    "info_text": "'Séance anti-stress — 70€' L'adjectif promet un effet. 'Pack libération des tensions — 350€' Vous associez un prix à une guérison. Ce qui est conforme — 'Séance de sophrologie — 60 min · 70€.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Intitulé de séance ≠ Promesse d'effet"
+  },
+  {
+    "id": 127,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez mis 'sans médicament' sur votre site ou votre fiche ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "'Sans médicament' — c'est une comparaison implicite avec la médecine conventionnelle. Les comparaisons dans la communication du secteur bien-être — elles sont encadrées. Et ce mot implique que votre approche est sans risque. Ce n'est pas ce que dit la science.",
+    "slide3_type": "bandeau",
+    "banner_text": "Sans médicament ≠ Sans implication"
+  },
+  {
+    "id": 128,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez participé à un comparateur de praticiens en ligne. Vous savez sur quels critères vous êtes classé ?",
+    "info_text": "Beaucoup de comparateurs ne rendent pas publics leurs critères de classement. Si vous payez pour apparaître — c'est du référencement payant. Si l'annuaire promet de 'trouver les meilleurs praticiens' — vous cautionnez ce discours.",
+    "slide3_type": "bandeau",
+    "banner_text": "Comparateur ≠ Toujours neutre"
+  },
+  {
+    "id": 129,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a du contenu régulièrement mis à jour ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je n'ai pas de blog"
+    ],
+    "info_text": "Google privilégie les sites vivants. Un site sans mise à jour depuis 2022 — c'est un signal de stagnation. Et si vos articles contiennent des formulations obsolètes ou risquées — Google les indexe toujours.",
+    "slide3_type": "bandeau",
+    "banner_text": "Site sans mise à jour ≠ Site performant"
+  },
+  {
+    "id": 130,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez reçu une proposition d'être référencé dans un annuaire qui 'sélectionne les meilleurs praticiens.' Vous avez accepté ?",
+    "info_text": "Si l'annuaire valorise certains praticiens au détriment d'autres — vous entrez dans une logique de publicité comparative. Si vous payez pour apparaître — directement ou indirectement — c'est du référencement payant.",
+    "slide3_type": "bandeau",
+    "banner_text": "Référencement payant ≠ Toujours autorisé"
+  },
+  {
+    "id": 131,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Corriger son site ≠ Effacer ses traces Google",
+    "info_text": "Vous corrigez une formulation. Vous pensez que le problème est réglé. Mais Google conserve des traces. Archives. Caches. Extraits repris. Reformulations par des outils d'IA. Ce qui a été indexé ne disparaît pas immédiatement.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez vérifié ce que Google indexe encore de vos anciennes pages ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non"
+    ]
+  },
+  {
+    "id": 132,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client vous demande de supprimer un témoignage que vous avez publié sur votre site. Vous avez une procédure ?",
+    "info_text": "Le consentement n'est jamais définitif. Votre client a le droit de retrait. Si vous publiez un témoignage — vous devez pouvoir le retirer à la demande de son auteur. Immédiatement.",
+    "slide3_type": "bandeau",
+    "banner_text": "Consentement initial ≠ Consentement permanent"
+  },
+  {
+    "id": 133,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a du contenu dupliqué — les mêmes textes sur plusieurs pages ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Le contenu dupliqué est pénalisé par Google. Deux pages avec les mêmes textes — Google doit choisir laquelle indexer. Souvent il choisit mal. Et vous perdez de la visibilité sur les deux pages à la fois.",
+    "slide3_type": "bandeau",
+    "banner_text": "Contenu dupliqué ≠ Double visibilité"
+  },
+  {
+    "id": 134,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'coaching de vie' sur votre site. Vous savez que ce terme n'est pas réglementé — mais pas sans risques non plus ?",
+    "info_text": "'Coach de vie' — titre libre. Mais libre ne veut pas dire sans cadre. L'article L.121-2 du Code de la consommation s'applique à tous. Ce que vous promettez doit être réel et vérifiable.",
+    "slide3_type": "bandeau",
+    "banner_text": "Titre non réglementé ≠ Communication sans cadre"
+  },
+  {
+    "id": 135,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez une page 'mentions légales' sur votre site ?",
+    "poll_options": [
+      "Oui complète",
+      "Oui mais incomplète",
+      "Non"
+    ],
+    "info_text": "Votre nom ou raison sociale. Votre adresse professionnelle. Votre SIRET. Vos coordonnées de contact. Le nom de votre hébergeur. Chacun de ces champs est obligatoire. Personne ne les regarde. La DGCCRF, si.",
+    "slide3_type": "bandeau",
+    "banner_text": "Mentions légales ≠ Optionnel"
+  },
+  {
+    "id": 136,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je rééquilibre votre système nerveux' sur votre site. Vous saviez que c'était risqué ?",
+    "info_text": "'Rééquilibrer le système nerveux' — c'est une allégation physiologique précise. Ce qui est permis — 'j'accompagne les personnes qui cherchent à retrouver calme et ancrage.' Même intention. Cadre différent.",
+    "slide3_type": "bandeau",
+    "banner_text": "Rééquilibrer le système nerveux ≠ Formulation neutre"
+  },
+  {
+    "id": 137,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a des images sans balises ALT ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ],
+    "info_text": "Les balises ALT décrivent vos images pour Google et pour l'accessibilité. Chaque image sans balise ALT — c'est une opportunité SEO manquée. Et un défaut d'accessibilité numérique.",
+    "slide3_type": "bandeau",
+    "banner_text": "Image sans balise ALT ≠ Invisible pour Google seulement"
+  },
+  {
+    "id": 138,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez un logo qui ressemble au caducée médical ou à la croix pharmaceutique. Vous saviez que ça exposait ?",
+    "info_text": "Ces symboles appartiennent aux professions médicales et paramédicales. Les utiliser quand vous n'en faites pas partie crée une confusion visuelle sur votre statut. Même si c'est un choix esthétique. Même si c'est juste pour 'faire sérieux.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Symbole médical ≠ Gage de crédibilité bien-être"
+  },
+  {
+    "id": 139,
+    "slide1_type": "poll",
+    "poll_question": "Votre site Wordpress ou autre CMS est mis à jour régulièrement ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "C'est quoi une mise à jour CMS ?"
+    ],
+    "info_text": "Un CMS non mis à jour — c'est une faille de sécurité potentielle. Et si votre site est piraté et diffuse du contenu illicite — vous en êtes responsable. Votre hébergeur et votre prestataire ne le sont pas automatiquement.",
+    "slide3_type": "bandeau",
+    "banner_text": "CMS non mis à jour ≠ Site sécurisé"
+  },
+  {
+    "id": 140,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez mis 'accompagnement psychologique' sur votre site. Vous êtes psychologue certifié ?",
+    "info_text": "'Psychologique' associé à 'accompagnement' — c'est flirter avec un titre réglementé. Le titre de psychologue est protégé en France. Ce qui est conforme — 'accompagnement bien-être et développement personnel.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Accompagnement psychologique ≠ Terme libre"
+  },
+  {
+    "id": 141,
+    "slide1_type": "phrase_design",
+    "phrase_text": "SEO local ≠ Publicité",
+    "info_text": "Quelqu'un tape 'naturopathe + votre ville.' Il cherche de l'aide. Être visible pour cette personne — c'est répondre à une demande. Pas s'imposer. La différence change tout sur votre posture.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous pensez que le SEO local est trop commercial pour votre profession ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Parfois"
+    ]
+  },
+  {
+    "id": 142,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez reçu un avis négatif que vous pensez être faux. Vous avez quoi comme preuves avant de le signaler ?",
+    "info_text": "Un avis négatif n'est pas une diffamation. La diffamation — c'est un fait précis et faux portant atteinte à votre honneur. 'Je n'ai pas ressenti d'amélioration' — ce n'est pas de la diffamation. C'est un ressenti personnel. Et c'est légal.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avis négatif ≠ Diffamation automatique"
+  },
+  {
+    "id": 143,
+    "slide1_type": "poll",
+    "poll_question": "Votre Instagram a un lien en bio qui pointe vers une page conforme ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je n'ai pas de lien en bio"
+    ],
+    "info_text": "Chaque post Instagram qui drive du trafic vers votre site — amplifie ce que votre site dit. Si votre site contient des formulations problématiques — votre Instagram les amplifie aussi.",
+    "slide3_type": "bandeau",
+    "banner_text": "Bio Instagram ≠ Détail accessoire"
+  },
+  {
+    "id": 144,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je vous aide à perdre du poids naturellement' sur votre site. Vous saviez que c'était risqué ?",
+    "info_text": "'Perdre du poids' associé à 'naturellement' — c'est une promesse de résultat avec une allégation implicite d'efficacité naturelle. Ce qui est permis — 'j'accompagne les personnes qui souhaitent adopter une hygiène de vie équilibrée.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Perdre du poids naturellement ≠ Formulation conforme"
+  },
+  {
+    "id": 145,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des CGV sur votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "C'est obligatoire ?"
+    ],
+    "info_text": "Les CGV ne sont pas toujours obligatoires pour les praticiens bien-être. Mais elles protègent. Elles encadrent votre relation commerciale. Elles définissent les conditions d'annulation, de remboursement, et les responsabilités de chaque partie.",
+    "slide3_type": "bandeau",
+    "banner_text": "Sans CGV ≠ Sans conséquences"
+  },
+  {
+    "id": 146,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client vous a demandé 'est-ce que votre approche peut aider pour ma pathologie spécifique ?' Vous avez répondu quoi ?",
+    "info_text": "La réponse conforme — 'je ne suis pas en mesure de répondre à cette question médicale. Mon approche s'inscrit dans une démarche de bien-être général. Je vous encourage à consulter un médecin.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Répondre à une question médicale ≠ Anodin"
+  },
+  {
+    "id": 147,
+    "slide1_type": "poll",
+    "poll_question": "Votre fiche Google a des photos récentes de moins de 6 mois ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Google favorise les fiches actives. Des photos récentes — c'est un signal d'activité pour l'algorithme. Et vos clients voient votre cabinet tel qu'il est aujourd'hui. Pas tel qu'il était à l'ouverture.",
+    "slide3_type": "bandeau",
+    "banner_text": "Photos de 2021 ≠ Signal d'activité récente"
+  },
+  {
+    "id": 148,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez publié en story 'résultat après X séances avec moi.' Vous saviez que c'est une promesse ?",
+    "info_text": "Attribuer un résultat directement à vos séances — c'est une allégation thérapeutique. Même en story. Même si c'est vrai. La story capturée existe légalement.",
+    "slide3_type": "bandeau",
+    "banner_text": "Story éphémère ≠ Communication sans trace"
+  },
+  {
+    "id": 149,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des backlinks — des liens depuis d'autres sites — vers votre site ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que c'est"
+    ],
+    "info_text": "Les backlinks sont un signal de confiance pour Google. Un praticien cité par une association professionnelle, un article de presse local, un annuaire spécialisé — gagne en autorité aux yeux de Google.",
+    "slide3_type": "bandeau",
+    "banner_text": "Backlinks qualitatifs ≠ Backlinks achetés"
+  },
+  {
+    "id": 150,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je suis expert en...' sur votre site ou votre fiche. Vous saviez que 'expert' est encadré par la DGCCRF ?",
+    "info_text": "'Expert' dans une communication commerciale doit être justifiable. La DGCCRF peut demander sur quelle base vous revendiquez cette expertise. Formation ? Expérience ? Études publiées ? Ce que vous revendiquez doit correspondre à ce que vous pouvez prouver.",
+    "slide3_type": "bandeau",
+    "banner_text": "Expert ≠ Terme libre"
+  },
+  {
+    "id": 151,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Bien-être ≠ Médecine",
+    "info_text": "La frontière est précise. Et souvent franchie sans le vouloir. 'J'accompagne' — vous êtes dans votre champ. 'Je traite' — vous entrez dans celui du médecin. Un seul mot. Deux périmètres distincts.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous savez exactement où est la frontière pour votre profession ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Vaguement"
+    ]
+  },
+  {
+    "id": 152,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site a une page d'accueil qui commence par 'Bienvenue sur le site de [votre nom].' Vous savez que c'est votre chance de visibilité gâchée ?",
+    "info_text": "Votre H1 — le titre principal de votre page — doit dire ce que vous faites et où vous le faites. 'Sophrologue à Lyon — accompagnement stress et sommeil.' Pas 'Bienvenue sur mon site.'",
+    "slide3_type": "bandeau",
+    "banner_text": "H1 générique ≠ Signal SEO efficace"
+  },
+  {
+    "id": 153,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a une page dédiée à chaque service que vous proposez ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Tout est sur une seule page"
+    ],
+    "info_text": "Une page par service — c'est une page par opportunité SEO. 'Sophrologie pour la gestion du stress.' 'Sophrologie pour la préparation à l'accouchement.' Deux pages. Deux requêtes ciblées. Deux fois plus de visibilité potentielle.",
+    "slide3_type": "bandeau",
+    "banner_text": "Page unique ≠ Visibilité maximale"
+  },
+  {
+    "id": 154,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'séance de guérison énergétique' sur votre site. Vous saviez que 'guérison' dans un contexte commercial est risqué ?",
+    "info_text": "'Guérison' dans un intitulé de séance — c'est une promesse médicale. 'Séance énergétique' — c'est la description de votre pratique. Un mot change tout. Sur votre site. Et aux yeux de la DGCCRF.",
+    "slide3_type": "bandeau",
+    "banner_text": "Guérison dans un intitulé ≠ Terme libre"
+  },
+  {
+    "id": 155,
+    "slide1_type": "poll",
+    "poll_question": "Vous utilisez votre email Gmail ou Yahoo pour votre activité professionnelle ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Un email @gmail ou @yahoo pour votre activité professionnelle — c'est un signal de manque de professionnalisme. Et Gmail héberge vos emails aux États-Unis. Les données de vos clients qui vous écrivent passent par ces serveurs.",
+    "slide3_type": "bandeau",
+    "banner_text": "Gmail professionnel ≠ Image professionnelle sérieuse"
+  },
+  {
+    "id": 156,
+    "slide1_type": "question_box",
+    "poll_question": "Votre client a laissé un avis avec son vrai prénom et des détails identifiables. Vous l'avez partagé en story. Vous aviez son accord ?",
+    "info_text": "Un prénom + une expérience identifiable — ce sont des données personnelles. Pour partager cet avis sur Instagram — vous avez besoin d'un accord explicite. Pas juste l'accord implicite qu'il a laissé un avis public.",
+    "slide3_type": "bandeau",
+    "banner_text": "Avis public ≠ Diffusable partout sans accord"
+  },
+  {
+    "id": 157,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez fait une refonte de site récente. Vous avez vérifié la conformité avant la mise en ligne ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne savais pas que c'était nécessaire"
+    ],
+    "info_text": "Une refonte de site — c'est le moment où les risques se créent. Un nouveau contenu rédigé par une agence. Des formulations attractives qui dépassent votre périmètre. 10 vérifications juridiques avant toute mise en ligne.",
+    "slide3_type": "bandeau",
+    "banner_text": "Refonte ≠ Vérification automatique"
+  },
+  {
+    "id": 158,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'accompagnement sur mesure' sur votre site. Vous saviez que 'sur mesure' peut créer une attente ?",
+    "info_text": "'Sur mesure' implique que votre approche s'adapte précisément à chaque situation individuelle. Si votre client a une pathologie complexe — et que vous promettez un accompagnement 'sur mesure' pour sa situation — l'attente créée peut dépasser votre champ.",
+    "slide3_type": "bandeau",
+    "banner_text": "Sur mesure ≠ Sans implication"
+  },
+  {
+    "id": 159,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez un site web que vous avez construit vous-même sur Wix ou Squarespace ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Un site fait maison — c'est votre visibilité. Ce qui compte n'est pas l'outil que vous avez utilisé. C'est ce que vous avez écrit dessus. Et si ce que vous avez écrit correspond à votre cadre réel.",
+    "slide3_type": "bandeau",
+    "banner_text": "Site fait maison ≠ Site problématique par défaut"
+  },
+  {
+    "id": 160,
+    "slide1_type": "question_box",
+    "poll_question": "La loi DMA est entrée en vigueur. Elle concerne les grands acteurs du digital. Vous savez comment elle impacte vos avis Google ?",
+    "info_text": "La loi DMA impose plus de transparence aux plateformes sur la gestion des avis. Google doit préciser comment il trie et affiche les avis. Pour vous — c'est une opportunité. Des avis authentiques et réguliers sont encore plus valorisés.",
+    "slide3_type": "bandeau",
+    "banner_text": "Loi DMA ≠ Rien à voir avec vous"
+  },
+  {
+    "id": 161,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Hacker l'algorithme ≠ Stratégie durable",
+    "info_text": "Vous ajoutez des mots-clés partout. Vous copiez ce que font vos concurrents. Votre fiche monte. Puis un contrôle arrive. Et ce que vous avez optimisé devient ce qui vous expose. Optimiser sans cadre — c'est construire sur du sable.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous avez déjà 'hacké' votre fiche Google avec des techniques douteuses ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non"
+    ]
+  },
+  {
+    "id": 162,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'séance de sophrologie pour guérir votre insomnie' sur votre site. Vous savez que 'guérir l'insomnie' est une promesse médicale ?",
+    "info_text": "'Guérir l'insomnie' — c'est affirmer un résultat médical. Ce qui est conforme — 'j'accompagne les personnes qui cherchent à améliorer la qualité de leur sommeil.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Guérir l'insomnie ≠ Accompagner le sommeil"
+  },
+  {
+    "id": 163,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez une stratégie de contenu planifiée pour les 3 prochains mois ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Pas vraiment"
+    ],
+    "info_text": "Publier dans l'urgence — c'est là que les glissements se produisent. Dans l'élan. Sans relecture. Une stratégie planifiée permet de relire chaque formulation avec le bon regard avant de publier.",
+    "slide3_type": "bandeau",
+    "banner_text": "Spontané ≠ Réfléchi"
+  },
+  {
+    "id": 164,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je suis passionné par la guérison naturelle.' Dans votre bio Instagram. Vous saviez que c'était risqué ?",
+    "info_text": "'Guérison naturelle' dans votre bio — c'est affirmer que vous opérez dans le champ de la guérison. Même si c'est une passion. Même si votre intention est différente. C'est ce que les autorités lisent.",
+    "slide3_type": "bandeau",
+    "banner_text": "Passion pour la guérison ≠ Formulation neutre"
+  },
+  {
+    "id": 165,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a du contenu mis en cache par Google depuis plus de 6 mois ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas vérifier"
+    ],
+    "info_text": "Le cache Google — c'est la version de votre site que Google a indexée. Tapez 'cache:votresite.com' dans Google. Vous verrez ce que Google retient de vous. Pas toujours ce que vous avez corrigé.",
+    "slide3_type": "bandeau",
+    "banner_text": "Site corrigé ≠ Cache Google mis à jour"
+  },
+  {
+    "id": 166,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez un disclaimer dans votre bio Instagram qui dit 'je ne suis pas médecin.' Vous pensez que ça vous protège ?",
+    "info_text": "Un disclaimer ne neutralise pas les promesses qui précèdent. Si votre bio promet 'sortir du burn-out' et que votre disclaimer dit 'je ne suis pas médecin' — la promesse principale reste. Le fond doit être conforme.",
+    "slide3_type": "bandeau",
+    "banner_text": "Disclaimer ≠ Protection automatique"
+  },
+  {
+    "id": 167,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez des URLs avec des accents ou des caractères spéciaux ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas les voir"
+    ],
+    "info_text": "Les accents dans les URLs — certains systèmes les encodent mal. /sophrologie-déstress ou /sophrologie-destress — Google préfère les URLs propres, en minuscules, sans accents, avec des tirets comme séparateurs.",
+    "slide3_type": "bandeau",
+    "banner_text": "URL avec accents ≠ URL optimisée"
+  },
+  {
+    "id": 168,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez publié les résultats d'une étude sur votre pratique sans mentionner que les résultats peuvent varier. Vous saviez que ça vous engageait ?",
+    "info_text": "Publier des chiffres d'une étude sans contexte complet — c'est une information partielle. Qui peut créer une attente sur votre propre pratique. Le contexte d'une étude n'est jamais celui de votre cabinet.",
+    "slide3_type": "bandeau",
+    "banner_text": "Résultat d'étude ≠ Résultat de votre pratique"
+  },
+  {
+    "id": 169,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez une stratégie pour obtenir des avis Google de façon éthique et régulière ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas comment faire légalement"
+    ],
+    "info_text": "Ce qui est autorisé — demander un avis à votre client. Après la séance. Sans contrepartie. Avec un texte neutre. Ce qui n'est pas autorisé — inciter avec une réduction, un cadeau, ou une demande sous pression.",
+    "slide3_type": "bandeau",
+    "banner_text": "Demander un avis ≠ L'acheter"
+  },
+  {
+    "id": 170,
+    "slide1_type": "question_box",
+    "poll_question": "Votre site a une page 'mes résultats' ou 'mes succès.' Vous avez vérifié chaque témoignage présent sur cette page ?",
+    "info_text": "Une page résultats ou succès — c'est votre page la plus exposée. Chaque témoignage doit être authentique, vérifiable, sans terme médical, sans promesse de résultat, avec accord écrit de son auteur.",
+    "slide3_type": "bandeau",
+    "banner_text": "Page résultats ≠ Page sans risque"
+  },
+  {
+    "id": 171,
+    "slide1_type": "phrase_design",
+    "phrase_text": "Visible localement ≠ Présent en ligne",
+    "info_text": "Avoir un site et un compte Instagram — c'est être présent en ligne. Apparaître quand quelqu'un tape 'sophrologue + votre ville' sur Google Maps — c'est être visible localement. Ce ne sont pas les mêmes efforts. Ce ne sont pas les mêmes résultats.",
+    "slide3_type": "poll",
+    "slide3_poll_question": "Vous apparaissez dans les 3 premiers sur Google Maps pour votre profession + votre ville ?",
+    "slide3_poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas"
+    ]
+  },
+  {
+    "id": 172,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'médecine douce' sur votre site ou votre fiche. Vous saviez que ce terme peut créer une confusion ?",
+    "info_text": "'Médecine douce' — ce terme associe votre pratique à la médecine. Même avec 'douce' devant. Alternative conforme — 'approche bien-être', 'accompagnement naturel', 'pratiques de mieux-être.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Médecine douce ≠ Terme neutre"
+  },
+  {
+    "id": 173,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez envoyé une newsletter à votre liste de contacts sans lien de désinscription ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Un lien de désinscription fonctionnel dans chaque email — c'est une obligation légale. Pas une option. Une newsletter sans lien de désinscription expose à une plainte CNIL.",
+    "slide3_type": "bandeau",
+    "banner_text": "Newsletter ≠ Lien de désinscription optionnel"
+  },
+  {
+    "id": 174,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'programme de santé naturelle' sur votre site. Vous saviez que 'programme de santé' peut créer une confusion ?",
+    "info_text": "'Programme de santé' — c'est flirter avec le territoire médical. Un programme de santé est généralement prescrit par un médecin. Alternative conforme — 'programme de bien-être et hygiène de vie.'",
+    "slide3_type": "bandeau",
+    "banner_text": "Programme de santé ≠ Programme de bien-être"
+  },
+  {
+    "id": 175,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez partagé en post Instagram les résultats d'un client après X séances avec vous ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Attribuer un résultat à vos séances — c'est une allégation thérapeutique. Ce qui est conforme — laisser votre client témoigner en son nom. 'Après nos séances, je me sens...' Pas 'Grâce à ma méthode, mon client a...' La nuance protège tout.",
+    "slide3_type": "bandeau",
+    "banner_text": "Résultat attribué à vos séances ≠ Témoignage neutre"
+  },
+  {
+    "id": 176,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'accompagnement personnalisé selon votre profil énergétique.' Vous saviez que 'profil énergétique' peut poser problème ?",
+    "info_text": "'Profil énergétique' dans un contexte qui implique un diagnostic — c'est créer une confusion avec un acte médical. Si vous établissez un 'profil' — qui l'établit ? Sur quelle base ? Ces questions peuvent vous exposer.",
+    "slide3_type": "bandeau",
+    "banner_text": "Profil énergétique ≠ Terme sans implications"
+  },
+  {
+    "id": 177,
+    "slide1_type": "poll",
+    "poll_question": "Votre site a été conçu pour convertir les visiteurs en prises de rendez-vous ?",
+    "poll_options": [
+      "Oui",
+      "Non",
+      "Je ne sais pas ce que ça veut dire"
+    ],
+    "info_text": "Un bouton de prise de rendez-vous visible sans scroller — c'est votre priorité n°1. Votre numéro de téléphone en haut de page — c'est votre deuxième priorité. Tout le reste est secondaire.",
+    "slide3_type": "bandeau",
+    "banner_text": "Beau site ≠ Site qui convertit"
+  },
+  {
+    "id": 178,
+    "slide1_type": "question_box",
+    "poll_question": "Vous avez 'je travaille sur vos traumatismes' sur votre site. Vous êtes psychologue ou thérapeute certifié ?",
+    "info_text": "Travailler sur les traumatismes — c'est une pratique clinique encadrée. Si vous n'êtes pas un professionnel de santé mentale qualifié — cette formulation vous expose à l'exercice illégal de la psychologie.",
+    "slide3_type": "bandeau",
+    "banner_text": "Travailler sur les traumatismes ≠ Pratique bien-être"
+  },
+  {
+    "id": 179,
+    "slide1_type": "poll",
+    "poll_question": "Vous avez relu votre site comme si vous étiez votre client idéal — pas comme son créateur ?",
+    "poll_options": [
+      "Oui",
+      "Non"
+    ],
+    "info_text": "Votre client idéal ne connaît pas votre pratique. Il arrive avec ses mots. Ses peurs. Ses attentes. Ce qu'il lit sur votre site doit lui permettre de comprendre ce que vous faites — sans créer d'attente que vous ne pouvez pas satisfaire.",
+    "slide3_type": "bandeau",
+    "banner_text": "Votre regard sur votre site ≠ Regard de votre client"
+  },
+  {
+    "id": 180,
+    "slide1_type": "question_box",
+    "poll_question": "Dans 6 mois — votre site sera-t-il plus visible et plus conforme qu'aujourd'hui ? Qu'est-ce qui va changer ?",
+    "info_text": "La visibilité et la conformité ne s'opposent pas. Ce sont le même objectif. Être trouvé pour ce que vous êtes réellement autorisé à faire — c'est là que se rencontrent le SEO efficace et la posture irréprochable.",
+    "slide3_type": "bandeau",
+    "banner_text": "Visible & Conforme ≠ Incompatible"
+  }
 ]

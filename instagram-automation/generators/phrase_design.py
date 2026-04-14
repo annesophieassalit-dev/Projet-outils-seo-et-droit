@@ -31,16 +31,16 @@ from generators.base import load_font, make_radial_gradient
 _W, _H   = FEED_W, 1350    # 1080 × 1350
 
 # ── Pilules ──────────────────────────────────────────────────────────────────
-_PILL_W  = _W - 80          # 1000 px (40 px marge de chaque côté)
-_PILL_H  = 128              # hauteur des pilules
-_PILL_R  = 16               # rayon des coins
+_PILL_W  = _W - 280         # 800 px — moins large, marges 140px de chaque côté
+_PILL_H  = 108              # hauteur des pilules (réduite)
+_PILL_R  = 14               # rayon des coins
 _TILT1   = 0.0              # P1 — droite (horizontale)
 _TILT2   = +3.5             # P2 — penchée dans l'autre sens
-_OVERLAP = 26               # px que P2 passe derrière P1
+_OVERLAP = 22               # px que P2 passe derrière P1
 
 # ── Positions verticales ─────────────────────────────────────────────────────
-_P1_CY   = 575              # centre y pilule 1 (centré dans l'espace header→footer)
-_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 575 + 128 - 26 = 677
+_P1_CY   = 560              # centre y pilule 1
+_P2_CY   = _P1_CY + _PILL_H - _OVERLAP   # 560 + 108 - 22 = 646
 
 _FOOT_Y  = 1095             # badge auteure
 _FOOT_H  = 160
@@ -221,8 +221,8 @@ def generate_phrase_design_yellow(
         line1, line2 = pill_text, None
 
     cl, cr, tc = YELLOW_LEFT, YELLOW_RIGHT, tuple(YELLOW_TEXT)
-    font1 = load_font(FONT_BOLD,    76)
-    font2 = load_font(FONT_SERIF_I, 64)
+    font1 = load_font(FONT_BOLD,    64)
+    font2 = load_font(FONT_SERIF_I, 54)
 
     # P2 d'abord (derrière), P1 ensuite (devant)
     if line2:
@@ -260,8 +260,8 @@ def generate_phrase_design_blue(
         line1, line2 = pill_text, None
 
     cl, cr = PILL_LEFT, PILL_RIGHT
-    font1 = load_font(FONT_BOLD,    76)
-    font2 = load_font(FONT_SERIF_I, 64)
+    font1 = load_font(FONT_BOLD,    64)
+    font2 = load_font(FONT_SERIF_I, 54)
 
     # P2 d'abord (derrière), P1 ensuite (devant)
     if line2:
