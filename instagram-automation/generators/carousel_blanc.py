@@ -25,8 +25,7 @@ from generators.base import load_font
 
 # ── Couleurs ──────────────────────────────────────────────────────────────────
 _BG        = (238, 234, 228)     # beige très clair
-_NAVY      = (28,  56, 108)      # bleu marine — barre, bold, flèche
-_BODY      = (58,  128, 192)     # bleu moyen — corps de texte
+_NAVY      = (28,  56, 108)      # bleu marine — barre, bold, corps, flèche
 _GRAD_A    = (232,  77, 115)     # rose vif (gauche du gradient titre)
 _GRAD_B    = (245, 193,  42)     # jaune doré (droite du gradient titre)
 _BADGE_BG  = (252, 248, 242)     # fond badge footer
@@ -35,22 +34,22 @@ _BADGE_BG  = (252, 248, 242)     # fond badge footer
 _W, _H          = FEED_W, 1350
 _MARGIN_X       = 80
 _TITLE_MARGIN   = 38           # marge titre (plus étroit pour plus de mots/ligne)
-_TITLE_TOP      = 88
-_TITLE_SIZE     = 78
+_TITLE_TOP      = 78
+_TITLE_SIZE     = 108          # titre grand — correspond aux modèles
 _BORDER_X       = 98
-_BORDER_W     = 4
-_TEXT_X       = 146
-_TEXT_W       = _W - _TEXT_X - 62
-_BOLD_SIZE    = 40
-_BODY_SIZE    = 37
-_SRC_SIZE     = 28
-_BODY_LS      = 1.46
-_CONTENT_TOP  = 450    # y minimum de départ du bloc de contenu
-_ARROW_X      = _W - 290   # début de la flèche (gauche des points)
-_ARROW_CY     = 958        # centre y de la flèche
-_FOOTER_Y     = 1268
-_FOOTER_H     = 56
-_FOOTER_W     = 650
+_BORDER_W       = 4
+_TEXT_X         = 146
+_TEXT_W         = _W - _TEXT_X - 62
+_BOLD_SIZE      = 40
+_BODY_SIZE      = 37
+_SRC_SIZE       = 28
+_BODY_LS        = 1.46
+_CONTENT_TOP    = 500    # y minimum de départ du bloc de contenu
+_ARROW_X        = _W - 290   # début de la flèche (gauche des points)
+_ARROW_CY       = 970        # centre y de la flèche
+_FOOTER_Y       = 1268
+_FOOTER_H       = 56
+_FOOTER_W       = 650
 
 
 # ── Utilitaires ───────────────────────────────────────────────────────────────
@@ -179,7 +178,7 @@ def _draw_content_block(draw: ImageDraw.Draw, y: int,
     # Paragraphes
     for idx, pl in enumerate(para_blocks):
         for line in pl:
-            draw.text((_TEXT_X, ty), line, font=f_body, fill=_BODY)
+            draw.text((_TEXT_X, ty), line, font=f_body, fill=_NAVY)
             ty += body_lh
         if idx < len(para_blocks) - 1:
             ty += 22
@@ -188,7 +187,7 @@ def _draw_content_block(draw: ImageDraw.Draw, y: int,
     if src_lines:
         ty += 28
         for line in src_lines:
-            draw.text((_TEXT_X, ty), line, font=f_src, fill=_BODY)
+            draw.text((_TEXT_X, ty), line, font=f_src, fill=_NAVY)
             ty += src_lh
 
     return int(ty)
