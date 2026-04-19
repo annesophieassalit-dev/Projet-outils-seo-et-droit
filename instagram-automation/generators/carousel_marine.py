@@ -398,6 +398,10 @@ def generate_marine_carousel_set(
         carousel: dict,
         output_dir: str = "output/carousels",
 ) -> list:
+    # Dispatcher de style
+    if carousel.get("style") == "blanc":
+        from generators.carousel_blanc import generate_blanc_carousel_set
+        return generate_blanc_carousel_set(carousel, output_dir)
     """
     Génère toutes les slides d'un carousel.
 

@@ -41,7 +41,8 @@ FONT_BLACK   = f"{FONT_DIR}/Montserrat-Black.ttf"
 FONT_BOLD    = f"{FONT_DIR}/Montserrat-Bold.ttf"
 FONT_REGULAR = f"{FONT_DIR}/Montserrat-Regular.ttf"
 FONT_LIGHT   = f"{FONT_DIR}/Montserrat-Light.ttf"
-FONT_LIGHT_I = f"{FONT_DIR}/Montserrat-LightItalic.ttf"
+FONT_LIGHT_I  = f"{FONT_DIR}/Montserrat-LightItalic.ttf"
+FONT_BOLD_I   = f"{FONT_DIR}/Montserrat-BoldItalic.ttf"
 
 # Polices spéciales (bandeau slide 3)
 FONT_ARIMO   = f"{FONT_DIR}/Arimo-Regular.ttf"      # haut du bandeau

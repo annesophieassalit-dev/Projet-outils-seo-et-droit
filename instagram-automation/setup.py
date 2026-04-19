@@ -29,6 +29,8 @@ FONTS = {
         "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-Light.ttf",
     "Montserrat-LightItalic.ttf":
         "https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-LightItalic.ttf",
+    "Montserrat-BoldItalic.ttf":
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq0N6aX8.ttf",
     # Arimo — haut du bandeau (slide 3)
     "Arimo-Regular.ttf":
         "https://github.com/googlefonts/Arimo/raw/main/fonts/ttf/Arimo-Regular.ttf",

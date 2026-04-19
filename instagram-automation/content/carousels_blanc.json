@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "style": "blanc",
+    "slides": [
+      {
+        "title": "La voix, ce n'est pas une donnée neutre",
+        "bold": "Le RGPD considère la voix comme une donnée personnelle à part entière.",
+        "paragraphs": [
+          "Si votre site propose la recherche vocale, vous traitez ces données. Même sans le savoir. Même si c'est votre prestataire qui gère."
+        ]
+      },
+      {
+        "title": "Ce que beaucoup ignorent",
+        "bold": "La responsabilité du traitement reste la vôtre.",
+        "paragraphs": [
+          "Sans base légale, sans mention d'information, sans politique de confidentialité à jour, vous êtes exposé.",
+          "Juridiquement. Et en termes de crédibilité."
+        ]
+      },
+      {
+        "title": "Conformité = confiance\n= meilleur référencement",
+        "bold": "Un site conforme inspire confiance à vos utilisateurs.",
+        "paragraphs": [
+          "Cette confiance, Google la mesure : temps de visite, taux de retour, engagement.",
+          "Être dans les clous, c'est aussi un levier SEO."
+        ]
+      },
+      {
+        "title": "Ne laissez pas cette\nfonctionnalité vous exposer",
+        "bold": "Vous utilisez la recherche vocale sur votre site ?",
+        "paragraphs": [
+          "Vérifiez votre politique de confidentialité avant de continuer."
+        ],
+        "sources": "Sources : RGPD, CNIL, livre blanc de la CNIL sur les assistants vocaux",
+        "is_last": true
+      }
+    ],
+    "caption": "La recherche vocale collecte la voix — une donnée personnelle au sens du RGPD.\nMême si c'est votre prestataire qui gère, vous restez responsable du traitement.\nConformité et SEO ne s'opposent pas. C'est le même objectif.\n\n#RGPD #SEOlocal #visibleetconforme #bienetrelegal #praticienbienettre"
+  },
+  {
+    "id": 2,
+    "style": "blanc",
+    "slides": [
+      {
+        "title": "Votre site vous représente. Vérifiez ce qu'il dit.",
+        "bold": "Chaque mot sur votre site est une prise de parole professionnelle.",
+        "paragraphs": [
+          "Un mot peut sembler anodin — et créer une confusion sur votre statut ou votre champ d'action."
+        ]
+      },
+      {
+        "title": "Ce que la DGCCRF contrôle",
+        "bold": "Les pratiques commerciales trompeuses incluent les formulations ambiguës.",
+        "paragraphs": [
+          "Même sans intention. Même avec bienveillance.",
+          "L'ambiguïté sur votre champ d'action — c'est une infraction potentielle."
+        ]
+      },
+      {
+        "title": "Être visible, c'est aussi être lisible",
+        "bold": "Google lit votre site comme vos clients — et comme un inspecteur.",
+        "paragraphs": [
+          "Ce que vous écrivez pour être trouvé peut aussi devenir ce qui vous expose.",
+          "Un audit préventif, c'est une heure de travail. Une mise en demeure, c'est autre chose."
+        ]
+      },
+      {
+        "title": "Un seul regard change tout",
+        "bold": "Vous n'avez pas besoin de tout réécrire.",
+        "paragraphs": [
+          "Vous avez besoin de savoir où regarder."
+        ],
+        "sources": "Sources : DGCCRF, Code de la consommation, art. L121-1",
+        "is_last": true
+      }
+    ],
+    "caption": "Votre site peut être bien rédigé. Et quand même vous exposer.\nLa DGCCRF contrôle les pratiques commerciales — y compris les vôtres.\nUn regard formé sur votre communication, c'est la différence.\n\n#DGCCRF #SEOlocal #visibleetconforme #praticienbienettre #juridique"
+  },
+  {
+    "id": 3,
+    "style": "blanc",
+    "slides": [
+      {
+        "title": "Votre fiche Google dit-elle ce que vous faites vraiment ?",
+        "bold": "La fiche Google My Business est votre vitrine locale n°1.",
+        "paragraphs": [
+          "C'est ce que voit votre futur client avant même d'ouvrir votre site. Avant de lire votre bio Instagram."
+        ]
+      },
+      {
+        "title": "Ce que vous n'avez pas choisi",
+        "bold": "Google peut créer une fiche à votre nom sans votre accord.",
+        "paragraphs": [
+          "Une fiche non réclamée peut contenir des informations inexactes.",
+          "Revendiquez votre fiche. Contrôlez votre premier contact."
+        ]
+      },
+      {
+        "title": "SEO local et conformité : le même travail",
+        "bold": "Optimiser votre fiche, c'est aussi vérifier chaque mot.",
+        "paragraphs": [
+          "Catégorie, description, photos — chaque élément doit correspondre à ce que vous faites réellement.",
+          "Un mot médical dans votre description peut créer une confusion sur votre statut."
+        ]
+      },
+      {
+        "title": "Prenez le contrôle de votre présence locale",
+        "bold": "Votre fiche Google est votre premier levier SEO — et votre premier risque.",
+        "paragraphs": [
+          "Réclamez-la. Vérifiez-la. Optimisez-la dans votre cadre."
+        ],
+        "sources": "Sources : Google Business Profile, DGCCRF, art. L121-1 Code conso.",
+        "is_last": true
+      }
+    ],
+    "caption": "Votre fiche Google vous représente 24h/24 — même quand vous dormez.\nUne fiche non réclamée est une fiche que vous ne contrôlez pas.\nSEO local et conformité juridique — les deux en même temps.\n\n#SEOlocal #GoogleMyBusiness #visibleetconforme #bienetrelegal"
+  }
+]

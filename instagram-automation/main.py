@@ -6,6 +6,7 @@ Usage :
   python main.py --test story           → Génère une story sans publier
   python main.py --test carousel-seo    → Génère un carousel SEO sans publier
   python main.py --test carousel-rgpd   → Génère un carousel RGPD sans publier
+  python main.py --test carousel-blanc  → Génère un carousel blanc sans publier
   python main.py --test flash           → Génère un post flash sans publier
   python main.py --publish story        → Publie immédiatement une story
   python main.py --publish carousel-seo → Publie immédiatement un carousel SEO
@@ -56,6 +57,14 @@ def cmd_test(content_type: str) -> None:
         for p in paths:
             log.info(f"    {p}")
 
+    elif content_type == "carousel-blanc":
+        carousels = json.loads((content_dir / "carousels_blanc.json").read_text())
+        carousel  = carousels[0]
+        paths     = generate_marine_carousel_set(carousel)
+        log.info(f"✓ Carousel blanc généré ({len(paths)} slides) :")
+        for p in paths:
+            log.info(f"    {p}")
+
     elif content_type == "flash":
         posts = json.loads((content_dir / "flash_posts.json").read_text())
         post  = posts[0]
@@ -70,7 +79,7 @@ def cmd_test(content_type: str) -> None:
             log.info(f"✓ Flash post {variant} généré : {path}")
 
     else:
-        log.error(f"Type inconnu : {content_type}. Choisissez : story, carousel-seo, carousel-rgpd, flash")
+        log.error(f"Type inconnu : {content_type}. Choisissez : story, carousel-seo, carousel-rgpd, carousel-blanc, flash")
         sys.exit(1)
 
 
