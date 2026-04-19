@@ -35,7 +35,7 @@ _W, _H          = FEED_W, 1350
 _MARGIN_X       = 80
 _TITLE_MARGIN   = 38           # marge titre (plus étroit pour plus de mots/ligne)
 _TITLE_TOP      = 78
-_TITLE_SIZE     = 108          # titre grand — correspond aux modèles
+_TITLE_SIZE     = 148          # titre grand — correspond aux modèles
 _BORDER_X       = 98
 _BORDER_W       = 4
 _TEXT_X         = 146
@@ -74,6 +74,35 @@ def _wrap(draw: ImageDraw.Draw, text: str, font, max_w: int) -> list:
     return lines
 
 
+def _balanced_wrap(draw: ImageDraw.Draw, text: str, font, max_w: int) -> list:
+    """Wrap title into the most visually balanced lines (minimize width variance)."""
+    m = lambda t: draw.textlength(t, font=font)
+    words = text.replace("\n", " ").split()
+
+    def splits(ws, n):
+        if n == 1:
+            yield (ws,)
+            return
+        for i in range(1, len(ws) - n + 2):
+            for rest in splits(ws[i:], n - 1):
+                yield (ws[:i],) + rest
+
+    for n_lines in range(1, len(words) + 1):
+        best, best_score = None, float('inf')
+        for parts in splits(words, n_lines):
+            lines = [" ".join(p) for p in parts]
+            widths = [m(l) for l in lines]
+            if any(w > max_w for w in widths):
+                continue
+            score = max(widths) - min(widths)
+            if score < best_score:
+                best_score, best = score, lines
+        if best:
+            return best
+
+    return [text]
+
+
 def _lh(draw: ImageDraw.Draw, font, spacing: float = 1.3) -> float:
     bb = draw.textbbox((0, 0), "Ag", font=font)
     return (bb[3] - bb[1]) * spacing
@@ -91,10 +120,16 @@ def _beige_bg() -> tuple:
 
 def _draw_gradient_title(draw: ImageDraw.Draw, title: str, y_start: int) -> int:
     """Dessine le titre en Bold Italic avec gradient rose→jaune mot par mot.
+    Réduit automatiquement la taille si le titre dépasse 3 lignes.
     Retourne la coordonnée Y après la dernière ligne."""
-    font  = load_font(FONT_BOLD_I, _TITLE_SIZE)
     max_w = _W - 2 * _TITLE_MARGIN
-    lines = _wrap(draw, title, font, max_w)
+    font, lines = None, None
+    for size in (_TITLE_SIZE, 120, 96):
+        f = load_font(FONT_BOLD_I, size)
+        l = _balanced_wrap(draw, title, f, max_w)
+        if len(l) <= 3 or size == 96:
+            font, lines = f, l
+            break
     lh    = _lh(draw, font, 1.18)
 
     y = float(y_start)
@@ -195,8 +230,8 @@ def _draw_content_block(draw: ImageDraw.Draw, y: int,
 
 # ── Flèche de navigation ·· → ─────────────────────────────────────────────────
 
-def _draw_nav_arrow(draw: ImageDraw.Draw) -> None:
-    x, cy = _ARROW_X, _ARROW_CY
+def _draw_nav_arrow(draw: ImageDraw.Draw, cy: int = None) -> None:
+    x, cy = _ARROW_X, (cy if cy is not None else _ARROW_CY)
 
     # Deux points ronds
     r = 8
@@ -259,11 +294,13 @@ def generate_blanc_slide(
 
     # Contenu : démarre après le titre avec au moins 80px d'espace
     content_y = max(title_bottom + 80, _CONTENT_TOP)
-    _draw_content_block(draw, content_y, bold, paragraphs, sources)
+    content_bottom = _draw_content_block(draw, content_y, bold, paragraphs, sources)
 
-    # Navigation
+    # Navigation : toujours sous le contenu, au-dessus du footer
     if not is_last:
-        _draw_nav_arrow(draw)
+        arrow_cy = max(content_bottom + 48, _ARROW_CY)
+        arrow_cy = min(arrow_cy, _FOOTER_Y - 68)
+        _draw_nav_arrow(draw, arrow_cy)
 
     # Footer
     _draw_footer_badge(draw)
