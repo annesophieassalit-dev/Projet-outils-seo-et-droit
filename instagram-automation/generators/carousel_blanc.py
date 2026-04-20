@@ -44,7 +44,7 @@ _BOLD_SIZE      = 40
 _BODY_SIZE      = 37
 _SRC_SIZE       = 28
 _BODY_LS        = 1.46
-_CONTENT_TOP    = 500    # y minimum de départ du bloc de contenu
+_CONTENT_TOP    = 460    # y minimum de départ du bloc de contenu
 _ARROW_X        = _W - 290   # début de la flèche (gauche des points)
 _ARROW_CY       = 970        # centre y de la flèche
 _FOOTER_Y       = 1268
@@ -127,7 +127,7 @@ def _draw_gradient_title(draw: ImageDraw.Draw, title: str, y_start: int) -> int:
     for size in (_TITLE_SIZE, 120, 96):
         f = load_font(FONT_BOLD_I, size)
         l = _balanced_wrap(draw, title, f, max_w)
-        if len(l) <= 3 or size == 96:
+        if len(l) <= 4 or size == 96:
             font, lines = f, l
             break
     lh    = _lh(draw, font, 1.18)
@@ -293,7 +293,7 @@ def generate_blanc_slide(
     title_bottom = _draw_gradient_title(draw, title, _TITLE_TOP)
 
     # Contenu : démarre après le titre avec au moins 80px d'espace
-    content_y = max(title_bottom + 80, _CONTENT_TOP)
+    content_y = max(title_bottom + 52, _CONTENT_TOP)
     content_bottom = _draw_content_block(draw, content_y, bold, paragraphs, sources)
 
     # Navigation : toujours sous le contenu, au-dessus du footer
