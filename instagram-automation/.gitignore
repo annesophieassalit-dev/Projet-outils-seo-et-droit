@@ -9,6 +9,9 @@ venv/
 # Images générées (temporaires)
 output/
 
+# Exports horodatés générés par export.py
+export/
+
 # Logs et base de données du scheduler
 logs/
 
