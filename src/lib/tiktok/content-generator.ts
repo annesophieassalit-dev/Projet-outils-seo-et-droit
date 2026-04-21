@@ -165,7 +165,7 @@ Réponds avec ce JSON exact :
 }
 
 function mergeHashtags(generated: string[]): string[] {
-  const all = [...new Set([...generated, ...HASHTAGS_BASE.slice(0, 5)])];
+  const all = Array.from(new Set(generated.concat(HASHTAGS_BASE.slice(0, 5))));
   return all.slice(0, 8);
 }
 
