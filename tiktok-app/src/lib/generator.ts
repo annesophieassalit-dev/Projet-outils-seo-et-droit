@@ -45,7 +45,8 @@ JSON exact :
   });
 
   const raw = (message.content[0] as { type: string; text: string }).text;
-  const data = JSON.parse(raw);
+  const cleaned = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+  const data = JSON.parse(cleaned);
 
   const hashtags = Array.from(new Set((data.hashtags as string[]).concat(HASHTAGS.slice(0, 4)))).slice(0, 8);
 
