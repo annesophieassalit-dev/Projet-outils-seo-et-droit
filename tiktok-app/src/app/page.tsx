@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2 } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
 const PILLARS = Object.entries(PILLAR_LABELS) as [Pillar, string][];
+
+function svgToUrl(svg: string): string {
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+const STORAGE_KEY = 'tiktok_contents';
 
 export default function HomePage() {
   const [contents, setContents] = useState<Content[]>([]);
@@ -67,6 +73,24 @@ export default function HomePage() {
     (selected.image_svgs || []).forEach((svg, i) => {
       setTimeout(() => downloadSlide(svg, `${selected.id}_slide_${i + 1}.svg`), i * 300);
     });
+  };
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) setContents(JSON.parse(saved));
+  }, []);
+
+  // Save to localStorage whenever contents change
+  useEffect(() => {
+    if (contents.length > 0) localStorage.setItem(STORAGE_KEY, JSON.stringify(contents));
+  }, [contents]);
+
+  const clearAll = () => {
+    if (confirm('Supprimer tous les contenus ?')) {
+      setContents([]);
+      localStorage.removeItem(STORAGE_KEY);
+    }
   };
 
   const openContent = (c: Content) => { setSelected(c); setSlideIdx(0); };
@@ -144,8 +168,11 @@ export default function HomePage() {
         {/* Content list */}
         {contents.length > 0 && (
           <div className="bg-white rounded-2xl border border-stone-200 overflow-hidden">
-            <div className="px-5 py-4 border-b border-stone-100">
-              <h2 className="font-bold text-gray-900">Contenus générés</h2>
+            <div className="px-5 py-4 border-b border-stone-100 flex items-center justify-between">
+              <h2 className="font-bold text-gray-900">Contenus générés ({contents.length})</h2>
+              <button onClick={clearAll} className="flex items-center gap-1 text-xs text-gray-400 hover:text-red-500">
+                <Trash2 className="h-3 w-3" />Effacer
+              </button>
             </div>
             <div className="divide-y divide-stone-50">
               {contents.map((c) => (
@@ -156,7 +183,7 @@ export default function HomePage() {
                 >
                   <div className="w-10 h-16 rounded-lg bg-[#2B2B2B] flex items-center justify-center shrink-0 overflow-hidden">
                     {c.image_svgs?.[0] ? (
-                      <img src={`data:image/svg+xml;base64,${btoa(c.image_svgs[0])}`} alt="" className="w-full h-full object-cover" />
+                      <img src={{svgToUrl(c.image_svgs[0])}} alt="" className="w-full h-full object-cover" />
                     ) : (
                       <span className="text-white text-xs">{c.content_type === 'carousel' ? '▤' : '▶'}</span>
                     )}
@@ -194,7 +221,7 @@ export default function HomePage() {
                 <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16]">
                   {selected.image_svgs?.[slideIdx] ? (
                     <img
-                      src={`data:image/svg+xml;base64,${btoa(selected.image_svgs[slideIdx])}`}
+                      src={{svgToUrl(selected.image_svgs[slideIdx])}}
                       alt={`Slide ${slideIdx + 1}`}
                       className="w-full h-full object-contain"
                     />
