@@ -106,6 +106,12 @@ export default function HomePage() {
           <p className="text-xs text-gray-400 mt-0.5">Organisation alimentaire simple — TikTok Auto</p>
         </div>
         <div className="flex gap-3">
+          <button
+            onClick={() => { localStorage.clear(); setContents([]); }}
+            className="text-xs text-red-400 hover:text-red-300 px-3 py-1.5 rounded-lg hover:bg-white/10"
+          >
+            🗑 Réinitialiser
+          </button>
           <Link href="/contenu" className="text-sm text-gray-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/10">
             Mes contenus ({contents.length})
           </Link>
