@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -20,26 +20,53 @@ export default function HomePage() {
 
   const generateDaily = async () => {
     setLoading(true);
-    const res = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'generate_daily' }),
-    });
-    const data = await res.json();
-    if (data.contents) setContents((prev) => [...data.contents, ...prev]);
+    try {
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'generate_daily' }),
+      });
+      const data = await res.json();
+      if (data.error) alert('Erreur : ' + data.error);
+      if (data.contents) setContents((prev) => [...data.contents, ...prev]);
+    } catch (e) {
+      alert('Erreur réseau. Vérifier la clé Anthropic dans Vercel.');
+    }
     setLoading(false);
   };
 
   const generateOne = async () => {
     setGenerating(true);
-    const res = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'generate_one', type: customType, pillar: customPillar }),
-    });
-    const data = await res.json();
-    if (data.content) setContents((prev) => [data.content, ...prev]);
+    try {
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'generate_one', type: customType, pillar: customPillar }),
+      });
+      const data = await res.json();
+      if (data.error) alert('Erreur : ' + data.error);
+      if (data.content) setContents((prev) => [data.content, ...prev]);
+    } catch (e) {
+      alert('Erreur réseau. Vérifier la clé Anthropic dans Vercel.');
+    }
     setGenerating(false);
+  };
+
+  const downloadSlide = (svg: string, filename: string) => {
+    const blob = new Blob([svg], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const downloadAllSlides = () => {
+    if (!selected) return;
+    (selected.image_svgs || []).forEach((svg, i) => {
+      setTimeout(() => downloadSlide(svg, `${selected.id}_slide_${i + 1}.svg`), i * 300);
+    });
   };
 
   const openContent = (c: Content) => { setSelected(c); setSlideIdx(0); };
@@ -186,6 +213,9 @@ export default function HomePage() {
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
+                <button onClick={downloadAllSlides} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#2B2B2B] rounded-xl text-white text-sm font-medium hover:bg-black">
+                  <Download className="h-4 w-4" />Télécharger toutes les slides
+                </button>
               </div>
 
               {/* Details */}
