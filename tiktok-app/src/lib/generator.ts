@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { Content, ContentType, Pillar, Slide } from '@/types/content';
-import { slidesToPngs } from './svg';
+import { slidesToSvgs } from './svg';
 
 const client = new Anthropic();
 
@@ -51,7 +51,7 @@ JSON exact :
 
   const hashtags = Array.from(new Set((data.hashtags as string[]).concat(HASHTAGS.slice(0, 4)))).slice(0, 8);
 
-  return {
+  const content: Content = {
     id: generateId(),
     content_type: type,
     pillar,
@@ -64,8 +64,7 @@ JSON exact :
     created_at: new Date().toISOString(),
   };
 
-  // Generate PNG images
-  content.image_svgs = await slidesToPngs(content.slides);
+  content.image_svgs = slidesToSvgs(content.slides);
   return content;
 }
 

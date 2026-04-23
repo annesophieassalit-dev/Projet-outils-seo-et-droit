@@ -8,8 +8,25 @@ import type { Content, ContentType, Pillar } from "@/types/content";
 
 const PILLARS = Object.entries(PILLAR_LABELS) as [Pillar, string][];
 
-function pngUrl(base64: string): string {
-  return `data:image/png;base64,${base64}`;
+function svgUrl(svg: string): string {
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+function downloadSvgAsPng(svg: string, filename: string): void {
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1920;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  const img = new Image();
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0);
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = filename;
+    a.click();
+  };
+  img.src = svgUrl(svg);
 }
 
 const STORAGE_KEY = 'tiktok_contents';
@@ -60,23 +77,18 @@ export default function HomePage() {
 
   const downloadAllSlides = () => {
     if (!selected) return;
-    (selected.image_svgs || []).forEach((b64, i) => {
+    (selected.image_svgs || []).forEach((svg, i) => {
       setTimeout(() => {
-        const a = document.createElement('a');
-        a.href = pngUrl(b64);
-        a.download = `slide_${i + 1}.png`;
-        a.click();
-      }, i * 400);
+        downloadSvgAsPng(svg, `slide_${i + 1}.png`);
+      }, i * 600);
     });
   };
 
-  // Load from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) setContents(JSON.parse(saved));
   }, []);
 
-  // Save to localStorage whenever contents change
   useEffect(() => {
     if (contents.length > 0) localStorage.setItem(STORAGE_KEY, JSON.stringify(contents));
   }, [contents]);
@@ -107,10 +119,10 @@ export default function HomePage() {
         </div>
         <div className="flex gap-3">
           <button
-            onClick={() => { localStorage.clear(); setContents([]); }}
+            onClick={clearAll}
             className="text-xs text-red-400 hover:text-red-300 px-3 py-1.5 rounded-lg hover:bg-white/10"
           >
-            🗑 Réinitialiser
+            Effacer tout
           </button>
           <Link href="/contenu" className="text-sm text-gray-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/10">
             Mes contenus ({contents.length})
@@ -184,7 +196,7 @@ export default function HomePage() {
                 >
                   <div className="w-10 h-16 rounded-lg bg-[#2B2B2B] flex items-center justify-center shrink-0 overflow-hidden">
                     {c.image_svgs?.[0] ? (
-                      <img src={{pngUrl(c.image_svgs[0])}} alt="" className="w-full h-full object-cover" />
+                      <img src={svgUrl(c.image_svgs[0])} alt="" className="w-full h-full object-cover" />
                     ) : (
                       <span className="text-white text-xs">{c.content_type === 'carousel' ? '▤' : '▶'}</span>
                     )}
@@ -222,7 +234,7 @@ export default function HomePage() {
                 <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16]">
                   {selected.image_svgs?.[slideIdx] ? (
                     <img
-                      src={{pngUrl(selected.image_svgs[slideIdx])}}
+                      src={svgUrl(selected.image_svgs[slideIdx])}
                       alt={`Slide ${slideIdx + 1}`}
                       className="w-full h-full object-contain"
                     />
@@ -242,7 +254,7 @@ export default function HomePage() {
                   </button>
                 </div>
                 <button onClick={downloadAllSlides} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#2B2B2B] rounded-xl text-white text-sm font-medium hover:bg-black">
-                  <Download className="h-4 w-4" />Télécharger toutes les slides
+                  <Download className="h-4 w-4" />Télécharger toutes les slides (PNG)
                 </button>
               </div>
 
