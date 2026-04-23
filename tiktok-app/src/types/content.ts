@@ -19,7 +19,7 @@ export interface Content {
   hashtags: string[];
   status: 'draft' | 'ready';
   created_at: string;
-  image_svgs?: string[];
+  image_svgs?: string[]; // base64 PNG strings
 }
 
 export const PILLAR_LABELS: Record<Pillar, string> = {

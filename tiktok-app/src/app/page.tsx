@@ -8,8 +8,8 @@ import type { Content, ContentType, Pillar } from "@/types/content";
 
 const PILLARS = Object.entries(PILLAR_LABELS) as [Pillar, string][];
 
-function svgToUrl(svg: string): string {
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+function pngUrl(base64: string): string {
+  return `data:image/png;base64,${base64}`;
 }
 
 const STORAGE_KEY = 'tiktok_contents';
@@ -58,20 +58,15 @@ export default function HomePage() {
     setGenerating(false);
   };
 
-  const downloadSlide = (svg: string, filename: string) => {
-    const blob = new Blob([svg], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
   const downloadAllSlides = () => {
     if (!selected) return;
-    (selected.image_svgs || []).forEach((svg, i) => {
-      setTimeout(() => downloadSlide(svg, `${selected.id}_slide_${i + 1}.svg`), i * 300);
+    (selected.image_svgs || []).forEach((b64, i) => {
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = pngUrl(b64);
+        a.download = `slide_${i + 1}.png`;
+        a.click();
+      }, i * 400);
     });
   };
 
@@ -183,7 +178,7 @@ export default function HomePage() {
                 >
                   <div className="w-10 h-16 rounded-lg bg-[#2B2B2B] flex items-center justify-center shrink-0 overflow-hidden">
                     {c.image_svgs?.[0] ? (
-                      <img src={{svgToUrl(c.image_svgs[0])}} alt="" className="w-full h-full object-cover" />
+                      <img src={{pngUrl(c.image_svgs[0])}} alt="" className="w-full h-full object-cover" />
                     ) : (
                       <span className="text-white text-xs">{c.content_type === 'carousel' ? '▤' : '▶'}</span>
                     )}
@@ -221,7 +216,7 @@ export default function HomePage() {
                 <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16]">
                   {selected.image_svgs?.[slideIdx] ? (
                     <img
-                      src={{svgToUrl(selected.image_svgs[slideIdx])}}
+                      src={{pngUrl(selected.image_svgs[slideIdx])}}
                       alt={`Slide ${slideIdx + 1}`}
                       className="w-full h-full object-contain"
                     />

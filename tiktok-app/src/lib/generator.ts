@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { Content, ContentType, Pillar, Slide } from '@/types/content';
+import { slidesToPngs } from './svg';
 
 const client = new Anthropic();
 
@@ -62,6 +63,10 @@ JSON exact :
     status: 'ready',
     created_at: new Date().toISOString(),
   };
+
+  // Generate PNG images
+  content.image_svgs = await slidesToPngs(content.slides);
+  return content;
 }
 
 export async function generateTopicsAndContent(): Promise<Content[]> {
