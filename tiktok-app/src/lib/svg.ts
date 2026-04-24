@@ -4,6 +4,16 @@ const W = 1080;
 const H = 1920;
 const PAD = 90;
 
+// Palette Prévoir Utile logo: vert forêt, crème, sauge, olive
+const THEMES = [
+  // DARK — hook/conclusion : fond vert forêt
+  { bg: '#2A3D18', text: '#F2EDD8', hl: '#A8BC5A', accent: '#A8BC5A' },
+  // KRAFT — fond crème, lignes carnet
+  { bg: '#F2EDD8', text: '#2A3D18', hl: '#6B7C2A', accent: '#6B7C2A' },
+  // SAGE — fond vert sauge, style fiche
+  { bg: '#C8D4A2', text: '#2A3D18', hl: '#2A3D18', accent: '#4A5E1A' },
+];
+
 function esc(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
@@ -21,54 +31,61 @@ function wrapLines(text: string, maxChars: number): string[] {
   return lines;
 }
 
+function themeIndex(slide: Slide, idx: number): number {
+  if (slide.type === 'hook' || slide.type === 'conclusion') return 0;
+  return idx % 2 === 1 ? 1 : 2;
+}
+
+function bgExtras(tIdx: number, accent: string): string {
+  if (tIdx === 1) {
+    // Kraft/carnet : lignes horizontales légères
+    return Array.from({ length: 17 }, (_, i) =>
+      `<line x1="${PAD}" y1="${290 + i * 92}" x2="${W - PAD}" y2="${290 + i * 92}" stroke="${accent}" stroke-width="1.5" opacity="0.22"/>`
+    ).join('\n  ');
+  }
+  if (tIdx === 2) {
+    // Sage/fiche : ovales feuilles en coin
+    return `<ellipse cx="980" cy="1820" rx="70" ry="28" fill="${accent}" opacity="0.18" transform="rotate(-40 980 1820)"/>
+  <ellipse cx="910" cy="1865" rx="52" ry="20" fill="${accent}" opacity="0.12" transform="rotate(-55 910 1865)"/>
+  <ellipse cx="105" cy="95" rx="52" ry="20" fill="${accent}" opacity="0.12" transform="rotate(40 105 95)"/>`;
+  }
+  return '';
+}
+
 export function slideToSvg(slide: Slide, idx: number, total: number): string {
-  const isHook = slide.type === 'hook';
-  const bg = isHook ? '#2B2B2B' : '#F5F0E8';
-  const textColor = isHook ? '#FFFFFF' : '#2B2B2B';
-  const fs = slide.text.length > 80 ? 52 : slide.text.length > 50 ? 62 : 72;
+  const tIdx = themeIndex(slide, idx);
+  const t = THEMES[tIdx];
+
+  const fs = slide.text.length > 80 ? 56 : slide.text.length > 50 ? 66 : 78;
   const lh = fs * 1.55;
-  const maxChars = Math.floor(18 * (72 / fs));
+  const maxChars = Math.floor(18 * (78 / fs));
   const lines = wrapLines(slide.text, maxChars);
   const blockH = lines.length * lh;
   const startY = (H - blockH) / 2 + fs;
-  const hlColor = isHook ? '#F6E27A' : '#B85C20';
 
   const textEls = lines.map((line, i) => {
     const y = startY + i * lh;
-    const hl = (slide.highlight || []);
+    const hl = slide.highlight || [];
     const matched = hl.find(h => line.toLowerCase().includes(h.toLowerCase()));
     if (matched) {
       const lo = line.toLowerCase().indexOf(matched.toLowerCase());
       const before = esc(line.slice(0, lo));
       const match = esc(line.slice(lo, lo + matched.length));
       const after = esc(line.slice(lo + matched.length));
-      return `<text x="${W/2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="Georgia,serif" font-weight="700"><tspan fill="${textColor}">${before}</tspan><tspan fill="${hlColor}">${match}</tspan><tspan fill="${textColor}">${after}</tspan></text>`;
+      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="Georgia,serif" font-weight="700"><tspan fill="${t.text}">${before}</tspan><tspan fill="${t.hl}">${match}</tspan><tspan fill="${t.text}">${after}</tspan></text>`;
     }
-    return `<text x="${W/2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${textColor}" font-family="Georgia,serif" font-weight="700">${esc(line)}</text>`;
-  }).join('\n');
-
-  const arrowColor = isHook ? '#666' : '#C8B9A8';
-  const isLast = idx === total - 1;
-  const bottomY = H - 80;
-  const bottomEl = isLast
-    ? `<text x="${W/2}" y="${bottomY}" text-anchor="middle" font-size="28" fill="${arrowColor}" font-family="Georgia,serif">Sauvegarde si utile 💾</text>`
-    : `<g transform="translate(${W/2 - 20},${bottomY - 20})">
-        <line x1="0" y1="10" x2="32" y2="10" stroke="${arrowColor}" stroke-width="3" stroke-linecap="round"/>
-        <polyline points="22,2 32,10 22,18" fill="none" stroke="${arrowColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      <text x="${W/2 + 24}" y="${bottomY}" text-anchor="middle" font-size="24" fill="${arrowColor}" font-family="Georgia,serif">${idx+1}/${total}</text>`;
-
-  const topColor = isHook ? '#666' : '#C8B9A8';
-  const sep = isHook ? '' : `<rect x="${PAD}" y="85" width="${W-PAD*2}" height="1" fill="#C8B9A8" opacity="0.5"/>
-    <rect x="${PAD}" y="${H-100}" width="${W-PAD*2}" height="1" fill="#C8B9A8" opacity="0.5"/>`;
+    return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${t.text}" font-family="Georgia,serif" font-weight="700">${esc(line)}</text>`;
+  }).join('\n  ');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <rect width="${W}" height="${H}" fill="${bg}"/>
-  ${sep}
-  <text x="${W/2}" y="62" text-anchor="middle" font-size="26" fill="${topColor}" font-family="Georgia,serif" letter-spacing="3">PRÉVOIR SANS PANIQUER</text>
+  <rect width="${W}" height="${H}" fill="${t.bg}"/>
+  ${bgExtras(tIdx, t.accent)}
+  <rect x="${PAD}" y="94" width="${W - PAD * 2}" height="2" fill="${t.accent}" opacity="0.5"/>
+  <rect x="${PAD}" y="${H - 114}" width="${W - PAD * 2}" height="2" fill="${t.accent}" opacity="0.5"/>
+  <text x="${W / 2}" y="62" text-anchor="middle" font-size="24" fill="${t.accent}" font-family="Georgia,serif" letter-spacing="4" font-weight="700">PRÉVOIR UTILE</text>
   ${textEls}
-  ${bottomEl}
+  <text x="${W / 2}" y="${H - 68}" text-anchor="middle" font-size="26" fill="${t.text}" font-family="Georgia,serif" opacity="0.35">${idx + 1} / ${total}</text>
 </svg>`;
 }
 
