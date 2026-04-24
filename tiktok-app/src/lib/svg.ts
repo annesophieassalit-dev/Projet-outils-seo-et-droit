@@ -4,14 +4,14 @@ const W = 1080;
 const H = 1920;
 const PAD = 90;
 
-// Palette Prévoir Utile logo: vert forêt, crème, sauge, olive
+// Palette Prévoir Utile — alignée avec l'ebook
 const THEMES = [
-  // DARK — hook/conclusion : fond vert forêt
-  { bg: '#2A3D18', text: '#F2EDD8', hl: '#A8BC5A', accent: '#A8BC5A' },
-  // KRAFT — fond crème, lignes carnet
-  { bg: '#F2EDD8', text: '#2A3D18', hl: '#6B7C2A', accent: '#6B7C2A' },
-  // SAGE — fond vert sauge, style fiche
-  { bg: '#C8D4A2', text: '#2A3D18', hl: '#2A3D18', accent: '#4A5E1A' },
+  // DARK — hook/conclusion : fond vert forêt, texte crème, vert olive en accent
+  { bg: '#2A3D18', text: '#F5F0E2', hl: '#A8BC5A', accent: '#A8BC5A' },
+  // KRAFT — fond crème ebook, titres vert, highlights terracotta ebook
+  { bg: '#F5F0E2', text: '#2A3D18', hl: '#B85C20', accent: '#6B7C2A' },
+  // SAGE — fond vert sauge, texte vert foncé, highlights terracotta
+  { bg: '#C8D4A2', text: '#2A3D18', hl: '#B85C20', accent: '#4A5E1A' },
 ];
 
 function esc(s: string) {

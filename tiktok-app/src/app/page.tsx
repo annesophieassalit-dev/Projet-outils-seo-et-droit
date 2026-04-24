@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import JSZip from "jszip";
 import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2 } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
@@ -80,33 +81,37 @@ export default function HomePage() {
   const downloadAllSlides = async () => {
     if (!selected || downloading) return;
     setDownloading(true);
-    const JSZip = (await import('jszip')).default;
-    const zip = new JSZip();
-    const svgs = selected.image_svgs || [];
+    try {
+      const zip = new JSZip();
+      const svgs = selected.image_svgs || [];
 
-    await Promise.all(svgs.map((svg, i) => new Promise<void>((resolve) => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 1080;
-      canvas.height = 1920;
-      const ctx = canvas.getContext('2d')!;
-      const img = new Image();
-      img.onload = () => {
-        ctx.drawImage(img, 0, 0);
-        canvas.toBlob((blob) => {
-          if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
-          resolve();
-        }, 'image/png');
-      };
-      img.src = svgUrl(svg);
-    })));
+      await Promise.all(svgs.map((svg, i) => new Promise<void>((resolve) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        const ctx = canvas.getContext('2d')!;
+        const img = new Image();
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob((blob) => {
+            if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
+            resolve();
+          }, 'image/png');
+        };
+        img.onerror = () => resolve();
+        img.src = svgUrl(svg);
+      })));
 
-    const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
-    const blob = await zip.generateAsync({ type: 'blob' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `${safeName}.zip`;
-    a.click();
-    URL.revokeObjectURL(a.href);
+      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
+      const blob = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${safeName || 'slides'}.zip`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } catch (e) {
+      alert('Erreur ZIP. Essaie de régénérer le contenu.');
+    }
     setDownloading(false);
   };
 
