@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import JSZip from "jszip";
 import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2 } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
@@ -75,13 +76,43 @@ export default function HomePage() {
     setGenerating(false);
   };
 
-  const downloadAllSlides = () => {
-    if (!selected) return;
-    (selected.image_svgs || []).forEach((svg, i) => {
-      setTimeout(() => {
-        downloadSvgAsPng(svg, `slide_${i + 1}.png`);
-      }, i * 600);
-    });
+  const [downloading, setDownloading] = useState(false);
+
+  const downloadAllSlides = async () => {
+    if (!selected || downloading) return;
+    setDownloading(true);
+    try {
+      const zip = new JSZip();
+      const svgs = selected.image_svgs || [];
+
+      await Promise.all(svgs.map((svg, i) => new Promise<void>((resolve) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        const ctx = canvas.getContext('2d')!;
+        const img = new Image();
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob((blob) => {
+            if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
+            resolve();
+          }, 'image/png');
+        };
+        img.onerror = () => resolve();
+        img.src = svgUrl(svg);
+      })));
+
+      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
+      const blob = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${safeName || 'slides'}.zip`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } catch (e) {
+      alert('Erreur ZIP. Essaie de régénérer le contenu.');
+    }
+    setDownloading(false);
   };
 
   useEffect(() => {
@@ -253,8 +284,9 @@ export default function HomePage() {
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
-                <button onClick={downloadAllSlides} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#2B2B2B] rounded-xl text-white text-sm font-medium hover:bg-black">
-                  <Download className="h-4 w-4" />Télécharger toutes les slides (PNG)
+                <button onClick={downloadAllSlides} disabled={downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#2A3D18] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-60">
+                  {downloading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+                  {downloading ? 'Création du ZIP...' : 'Télécharger en ZIP (1 dossier)'}
                 </button>
               </div>
 
