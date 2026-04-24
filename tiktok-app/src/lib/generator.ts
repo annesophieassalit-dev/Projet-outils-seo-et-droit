@@ -14,6 +14,8 @@ function generateId(): string {
   return Math.random().toString(36).slice(2, 10);
 }
 
+let _themeCounter = 0;
+
 export async function generateContent(type: ContentType, pillar: Pillar, topic?: string): Promise<Content> {
   const isVideo = type === 'video_long';
   const slideCount = isVideo ? '7 à 10' : '5 à 7';
@@ -64,7 +66,8 @@ JSON exact :
     created_at: new Date().toISOString(),
   };
 
-  content.image_svgs = slidesToSvgs(content.slides);
+  content.themeIndex = _themeCounter++ % 5;
+  content.image_svgs = slidesToSvgs(content.slides, content.themeIndex);
   return content;
 }
 

@@ -20,6 +20,7 @@ export interface Content {
   status: 'draft' | 'ready';
   created_at: string;
   image_svgs?: string[]; // SVG strings
+  themeIndex?: number;  // 0-4, visual theme of the post
 }
 
 export const PILLAR_LABELS: Record<Pillar, string> = {
