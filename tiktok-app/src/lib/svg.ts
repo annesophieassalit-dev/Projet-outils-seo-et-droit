@@ -2,34 +2,34 @@ import type { Slide } from '@/types/content';
 
 const W = 1080;
 const H = 1920;
-const PAD = 90;
+const PAD = 80;
 
-// 5 thèmes — chaque post en prend un différent pour varier le feed
+// 5 thèmes — 1 couleur dominante par post, info slides = version claire du même thème
 const POST_THEMES = [
-  // 0 — NOIR + JAUNE (original bold)
+  // 0 — NOIR MODERNE + JAUNE
   {
-    hookBg: '#2B2B2B', hookText: '#FFFFFF', hookHl: '#F6E27A', hookAccent: '#F6E27A',
-    infoBg: ['#F5EDD5', '#FEFBF0'], infoText: '#2B2B2B', infoHl: '#B85C20', infoAccent: '#7B4F2A',
+    hookBg1: '#1A1A1A', hookBg2: '#2E2E2E', hookText: '#FFFFFF', hookHl: '#F6E27A', hookAccent: '#F6E27A',
+    infoBg: '#F7F7F5', infoText: '#1A1A1A', infoHl: '#C8960A', infoStripe: '#F6E27A',
   },
-  // 1 — VERT FORÊT + OLIVE
+  // 1 — VERT FORÊT
   {
-    hookBg: '#2A3D18', hookText: '#F5F0E2', hookHl: '#A8BC5A', hookAccent: '#A8BC5A',
-    infoBg: ['#F5F0E2', '#C8D4A2'], infoText: '#2A3D18', infoHl: '#B85C20', infoAccent: '#6B7C2A',
+    hookBg1: '#1A3012', hookBg2: '#2A4A1E', hookText: '#F0F5E8', hookHl: '#A8D060', hookAccent: '#A8D060',
+    infoBg: '#F0F5E8', infoText: '#1A3012', infoHl: '#2A6020', infoStripe: '#6BA040',
   },
-  // 2 — CRAFT BRUN + JAUNE (papier kraft chaud)
+  // 2 — CRAFT BRUN CHAUD
   {
-    hookBg: '#6B4226', hookText: '#FFF3DC', hookHl: '#F6E27A', hookAccent: '#F0D080',
-    infoBg: ['#F0DFB8', '#E8CFA0'], infoText: '#3A2810', infoHl: '#6B4226', infoAccent: '#8B6030',
+    hookBg1: '#3A1A08', hookBg2: '#6B3A1A', hookText: '#FFF3DC', hookHl: '#F6D860', hookAccent: '#F0C040',
+    infoBg: '#FAF0DC', infoText: '#3A1A08', infoHl: '#8B4A14', infoStripe: '#C87830',
   },
-  // 3 — VERT CLAIR SAUGE
+  // 3 — VERT SAUGE CLAIR
   {
-    hookBg: '#4A6741', hookText: '#F0F5E8', hookHl: '#E8D870', hookAccent: '#C8E090',
-    infoBg: ['#D4E8C2', '#EAF2D8'], infoText: '#2A3D18', infoHl: '#B85C20', infoAccent: '#4A6741',
+    hookBg1: '#253C2A', hookBg2: '#3A5C40', hookText: '#EAF5EA', hookHl: '#C0E878', hookAccent: '#C0E878',
+    infoBg: '#EAF5EA', infoText: '#1A3020', infoHl: '#3A7040', infoStripe: '#70B060',
   },
-  // 4 — NOTE PERSONNELLE (crème chaud, intimiste)
+  // 4 — ARDOISE + OR
   {
-    hookBg: '#3A3228', hookText: '#FEFDF5', hookHl: '#D4C048', hookAccent: '#C8B040',
-    infoBg: ['#FEFDF5', '#FFF8E8'], infoText: '#3A3228', infoHl: '#8B6914', infoAccent: '#9A8030',
+    hookBg1: '#1C1C28', hookBg2: '#2E2E42', hookText: '#F8F6F0', hookHl: '#D4B84A', hookAccent: '#D4B84A',
+    infoBg: '#F8F6F0', infoText: '#1C1C28', infoHl: '#8B7020', infoStripe: '#D4B84A',
   },
 ];
 
@@ -50,73 +50,66 @@ function wrapLines(text: string, maxChars: number): string[] {
   return lines;
 }
 
-function bgExtras(isHook: boolean, postTheme: number, infoAlt: number, accent: string): string {
-  if (isHook) {
-    // Craft theme: petits points texturés
-    if (postTheme === 2) {
-      return `<defs><pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-        <circle cx="14" cy="14" r="1.5" fill="${accent}" opacity="0.25"/>
-      </pattern></defs>
-      <rect width="${W}" height="${H}" fill="url(#dots)"/>`;
-    }
-    return '';
-  }
-
-  // Info slides
-  if (postTheme === 0 || postTheme === 1 || postTheme === 4) {
-    // Lignes horizontales style carnet/note
-    if (infoAlt === 0) {
-      return Array.from({ length: 17 }, (_, i) =>
-        `<line x1="${PAD}" y1="${290 + i * 92}" x2="${W - PAD}" y2="${290 + i * 92}" stroke="${accent}" stroke-width="1.5" opacity="0.22"/>`
-      ).join('\n  ');
-    }
-    // Fiche : bordure intérieure arrondie
-    return `<rect x="40" y="40" width="${W - 80}" height="${H - 80}" rx="24" fill="none" stroke="${accent}" stroke-width="3" opacity="0.25"/>`;
-  }
-
-  if (postTheme === 2) {
-    // Craft : lignes + texture dots
-    return `<defs><pattern id="dots2" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="1.2" fill="${accent}" opacity="0.18"/>
-    </pattern></defs>
-    <rect width="${W}" height="${H}" fill="url(#dots2)"/>
-    ${Array.from({ length: 15 }, (_, i) =>
-      `<line x1="${PAD}" y1="${320 + i * 98}" x2="${W - PAD}" y2="${320 + i * 98}" stroke="${accent}" stroke-width="1.5" opacity="0.2"/>`
-    ).join('\n    ')}`;
-  }
-
-  if (postTheme === 3) {
-    // Vert clair : ovales feuilles
-    return `<ellipse cx="980" cy="1820" rx="72" ry="28" fill="${accent}" opacity="0.20" transform="rotate(-40 980 1820)"/>
-  <ellipse cx="900" cy="1870" rx="55" ry="22" fill="${accent}" opacity="0.14" transform="rotate(-55 900 1870)"/>
-  <ellipse cx="105" cy="95" rx="55" ry="22" fill="${accent}" opacity="0.14" transform="rotate(40 105 95)"/>
-  <ellipse cx="180" cy="55" rx="40" ry="16" fill="${accent}" opacity="0.10" transform="rotate(30 180 55)"/>`;
-  }
-
-  return '';
-}
-
 export function slideToSvg(slide: Slide, idx: number, total: number, postThemeIdx = 0): string {
   const pt = POST_THEMES[postThemeIdx % POST_THEMES.length];
   const isHook = slide.type === 'hook';
   const isConclusion = slide.type === 'conclusion';
   const useDark = isHook || isConclusion;
-  const infoAlt = idx % 2;
+  const font = 'Inter,Helvetica Neue,Arial,sans-serif';
 
-  const bg = useDark ? pt.hookBg : pt.infoBg[infoAlt];
-  const textColor = useDark ? pt.hookText : pt.infoText;
-  const hlColor = useDark ? pt.hookHl : pt.infoHl;
-  const accent = useDark ? pt.hookAccent : pt.infoAccent;
-
-  const fs = slide.text.length > 80 ? 56 : slide.text.length > 50 ? 66 : 78;
-  const lh = fs * 1.55;
-  const maxChars = Math.floor(18 * (78 / fs));
+  const fs = slide.text.length > 80 ? 58 : slide.text.length > 50 ? 68 : 82;
+  const lh = fs * 1.45;
+  const maxChars = Math.floor(17 * (82 / fs));
   const lines = wrapLines(slide.text, maxChars);
   const blockH = lines.length * lh;
   const startY = (H - blockH) / 2 + fs;
 
-  const textEls = lines.map((line, i) => {
-    const y = startY + i * lh;
+  if (useDark) {
+    // Hook/conclusion : fond dégradé sombre, texte centré, accent coloré
+    const hlColor = pt.hookHl;
+    const textEls = lines.map((line, i) => {
+      const y = startY + i * lh;
+      const hl = slide.highlight || [];
+      const matched = hl.find(h => line.toLowerCase().includes(h.toLowerCase()));
+      if (matched) {
+        const lo = line.toLowerCase().indexOf(matched.toLowerCase());
+        const before = esc(line.slice(0, lo));
+        const match = esc(line.slice(lo, lo + matched.length));
+        const after = esc(line.slice(lo + matched.length));
+        return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="${font}" font-weight="800"><tspan fill="${pt.hookText}">${before}</tspan><tspan fill="${hlColor}">${match}</tspan><tspan fill="${pt.hookText}">${after}</tspan></text>`;
+      }
+      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${pt.hookText}" font-family="${font}" font-weight="800">${esc(line)}</text>`;
+    }).join('\n  ');
+
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="${pt.hookBg1}"/>
+      <stop offset="100%" stop-color="${pt.hookBg2}"/>
+    </linearGradient>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#hg)"/>
+  <rect x="0" y="0" width="10" height="${H}" fill="${pt.hookAccent}"/>
+  <rect x="${W - 10}" y="0" width="10" height="${H}" fill="${pt.hookAccent}" opacity="0.4"/>
+  <text x="${PAD + 20}" y="68" font-size="20" fill="${pt.hookAccent}" font-family="${font}" font-weight="700" letter-spacing="5" opacity="0.9">PRÉVOIR UTILE</text>
+  <line x1="${PAD + 20}" y1="88" x2="${W - PAD}" y2="88" stroke="${pt.hookAccent}" stroke-width="1.5" opacity="0.4"/>
+  ${textEls}
+  <line x1="${PAD + 20}" y1="${H - 100}" x2="${W - PAD}" y2="${H - 100}" stroke="${pt.hookAccent}" stroke-width="1.5" opacity="0.4"/>
+  <text x="${PAD + 20}" y="${H - 68}" font-size="22" fill="${pt.hookText}" font-family="${font}" opacity="0.45">${idx + 1} / ${total}</text>
+</svg>`;
+  }
+
+  // Info slides : fond clair, bande colorée à gauche, texte aligné gauche
+  const xText = PAD + 50;
+  const maxW = W - xText - PAD;
+  const maxCharsInfo = Math.floor(maxChars * 0.92);
+  const linesInfo = wrapLines(slide.text, maxCharsInfo);
+  const blockHInfo = linesInfo.length * lh;
+  const startYInfo = (H - blockHInfo) / 2 + fs;
+
+  const textEls = linesInfo.map((line, i) => {
+    const y = startYInfo + i * lh;
     const hl = slide.highlight || [];
     const matched = hl.find(h => line.toLowerCase().includes(h.toLowerCase()));
     if (matched) {
@@ -124,20 +117,21 @@ export function slideToSvg(slide: Slide, idx: number, total: number, postThemeId
       const before = esc(line.slice(0, lo));
       const match = esc(line.slice(lo, lo + matched.length));
       const after = esc(line.slice(lo + matched.length));
-      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="Georgia,serif" font-weight="700"><tspan fill="${textColor}">${before}</tspan><tspan fill="${hlColor}">${match}</tspan><tspan fill="${textColor}">${after}</tspan></text>`;
+      return `<text x="${xText}" y="${y}" font-size="${fs}" font-family="${font}" font-weight="700"><tspan fill="${pt.infoText}">${before}</tspan><tspan fill="${pt.infoHl}">${match}</tspan><tspan fill="${pt.infoText}">${after}</tspan></text>`;
     }
-    return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${textColor}" font-family="Georgia,serif" font-weight="700">${esc(line)}</text>`;
+    return `<text x="${xText}" y="${y}" font-size="${fs}" fill="${pt.infoText}" font-family="${font}" font-weight="700">${esc(line)}</text>`;
   }).join('\n  ');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <rect width="${W}" height="${H}" fill="${bg}"/>
-  ${bgExtras(useDark, postThemeIdx % 5, infoAlt, accent)}
-  <rect x="${PAD}" y="94" width="${W - PAD * 2}" height="2" fill="${accent}" opacity="0.55"/>
-  <rect x="${PAD}" y="${H - 114}" width="${W - PAD * 2}" height="2" fill="${accent}" opacity="0.55"/>
-  <text x="${W / 2}" y="62" text-anchor="middle" font-size="24" fill="${accent}" font-family="Georgia,serif" letter-spacing="4" font-weight="700">PRÉVOIR UTILE</text>
+  <rect width="${W}" height="${H}" fill="${pt.infoBg}"/>
+  <rect x="0" y="0" width="18" height="${H}" fill="${pt.infoStripe}"/>
+  <rect x="0" y="0" width="18" height="${H}" fill="${pt.infoStripe}" opacity="1"/>
+  <text x="${PAD - 10}" y="68" font-size="20" fill="${pt.infoStripe}" font-family="${font}" font-weight="700" letter-spacing="5" opacity="0.8">PRÉVOIR UTILE</text>
+  <line x1="${PAD - 10}" y1="88" x2="${W - PAD}" y2="88" stroke="${pt.infoStripe}" stroke-width="1.5" opacity="0.3"/>
   ${textEls}
-  <text x="${W / 2}" y="${H - 68}" text-anchor="middle" font-size="26" fill="${textColor}" font-family="Georgia,serif" opacity="0.35">${idx + 1} / ${total}</text>
+  <line x1="${PAD - 10}" y1="${H - 100}" x2="${W - PAD}" y2="${H - 100}" stroke="${pt.infoStripe}" stroke-width="1.5" opacity="0.3"/>
+  <text x="${PAD - 10}" y="${H - 68}" font-size="22" fill="${pt.infoText}" font-family="${font}" opacity="0.35">${idx + 1} / ${total}</text>
 </svg>`;
 }
 
