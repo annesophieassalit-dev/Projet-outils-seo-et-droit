@@ -5,10 +5,19 @@ import { slidesToSvgs } from './svg';
 const client = new Anthropic();
 
 const SYSTEM = `Tu es expert en contenu TikTok sur l'organisation alimentaire et l'anticipation simple.
-Ton : calme, factuel, utile. JAMAIS catastrophisme, politique, complot.
+Ton : direct, factuel, percutant. JAMAIS catastrophisme, politique, complot.
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
 const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
+
+// Chaque format guide le style du hook ET correspond à un thème visuel
+const FORMATS = [
+  { label: 'ERREUR',      hookGuide: 'une erreur concrète à éviter. Exemples : "TU STOCKES MAL ÇA", "CETTE ERREUR COÛTE CHER", "ARRÊTE DE FAIRE ÇA". Max 5 mots, MAJUSCULES.' },
+  { label: 'ASTUCE',      hookGuide: 'une astuce chiffrée ou concrète. Exemples : "5 ALIMENTS INDISPENSABLES", "LE SECRET DES FAMILLES PRÉPARÉES", "CE QUE PERSONNE NE DIT". Max 5 mots, MAJUSCULES.' },
+  { label: 'VRAI / FAUX', hookGuide: 'une idée reçue à démystifier. Exemples : "LE RIZ NE DURE PAS TOUJOURS", "L\'EAU EN BOUTEILLE PÉRIME", "LES PÂTES NE SUFFISENT PAS". Max 6 mots, MAJUSCULES.' },
+  { label: 'SAVAIS-TU ?', hookGuide: 'un fait surprenant ou contre-intuitif. Exemples : "1 KG DE LENTILLES = 8 REPAS", "LE SEL DURE ILLIMITÉ", "LE MIEL NE PÉRIME JAMAIS". Max 6 mots, MAJUSCULES.' },
+  { label: 'CHECKLIST',   hookGuide: 'une liste pratique avec chiffre. Exemples : "7 ESSENTIELS POUR 1 SEMAINE", "LA LISTE QUE TOUT LE MONDE OUBLIE", "3 CHOSES À FAIRE CE WEEK-END". Max 6 mots, MAJUSCULES.' },
+];
 
 function generateId(): string {
   return Math.random().toString(36).slice(2, 10);
@@ -17,6 +26,8 @@ function generateId(): string {
 let _themeCounter = 0;
 
 export async function generateContent(type: ContentType, pillar: Pillar, topic?: string): Promise<Content> {
+  const themeIdx = _themeCounter++ % 5;
+  const fmt = FORMATS[themeIdx];
   const isVideo = type === 'video_long';
   const slideCount = isVideo ? '7 à 10' : '5 à 7';
 
@@ -29,21 +40,24 @@ export async function generateContent(type: ContentType, pillar: Pillar, topic?:
       content: `Crée un contenu TikTok ${isVideo ? 'vidéo longue (1min+)' : 'carrousel court'}.
 ${topic ? `Sujet : ${topic}` : `Pilier : ${pillar}`}
 
-${slideCount} slides. Structure :
-- Slide 1 : hook max 8 mots
-- Slides 2+ : info courte, 1-2 phrases
-- Dernière : conseil ou question
+Format visuel : "${fmt.label}"
+Style du hook (slide 1) : ${fmt.hookGuide}
 
-Max 2 mots surlignés par slide (chiffres, mots clés).
+${slideCount} slides. Structure :
+- Slide 1 : hook percutant MAX 6 MOTS en MAJUSCULES, style "${fmt.label}"
+- Slides 2+ : fait concret, 1 phrase courte max 100 caractères, avec chiffres si possible
+- Dernière : conseil actionnable en 1 phrase ou question directe
+
+Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement).
 
 JSON exact :
 {
   "title": "titre interne",
-  "hook": "hook slide 1",
+  "hook": "HOOK MAJUSCULES MAX 6 MOTS",
   "slides": [{"order":1,"type":"hook","text":"texte","highlight":["mot"]}],
-  "caption": "légende TikTok emojis max 150 chars",
+  "caption": "légende TikTok avec emojis, max 150 chars",
   "hashtags": ["tag1","tag2","tag3"]
-}`
+}`,
     }],
   });
 
@@ -64,10 +78,10 @@ JSON exact :
     hashtags,
     status: 'ready',
     created_at: new Date().toISOString(),
+    themeIndex: themeIdx,
   };
 
-  content.themeIndex = _themeCounter++ % 5;
-  content.image_svgs = slidesToSvgs(content.slides, content.themeIndex);
+  content.image_svgs = slidesToSvgs(content.slides, themeIdx);
   return content;
 }
 
