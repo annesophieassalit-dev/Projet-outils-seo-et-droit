@@ -116,11 +116,6 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.search.includes('reset=true')) {
-      localStorage.clear();
-      window.location.replace('/');
-      return;
-    }
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) setContents(JSON.parse(saved));
   }, []);
