@@ -4,19 +4,40 @@ import { slidesToSvgs } from './svg';
 
 const client = new Anthropic();
 
-const SYSTEM = `Tu es expert en contenu TikTok sur l'organisation alimentaire et l'anticipation simple.
-Ton : direct, factuel, percutant. JAMAIS catastrophisme, politique, complot.
+const SYSTEM = `Tu es directeur créatif TikTok spécialisé en contenus viraux.
+Thème : préparation alimentaire intelligente — anticiper sans paniquer.
+Ton : direct, factuel, utile. JAMAIS survivaliste, catastrophiste, complotiste.
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
 const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
 
-// Chaque format guide le style du hook ET correspond à un thème visuel
+// Chaque format guide le hook ET le thème visuel
 const FORMATS = [
-  { label: 'ERREUR',      hookGuide: 'une erreur concrète à éviter. Exemples : "TU STOCKES MAL ÇA", "CETTE ERREUR COÛTE CHER", "ARRÊTE DE FAIRE ÇA". Max 5 mots, MAJUSCULES.' },
-  { label: 'ASTUCE',      hookGuide: 'une astuce chiffrée ou concrète. Exemples : "5 ALIMENTS INDISPENSABLES", "LE SECRET DES FAMILLES PRÉPARÉES", "CE QUE PERSONNE NE DIT". Max 5 mots, MAJUSCULES.' },
-  { label: 'VRAI / FAUX', hookGuide: 'une idée reçue à démystifier. Exemples : "LE RIZ NE DURE PAS TOUJOURS", "L\'EAU EN BOUTEILLE PÉRIME", "LES PÂTES NE SUFFISENT PAS". Max 6 mots, MAJUSCULES.' },
-  { label: 'SAVAIS-TU ?', hookGuide: 'un fait surprenant ou contre-intuitif. Exemples : "1 KG DE LENTILLES = 8 REPAS", "LE SEL DURE ILLIMITÉ", "LE MIEL NE PÉRIME JAMAIS". Max 6 mots, MAJUSCULES.' },
-  { label: 'CHECKLIST',   hookGuide: 'une liste pratique avec chiffre. Exemples : "7 ESSENTIELS POUR 1 SEMAINE", "LA LISTE QUE TOUT LE MONDE OUBLIE", "3 CHOSES À FAIRE CE WEEK-END". Max 6 mots, MAJUSCULES.' },
+  {
+    label: 'ERREUR',
+    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type erreur/problème. Style direct, pas de titre d'ebook.
+Exemples validés : "TU STOCKES MAL ÇA" / "NE STOCKE PAS ÇA" / "3 ERREURS DE DÉBUTANT" / "TON FRIGO EST VIDE EN 72H" / "TU JETTES ÇA TROP VITE"`,
+  },
+  {
+    label: 'ASTUCE',
+    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type révélation ou astuce. Simple, percutant.
+Exemples validés : "STOCKE ÇA D'ABORD" / "ÇA SE GARDE 5 ANS" / "CE QUE PERSONNE NE DIT" / "LE SECRET DES FAMILLES PRÉPARÉES"`,
+  },
+  {
+    label: 'VRAI / FAUX',
+    hookGuide: `Hook court viral, max 6 mots MAJUSCULES, type idée reçue à démystifier. Assertion provocante.
+Exemples validés : "LE RIZ BLANC DURE PLUS LONGTEMPS" / "LES PÂTES NE SUFFISENT PAS" / "N'ACHÈTE PAS ÇA"`,
+  },
+  {
+    label: 'SAVAIS-TU ?',
+    hookGuide: `Hook court viral, max 6 mots MAJUSCULES, type fait surprenant ou scénario concret.
+Exemples validés : "EAU : TU N'EN AS PAS ASSEZ" / "SI L'EAU COUPE ?" / "SI L'ÉLECTRICITÉ COUPE ?" / "TON FRIGO EST VIDE EN 72H"`,
+  },
+  {
+    label: 'CHECKLIST',
+    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type liste pratique avec chiffre ou urgence.
+Exemples validés : "7 ESSENTIELS POUR 1 SEMAINE" / "LA LISTE QUE TOUT LE MONDE OUBLIE" / "3 CHOSES À FAIRE CE WEEK-END"`,
+  },
 ];
 
 function generateId(): string {
@@ -37,25 +58,24 @@ export async function generateContent(type: ContentType, pillar: Pillar, topic?:
     system: SYSTEM,
     messages: [{
       role: 'user',
-      content: `Crée un contenu TikTok ${isVideo ? 'vidéo longue (1min+)' : 'carrousel court'}.
+      content: `Crée un contenu TikTok ${isVideo ? 'vidéo longue (1min+)' : 'carrousel texte'}.
 ${topic ? `Sujet : ${topic}` : `Pilier : ${pillar}`}
 
-Format visuel : "${fmt.label}"
-Style du hook (slide 1) : ${fmt.hookGuide}
+FORMAT VISUEL : "${fmt.label}"
+STYLE DU HOOK : ${fmt.hookGuide}
 
-${slideCount} slides. Structure :
-- Slide 1 : hook percutant MAX 6 MOTS en MAJUSCULES, style "${fmt.label}"
-- Slides 2+ : fait concret, 1 phrase courte max 100 caractères, avec chiffres si possible
-- Dernière : conseil actionnable en 1 phrase ou question directe
-
-Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement).
+RÈGLES STRICTES :
+- Slide 1 (hook) : MAX 6 MOTS, MAJUSCULES, style TikTok viral — PAS un titre d'ebook
+- Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète
+- Dernière slide : question directe ou conseil actionnable en 1 phrase
+- Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
 
 JSON exact :
 {
-  "title": "titre interne",
-  "hook": "HOOK MAJUSCULES MAX 6 MOTS",
+  "title": "titre interne court",
+  "hook": "HOOK MAX 6 MOTS MAJUSCULES",
   "slides": [{"order":1,"type":"hook","text":"texte","highlight":["mot"]}],
-  "caption": "légende TikTok avec emojis, max 150 chars",
+  "caption": "légende TikTok emojis, max 150 chars",
   "hashtags": ["tag1","tag2","tag3"]
 }`,
     }],
