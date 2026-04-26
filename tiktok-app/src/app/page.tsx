@@ -145,9 +145,13 @@ export default function HomePage() {
       display.height = 1920;
       const ctx = display.getContext('2d')!;
 
-      const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
-        ? 'video/webm;codecs=vp9'
-        : 'video/webm';
+      const mimeType =
+        MediaRecorder.isTypeSupported('video/mp4;codecs=avc1')
+          ? 'video/mp4;codecs=avc1'
+          : MediaRecorder.isTypeSupported('video/mp4')
+          ? 'video/mp4'
+          : 'video/webm;codecs=vp9';
+      const ext = mimeType.startsWith('video/mp4') ? 'mp4' : 'webm';
       const stream = display.captureStream(30);
       const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
       const chunks: Blob[] = [];
@@ -168,7 +172,7 @@ export default function HomePage() {
       const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `${safeName || 'video'}.webm`;
+      a.download = `${safeName || 'video'}.${ext}`;
       a.click();
       URL.revokeObjectURL(a.href);
     } catch {
