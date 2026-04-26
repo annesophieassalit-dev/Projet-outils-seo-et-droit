@@ -94,8 +94,8 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
   </defs>
   <rect width="${W}" height="${H}" fill="${BG}"/>
   <rect x="0" y="0" width="${W}" height="5" fill="${t.ca}" opacity="0.75"/>
-  <text x="${W / 2}" y="${cardY - 34}" text-anchor="middle" font-size="22" fill="${t.ca}" font-family="${FONT}" font-weight="700" letter-spacing="9" opacity="0.85">${esc(t.la)}</text>
-  <rect x="${W / 2 - 44}" y="${cardY - 14}" width="88" height="2" fill="${t.ca}" rx="1" opacity="0.40"/>
+  <text x="${W / 2}" y="${cardY - 52}" text-anchor="middle" font-size="36" fill="${t.ca}" font-family="${FONT}" font-weight="700" letter-spacing="8" opacity="0.90">${esc(t.la)}</text>
+  <rect x="${W / 2 - 60}" y="${cardY - 22}" width="120" height="2" fill="${t.ca}" rx="1" opacity="0.40"/>
   <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${CARD}" rx="24" filter="url(#cs)"/>
   ${textEls}
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">PRÉVOIR UTILE</text>
