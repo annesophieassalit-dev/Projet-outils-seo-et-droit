@@ -7,6 +7,7 @@ const client = new Anthropic();
 const SYSTEM = `Tu es directeur créatif TikTok spécialisé en contenus viraux.
 Thème : préparation alimentaire intelligente — anticiper sans paniquer.
 Ton : direct, factuel, utile. JAMAIS survivaliste, catastrophiste, complotiste.
+Pattern gagnant prouvé : 2e personne + erreur cachée ("Tu fais X mal sans le savoir").
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
 const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
@@ -15,28 +16,28 @@ const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation'
 const FORMATS = [
   {
     label: 'ERREUR',
-    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type erreur/problème. Style direct, pas de titre d'ebook.
-Exemples validés : "TU STOCKES MAL ÇA" / "NE STOCKE PAS ÇA" / "3 ERREURS DE DÉBUTANT" / "TON FRIGO EST VIDE EN 72H" / "TU JETTES ÇA TROP VITE"`,
+    hookGuide: `Phrase directe, max 8 mots, 2e personne + erreur cachée. Pas tout en majuscules.
+Exemples validés : "Tu stockes mal sans le savoir" / "Tu jettes ça trop tôt" / "Tu oublies toujours cet aliment" / "Tout le monde achète ça en premier. Mauvaise idée." / "Tu fais cette erreur sans t'en rendre compte"`,
   },
   {
     label: 'ASTUCE',
-    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type révélation ou astuce. Simple, percutant.
-Exemples validés : "STOCKE ÇA D'ABORD" / "ÇA SE GARDE 5 ANS" / "CE QUE PERSONNE NE DIT" / "LE SECRET DES FAMILLES PRÉPARÉES"`,
+    hookGuide: `Phrase directe, max 8 mots, révélation contre-intuitive. 2e personne si possible.
+Exemples validés : "Ce que personne ne te dit sur le stockage" / "Tu peux conserver ça 5 ans" / "La plupart des gens font ça à l'envers" / "Tu achètes ça en dernier. C'est une erreur."`,
   },
   {
     label: 'VRAI / FAUX',
-    hookGuide: `Hook court viral, max 6 mots MAJUSCULES, type idée reçue à démystifier. Assertion provocante.
-Exemples validés : "LE RIZ BLANC DURE PLUS LONGTEMPS" / "LES PÂTES NE SUFFISENT PAS" / "N'ACHÈTE PAS ÇA"`,
+    hookGuide: `Phrase directe, max 8 mots, idée reçue à démystifier. Assertion provocante, sans majuscules.
+Exemples validés : "Le riz blanc dure plus longtemps que tu crois" / "Les pâtes ne suffisent pas" / "Tu penses être prêt. Tu ne l'es pas." / "Ce que tu stockes en premier est une erreur"`,
   },
   {
     label: 'SAVAIS-TU ?',
-    hookGuide: `Hook court viral, max 6 mots MAJUSCULES, type fait surprenant ou scénario concret.
-Exemples validés : "EAU : TU N'EN AS PAS ASSEZ" / "SI L'EAU COUPE ?" / "SI L'ÉLECTRICITÉ COUPE ?" / "TON FRIGO EST VIDE EN 72H"`,
+    hookGuide: `Phrase directe, max 8 mots, fait surprenant ou scénario concret. 2e personne.
+Exemples validés : "Tu n'as pas assez d'eau pour 3 jours" / "Si l'électricité coupe ce soir, tu manges quoi ?" / "Tu penses être prêt. Tu ne l'es probablement pas." / "Ton frigo est vide en 72h sans le savoir"`,
   },
   {
     label: 'CHECKLIST',
-    hookGuide: `Hook court viral, max 5 mots MAJUSCULES, type liste pratique avec chiffre ou urgence.
-Exemples validés : "7 ESSENTIELS POUR 1 SEMAINE" / "LA LISTE QUE TOUT LE MONDE OUBLIE" / "3 CHOSES À FAIRE CE WEEK-END"`,
+    hookGuide: `Phrase directe, max 8 mots, liste avec chiffre ou contre-intuition. 2e personne préférée.
+Exemples validés : "Les 3 produits que tout le monde achète en premier… erreur" / "Tu oublies toujours ces 5 choses" / "La liste que tu fais est dans le mauvais ordre"`,
   },
 ];
 
@@ -65,7 +66,7 @@ FORMAT VISUEL : "${fmt.label}"
 STYLE DU HOOK : ${fmt.hookGuide}
 
 RÈGLES STRICTES :
-- Slide 1 (hook) : MAX 6 MOTS, MAJUSCULES, style TikTok viral — PAS un titre d'ebook
+- Slide 1 (hook) : max 8 mots, style phrase directe 2e personne, PAS tout en majuscules, PAS un titre d'ebook
 - Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète
 - Dernière slide : question directe ou conseil actionnable en 1 phrase
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
@@ -73,7 +74,7 @@ RÈGLES STRICTES :
 JSON exact :
 {
   "title": "titre interne court",
-  "hook": "HOOK MAX 6 MOTS MAJUSCULES",
+  "hook": "hook direct max 8 mots",
   "slides": [{"order":1,"type":"hook","text":"texte","highlight":["mot"]}],
   "caption": "légende TikTok emojis, max 150 chars",
   "hashtags": ["tag1","tag2","tag3"]
