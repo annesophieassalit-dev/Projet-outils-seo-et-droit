@@ -78,6 +78,7 @@ RÈGLES STRICTES :
 - Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète
 - Dernière slide : question directe ou conseil actionnable en 1 phrase
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
+- DURÉES INTERDITES : ne jamais écrire de durée supérieure à 5 ans. Le riz se conserve 2-4 ans, pas 25 ans. Toute durée > 5 ans est FAUSSE dans un contexte domestique normal.
 
 JSON exact :
 {
