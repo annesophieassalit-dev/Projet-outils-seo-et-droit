@@ -98,9 +98,9 @@ export default function HomePage() {
           const canvas = await svgToCanvas(svg);
           await new Promise<void>((resolve) => {
             canvas.toBlob((blob) => {
-              if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.jpg`, blob);
+              if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
               resolve();
-            }, 'image/jpeg', 0.93);
+            }, 'image/png');
           });
         } catch { /* skip failed slide */ }
       }));
@@ -365,7 +365,7 @@ export default function HomePage() {
                 </div>
                 <button onClick={downloadAllSlides} disabled={downloading || exportingVideo} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#243126] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-60">
                   {downloading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
-                  {downloading ? 'Création du ZIP...' : 'Carrousel TikTok (ZIP · JPG)'}
+                  {downloading ? 'Création du ZIP...' : 'Carrousel Instagram / TikTok (ZIP · PNG)'}
                 </button>
                 <button onClick={exportAsVideo} disabled={exportingVideo || downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#A63D2F] rounded-xl text-white text-sm font-medium hover:bg-[#8a3226] disabled:opacity-60">
                   {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
