@@ -22,22 +22,25 @@ function wrapLines(text: string, maxChars: number): string[] {
   return lines;
 }
 
-function safeFontSize(desired: number, text: string): number {
+// HOOK_TW : largeur utile du texte à l'intérieur de la carte (60px de marge de chaque côté)
+const HOOK_TW = 800;
+
+function safeFontSize(desired: number, text: string, maxW = TW): number {
   const longest = Math.max(...text.split(' ').map(w => w.length));
-  return Math.min(desired, Math.max(52, Math.floor(TW / (longest * 0.65))));
+  return Math.min(desired, Math.max(52, Math.floor(maxW / (longest * 0.65))));
 }
 
 function hookLayout(text: string, desired: number): { lines: string[]; fs: number } {
-  let fs = safeFontSize(desired, text);
+  let fs = safeFontSize(desired, text, HOOK_TW);
   for (let i = 0; i < 4; i++) {
-    const maxC = Math.max(5, Math.floor(1420 / fs));
+    const maxC = Math.max(5, Math.floor(1235 / fs));
     const lines = wrapLines(text, maxC);
     const orphan = lines.length > 1 &&
       lines.some(l => l.trim().split(' ').length === 1 && l.trim().length <= 3);
     if (!orphan) return { lines, fs };
     fs = Math.round(fs * 0.88);
   }
-  const maxC = Math.max(5, Math.floor(1420 / fs));
+  const maxC = Math.max(5, Math.floor(1235 / fs));
   return { lines: wrapLines(text, maxC), fs };
 }
 
@@ -105,8 +108,8 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
   <rect width="${W}" height="${H}" fill="${v.bg}"/>
   <rect x="0" y="0" width="${W}" height="6" fill="${t.ca}"/>
   <rect x="0" y="${H - 6}" width="${W}" height="6" fill="${t.ca}" opacity="0.35"/>
-  <text x="${W / 2}" y="74" text-anchor="middle" font-size="23" fill="${t.ca}" font-family="${FONT}" font-weight="700" letter-spacing="9" opacity="0.90">${esc(t.la)}</text>
-  <rect x="${W / 2 - 44}" y="90" width="88" height="2" fill="${t.ca}" rx="1" opacity="0.45"/>
+  <text x="${W / 2}" y="204" text-anchor="middle" font-size="23" fill="${t.ca}" font-family="${FONT}" font-weight="700" letter-spacing="9" opacity="0.90">${esc(t.la)}</text>
+  <rect x="${W / 2 - 44}" y="222" width="88" height="2" fill="${t.ca}" rx="1" opacity="0.45"/>
   <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${v.card}" rx="22" filter="url(#cs)"/>
   ${textEls}
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${v.footer}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.55">PRÉVOIR UTILE</text>
