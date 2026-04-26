@@ -9,6 +9,7 @@ Thème : préparation alimentaire intelligente — anticiper sans paniquer.
 Ton : direct, factuel, utile. JAMAIS survivaliste, catastrophiste, complotiste.
 Pattern gagnant prouvé : 2e personne + erreur cachée ("Tu stockes mal sans le savoir").
 INTERDIT dans les hooks : toute formulation santé-peur ("va te rendre malade", "dangereux", "toxique", "empoisonner") — trop signalable, nuit à la crédibilité.
+DURÉES DE CONSERVATION : cite uniquement des durées réalistes en conditions domestiques normales (placard, congélateur standard). Jamais de durées extrêmes type "25 ans" qui relèvent du stockage professionnel sous vide à l'azote. Références prudentes : riz blanc 2-5 ans, pâtes 2-3 ans, conserves 2-5 ans selon produit, huile 1-2 ans.
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
 const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
