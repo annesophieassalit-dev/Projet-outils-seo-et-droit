@@ -121,7 +121,7 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
   const maxC2 = Math.max(10, Math.floor(1420 / fs2));
   const lines2 = wrapLines(slide.text, maxC2);
   const blockH2 = lines2.length * lh2;
-  const textCenter2 = 370 + (H - 80 - 370) / 2;
+  const textCenter2 = 510 + (H - 80 - 510) / 2;
   const startY2 = Math.round(textCenter2 - blockH2 / 2 + fs2);
 
   const textEls2 = lines2.map((line, i) => {
@@ -138,9 +138,9 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${IB}"/>
   <rect x="0" y="0" width="${W}" height="8" fill="${t.ia}"/>
-  <text x="${W / 2}" y="340" text-anchor="middle" font-size="270" fill="${t.ia}" font-family="${FONT}" font-weight="900" opacity="0.07">${idx + 1}</text>
-  <text x="${W / 2}" y="316" text-anchor="middle" font-size="218" fill="${t.ia}" font-family="${FONT}" font-weight="900" opacity="0.40">${idx + 1}</text>
-  <rect x="${W / 2 - 96}" y="358" width="192" height="4" fill="${t.ia}" rx="2"/>
+  <text x="${W / 2}" y="480" text-anchor="middle" font-size="270" fill="${t.ia}" font-family="${FONT}" font-weight="900" opacity="0.07">${idx + 1}</text>
+  <text x="${W / 2}" y="456" text-anchor="middle" font-size="218" fill="${t.ia}" font-family="${FONT}" font-weight="900" opacity="0.40">${idx + 1}</text>
+  <rect x="${W / 2 - 96}" y="498" width="192" height="4" fill="${t.ia}" rx="2"/>
   ${textEls2}
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${IT}" font-family="${FONT}" opacity="0.20">${idx + 1} / ${total}</text>
 </svg>`;
