@@ -7,7 +7,8 @@ const client = new Anthropic();
 const SYSTEM = `Tu es directeur créatif TikTok spécialisé en contenus viraux.
 Thème : préparation alimentaire intelligente — anticiper sans paniquer.
 Ton : direct, factuel, utile. JAMAIS survivaliste, catastrophiste, complotiste.
-Pattern gagnant prouvé : 2e personne + erreur cachée ("Tu fais X mal sans le savoir").
+Pattern gagnant prouvé : 2e personne + erreur cachée ("Tu stockes mal sans le savoir").
+INTERDIT dans les hooks : toute formulation santé-peur ("va te rendre malade", "dangereux", "toxique", "empoisonner") — trop signalable, nuit à la crédibilité.
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
 const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
@@ -16,28 +17,34 @@ const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation'
 const FORMATS = [
   {
     label: 'ERREUR',
-    hookGuide: `Phrase directe, max 8 mots, 2e personne + erreur cachée. Pas tout en majuscules.
-Exemples validés : "Tu stockes mal sans le savoir" / "Tu jettes ça trop tôt" / "Tu oublies toujours cet aliment" / "Tout le monde achète ça en premier. Mauvaise idée." / "Tu fais cette erreur sans t'en rendre compte"`,
+    hookGuide: `Slogan TikTok, MAX 6 MOTS, 2e personne + erreur cachée. Pas de formulation santé-peur.
+❌ Trop long : "Tu fais cette erreur sans t'en rendre compte" → ✅ Court : "Tu stockes mal sans le savoir"
+❌ Peur santé : "Ton huile stockée va te rendre malade" → ✅ Factuel : "Tu stockes mal ton huile"
+Autres exemples courts validés : "Tu jettes ça trop tôt" / "Tu oublies toujours ça" / "Mauvaise idée. Voilà pourquoi."`,
   },
   {
     label: 'ASTUCE',
-    hookGuide: `Phrase directe, max 8 mots, révélation contre-intuitive. 2e personne si possible.
-Exemples validés : "Ce que personne ne te dit sur le stockage" / "Tu peux conserver ça 5 ans" / "La plupart des gens font ça à l'envers" / "Tu achètes ça en dernier. C'est une erreur."`,
+    hookGuide: `Slogan TikTok, MAX 6 MOTS, révélation contre-intuitive. Court, percutant.
+❌ Trop long : "Ce que personne ne te dit sur le stockage" → ✅ Court : "Personne ne te dit ça"
+Autres exemples courts validés : "Tu peux stocker ça 5 ans" / "Tu fais ça à l'envers" / "Stocke ça en premier"`,
   },
   {
     label: 'VRAI / FAUX',
-    hookGuide: `Phrase directe, max 8 mots, idée reçue à démystifier. Assertion provocante, sans majuscules.
-Exemples validés : "Le riz blanc dure plus longtemps que tu crois" / "Les pâtes ne suffisent pas" / "Tu penses être prêt. Tu ne l'es pas." / "Ce que tu stockes en premier est une erreur"`,
+    hookGuide: `Slogan TikTok, MAX 6 MOTS, idée reçue percutante. Assertion courte, pas de point d'interrogation.
+❌ Trop long : "Le riz blanc dure plus longtemps que tu crois" → ✅ Court : "Le riz blanc dure plus"
+Autres exemples courts validés : "Les pâtes ne suffisent pas" / "Tu n'es pas prêt" / "Tu stockes les mauvaises choses"`,
   },
   {
     label: 'SAVAIS-TU ?',
-    hookGuide: `Phrase directe, max 8 mots, fait surprenant ou scénario concret. 2e personne.
-Exemples validés : "Tu n'as pas assez d'eau pour 3 jours" / "Si l'électricité coupe ce soir, tu manges quoi ?" / "Tu penses être prêt. Tu ne l'es probablement pas." / "Ton frigo est vide en 72h sans le savoir"`,
+    hookGuide: `Slogan TikTok, MAX 6 MOTS, scénario concret ou chiffre choc. 2e personne.
+❌ Trop long : "Tu n'as probablement pas assez d'eau pour 3 jours" → ✅ Court : "Pas assez d'eau pour 72h"
+Autres exemples courts validés : "Si l'eau coupe ce soir ?" / "Ton frigo vide en 72h" / "Tu n'as pas assez d'eau"`,
   },
   {
     label: 'CHECKLIST',
-    hookGuide: `Phrase directe, max 8 mots, liste avec chiffre ou contre-intuition. 2e personne préférée.
-Exemples validés : "Les 3 produits que tout le monde achète en premier… erreur" / "Tu oublies toujours ces 5 choses" / "La liste que tu fais est dans le mauvais ordre"`,
+    hookGuide: `Slogan TikTok, MAX 6 MOTS, chiffre + contre-intuition. Court et direct.
+❌ Trop long : "Les 3 produits que tout le monde achète en premier… erreur" → ✅ Court : "Tu achètes ça en premier. Erreur."
+Autres exemples courts validés : "Tu oublies ces 5 choses" / "La liste dans le mauvais ordre" / "3 erreurs de débutant"`,
   },
 ];
 
@@ -66,7 +73,7 @@ FORMAT VISUEL : "${fmt.label}"
 STYLE DU HOOK : ${fmt.hookGuide}
 
 RÈGLES STRICTES :
-- Slide 1 (hook) : max 8 mots, style phrase directe 2e personne, PAS tout en majuscules, PAS un titre d'ebook
+- Slide 1 (hook) : MAX 6 MOTS — slogan, pas un titre. Couper impitoyablement. PAS de formulation santé-peur.
 - Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète
 - Dernière slide : question directe ou conseil actionnable en 1 phrase
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
