@@ -162,7 +162,7 @@ export default function HomePage() {
 
       for (const canvas of canvases) {
         ctx.drawImage(canvas, 0, 0);
-        await new Promise(r => setTimeout(r, 3000));
+        await new Promise(r => setTimeout(r, 4000));
       }
 
       await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
@@ -370,7 +370,7 @@ export default function HomePage() {
                 <button onClick={exportAsVideo} disabled={exportingVideo || downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#A63D2F] rounded-xl text-white text-sm font-medium hover:bg-[#8a3226] disabled:opacity-60">
                   {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
                   {exportingVideo
-                    ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 3}s)...`
+                    ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 4}s)...`
                     : 'Télécharger en vidéo (TikTok)'}
                 </button>
               </div>
