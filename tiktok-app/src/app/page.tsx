@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import JSZip from "jszip";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2 } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, Video } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -84,6 +84,7 @@ export default function HomePage() {
   };
 
   const [downloading, setDownloading] = useState(false);
+  const [exportingVideo, setExportingVideo] = useState(false);
 
   const downloadAllSlides = async () => {
     if (!selected || downloading) return;
@@ -130,6 +131,51 @@ export default function HomePage() {
   useEffect(() => {
     if (contents.length > 0) localStorage.setItem(STORAGE_KEY, JSON.stringify(contents));
   }, [contents]);
+
+  const exportAsVideo = async () => {
+    if (!selected || exportingVideo) return;
+    const svgs = selected.image_svgs;
+    if (!svgs || svgs.length === 0) return;
+    setExportingVideo(true);
+    try {
+      const canvases = await Promise.all(svgs.map(svg => svgToCanvas(svg)));
+
+      const display = document.createElement('canvas');
+      display.width = 1080;
+      display.height = 1920;
+      const ctx = display.getContext('2d')!;
+
+      const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
+        ? 'video/webm;codecs=vp9'
+        : 'video/webm';
+      const stream = display.captureStream(30);
+      const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
+      const chunks: Blob[] = [];
+      recorder.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
+
+      recorder.start();
+      await new Promise(r => setTimeout(r, 80));
+
+      for (const canvas of canvases) {
+        ctx.drawImage(canvas, 0, 0);
+        await new Promise(r => setTimeout(r, 3000));
+      }
+
+      await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
+      stream.getTracks().forEach(t => t.stop());
+
+      const blob = new Blob(chunks, { type: mimeType });
+      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${safeName || 'video'}.webm`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } catch {
+      alert('Export vidéo non supporté sur ce navigateur. Utilise Chrome ou Edge.');
+    }
+    setExportingVideo(false);
+  };
 
   const clearAll = () => {
     if (confirm('Supprimer tous les contenus ?')) {
@@ -313,9 +359,15 @@ export default function HomePage() {
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
-                <button onClick={downloadAllSlides} disabled={downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#2A3D18] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-60">
+                <button onClick={downloadAllSlides} disabled={downloading || exportingVideo} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#243126] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-60">
                   {downloading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
-                  {downloading ? 'Création du ZIP...' : 'Télécharger en ZIP (1 dossier)'}
+                  {downloading ? 'Création du ZIP...' : 'Télécharger en ZIP (photos)'}
+                </button>
+                <button onClick={exportAsVideo} disabled={exportingVideo || downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#A63D2F] rounded-xl text-white text-sm font-medium hover:bg-[#8a3226] disabled:opacity-60">
+                  {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
+                  {exportingVideo
+                    ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 3}s)...`
+                    : 'Télécharger en vidéo (TikTok)'}
                 </button>
               </div>
 
