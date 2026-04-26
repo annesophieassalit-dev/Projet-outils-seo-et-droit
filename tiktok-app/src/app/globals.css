@@ -4,5 +4,5 @@
 
 body {
   background: #F5F0E8;
-  font-family: Georgia, serif;
+  font-family: var(--font-montserrat), 'Arial Black', Helvetica Neue, Arial, sans-serif;
 }

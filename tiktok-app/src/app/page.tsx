@@ -13,21 +13,22 @@ function svgUrl(svg: string): string {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-function downloadSvgAsPng(svg: string, filename: string): void {
+async function svgToCanvas(svg: string): Promise<HTMLCanvasElement> {
+  await Promise.allSettled([
+    document.fonts.load('900 72px Montserrat'),
+    document.fonts.load('800 72px Montserrat'),
+  ]);
   const canvas = document.createElement('canvas');
   canvas.width = 1080;
   canvas.height = 1920;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
-  const img = new Image();
-  img.onload = () => {
-    ctx.drawImage(img, 0, 0);
-    const a = document.createElement('a');
-    a.href = canvas.toDataURL('image/png');
-    a.download = filename;
-    a.click();
-  };
-  img.src = svgUrl(svg);
+  const ctx = canvas.getContext('2d')!;
+  await new Promise<void>((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => { ctx.drawImage(img, 0, 0); resolve(); };
+    img.onerror = reject;
+    img.src = svgUrl(svg);
+  });
+  return canvas;
 }
 
 const STORAGE_KEY = 'tiktok_contents';
@@ -91,22 +92,17 @@ export default function HomePage() {
       const zip = new JSZip();
       const svgs = selected.image_svgs || [];
 
-      await Promise.all(svgs.map((svg, i) => new Promise<void>((resolve) => {
-        const canvas = document.createElement('canvas');
-        canvas.width = 1080;
-        canvas.height = 1920;
-        const ctx = canvas.getContext('2d')!;
-        const img = new Image();
-        img.onload = () => {
-          ctx.drawImage(img, 0, 0);
-          canvas.toBlob((blob) => {
-            if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
-            resolve();
-          }, 'image/png');
-        };
-        img.onerror = () => resolve();
-        img.src = svgUrl(svg);
-      })));
+      await Promise.all(svgs.map(async (svg, i) => {
+        try {
+          const canvas = await svgToCanvas(svg);
+          await new Promise<void>((resolve) => {
+            canvas.toBlob((blob) => {
+              if (blob) zip.file(`slide_${String(i + 1).padStart(2, '0')}.png`, blob);
+              resolve();
+            }, 'image/png');
+          });
+        } catch { /* skip failed slide */ }
+      }));
 
       const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
       const blob = await zip.generateAsync({ type: 'blob' });
