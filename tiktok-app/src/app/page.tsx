@@ -40,6 +40,7 @@ export default function HomePage() {
   const [copied, setCopied] = useState(false);
   const [customPillar, setCustomPillar] = useState<Pillar>('checklist');
   const [customType, setCustomType] = useState<ContentType>('carousel');
+  const [customTopic, setCustomTopic] = useState('');
   const [generating, setGenerating] = useState(false);
 
   const generateDaily = async () => {
@@ -65,7 +66,12 @@ export default function HomePage() {
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'generate_one', type: customType, pillar: customPillar }),
+        body: JSON.stringify({
+          action: 'generate_one',
+          type: customType,
+          pillar: customPillar,
+          topic: customTopic.trim() || undefined,
+        }),
       });
       const data = await res.json();
       if (data.error) alert('Erreur : ' + data.error);
@@ -186,31 +192,53 @@ export default function HomePage() {
 
         {/* Generate custom */}
         <div className="bg-white rounded-2xl border border-stone-200 p-6">
-          <h2 className="font-bold text-gray-900 mb-4">Générer un contenu spécifique</h2>
-          <div className="flex gap-3 flex-wrap">
-            <select
-              value={customPillar}
-              onChange={(e) => setCustomPillar(e.target.value as Pillar)}
-              className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none"
-            >
-              {PILLARS.map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-            </select>
-            <select
-              value={customType}
-              onChange={(e) => setCustomType(e.target.value as ContentType)}
-              className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none"
-            >
-              <option value="carousel">Carrousel</option>
-              <option value="video_long">Vidéo longue</option>
-            </select>
-            <button
-              onClick={generateOne}
-              disabled={generating}
-              className="flex items-center gap-2 px-4 py-2 bg-[#D6A77A] rounded-lg text-white text-sm font-medium hover:bg-[#c49060] disabled:opacity-50"
-            >
-              {generating ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
-              {generating ? 'Génération...' : 'Générer'}
-            </button>
+          <h2 className="font-bold text-gray-900 mb-1">Générer un contenu spécifique</h2>
+          <p className="text-sm text-gray-500 mb-4">Choisis un pilier ou saisis un sujet libre (l'actualité, une question reçue...)</p>
+          <div className="space-y-3">
+            <div className="relative">
+              <input
+                type="text"
+                value={customTopic}
+                onChange={(e) => setCustomTopic(e.target.value)}
+                placeholder="Sujet libre : ex. panne de courant et frigo, risque de pénurie d'huile..."
+                className="w-full px-3 py-2.5 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none focus:ring-2 focus:ring-[#D6A77A] focus:border-transparent pr-8"
+              />
+              {customTopic && (
+                <button
+                  onClick={() => setCustomTopic('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500 text-base leading-none"
+                >✕</button>
+              )}
+            </div>
+            {customTopic.trim() && (
+              <p className="text-xs text-amber-600 font-medium">Sujet libre actif — le pilier ci-dessous est ignoré</p>
+            )}
+            <div className="flex gap-3 flex-wrap">
+              <select
+                value={customPillar}
+                onChange={(e) => setCustomPillar(e.target.value as Pillar)}
+                disabled={!!customTopic.trim()}
+                className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none disabled:opacity-40"
+              >
+                {PILLARS.map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+              </select>
+              <select
+                value={customType}
+                onChange={(e) => setCustomType(e.target.value as ContentType)}
+                className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none"
+              >
+                <option value="carousel">Carrousel</option>
+                <option value="video_long">Vidéo longue</option>
+              </select>
+              <button
+                onClick={generateOne}
+                disabled={generating}
+                className="flex items-center gap-2 px-4 py-2 bg-[#D6A77A] rounded-lg text-white text-sm font-medium hover:bg-[#c49060] disabled:opacity-50"
+              >
+                {generating ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
+                {generating ? 'Génération...' : 'Générer'}
+              </button>
+            </div>
           </div>
         </div>
 
