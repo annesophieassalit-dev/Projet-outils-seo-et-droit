@@ -76,7 +76,7 @@ STYLE DU HOOK : ${fmt.hookGuide}
 RÈGLES STRICTES :
 - Slide 1 (hook) : MAX 6 MOTS — slogan, pas un titre. Couper impitoyablement. PAS de formulation santé-peur.
 - Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète
-- Dernière slide : question directe ou conseil actionnable en 1 phrase
+- Dernière slide info : conseil actionnable ou question directe en 1 phrase (pas de slide "conclusion", on la gère nous-mêmes)
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
 - DURÉES INTERDITES : ne jamais écrire de durée supérieure à 5 ans. Le riz se conserve 2-4 ans, pas 25 ans. Toute durée > 5 ans est FAUSSE dans un contexte domestique normal.
 
@@ -97,13 +97,20 @@ JSON exact :
 
   const hashtags = Array.from(new Set((data.hashtags as string[]).concat(HASHTAGS.slice(0, 4)))).slice(0, 8);
 
+  // Filtre les éventuelles slides "conclusion" générées par Claude + ajoute la nôtre
+  const rawSlides = (data.slides as Slide[]).filter(s => s.type !== 'conclusion');
+  const slides: Slide[] = [
+    ...rawSlides,
+    { order: rawSlides.length + 1, type: 'conclusion', text: 'Lien en bio', highlight: [] },
+  ];
+
   const content: Content = {
     id: generateId(),
     content_type: type,
     pillar,
     title: data.title,
     hook: data.hook,
-    slides: data.slides as Slide[],
+    slides,
     caption: data.caption,
     hashtags,
     status: 'ready',

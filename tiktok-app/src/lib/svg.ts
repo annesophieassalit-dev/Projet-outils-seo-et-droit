@@ -58,8 +58,22 @@ const TEXT  = '#F5F1E8';
 export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 0): string {
   const t = THEMES[themeIdx % THEMES.length];
 
-  // ── HOOK / CONCLUSION ─────────────────────────────────────────────────────
-  if (slide.type === 'hook' || slide.type === 'conclusion') {
+  // ── CONCLUSION : slide CTA "Lien en bio" ──────────────────────────────────
+  if (slide.type === 'conclusion') {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <rect width="${W}" height="${H}" fill="#243126"/>
+  <rect x="0" y="0" width="${W}" height="6" fill="${t.ca}"/>
+  <rect x="0" y="${H - 6}" width="${W}" height="6" fill="${t.ca}" opacity="0.35"/>
+  <text x="${W / 2}" y="830" text-anchor="middle" font-size="118" fill="#FFFFFF" font-family="${FONT}" font-weight="900">Lien en bio 👆</text>
+  <rect x="${W / 2 - 180}" y="880" width="360" height="4" fill="#D6B98C" rx="2"/>
+  <text x="${W / 2}" y="990" text-anchor="middle" font-size="68" fill="#D6B98C" font-family="${FONT}" font-weight="700">Guide PDF — 11€</text>
+  <text x="${W / 2}" y="${H - 80}" text-anchor="middle" font-size="36" fill="#FFFFFF" font-family="${FONT}" font-weight="700" letter-spacing="10" opacity="0.55">PRÉVOIR UTILE</text>
+</svg>`;
+  }
+
+  // ── HOOK ──────────────────────────────────────────────────────────────────
+  if (slide.type === 'hook') {
     const text = slide.text; // mixed case — pas de toUpperCase()
     const len = text.length;
     const desired = len <= 20 ? 168 : len <= 32 ? 148 : len <= 48 ? 120 : len <= 65 ? 100 : 84;
