@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import JSZip from "jszip";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, X, Video } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, X, Video, Mic } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -44,6 +44,7 @@ export default function HomePage() {
   const [generating, setGenerating] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [exportingVideo, setExportingVideo] = useState(false);
+  const [exportingVoice, setExportingVoice] = useState(false);
   const [tab, setTab] = useState<'preview' | 'caption'>('preview');
 
   const generateDaily = async () => {
@@ -167,6 +168,86 @@ export default function HomePage() {
       alert('Export vidéo non supporté. Utilise Chrome ou Edge.');
     }
     setExportingVideo(false);
+  };
+
+  const exportAsVideoWithVoice = async () => {
+    if (!selected || exportingVoice) return;
+    const svgs = selected.image_svgs;
+    if (!svgs || svgs.length === 0) return;
+    setExportingVoice(true);
+    try {
+      const canvases = await Promise.all(svgs.map(svg => svgToCanvas(svg)));
+      const audioCtx = new AudioContext();
+      const audioDest = audioCtx.createMediaStreamDestination();
+
+      const ttsTexts = selected.slides.map(s =>
+        s.type === 'conclusion' ? 'Retrouve le lien en bio pour accéder au guide PDF.' : s.text
+      );
+      const audioBuffers = await Promise.all(ttsTexts.map(async (text) => {
+        try {
+          const res = await fetch('/api/tts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text }),
+          });
+          if (!res.ok) return null;
+          const ab = await res.arrayBuffer();
+          return await audioCtx.decodeAudioData(ab);
+        } catch { return null; }
+      }));
+
+      const display = document.createElement('canvas');
+      display.width = 1080;
+      display.height = 1920;
+      const ctx = display.getContext('2d')!;
+      const videoStream = display.captureStream(30);
+      const combined = new MediaStream([
+        ...videoStream.getVideoTracks(),
+        ...audioDest.stream.getAudioTracks(),
+      ]);
+
+      const mimeType =
+        MediaRecorder.isTypeSupported('video/mp4;codecs=avc1') ? 'video/mp4;codecs=avc1' :
+        MediaRecorder.isTypeSupported('video/mp4') ? 'video/mp4' : 'video/webm;codecs=vp9';
+      const ext = mimeType.startsWith('video/mp4') ? 'mp4' : 'webm';
+      const recorder = new MediaRecorder(combined, { mimeType, videoBitsPerSecond: 8_000_000 });
+      const chunks: Blob[] = [];
+      recorder.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
+      recorder.start();
+      await new Promise(r => setTimeout(r, 80));
+
+      for (let i = 0; i < canvases.length; i++) {
+        ctx.drawImage(canvases[i], 0, 0);
+        const buf = audioBuffers[i];
+        if (buf) {
+          await new Promise<void>(resolve => {
+            const src = audioCtx.createBufferSource();
+            src.buffer = buf;
+            src.connect(audioDest);
+            src.onended = () => resolve();
+            src.start();
+          });
+          await new Promise(r => setTimeout(r, 500));
+        } else {
+          await new Promise(r => setTimeout(r, 3000));
+        }
+      }
+
+      await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
+      combined.getTracks().forEach(t => t.stop());
+      audioCtx.close();
+
+      const blob = new Blob(chunks, { type: mimeType });
+      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${safeName || 'video'}_voix.${ext}`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } catch {
+      alert('Erreur voix. Vérifier la clé OPENAI_API_KEY dans Vercel.');
+    }
+    setExportingVoice(false);
   };
 
   const clearAll = () => {
@@ -444,15 +525,26 @@ export default function HomePage() {
                 {downloading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
                 {downloading ? 'Création du ZIP...' : '⬇ Carrousel PNG (Instagram / TikTok)'}
               </button>
-              <button
-                onClick={exportAsVideo}
-                disabled={exportingVideo || downloading}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm disabled:opacity-40 active:scale-95 transition-transform"
-                style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.6)' }}
-              >
-                {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
-                {exportingVideo ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 4}s)...` : 'Exporter en vidéo MP4'}
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={exportAsVideo}
+                  disabled={exportingVideo || downloading || exportingVoice}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm disabled:opacity-40 active:scale-95 transition-transform"
+                  style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.6)' }}
+                >
+                  {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
+                  {exportingVideo ? 'Export...' : 'MP4'}
+                </button>
+                <button
+                  onClick={exportAsVideoWithVoice}
+                  disabled={exportingVoice || downloading || exportingVideo}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm disabled:opacity-40 active:scale-95 transition-transform"
+                  style={{ background: 'rgba(212,168,67,0.15)', color: '#D4A843' }}
+                >
+                  {exportingVoice ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Mic className="h-4 w-4" />}
+                  {exportingVoice ? 'Voix...' : 'MP4 + Voix'}
+                </button>
+              </div>
             </div>
           </div>
         </div>
