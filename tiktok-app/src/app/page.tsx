@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import JSZip from "jszip";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, X, Video } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, X, Video } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -186,20 +186,21 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F0E8]">
+    <div className="min-h-screen" style={{ background: '#0D0D0D' }}>
 
       {/* Header */}
-      <header className="bg-[#243126] text-white px-4 py-3 flex items-center justify-between sticky top-0 z-10">
+      <header style={{ background: '#141414', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+        className="text-white px-4 py-3 flex items-center justify-between sticky top-0 z-10">
         <div>
-          <h1 className="font-bold text-base tracking-wide">PRÉVOIR UTILE</h1>
-          <p className="text-xs text-white/50 leading-none mt-0.5">TikTok Auto</p>
+          <h1 className="font-black text-base tracking-widest text-white">PRÉVOIR UTILE</h1>
+          <p className="text-xs leading-none mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>TikTok Auto</p>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-xs text-white/50 bg-white/10 px-2.5 py-1 rounded-full">
+          <span className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.45)' }}>
             {contents.length} contenu{contents.length > 1 ? 's' : ''}
           </span>
           {contents.length > 0 && (
-            <button onClick={clearAll} className="text-xs text-red-400 px-2.5 py-1 rounded-full bg-white/10">
+            <button onClick={clearAll} className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,60,60,0.12)', color: '#ff6b6b' }}>
               Effacer
             </button>
           )}
@@ -209,13 +210,14 @@ export default function HomePage() {
       <div className="max-w-2xl mx-auto px-4 py-5 space-y-4">
 
         {/* Générer contenu du jour */}
-        <div className="bg-white rounded-2xl border border-stone-200 p-5">
-          <h2 className="font-bold text-gray-900 mb-0.5">Contenu du jour</h2>
-          <p className="text-sm text-gray-400 mb-4">3 carrousels générés automatiquement</p>
+        <div className="rounded-2xl p-5" style={{ background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.07)' }}>
+          <h2 className="font-bold text-white mb-0.5">Contenu du jour</h2>
+          <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.35)' }}>3 carrousels générés automatiquement</p>
           <button
             onClick={generateDaily}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 py-4 bg-[#243126] rounded-xl text-white font-bold text-base hover:bg-black disabled:opacity-50 active:scale-95 transition-transform"
+            className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
+            style={{ background: '#D4A843', color: '#0D0D0D' }}
           >
             {loading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
             {loading ? 'Génération en cours...' : 'Générer le contenu du jour'}
@@ -223,8 +225,8 @@ export default function HomePage() {
         </div>
 
         {/* Sujet libre */}
-        <div className="bg-white rounded-2xl border border-stone-200 p-5">
-          <h2 className="font-bold text-gray-900 mb-3">Sujet libre</h2>
+        <div className="rounded-2xl p-5" style={{ background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.07)' }}>
+          <h2 className="font-bold text-white mb-3">Sujet libre</h2>
           <div className="space-y-3">
             <div className="relative">
               <input
@@ -232,10 +234,15 @@ export default function HomePage() {
                 value={customTopic}
                 onChange={(e) => setCustomTopic(e.target.value)}
                 placeholder="Ex: panne de courant et frigo, pénurie d'huile..."
-                className="w-full px-4 py-3 text-base border border-stone-200 rounded-xl bg-stone-50 focus:outline-none focus:ring-2 focus:ring-[#D6B98C] pr-10"
+                className="w-full px-4 py-3 text-sm rounded-xl focus:outline-none pr-10"
+                style={{
+                  background: '#252525',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  color: '#F5F1E8',
+                }}
               />
               {customTopic && (
-                <button onClick={() => setCustomTopic('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 p-1">
+                <button onClick={() => setCustomTopic('')} className="absolute right-3 top-1/2 -translate-y-1/2 p-1" style={{ color: 'rgba(255,255,255,0.35)' }}>
                   <X className="h-4 w-4" />
                 </button>
               )}
@@ -245,14 +252,16 @@ export default function HomePage() {
                 value={customPillar}
                 onChange={(e) => setCustomPillar(e.target.value as Pillar)}
                 disabled={!!customTopic.trim()}
-                className="flex-1 px-3 py-3 text-sm border border-stone-200 rounded-xl bg-stone-50 focus:outline-none disabled:opacity-40"
+                className="flex-1 px-3 py-3 text-sm rounded-xl focus:outline-none disabled:opacity-30"
+                style={{ background: '#252525', border: '1px solid rgba(255,255,255,0.1)', color: '#F5F1E8' }}
               >
                 {PILLARS.map(([k, v]) => <option key={k} value={k}>{v}</option>)}
               </select>
               <select
                 value={customType}
                 onChange={(e) => setCustomType(e.target.value as ContentType)}
-                className="px-3 py-3 text-sm border border-stone-200 rounded-xl bg-stone-50 focus:outline-none"
+                className="px-3 py-3 text-sm rounded-xl focus:outline-none"
+                style={{ background: '#252525', border: '1px solid rgba(255,255,255,0.1)', color: '#F5F1E8' }}
               >
                 <option value="carousel">Carrousel</option>
                 <option value="video_long">Vidéo longue</option>
@@ -261,7 +270,8 @@ export default function HomePage() {
             <button
               onClick={generateOne}
               disabled={generating}
-              className="w-full flex items-center justify-center gap-2 py-4 bg-[#D6B98C] rounded-xl text-white font-bold text-base hover:bg-[#c4a07a] disabled:opacity-50 active:scale-95 transition-transform"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
+              style={{ background: '#7A9E72', color: '#0D0D0D' }}
             >
               {generating ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
               {generating ? 'Génération...' : 'Générer ce sujet'}
@@ -271,29 +281,30 @@ export default function HomePage() {
 
         {/* Liste des contenus */}
         {contents.length > 0 && (
-          <div className="bg-white rounded-2xl border border-stone-200 overflow-hidden">
-            <div className="px-4 py-3 border-b border-stone-100">
-              <h2 className="font-bold text-gray-900">Mes contenus</h2>
+          <div className="rounded-2xl overflow-hidden" style={{ background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.07)' }}>
+            <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              <h2 className="font-bold text-white">Mes contenus</h2>
             </div>
-            <div className="divide-y divide-stone-50">
-              {contents.map((c) => (
+            <div>
+              {contents.map((c, idx) => (
                 <button
                   key={c.id}
                   onClick={() => openContent(c)}
-                  className="w-full flex items-center gap-4 px-4 py-4 hover:bg-stone-50 active:bg-stone-100 text-left transition-colors"
+                  className="w-full flex items-center gap-4 px-4 py-4 text-left transition-colors active:opacity-70"
+                  style={{ borderBottom: idx < contents.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}
                 >
-                  <div className="w-10 h-16 rounded-lg bg-[#243126] shrink-0 overflow-hidden">
+                  <div className="w-10 h-16 rounded-lg shrink-0 overflow-hidden" style={{ background: '#252525' }}>
                     {c.image_svgs?.[0] ? (
                       <img src={svgUrl(c.image_svgs[0])} alt="" className="w-full h-full object-cover" />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-white text-xs">▤</div>
+                      <div className="w-full h-full flex items-center justify-center text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>▤</div>
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-gray-900 truncate">{c.hook}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{PILLAR_LABELS[c.pillar]}</p>
+                    <p className="text-sm font-semibold truncate text-white">{c.hook}</p>
+                    <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{PILLAR_LABELS[c.pillar]}</p>
                   </div>
-                  <Eye className="h-5 w-5 text-gray-300 shrink-0" />
+                  <Eye className="h-5 w-5 shrink-0" style={{ color: 'rgba(255,255,255,0.2)' }} />
                 </button>
               ))}
             </div>
@@ -301,7 +312,7 @@ export default function HomePage() {
         )}
 
         {contents.length === 0 && !loading && (
-          <div className="text-center py-20 text-gray-400 text-sm">
+          <div className="text-center py-20 text-sm" style={{ color: 'rgba(255,255,255,0.2)' }}>
             Lance la génération pour commencer
           </div>
         )}
@@ -309,28 +320,30 @@ export default function HomePage() {
 
       {/* Modal plein écran sur mobile */}
       {selected && (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col md:bg-black/60 md:items-center md:justify-center md:p-4">
-          <div className="flex flex-col h-full md:h-auto md:max-h-[92vh] md:w-full md:max-w-3xl md:rounded-2xl md:overflow-hidden bg-white">
+        <div className="fixed inset-0 z-50 flex flex-col md:items-center md:justify-center md:p-4" style={{ background: '#0D0D0D' }}>
+          <div className="flex flex-col h-full md:h-auto md:max-h-[92vh] md:w-full md:max-w-3xl md:rounded-2xl md:overflow-hidden" style={{ background: '#141414' }}>
 
             {/* Header modal */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-stone-100 shrink-0">
-              <p className="font-bold text-gray-900 truncate text-sm flex-1 mr-3">{selected.hook}</p>
-              <button onClick={() => setSelected(null)} className="p-2 rounded-full bg-stone-100 text-gray-500">
+            <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+              <p className="font-bold text-white truncate text-sm flex-1 mr-3">{selected.hook}</p>
+              <button onClick={() => setSelected(null)} className="p-2 rounded-full" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}>
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             {/* Tabs mobile */}
-            <div className="flex border-b border-stone-100 shrink-0 md:hidden">
+            <div className="flex shrink-0 md:hidden" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
               <button
                 onClick={() => setTab('preview')}
-                className={`flex-1 py-3 text-sm font-semibold ${tab === 'preview' ? 'text-[#243126] border-b-2 border-[#243126]' : 'text-gray-400'}`}
+                className="flex-1 py-3 text-sm font-semibold transition-colors"
+                style={tab === 'preview' ? { color: '#D4A843', borderBottom: '2px solid #D4A843' } : { color: 'rgba(255,255,255,0.35)' }}
               >
                 Aperçu
               </button>
               <button
                 onClick={() => setTab('caption')}
-                className={`flex-1 py-3 text-sm font-semibold ${tab === 'caption' ? 'text-[#243126] border-b-2 border-[#243126]' : 'text-gray-400'}`}
+                className="flex-1 py-3 text-sm font-semibold transition-colors"
+                style={tab === 'caption' ? { color: '#D4A843', borderBottom: '2px solid #D4A843' } : { color: 'rgba(255,255,255,0.35)' }}
               >
                 Légende
               </button>
@@ -342,7 +355,7 @@ export default function HomePage() {
 
                 {/* Colonne aperçu */}
                 <div className={`space-y-3 p-4 md:p-0 ${tab === 'caption' ? 'hidden md:block' : ''}`}>
-                  <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16] max-h-[55vh] md:max-h-none">
+                  <div className="rounded-xl overflow-hidden aspect-[9/16] max-h-[55vh] md:max-h-none" style={{ background: '#0D0D0D' }}>
                     {selected.image_svgs?.[slideIdx] ? (
                       <img
                         src={svgUrl(selected.image_svgs[slideIdx])}
@@ -351,7 +364,7 @@ export default function HomePage() {
                       />
                     ) : (
                       <div className="flex items-center justify-center h-full p-4 text-center">
-                        <p className="text-sm font-medium text-gray-600">{selected.slides[slideIdx]?.text}</p>
+                        <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.6)' }}>{selected.slides[slideIdx]?.text}</p>
                       </div>
                     )}
                   </div>
@@ -360,17 +373,19 @@ export default function HomePage() {
                     <button
                       onClick={() => setSlideIdx((i) => Math.max(0, i - 1))}
                       disabled={slideIdx === 0}
-                      className="p-3 rounded-xl bg-stone-100 disabled:opacity-30 active:scale-95 transition-transform"
+                      className="p-3 rounded-xl disabled:opacity-20 active:scale-95 transition-transform"
+                      style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </button>
-                    <span className="text-sm text-gray-500 font-medium">
+                    <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>
                       {slideIdx + 1} / {selected.slides.length}
                     </span>
                     <button
                       onClick={() => setSlideIdx((i) => Math.min(selected.slides.length - 1, i + 1))}
                       disabled={slideIdx === selected.slides.length - 1}
-                      className="p-3 rounded-xl bg-stone-100 disabled:opacity-30 active:scale-95 transition-transform"
+                      className="p-3 rounded-xl disabled:opacity-20 active:scale-95 transition-transform"
+                      style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
                     >
                       <ChevronRight className="h-5 w-5" />
                     </button>
@@ -380,13 +395,16 @@ export default function HomePage() {
                 {/* Colonne légende */}
                 <div className={`space-y-4 p-4 md:p-0 ${tab === 'preview' ? 'hidden md:block' : ''}`}>
                   <div>
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Slides</p>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: 'rgba(255,255,255,0.3)' }}>Slides</p>
                     <div className="space-y-1.5">
                       {selected.slides.map((s, i) => (
                         <button
                           key={i}
                           onClick={() => { setSlideIdx(i); setTab('preview'); }}
-                          className={`w-full text-left px-3 py-2.5 rounded-xl text-sm transition-colors ${i === slideIdx ? 'bg-[#243126] text-white' : 'bg-stone-50 text-gray-700 active:bg-stone-100'}`}
+                          className="w-full text-left px-3 py-2.5 rounded-xl text-sm transition-colors"
+                          style={i === slideIdx
+                            ? { background: '#D4A843', color: '#0D0D0D' }
+                            : { background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.7)' }}
                         >
                           <span className="opacity-40 mr-1">{i + 1}.</span>{s.text}
                         </button>
@@ -396,16 +414,18 @@ export default function HomePage() {
 
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Légende TikTok</p>
-                      <button onClick={copyCaption} className="flex items-center gap-1 text-xs text-gray-400 active:text-green-500">
-                        {copied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+                      <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.3)' }}>Légende TikTok</p>
+                      <button onClick={copyCaption} className="flex items-center gap-1 text-xs transition-colors" style={{ color: copied ? '#7A9E72' : 'rgba(255,255,255,0.35)' }}>
+                        {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
                         {copied ? 'Copié !' : 'Copier'}
                       </button>
                     </div>
-                    <div className="bg-stone-50 rounded-xl p-3 text-sm text-gray-700 leading-relaxed">{selected.caption}</div>
+                    <div className="rounded-xl p-3 text-sm leading-relaxed" style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.75)' }}>
+                      {selected.caption}
+                    </div>
                     <div className="flex flex-wrap gap-1.5 mt-2">
                       {selected.hashtags.map((h) => (
-                        <span key={h} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">{h}</span>
+                        <span key={h} className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(122,158,114,0.15)', color: '#7A9E72' }}>{h}</span>
                       ))}
                     </div>
                   </div>
@@ -414,11 +434,12 @@ export default function HomePage() {
             </div>
 
             {/* Boutons sticky en bas */}
-            <div className="shrink-0 p-4 border-t border-stone-100 bg-white space-y-2">
+            <div className="shrink-0 p-4 space-y-2" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
               <button
                 onClick={downloadAllSlides}
                 disabled={downloading || exportingVideo}
-                className="w-full flex items-center justify-center gap-2 py-4 bg-[#243126] rounded-2xl text-white font-bold text-base hover:bg-black disabled:opacity-60 active:scale-95 transition-transform"
+                className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
+                style={{ background: '#D4A843', color: '#0D0D0D' }}
               >
                 {downloading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
                 {downloading ? 'Création du ZIP...' : '⬇ Carrousel PNG (Instagram / TikTok)'}
@@ -426,7 +447,8 @@ export default function HomePage() {
               <button
                 onClick={exportAsVideo}
                 disabled={exportingVideo || downloading}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-stone-100 rounded-2xl text-stone-600 font-semibold text-sm hover:bg-stone-200 disabled:opacity-60 active:scale-95 transition-transform"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm disabled:opacity-40 active:scale-95 transition-transform"
+                style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.6)' }}
               >
                 {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
                 {exportingVideo ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 4}s)...` : 'Exporter en vidéo MP4'}
