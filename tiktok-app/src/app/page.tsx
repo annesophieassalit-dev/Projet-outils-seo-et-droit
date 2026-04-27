@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import JSZip from "jszip";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, X } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, X, Video } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -43,6 +43,7 @@ export default function HomePage() {
   const [customTopic, setCustomTopic] = useState('');
   const [generating, setGenerating] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [exportingVideo, setExportingVideo] = useState(false);
   const [tab, setTab] = useState<'preview' | 'caption'>('preview');
 
   const generateDaily = async () => {
@@ -127,6 +128,46 @@ export default function HomePage() {
   useEffect(() => {
     if (contents.length > 0) localStorage.setItem(STORAGE_KEY, JSON.stringify(contents));
   }, [contents]);
+
+  const exportAsVideo = async () => {
+    if (!selected || exportingVideo) return;
+    const svgs = selected.image_svgs;
+    if (!svgs || svgs.length === 0) return;
+    setExportingVideo(true);
+    try {
+      const canvases = await Promise.all(svgs.map(svg => svgToCanvas(svg)));
+      const display = document.createElement('canvas');
+      display.width = 1080;
+      display.height = 1920;
+      const ctx = display.getContext('2d')!;
+      const mimeType =
+        MediaRecorder.isTypeSupported('video/mp4;codecs=avc1') ? 'video/mp4;codecs=avc1' :
+        MediaRecorder.isTypeSupported('video/mp4') ? 'video/mp4' : 'video/webm;codecs=vp9';
+      const ext = mimeType.startsWith('video/mp4') ? 'mp4' : 'webm';
+      const stream = display.captureStream(30);
+      const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
+      const chunks: Blob[] = [];
+      recorder.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
+      recorder.start();
+      await new Promise(r => setTimeout(r, 80));
+      for (const canvas of canvases) {
+        ctx.drawImage(canvas, 0, 0);
+        await new Promise(r => setTimeout(r, 4000));
+      }
+      await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
+      stream.getTracks().forEach(t => t.stop());
+      const blob = new Blob(chunks, { type: mimeType });
+      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${safeName || 'video'}.${ext}`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } catch {
+      alert('Export vidéo non supporté. Utilise Chrome ou Edge.');
+    }
+    setExportingVideo(false);
+  };
 
   const clearAll = () => {
     if (confirm('Supprimer tous les contenus ?')) {
@@ -372,15 +413,23 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Bouton download sticky en bas */}
-            <div className="shrink-0 p-4 border-t border-stone-100 bg-white">
+            {/* Boutons sticky en bas */}
+            <div className="shrink-0 p-4 border-t border-stone-100 bg-white space-y-2">
               <button
                 onClick={downloadAllSlides}
-                disabled={downloading}
+                disabled={downloading || exportingVideo}
                 className="w-full flex items-center justify-center gap-2 py-4 bg-[#243126] rounded-2xl text-white font-bold text-base hover:bg-black disabled:opacity-60 active:scale-95 transition-transform"
               >
                 {downloading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
-                {downloading ? 'Création du ZIP...' : '⬇ Télécharger le carrousel (PNG)'}
+                {downloading ? 'Création du ZIP...' : '⬇ Carrousel PNG (Instagram / TikTok)'}
+              </button>
+              <button
+                onClick={exportAsVideo}
+                disabled={exportingVideo || downloading}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-stone-100 rounded-2xl text-stone-600 font-semibold text-sm hover:bg-stone-200 disabled:opacity-60 active:scale-95 transition-transform"
+              >
+                {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
+                {exportingVideo ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 4}s)...` : 'Exporter en vidéo MP4'}
               </button>
             </div>
           </div>
