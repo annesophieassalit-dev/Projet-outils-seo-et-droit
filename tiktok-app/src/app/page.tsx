@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import JSZip from "jszip";
-import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, Video } from "lucide-react";
+import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, Trash2, X } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
 import type { Content, ContentType, Pillar } from "@/types/content";
 
@@ -43,6 +42,8 @@ export default function HomePage() {
   const [customType, setCustomType] = useState<ContentType>('carousel');
   const [customTopic, setCustomTopic] = useState('');
   const [generating, setGenerating] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [tab, setTab] = useState<'preview' | 'caption'>('preview');
 
   const generateDaily = async () => {
     setLoading(true);
@@ -55,7 +56,7 @@ export default function HomePage() {
       const data = await res.json();
       if (data.error) alert('Erreur : ' + data.error);
       if (data.contents) setContents((prev) => [...data.contents, ...prev]);
-    } catch (e) {
+    } catch {
       alert('Erreur réseau. Vérifier la clé Anthropic dans Vercel.');
     }
     setLoading(false);
@@ -77,14 +78,11 @@ export default function HomePage() {
       const data = await res.json();
       if (data.error) alert('Erreur : ' + data.error);
       if (data.content) setContents((prev) => [data.content, ...prev]);
-    } catch (e) {
+    } catch {
       alert('Erreur réseau. Vérifier la clé Anthropic dans Vercel.');
     }
     setGenerating(false);
   };
-
-  const [downloading, setDownloading] = useState(false);
-  const [exportingVideo, setExportingVideo] = useState(false);
 
   const downloadAllSlides = async () => {
     if (!selected || downloading) return;
@@ -92,7 +90,6 @@ export default function HomePage() {
     try {
       const zip = new JSZip();
       const svgs = selected.image_svgs || [];
-
       await Promise.all(svgs.map(async (svg, i) => {
         try {
           const canvas = await svgToCanvas(svg);
@@ -102,9 +99,8 @@ export default function HomePage() {
               resolve();
             }, 'image/png');
           });
-        } catch { /* skip failed slide */ }
+        } catch { /* skip */ }
       }));
-
       const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
       const blob = await zip.generateAsync({ type: 'blob' });
       const a = document.createElement('a');
@@ -112,7 +108,7 @@ export default function HomePage() {
       a.download = `${safeName || 'slides'}.zip`;
       a.click();
       URL.revokeObjectURL(a.href);
-    } catch (e) {
+    } catch {
       alert('Erreur ZIP. Essaie de régénérer le contenu.');
     }
     setDownloading(false);
@@ -132,55 +128,6 @@ export default function HomePage() {
     if (contents.length > 0) localStorage.setItem(STORAGE_KEY, JSON.stringify(contents));
   }, [contents]);
 
-  const exportAsVideo = async () => {
-    if (!selected || exportingVideo) return;
-    const svgs = selected.image_svgs;
-    if (!svgs || svgs.length === 0) return;
-    setExportingVideo(true);
-    try {
-      const canvases = await Promise.all(svgs.map(svg => svgToCanvas(svg)));
-
-      const display = document.createElement('canvas');
-      display.width = 1080;
-      display.height = 1920;
-      const ctx = display.getContext('2d')!;
-
-      const mimeType =
-        MediaRecorder.isTypeSupported('video/mp4;codecs=avc1')
-          ? 'video/mp4;codecs=avc1'
-          : MediaRecorder.isTypeSupported('video/mp4')
-          ? 'video/mp4'
-          : 'video/webm;codecs=vp9';
-      const ext = mimeType.startsWith('video/mp4') ? 'mp4' : 'webm';
-      const stream = display.captureStream(30);
-      const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 8_000_000 });
-      const chunks: Blob[] = [];
-      recorder.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
-
-      recorder.start();
-      await new Promise(r => setTimeout(r, 80));
-
-      for (const canvas of canvases) {
-        ctx.drawImage(canvas, 0, 0);
-        await new Promise(r => setTimeout(r, 4000));
-      }
-
-      await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
-      stream.getTracks().forEach(t => t.stop());
-
-      const blob = new Blob(chunks, { type: mimeType });
-      const safeName = selected.hook.replace(/[^\w\s]/g, '').trim().slice(0, 50).replace(/\s+/g, '_');
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `${safeName || 'video'}.${ext}`;
-      a.click();
-      URL.revokeObjectURL(a.href);
-    } catch {
-      alert('Export vidéo non supporté sur ce navigateur. Utilise Chrome ou Edge.');
-    }
-    setExportingVideo(false);
-  };
-
   const clearAll = () => {
     if (confirm('Supprimer tous les contenus ?')) {
       setContents([]);
@@ -188,7 +135,7 @@ export default function HomePage() {
     }
   };
 
-  const openContent = (c: Content) => { setSelected(c); setSlideIdx(0); };
+  const openContent = (c: Content) => { setSelected(c); setSlideIdx(0); setTab('preview'); };
 
   const copyCaption = () => {
     if (!selected) return;
@@ -199,123 +146,113 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#F5F0E8]">
+
       {/* Header */}
-      <header className="bg-[#2B2B2B] text-white px-6 py-4 flex items-center justify-between">
+      <header className="bg-[#243126] text-white px-4 py-3 flex items-center justify-between sticky top-0 z-10">
         <div>
-          <h1 className="font-bold text-lg tracking-wide">PRÉVOIR SANS PANIQUER</h1>
-          <p className="text-xs text-gray-400 mt-0.5">Organisation alimentaire simple — TikTok Auto</p>
+          <h1 className="font-bold text-base tracking-wide">PRÉVOIR UTILE</h1>
+          <p className="text-xs text-white/50 leading-none mt-0.5">TikTok Auto</p>
         </div>
-        <div className="flex gap-3">
-          <button
-            onClick={clearAll}
-            className="text-xs text-red-400 hover:text-red-300 px-3 py-1.5 rounded-lg hover:bg-white/10"
-          >
-            Effacer tout
-          </button>
-          <Link href="/contenu" className="text-sm text-gray-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/10">
-            Mes contenus ({contents.length})
-          </Link>
-          <Link href="/parametres" className="text-sm text-gray-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-white/10">
-            Paramètres
-          </Link>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-white/50 bg-white/10 px-2.5 py-1 rounded-full">
+            {contents.length} contenu{contents.length > 1 ? 's' : ''}
+          </span>
+          {contents.length > 0 && (
+            <button onClick={clearAll} className="text-xs text-red-400 px-2.5 py-1 rounded-full bg-white/10">
+              Effacer
+            </button>
+          )}
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto p-6 space-y-6">
-        {/* Generate daily */}
-        <div className="bg-white rounded-2xl border border-stone-200 p-6">
-          <h2 className="font-bold text-gray-900 mb-1">Génération quotidienne</h2>
-          <p className="text-sm text-gray-500 mb-4">Génère 2 carrousels + 1 vidéo longue automatiquement</p>
+      <div className="max-w-2xl mx-auto px-4 py-5 space-y-4">
+
+        {/* Générer contenu du jour */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-5">
+          <h2 className="font-bold text-gray-900 mb-0.5">Contenu du jour</h2>
+          <p className="text-sm text-gray-400 mb-4">3 carrousels générés automatiquement</p>
           <button
             onClick={generateDaily}
             disabled={loading}
-            className="flex items-center gap-2 px-5 py-2.5 bg-[#2B2B2B] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-50"
+            className="w-full flex items-center justify-center gap-2 py-4 bg-[#243126] rounded-xl text-white font-bold text-base hover:bg-black disabled:opacity-50 active:scale-95 transition-transform"
           >
-            {loading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
+            {loading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
             {loading ? 'Génération en cours...' : 'Générer le contenu du jour'}
           </button>
         </div>
 
-        {/* Generate custom */}
-        <div className="bg-white rounded-2xl border border-stone-200 p-6">
-          <h2 className="font-bold text-gray-900 mb-1">Générer un contenu spécifique</h2>
-          <p className="text-sm text-gray-500 mb-4">Choisis un pilier ou saisis un sujet libre (l'actualité, une question reçue...)</p>
+        {/* Sujet libre */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-5">
+          <h2 className="font-bold text-gray-900 mb-3">Sujet libre</h2>
           <div className="space-y-3">
             <div className="relative">
               <input
                 type="text"
                 value={customTopic}
                 onChange={(e) => setCustomTopic(e.target.value)}
-                placeholder="Sujet libre : ex. panne de courant et frigo, risque de pénurie d'huile..."
-                className="w-full px-3 py-2.5 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none focus:ring-2 focus:ring-[#D6A77A] focus:border-transparent pr-8"
+                placeholder="Ex: panne de courant et frigo, pénurie d'huile..."
+                className="w-full px-4 py-3 text-base border border-stone-200 rounded-xl bg-stone-50 focus:outline-none focus:ring-2 focus:ring-[#D6B98C] pr-10"
               />
               {customTopic && (
-                <button
-                  onClick={() => setCustomTopic('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gray-500 text-base leading-none"
-                >✕</button>
+                <button onClick={() => setCustomTopic('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 p-1">
+                  <X className="h-4 w-4" />
+                </button>
               )}
             </div>
-            {customTopic.trim() && (
-              <p className="text-xs text-amber-600 font-medium">Sujet libre actif — le pilier ci-dessous est ignoré</p>
-            )}
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex gap-2">
               <select
                 value={customPillar}
                 onChange={(e) => setCustomPillar(e.target.value as Pillar)}
                 disabled={!!customTopic.trim()}
-                className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none disabled:opacity-40"
+                className="flex-1 px-3 py-3 text-sm border border-stone-200 rounded-xl bg-stone-50 focus:outline-none disabled:opacity-40"
               >
                 {PILLARS.map(([k, v]) => <option key={k} value={k}>{v}</option>)}
               </select>
               <select
                 value={customType}
                 onChange={(e) => setCustomType(e.target.value as ContentType)}
-                className="px-3 py-2 text-sm border border-stone-200 rounded-lg bg-stone-50 focus:outline-none"
+                className="px-3 py-3 text-sm border border-stone-200 rounded-xl bg-stone-50 focus:outline-none"
               >
                 <option value="carousel">Carrousel</option>
                 <option value="video_long">Vidéo longue</option>
               </select>
-              <button
-                onClick={generateOne}
-                disabled={generating}
-                className="flex items-center gap-2 px-4 py-2 bg-[#D6A77A] rounded-lg text-white text-sm font-medium hover:bg-[#c49060] disabled:opacity-50"
-              >
-                {generating ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
-                {generating ? 'Génération...' : 'Générer'}
-              </button>
             </div>
+            <button
+              onClick={generateOne}
+              disabled={generating}
+              className="w-full flex items-center justify-center gap-2 py-4 bg-[#D6B98C] rounded-xl text-white font-bold text-base hover:bg-[#c4a07a] disabled:opacity-50 active:scale-95 transition-transform"
+            >
+              {generating ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
+              {generating ? 'Génération...' : 'Générer ce sujet'}
+            </button>
           </div>
         </div>
 
-        {/* Content list */}
+        {/* Liste des contenus */}
         {contents.length > 0 && (
           <div className="bg-white rounded-2xl border border-stone-200 overflow-hidden">
-            <div className="px-5 py-4 border-b border-stone-100 flex items-center justify-between">
-              <h2 className="font-bold text-gray-900">Contenus générés ({contents.length})</h2>
-              <button onClick={clearAll} className="flex items-center gap-1 text-xs text-gray-400 hover:text-red-500">
-                <Trash2 className="h-3 w-3" />Effacer
-              </button>
+            <div className="px-4 py-3 border-b border-stone-100">
+              <h2 className="font-bold text-gray-900">Mes contenus</h2>
             </div>
             <div className="divide-y divide-stone-50">
               {contents.map((c) => (
                 <button
                   key={c.id}
                   onClick={() => openContent(c)}
-                  className="w-full flex items-center gap-4 px-5 py-4 hover:bg-stone-50 text-left transition-colors"
+                  className="w-full flex items-center gap-4 px-4 py-4 hover:bg-stone-50 active:bg-stone-100 text-left transition-colors"
                 >
-                  <div className="w-10 h-16 rounded-lg bg-[#2B2B2B] flex items-center justify-center shrink-0 overflow-hidden">
+                  <div className="w-10 h-16 rounded-lg bg-[#243126] shrink-0 overflow-hidden">
                     {c.image_svgs?.[0] ? (
                       <img src={svgUrl(c.image_svgs[0])} alt="" className="w-full h-full object-cover" />
                     ) : (
-                      <span className="text-white text-xs">{c.content_type === 'carousel' ? '▤' : '▶'}</span>
+                      <div className="w-full h-full flex items-center justify-center text-white text-xs">▤</div>
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-gray-900 truncate">{c.hook}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{PILLAR_LABELS[c.pillar]} · {c.content_type === 'carousel' ? 'Carrousel' : 'Vidéo longue'}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{PILLAR_LABELS[c.pillar]}</p>
                   </div>
-                  <Eye className="h-4 w-4 text-gray-300 shrink-0" />
+                  <Eye className="h-5 w-5 text-gray-300 shrink-0" />
                 </button>
               ))}
             </div>
@@ -323,88 +260,128 @@ export default function HomePage() {
         )}
 
         {contents.length === 0 && !loading && (
-          <div className="text-center py-16 text-gray-400 text-sm">
-            Clique sur "Générer le contenu du jour" pour commencer
+          <div className="text-center py-20 text-gray-400 text-sm">
+            Lance la génération pour commencer
           </div>
         )}
       </div>
 
-      {/* Content modal */}
+      {/* Modal plein écran sur mobile */}
       {selected && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4" onClick={() => setSelected(null)}>
-          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between px-6 py-4 border-b border-stone-100">
-              <h2 className="font-bold text-gray-900 truncate">{selected.hook}</h2>
-              <button onClick={() => setSelected(null)} className="text-gray-400 hover:text-gray-600 text-xl">✕</button>
+        <div className="fixed inset-0 z-50 bg-white flex flex-col md:bg-black/60 md:items-center md:justify-center md:p-4">
+          <div className="flex flex-col h-full md:h-auto md:max-h-[92vh] md:w-full md:max-w-3xl md:rounded-2xl md:overflow-hidden bg-white">
+
+            {/* Header modal */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-stone-100 shrink-0">
+              <p className="font-bold text-gray-900 truncate text-sm flex-1 mr-3">{selected.hook}</p>
+              <button onClick={() => setSelected(null)} className="p-2 rounded-full bg-stone-100 text-gray-500">
+                <X className="h-5 w-5" />
+              </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 p-6">
-              {/* Slide preview */}
-              <div className="space-y-3">
-                <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16]">
-                  {selected.image_svgs?.[slideIdx] ? (
-                    <img
-                      src={svgUrl(selected.image_svgs[slideIdx])}
-                      alt={`Slide ${slideIdx + 1}`}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full p-4 text-center">
-                      <p className="text-sm font-medium text-gray-600">{selected.slides[slideIdx]?.text}</p>
-                    </div>
-                  )}
-                </div>
-                <div className="flex items-center justify-between">
-                  <button onClick={() => setSlideIdx((i) => Math.max(0, i - 1))} disabled={slideIdx === 0} className="p-1.5 rounded-lg hover:bg-stone-100 disabled:opacity-30">
-                    <ChevronLeft className="h-4 w-4" />
-                  </button>
-                  <span className="text-xs text-gray-400">Slide {slideIdx + 1} / {selected.slides.length}</span>
-                  <button onClick={() => setSlideIdx((i) => Math.min(selected.slides.length - 1, i + 1))} disabled={slideIdx === selected.slides.length - 1} className="p-1.5 rounded-lg hover:bg-stone-100 disabled:opacity-30">
-                    <ChevronRight className="h-4 w-4" />
-                  </button>
-                </div>
-                <button onClick={downloadAllSlides} disabled={downloading || exportingVideo} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#243126] rounded-xl text-white text-sm font-medium hover:bg-black disabled:opacity-60">
-                  {downloading ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
-                  {downloading ? 'Création du ZIP...' : 'Carrousel Instagram / TikTok (ZIP · PNG)'}
-                </button>
-                <button onClick={exportAsVideo} disabled={exportingVideo || downloading} className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#A63D2F] rounded-xl text-white text-sm font-medium hover:bg-[#8a3226] disabled:opacity-60">
-                  {exportingVideo ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Video className="h-4 w-4" />}
-                  {exportingVideo
-                    ? `Vidéo en cours (~${(selected?.slides.length ?? 0) * 4}s)...`
-                    : 'Télécharger en vidéo (TikTok)'}
-                </button>
-              </div>
+            {/* Tabs mobile */}
+            <div className="flex border-b border-stone-100 shrink-0 md:hidden">
+              <button
+                onClick={() => setTab('preview')}
+                className={`flex-1 py-3 text-sm font-semibold ${tab === 'preview' ? 'text-[#243126] border-b-2 border-[#243126]' : 'text-gray-400'}`}
+              >
+                Aperçu
+              </button>
+              <button
+                onClick={() => setTab('caption')}
+                className={`flex-1 py-3 text-sm font-semibold ${tab === 'caption' ? 'text-[#243126] border-b-2 border-[#243126]' : 'text-gray-400'}`}
+              >
+                Légende
+              </button>
+            </div>
 
-              {/* Details */}
-              <div className="space-y-4">
-                <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase mb-2">Slides</p>
-                  <div className="space-y-1.5">
-                    {selected.slides.map((s, i) => (
-                      <button key={i} onClick={() => setSlideIdx(i)}
-                        className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${i === slideIdx ? 'bg-[#2B2B2B] text-white' : 'bg-stone-50 text-gray-700 hover:bg-stone-100'}`}>
-                        <span className="opacity-40 mr-1">{i + 1}.</span>{s.text}
-                      </button>
-                    ))}
+            {/* Contenu scrollable */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="flex flex-col md:grid md:grid-cols-2 md:gap-6 md:p-6">
+
+                {/* Colonne aperçu */}
+                <div className={`space-y-3 p-4 md:p-0 ${tab === 'caption' ? 'hidden md:block' : ''}`}>
+                  <div className="bg-stone-100 rounded-xl overflow-hidden aspect-[9/16] max-h-[55vh] md:max-h-none">
+                    {selected.image_svgs?.[slideIdx] ? (
+                      <img
+                        src={svgUrl(selected.image_svgs[slideIdx])}
+                        alt={`Slide ${slideIdx + 1}`}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full p-4 text-center">
+                        <p className="text-sm font-medium text-gray-600">{selected.slides[slideIdx]?.text}</p>
+                      </div>
+                    )}
                   </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-xs font-semibold text-gray-400 uppercase">Légende TikTok</p>
-                    <button onClick={copyCaption} className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600">
-                      {copied ? <Check className="h-3 w-3 text-green-500" /> : <Copy className="h-3 w-3" />}
-                      {copied ? 'Copié !' : 'Copier'}
+                  {/* Navigation slides */}
+                  <div className="flex items-center justify-between">
+                    <button
+                      onClick={() => setSlideIdx((i) => Math.max(0, i - 1))}
+                      disabled={slideIdx === 0}
+                      className="p-3 rounded-xl bg-stone-100 disabled:opacity-30 active:scale-95 transition-transform"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <span className="text-sm text-gray-500 font-medium">
+                      {slideIdx + 1} / {selected.slides.length}
+                    </span>
+                    <button
+                      onClick={() => setSlideIdx((i) => Math.min(selected.slides.length - 1, i + 1))}
+                      disabled={slideIdx === selected.slides.length - 1}
+                      className="p-3 rounded-xl bg-stone-100 disabled:opacity-30 active:scale-95 transition-transform"
+                    >
+                      <ChevronRight className="h-5 w-5" />
                     </button>
                   </div>
-                  <div className="bg-stone-50 rounded-lg p-3 text-sm text-gray-700">{selected.caption}</div>
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {selected.hashtags.map((h) => (
-                      <span key={h} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">{h}</span>
-                    ))}
+                </div>
+
+                {/* Colonne légende */}
+                <div className={`space-y-4 p-4 md:p-0 ${tab === 'preview' ? 'hidden md:block' : ''}`}>
+                  <div>
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Slides</p>
+                    <div className="space-y-1.5">
+                      {selected.slides.map((s, i) => (
+                        <button
+                          key={i}
+                          onClick={() => { setSlideIdx(i); setTab('preview'); }}
+                          className={`w-full text-left px-3 py-2.5 rounded-xl text-sm transition-colors ${i === slideIdx ? 'bg-[#243126] text-white' : 'bg-stone-50 text-gray-700 active:bg-stone-100'}`}
+                        >
+                          <span className="opacity-40 mr-1">{i + 1}.</span>{s.text}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Légende TikTok</p>
+                      <button onClick={copyCaption} className="flex items-center gap-1 text-xs text-gray-400 active:text-green-500">
+                        {copied ? <Check className="h-3.5 w-3.5 text-green-500" /> : <Copy className="h-3.5 w-3.5" />}
+                        {copied ? 'Copié !' : 'Copier'}
+                      </button>
+                    </div>
+                    <div className="bg-stone-50 rounded-xl p-3 text-sm text-gray-700 leading-relaxed">{selected.caption}</div>
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {selected.hashtags.map((h) => (
+                        <span key={h} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">{h}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Bouton download sticky en bas */}
+            <div className="shrink-0 p-4 border-t border-stone-100 bg-white">
+              <button
+                onClick={downloadAllSlides}
+                disabled={downloading}
+                className="w-full flex items-center justify-center gap-2 py-4 bg-[#243126] rounded-2xl text-white font-bold text-base hover:bg-black disabled:opacity-60 active:scale-95 transition-transform"
+              >
+                {downloading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
+                {downloading ? 'Création du ZIP...' : '⬇ Télécharger le carrousel (PNG)'}
+              </button>
             </div>
           </div>
         </div>
