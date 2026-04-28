@@ -1,5 +1,24 @@
 import type { Metadata } from "next";
+import { Montserrat, Arimo, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const arimo = Arimo({
+  subsets: ["latin"],
+  variable: "--font-arimo",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +52,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="font-sans antialiased">{children}</body>
+      <body
+        className={`${montserrat.variable} ${arimo.variable} ${playfairDisplay.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Vert sauge moderne — confiance, conformité, positif
+        // Vert sauge — confiance, conformité, positif
         zen: {
           50:  "#eef9f4",
           100: "#d1f0e3",
@@ -36,9 +36,25 @@ const config: Config = {
           800: "#93333b",
           900: "#7a2d34",
         },
+        // Rose brand — Visible & Conforme Studio
+        brand: {
+          50:  "#fdf4f4",
+          100: "#fae6e6",
+          200: "#f5d0d0",
+          300: "#edb0b0",
+          400: "#e0a0a0",
+          500: "#cf9090",
+          600: "#bf7070",
+          700: "#a35555",
+          800: "#854040",
+          900: "#6e3535",
+        },
       },
       fontFamily: {
-        sans: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans:        ["var(--font-arimo)", "system-ui", "-apple-system", "sans-serif"],
+        montserrat:  ["var(--font-montserrat)", "sans-serif"],
+        arimo:       ["var(--font-arimo)", "sans-serif"],
+        serif:       ["var(--font-playfair)", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
