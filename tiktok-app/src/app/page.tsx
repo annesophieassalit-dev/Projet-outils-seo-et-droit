@@ -21,11 +21,23 @@ async function svgToCanvas(svg: string): Promise<HTMLCanvasElement> {
   canvas.width = 1080;
   canvas.height = 1920;
   const ctx = canvas.getContext('2d')!;
+  // Fond opaque par défaut — évite les PNG transparents qui s'affichent noirs sur TikTok
+  ctx.fillStyle = '#141414';
+  ctx.fillRect(0, 0, 1080, 1920);
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
   await new Promise<void>((resolve, reject) => {
     const img = new Image();
-    img.onload = () => { ctx.drawImage(img, 0, 0); resolve(); };
-    img.onerror = reject;
-    img.src = svgUrl(svg);
+    img.onload = () => {
+      // rAF garantit que le SVG est entièrement rendu avant drawImage
+      requestAnimationFrame(() => {
+        ctx.drawImage(img, 0, 0, 1080, 1920);
+        URL.revokeObjectURL(url);
+        resolve();
+      });
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(); };
+    img.src = url;
   });
   return canvas;
 }
