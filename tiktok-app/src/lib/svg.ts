@@ -141,9 +141,9 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${BG}"/>
   <rect x="0" y="0" width="${W}" height="8" fill="${t.ca}"/>
-  <text x="${W / 2}" y="480" text-anchor="middle" font-size="270" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.06">${idx + 1}</text>
-  <text x="${W / 2}" y="456" text-anchor="middle" font-size="218" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.32">${idx + 1}</text>
-  <rect x="${W / 2 - 96}" y="498" width="192" height="4" fill="${t.ca}" rx="2"/>
+  <text x="${W / 2}" y="${startY2 - 160}" text-anchor="middle" font-size="270" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.06">${idx + 1}</text>
+  <text x="${W / 2}" y="${startY2 - 184}" text-anchor="middle" font-size="218" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.32">${idx + 1}</text>
+  <rect x="${W / 2 - 96}" y="${startY2 - 138}" width="192" height="4" fill="${t.ca}" rx="2"/>
   ${textEls2}
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" opacity="0.18">${idx + 1} / ${total}</text>
 </svg>`;
