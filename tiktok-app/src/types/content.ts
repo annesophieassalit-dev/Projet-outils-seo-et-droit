@@ -1,5 +1,16 @@
 export type ContentType = 'carousel' | 'video_long';
-export type Pillar = 'vrai_faux' | 'cuisson_sans_energie' | 'stock_petit_budget' | 'checklist' | 'erreurs_frequentes' | 'penuries_possibles';
+
+export type Pillar =
+  | 'urgence'
+  | 'deconstruction_mythes'
+  | 'scenarios_realistes'
+  | 'experience_personnelle'
+  | 'micro_autonomie'
+  | 'budget'
+  | 'newsjacking'
+  | 'erreurs_frequentes'
+  | 'vrai_faux'
+  | 'checklist';
 
 export interface Slide {
   order: number;
@@ -19,15 +30,19 @@ export interface Content {
   hashtags: string[];
   status: 'draft' | 'ready';
   created_at: string;
-  image_svgs?: string[]; // SVG strings
-  themeIndex?: number;  // 0-4, visual theme of the post
+  image_svgs?: string[];
+  themeIndex?: number;
 }
 
 export const PILLAR_LABELS: Record<Pillar, string> = {
-  vrai_faux: 'Vrai / Faux',
-  cuisson_sans_energie: 'Cuisson sans énergie',
-  stock_petit_budget: 'Stock petit budget',
-  checklist: 'Checklist',
+  urgence: 'Urgence / Panique',
+  deconstruction_mythes: 'Déconstruction de mythes',
+  scenarios_realistes: 'Scénarios réalistes',
+  experience_personnelle: "J'ai testé",
+  micro_autonomie: 'Micro autonomie',
+  budget: 'Budget',
+  newsjacking: 'Actu / News',
   erreurs_frequentes: 'Erreurs fréquentes',
-  penuries_possibles: 'Pénuries possibles',
+  vrai_faux: 'Vrai / Faux',
+  checklist: 'Checklist',
 };

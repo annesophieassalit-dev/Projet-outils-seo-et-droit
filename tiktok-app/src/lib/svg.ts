@@ -42,13 +42,18 @@ function hookLayout(text: string, desired: number): { lines: string[]; fs: numbe
   return { lines: wrapLines(text, maxC), fs };
 }
 
-// Design dark premium — accent en alternance, fond unique quasi-noir
+// Design dark premium — 10 thèmes alignés sur les 10 formats éditoriaux
 const THEMES = [
-  { la: 'ERREUR',      ca: '#D4A843' }, // or/saffron
-  { la: 'ASTUCE',      ca: '#7A9E72' }, // vert sage clair (lisible sur noir)
-  { la: 'VRAI / FAUX', ca: '#C25B42' }, // rouge brique clair
-  { la: 'SAVAIS-TU ?', ca: '#D4A843' }, // or/saffron
-  { la: 'CHECKLIST',   ca: '#7A9E72' }, // vert sage
+  { la: 'URGENCE',     ca: '#C25B42' }, // rouge brique — alerte
+  { la: 'MYTHE',       ca: '#D4A843' }, // or — révélation
+  { la: 'SCÉNARIO',    ca: '#7A9E72' }, // vert sage — projection
+  { la: "J'AI TESTÉ",  ca: '#D4A843' }, // or — personnel
+  { la: 'AUTONOMIE',   ca: '#7A9E72' }, // vert sage — nature
+  { la: 'BUDGET',      ca: '#C25B42' }, // rouge brique — action
+  { la: 'ACTU',        ca: '#D4A843' }, // or — info
+  { la: 'ERREUR',      ca: '#C25B42' }, // rouge brique — alerte
+  { la: 'VRAI / FAUX', ca: '#D4A843' }, // or — débat
+  { la: 'CHECKLIST',   ca: '#7A9E72' }, // vert sage — liste
 ];
 
 const BG   = '#141414';
