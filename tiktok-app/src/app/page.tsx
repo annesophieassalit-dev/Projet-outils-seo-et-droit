@@ -190,6 +190,7 @@ export default function HomePage() {
     try {
       const canvases = await Promise.all(svgs.map(svg => svgToCanvas(svg)));
       const audioCtx = new AudioContext();
+      if (audioCtx.state === 'suspended') await audioCtx.resume();
       const audioDest = audioCtx.createMediaStreamDestination();
 
       const ttsTexts = selected.slides.map(s =>
@@ -208,6 +209,22 @@ export default function HomePage() {
         } catch { return null; }
       }));
 
+      const hasAudio = audioBuffers.some(b => b !== null);
+      if (!hasAudio) {
+        audioCtx.close();
+        alert('Voix indisponible — ajoute OPENAI_API_KEY dans Vercel → Settings → Environment Variables, puis redéploie.');
+        setExportingVoice(false);
+        return;
+      }
+
+      // Connecte un silence constant pour que le stream audio soit actif dès le départ
+      const silenceOsc = audioCtx.createOscillator();
+      const silenceGain = audioCtx.createGain();
+      silenceGain.gain.value = 0;
+      silenceOsc.connect(silenceGain);
+      silenceGain.connect(audioDest);
+      silenceOsc.start();
+
       const display = document.createElement('canvas');
       display.width = 1080;
       display.height = 1920;
@@ -222,11 +239,11 @@ export default function HomePage() {
         MediaRecorder.isTypeSupported('video/mp4;codecs=avc1') ? 'video/mp4;codecs=avc1' :
         MediaRecorder.isTypeSupported('video/mp4') ? 'video/mp4' : 'video/webm;codecs=vp9';
       const ext = mimeType.startsWith('video/mp4') ? 'mp4' : 'webm';
-      const recorder = new MediaRecorder(combined, { mimeType, videoBitsPerSecond: 8_000_000 });
+      const recorder = new MediaRecorder(combined, { mimeType, videoBitsPerSecond: 8_000_000, audioBitsPerSecond: 128_000 });
       const chunks: Blob[] = [];
       recorder.ondataavailable = (e) => { if (e.data.size > 0) chunks.push(e.data); };
-      recorder.start();
-      await new Promise(r => setTimeout(r, 80));
+      recorder.start(100);
+      await new Promise(r => setTimeout(r, 200));
 
       for (let i = 0; i < canvases.length; i++) {
         ctx.drawImage(canvases[i], 0, 0);
@@ -245,6 +262,7 @@ export default function HomePage() {
         }
       }
 
+      silenceOsc.stop();
       await new Promise<void>(resolve => { recorder.onstop = () => resolve(); recorder.stop(); });
       combined.getTracks().forEach(t => t.stop());
       audioCtx.close();
@@ -256,8 +274,9 @@ export default function HomePage() {
       a.download = `${safeName || 'video'}_voix.${ext}`;
       a.click();
       URL.revokeObjectURL(a.href);
-    } catch {
-      alert('Erreur voix. Vérifier la clé OPENAI_API_KEY dans Vercel.');
+    } catch (e) {
+      console.error(e);
+      alert('Export voix échoué. Utilise Chrome ou Edge sur Android — iOS ne supporte pas cette fonctionnalité.');
     }
     setExportingVoice(false);
   };
