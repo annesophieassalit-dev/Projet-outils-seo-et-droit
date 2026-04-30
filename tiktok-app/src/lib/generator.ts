@@ -13,7 +13,17 @@ INTERDIT dans les hooks : toute formulation santé-peur ("va te rendre malade", 
 DURÉES DE CONSERVATION : cite uniquement des durées réalistes en conditions domestiques normales. Jamais > 5 ans. Riz blanc 2-5 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
 Réponds UNIQUEMENT en JSON valide sans markdown.`;
 
-const HASHTAGS = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
+const HASHTAGS_TIKTOK = ['#organisationalimentaire','#stockalimentaire','#anticipation','#autonomiealimentaire','#conseilspratiques','#preparationsimple','#stockutile','#vieorganisee'];
+
+// Instagram : mix petit/moyen/grand volume pour discovery
+export const HASHTAGS_INSTA = [
+  // Petits — très ciblés (5k-50k posts)
+  '#stockalimentaire','#reservealimentaire','#autonomiealimentaire','#stockpilingfrance',
+  // Moyens — niche (50k-500k)
+  '#organisationalimentaire','#preparationrepas','#conservesmaison','#economiedomestique','#frugalite','#vieorganisee',
+  // Grands — reach (500k-5M)
+  '#astucescuisine','#astucesvie','#antigaspi','#mealprep','#organisation','#conseilscuisine',
+];
 
 // 10 formats — weight 3 = fréquent, weight 2 = normal, weight 1 = rare
 const FORMATS = [
@@ -170,13 +180,20 @@ JSON exact :
   const cleaned = raw.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
   const data = JSON.parse(cleaned);
 
-  const hashtags = Array.from(new Set((data.hashtags as string[]).concat(HASHTAGS.slice(0, 4)))).slice(0, 8);
+  const hashtags = Array.from(new Set((data.hashtags as string[]).concat(HASHTAGS_TIKTOK.slice(0, 4)))).slice(0, 8);
 
   const rawSlides = (data.slides as Slide[]).filter(s => s.type !== 'conclusion');
   const slides: Slide[] = [
     ...rawSlides,
     { order: rawSlides.length + 1, type: 'conclusion', text: 'Lien en bio', highlight: [] },
   ];
+
+  // Hashtags Instagram : 4 ciblés du sujet + mix petit/moyen/grand volume
+  const instaTopicTags = (data.hashtags as string[]).slice(0, 4);
+  const hashtags_insta = Array.from(new Set([
+    ...instaTopicTags,
+    ...HASHTAGS_INSTA,
+  ])).slice(0, 14);
 
   const content: Content = {
     id: generateId(),
@@ -187,6 +204,7 @@ JSON exact :
     slides,
     caption: data.caption,
     hashtags,
+    hashtags_insta,
     status: 'ready',
     created_at: new Date().toISOString(),
     themeIndex: safeIdx,

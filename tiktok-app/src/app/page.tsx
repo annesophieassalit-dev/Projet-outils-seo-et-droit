@@ -51,6 +51,7 @@ export default function HomePage() {
   const [slideIdx, setSlideIdx] = useState(0);
   const [copied, setCopied] = useState(false);
   const [copiedHook, setCopiedHook] = useState(false);
+  const [copiedInsta, setCopiedInsta] = useState(false);
   const [customPillar, setCustomPillar] = useState<Pillar>('checklist');
   const [customType, setCustomType] = useState<ContentType>('carousel');
   const [customTopic, setCustomTopic] = useState('');
@@ -305,6 +306,14 @@ export default function HomePage() {
     setTimeout(() => setCopiedHook(false), 2000);
   };
 
+  const copyInsta = () => {
+    if (!selected) return;
+    const tags = selected.hashtags_insta || [];
+    navigator.clipboard.writeText(`${selected.caption}\n\n${tags.join(' ')}`);
+    setCopiedInsta(true);
+    setTimeout(() => setCopiedInsta(false), 2000);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: '#0D0D0D' }}>
 
@@ -556,12 +565,36 @@ export default function HomePage() {
                     <div className="rounded-xl p-3 text-sm leading-relaxed" style={{ background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.75)' }}>
                       {selected.caption}
                     </div>
-                    <div className="flex flex-wrap gap-1.5 mt-2">
+                    <p className="text-xs mt-1.5 mb-1" style={{ color: 'rgba(255,255,255,0.25)' }}>TikTok</p>
+                    <div className="flex flex-wrap gap-1.5">
                       {selected.hashtags.map((h) => (
                         <span key={h} className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(122,158,114,0.15)', color: '#7A9E72' }}>{h}</span>
                       ))}
                     </div>
                   </div>
+
+                  {selected.hashtags_insta && selected.hashtags_insta.length > 0 && (
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.3)' }}>Instagram Reels</p>
+                        <button onClick={copyInsta} className="flex items-center gap-1 text-xs transition-colors" style={{ color: copiedInsta ? '#7A9E72' : 'rgba(255,255,255,0.35)' }}>
+                          {copiedInsta ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                          {copiedInsta ? 'Copié !' : 'Copier légende + #'}
+                        </button>
+                      </div>
+                      <div className="rounded-xl p-3 text-xs leading-relaxed mb-2" style={{ background: 'rgba(195,105,231,0.08)', border: '1px solid rgba(195,105,231,0.15)', color: 'rgba(255,255,255,0.5)' }}>
+                        <p className="font-semibold mb-1" style={{ color: 'rgba(255,255,255,0.7)' }}>Conseils Reels :</p>
+                        <p>• Ajoute un son tendance dans Instagram (pas le tien)</p>
+                        <p>• Poste entre 18h–21h en semaine</p>
+                        <p>• 1ère ligne = ton hook exact ci-dessus</p>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {selected.hashtags_insta.map((h) => (
+                          <span key={h} className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(195,105,231,0.12)', color: '#C369E7' }}>{h}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

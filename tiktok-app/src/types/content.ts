@@ -28,6 +28,7 @@ export interface Content {
   slides: Slide[];
   caption: string;
   hashtags: string[];
+  hashtags_insta?: string[];
   status: 'draft' | 'ready';
   created_at: string;
   image_svgs?: string[];
