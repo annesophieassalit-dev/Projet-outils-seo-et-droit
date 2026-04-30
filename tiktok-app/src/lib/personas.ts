@@ -18,6 +18,7 @@ export interface Persona {
   id: PersonaId;
   name: string;
   tagline: string;
+  ctaSubtitle: string;
   system: string;
   formats: Format[];
   themes: PersonaTheme[];
@@ -30,6 +31,7 @@ const PREVOIR_UTILE: Persona = {
   id: 'prevoir_utile',
   name: 'PRÉVOIR UTILE',
   tagline: 'TikTok Auto',
+  ctaSubtitle: 'Guide PDF — 11€',
   system: `Tu es directeur créatif TikTok spécialisé en contenus viraux.
 Thème : préparation alimentaire intelligente — anticiper sans paniquer.
 Ton : direct, factuel, utile. JAMAIS survivaliste, catastrophiste, complotiste.
@@ -70,6 +72,7 @@ const MAMAN_ORGANISEE: Persona = {
   id: 'maman_organisee',
   name: 'MAMAN ORGANISÉE',
   tagline: 'Foyer sans galères',
+  ctaSubtitle: 'Guide famille & potager — 11€',
   system: `Tu es créatrice de contenu TikTok/Instagram spécialisée dans la vie de famille organisée.
 Positionnement : "Anticiper le quotidien d'un foyer sans paniquer."
 Audience : mamans, femmes au foyer, mères de famille qui gèrent la maison et les repas.
