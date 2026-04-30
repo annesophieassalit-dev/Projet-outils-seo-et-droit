@@ -1,21 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateContent, generateTopicsAndContent } from '@/lib/generator';
-import type { ContentType, Pillar } from '@/types/content';
+import type { ContentType, PersonaId, Pillar } from '@/types/content';
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { action, type, pillar, topic } = body;
+  const { action, type, pillar, topic, persona } = body;
+  const personaId: PersonaId = persona === 'maman_organisee' ? 'maman_organisee' : 'prevoir_utile';
 
   try {
     if (action === 'generate_daily') {
-      const contents = await generateTopicsAndContent();
+      const contents = await generateTopicsAndContent(personaId);
       return NextResponse.json({ contents });
     }
 
     if (action === 'generate_one') {
       const content = await generateContent(
         (type || 'carousel') as ContentType,
-        (pillar || 'checklist') as Pillar,
+        personaId,
+        (pillar || undefined) as Pillar | undefined,
         topic,
       );
       return NextResponse.json({ content });

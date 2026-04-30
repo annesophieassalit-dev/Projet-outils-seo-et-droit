@@ -1,10 +1,12 @@
 import type { Slide } from '@/types/content';
+import type { PersonaTheme } from './personas';
 
 const W = 1080;
 const H = 1920;
 const HOOK_TW = 800;
 const TW = W - 160;
 const FONT = "'Montserrat','Arial Black','Helvetica Neue',Arial,sans-serif";
+const TEXT = '#F5F1E8';
 
 function esc(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -42,50 +44,34 @@ function hookLayout(text: string, desired: number): { lines: string[]; fs: numbe
   return { lines: wrapLines(text, maxC), fs };
 }
 
-// Design dark premium — 10 thèmes alignés sur les 10 formats éditoriaux
-const THEMES = [
-  { la: 'URGENCE',     ca: '#C25B42' }, // rouge brique — alerte
-  { la: 'MYTHE',       ca: '#D4A843' }, // or — révélation
-  { la: 'SCÉNARIO',    ca: '#7A9E72' }, // vert sage — projection
-  { la: "J'AI TESTÉ",  ca: '#D4A843' }, // or — personnel
-  { la: 'AUTONOMIE',   ca: '#7A9E72' }, // vert sage — nature
-  { la: 'BUDGET',      ca: '#C25B42' }, // rouge brique — action
-  { la: 'ACTU',        ca: '#D4A843' }, // or — info
-  { la: 'ERREUR',      ca: '#C25B42' }, // rouge brique — alerte
-  { la: 'VRAI / FAUX', ca: '#D4A843' }, // or — débat
-  { la: 'CHECKLIST',   ca: '#7A9E72' }, // vert sage — liste
-];
+export function slideToSvg(slide: Slide, idx: number, total: number, theme: PersonaTheme, personaName: string): string {
+  const { ca, bg, card } = theme;
 
-const BG   = '#141414';
-const CARD  = '#252525';
-const TEXT  = '#F5F1E8';
-
-export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 0): string {
-  const t = THEMES[themeIdx % THEMES.length];
-
-  // ── CONCLUSION : slide CTA "Lien en bio" ──────────────────────────────────
+  // ── CONCLUSION ───────────────────────────────────────────────────────────────
   if (slide.type === 'conclusion') {
+    const isMaman = bg.startsWith('#5C') || bg.startsWith('#3D');
+    const ctaBg = isMaman ? bg : '#243126';
+    const ctaColor = isMaman ? ca : '#D6B98C';
     return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <rect width="${W}" height="${H}" fill="#243126"/>
-  <rect x="0" y="0" width="${W}" height="6" fill="${t.ca}"/>
-  <rect x="0" y="${H - 6}" width="${W}" height="6" fill="${t.ca}" opacity="0.35"/>
+  <rect width="${W}" height="${H}" fill="${ctaBg}"/>
+  <rect x="0" y="0" width="${W}" height="6" fill="${ca}"/>
+  <rect x="0" y="${H - 6}" width="${W}" height="6" fill="${ca}" opacity="0.35"/>
   <text x="${W / 2}" y="830" text-anchor="middle" font-size="118" fill="#FFFFFF" font-family="${FONT}" font-weight="900">Lien en bio 👆</text>
-  <rect x="${W / 2 - 180}" y="880" width="360" height="4" fill="#D6B98C" rx="2"/>
-  <text x="${W / 2}" y="990" text-anchor="middle" font-size="68" fill="#D6B98C" font-family="${FONT}" font-weight="700">Guide PDF — 11€</text>
-  <text x="${W / 2}" y="${H - 80}" text-anchor="middle" font-size="36" fill="#FFFFFF" font-family="${FONT}" font-weight="700" letter-spacing="10" opacity="0.55">PRÉVOIR UTILE</text>
+  <rect x="${W / 2 - 180}" y="880" width="360" height="4" fill="${ctaColor}" rx="2"/>
+  <text x="${W / 2}" y="990" text-anchor="middle" font-size="68" fill="${ctaColor}" font-family="${FONT}" font-weight="700">Guide — 11€</text>
+  <text x="${W / 2}" y="${H - 80}" text-anchor="middle" font-size="36" fill="#FFFFFF" font-family="${FONT}" font-weight="700" letter-spacing="10" opacity="0.55">${esc(personaName)}</text>
 </svg>`;
   }
 
-  // ── HOOK ──────────────────────────────────────────────────────────────────
+  // ── HOOK ────────────────────────────────────────────────────────────────────
   if (slide.type === 'hook') {
-    const text = slide.text; // mixed case — pas de toUpperCase()
+    const text = slide.text;
     const len = text.length;
     const desired = len <= 20 ? 168 : len <= 32 ? 148 : len <= 48 ? 120 : len <= 65 ? 100 : 84;
     const { lines, fs } = hookLayout(text, desired);
     const lh = Math.round(fs * 1.24);
     const blockH = lines.length * lh;
-
     const firstY = Math.round(H * 0.50 - blockH / 2 + fs);
     const padV = 160;
     const padH = 80;
@@ -99,7 +85,7 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
       const m = (slide.highlight || []).find(h => line.toLowerCase().includes(h.toLowerCase()));
       if (m) {
         const lo = line.toLowerCase().indexOf(m.toLowerCase());
-        return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="${FONT}" font-weight="800"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${t.ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
+        return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="${FONT}" font-weight="800"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
       }
       return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${TEXT}" font-family="${FONT}" font-weight="800">${esc(line)}</text>`;
     }).join('\n  ');
@@ -111,17 +97,17 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
       <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000000" flood-opacity="0.65"/>
     </filter>
   </defs>
-  <rect width="${W}" height="${H}" fill="${BG}"/>
-  <rect x="0" y="0" width="${W}" height="5" fill="${t.ca}" opacity="0.75"/>
-  <text x="${W / 2}" y="${cardY - 60}" text-anchor="middle" font-size="48" fill="${t.ca}" font-family="${FONT}" font-weight="700" letter-spacing="7" opacity="0.92">${esc(t.la)}</text>
-  <rect x="${W / 2 - 70}" y="${cardY - 24}" width="140" height="3" fill="${t.ca}" rx="1" opacity="0.45"/>
-  <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${CARD}" rx="24" filter="url(#cs)"/>
+  <rect width="${W}" height="${H}" fill="${bg}"/>
+  <rect x="0" y="0" width="${W}" height="5" fill="${ca}" opacity="0.75"/>
+  <text x="${W / 2}" y="${cardY - 60}" text-anchor="middle" font-size="48" fill="${ca}" font-family="${FONT}" font-weight="700" letter-spacing="7" opacity="0.92">${esc(theme.la)}</text>
+  <rect x="${W / 2 - 70}" y="${cardY - 24}" width="140" height="3" fill="${ca}" rx="1" opacity="0.45"/>
+  <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${card}" rx="24" filter="url(#cs)"/>
   ${textEls}
-  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">PRÉVOIR UTILE</text>
+  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
 </svg>`;
   }
 
-  // ── INFO / COMPLEMENT ─────────────────────────────────────────────────────
+  // ── INFO / COMPLEMENT ────────────────────────────────────────────────────────
   const len2 = slide.text.length;
   const desired2 = len2 <= 38 ? 84 : len2 <= 58 ? 74 : len2 <= 78 ? 64 : 57;
   const fs2 = safeFontSize(desired2, slide.text);
@@ -137,23 +123,23 @@ export function slideToSvg(slide: Slide, idx: number, total: number, themeIdx = 
     const m = (slide.highlight || []).find(h => line.toLowerCase().includes(h.toLowerCase()));
     if (m) {
       const lo = line.toLowerCase().indexOf(m.toLowerCase());
-      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" font-family="${FONT}" font-weight="700"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${t.ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
+      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" font-family="${FONT}" font-weight="700"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
     }
     return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" fill="${TEXT}" font-family="${FONT}" font-weight="700">${esc(line)}</text>`;
   }).join('\n  ');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <rect width="${W}" height="${H}" fill="${BG}"/>
-  <rect x="0" y="0" width="${W}" height="8" fill="${t.ca}"/>
-  <text x="${W / 2}" y="${startY2 - 160}" text-anchor="middle" font-size="270" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.06">${idx + 1}</text>
-  <text x="${W / 2}" y="${startY2 - 184}" text-anchor="middle" font-size="218" fill="${t.ca}" font-family="${FONT}" font-weight="900" opacity="0.32">${idx + 1}</text>
-  <rect x="${W / 2 - 96}" y="${startY2 - 138}" width="192" height="4" fill="${t.ca}" rx="2"/>
+  <rect width="${W}" height="${H}" fill="${bg}"/>
+  <rect x="0" y="0" width="${W}" height="8" fill="${ca}"/>
+  <text x="${W / 2}" y="${startY2 - 160}" text-anchor="middle" font-size="270" fill="${ca}" font-family="${FONT}" font-weight="900" opacity="0.06">${idx + 1}</text>
+  <text x="${W / 2}" y="${startY2 - 184}" text-anchor="middle" font-size="218" fill="${ca}" font-family="${FONT}" font-weight="900" opacity="0.32">${idx + 1}</text>
+  <rect x="${W / 2 - 96}" y="${startY2 - 138}" width="192" height="4" fill="${ca}" rx="2"/>
   ${textEls2}
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" opacity="0.18">${idx + 1} / ${total}</text>
 </svg>`;
 }
 
-export function slidesToSvgs(slides: Slide[], themeIdx = 0): string[] {
-  return slides.map((s, i) => slideToSvg(s, i, slides.length, themeIdx));
+export function slidesToSvgs(slides: Slide[], theme: PersonaTheme, personaName: string): string[] {
+  return slides.map((s, i) => slideToSvg(s, i, slides.length, theme, personaName));
 }

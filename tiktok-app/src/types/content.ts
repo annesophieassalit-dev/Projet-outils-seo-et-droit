@@ -1,4 +1,5 @@
 export type ContentType = 'carousel' | 'video_long';
+export type PersonaId = 'prevoir_utile' | 'maman_organisee';
 
 export type Pillar =
   | 'urgence'
@@ -10,7 +11,12 @@ export type Pillar =
   | 'newsjacking'
   | 'erreurs_frequentes'
   | 'vrai_faux'
-  | 'checklist';
+  | 'checklist'
+  | 'repas_debrouille'
+  | 'enfants'
+  | 'organisation'
+  | 'produits_cles'
+  | 'mini_systemes';
 
 export interface Slide {
   order: number;
@@ -21,6 +27,7 @@ export interface Slide {
 
 export interface Content {
   id: string;
+  persona: PersonaId;
   content_type: ContentType;
   pillar: Pillar;
   title: string;
@@ -36,14 +43,19 @@ export interface Content {
 }
 
 export const PILLAR_LABELS: Record<Pillar, string> = {
-  urgence: 'Urgence / Panique',
-  deconstruction_mythes: 'Déconstruction de mythes',
-  scenarios_realistes: 'Scénarios réalistes',
+  urgence: 'Urgence',
+  deconstruction_mythes: 'Mythe',
+  scenarios_realistes: 'Scénario',
   experience_personnelle: "J'ai testé",
   micro_autonomie: 'Micro autonomie',
   budget: 'Budget',
-  newsjacking: 'Actu / News',
-  erreurs_frequentes: 'Erreurs fréquentes',
+  newsjacking: 'Actu',
+  erreurs_frequentes: 'Erreur',
   vrai_faux: 'Vrai / Faux',
   checklist: 'Checklist',
+  repas_debrouille: 'Repas débrouille',
+  enfants: 'Enfants',
+  organisation: 'Organisation',
+  produits_cles: 'Produits clés',
+  mini_systemes: 'Mini système',
 };

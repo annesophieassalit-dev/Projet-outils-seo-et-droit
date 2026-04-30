@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import JSZip from "jszip";
 import { Zap, RefreshCw, Eye, Copy, Check, ChevronLeft, ChevronRight, Download, X, Video, Mic } from "lucide-react";
 import { PILLAR_LABELS } from "@/types/content";
-import type { Content, ContentType, Pillar } from "@/types/content";
+import type { Content, ContentType, PersonaId, Pillar } from "@/types/content";
+import { PERSONAS } from "@/lib/personas";
 
 const PILLARS = Object.entries(PILLAR_LABELS) as [Pillar, string][];
 
@@ -45,6 +46,7 @@ async function svgToCanvas(svg: string): Promise<HTMLCanvasElement> {
 const STORAGE_KEY = 'tiktok_contents';
 
 export default function HomePage() {
+  const [persona, setPersona] = useState<PersonaId>('prevoir_utile');
   const [contents, setContents] = useState<Content[]>([]);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState<Content | null>(null);
@@ -67,7 +69,7 @@ export default function HomePage() {
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'generate_daily' }),
+        body: JSON.stringify({ action: 'generate_daily', persona }),
       });
       const data = await res.json();
       if (data.error) alert('Erreur : ' + data.error);
@@ -86,6 +88,7 @@ export default function HomePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'generate_one',
+          persona,
           type: customType,
           pillar: customPillar,
           topic: customTopic.trim() || undefined,
@@ -314,25 +317,43 @@ export default function HomePage() {
     setTimeout(() => setCopiedInsta(false), 2000);
   };
 
+  const p = PERSONAS[persona];
+  const accent = persona === 'maman_organisee' ? '#FF3D9A' : '#D4A843';
+  const visibleContents = contents.filter(c => c.persona === persona);
+
   return (
     <div className="min-h-screen" style={{ background: '#0D0D0D' }}>
 
       {/* Header */}
       <header style={{ background: '#141414', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-        className="text-white px-4 py-3 flex items-center justify-between sticky top-0 z-10">
-        <div>
-          <h1 className="font-black text-base tracking-widest text-white">PRÉVOIR UTILE</h1>
-          <p className="text-xs leading-none mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>TikTok Auto</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.45)' }}>
-            {contents.length} contenu{contents.length > 1 ? 's' : ''}
-          </span>
-          {contents.length > 0 && (
-            <button onClick={clearAll} className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,60,60,0.12)', color: '#ff6b6b' }}>
-              Effacer
+        className="text-white px-4 py-3 sticky top-0 z-10 space-y-2">
+        {/* Sélecteur de persona */}
+        <div className="flex gap-2">
+          {(['prevoir_utile', 'maman_organisee'] as PersonaId[]).map(pid => (
+            <button
+              key={pid}
+              onClick={() => setPersona(pid)}
+              className="flex-1 py-2 rounded-xl text-xs font-black tracking-wider transition-all"
+              style={pid === persona
+                ? { background: pid === 'maman_organisee' ? '#FF3D9A' : '#D4A843', color: '#0D0D0D' }
+                : { background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.45)' }}
+            >
+              {PERSONAS[pid].name}
             </button>
-          )}
+          ))}
+        </div>
+        <div className="flex items-center justify-between">
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{p.tagline}</p>
+          <div className="flex items-center gap-2">
+            <span className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.45)' }}>
+              {visibleContents.length} contenu{visibleContents.length > 1 ? 's' : ''}
+            </span>
+            {visibleContents.length > 0 && (
+              <button onClick={clearAll} className="text-xs px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,60,60,0.12)', color: '#ff6b6b' }}>
+                Effacer
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
@@ -346,7 +367,7 @@ export default function HomePage() {
             onClick={generateDaily}
             disabled={loading}
             className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
-            style={{ background: '#D4A843', color: '#0D0D0D' }}
+            style={{ background: accent, color: '#0D0D0D' }}
           >
             {loading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
             {loading ? 'Génération en cours...' : 'Générer le contenu du jour'}
@@ -400,7 +421,7 @@ export default function HomePage() {
               onClick={generateOne}
               disabled={generating}
               className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
-              style={{ background: '#7A9E72', color: '#0D0D0D' }}
+              style={{ background: accent, color: '#0D0D0D', filter: 'brightness(0.85)' }}
             >
               {generating ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
               {generating ? 'Génération...' : 'Générer ce sujet'}
@@ -409,18 +430,18 @@ export default function HomePage() {
         </div>
 
         {/* Liste des contenus */}
-        {contents.length > 0 && (
+        {visibleContents.length > 0 && (
           <div className="rounded-2xl overflow-hidden" style={{ background: '#1A1A1A', border: '1px solid rgba(255,255,255,0.07)' }}>
             <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <h2 className="font-bold text-white">Mes contenus</h2>
             </div>
             <div>
-              {contents.map((c, idx) => (
+              {visibleContents.map((c, idx) => (
                 <button
                   key={c.id}
                   onClick={() => openContent(c)}
                   className="w-full flex items-center gap-4 px-4 py-4 text-left transition-colors active:opacity-70"
-                  style={{ borderBottom: idx < contents.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}
+                  style={{ borderBottom: idx < visibleContents.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}
                 >
                   <div className="w-10 h-16 rounded-lg shrink-0 overflow-hidden" style={{ background: '#252525' }}>
                     {c.image_svgs?.[0] ? (
@@ -440,7 +461,7 @@ export default function HomePage() {
           </div>
         )}
 
-        {contents.length === 0 && !loading && (
+        {visibleContents.length === 0 && !loading && (
           <div className="text-center py-20 text-sm" style={{ color: 'rgba(255,255,255,0.2)' }}>
             Lance la génération pour commencer
           </div>
@@ -465,14 +486,14 @@ export default function HomePage() {
               <button
                 onClick={() => setTab('preview')}
                 className="flex-1 py-3 text-sm font-semibold transition-colors"
-                style={tab === 'preview' ? { color: '#D4A843', borderBottom: '2px solid #D4A843' } : { color: 'rgba(255,255,255,0.35)' }}
+                style={tab === 'preview' ? { color: accent, borderBottom: `2px solid ${accent}` } : { color: 'rgba(255,255,255,0.35)' }}
               >
                 Aperçu
               </button>
               <button
                 onClick={() => setTab('caption')}
                 className="flex-1 py-3 text-sm font-semibold transition-colors"
-                style={tab === 'caption' ? { color: '#D4A843', borderBottom: '2px solid #D4A843' } : { color: 'rgba(255,255,255,0.35)' }}
+                style={tab === 'caption' ? { color: accent, borderBottom: `2px solid ${accent}` } : { color: 'rgba(255,255,255,0.35)' }}
               >
                 Légende
               </button>
@@ -532,7 +553,7 @@ export default function HomePage() {
                           onClick={() => { setSlideIdx(i); setTab('preview'); }}
                           className="w-full text-left px-3 py-2.5 rounded-xl text-sm transition-colors"
                           style={i === slideIdx
-                            ? { background: '#D4A843', color: '#0D0D0D' }
+                            ? { background: accent, color: '#0D0D0D' }
                             : { background: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.7)' }}
                         >
                           <span className="opacity-40 mr-1">{i + 1}.</span>{s.text}
@@ -549,7 +570,7 @@ export default function HomePage() {
                         {copiedHook ? 'Copié !' : 'Copier'}
                       </button>
                     </div>
-                    <div className="rounded-xl px-4 py-3 font-black text-base leading-snug" style={{ background: 'rgba(212,168,67,0.1)', border: '1px solid rgba(212,168,67,0.25)', color: '#D4A843' }}>
+                    <div className="rounded-xl px-4 py-3 font-black text-base leading-snug" style={{ background: `${accent}18`, border: `1px solid ${accent}40`, color: accent }}>
                       {selected.hook}
                     </div>
                   </div>
@@ -605,7 +626,7 @@ export default function HomePage() {
                 onClick={downloadAllSlides}
                 disabled={downloading || exportingVideo}
                 className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-sm tracking-wide disabled:opacity-40 active:scale-95 transition-transform"
-                style={{ background: '#D4A843', color: '#0D0D0D' }}
+                style={{ background: accent, color: '#0D0D0D' }}
               >
                 {downloading ? <RefreshCw className="h-5 w-5 animate-spin" /> : <Download className="h-5 w-5" />}
                 {downloading ? 'Création du ZIP...' : '⬇ Carrousel PNG (Instagram / TikTok)'}
@@ -624,7 +645,7 @@ export default function HomePage() {
                   onClick={exportAsVideoWithVoice}
                   disabled={exportingVoice || downloading || exportingVideo}
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm disabled:opacity-40 active:scale-95 transition-transform"
-                  style={{ background: 'rgba(212,168,67,0.15)', color: '#D4A843' }}
+                  style={{ background: `${accent}25`, color: accent }}
                 >
                   {exportingVoice ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Mic className="h-4 w-4" />}
                   {exportingVoice ? 'Voix...' : 'MP4 + Voix'}
