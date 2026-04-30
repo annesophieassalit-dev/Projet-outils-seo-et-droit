@@ -128,7 +128,7 @@ JSON exact :
     themeIndex: safeIdx,
   };
 
-  content.image_svgs = slidesToSvgs(slides, theme, persona.name);
+  content.image_svgs = slidesToSvgs(slides, theme, persona.name, persona.ctaSubtitle);
   return content;
 }
 

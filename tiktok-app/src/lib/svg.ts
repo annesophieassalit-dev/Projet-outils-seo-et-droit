@@ -44,7 +44,7 @@ function hookLayout(text: string, desired: number): { lines: string[]; fs: numbe
   return { lines: wrapLines(text, maxC), fs };
 }
 
-export function slideToSvg(slide: Slide, idx: number, total: number, theme: PersonaTheme, personaName: string): string {
+export function slideToSvg(slide: Slide, idx: number, total: number, theme: PersonaTheme, personaName: string, ctaSubtitle = 'Guide PDF — 11€'): string {
   const { ca, bg, card } = theme;
 
   // ── CONCLUSION ───────────────────────────────────────────────────────────────
@@ -140,6 +140,6 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
 </svg>`;
 }
 
-export function slidesToSvgs(slides: Slide[], theme: PersonaTheme, personaName: string): string[] {
-  return slides.map((s, i) => slideToSvg(s, i, slides.length, theme, personaName));
+export function slidesToSvgs(slides: Slide[], theme: PersonaTheme, personaName: string, ctaSubtitle = 'Guide PDF — 11€'): string[] {
+  return slides.map((s, i) => slideToSvg(s, i, slides.length, theme, personaName, ctaSubtitle));
 }
