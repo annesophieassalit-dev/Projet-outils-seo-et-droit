@@ -50,6 +50,7 @@ export default function HomePage() {
   const [selected, setSelected] = useState<Content | null>(null);
   const [slideIdx, setSlideIdx] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [copiedHook, setCopiedHook] = useState(false);
   const [customPillar, setCustomPillar] = useState<Pillar>('checklist');
   const [customType, setCustomType] = useState<ContentType>('carousel');
   const [customTopic, setCustomTopic] = useState('');
@@ -297,6 +298,13 @@ export default function HomePage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const copyHook = () => {
+    if (!selected) return;
+    navigator.clipboard.writeText(selected.hook);
+    setCopiedHook(true);
+    setTimeout(() => setCopiedHook(false), 2000);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: '#0D0D0D' }}>
 
@@ -521,6 +529,19 @@ export default function HomePage() {
                           <span className="opacity-40 mr-1">{i + 1}.</span>{s.text}
                         </button>
                       ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.3)' }}>Hook — 1ère ligne</p>
+                      <button onClick={copyHook} className="flex items-center gap-1 text-xs transition-colors" style={{ color: copiedHook ? '#7A9E72' : 'rgba(255,255,255,0.35)' }}>
+                        {copiedHook ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                        {copiedHook ? 'Copié !' : 'Copier'}
+                      </button>
+                    </div>
+                    <div className="rounded-xl px-4 py-3 font-black text-base leading-snug" style={{ background: 'rgba(212,168,67,0.1)', border: '1px solid rgba(212,168,67,0.25)', color: '#D4A843' }}>
+                      {selected.hook}
                     </div>
                   </div>
 
