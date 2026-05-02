@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd instagram-webapp && npm install && npm run build",
+  "outputDirectory": "instagram-webapp/.next",
+  "installCommand": "cd instagram-webapp && npm install",
+  "framework": "nextjs"
+}
