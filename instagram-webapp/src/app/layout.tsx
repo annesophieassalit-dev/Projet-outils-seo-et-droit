@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 { href: "/carousels",  label: "Carousels"  },
                 { href: "/stories",    label: "Stories"    },
                 { href: "/flash",      label: "Flash"      },
+                { href: "/generer",    label: "✦ Générer"  },
               ].map((l) => (
                 <a
                   key={l.href}
