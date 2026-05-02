@@ -188,8 +188,8 @@ def generate_marine_hook_slide(
         title    = hook_text.strip()
         subtitle = ""
 
-    font_title = load_font(FONT_BOLD,    72)
-    font_sub   = load_font(FONT_REGULAR, 46)
+    font_title = load_font(FONT_BOLD,    96)
+    font_sub   = load_font(FONT_REGULAR, 52)
 
     title_h = _block_height(draw, title, font_title, max_w, 1.25)
     sub_h   = _block_height(draw, subtitle, font_sub, max_w, 1.4) if subtitle else 0
@@ -232,7 +232,7 @@ def generate_marine_bullet_slide(
     """
     img, draw = _rose_sq_base()
 
-    font_title = load_font(FONT_SERIF_I, 72)   # Cormorant Italic — élégant, style Playfair
+    font_title = load_font(FONT_SERIF_I, 90)   # Cormorant Italic — élégant, style Playfair
     font_item  = load_font(FONT_BOLD,    38)
     max_w      = FEED_W - 2 * _MARGIN_X
     text_w     = max_w - 2 * _CARD_PAD_X
@@ -306,7 +306,7 @@ def generate_marine_text_slide(
     _TEXT_PAD_Y = 38                 # padding vertical intérieur (plus grand que les bulles)
     max_text_w  = card_w - 2 * _TEXT_PAD_X
 
-    font_title = load_font(FONT_BOLD, 50) if title else None
+    font_title = load_font(FONT_BOLD, 64) if title else None
     usable_h   = _USABLE_Y2 - _TOP_Y
 
     TITLE_BODY_GAP = 28
