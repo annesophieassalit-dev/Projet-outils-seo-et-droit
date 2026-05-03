@@ -20,7 +20,7 @@ export type Pillar =
 
 export interface Slide {
   order: number;
-  type: 'hook' | 'info' | 'complement' | 'conclusion';
+  type: 'hook' | 'info' | 'complement' | 'conclusion' | 'subscribe';
   text: string;
   highlight?: string[];
 }

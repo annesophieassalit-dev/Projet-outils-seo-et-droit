@@ -49,7 +49,7 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
 
   // ── CONCLUSION ───────────────────────────────────────────────────────────────
   if (slide.type === 'conclusion') {
-    const isMaman = bg.startsWith('#5C') || bg.startsWith('#3D');
+    const isMaman = bg.startsWith('#5C') || bg.startsWith('#3D') || bg.startsWith('#FF');
     const ctaBg = isMaman ? bg : '#243126';
     const ctaColor = isMaman ? ca : '#D6B98C';
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -103,6 +103,20 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
   <rect x="${W / 2 - 70}" y="${cardY - 24}" width="140" height="3" fill="${ca}" rx="1" opacity="0.45"/>
   <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${card}" rx="24" filter="url(#cs)"/>
   ${textEls}
+  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
+</svg>`;
+  }
+
+  // ── SUBSCRIBE ────────────────────────────────────────────────────────────────
+  if (slide.type === 'subscribe') {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <rect width="${W}" height="${H}" fill="${bg}"/>
+  <rect x="0" y="0" width="${W}" height="6" fill="${ca}"/>
+  <text x="${W / 2}" y="920" text-anchor="middle" font-size="320" fill="${ca}" font-family="${FONT}" font-weight="900" opacity="0.07">♥</text>
+  <text x="${W / 2}" y="980" text-anchor="middle" font-size="112" fill="${ca}" font-family="${FONT}" font-weight="900">Abonne-toi</text>
+  <rect x="${W / 2 - 140}" y="1004" width="280" height="4" fill="${ca}" rx="2"/>
+  <text x="${W / 2}" y="1090" text-anchor="middle" font-size="54" fill="${TEXT}" font-family="${FONT}" font-weight="700" opacity="0.88">pour plus de tips comme ça</text>
   <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
 </svg>`;
   }

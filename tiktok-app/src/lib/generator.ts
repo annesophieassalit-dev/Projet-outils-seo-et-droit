@@ -76,17 +76,18 @@ STYLE DU HOOK : ${fmt.hookGuide}
 
 RÈGLES STRICTES :
 - Slide 1 (hook) : MAX 6 MOTS — slogan percutant, pas un titre. Couper impitoyablement.
-- Slides 2 à ${isVideo ? '9' : '6'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète et originale
+- Slides 2 à ${isVideo ? '9' : '4'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète et originale
 - Dernière slide info : conseil actionnable ou question directe en 1 phrase (pas "conclusion")
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
 - DURÉES INTERDITES : jamais > 5 ans. Riz 2-4 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
+- Caption : 3-4 phrases avec emojis. Commence par la tension ou promesse du hook, ajoute 1-2 tips concrets, finis par un CTA ou question. 280-350 caractères.
 
 JSON exact :
 {
   "title": "titre interne court",
   "hook": "hook direct max 6 mots",
   "slides": [{"order":1,"type":"hook","text":"texte","highlight":["mot"]}],
-  "caption": "légende TikTok emojis, max 150 chars",
+  "caption": "légende TikTok 3-4 phrases emojis 280-350 chars",
   "hashtags": ["tag1","tag2","tag3"]
 }`,
     }],
@@ -106,10 +107,11 @@ JSON exact :
     ...persona.hashtagsInsta,
   ])).slice(0, 14);
 
-  const rawSlides = (data.slides as Slide[]).filter(s => s.type !== 'conclusion');
+  const rawSlides = (data.slides as Slide[]).filter(s => s.type !== 'conclusion' && s.type !== 'subscribe');
   const slides: Slide[] = [
     ...rawSlides,
-    { order: rawSlides.length + 1, type: 'conclusion', text: 'Lien en bio', highlight: [] },
+    { order: rawSlides.length + 1, type: 'subscribe', text: 'Abonne-toi', highlight: [] },
+    { order: rawSlides.length + 2, type: 'conclusion', text: 'Lien en bio', highlight: [] },
   ];
 
   const content: Content = {
