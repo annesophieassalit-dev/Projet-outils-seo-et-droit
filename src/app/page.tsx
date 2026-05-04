@@ -56,7 +56,7 @@ export default function LandingPage() {
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-extrabold text-gray-900 leading-[1.35] tracking-tight mb-6">
             Le seul outil qui optimise votre{" "}
             <span className="text-zen-600">SEO</span>
             {" "}et vérifie votre{" "}
@@ -64,7 +64,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
-            Analysez votre site, repérez les risques, créez des contenus conformes —
+            Analysez votre site, repérez les risques, créez des contenus conformes,
             en quelques minutes, sans jargon juridique.
           </p>
 
