@@ -55,21 +55,26 @@ export default function LandingPage() {
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="leading-tight mb-6">
-            <span className="block text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight">
-              Soyez{" "}
-              <span className="text-zen-600">visible.</span>
+          <h1 className="mb-10">
+            <span className="block text-lg sm:text-xl font-normal text-gray-400 mb-3 tracking-wide">
+              Le seul outil qui
             </span>
-            <span className="block text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight mt-1">
-              Restez{" "}
-              <span className="text-coral-500">conforme.</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+              optimise votre{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-zen-700">SEO</span>
+                <span className="absolute inset-x-0 bottom-1 h-3 bg-zen-100 -z-0 rounded" aria-hidden="true" />
+              </span>
+            </span>
+            <span className="block text-2xl sm:text-3xl font-light text-gray-300 my-2">et</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+              vérifie votre{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-coral-600">conformité juridique</span>
+                <span className="absolute inset-x-0 bottom-1 h-3 bg-coral-50 -z-0 rounded" aria-hidden="true" />
+              </span>
             </span>
           </h1>
-
-          <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-            L&apos;outil SEO & juridique conçu pour les praticiens du bien-être —
-            analysez votre site, sécurisez vos textes, créez des contenus optimisés.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link
