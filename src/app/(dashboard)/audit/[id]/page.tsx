@@ -13,6 +13,7 @@ import {
   Sparkles,
   ArrowRight,
   Lock,
+  FileDown,
 } from "lucide-react";
 import { formatDate, riskLevelColor, riskLevelLabel } from "@/lib/utils";
 import type { AuditIssue, LegalRuleMatch, SeoScore, LegalScore } from "@/types/audit";
@@ -264,6 +265,16 @@ export default async function AuditResultPage({
               <ExternalLink className="h-3 w-3" />
             </a>
           </div>
+          {isPro && (
+            <Link
+              href={`/audit/${id}/print`}
+              target="_blank"
+              className="inline-flex items-center gap-2 border border-gray-200 text-gray-700 text-sm px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <FileDown className="h-4 w-4" />
+              Télécharger PDF
+            </Link>
+          )}
         </div>
       </div>
 

@@ -51,6 +51,10 @@ export default function LandingPage() {
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-6 border border-zen-200">
+            Pensé pour les professionnels du bien-être
+          </div>
+
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
             Le seul outil qui optimise votre SEO
             <span className="text-zen-700 block mt-1">
