@@ -51,19 +51,24 @@ export default function LandingPage() {
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-6 border border-zen-200">
+          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-8 border border-zen-200">
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-            Le seul outil qui optimise votre SEO
-            <span className="text-zen-700 block mt-1">
-              et vérifie votre conformité juridique
+          <h1 className="leading-tight mb-6">
+            <span className="block text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight">
+              Soyez{" "}
+              <span className="text-zen-600">visible.</span>
+            </span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 tracking-tight mt-1">
+              Restez{" "}
+              <span className="text-coral-500">conforme.</span>
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-coral-500 font-medium mb-8">
-            Analysez. Vérifiez. Créez. Publiez en confiance.
+          <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+            L&apos;outil SEO & juridique conçu pour les praticiens du bien-être —
+            analysez votre site, sécurisez vos textes, créez des contenus optimisés.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
