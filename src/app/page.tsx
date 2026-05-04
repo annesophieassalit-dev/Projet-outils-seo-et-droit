@@ -49,63 +49,56 @@ export default function LandingPage() {
       </header>
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
-      <section className="pt-20 pb-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-8 border border-zen-200">
+      <section className="pt-24 pb-28 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto text-center">
+
+          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-10 border border-zen-200 font-medium">
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="mb-10">
-            <span className="block text-lg sm:text-xl font-normal text-gray-400 mb-3 tracking-wide">
-              Le seul outil qui
-            </span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-              optimise votre{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-zen-700">SEO</span>
-                <span className="absolute inset-x-0 bottom-1 h-3 bg-zen-100 -z-0 rounded" aria-hidden="true" />
-              </span>
-            </span>
-            <span className="block text-2xl sm:text-3xl font-light text-gray-300 my-2">et</span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-              vérifie votre{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-coral-600">conformité juridique</span>
-                <span className="absolute inset-x-0 bottom-1 h-3 bg-coral-50 -z-0 rounded" aria-hidden="true" />
-              </span>
-            </span>
+          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] tracking-tight mb-6">
+            Le seul outil qui optimise votre{" "}
+            <span className="text-zen-600">SEO</span>
+            {" "}et vérifie votre{" "}
+            <span className="text-coral-500">conformité juridique.</span>
           </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+            Analysez votre site, repérez les risques, créez des contenus conformes —
+            en quelques minutes, sans jargon juridique.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <Link
               href="/inscription"
-              className="bg-coral-500 text-white px-8 py-4 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-lg flex items-center justify-center gap-2"
+              className="bg-coral-500 text-white px-8 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2"
             >
               Analyser mes contenus gratuitement
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="#fonctionnalites"
-              className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl hover:bg-gray-50 transition-colors font-medium text-lg"
+              className="border border-gray-200 text-gray-600 px-8 py-3.5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-base"
             >
               Voir comment ça marche
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-600" />
-              1 diagnostic gratuit, sans carte bancaire
+              <CheckCircle2 className="h-4 w-4 text-zen-500" />
+              Gratuit, sans carte bancaire
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-600" />
+              <CheckCircle2 className="h-4 w-4 text-zen-500" />
               Résultats en moins de 2 minutes
             </div>
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-600" />
+              <CheckCircle2 className="h-4 w-4 text-zen-500" />
               Règles actualisées régulièrement
             </div>
           </div>
+
         </div>
       </section>
 
