@@ -21,7 +21,6 @@ export default function LandingPage() {
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <ShieldCheck className="h-7 w-7 text-zen-700" />
             <span className="font-bold text-xl text-gray-900">Visible & Conforme</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
@@ -52,10 +51,6 @@ export default function LandingPage() {
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
       <section className="pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-800 text-sm px-4 py-1.5 rounded-full mb-6 border border-zen-200">
-            Pensé pour les professionnels du bien-être
-          </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
             Le seul outil qui optimise votre SEO
             <span className="text-zen-700 block mt-1">
@@ -325,7 +320,7 @@ export default function LandingPage() {
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
                   "3 diagnostics par mois (SEO + conformité)",
-                  "Scans de texte illimités avec analyse IA",
+                  "Scans de texte illimités",
                   "Générateur de contenus safe — illimité",
                   "Posts LinkedIn, Instagram, TikTok, Threads…",
                   "Bibliothèque complète + historique",
@@ -377,8 +372,7 @@ export default function LandingPage() {
             <span className="font-bold text-gray-900">Visible & Conforme</span>
           </div>
           <p className="text-sm text-gray-400 text-center">
-            © 2025 Visible & Conforme · Outil de conformité éditoriale orienté prévention du risque.
-            Ne constitue pas une consultation juridique.
+            © 2025 Visible & Conforme · Ne constitue pas une consultation juridique.
           </p>
           <div className="flex gap-4 text-sm text-gray-500">
             <Link href="/mentions-legales" className="hover:text-gray-900 transition-colors">
