@@ -56,7 +56,7 @@ export default function MentionsLegalesPage() {
             <p>Visible & Conforme est édité par :</p>
             <p className="font-medium text-gray-800">Anne-Sophie Assalit</p>
             <p>Antibes (06)</p>
-            <p>SIREN : 852 586 791</p>
+            <p>SIRET : 852 586 791 00018</p>
             <p>Contact : <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">contact@visibleetconforme.fr</a></p>
           </div>
         </section>

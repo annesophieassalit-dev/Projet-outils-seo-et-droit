@@ -291,6 +291,16 @@ export const CONFUSION_RULES: LegalRule[] = [
     legalReference: "Art. 44 Loi 85-772 (psychologue) + Art. 52 Loi 2004-806 (psychothérapeute)",
   },
   {
+    id: "CP-008b2",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\bDr\.?\s+[A-Z]/g,
+    term: "Dr (abréviation de Docteur)",
+    recommendation:
+      "« Dr » est réservé aux médecins et aux titulaires d'un doctorat universitaire reconnu. Son usage sans ces conditions est un délit pénal (usurpation de titre). Utilisez votre prénom, nom et titre réel — ex : « Marie Martin, naturopathe certifiée ».",
+    legalReference: "Art. 433-17 Code pénal — usurpation de titre",
+  },
+  {
     id: "CP-008c",
     category: "confusion_professionnelle",
     severity: "error",
