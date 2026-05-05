@@ -290,7 +290,7 @@ export default function LandingPage() {
               <div className="text-4xl font-bold mb-6">0 €</div>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "1 diagnostic complet par mois (SEO + conformité)",
+                  "1 diagnostic par mois (SEO complet + aperçu conformité)",
                   "5 scans de texte par mois",
                   "Rapport avec points clés identifiés",
                   "Bibliothèque de formulations validées",
