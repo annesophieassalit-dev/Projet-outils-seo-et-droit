@@ -155,7 +155,7 @@ export default function ScannerPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Scanner de texte</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Collez n'importe quel texte — bio, post, page web, description de programme —
+          Collez n'importe quel texte — bio Instagram, post, article de blog, page de site, présentation d'activité —
           et détectez les formulations à risque instantanément.
         </p>
       </div>

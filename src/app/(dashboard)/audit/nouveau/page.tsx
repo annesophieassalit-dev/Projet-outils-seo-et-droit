@@ -76,8 +76,7 @@ export default function NouvelAuditPage() {
           Analyser un site
         </h1>
         <p className="text-gray-500">
-          Entrez l&apos;URL de votre site (ou d&apos;un site concurrent) pour obtenir
-          votre rapport SEO et juridique.
+          Entrez l&apos;URL de votre site pour obtenir votre rapport SEO et conformité.
         </p>
       </div>
 
