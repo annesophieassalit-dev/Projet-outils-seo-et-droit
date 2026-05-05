@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import {
   Sparkles, Loader2, Copy, Check, RefreshCw,
-  ChevronDown, Lock, ArrowRight,
+  Lock, ArrowRight,
 } from "lucide-react";
 import type { ContentType, GeneratedContent } from "@/types/scanner";
 import { CONTENT_TYPE_LABELS } from "@/types/scanner";
@@ -93,7 +93,6 @@ function ResultCard({
 }) {
   const [copiedMain, setCopiedMain] = useState(false);
   const [copiedVariant, setCopiedVariant] = useState(false);
-  const [showNote, setShowNote] = useState(false);
 
   async function copyMain() {
     await navigator.clipboard.writeText(result.content);
@@ -117,25 +116,6 @@ function ResultCard({
         onCopy={copyMain}
         copied={copiedMain}
       />
-
-      {/* Note de conformité */}
-      <div className="bg-zen-50 border border-zen-100 rounded-xl px-4 py-3">
-        <button
-          onClick={() => setShowNote(!showNote)}
-          className="w-full flex items-center justify-between text-xs text-zen-700"
-        >
-          <span className="flex items-center gap-1.5 font-medium">
-            <Sparkles className="h-3.5 w-3.5" />
-            Pourquoi ce contenu est conforme
-          </span>
-          <ChevronDown className={`h-3.5 w-3.5 transition-transform ${showNote ? "rotate-180" : ""}`} />
-        </button>
-        {showNote && (
-          <p className="text-xs text-zen-800 mt-2 pt-2 border-t border-zen-200 leading-relaxed">
-            {result.complianceNote}
-          </p>
-        )}
-      </div>
 
       {/* Bouton variante + résultat variante */}
       <div className="space-y-3">
