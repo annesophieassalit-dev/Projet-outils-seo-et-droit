@@ -12,7 +12,6 @@ import {
   Sparkles,
   ScanText,
   BookOpen,
-  Video,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -46,11 +45,6 @@ const navItems = [
     href: "/rapports",
     label: "Mes rapports",
     icon: FileText,
-  },
-  {
-    href: "/tiktok",
-    label: "TikTok Auto",
-    icon: Video,
   },
   {
     href: "/abonnement",
