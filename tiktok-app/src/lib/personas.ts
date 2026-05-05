@@ -90,8 +90,8 @@ ANGLES ÉDITORIAUX — varie entre ces axes à chaque post :
 • Enfants et stock : faire accepter les plats débrouille, goûters longue conservation
 
 JAMAIS : catastrophisme, "survie", "fin du monde". TOUJOURS : pragmatique, utile, bienveillant.
-INTERDIT : sujets génériques ("bien ranger ses placards", "5 aliments que...", "le savais-tu"), ton neutre.
-IMPORTANT : génère un sujet SPÉCIFIQUE et NOUVEAU — ex. "les lentilles corail comme protéines de débrouille" plutôt que "les protéines en stock".
+INTERDIT : sujets génériques répétés ("5 aliments que...", "le savais-tu"), ton neutre.
+IMPORTANT : génère un sujet SPÉCIFIQUE et NOUVEAU — varie les angles à chaque post, ne reste pas sur le même thème.
 DURÉES : jamais > 5 ans. Riz 2-5 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
 Réponds UNIQUEMENT en JSON valide sans markdown.`,
   formats: [
