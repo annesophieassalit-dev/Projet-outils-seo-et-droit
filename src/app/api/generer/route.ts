@@ -5,7 +5,7 @@ import { generateContent, generateVariant } from "@/lib/analyzers/content-genera
 
 const generateSchema = z.object({
   contentType: z.enum([
-    "bio_instagram", "presentation_activite", "description_programme",
+    "bio_instagram", "presentation_activite", "article_blog",
     "post_linkedin", "post_instagram", "post_facebook", "post_tiktok", "post_threads",
     "fiche_google", "accroche_site",
   ]),

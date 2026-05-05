@@ -76,19 +76,21 @@ Optimisation SEO + clarté :
 - Phrases courtes, lisibles, sans jargon
 - Ton : ${toneInstruction}`,
 
-    description_programme: `Rédige une description de programme ou forfait pour ${profession}.
+    article_blog: `Rédige un article de blog pour ${profession}.
 
 Thèmes : ${themesText}
-Longueur : 100–150 mots
+Longueur : 400–600 mots
 
-Structure performante :
-- Titre accrocheur sobre (pas de majuscules excessives)
-- Ce que la personne va explorer / développer (pas "obtenir")
-- Format et durée
-- À qui c'est destiné (situation, pas pathologie)
-- Invitation à passer à l'action, sans pression
+Structure :
+- Titre accrocheur et naturel (optimisé SEO, sans majuscules excessives)
+- Introduction : situation vécue par le lecteur (pas de promesse)
+- Développement : 3-4 paragraphes courts, pédagogiques, accessibles
+- Conclusion : invitation douce à en savoir plus ou à prendre contact
 
-Ton : ${toneInstruction}`,
+Optimisation SEO :
+- Utiliser naturellement les mots-clés de la profession
+- Phrases courtes, lisibles, sans jargon
+- Ton : ${toneInstruction}`,
 
     post_linkedin: `Rédige un post LinkedIn optimisé pour la portée organique, pour ${profession}.
 

@@ -19,7 +19,7 @@ const CONTENT_TYPES: ContentType[] = [
   "post_threads",
   "bio_instagram",
   "presentation_activite",
-  "description_programme",
+  "article_blog",
   "fiche_google",
   "accroche_site",
 ];
@@ -223,7 +223,7 @@ export default function GenerateurPage() {
           <Lock className="h-10 w-10 text-amber-500 mx-auto mb-3" />
           <h2 className="font-bold text-gray-900 mb-1">Fonctionnalité Pro</h2>
           <p className="text-gray-600 text-sm mb-4">
-            Le générateur de contenus est disponible avec le plan Pro à 14€/mois.
+            Le générateur de contenus est disponible avec le plan Pro à 19€/mois.
           </p>
           <Link
             href="/abonnement"
@@ -388,9 +388,9 @@ export default function GenerateurPage() {
 
       {/* Note de fond */}
       <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-amber-800">
-        <strong>Principe de conception :</strong> Tous les contenus générés évitent les promesses de résultats,
-        les termes médicaux et les formulations commerciales agressives. L'objectif est une communication
-        crédible et professionnelle, pas du marketing impactant.
+        <strong>Principe de conception :</strong> tous les contenus générés évitent les promesses de résultats,
+        les termes médicaux et les formulations commerciales agressives. L&apos;objectif est une communication
+        crédible, professionnelle et efficace pour votre visibilité.
       </div>
 
       {/* Disclaimer juridique */}

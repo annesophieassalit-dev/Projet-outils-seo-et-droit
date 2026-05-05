@@ -32,7 +32,7 @@ export interface ScannerResult {
 export type ContentType =
   | "bio_instagram"
   | "presentation_activite"
-  | "description_programme"
+  | "article_blog"
   | "post_linkedin"
   | "post_instagram"
   | "post_facebook"
@@ -81,7 +81,7 @@ export interface FormulationEntry {
 export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
   bio_instagram: "Bio Instagram",
   presentation_activite: "Présentation activité",
-  description_programme: "Description programme",
+  article_blog: "Article de blog",
   post_linkedin: "Post LinkedIn",
   post_instagram: "Post Instagram",
   post_facebook: "Post Facebook",
