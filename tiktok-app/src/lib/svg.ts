@@ -46,6 +46,7 @@ function hookLayout(text: string, desired: number): { lines: string[]; fs: numbe
 
 export function slideToSvg(slide: Slide, idx: number, total: number, theme: PersonaTheme, personaName: string, ctaSubtitle = 'Guide PDF — 11€'): string {
   const { ca, bg, card } = theme;
+  const tc = theme.text ?? TEXT;
 
   // ── CONCLUSION ───────────────────────────────────────────────────────────────
   if (slide.type === 'conclusion') {
@@ -57,10 +58,10 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
   <rect width="${W}" height="${H}" fill="${ctaBg}"/>
   <rect x="0" y="0" width="${W}" height="6" fill="${ca}"/>
   <rect x="0" y="${H - 6}" width="${W}" height="6" fill="${ca}" opacity="0.35"/>
-  <text x="${W / 2}" y="830" text-anchor="middle" font-size="118" fill="#FFFFFF" font-family="${FONT}" font-weight="900">Lien en bio 👆</text>
+  <text x="${W / 2}" y="830" text-anchor="middle" font-size="118" fill="${tc}" font-family="${FONT}" font-weight="900">Lien en bio 👆</text>
   <rect x="${W / 2 - 180}" y="880" width="360" height="4" fill="${ctaColor}" rx="2"/>
   <text x="${W / 2}" y="990" text-anchor="middle" font-size="68" fill="${ctaColor}" font-family="${FONT}" font-weight="700">Guide — 11€</text>
-  <text x="${W / 2}" y="${H - 80}" text-anchor="middle" font-size="36" fill="#FFFFFF" font-family="${FONT}" font-weight="700" letter-spacing="10" opacity="0.55">${esc(personaName)}</text>
+  <text x="${W / 2}" y="${H - 80}" text-anchor="middle" font-size="36" fill="${tc}" font-family="${FONT}" font-weight="700" letter-spacing="10" opacity="0.55">${esc(personaName)}</text>
 </svg>`;
   }
 
@@ -85,9 +86,9 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
       const m = (slide.highlight || []).find(h => line.toLowerCase().includes(h.toLowerCase()));
       if (m) {
         const lo = line.toLowerCase().indexOf(m.toLowerCase());
-        return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="${FONT}" font-weight="800"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
+        return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" font-family="${FONT}" font-weight="800"><tspan fill="${tc}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${tc}">${esc(line.slice(lo + m.length))}</tspan></text>`;
       }
-      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${TEXT}" font-family="${FONT}" font-weight="800">${esc(line)}</text>`;
+      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs}" fill="${tc}" font-family="${FONT}" font-weight="800">${esc(line)}</text>`;
     }).join('\n  ');
 
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -103,7 +104,7 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
   <rect x="${W / 2 - 70}" y="${cardY - 24}" width="140" height="3" fill="${ca}" rx="1" opacity="0.45"/>
   <rect x="${cardX}" y="${cardY}" width="${cardW}" height="${cardH}" fill="${card}" rx="24" filter="url(#cs)"/>
   ${textEls}
-  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
+  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${tc}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
 </svg>`;
   }
 
@@ -116,8 +117,8 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
   <text x="${W / 2}" y="920" text-anchor="middle" font-size="320" fill="${ca}" font-family="${FONT}" font-weight="900" opacity="0.07">♥</text>
   <text x="${W / 2}" y="980" text-anchor="middle" font-size="112" fill="${ca}" font-family="${FONT}" font-weight="900">Abonne-toi</text>
   <rect x="${W / 2 - 140}" y="1004" width="280" height="4" fill="${ca}" rx="2"/>
-  <text x="${W / 2}" y="1090" text-anchor="middle" font-size="54" fill="${TEXT}" font-family="${FONT}" font-weight="700" opacity="0.88">pour plus de tips comme ça</text>
-  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
+  <text x="${W / 2}" y="1090" text-anchor="middle" font-size="54" fill="${tc}" font-family="${FONT}" font-weight="700" opacity="0.88">pour plus de tips comme ça</text>
+  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${tc}" font-family="${FONT}" font-weight="600" letter-spacing="6" opacity="0.22">${esc(personaName)}</text>
 </svg>`;
   }
 
@@ -137,9 +138,9 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
     const m = (slide.highlight || []).find(h => line.toLowerCase().includes(h.toLowerCase()));
     if (m) {
       const lo = line.toLowerCase().indexOf(m.toLowerCase());
-      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" font-family="${FONT}" font-weight="700"><tspan fill="${TEXT}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${TEXT}">${esc(line.slice(lo + m.length))}</tspan></text>`;
+      return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" font-family="${FONT}" font-weight="700"><tspan fill="${tc}">${esc(line.slice(0, lo))}</tspan><tspan fill="${ca}">${esc(line.slice(lo, lo + m.length))}</tspan><tspan fill="${tc}">${esc(line.slice(lo + m.length))}</tspan></text>`;
     }
-    return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" fill="${TEXT}" font-family="${FONT}" font-weight="700">${esc(line)}</text>`;
+    return `<text x="${W / 2}" y="${y}" text-anchor="middle" font-size="${fs2}" fill="${tc}" font-family="${FONT}" font-weight="700">${esc(line)}</text>`;
   }).join('\n  ');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -150,7 +151,7 @@ export function slideToSvg(slide: Slide, idx: number, total: number, theme: Pers
   <text x="${W / 2}" y="${startY2 - 184}" text-anchor="middle" font-size="218" fill="${ca}" font-family="${FONT}" font-weight="900" opacity="0.32">${idx + 1}</text>
   <rect x="${W / 2 - 96}" y="${startY2 - 138}" width="192" height="4" fill="${ca}" rx="2"/>
   ${textEls2}
-  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${TEXT}" font-family="${FONT}" opacity="0.18">${idx + 1} / ${total}</text>
+  <text x="${W / 2}" y="${H - 50}" text-anchor="middle" font-size="19" fill="${tc}" font-family="${FONT}" opacity="0.18">${idx + 1} / ${total}</text>
 </svg>`;
 }
 

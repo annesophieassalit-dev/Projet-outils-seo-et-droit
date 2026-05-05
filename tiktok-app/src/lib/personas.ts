@@ -12,6 +12,7 @@ export interface PersonaTheme {
   ca: string;   // accent color
   bg: string;   // background
   card: string; // card background
+  text?: string; // text override for light backgrounds
 }
 
 export interface Persona {
@@ -75,11 +76,22 @@ const MAMAN_ORGANISEE: Persona = {
   ctaSubtitle: 'Guide famille & potager — 11€',
   system: `Tu es créatrice de contenu TikTok/Instagram spécialisée dans la vie de famille organisée.
 Positionnement : "Anticiper le quotidien d'un foyer sans paniquer."
-Audience : mamans, femmes au foyer, mères de famille qui gèrent la maison et les repas.
+Audience : mamans, femmes qui gèrent un foyer, mères qui veulent être prêtes sans se stresser.
 Ton : chaleureux, complice, direct. Jamais moralisateur. Jamais survivaliste. Ancré dans le quotidien réel.
-Angle : L'IMPRÉVU DU QUOTIDIEN — "quand tu n'as plus rien", "quand tu ne peux pas faire les courses", "quand tout est fermé", "quand tu dois improviser".
-JAMAIS : "pénurie", "survie", "catastrophe". TOUJOURS : charge mentale, repas, enfants, budget, organisation.
-INTERDIT : contenu éducatif pur, ton neutre, "5 aliments que...", "le savais-tu".
+
+ANGLES ÉDITORIAUX — varie entre ces axes à chaque post :
+• Imprévu du quotidien : frigo vide, magasin fermé, fin de mois, journée chaotique
+• Équilibre nutritionnel : bien manger avec le stock (protéines, fer, vitamines des conserves), pas juste des pâtes
+• Pénuries & ruptures : réagir quand les rayons sont vides, adapter les repas en famille sans paniquer
+• Potager accessible : balcon, rebord de fenêtre, germination, herbes fraîches avec rien
+• Budget malin : inflation, achats stratégiques, ne plus jeter, faire plus avec moins
+• Charge mentale repas : menu semaine, liste automatique, batch cooking, système simple
+• Produits oubliés : ce qu'on ne pense jamais à stocker (levure, vinaigre, légumineuses, conserves protéinées)
+• Enfants et stock : faire accepter les plats débrouille, goûters longue conservation
+
+JAMAIS : catastrophisme, "survie", "fin du monde". TOUJOURS : pragmatique, utile, bienveillant.
+INTERDIT : sujets génériques ("bien ranger ses placards", "5 aliments que...", "le savais-tu"), ton neutre.
+IMPORTANT : génère un sujet SPÉCIFIQUE et NOUVEAU — ex. "les lentilles corail comme protéines de débrouille" plutôt que "les protéines en stock".
 DURÉES : jamais > 5 ans. Riz 2-5 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
 Réponds UNIQUEMENT en JSON valide sans markdown.`,
   formats: [
@@ -93,6 +105,7 @@ Réponds UNIQUEMENT en JSON valide sans markdown.`,
     { pillar: 'produits_cles', label: 'PRODUITS', weight: 1, hookGuide: `MAX 6 MOTS, produit oublié mais essentiel. Surprise.\n✅ "Personne ne pense à ça" / "Tu oublies toujours ce produit"` },
     { pillar: 'mini_systemes', label: 'SYSTÈME', weight: 1, hookGuide: `MAX 6 MOTS, astuce simple qui change tout.\n✅ "Le truc simple que j'ai mis en place" / "Menu d'urgence façon maman"` },
     { pillar: 'micro_autonomie', label: 'AUTONOMIE', weight: 1, hookGuide: `MAX 6 MOTS, petite autonomie accessible sans jardin.\n✅ "Ce que mon balcon m'évite" / "Germer sans jardin c'est simple"` },
+    { pillar: 'newsjacking', label: 'ACTU', weight: 2, hookGuide: `MAX 6 MOTS, actu + impact famille. Jamais catastrophiste.\n✅ "Quand les rayons se vident encore" / "Cette pénurie change ton menu" / "Inflation. Ton frigo s'adapte"` },
   ],
   // Alternance : dark bordeaux (indices pairs) / rose vif (indices impairs) pour un feed varié
   themes: [
@@ -106,6 +119,7 @@ Réponds UNIQUEMENT en JSON valide sans markdown.`,
     { la: 'PRODUITS',     ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
     { la: 'SYSTÈME',      ca: '#FF80C0', bg: '#3D0825', card: '#5C1035' },
     { la: 'AUTONOMIE',    ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
+    { la: 'ACTU',         ca: '#FF3D9A', bg: '#FFFFFF', card: '#FFF0F5', text: '#3D0825' },
   ],
   hashtagsTiktok: ['#mamanorganisee','#organisationrepas','#repasenfants','#stockmaison','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer'],
   hashtagsInsta: ['#mamanorganisee','#organisationrepas','#repasenfants','#stockmaison','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer','#mealprep','#repasrapide','#cuisinefamille','#astucesvie','#antigaspi','#organisation'],
