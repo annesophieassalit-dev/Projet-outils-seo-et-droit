@@ -490,22 +490,108 @@ function generateIssues(
   // ── DONNÉES STRUCTURÉES ───────────────────────────────────────────────────
   if (meta.schemaMarkup.length === 0) {
     issues.push({
-      id: id(), category: "Données structurées", severity: "info",
-      title: "Pas de données structurées",
-      description: "Les données structurées permettent à Google d'afficher votre nom, adresse, téléphone et horaires directement dans les résultats.",
-      recommendation: "Ajoutez un schema LocalBusiness avec votre nom, adresse, téléphone et activité. Votre développeur ou votre CMS peut le faire facilement.",
+      id: id(), category: "Données structurées", severity: "warning",
+      title: "Aucune donnée structurée Schema.org",
+      description: "Les données structurées permettent à Google d'afficher votre nom, adresse, téléphone et horaires directement dans les résultats de recherche (rich snippets).",
+      recommendation: "Ajoutez un schema LocalBusiness. Sur WordPress : plugin Rank Math ou Yoast. Sur Wix/Squarespace : paramètres SEO du site.",
       url,
+    });
+  } else {
+    issues.push({
+      id: id(), category: "Données structurées", severity: "success",
+      title: `Schema.org détecté (${meta.schemaMarkup.join(", ")})`,
+      description: "Vos données structurées sont en place — Google peut afficher des informations enrichies.",
+      recommendation: "", url,
     });
   }
 
   // ── OPEN GRAPH ────────────────────────────────────────────────────────────
   if (!meta.ogImage) {
     issues.push({
-      id: id(), category: "Réseaux sociaux", severity: "info",
+      id: id(), category: "Réseaux sociaux", severity: "warning",
       title: "Pas d'image de partage (Open Graph)",
-      description: "Quand quelqu'un partage votre site sur Facebook ou LinkedIn, aucune image ne s'affiche.",
-      recommendation: "Ajoutez une balise og:image avec une belle photo de vous ou de votre cabinet (1200×630px).",
+      description: "Quand quelqu'un partage votre site sur Facebook, Instagram ou LinkedIn, aucune image ne s'affiche. Cela réduit drastiquement le taux de clic.",
+      recommendation: "Ajoutez une balise og:image avec une photo professionnelle de vous ou de votre espace (1200×630px recommandé).",
       url,
+    });
+  } else {
+    issues.push({
+      id: id(), category: "Réseaux sociaux", severity: "success",
+      title: "Image de partage configurée",
+      description: "Votre site affiche une image quand il est partagé sur les réseaux sociaux.",
+      recommendation: "", url,
+    });
+  }
+
+  if (!meta.ogTitle || !meta.ogDescription) {
+    issues.push({
+      id: id(), category: "Réseaux sociaux", severity: "warning",
+      title: "Balises Open Graph incomplètes",
+      description: "Le titre ou la description Open Graph manque. Vos partages sur les réseaux sociaux seront moins attractifs.",
+      recommendation: "Ajoutez og:title et og:description dans votre CMS (Yoast, Rank Math, ou balises meta manuelles).",
+      url,
+    });
+  }
+
+  // ── DOUBLE PÉNALITÉ : contenu court + pas de localisation ────────────────
+  if (content.wordCount < 300 && !semantic.hasLocalKeyword) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "error",
+      title: "Double problème : contenu insuffisant ET localisation absente",
+      description: "Votre page est trop courte ET ne mentionne pas votre ville. C'est la combinaison la plus pénalisante pour le SEO local — vous êtes quasiment invisible sur Google.",
+      recommendation: "Priorité 1 : ajoutez votre ville dans le titre, H1 et meta description. Priorité 2 : développez votre page à 500+ mots en décrivant votre approche et vos séances.",
+      url,
+    });
+  }
+
+  // ── ANALYSE SÉMANTIQUE APPROFONDIE ───────────────────────────────────────
+  const allText = ($("body").text() || "").toLowerCase();
+  const titleText = ($("title").text() || "").toLowerCase();
+  const h1Text2 = ($("h1").text() || "").toLowerCase();
+  const firstParagraph = ($("p").first().text() || "").toLowerCase();
+
+  // Densité mot-clé activité dans zones clés
+  const activityInTitle = ACTIVITY_KEYWORDS.some(kw => titleText.includes(kw));
+  const activityInH1 = ACTIVITY_KEYWORDS.some(kw => h1Text2.includes(kw));
+  const activityInFirst = ACTIVITY_KEYWORDS.some(kw => firstParagraph.includes(kw));
+
+  if (semantic.hasActivityKeyword && !activityInTitle && !activityInH1) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "warning",
+      title: "Spécialité absente des zones clés",
+      description: "Votre activité est mentionnée sur la page mais pas dans le titre ou le H1 — les zones les plus importantes pour Google.",
+      recommendation: "Intégrez votre spécialité (naturopathe, sophrologue…) dans votre balise title ET votre H1.",
+      url,
+    });
+  }
+
+  if (semantic.hasActivityKeyword && !activityInFirst) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "info",
+      title: "Spécialité tardive dans le contenu",
+      description: "Votre activité n'apparaît pas dans le premier paragraphe de texte — Google accorde plus de poids aux mots en début de page.",
+      recommendation: "Mentionnez votre spécialité dès les premières lignes de votre page.",
+      url,
+    });
+  }
+
+  // Champ sémantique bien-être
+  const SEMANTIC_FIELD = ["séance", "accompagnement", "consultation", "bien-être", "équilibre", "naturel", "holistique", "approche", "écoute"];
+  const semanticScore = SEMANTIC_FIELD.filter(w => allText.includes(w)).length;
+  if (semanticScore < 3) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "warning",
+      title: "Champ sémantique trop pauvre",
+      description: `Seulement ${semanticScore}/9 mots du champ sémantique bien-être détectés. Google associe votre page à votre domaine grâce à la richesse du vocabulaire utilisé.`,
+      recommendation: "Enrichissez votre contenu avec des termes comme : séance, accompagnement, écoute, équilibre, approche naturelle, bien-être, holistique.",
+      url,
+    });
+  } else if (semanticScore >= 6) {
+    issues.push({
+      id: id(), category: "Sémantique", severity: "success",
+      title: "Bon champ sémantique",
+      description: `${semanticScore}/9 mots du champ sémantique bien-être détectés — votre page communique clairement votre domaine.`,
+      recommendation: "", url,
     });
   }
 
@@ -517,9 +603,9 @@ function generateIssues(
 function calculateScore(issues: AuditIssue[]): number {
   let score = 100;
   for (const issue of issues) {
-    if (issue.severity === "error") score -= 15;
-    else if (issue.severity === "warning") score -= 5;
-    else if (issue.severity === "info") score -= 2;
+    if (issue.severity === "error") score -= 20;
+    else if (issue.severity === "warning") score -= 8;
+    else if (issue.severity === "info") score -= 3;
   }
   return Math.max(0, Math.min(100, score));
 }

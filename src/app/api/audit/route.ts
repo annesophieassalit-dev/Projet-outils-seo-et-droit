@@ -77,8 +77,8 @@ export async function POST(request: NextRequest) {
     const auditsUsed = profile?.audits_used_this_month || 0;
     const limits: Record<string, number> = {
       gratuit: 1,
-      essentiel: 3, // ancien plan
-      pro: 3,
+      essentiel: 10,
+      pro: -1, // illimité
     };
     const limit = limits[plan] ?? 1;
 
