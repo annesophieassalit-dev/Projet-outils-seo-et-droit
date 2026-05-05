@@ -8,9 +8,9 @@ const generateSchema = z.object({
   contentType: z.enum([
     "bio_instagram", "presentation_activite", "article_blog",
     "post_linkedin", "post_instagram", "post_facebook", "post_tiktok", "post_threads",
-    "fiche_google", "accroche_site",
+    "fiche_google", "accroche_site", "hook_reseaux",
   ]),
-  profession: z.string().min(1),
+  profession: z.string().min(1, "Veuillez indiquer votre activité (ex : Naturopathe, Coach de vie…)"),
   themes: z.array(z.string()).default([]),
   specificites: z.string().max(500).optional(),
   tone: z.enum(["professionnel", "chaleureux", "sobre"]).default("chaleureux"),

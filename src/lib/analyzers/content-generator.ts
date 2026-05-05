@@ -184,6 +184,26 @@ Format Threads :
 - Pas d'emojis ou 1 maximum — la force vient des mots, pas de la mise en forme
 - Se termine par une phrase ouverte ou une invitation à réagir, jamais par un lien direct
 - Ton : ${toneInstruction}`,
+
+    hook_reseaux: `Génère 5 accroches (hooks) percutantes pour ${profession}, adaptées aux réseaux sociaux, sur les thèmes : ${themesText}.
+
+Ces hooks sont des premières phrases destinées à stopper le scroll et donner envie de lire la suite. Chacun doit être utilisable indépendamment comme première ligne d'un post Instagram, LinkedIn, Facebook ou Threads.
+
+Produis exactement 5 hooks numérotés, chacun d'un type différent :
+
+1. **Hook Empathie** — parle directement à une situation vécue par ton lecteur (ex : "Vous avez l'impression de tourner en rond malgré tous vos efforts ?")
+2. **Hook Affirmation** — une déclaration courte et tranchée qui crée une friction positive (ex : "Ce n'est pas votre volonté qui manque.")
+3. **Hook Curiosité** — crée une attente, une question implicite (ex : "Il y a une chose que personne ne dit sur la fatigue chronique.")
+4. **Hook Identification** — une observation concrète du quotidien que le lecteur reconnaît immédiatement (ex : "Se lever fatigué alors qu'on a dormi 8h…")
+5. **Hook Storytelling** — une amorce de récit courte, commence par une scène ou un moment (ex : "Une de mes clientes m'a dit une phrase qui m'a marquée.")
+
+Règles :
+- Maximum 15 mots par hook
+- Jamais de promesses de résultats ni de termes médicaux
+- Ton : ${toneInstruction}
+- Ne PAS inclure de suite ou développement — juste la première phrase d'accroche
+
+Après les 5 hooks, ajoute une ligne : "💡 Conseil d'usage : combinez l'accroche avec un développement en 3–4 paragraphes courts."`,
   };
 
   const specificitesText = specificites
@@ -193,6 +213,11 @@ Format Threads :
   return `${contentInstructions[contentType]}
 
 Intention : ${intentionInstruction}${specificitesText}
+
+RÈGLES DE FORMAT (impératives) :
+- Ne commence PAS par un titre, un label ou un header (ex: "POST INSTAGRAM —", "**TITRE**", "Voici votre post", etc.)
+- Commence DIRECTEMENT par le contenu (première phrase du post, de la bio, de l'article…)
+- Aucun markdown de titre (**texte** en début de contenu)
 
 Après le contenu, ajoute sur une nouvelle ligne séparée par "---" :
 Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;
@@ -205,14 +230,16 @@ export async function generateContent(input: GeneratorInput): Promise<GeneratedC
 
   const message = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 1200,
+    max_tokens: 1500,
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: buildPrompt(input) }],
   });
 
   const raw = (message.content[0] as { type: "text"; text: string }).text;
   const parts = raw.split("---");
-  const content = parts[0].trim();
+  const rawContent = parts[0].trim();
+  // Strip any residual markdown title line at the start (e.g. "**POST INSTAGRAM — …**")
+  const content = rawContent.replace(/^\*\*[^\n]+\*\*\s*\n?/, "").trim();
   const complianceNote = parts[1]?.trim() || "Contenu rédigé en respectant les règles applicables aux praticiens du bien-être non réglementés.";
 
   return { contentType: input.contentType, content, complianceNote };

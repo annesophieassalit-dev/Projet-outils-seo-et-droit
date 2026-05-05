@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Sparkles, Loader2, Copy, Check, RefreshCw,
   ChevronDown, Lock, ArrowRight,
@@ -12,6 +12,7 @@ import Link from "next/link";
 // ─── Constantes ───────────────────────────────────────────────────────────────
 
 const CONTENT_TYPES: ContentType[] = [
+  "hook_reseaux",
   "post_instagram",
   "post_linkedin",
   "post_facebook",
@@ -47,69 +48,120 @@ const TONES = [
 
 // ─── Composant résultat ───────────────────────────────────────────────────────
 
+function ContentCard({
+  content,
+  label,
+  onCopy,
+  copied,
+  badge,
+}: {
+  content: string;
+  label: string;
+  onCopy: () => void;
+  copied: boolean;
+  badge?: React.ReactNode;
+}) {
+  return (
+    <div className="bg-white rounded-2xl border-2 border-zen-200 overflow-hidden">
+      <div className="flex items-center justify-between px-5 py-3 bg-zen-50 border-b border-zen-100">
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-semibold text-zen-900">{label}</span>
+          {badge}
+        </div>
+        <button
+          onClick={onCopy}
+          className="flex items-center gap-1.5 bg-zen-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-zen-800 transition-colors"
+        >
+          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? "Copié !" : "Copier"}
+        </button>
+      </div>
+      <div className="p-5">
+        <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-line">{content}</p>
+      </div>
+    </div>
+  );
+}
+
 function ResultCard({
-  result, profession, onVariant, variantLoading,
+  result, onVariant, variantLoading, variant,
 }: {
   result: GeneratedContent;
-  profession: string;
   onVariant: () => void;
   variantLoading: boolean;
+  variant: string | null;
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copiedMain, setCopiedMain] = useState(false);
+  const [copiedVariant, setCopiedVariant] = useState(false);
   const [showNote, setShowNote] = useState(false);
 
-  async function copy() {
+  async function copyMain() {
     await navigator.clipboard.writeText(result.content);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedMain(true);
+    setTimeout(() => setCopiedMain(false), 2000);
+  }
+
+  async function copyVariant() {
+    if (!variant) return;
+    await navigator.clipboard.writeText(variant);
+    setCopiedVariant(true);
+    setTimeout(() => setCopiedVariant(false), 2000);
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
-      <div className="flex items-center justify-between px-5 py-3 bg-gray-50 border-b border-gray-100">
-        <span className="text-sm font-medium text-gray-700">
-          {CONTENT_TYPE_LABELS[result.contentType]}
-        </span>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowNote(!showNote)}
-            className="text-xs text-gray-400 hover:text-gray-600 flex items-center gap-1"
-          >
-            <Sparkles className="h-3 w-3" />
-            Note conformité
-            <ChevronDown className={`h-3 w-3 transition-transform ${showNote ? "rotate-180" : ""}`} />
-          </button>
-          <button
-            onClick={onVariant}
-            disabled={variantLoading}
-            className="text-xs flex items-center gap-1 text-blue-600 hover:text-blue-800 disabled:opacity-40"
-          >
-            <RefreshCw className={`h-3 w-3 ${variantLoading ? "animate-spin" : ""}`} />
-            Variante
-          </button>
-          <button
-            onClick={copy}
-            className="text-xs flex items-center gap-1 text-zen-700 hover:text-zen-900"
-          >
-            {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-            {copied ? "Copié !" : "Copier"}
-          </button>
-        </div>
-      </div>
+    <div className="space-y-4">
+      {/* Post principal */}
+      <ContentCard
+        content={result.content}
+        label={CONTENT_TYPE_LABELS[result.contentType]}
+        onCopy={copyMain}
+        copied={copiedMain}
+      />
 
-      <div className="p-5">
-        <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-line">
-          {result.content}
-        </p>
-      </div>
-
-      {showNote && (
-        <div className="px-5 py-3 bg-zen-50 border-t border-zen-100">
-          <p className="text-xs text-zen-700">
-            <strong>Note de conformité :</strong> {result.complianceNote}
+      {/* Note de conformité */}
+      <div className="bg-zen-50 border border-zen-100 rounded-xl px-4 py-3">
+        <button
+          onClick={() => setShowNote(!showNote)}
+          className="w-full flex items-center justify-between text-xs text-zen-700"
+        >
+          <span className="flex items-center gap-1.5 font-medium">
+            <Sparkles className="h-3.5 w-3.5" />
+            Pourquoi ce contenu est conforme
+          </span>
+          <ChevronDown className={`h-3.5 w-3.5 transition-transform ${showNote ? "rotate-180" : ""}`} />
+        </button>
+        {showNote && (
+          <p className="text-xs text-zen-800 mt-2 pt-2 border-t border-zen-200 leading-relaxed">
+            {result.complianceNote}
           </p>
-        </div>
-      )}
+        )}
+      </div>
+
+      {/* Bouton variante + résultat variante */}
+      <div className="space-y-3">
+        <button
+          onClick={onVariant}
+          disabled={variantLoading}
+          className="w-full flex items-center justify-center gap-2 border-2 border-dashed border-gray-200 text-gray-500 py-3 rounded-xl text-sm hover:border-zen-400 hover:text-zen-700 transition-colors disabled:opacity-40"
+        >
+          <RefreshCw className={`h-4 w-4 ${variantLoading ? "animate-spin" : ""}`} />
+          {variantLoading ? "Génération de la variante…" : "Générer une variante"}
+        </button>
+
+        {variant && (
+          <ContentCard
+            content={variant}
+            label="Variante"
+            onCopy={copyVariant}
+            copied={copiedVariant}
+            badge={
+              <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">
+                Angle différent
+              </span>
+            }
+          />
+        )}
+      </div>
     </div>
   );
 }
@@ -134,8 +186,10 @@ export default function GenerateurPage() {
   const [loading, setLoading] = useState(false);
   const [variantLoading, setVariantLoading] = useState(false);
   const [result, setResult] = useState<GeneratedContent | null>(null);
+  const [variant, setVariant] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [upgradeRequired, setUpgradeRequired] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   function toggleTheme(id: string) {
     setSelectedThemes((prev) =>
@@ -143,10 +197,17 @@ export default function GenerateurPage() {
     );
   }
 
+  useEffect(() => {
+    if (result) {
+      setTimeout(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, [result]);
+
   async function generate() {
     setLoading(true);
     setError("");
     setResult(null);
+    setVariant(null);
     setUpgradeRequired(false);
 
     try {
@@ -193,11 +254,7 @@ export default function GenerateurPage() {
       });
       const data = await res.json();
       if (data.variant) {
-        setResult({
-          ...result,
-          content: data.variant,
-          complianceNote: result.complianceNote,
-        });
+        setVariant(data.variant);
       }
     } catch { /* silencieux */ }
     finally { setVariantLoading(false); }
@@ -269,6 +326,28 @@ export default function GenerateurPage() {
               placeholder="Ex : Naturopathe, Coach de vie, Sophrologue…"
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600"
             />
+          </div>
+
+          {/* Upsell ebook */}
+          <div className="bg-gradient-to-br from-zen-50 to-amber-50 border border-zen-200 rounded-2xl p-5 space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl shrink-0">📖</span>
+              <div>
+                <p className="text-sm font-semibold text-gray-900">Allez plus loin avec le guide</p>
+                <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                  Le générateur écrit pour vous. Le guide <em>Visible & Conforme</em> vous explique <strong>pourquoi</strong> certaines formulations sont risquées juridiquement — pour comprendre, pas seulement copier-coller.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="https://annesophieassalit.systeme.io/visibleetconforme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-zen-700 text-white px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-zen-800 transition-colors"
+            >
+              Découvrir le guide
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
 
@@ -378,12 +457,14 @@ export default function GenerateurPage() {
 
       {/* Résultat */}
       {result && (
-        <ResultCard
-          result={result}
-          profession={profession}
-          onVariant={generateVariant}
-          variantLoading={variantLoading}
-        />
+        <div ref={resultRef} className="scroll-mt-6">
+          <ResultCard
+            result={result}
+            onVariant={generateVariant}
+            variantLoading={variantLoading}
+            variant={variant}
+          />
+        </div>
       )}
 
       {/* Note de fond */}

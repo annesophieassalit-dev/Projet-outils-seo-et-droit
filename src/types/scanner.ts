@@ -39,7 +39,8 @@ export type ContentType =
   | "post_tiktok"
   | "post_threads"
   | "fiche_google"
-  | "accroche_site";
+  | "accroche_site"
+  | "hook_reseaux";
 
 export interface GeneratorInput {
   contentType: ContentType;
@@ -89,6 +90,7 @@ export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
   post_threads: "Post Threads",
   fiche_google: "Fiche Google My Business",
   accroche_site: "Accroche site web",
+  hook_reseaux: "Hooks / Accroches réseaux",
 };
 
 export const THEME_LABELS: Record<FormulationTheme, string> = {
