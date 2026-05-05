@@ -258,7 +258,11 @@ function generateIssues(
   semantic: SemanticAnalysis,
   linking: InternalLinkingAnalysis,
   loadTimeMs: number,
-  url: string
+  url: string,
+  allText: string,
+  titleText: string,
+  h1Text2: string,
+  firstParagraph: string,
 ): AuditIssue[] {
   const issues: AuditIssue[] = [];
   let i = 0;
@@ -545,10 +549,6 @@ function generateIssues(
   }
 
   // ── ANALYSE SÉMANTIQUE APPROFONDIE ───────────────────────────────────────
-  const allText = ($("body").text() || "").toLowerCase();
-  const titleText = ($("title").text() || "").toLowerCase();
-  const h1Text2 = ($("h1").text() || "").toLowerCase();
-  const firstParagraph = ($("p").first().text() || "").toLowerCase();
 
   // Densité mot-clé activité dans zones clés
   const activityInTitle = ACTIVITY_KEYWORDS.some(kw => titleText.includes(kw));
@@ -625,7 +625,11 @@ export async function analyzeSeo(url: string, profession = ""): Promise<SeoScore
   const semantic = analyzeSemantics($, meta);
   const linking = analyzeInternalLinking($, url);
   const hnStructure = analyzeHnStructure($, profession);
-  const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url);
+  const allText = ($("body").text() || "").toLowerCase();
+  const titleText = ($("title").text() || "").toLowerCase();
+  const h1TextSem = ($("h1").text() || "").toLowerCase();
+  const firstParagraph = ($("p").first().text() || "").toLowerCase();
+  const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url, allText, titleText, h1TextSem, firstParagraph);
   const score = calculateScore(issues);
 
   return {
