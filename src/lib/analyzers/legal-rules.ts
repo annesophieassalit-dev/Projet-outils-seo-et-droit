@@ -291,6 +291,70 @@ export const CONFUSION_RULES: LegalRule[] = [
     legalReference: "Art. 44 Loi 85-772 (psychologue) + Art. 52 Loi 2004-806 (psychothérapeute)",
   },
   {
+    id: "CP-008c",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\bkin[eé]\b/gi,
+    term: "kiné (abréviation)",
+    recommendation:
+      "« Kiné » est l'abréviation de kinésithérapeute, titre strictement réglementé nécessitant un diplôme d'État et une inscription à l'Ordre. Son usage par un praticien bien-être non réglementé constitue une usurpation de titre. Utilisez votre titre exact.",
+    legalReference: "Art. L4321-1 CSP + Art. 433-17 Code pénal",
+  },
+  {
+    id: "CP-008d",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\bost[eé]o\b/gi,
+    term: "ostéo (abréviation)",
+    recommendation:
+      "« Ostéo » est systématiquement associé à ostéopathe, titre réglementé depuis 2014 (décret 2014-1043). Même si vous vous qualifiez d'ostéothérapeute (titre non protégé), l'abréviation « ostéo » crée une confusion avec la profession réglementée. Précisez : « praticien en techniques ostéo-articulaires » ou votre titre complet.",
+    legalReference: "Décret n°2014-1043 du 12 sept. 2014 — titre d'ostéopathe",
+  },
+  {
+    id: "CP-008e",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\bchiro\b/gi,
+    term: "chiro (abréviation)",
+    recommendation:
+      "« Chiro » est l'abréviation de chiropracteur, titre réglementé en France depuis la loi de 2002. Son usage sans être titulaire du titre légal constitue une usurpation. Utilisez votre titre exact.",
+    legalReference: "Art. 75 Loi 2002-303 du 4 mars 2002",
+  },
+  {
+    id: "CP-008f",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\bergo\b/gi,
+    term: "ergo (abréviation)",
+    falsePositiveCheck: (ctx) => /ergonomie|ergonomique|ergo-coach/i.test(ctx),
+    recommendation:
+      "« Ergo » est l'abréviation d'ergothérapeute, professionnel de santé réglementé (diplôme d'État). Si vous exercez une pratique centrée sur le mouvement ou le travail sans ce diplôme, précisez votre titre exact pour éviter toute confusion.",
+    legalReference: "Art. L4331-1 CSP",
+  },
+  {
+    id: "CP-008g",
+    category: "confusion_professionnelle",
+    severity: "warning",
+    pattern: /\bortho\b/gi,
+    term: "ortho (abréviation)",
+    falsePositiveCheck: (ctx) =>
+      /orthodonti|orthopédagogu|orthophoni(?!ste)|orthoptis(?!te)/i.test(ctx),
+    recommendation:
+      "« Ortho » renvoie à orthophoniste ou orthoptiste, deux professions de santé réglementées. Si votre pratique touche à la voix, la parole ou la vision sans ce diplôme, évitez cette abréviation et précisez votre titre exact.",
+    legalReference: "Art. L4341-1 et L4342-1 CSP",
+  },
+  {
+    id: "CP-008h",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\binfirm(?:ière?|ier)?\b/gi,
+    term: "infirmier·e (ou abréviation)",
+    falsePositiveCheck: (ctx) => /infirmière?\s+diplômée?\s+d['']état/i.test(ctx),
+    recommendation:
+      "Le titre d'infirmier/infirmière est réglementé et protégé par le Code de la santé publique. Son usage sans être titulaire du diplôme d'État correspondant constitue une infraction pénale.",
+    legalReference: "Art. L4311-1 CSP + Art. 433-17 Code pénal",
+  },
+  {
     id: "CP-009",
     category: "confusion_professionnelle",
     severity: "error",

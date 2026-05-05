@@ -54,9 +54,9 @@ export default function MentionsLegalesPage() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Éditeur du service</h2>
           <div className="text-sm text-gray-600 space-y-1">
             <p>Visible & Conforme est édité par :</p>
-            <p className="font-medium text-gray-800">[Nom ou raison sociale]</p>
-            <p>[Adresse]</p>
-            <p>[SIRET / numéro d'immatriculation]</p>
+            <p className="font-medium text-gray-800">Anne-Sophie Assalit</p>
+            <p>Antibes (06)</p>
+            <p>SIREN : 852 586 791</p>
             <p>Contact : <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">contact@visibleetconforme.fr</a></p>
           </div>
         </section>
