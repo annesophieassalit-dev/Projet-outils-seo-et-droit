@@ -157,6 +157,23 @@ const STATIC_REFORMULATIONS: Record<string, ReformulationSuggestion> = {
   "symptômes": { original: "symptômes", safe: "manifestations", explanation: "Préférez « signaux du corps », « ressentis »." },
   "pathologie": { original: "pathologie", safe: "situation", explanation: "Terme médical. Utilisez « situation », « vécu », « difficulté »." },
   "maladie": { original: "maladie", safe: "condition de santé", explanation: "Utilisez « personnes vivant avec... » sans prétendre agir dessus." },
+  // ── Cat. 5 — Vocabulaire pseudo-scientifique ──────────────────────────────
+  "toxines": { original: "toxines", safe: "résidus naturels de l'organisme", explanation: "Le concept de « toxines » n'a pas de définition médicale reconnue." },
+  "détox": { original: "détox", safe: "soutien des fonctions naturelles", explanation: "Les allégations détox sont encadrées par le Règlement CE 1924/2006." },
+  "detox": { original: "detox", safe: "soutien des fonctions naturelles", explanation: "Les allégations détox sont encadrées par le Règlement CE 1924/2006." },
+  "détoxification": { original: "détoxification", safe: "accompagnement naturel de l'organisme", explanation: "Terme non reconnu médicalement — risque d'allégation de santé non autorisée." },
+  "drainage lymphatique": { original: "drainage lymphatique", safe: "drainage lymphatique bien-être", explanation: "Précisez qu'il s'agit d'un soin bien-être, non d'un acte médical." },
+  "rééquilibrage hormonal": { original: "rééquilibrage hormonal", safe: "approche naturelle pour soutenir l'équilibre", explanation: "Agir sur les hormones relève de l'endocrinologie." },
+  "boost immunité": { original: "boost immunité", safe: "prendre soin de son bien-être global", explanation: "Les allégations immunitaires sont réglementées (Règlement CE 1924/2006)." },
+  // ── Cat. 6 — Témoignages et preuves ──────────────────────────────────────
+  "avant/après": { original: "avant/après", safe: "évolution personnelle à votre rythme", explanation: "Les comparaisons avant/après impliquent une promesse de résultat — ajoutez « résultats variables »." },
+  "avant après": { original: "avant après", safe: "évolution personnelle à votre rythme", explanation: "Les comparaisons avant/après impliquent une promesse de résultat." },
+  "résultats visibles": { original: "résultats visibles", safe: "évolution ressentie progressivement", explanation: "Promettre des résultats visibles est une allégation invérifiable." },
+  "cas client": { original: "cas client", safe: "témoignage de personnes accompagnées", explanation: "« Cas client » imite le vocabulaire des cas cliniques médicaux." },
+  "témoignage patient": { original: "témoignage patient", safe: "retour d'expérience", explanation: "« Patient » appartient au vocabulaire médical." },
+  "transformation garantie": { original: "transformation garantie", safe: "accompagnement vers un changement progressif", explanation: "Résultat garanti = allégation illicite." },
+  "méthode prouvée": { original: "méthode prouvée", safe: "approche inspirée de pratiques reconnues", explanation: "Sans étude validée, « prouvée » est une affirmation trompeuse." },
+  "scientifiquement prouvé": { original: "scientifiquement prouvé", safe: "dont certains bénéfices font l'objet d'études préliminaires", explanation: "Exige des études cliniques publiées et validées." },
 };
 
 // ─── Mapping catégories → labels lisibles ─────────────────────────────────────

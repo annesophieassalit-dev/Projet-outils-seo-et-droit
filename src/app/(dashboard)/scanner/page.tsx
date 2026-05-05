@@ -160,6 +160,15 @@ export default function ScannerPage() {
         </p>
       </div>
 
+      {/* Note contextuelle */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-start gap-2.5">
+        <span className="text-lg shrink-0">💡</span>
+        <p className="text-xs text-amber-800 leading-relaxed">
+          <strong>Important :</strong> aucun mot n'est interdit seul — c'est le <strong>contexte et l'interprétation</strong> qui créent le risque juridique.
+          Le scanner signale les termes à surveiller ; à vous d'évaluer si votre formulation globale est problématique.
+        </p>
+      </div>
+
       {/* Zone de saisie */}
       <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-4">
         <textarea

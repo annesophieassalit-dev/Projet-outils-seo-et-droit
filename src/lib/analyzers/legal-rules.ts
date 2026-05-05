@@ -542,6 +542,136 @@ export const PUBLICITE_MENSONGERE_RULES: LegalRule[] = [
   },
 ];
 
+// ─── Vocabulaire pseudo-scientifique (Kit Cat. 5) ────────────────────────────
+
+export const PSEUDOSCIENCE_RULES: LegalRule[] = [
+  {
+    id: "PS-001",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(toxines?|détox|detox|détoxification|detoxification|détoxifie[rz]?)\b/gi,
+    term: "toxines / détox",
+    recommendation:
+      "Les allégations de « détox » ou d'élimination de « toxines » sont non prouvées scientifiquement et encadrées par le Règlement CE 1924/2006. Utilisez : « soutien des fonctions naturelles de l'organisme ».",
+    legalReference: "Règlement CE 1924/2006 — allégations de santé",
+  },
+  {
+    id: "PS-002",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(hormonal[e]?[s]?|déséquilibre\s+hormonal|hormones?\s+(en\s+)?(déséquilibre|perturbées?|régulées?))\b/gi,
+    term: "hormonal / déséquilibre hormonal",
+    recommendation:
+      "Agir sur le système hormonal relève de l'endocrinologie médicale. Préférez : « soutenir la vitalité naturelle », « favoriser un équilibre global ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PS-003",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(stimul[a-z]+)\s+(le\s+|la\s+|les\s+|votre\s+|du\s+)?(système\s+immunitaire|immunité|circulation|lymphe|foie|reins?|pancréas|thyroïde|surrénales?)\b/gi,
+    term: "stimuler [organe / système]",
+    recommendation:
+      "Promettre de stimuler un organe ou un système physiologique est une allégation médicale. Utilisez : « soutenir le bien-être global », « favoriser la vitalité ».",
+    legalReference: "Règlement CE 1924/2006 + Art. L4161-1 CSP",
+  },
+  {
+    id: "PS-004",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(régul[a-z]+)\s+(le\s+|la\s+|les\s+|votre\s+|du\s+)?(système\s+nerveux|hormones?|cortisol|glycémie|tension|circulation|thyroïde|sommeil\s+profond)\b/gi,
+    term: "réguler [fonction physiologique]",
+    recommendation:
+      "Réguler une fonction physiologique est un acte médical. Préférez : « accompagner vers un équilibre », « soutenir un rythme naturel ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PS-005",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(drainage\s+(lymphatique|hépatique|rénal|intestinal)|drainage\s+médical)\b/gi,
+    term: "drainage [médical]",
+    recommendation:
+      "Le drainage médical est un acte paramédical réglementé. Précisez : « drainage lymphatique bien-être » et ajoutez qu'il ne remplace pas un suivi médical.",
+    legalReference: "Art. L4321-1 CSP",
+  },
+  {
+    id: "PS-006",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(rééquilibrage\s+(hormonal|alimentaire\s+médical|nerveux|énergétique\s+médical))\b/gi,
+    term: "rééquilibrage [médical]",
+    recommendation:
+      "« Rééquilibrage » associé à un terme médical (hormonal, nerveux) implique une action thérapeutique. Utilisez : « approche naturelle pour soutenir l'équilibre ».",
+    legalReference: "Art. L4161-1 CSP",
+  },
+  {
+    id: "PS-007",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(boost[e]?\s+(l'immunité|le\s+système\s+immunitaire|les\s+défenses)|renforcer\s+(l'immunité|les\s+défenses\s+immunitaires))\b/gi,
+    term: "booster l'immunité / renforcer les défenses",
+    recommendation:
+      "Les allégations immunitaires sont strictement réglementées. Seules certaines sont autorisées avec des nutriments spécifiques. Utilisez : « prendre soin de son bien-être global ».",
+    legalReference: "Règlement CE 1924/2006",
+  },
+];
+
+// ─── Témoignages et preuves (Kit Cat. 6) ─────────────────────────────────────
+
+export const TEMOIGNAGES_RULES: LegalRule[] = [
+  {
+    id: "TE-001",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(avant[\s\/-]+après|before[\s\/-]+after|résultats?\s+visibles?)\b/gi,
+    term: "avant/après / résultats visibles",
+    recommendation:
+      "Les photos ou comparaisons avant/après impliquent une promesse de résultat visuel. Elles sont encadrées par la jurisprudence sur la publicité trompeuse. Ajoutez toujours : « résultats variables selon chaque personne ».",
+    legalReference: "Art. L121-2 Code de la consommation",
+  },
+  {
+    id: "TE-002",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(témoignage[s]?\s+(patient|client|de\s+patient|de\s+client)|cas\s+(client[s]?|clinique[s]?))\b/gi,
+    term: "témoignage patient / cas client",
+    recommendation:
+      "Les témoignages patients sont soumis aux règles de la publicité médicale. Préférez « retour d'expérience » ou « témoignage de personnes accompagnées ». Les cas cliniques sont réservés aux professionnels de santé.",
+    legalReference: "Art. L1161-1 CSP + Décret 2017-1436",
+  },
+  {
+    id: "TE-003",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(preuve[s]?\s+(scientifique[s]?|clinique[s]?|médicale[s]?)|études?\s+prouvent?|scientifiquement\s+prouvé)\b/gi,
+    term: "preuves scientifiques / études prouvent",
+    recommendation:
+      "Affirmer une preuve scientifique sans étude publiée et validée est une pratique commerciale trompeuse. Utilisez : « certains bénéfices font l'objet d'études préliminaires ».",
+    legalReference: "Art. L121-1 Code de la consommation",
+  },
+  {
+    id: "TE-004",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(transformation\s+(radicale|garantie|totale|en\s+\d+\s+(jours?|semaines?|séances?)))\b/gi,
+    term: "transformation radicale / garantie",
+    recommendation:
+      "Promettre une transformation garantie est une allégation invérifiable. Préférez : « accompagnement vers un changement progressif », « à votre rythme ».",
+    legalReference: "Art. L121-2 Code de la consommation",
+  },
+  {
+    id: "TE-005",
+    category: "publicite_mensongere",
+    severity: "warning",
+    pattern: /\b(méthode\s+(prouvée|validée\s+scientifiquement|reconnue\s+médicalement)|technique\s+(prouvée|cliniquement\s+testée))\b/gi,
+    term: "méthode prouvée / validée scientifiquement",
+    recommendation:
+      "Sans étude scientifique publiée et validée, ces affirmations sont trompeuses. Utilisez : « approche inspirée de… », « technique issue de… ».",
+    legalReference: "Art. L121-1 Code de la consommation",
+  },
+];
+
 // ─── Protection consommateur ──────────────────────────────────────────────────
 
 export const PROTECTION_CONSO_RULES: LegalRule[] = [
@@ -576,6 +706,8 @@ export const ALL_LEGAL_RULES: LegalRule[] = [
   ...MENTIONS_RULES,
   ...PROTECTION_CONSO_RULES,
   ...PUBLICITE_MENSONGERE_RULES,
+  ...PSEUDOSCIENCE_RULES,
+  ...TEMOIGNAGES_RULES,
 ];
 
 // ─── Pages requises ───────────────────────────────────────────────────────────

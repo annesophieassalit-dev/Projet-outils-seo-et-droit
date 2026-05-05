@@ -12,6 +12,7 @@ import {
   Sparkles,
   ScanText,
   BookOpen,
+  CalendarDays,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +41,11 @@ const navItems = [
     href: "/bibliotheque",
     label: "Bibliothèque",
     icon: BookOpen,
+  },
+  {
+    href: "/planning",
+    label: "Planning éditorial",
+    icon: CalendarDays,
   },
   {
     href: "/rapports",
