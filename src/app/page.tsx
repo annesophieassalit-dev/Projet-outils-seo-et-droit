@@ -87,7 +87,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              Gratuit, sans carte bancaire
+              14 jours gratuits, sans carte bancaire
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-zen-500" />
@@ -283,18 +283,20 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Gratuit — uniquement ce qui est inclus */}
+            {/* Essai 14 jours */}
             <div className="border border-gray-200 rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-1">Gratuit</h3>
-              <p className="text-gray-500 text-sm mb-4">Pour découvrir l&apos;outil</p>
-              <div className="text-4xl font-bold mb-6">0 €</div>
+              <h3 className="font-bold text-xl mb-1">Essai gratuit</h3>
+              <p className="text-gray-500 text-sm mb-4">14 jours — accès complet</p>
+              <div className="text-4xl font-bold mb-1">0 €</div>
+              <p className="text-xs text-gray-400 mb-6">Sans carte bancaire</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "1 diagnostic par mois (SEO complet + aperçu conformité)",
-                  "5 scans de texte par mois",
-                  "Rapport avec points clés identifiés",
-                  "Bibliothèque de formulations validées",
-                  "Accès immédiat, sans carte bancaire",
+                  "Accès à toutes les fonctionnalités Pro",
+                  "Diagnostics SEO + conformité illimités",
+                  "Scanner de texte illimité",
+                  "Générateur de contenus safe",
+                  "Bibliothèque complète de formulations",
+                  "Export PDF des rapports",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -306,14 +308,14 @@ export default function LandingPage() {
                 href="/inscription"
                 className="block text-center border border-gray-300 text-gray-700 py-3 rounded-xl hover:bg-gray-50 transition-colors font-medium"
               >
-                Commencer gratuitement
+                Démarrer l&apos;essai gratuit
               </Link>
             </div>
 
             {/* Pro */}
             <div className="border-2 border-zen-600 rounded-2xl p-8 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                Recommandé
+                Après l&apos;essai
               </div>
               <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
                 Pro
@@ -323,7 +325,7 @@ export default function LandingPage() {
               <div className="text-4xl font-bold mb-1">
                 19 €<span className="text-lg font-normal text-gray-500">/mois</span>
               </div>
-              <p className="text-xs text-gray-400 mb-6">Sans engagement</p>
+              <p className="text-xs text-gray-400 mb-6">Sans engagement · Résiliable à tout moment</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
                   "Diagnostics illimités (SEO + conformité)",
@@ -340,10 +342,10 @@ export default function LandingPage() {
                 ))}
               </ul>
               <Link
-                href="/inscription?plan=pro"
+                href="/inscription"
                 className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
               >
-                Démarrer l&apos;essai
+                Commencer l&apos;essai gratuit
               </Link>
             </div>
           </div>
@@ -358,7 +360,7 @@ export default function LandingPage() {
             Protégez votre activité aujourd&apos;hui
           </h2>
           <p className="text-coral-100 mb-8 text-lg">
-            Un diagnostic gratuit, aucune carte bancaire requise.
+            14 jours gratuits, accès complet, aucune carte bancaire requise.
             Découvrez en 2 minutes les risques de votre site actuel.
           </p>
           <Link

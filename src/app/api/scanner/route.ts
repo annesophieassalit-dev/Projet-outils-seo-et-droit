@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { scanTextBasic, scanTextWithAI } from "@/lib/analyzers/text-scanner";
+import { getEffectivePlan } from "@/lib/trial";
 
 const schema = z.object({
   text: z.string().min(10, "Le texte doit contenir au moins 10 caractères.").max(8000),
@@ -9,9 +10,8 @@ const schema = z.object({
 });
 
 const SCAN_LIMITS: Record<string, number> = {
-  gratuit: 5,
   essentiel: 20,
-  pro: -1, // illimité
+  pro: -1,
 };
 
 export async function POST(request: NextRequest) {
@@ -32,15 +32,25 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, profession, scans_used_this_month, audits_reset_date")
+    .select("plan, trial_ends_at, profession, scans_used_this_month, audits_reset_date")
     .eq("id", user.id)
     .single();
 
-  const plan = profile?.plan || "gratuit";
-  const limit = SCAN_LIMITS[plan] ?? 5;
+  const { effectivePlan } = getEffectivePlan({
+    plan: profile?.plan || "gratuit",
+    trial_ends_at: profile?.trial_ends_at,
+  });
+
+  if (effectivePlan === "expired") {
+    return NextResponse.json(
+      { error: "Votre essai gratuit est terminé. Abonnez-vous pour continuer.", trialExpired: true },
+      { status: 403 }
+    );
+  }
+
+  const limit = SCAN_LIMITS[effectivePlan] ?? -1;
   const scansUsed = profile?.scans_used_this_month || 0;
 
-  // Réinitialisation mensuelle (même date que les audits)
   const now = new Date();
   const resetDate = profile?.audits_reset_date ? new Date(profile.audits_reset_date) : null;
   if (resetDate && now > resetDate) {
@@ -53,11 +63,10 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id);
   }
 
-  // Vérification limite
   if (limit !== -1 && scansUsed >= limit) {
     return NextResponse.json(
       {
-        error: `Vous avez utilisé vos ${limit} scans gratuits ce mois-ci. Passez au plan Pro pour des scans illimités.`,
+        error: `Vous avez utilisé vos ${limit} scans ce mois-ci. Passez au plan Pro pour des scans illimités.`,
         limitReached: true,
         scansUsed,
         limit,
@@ -66,13 +75,12 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const canUseAI = plan === "pro" && useAI;
+  const canUseAI = effectivePlan === "pro" && useAI;
 
   const result = canUseAI
     ? await scanTextWithAI(text, profile?.profession || "")
     : scanTextBasic(text);
 
-  // Incrémenter le compteur + enregistrer l'événement
   await Promise.all([
     supabase.from("profiles").update({ scans_used_this_month: scansUsed + 1 }).eq("id", user.id),
     supabase.from("usage_events").insert({ user_id: user.id, type: "scan" }),

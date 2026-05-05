@@ -3,6 +3,7 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeSeo } from "@/lib/analyzers/seo-analyzer";
 import { analyzeLegal } from "@/lib/analyzers/legal-analyzer";
+import { getEffectivePlan } from "@/lib/trial";
 import type { AuditResult } from "@/types/audit";
 
 const auditSchema = z.object({
@@ -22,11 +23,7 @@ export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient();
 
-    // Authentification
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
+    const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       return NextResponse.json(
         { error: "Vous devez être connecté pour lancer un audit." },
@@ -34,7 +31,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validation de la requête
     const body = await request.json();
     const parsed = auditSchema.safeParse(body);
     if (!parsed.success) {
@@ -46,14 +42,26 @@ export async function POST(request: NextRequest) {
 
     const { url, profession, includeLegal, includeAI } = parsed.data;
 
-    // Vérifier l'abonnement et les limites
     const { data: profile } = await supabase
       .from("profiles")
-      .select("plan, audits_used_this_month, audits_reset_date")
+      .select("plan, trial_ends_at, audits_used_this_month, audits_reset_date")
       .eq("id", user.id)
       .single();
 
-    const plan = profile?.plan || "gratuit";
+    const { effectivePlan, trialExpired } = getEffectivePlan({
+      plan: profile?.plan || "gratuit",
+      trial_ends_at: profile?.trial_ends_at,
+    });
+
+    if (effectivePlan === "expired") {
+      return NextResponse.json(
+        {
+          error: "Votre essai gratuit est terminé. Abonnez-vous pour continuer.",
+          trialExpired: true,
+        },
+        { status: 403 }
+      );
+    }
 
     // Réinitialisation mensuelle
     const now = new Date();
@@ -76,35 +84,26 @@ export async function POST(request: NextRequest) {
 
     const auditsUsed = profile?.audits_used_this_month || 0;
     const limits: Record<string, number> = {
-      gratuit: 1,
       essentiel: 10,
-      pro: -1, // illimité
+      pro: -1,
     };
-    const limit = limits[plan] ?? 1;
+    const limit = limits[effectivePlan] ?? -1;
 
     if (limit !== -1 && auditsUsed >= limit) {
       return NextResponse.json(
         {
-          error: `Vous avez utilisé vos ${limit} diagnostics ce mois-ci. Revenez le mois prochain ou passez au plan Pro.`,
+          error: `Vous avez utilisé vos ${limit} diagnostics ce mois-ci. Passez au plan Pro pour des diagnostics illimités.`,
           limitReached: true,
         },
         { status: 403 }
       );
     }
 
-    // Tous les plans incluent SEO + diagnostic de conformité juridique
-    const canDoLegal = true;
-    const canDoAI = plan === "pro";
+    const canDoAI = effectivePlan === "pro";
 
-    // Créer l'audit en BDD (status: running)
     const { data: audit, error: insertError } = await supabase
       .from("audits")
-      .insert({
-        user_id: user.id,
-        url,
-        status: "running",
-        profession,
-      })
+      .insert({ user_id: user.id, url, status: "running", profession })
       .select()
       .single();
 
@@ -112,27 +111,20 @@ export async function POST(request: NextRequest) {
       throw new Error("Impossible de créer l'audit en base de données.");
     }
 
-    // Incrémenter le compteur + enregistrer l'événement
     await Promise.all([
       supabase.from("profiles").update({ audits_used_this_month: auditsUsed + 1 }).eq("id", user.id),
       supabase.from("usage_events").insert({ user_id: user.id, type: "diagnostic" }),
     ]);
 
-    // ── Lancement des analyses ──
     const [seoResult, legalResult] = await Promise.allSettled([
       analyzeSeo(url),
-      canDoLegal && includeLegal
-        ? analyzeLegal(url, {
-            useAI: canDoAI && includeAI,
-            profession,
-          })
+      includeLegal
+        ? analyzeLegal(url, { useAI: canDoAI && includeAI, profession })
         : Promise.resolve(null),
     ]);
 
-    const seo =
-      seoResult.status === "fulfilled" ? seoResult.value : null;
-    const legal =
-      legalResult.status === "fulfilled" ? legalResult.value : null;
+    const seo = seoResult.status === "fulfilled" ? seoResult.value : null;
+    const legal = legalResult.status === "fulfilled" ? legalResult.value : null;
 
     const globalScore =
       seo && legal
@@ -141,7 +133,6 @@ export async function POST(request: NextRequest) {
         ? seo.score
         : null;
 
-    // Mettre à jour l'audit en BDD
     await supabase
       .from("audits")
       .update({
@@ -211,7 +202,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ audit: data });
   }
 
-  // Liste des audits de l'utilisateur
   const { data } = await supabase
     .from("audits")
     .select("id, url, status, seo_score, seo_grade, legal_score, legal_grade, global_score, legal_risk_level, created_at, completed_at")

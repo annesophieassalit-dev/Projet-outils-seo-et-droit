@@ -10,6 +10,8 @@ interface TopBarProps {
     email: string;
     fullName: string;
     plan: string;
+    isTrialing?: boolean;
+    trialDaysLeft?: number;
   };
 }
 
@@ -31,6 +33,13 @@ export default function TopBar({ user }: TopBarProps) {
     .join("")
     .toUpperCase()
     .slice(0, 2);
+
+  function planLabel() {
+    if (user.isTrialing) return `Essai — ${user.trialDaysLeft}j`;
+    if (user.plan === "pro") return "Plan Pro";
+    if (user.plan === "essentiel") return "Plan Essentiel";
+    return "Essai expiré";
+  }
 
   return (
     <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-end px-6 shrink-0">
@@ -59,9 +68,7 @@ export default function TopBar({ user }: TopBarProps) {
                 <p className="text-xs font-medium text-gray-900 truncate">
                   {user.email}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5 capitalize">
-                  Plan {user.plan}
-                </p>
+                <p className="text-xs text-gray-400 mt-0.5">{planLabel()}</p>
               </div>
               <button
                 onClick={handleLogout}

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { generateContent, generateVariant } from "@/lib/analyzers/content-generator";
+import { getEffectivePlan } from "@/lib/trial";
 
 const generateSchema = z.object({
   contentType: z.enum([
@@ -32,20 +33,22 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, profession, posts_generated_this_month, audits_reset_date")
+    .select("plan, trial_ends_at, profession, posts_generated_this_month, audits_reset_date")
     .eq("id", user.id)
     .single();
 
-  const plan = profile?.plan || "gratuit";
+  const { effectivePlan } = getEffectivePlan({
+    plan: profile?.plan || "gratuit",
+    trial_ends_at: profile?.trial_ends_at,
+  });
 
-  if (plan === "gratuit") {
+  if (effectivePlan === "expired") {
     return NextResponse.json(
-      { error: "Le générateur de contenus est disponible à partir du plan Pro (19€/mois).", upgradeRequired: true },
+      { error: "Votre essai gratuit est terminé. Abonnez-vous pour continuer.", trialExpired: true },
       { status: 403 }
     );
   }
 
-  // Réinitialisation mensuelle (même date que les autres compteurs)
   const now = new Date();
   const resetDate = profile?.audits_reset_date ? new Date(profile.audits_reset_date) : null;
   if (resetDate && now > resetDate) {
@@ -86,7 +89,6 @@ export async function POST(request: NextRequest) {
 
   const result = await generateContent(input);
 
-  // Incrémenter le compteur mensuel + enregistrer l'événement
   await Promise.all([
     supabase.from("profiles").update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 }).eq("id", user.id),
     supabase.from("usage_events").insert({ user_id: user.id, type: "post" }),
