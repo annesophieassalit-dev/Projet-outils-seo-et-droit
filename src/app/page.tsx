@@ -290,7 +290,7 @@ export default function LandingPage() {
               <div className="text-4xl font-bold mb-6">0 €</div>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "1 diagnostic par mois (SEO ou conformité)",
+                  "1 diagnostic complet par mois (SEO + conformité)",
                   "5 scans de texte par mois",
                   "Rapport avec points clés identifiés",
                   "Bibliothèque de formulations validées",
@@ -326,7 +326,7 @@ export default function LandingPage() {
               <p className="text-xs text-gray-400 mb-6">Sans engagement</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "3 diagnostics par mois (SEO + conformité)",
+                  "Diagnostics illimités (SEO + conformité)",
                   "Scans de texte illimités",
                   "Générateur de contenus safe — illimité",
                   "Posts LinkedIn, Instagram, TikTok, Threads…",
