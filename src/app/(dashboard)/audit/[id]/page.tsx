@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { getEffectivePlan } from "@/lib/trial";
 import {
   TrendingUp,
   ShieldCheck,
@@ -202,11 +203,14 @@ export default async function AuditResultPage({
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan")
+    .select("plan, trial_ends_at")
     .eq("id", user!.id)
     .single();
 
-  const plan = profile?.plan || "gratuit";
+  const { effectivePlan: plan } = getEffectivePlan({
+    plan: profile?.plan || "gratuit",
+    trial_ends_at: profile?.trial_ends_at,
+  });
 
   // Séparer les issues par sévérité pour l'affichage
   const seoErrors = seo?.issues.filter((i) => i.severity === "error") || [];

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { getEffectivePlan } from "@/lib/trial";
 import {
   Search,
   TrendingUp,
@@ -58,7 +59,7 @@ export default async function DashboardPage() {
   const [{ data: profile }, { data: audits }] = await Promise.all([
     supabase
       .from("profiles")
-      .select("full_name, profession, plan, audits_used_this_month")
+      .select("full_name, profession, plan, trial_ends_at, audits_used_this_month")
       .eq("id", user!.id)
       .single(),
     supabase
@@ -71,9 +72,12 @@ export default async function DashboardPage() {
       .limit(5),
   ]);
 
-  const plan = profile?.plan || "gratuit";
+  const { effectivePlan: plan } = getEffectivePlan({
+    plan: profile?.plan || "gratuit",
+    trial_ends_at: profile?.trial_ends_at,
+  });
   const auditsUsed = profile?.audits_used_this_month || 0;
-  const auditsLimit = plan === "gratuit" ? 1 : plan === "essentiel" ? 10 : null;
+  const auditsLimit = plan === "essentiel" ? 10 : null;
   const firstName = profile?.full_name?.split(" ")[0] || "vous";
 
   const completedAudits = audits?.filter((a) => a.status === "completed") || [];
@@ -142,8 +146,8 @@ export default async function DashboardPage() {
           <p className="text-xs text-gray-500 mb-1 flex items-center gap-1">
             <ShieldCheck className="h-3 w-3" /> Score juridique moyen
           </p>
-          {plan === "gratuit" ? (
-            <p className="text-sm text-gray-400">Plan Essentiel requis</p>
+          {plan === "expired" ? (
+            <p className="text-sm text-gray-400">Abonnement requis</p>
           ) : (
             <p className="text-2xl font-bold text-gray-900">
               {avgLegal !== null ? `${avgLegal}` : "—"}
@@ -161,23 +165,23 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {/* Upgrade banner */}
-      {plan === "gratuit" && (
+      {/* Upgrade banner (essai expiré) */}
+      {plan === "expired" && (
         <div className="bg-gradient-to-r from-zen-700 to-zen-600 rounded-xl p-5 flex items-center justify-between text-white">
           <div>
             <p className="font-semibold flex items-center gap-2">
               <ShieldCheck className="h-5 w-5" />
-              Activez l&apos;audit juridique
+              Votre essai gratuit est terminé
             </p>
             <p className="text-zen-100 text-sm mt-0.5">
-              Détectez les risques d&apos;exercice illégal et les mentions manquantes sur votre site.
+              Abonnez-vous pour continuer à utiliser tous les outils.
             </p>
           </div>
           <Link
             href="/abonnement"
             className="shrink-0 bg-white text-zen-800 font-semibold text-sm px-4 py-2 rounded-lg hover:bg-zen-50 transition-colors flex items-center gap-1"
           >
-            Voir les plans
+            Choisir un plan
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
