@@ -122,13 +122,32 @@ function checkMandatoryMentions(
   const hasLinkPattern = (patterns: RegExp[]): boolean =>
     patterns.some((p) => internalLinks.some((link) => p.test(link)));
 
+  // Vérifie le texte et href de chaque <a> — capte les footers rendus côté client
+  const hasAnchorMatch = (textPatterns: RegExp[], hrefPatterns: RegExp[]): boolean => {
+    let found = false;
+    $("a").each((_, el) => {
+      const anchorText = $(el).text();
+      const href = $(el).attr("href") || "";
+      if (
+        textPatterns.some((p) => p.test(anchorText)) ||
+        hrefPatterns.some((p) => p.test(href))
+      ) {
+        found = true;
+        return false;
+      }
+    });
+    return found;
+  };
+
   return {
     hasMentionsLegales:
       hasPattern(REQUIRED_PAGES.mentionsLegales.patterns) ||
-      hasLinkPattern(REQUIRED_PAGES.mentionsLegales.links),
+      hasLinkPattern(REQUIRED_PAGES.mentionsLegales.links) ||
+      hasAnchorMatch(REQUIRED_PAGES.mentionsLegales.patterns, REQUIRED_PAGES.mentionsLegales.links),
     hasPolitiqueConfidentialite:
       hasPattern(REQUIRED_PAGES.politiqueConfidentialite.patterns) ||
-      hasLinkPattern(REQUIRED_PAGES.politiqueConfidentialite.links),
+      hasLinkPattern(REQUIRED_PAGES.politiqueConfidentialite.links) ||
+      hasAnchorMatch(REQUIRED_PAGES.politiqueConfidentialite.patterns, REQUIRED_PAGES.politiqueConfidentialite.links),
     hasCGV:
       hasPattern(REQUIRED_PAGES.cgv.patterns) ||
       hasLinkPattern(REQUIRED_PAGES.cgv.links),

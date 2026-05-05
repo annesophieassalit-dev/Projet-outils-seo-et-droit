@@ -279,6 +279,18 @@ export const CONFUSION_RULES: LegalRule[] = [
     legalReference: "Recommandation DGCCRF 2021",
   },
   {
+    id: "CP-008b",
+    category: "confusion_professionnelle",
+    severity: "error",
+    pattern: /\bpsy\b/gi,
+    term: "psy (abréviation)",
+    falsePositiveCheck: (ctx) =>
+      /psychomotricien|psychopraticien|psychopédagog/i.test(ctx),
+    recommendation:
+      "« Psy » est une abréviation courante de psychologue et psychothérapeute, deux titres réglementés (ADELI/ARS). Son usage sans être titulaire de l'un de ces titres peut créer une confusion avec un professionnel de santé réglementé. Précisez votre titre exact : praticien bien-être, accompagnateur, coach...",
+    legalReference: "Art. 44 Loi 85-772 (psychologue) + Art. 52 Loi 2004-806 (psychothérapeute)",
+  },
+  {
     id: "CP-009",
     category: "confusion_professionnelle",
     severity: "error",

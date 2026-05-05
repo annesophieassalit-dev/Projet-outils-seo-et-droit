@@ -299,8 +299,27 @@ export default function BibliothequeClient({ plan }: { plan: string }) {
 
       {/* Note de bas de page */}
       <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-amber-800">
-        <strong>Rappel :</strong> Ces formulations sont des points de départ, à adapter à votre contexte.
-        En cas de doute sur une situation particulière, consultez un juriste spécialisé.
+        ces formulations sont des points de départ, à adapter à votre contexte.
+        En cas de doute sur une situation particulière, consultez un professionnel du droit.
+      </div>
+
+      {/* Lien ebook */}
+      <div className="bg-gradient-to-br from-zen-50 to-amber-50 border border-zen-200 rounded-2xl p-5 flex items-start gap-4">
+        <span className="text-2xl shrink-0">📖</span>
+        <div className="flex-1 space-y-2">
+          <p className="text-sm font-semibold text-gray-900">Comprendre le pourquoi avec le guide</p>
+          <p className="text-xs text-gray-600 leading-relaxed">
+            La bibliothèque vous donne les formulations prêtes à l&apos;emploi. Le guide <em>Visible & Conforme</em> explique <strong>pourquoi</strong> certains termes sont risqués juridiquement — pour ne pas juste copier, mais vraiment comprendre.
+          </p>
+          <a
+            href="https://annesophieassalit.systeme.io/visibleetconforme"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-zen-700 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-zen-800 transition-colors"
+          >
+            Découvrir le guide PDF
+          </a>
+        </div>
       </div>
     </div>
   );

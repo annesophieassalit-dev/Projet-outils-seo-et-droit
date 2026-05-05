@@ -338,7 +338,11 @@ export default async function AuditResultPage({
         </div>
       </div>
 
-      {/* Résultats SEO */}
+      {/* Résultats — 2 colonnes */}
+      <div className="grid lg:grid-cols-2 gap-6 items-start">
+
+      {/* Colonne SEO */}
+      <div>
       {seo && (
         <section className="space-y-3">
           <div className="flex items-center gap-2">
@@ -395,7 +399,7 @@ export default async function AuditResultPage({
           {seoInfos.length > 0 && (
             <div className="space-y-1.5">
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
-                Points conformes
+                Points vérifiés
               </h3>
               {seoInfos.map((issue) => (
                 <IssueCard key={issue.id} issue={issue} />
@@ -404,8 +408,10 @@ export default async function AuditResultPage({
           )}
         </section>
       )}
+      </div>
 
-      {/* Résultats juridiques */}
+      {/* Colonne juridique */}
+      <div>
       {legal ? (
         <section className="space-y-3">
           <div className="flex items-center gap-2">
@@ -580,6 +586,8 @@ export default async function AuditResultPage({
           </Link>
         </section>
       )}
+      </div>
+      </div>{/* fin grid 2 colonnes */}
 
       {/* Note de bas de page */}
       <p className="text-xs text-gray-400 text-center">
