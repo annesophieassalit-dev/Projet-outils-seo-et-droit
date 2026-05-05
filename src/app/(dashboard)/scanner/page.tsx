@@ -3,7 +3,7 @@
 import { useState } from "react";
 import {
   AlertTriangle, CheckCircle2, XCircle, Loader2,
-  Copy, Check, ChevronDown, ChevronUp, Sparkles,
+  Copy, Check, ChevronDown, ChevronUp, Sparkles, Info,
 } from "lucide-react";
 import type { ScannerResult, ScannerAlert, RiskLevel } from "@/types/scanner";
 import Link from "next/link";
@@ -106,6 +106,162 @@ function ReformulationCard({ original, safe, explanation }: {
   );
 }
 
+// ─── Panneau abréviations ─────────────────────────────────────────────────────
+
+const ABBREVIATIONS = [
+  {
+    abbr: "Dr",
+    title: "Docteur",
+    risk: "error" as const,
+    avoid: "Dr [Prénom Nom]",
+    use: "[Prénom Nom] + titre réel",
+    why: "Réservé aux médecins et docteurs universitaires. Usage sans ce titre = délit pénal.",
+    ref: "Art. 433-17 Code pénal",
+  },
+  {
+    abbr: "Psy",
+    title: "Psychologue / Psychothérapeute",
+    risk: "error" as const,
+    avoid: "psy, ma psy",
+    use: "praticien en accompagnement émotionnel",
+    why: "Abréviation de deux titres strictement réglementés (ADELI/ARS). Utilisé aussi pour le référencement, ce qui peut être considéré comme trompeur.",
+    ref: "Art. 44 Loi 85-772 + Art. 52 Loi 2004-806",
+  },
+  {
+    abbr: "Ostéo",
+    title: "Ostéopathe",
+    risk: "error" as const,
+    avoid: "ostéo",
+    use: "praticien en techniques ostéo-articulaires",
+    why: "Ostéopathe est un titre protégé depuis 2014. « Ostéo » seul crée la même confusion dans la perception du public.",
+    ref: "Décret n°2014-1043",
+  },
+  {
+    abbr: "Kiné",
+    title: "Kinésithérapeute",
+    risk: "error" as const,
+    avoid: "kiné",
+    use: "praticien en mobilité / accompagnement corporel",
+    why: "Titre réglementé nécessitant un diplôme d'État et une inscription à l'Ordre.",
+    ref: "Art. L4321-1 CSP",
+  },
+  {
+    abbr: "Chiro",
+    title: "Chiropracteur",
+    risk: "error" as const,
+    avoid: "chiro",
+    use: "votre titre complet exact",
+    why: "Titre réglementé depuis la loi de 2002. L'abréviation hérite du même statut.",
+    ref: "Art. 75 Loi 2002-303",
+  },
+  {
+    abbr: "Ergo",
+    title: "Ergothérapeute",
+    risk: "warning" as const,
+    avoid: "ergo",
+    use: "praticien en accompagnement du mouvement / autonomie",
+    why: "Profession de santé réglementée. À éviter si vous n'êtes pas titulaire du diplôme d'État.",
+    ref: "Art. L4331-1 CSP",
+  },
+  {
+    abbr: "Ortho",
+    title: "Orthophoniste / Orthoptiste",
+    risk: "warning" as const,
+    avoid: "ortho",
+    use: "votre titre complet exact",
+    why: "Renvoie à deux professions de santé réglementées. L'abréviation peut créer une confusion.",
+    ref: "Art. L4341-1 et L4342-1 CSP",
+  },
+];
+
+function AbbreviationsPanel() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border border-orange-200 rounded-xl overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-4 py-3 bg-orange-50 hover:bg-orange-100 transition-colors text-left"
+      >
+        <div className="flex items-center gap-2.5">
+          <Info className="h-4 w-4 text-orange-600 shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-orange-900">
+              Les abréviations — un risque souvent sous-estimé
+            </p>
+            <p className="text-xs text-orange-700 mt-0.5">
+              Si le titre complet est protégé, l&apos;abréviation l&apos;est aussi.
+            </p>
+          </div>
+        </div>
+        {open
+          ? <ChevronUp className="h-4 w-4 text-orange-500 shrink-0" />
+          : <ChevronDown className="h-4 w-4 text-orange-500 shrink-0" />}
+      </button>
+
+      {open && (
+        <div className="bg-white p-5 space-y-4">
+          <p className="text-sm text-gray-600 leading-relaxed">
+            Certaines abréviations correspondent à des professions réglementées. Même sans intention de créer une confusion,
+            elles peuvent laisser croire que vous exercez une activité de santé reconnue par l&apos;État.
+            Utilisées pour le référencement (ex : <em>psy</em> pour apparaître dans les recherches liées à la psychologie),
+            elles peuvent être considérées comme trompeuses — et fragiliser à la fois votre conformité et votre visibilité Google.
+          </p>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-xs text-amber-800 font-medium">
+            🔑 Règle d&apos;or : si le titre complet est protégé, l&apos;abréviation l&apos;est aussi.
+            Tous ces raccourcis héritent du statut juridique du titre d&apos;origine.
+          </div>
+
+          <div className="space-y-2">
+            {ABBREVIATIONS.map((a) => (
+              <div
+                key={a.abbr}
+                className={`rounded-xl border p-4 ${
+                  a.risk === "error"
+                    ? "bg-red-50 border-red-200"
+                    : "bg-orange-50 border-orange-200"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                      a.risk === "error"
+                        ? "bg-red-100 text-red-700"
+                        : "bg-orange-100 text-orange-700"
+                    }`}>
+                      {a.abbr}
+                    </span>
+                    <span className="text-xs text-gray-500">{a.title}</span>
+                  </div>
+                  <span className="text-xs text-gray-400 shrink-0">{a.ref}</span>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-2 text-xs">
+                  <div className="flex items-start gap-1.5">
+                    <XCircle className="h-3.5 w-3.5 text-red-500 shrink-0 mt-0.5" />
+                    <span className="text-gray-600 line-through">{a.avoid}</span>
+                  </div>
+                  <div className="flex items-start gap-1.5">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-zen-600 shrink-0 mt-0.5" />
+                    <span className="text-zen-800 font-medium">{a.use}</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-2 leading-relaxed">{a.why}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs text-gray-400 leading-relaxed">
+            Lorsqu&apos;un internaute lit rapidement une page ou une fiche Google, il interprète les termes tels qu&apos;ils
+            apparaissent. La prudence consiste à utiliser des formulations qui décrivent clairement votre pratique,
+            sans laisser penser que vous exercez une profession réglementée.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Page principale ──────────────────────────────────────────────────────────
 
 export default function ScannerPage() {
@@ -168,6 +324,9 @@ export default function ScannerPage() {
           Le scanner signale les termes à surveiller ; à vous d'évaluer si votre formulation globale est problématique.
         </p>
       </div>
+
+      {/* Abréviations à risque */}
+      <AbbreviationsPanel />
 
       {/* Zone de saisie */}
       <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-4">
