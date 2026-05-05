@@ -469,9 +469,7 @@ export default function GenerateurPage() {
 
       {/* Note de fond */}
       <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-amber-800">
-        <strong>Principe de conception :</strong> tous les contenus générés évitent les promesses de résultats,
-        les termes médicaux et les formulations commerciales agressives. L&apos;objectif est une communication
-        crédible, professionnelle et efficace pour votre visibilité.
+        L&apos;objectif est une communication crédible, professionnelle et efficace pour votre visibilité.
       </div>
 
       {/* Disclaimer juridique */}
