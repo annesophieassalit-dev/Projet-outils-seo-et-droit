@@ -74,7 +74,7 @@ function SeverityBadge({ severity }: { severity: string }) {
   const labels: Record<string, string> = {
     error: "Critique",
     warning: "Avertissement",
-    success: "Conforme",
+    success: "Bon point",
     info: "Info",
   };
   return (
