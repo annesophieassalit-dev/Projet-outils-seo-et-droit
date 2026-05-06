@@ -4,6 +4,7 @@ import {
   Search,
   AlertTriangle,
   CheckCircle2,
+  XCircle,
   ArrowRight,
   Sparkles,
   Scale,
@@ -115,7 +116,7 @@ export default function LandingPage() {
 
             {/* ── Colonne mockup ── */}
             <div className="relative">
-              {/* Halo décoratif */}
+              {/* Halos décoratifs */}
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-zen-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
               <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-coral-100 rounded-full blur-2xl opacity-40 pointer-events-none" />
 
@@ -129,53 +130,60 @@ export default function LandingPage() {
                     <div className="w-2.5 h-2.5 rounded-full bg-zen-500" />
                   </div>
                   <div className="flex-1 bg-zen-600/60 rounded-md px-3 py-1 text-xs text-zen-200 font-mono">
-                    visibleetconforme.fr/scanner
+                    visibleetconforme.fr/audit
                   </div>
                 </div>
 
-                {/* Contenu scanner */}
+                {/* Contenu diagnostic */}
                 <div className="p-5 space-y-4">
-                  {/* Texte analysé */}
-                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
-                    <p className="text-xs text-gray-400 mb-2 font-medium uppercase tracking-wide">Votre texte</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      Je{" "}
-                      <span className="bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-medium">soigne</span>
-                      {" "}l&apos;anxiété et les troubles du sommeil.
-                    </p>
+                  {/* URL analysée */}
+                  <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
+                    <div className="w-2 h-2 rounded-full bg-zen-500 shrink-0" />
+                    <span className="text-xs text-gray-500 font-mono truncate">sophrologue-lyon.fr</span>
+                    <span className="ml-auto text-xs bg-zen-100 text-zen-700 px-2 py-0.5 rounded-full font-medium shrink-0">Analysé</span>
                   </div>
 
-                  {/* Alerte critique */}
-                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-base">🔴</span>
-                      <span className="font-semibold text-red-800 text-sm">« soigne »</span>
-                      <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-medium">Critique</span>
+                  {/* Scores */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-zen-50 border border-zen-200 rounded-xl p-4 text-center">
+                      <p className="text-2xl font-extrabold text-zen-700">74</p>
+                      <p className="text-xs text-zen-600 mt-0.5">Score SEO</p>
                     </div>
-                    <p className="text-xs text-red-700 leading-relaxed">
-                      Terme médical interdit — implique un acte thérapeutique réglementé.
-                    </p>
-                  </div>
-
-                  {/* Suggestion */}
-                  <div className="bg-zen-50 border border-zen-200 rounded-xl p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle2 className="h-4 w-4 text-zen-600" />
-                      <span className="text-xs font-semibold text-zen-700 uppercase tracking-wide">Suggestion</span>
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                      <p className="text-2xl font-extrabold text-red-600">42</p>
+                      <p className="text-xs text-red-500 mt-0.5">Score juridique</p>
                     </div>
-                    <p className="text-sm text-zen-900 leading-relaxed">
-                      J&apos;accompagne les personnes qui traversent l&apos;anxiété et les troubles du sommeil.
-                    </p>
                   </div>
 
-                  {/* Score */}
-                  <div className="flex items-center justify-between pt-1">
-                    <span className="text-xs text-gray-400">Score de vigilance</span>
-                    <div className="flex items-center gap-3 flex-1 ml-4">
-                      <div className="flex-1 bg-gray-100 rounded-full h-1.5">
-                        <div className="bg-zen-500 h-1.5 rounded-full" style={{ width: "78%" }} />
-                      </div>
-                      <span className="text-xs font-semibold text-zen-700">78 / 100</span>
+                  {/* Alertes */}
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Termes détectés</p>
+                    <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2.5">
+                      <span className="text-sm">🔴</span>
+                      <span className="text-sm font-semibold text-red-800">« je traite »</span>
+                      <span className="ml-auto text-xs text-red-500">Critique</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2.5">
+                      <span className="text-sm">🟠</span>
+                      <span className="text-sm font-semibold text-orange-800">« thérapeute »</span>
+                      <span className="ml-auto text-xs text-orange-500">Vigilance</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2.5">
+                      <span className="text-sm">🟠</span>
+                      <span className="text-sm font-semibold text-orange-800">« résultats garantis »</span>
+                      <span className="ml-auto text-xs text-orange-500">Vigilance</span>
+                    </div>
+                  </div>
+
+                  {/* Mention check */}
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-xs text-red-700">
+                      <XCircle className="h-3.5 w-3.5 shrink-0" />
+                      Mentions légales
+                    </div>
+                    <div className="flex items-center gap-2 bg-zen-50 border border-zen-200 rounded-lg px-3 py-2 text-xs text-zen-700">
+                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+                      SIRET présent
                     </div>
                   </div>
                 </div>
