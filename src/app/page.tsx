@@ -66,9 +66,13 @@ export default function LandingPage() {
             Savez-vous ce que vous ne pouvez pas dire&nbsp;?
           </p>
 
-          <p className="text-base text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base text-gray-500 max-w-xl mx-auto mb-4 leading-relaxed">
             Analysez vos contenus en quelques secondes et repérez ce qui peut vous mettre en difficulté.
             Pour les praticiens bien-être qui refusent de choisir entre visibilité et sécurité.
+          </p>
+
+          <p className="text-sm font-medium text-zen-700 mb-10">
+            Un outil qui allie SEO et conformité juridique.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
