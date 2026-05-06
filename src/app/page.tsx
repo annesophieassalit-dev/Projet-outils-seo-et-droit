@@ -131,80 +131,83 @@ export default function LandingPage() {
               <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-coral-100 rounded-full blur-2xl opacity-40 pointer-events-none" />
 
               <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
-                {/* En-tête du rapport */}
-                <div className="bg-gradient-to-r from-zen-700 to-zen-600 px-5 py-4 flex items-center gap-3">
-                  <ShieldCheck className="h-4 w-4 text-zen-200 shrink-0" />
-                  <span className="text-sm font-semibold text-white">Rapport de diagnostic</span>
-                  <span className="ml-auto text-xs bg-zen-800/40 text-zen-200 px-2 py-0.5 rounded-full font-medium">Sophrologue · Lyon</span>
+
+                {/* En-tête */}
+                <div className="bg-gradient-to-r from-zen-700 to-zen-600 px-5 py-4">
+                  <div className="flex items-center gap-3">
+                    <ShieldCheck className="h-4 w-4 text-zen-200 shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-white leading-tight">Rapport de diagnostic</p>
+                      <p className="text-xs text-zen-300 mt-0.5">Analyse de : page d&apos;accueil</p>
+                    </div>
+                    <span className="ml-auto text-xs bg-zen-800/40 text-zen-200 px-2 py-0.5 rounded-full font-medium shrink-0">Sophrologue · Lyon</span>
+                  </div>
                 </div>
 
-                <div className="p-5 space-y-4">
-                  {/* Scores */}
+                <div className="p-5 space-y-5">
+
+                  {/* ① Scores — niveau primaire */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-zen-50 border border-zen-200 rounded-xl p-4">
                       <p className="text-3xl font-extrabold text-zen-700">74</p>
-                      <p className="text-xs text-zen-600 mt-0.5 font-medium">Score visibilité</p>
-                      <div className="mt-2 h-1.5 bg-zen-100 rounded-full overflow-hidden">
+                      <p className="text-xs text-zen-600 font-semibold mt-0.5">Score visibilité</p>
+                      <div className="mt-2.5 h-1.5 bg-zen-100 rounded-full overflow-hidden">
                         <div className="h-full bg-zen-500 rounded-full" style={{ width: "74%" }} />
                       </div>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                      <p className="text-3xl font-extrabold text-red-500">42</p>
-                      <p className="text-xs text-red-500 mt-0.5 font-medium">Score conformité</p>
-                      <div className="mt-2 h-1.5 bg-red-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-red-400 rounded-full" style={{ width: "42%" }} />
+                    <div className="bg-coral-50 border border-coral-200 rounded-xl p-4">
+                      <p className="text-3xl font-extrabold text-coral-500">42</p>
+                      <p className="text-xs text-coral-500 font-semibold mt-0.5">Score conformité</p>
+                      <div className="mt-2.5 h-1.5 bg-coral-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-coral-400 rounded-full" style={{ width: "42%" }} />
                       </div>
                     </div>
                   </div>
 
-                  {/* Stats rapides */}
-                  <div className="grid grid-cols-3 gap-2">
+                  {/* ② Formulations — niveau secondaire */}
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold text-zen-950/50 uppercase tracking-widest">Formulations à surveiller</p>
+                    <div className="bg-red-50 rounded-lg px-3 py-2.5 border border-red-100">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-red-700 flex-1 min-w-0 truncate">« je traite »</span>
+                        <span className="shrink-0 text-[10px] font-bold bg-red-100 text-red-600 px-1.5 py-0.5 rounded uppercase tracking-wide">Critique</span>
+                      </div>
+                      <p className="text-[11px] text-red-500 mt-1 font-medium">Assimilation à un acte médical</p>
+                    </div>
+                    <div className="bg-amber-50 rounded-lg px-3 py-2.5 border border-amber-100">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-amber-800 flex-1 min-w-0 truncate">« aide à réduire le stress »</span>
+                        <span className="shrink-0 text-[10px] font-bold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded uppercase tracking-wide">Vigilance</span>
+                      </div>
+                      <p className="text-[11px] text-amber-600 mt-1 font-medium">Promesse implicite de résultat</p>
+                    </div>
+                  </div>
+
+                  {/* ③ Points SEO — niveau tertiaire */}
+                  <div className="space-y-1.5 border-t border-gray-100 pt-4">
+                    <p className="text-[10px] font-bold text-zen-950/50 uppercase tracking-widest mb-2">Points SEO détectés</p>
                     {[
-                      { label: "Mots analysés", value: "847" },
-                      { label: "H1 détectés", value: "1" },
-                      { label: "Images sans alt", value: "3" },
-                    ].map((s) => (
-                      <div key={s.label} className="bg-gray-50 rounded-lg p-2.5 text-center border border-gray-100">
-                        <p className="text-base font-bold text-gray-800">{s.value}</p>
-                        <p className="text-xs text-gray-400 leading-tight mt-0.5">{s.label}</p>
+                      { text: "Meta description absente", error: true },
+                      { text: "Maillage interne faible", error: false },
+                      { text: "3 images sans texte alternatif", error: true },
+                    ].map((item) => (
+                      <div key={item.text} className="flex items-center gap-2 text-xs text-gray-500">
+                        <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.error ? "bg-red-400" : "bg-amber-400"}`} />
+                        {item.text}
                       </div>
                     ))}
                   </div>
 
-                  {/* Formulations */}
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Formulations à surveiller</p>
-                    <div className="border-l-[3px] border-red-400 pl-3 py-2 rounded-r-lg bg-red-50/60">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-xs font-bold text-red-700">« je traite »</span>
-                        <span className="ml-auto text-xs bg-red-100 text-red-600 px-1.5 py-0.5 rounded font-medium">Critique</span>
-                      </div>
-                      <p className="text-xs text-red-500 leading-relaxed">Risque d&apos;assimilation à un acte médical réglementé</p>
-                    </div>
-                    <div className="border-l-[3px] border-amber-400 pl-3 py-2 rounded-r-lg bg-amber-50/60">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-xs font-bold text-amber-800">« méthode efficace contre l&apos;anxiété »</span>
-                        <span className="ml-auto text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">Vigilance</span>
-                      </div>
-                      <p className="text-xs text-amber-700 leading-relaxed">Formulation pouvant être interprétée comme une promesse implicite de résultat</p>
-                    </div>
+                  {/* ④ Mentions — niveau bas, compact */}
+                  <div className="flex items-center gap-3 border-t border-gray-100 pt-3">
+                    <CheckCircle2 className="h-3 w-3 text-zen-500 shrink-0" />
+                    <span className="text-xs text-gray-400">Mentions légales</span>
+                    <CheckCircle2 className="h-3 w-3 text-zen-500 shrink-0" />
+                    <span className="text-xs text-gray-400">HTTPS</span>
+                    <XCircle className="h-3 w-3 text-coral-400 shrink-0" />
+                    <span className="text-xs text-gray-400">Politique RGPD</span>
                   </div>
 
-                  {/* Check mentions obligatoires */}
-                  <div className="grid grid-cols-3 gap-2 pt-1 border-t border-gray-100">
-                    <div className="flex flex-col items-center gap-1 py-1.5">
-                      <CheckCircle2 className="h-4 w-4 text-zen-600" />
-                      <span className="text-xs text-gray-400 text-center leading-tight">Mentions légales</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1 py-1.5">
-                      <CheckCircle2 className="h-4 w-4 text-zen-600" />
-                      <span className="text-xs text-gray-400 text-center leading-tight">HTTPS</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1 py-1.5">
-                      <XCircle className="h-4 w-4 text-red-400" />
-                      <span className="text-xs text-gray-400 text-center leading-tight">Politique RGPD</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -601,7 +604,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-zen-700" />
-            <span className="font-bold text-gray-900">Visible & Conforme</span>
+            <span className="font-bold text-zen-950">Visible & Conforme</span>
           </div>
           <p className="text-sm text-gray-400 text-center">
             © 2026 Visible & Conforme · Ne constitue pas une consultation juridique.
