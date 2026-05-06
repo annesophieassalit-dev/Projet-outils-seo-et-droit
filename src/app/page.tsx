@@ -67,7 +67,7 @@ export default function LandingPage() {
 
             {/* ── Colonne texte ── */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-10 border border-zen-200 font-medium">
+              <div className="inline-flex items-center gap-2 bg-zen-950 text-zen-100 text-sm px-5 py-2 rounded-full mb-10 font-semibold shadow-lg tracking-wide">
                 Pensé pour les professionnels du bien-être
               </div>
 
@@ -90,7 +90,7 @@ export default function LandingPage() {
               </p>
 
               <p className="text-sm text-gray-500 mb-12 leading-relaxed">
-                Identifiez les formulations pouvant poser problème dans votre communication en quelques secondes.
+                Analysez vos contenus, repérez les formulations sensibles et créez des textes mieux adaptés à votre activité.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -112,15 +112,15 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-3 text-sm text-zen-600">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  7 jours pour 1€ — accès complet
+                  Essai 7 jours pour 1€ · Sans engagement
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Puis 19€/mois, résiliable à tout moment
+                  Résultats en moins de 2 minutes
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Email de rappel avant renouvellement
+                  Règles actualisées régulièrement
                 </div>
               </div>
             </div>
@@ -180,6 +180,12 @@ export default function LandingPage() {
                         <span className="shrink-0 text-[10px] font-bold bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded uppercase tracking-wide">Vigilance</span>
                       </div>
                       <p className="text-[11px] text-amber-600 mt-1 font-medium">Promesse implicite de résultat</p>
+                    </div>
+                    <div className="bg-zen-50 rounded-lg px-3 py-2.5 border border-zen-200">
+                      <p className="text-[10px] font-bold text-zen-600 mb-1.5">✦ Reformulation suggérée</p>
+                      <p className="text-[11px] text-zen-700 italic leading-relaxed">
+                        &quot;J&apos;accompagne les personnes confrontées au stress et aux tensions émotionnelles.&quot;
+                      </p>
                     </div>
                   </div>
 
@@ -269,12 +275,70 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
+      <section className="py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-sm">
+
+            {/* Sans */}
+            <div className="bg-gray-50 p-8">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+                Sans Visible & Conforme
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Vérifier chaque formulation manuellement",
+                  "Chercher des réponses contradictoires sur internet",
+                  "Réécrire ses contenus plusieurs fois",
+                  "Mélanger conseils SEO, IA et règles juridiques",
+                  "Perdre du temps à douter avant de publier",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex items-center justify-center w-4 h-4 rounded-full border border-gray-300 shrink-0">
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                        <path d="M1 1l6 6M7 1L1 7" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-sm text-gray-500">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Avec */}
+            <div className="bg-white p-8">
+              <p className="text-xs font-bold text-zen-700 uppercase tracking-widest mb-6">
+                Avec Visible & Conforme
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Analyse visibilité + conformité",
+                  "Alertes sur les formulations sensibles",
+                  "Suggestions de reformulation adaptées",
+                  "Générateur de contenus pensé pour votre activité",
+                  "Un seul outil pour publier avec plus de clarté",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0 mt-0.5" />
+                    <span className="text-sm text-zen-950">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+          <p className="text-center mt-6 text-sm text-gray-500">
+            👉 <strong className="text-zen-950">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
+          </p>
+        </div>
+      </section>
+
       {/* ─── Fonctionnalités ────────────────────────────────────────────── */}
       <section id="fonctionnalites" className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
-              Tous les outils pour communiquer avec plus de vigilance
+              Analysez, corrigez et créez — depuis un seul outil
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
               Le seul outil pensé spécifiquement pour les praticiens du bien-être non réglementés,
@@ -345,17 +409,23 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+            <div className="rounded-2xl border-2 border-purple-200 bg-purple-50/20 p-8 hover:shadow-md transition-shadow">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
-                <BookOpen className="h-6 w-6 text-purple-600" />
+                <Sparkles className="h-6 w-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-bold text-zen-950 mb-3">Bibliothèque & Générateur</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Accédez à une bibliothèque de formulations validées par thème
-                (stress, sommeil, émotions...) et générez automatiquement
-                bio Instagram, posts LinkedIn, scripts TikTok et plus —
-                tous pensés pour votre activité.
+                (stress, sommeil, émotions...) et générez automatiquement des contenus
+                adaptés à votre activité et à votre secteur.
               </p>
+              <div className="flex flex-wrap gap-2">
+                {["Bio Instagram", "Post LinkedIn", "Page de présentation", "Script TikTok", "Fiche Google"].map((tag) => (
+                  <span key={tag} className="bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -416,15 +486,15 @@ export default function LandingPage() {
                   Je suis juriste de formation, diplômée en marketing digital et consultante en visibilité conforme.
                 </p>
                 <p>
-                  J&apos;ai créé Visible & Conforme parce que j&apos;ai constaté que beaucoup de praticiens
-                  du bien-être communiquent en ligne sans toujours mesurer l&apos;impact de certains mots.
-                  Pas par négligence — mais parce que personne ne leur a expliqué où se situent les zones
-                  de vigilance dans leur secteur.
+                  J&apos;ai créé Visible & Conforme parce que beaucoup de praticiens du bien-être peinent
+                  à trouver les bons mots en ligne : comment être visible sans se mettre en risque ?
+                  Comment créer du contenu régulièrement quand on ne sait pas ce qu&apos;on peut — ou ne peut pas — écrire ?
                 </p>
                 <p>
-                  Visible & Conforme est né de cette réalité : un outil pensé à la croisée du SEO local,
-                  de la rédaction web et de la vigilance éditoriale, pour aider les professionnels
-                  du bien-être à publier des contenus plus visibles et mieux adaptés à leur activité.
+                  L&apos;outil est né de cette question. Pensé à la croisée du SEO local, de la vigilance
+                  éditoriale et de la création de contenus, il aide les professionnels du bien-être
+                  à analyser leurs textes, corriger les formulations sensibles et générer des contenus
+                  adaptés à leur activité.
                 </p>
               </div>
               <p className="mt-5 text-zen-300 text-xs font-medium">
@@ -497,8 +567,8 @@ export default function LandingPage() {
                 {[
                   "Diagnostics illimités (visibilité + conformité)",
                   "Scans de texte illimités",
-                  "Générateur de contenus — illimité",
-                  "Posts LinkedIn, Instagram, TikTok, Threads…",
+                  "Générez posts, bios et contenus adaptés à votre activité",
+                  "LinkedIn, Instagram, TikTok, page de présentation…",
                   "Bibliothèque complète + historique",
                   "Export PDF des rapports",
                 ].map((f) => (
