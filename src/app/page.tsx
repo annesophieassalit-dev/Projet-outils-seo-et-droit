@@ -47,7 +47,7 @@ export default function LandingPage() {
               href="/inscription"
               className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-coral-600 transition-colors font-medium"
             >
-              Essai gratuit
+              Démarrer pour 1€
             </Link>
           </div>
         </div>
@@ -224,37 +224,37 @@ export default function LandingPage() {
               Les types de risques que Visible & Conforme aide à repérer
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Sans sur-promettre — Visible & Conforme identifie des zones de vigilance, pas des certitudes juridiques.
+              Visible & Conforme repère des formulations sensibles et zones de vigilance dans vos contenus.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: Scale,
-                title: "Confusion sur la qualification",
-                desc: "Usage de termes pouvant laisser penser à un statut réglementé : « thérapeute », « Dr », « clinicien », « psychothérapeute ».",
-                color: "text-red-600",
-                bg: "bg-red-50 border-red-200",
-              },
-              {
                 icon: AlertTriangle,
-                title: "Promesses pouvant être interprétées comme trompeuses",
-                desc: "Angle Code de la consommation : « résultats garantis », « immédiat », « radical », « miracle » — allégations invérifiables.",
+                title: "Promesses pouvant poser problème",
+                desc: "Certaines formulations peuvent être interprétées comme des promesses difficiles à vérifier ou trompeuses au regard du Code de la consommation.",
                 color: "text-amber-600",
                 bg: "bg-amber-50 border-amber-200",
               },
               {
+                icon: Scale,
+                title: "Confusion sur la qualification",
+                desc: "Certaines formulations peuvent créer une confusion sur le cadre réel de votre activité ou votre statut professionnel.",
+                color: "text-red-600",
+                bg: "bg-red-50 border-red-200",
+              },
+              {
                 icon: FileText,
-                title: "Vocabulaire créant une ambiguïté médicale",
-                desc: "Termes associés au domaine médical : soigner, traiter, guérir, diagnostiquer, soulager, rétablir, pathologie, symptôme...",
+                title: "Vocabulaire sensible",
+                desc: "Certains termes issus du vocabulaire médical ou thérapeutique nécessitent une vigilance particulière dans une communication en ligne.",
                 color: "text-orange-600",
                 bg: "bg-orange-50 border-orange-200",
               },
               {
                 icon: Search,
-                title: "Manque de clarté sur le positionnement réel",
-                desc: "Problème fréquent en SEO aussi : un praticien mal positionné dans ses textes n'est ni visible sur Google ni compris par ses visiteurs.",
+                title: "Positionnement peu clair",
+                desc: "Des textes imprécis ou mal formulés peuvent nuire à la compréhension de votre activité et à votre visibilité en ligne.",
                 color: "text-zen-700",
                 bg: "bg-zen-50 border-zen-200",
               },
@@ -352,8 +352,8 @@ export default function LandingPage() {
               <h3 className="text-xl font-bold text-zen-950 mb-3">Bibliothèque & Générateur</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Accédez à une bibliothèque de formulations validées par thème
-                (stress, sommeil, émotions...). Le plan Pro débloque la génération
-                automatique de bio Instagram, posts LinkedIn, scripts TikTok et plus —
+                (stress, sommeil, émotions...) et générez automatiquement
+                bio Instagram, posts LinkedIn, scripts TikTok et plus —
                 tous pensés pour votre activité.
               </p>
             </div>
@@ -368,7 +368,7 @@ export default function LandingPage() {
             Fait pour vous si vous êtes…
           </h2>
           <p className="text-gray-500 mb-10">
-            Visible & Conforme s&apos;adresse aux praticiens du bien-être non réglementés en France
+            Visible & Conforme s&apos;adresse aux praticiens du bien-être non réglementés en France — liste non exhaustive
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -376,7 +376,7 @@ export default function LandingPage() {
               "Énergéticien", "Praticien Reiki", "Sophrologue",
               "Nutritionniste (non diététicien)", "Coach sportif bien-être",
               "Praticien EFT", "Kinésiologue", "Praticien en méditation",
-              "Thérapeute familial", "Aromathérapeute",
+              "Thérapeute familial", "Aromathérapeute", "Masseur", "Ostéothérapeute",
             ].map((pro) => (
               <span key={pro} className="bg-white border border-zen-200 text-zen-800 px-4 py-2 rounded-full text-sm shadow-sm">
                 {pro}
@@ -413,21 +413,22 @@ export default function LandingPage() {
               </h2>
               <div className="space-y-4 text-zen-100 text-sm leading-relaxed">
                 <p>
-                  Je suis juriste de formation et consultante en visibilité conforme.
+                  Je suis juriste de formation, diplômée en marketing digital et consultante en visibilité conforme.
                 </p>
                 <p>
-                  J&apos;ai créé Visible & Conforme à partir d&apos;un constat simple : beaucoup de professionnels
-                  utilisent des formulations pensées pour améliorer leur visibilité… sans toujours mesurer
-                  les conséquences possibles de certains mots dans leur communication.
+                  J&apos;ai créé Visible & Conforme parce que j&apos;ai constaté que beaucoup de praticiens
+                  du bien-être communiquent en ligne sans toujours mesurer l&apos;impact de certains mots.
+                  Pas par négligence — mais parce que personne ne leur a expliqué où se situent les zones
+                  de vigilance dans leur secteur.
                 </p>
                 <p>
-                  Visible & Conforme a été conçu pour aider les professions à communication sensible
-                  à publier des contenus plus visibles, plus clairs et plus adaptés à leur activité.
-                  Une approche pensée à la croisée du SEO local, de la rédaction web et de la vigilance éditoriale.
+                  Visible & Conforme est né de cette réalité : un outil pensé à la croisée du SEO local,
+                  de la rédaction web et de la vigilance éditoriale, pour aider les professionnels
+                  du bien-être à publier des contenus plus visibles et mieux adaptés à leur activité.
                 </p>
               </div>
               <p className="mt-5 text-zen-300 text-xs font-medium">
-                Anne-Sophie Assalit · Juriste & fondatrice de Visible & Conforme
+                Anne-Sophie Assalit · Juriste, diplômée en marketing digital & fondatrice de Visible & Conforme
               </p>
             </div>
           </div>

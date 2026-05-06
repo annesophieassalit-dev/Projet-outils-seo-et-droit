@@ -29,35 +29,43 @@ export default function CGVPage() {
 
         <div className="space-y-10 text-sm text-gray-600 leading-relaxed">
 
-          {/* Préambule */}
-          <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Préambule</h2>
-            <p>
-              Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre
-              Anne-Sophie Assalit, éditrice de Visible & Conforme (ci-après &quot;le Service&quot;), SIRET 852 586 791 00018,
-              et toute personne souscrivant à un abonnement (ci-après &quot;l&apos;Utilisateur&quot;).
-            </p>
-            <p className="mt-2">
-              Toute souscription implique l&apos;acceptation pleine et entière des présentes CGV.
-            </p>
-          </section>
-
-          {/* Art. 1 */}
           <section>
             <h2 className="text-base font-semibold text-zen-950 mb-3">Article 1 — Objet</h2>
             <p>
-              Visible & Conforme est un outil d&apos;analyse éditoriale en ligne permettant aux professionnels du bien-être
-              de détecter certaines formulations pouvant présenter un risque juridique dans leur communication,
-              et d&apos;améliorer leur visibilité en ligne.
+              Les présentes Conditions Générales de Vente (CGV) régissent les relations entre
+              Anne-Sophie Assalit, éditrice de Visible & Conforme, SIRET 852 586 791 00018,
+              et toute personne souscrivant à un abonnement (ci-après &quot;l&apos;Utilisateur&quot;).
+            </p>
+            <p className="mt-2">
+              Visible & Conforme est un outil d&apos;analyse éditoriale en ligne permettant aux
+              professionnels du bien-être d&apos;identifier certaines formulations pouvant présenter
+              un risque dans leur communication et d&apos;améliorer leur visibilité en ligne.
             </p>
             <p className="mt-2 font-medium text-zen-950">
-              Visible & Conforme ne constitue pas une consultation juridique et ne remplace pas l&apos;avis d&apos;un professionnel du droit.
+              Visible & Conforme ne constitue pas une consultation juridique et ne remplace
+              pas l&apos;avis d&apos;un professionnel du droit.
             </p>
           </section>
 
-          {/* Art. 2 — Essai */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 2 — Essai payant 7 jours à 1€</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 2 — Acceptation des CGV</h2>
+            <p>
+              Toute souscription implique l&apos;acceptation pleine et entière des présentes CGV.
+              L&apos;Utilisateur reconnaît en avoir pris connaissance avant de souscrire.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 3 — Création de compte</h2>
+            <p>
+              L&apos;accès au Service nécessite la création d&apos;un compte avec une adresse email valide
+              et un mot de passe. L&apos;Utilisateur est responsable de la confidentialité de ses
+              identifiants et de toute activité réalisée depuis son compte.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 4 — Offre d&apos;essai payant</h2>
             <div className="bg-zen-50 border border-zen-200 rounded-xl p-5 space-y-3">
               <p>
                 Visible & Conforme propose un accès d&apos;essai de <strong>7 jours au tarif de 1€ TTC</strong>,
@@ -65,163 +73,125 @@ export default function CGVPage() {
               </p>
               <ul className="list-disc pl-5 space-y-1.5">
                 <li>Le paiement de 1€ est prélevé <strong>immédiatement</strong> à la souscription.</li>
-                <li>Un moyen de paiement valide est requis pour accéder à l&apos;essai.</li>
+                <li>Un moyen de paiement valide est requis.</li>
                 <li>L&apos;essai commence dès la validation du paiement.</li>
-                <li>À l&apos;issue des 7 jours, l&apos;abonnement mensuel à 19€ TTC/mois est automatiquement activé,
-                  sauf résiliation préalable de l&apos;Utilisateur.</li>
+                <li>
+                  À l&apos;issue des 7 jours, l&apos;abonnement mensuel est automatiquement activé,
+                  sauf résiliation préalable par l&apos;Utilisateur.
+                </li>
               </ul>
               <p className="text-zen-700 font-medium">
-                Le 1€ versé au titre de l&apos;essai ne sera pas remboursé en cas de résiliation dans le délai d&apos;essai,
-                sauf exercice du droit de rétractation dans les conditions prévues à l&apos;article 8.
+                Un email de rappel est envoyé au moins 3 jours avant la fin de la période d&apos;essai
+                et avant chaque renouvellement mensuel.
               </p>
-            </div>
-          </section>
-
-          {/* Art. 3 — Abonnement */}
-          <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 3 — Abonnement mensuel</h2>
-            <p>
-              À l&apos;issue de la période d&apos;essai, l&apos;abonnement mensuel Pro est facturé au tarif de{" "}
-              <strong>19€ TTC par mois</strong>, par prélèvement automatique sur le moyen de paiement enregistré.
-            </p>
-            <p className="mt-2">
-              L&apos;abonnement est reconduit tacitement chaque mois, à la date anniversaire de la première facturation,
-              jusqu&apos;à résiliation par l&apos;Utilisateur.
-            </p>
-          </section>
-
-          {/* Art. 4 — Email avant renouvellement */}
-          <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 4 — Rappel avant renouvellement</h2>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
               <p>
-                Visible & Conforme s&apos;engage à envoyer un <strong>email de rappel au moins 3 jours avant</strong> :
-              </p>
-              <ul className="list-disc pl-5 mt-2 space-y-1">
-                <li>la fin de la période d&apos;essai de 7 jours (et donc avant le premier prélèvement mensuel de 19€),</li>
-                <li>chaque renouvellement mensuel ultérieur.</li>
-              </ul>
-              <p className="mt-3 text-amber-800 font-medium">
-                Cet email constitue un rappel informatif. L&apos;absence de réponse vaut acceptation du renouvellement.
-                Pour résilier, l&apos;Utilisateur doit agir avant la date de prélèvement.
+                Le 1€ versé au titre de l&apos;essai n&apos;est pas remboursé en cas de résiliation
+                dans le délai d&apos;essai, sauf exercice du droit de rétractation dans les
+                conditions prévues à l&apos;article 6.
               </p>
             </div>
           </section>
 
-          {/* Art. 5 — Résiliation */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 5 — Résiliation</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 5 — Abonnement mensuel et résiliation</h2>
             <p>
-              L&apos;Utilisateur peut résilier son abonnement à tout moment, sans frais ni pénalité, via :
+              À l&apos;issue de la période d&apos;essai, l&apos;abonnement mensuel est facturé au tarif de{" "}
+              <strong>19€ TTC par mois</strong>, par prélèvement automatique sur le moyen de
+              paiement enregistré. Il est reconduit tacitement chaque mois jusqu&apos;à résiliation.
             </p>
+            <p className="mt-3">L&apos;Utilisateur peut résilier à tout moment, sans frais, via :</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>son espace client Stripe (accessible depuis la section &quot;Abonnement&quot; de l&apos;application),</li>
-              <li>ou en contactant le support à{" "}
+              <li>
+                ou en contactant le support à{" "}
                 <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
                   contact@visibleetconforme.fr
                 </a>.
               </li>
             </ul>
             <p className="mt-3">
-              La résiliation prend effet à la fin de la période en cours. L&apos;accès au Service est maintenu jusqu&apos;à
-              cette date. Aucun remboursement au prorata n&apos;est effectué pour la période écoulée.
+              La résiliation prend effet à la fin de la période en cours. L&apos;accès est maintenu
+              jusqu&apos;à cette date. Aucun remboursement au prorata n&apos;est effectué.
             </p>
-          </section>
-
-          {/* Art. 6 — Paiement */}
-          <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 6 — Modalités de paiement</h2>
-            <p>
+            <p className="mt-3">
               Les paiements sont traités de manière sécurisée par{" "}
-              <strong>Stripe</strong> (Stripe, Inc. — 185 Berry Street, Suite 550, San Francisco, CA 94107, États-Unis).
-              Les données bancaires de l&apos;Utilisateur ne sont pas stockées par Visible & Conforme.
-            </p>
-            <p className="mt-2">
-              En cas d&apos;échec de paiement lors du renouvellement, l&apos;accès au Service peut être suspendu après
-              notification à l&apos;Utilisateur.
+              <strong>Stripe</strong>. Les données bancaires ne sont pas stockées par Visible & Conforme.
             </p>
           </section>
 
-          {/* Art. 7 — Droit de rétractation */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 7 — Droit de rétractation</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 6 — Droit de rétractation</h2>
             <p>
-              Conformément aux articles L. 221-18 et suivants du Code de la consommation, l&apos;Utilisateur
-              dispose d&apos;un droit de rétractation de <strong>14 jours</strong> à compter de la souscription.
+              Conformément aux articles L. 221-18 et suivants du Code de la consommation,
+              l&apos;Utilisateur dispose d&apos;un droit de rétractation de <strong>14 jours</strong> à
+              compter de la souscription.
             </p>
             <p className="mt-2">
-              Toutefois, en souscrivant à l&apos;essai payant et en accédant immédiatement au Service,
-              l&apos;Utilisateur reconnaît expressément que l&apos;exécution du contrat commence avant l&apos;expiration
-              du délai de rétractation, conformément à l&apos;article L. 221-28 du Code de la consommation.
-              Dans ce cas, le droit de rétractation ne peut être exercé que pour la part non fournie du service.
+              Toutefois, en accédant immédiatement au Service après souscription, l&apos;Utilisateur
+              reconnaît expressément que l&apos;exécution du contrat commence avant l&apos;expiration
+              du délai de rétractation, conformément à l&apos;article L. 221-28 du Code de la
+              consommation. Dans ce cas, le droit de rétractation ne peut être exercé que
+              pour la part non fournie du service.
             </p>
             <p className="mt-2">
-              Pour exercer ce droit dans le délai légal, contactez :{" "}
+              Pour exercer ce droit dans le délai légal :{" "}
               <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
                 contact@visibleetconforme.fr
               </a>.
             </p>
           </section>
 
-          {/* Art. 8 — Responsabilité */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 8 — Limitation de responsabilité</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 7 — Limitation de responsabilité</h2>
             <p>
-              Les analyses fournies par Visible & Conforme sont générées automatiquement à titre indicatif.
-              Elles ne constituent pas un avis juridique personnalisé et ne sauraient engager la responsabilité
-              d&apos;Anne-Sophie Assalit en cas de décision prise sur leur base.
+              Les analyses fournies par Visible & Conforme sont générées automatiquement à titre
+              indicatif. Elles ne constituent pas un avis juridique personnalisé et ne sauraient
+              engager la responsabilité d&apos;Anne-Sophie Assalit en cas de décision prise sur leur base.
             </p>
             <p className="mt-2">
-              Pour toute situation nécessitant une analyse juridique approfondie, l&apos;Utilisateur est invité
-              à consulter un professionnel du droit qualifié.
+              Pour toute situation nécessitant une analyse juridique approfondie, l&apos;Utilisateur
+              est invité à consulter un professionnel du droit qualifié.
             </p>
           </section>
 
-          {/* Art. 9 — Données personnelles */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 9 — Données personnelles</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 8 — Données personnelles</h2>
             <p>
-              Les données collectées (adresse e-mail, contenus analysés, données de paiement traitées par Stripe)
-              sont utilisées exclusivement pour le fonctionnement du Service.
-              Elles ne sont pas revendues à des tiers.
-            </p>
-            <p className="mt-2">
-              Conformément au RGPD, l&apos;Utilisateur dispose d&apos;un droit d&apos;accès, de rectification
-              et de suppression de ses données.{" "}
+              Les données collectées sont utilisées exclusivement pour le fonctionnement du Service
+              et ne sont pas revendues à des tiers. Conformément au RGPD, l&apos;Utilisateur dispose
+              d&apos;un droit d&apos;accès, de rectification et de suppression de ses données.{" "}
               <Link href="/confidentialite" className="text-zen-700 hover:underline">
                 Consulter la politique de confidentialité →
               </Link>
             </p>
           </section>
 
-          {/* Art. 10 — Modification */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 10 — Modification des CGV</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 9 — Modification des CGV</h2>
             <p>
-              Visible & Conforme se réserve le droit de modifier les présentes CGV.
-              Les Utilisateurs abonnés seront informés par email au moins 30 jours avant l&apos;entrée en vigueur
-              de toute modification substantielle. La poursuite de l&apos;utilisation du Service vaut acceptation
-              des nouvelles conditions.
+              Visible & Conforme se réserve le droit de modifier les présentes CGV. Les Utilisateurs
+              abonnés seront informés par email au moins 30 jours avant l&apos;entrée en vigueur de
+              toute modification substantielle. La poursuite de l&apos;utilisation du Service vaut
+              acceptation des nouvelles conditions.
             </p>
           </section>
 
-          {/* Art. 11 — Loi applicable */}
           <section>
-            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 11 — Loi applicable et juridiction</h2>
+            <h2 className="text-base font-semibold text-zen-950 mb-3">Article 10 — Loi applicable</h2>
             <p>
-              Les présentes CGV sont soumises au droit français. En cas de litige, les parties s&apos;efforceront
-              de trouver une solution amiable. À défaut, les tribunaux français seront compétents.
+              Les présentes CGV sont soumises au droit français. En cas de litige, les parties
+              s&apos;efforceront de trouver une solution amiable. À défaut, les tribunaux français
+              seront compétents.
             </p>
             <p className="mt-2">
-              Pour tout litige de consommation, l&apos;Utilisateur peut recourir gratuitement à la médiation via
-              la plateforme européenne de règlement en ligne des litiges :{" "}
+              Pour tout litige de consommation, l&apos;Utilisateur peut recourir gratuitement à la
+              médiation via la plateforme européenne de règlement en ligne des litiges :{" "}
               <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-zen-700 hover:underline">
                 ec.europa.eu/consumers/odr
               </a>.
             </p>
           </section>
 
-          {/* Contact */}
           <section className="bg-zen-50 border border-zen-100 rounded-xl p-5">
             <h2 className="text-base font-semibold text-zen-950 mb-2">Contact</h2>
             <p>Anne-Sophie Assalit — Antibes (06)</p>
