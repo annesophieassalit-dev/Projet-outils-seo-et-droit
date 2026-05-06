@@ -50,8 +50,15 @@ export default function LandingPage() {
       </header>
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
-      <section className="pt-20 pb-24 px-4 sm:px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative pt-20 pb-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-br from-white via-zen-50/60 to-white">
+
+        {/* Cercles décoratifs de fond */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-zen-100 to-zen-200 rounded-full blur-3xl opacity-30 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-zen-200 rounded-full blur-2xl opacity-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-zen-100 to-zen-50 rounded-full blur-3xl opacity-40 translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-coral-100 rounded-full blur-2xl opacity-25 pointer-events-none" />
+
+        <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
             {/* ── Colonne texte ── */}
@@ -61,7 +68,7 @@ export default function LandingPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.2] tracking-tight mb-6">
-                <span className="text-gray-400 font-semibold block mb-1">
+                <span className="text-zen-400 font-semibold block mb-1">
                   Certains mots améliorent votre visibilité.
                 </span>
                 <span className="text-gray-900 block">
@@ -74,8 +81,8 @@ export default function LandingPage() {
                 Publiez des contenus visibles et conformes.
               </p>
 
-              <p className="text-base text-gray-400 italic mb-3">
-                Parce que vous ne pouvez pas communiquer comme tout le monde.
+              <p className="text-base text-zen-500 italic mb-3">
+                Parce que certains mots n&apos;ont pas les mêmes conséquences pour vous.
               </p>
 
               <p className="text-sm text-zen-700 font-medium mb-10">
@@ -92,13 +99,13 @@ export default function LandingPage() {
                 </Link>
                 <a
                   href="#fonctionnalites"
-                  className="border border-gray-200 text-gray-600 px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-base text-center"
+                  className="border border-zen-200 text-zen-700 bg-white/80 px-7 py-3.5 rounded-xl hover:bg-zen-50 transition-colors font-medium text-base text-center"
                 >
                   Voir comment ça marche
                 </a>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-400">
+              <div className="flex flex-col sm:flex-row gap-3 text-sm text-zen-600">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
                   14 jours gratuits, sans carte bancaire
