@@ -56,18 +56,22 @@ export default function LandingPage() {
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-extrabold text-gray-900 leading-[1.3] tracking-tight mb-5">
-            L&apos;outil qui améliore votre visibilité et vous aide à publier des{" "}
-            <span className="text-zen-600">contenus conformes.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-extrabold leading-[1.25] tracking-tight mb-8">
+            <span className="text-gray-400 font-semibold block mb-2">
+              Certains mots améliorent votre visibilité.
+            </span>
+            <span className="text-gray-900 block">
+              D&apos;autres peuvent{" "}
+              <span className="text-coral-500 italic">vous exposer.</span>
+            </span>
           </h1>
 
-          <p className="text-xl text-gray-600 font-medium mb-6">
-            Parce que vous ne pouvez pas communiquer comme tout le monde.
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 max-w-2xl mx-auto mb-5 leading-snug">
+            L&apos;outil qui améliore votre visibilité et vous aide à publier des contenus conformes.
           </p>
 
-          <p className="text-base text-gray-500 max-w-xl mx-auto mb-4 leading-relaxed">
-            Certains mots améliorent votre visibilité. D&apos;autres peuvent vous exposer.
-            En quelques secondes, repérez ce qui peut vous mettre en difficulté — et corrigez-le avant de publier.
+          <p className="text-base text-gray-400 italic mb-12">
+            Parce que vous ne pouvez pas communiquer comme tout le monde.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
