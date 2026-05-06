@@ -56,19 +56,22 @@ export default function LandingPage() {
             Pensé pour les professionnels du bien-être
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-extrabold text-gray-900 leading-[1.35] tracking-tight mb-6">
-            Le seul outil qui optimise votre{" "}
-            <span className="text-zen-600">SEO</span>
-            {" "}et vérifie votre{" "}
-            <span className="text-coral-500">conformité juridique.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-extrabold text-gray-900 leading-[1.3] tracking-tight mb-5">
+            Certains mots améliorent votre visibilité.{" "}
+            <span className="text-coral-500">D&apos;autres peuvent vous exposer.</span>
           </h1>
 
-          <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
-            Analysez votre site, repérez les risques, créez des contenus conformes,
-            en quelques minutes, sans jargon juridique.
+          <p className="text-xl text-gray-700 font-medium mb-3">
+            Vous savez quoi dire.<br />
+            Savez-vous ce que vous ne pouvez pas dire&nbsp;?
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
+          <p className="text-base text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+            Analysez vos contenus en quelques secondes et repérez ce qui peut vous mettre en difficulté.
+            Pour les praticiens bien-être qui refusent de choisir entre visibilité et sécurité.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <Link
               href="/inscription"
               className="bg-coral-500 text-white px-8 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2"
@@ -87,15 +90,15 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-zen-500" />
+              Résultat en moins de 2 minutes
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-zen-500" />
+              Des corrections adaptées à votre activité
+            </div>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-4 w-4 text-zen-500" />
               14 jours gratuits, sans carte bancaire
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              Résultats en moins de 2 minutes
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              Règles actualisées régulièrement
             </div>
           </div>
 
