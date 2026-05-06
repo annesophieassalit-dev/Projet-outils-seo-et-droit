@@ -57,22 +57,17 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-extrabold text-gray-900 leading-[1.3] tracking-tight mb-5">
-            Certains mots améliorent votre visibilité.{" "}
-            <span className="text-coral-500">D&apos;autres peuvent vous exposer.</span>
+            L&apos;outil qui améliore votre visibilité et vous aide à publier des{" "}
+            <span className="text-zen-600">contenus conformes.</span>
           </h1>
 
-          <p className="text-xl text-gray-700 font-medium mb-3">
-            Vous savez quoi dire.<br />
-            Savez-vous ce que vous ne pouvez pas dire&nbsp;?
+          <p className="text-xl text-gray-600 font-medium mb-6">
+            Parce que vous ne pouvez pas communiquer comme tout le monde.
           </p>
 
           <p className="text-base text-gray-500 max-w-xl mx-auto mb-4 leading-relaxed">
-            Analysez vos contenus en quelques secondes et repérez ce qui peut vous mettre en difficulté.
-            Pour les praticiens bien-être qui refusent de choisir entre visibilité et sécurité.
-          </p>
-
-          <p className="text-sm font-medium text-zen-700 mb-10">
-            Un outil qui allie SEO et conformité juridique.
+            Certains mots améliorent votre visibilité. D&apos;autres peuvent vous exposer.
+            En quelques secondes, repérez ce qui peut vous mettre en difficulté — et corrigez-le avant de publier.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
