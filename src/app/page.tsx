@@ -89,8 +89,8 @@ export default function LandingPage() {
                 Parce que certains mots n&apos;ont pas les mêmes conséquences pour vous.
               </p>
 
-              <p className="text-sm text-zen-700 font-medium mb-10">
-                → Identifiez ce qui peut vous exposer en quelques secondes.
+              <p className="text-sm text-gray-600 mb-10 leading-relaxed">
+                Identifiez les formulations pouvant poser problème dans votre communication en quelques secondes.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -271,7 +271,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Tous les outils pour communiquer en toute sécurité
+              Tous les outils pour communiquer avec plus de vigilance
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
               Le seul outil pensé spécifiquement pour les praticiens du bien-être non réglementés,
@@ -391,11 +391,15 @@ export default function LandingPage() {
 
         <div className="relative max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-start gap-10">
-            {/* Photo / avatar */}
+            {/* Photo */}
             <div className="shrink-0 mx-auto md:mx-0">
-              {/* Remplacer par <img src="/anne-sophie.jpg" ... /> quand la photo est disponible */}
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-zen-400 to-zen-300 border-4 border-zen-500/50 flex items-center justify-center shadow-xl">
-                <span className="text-2xl font-bold text-zen-900">AS</span>
+              <div className="w-28 h-28 rounded-2xl overflow-hidden border-4 border-zen-500/30 shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/anne-sophie.jpg"
+                  alt="Anne-Sophie Assalit"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -576,7 +580,7 @@ export default function LandingPage() {
         <div className="max-w-2xl mx-auto text-center">
           <Lock className="h-10 w-10 text-coral-100 mx-auto mb-4" />
           <h2 className="text-3xl font-bold text-white mb-4">
-            Protégez votre activité aujourd&apos;hui
+            Identifiez ce qui peut vous exposer
           </h2>
           <p className="text-coral-100 mb-8 text-lg">
             14 jours gratuits, accès complet, aucune carte bancaire requise.

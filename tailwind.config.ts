@@ -10,18 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Vert sauge moderne — confiance, conformité, positif
+        // Vert forêt premium — confiance, conformité, expertise
         zen: {
-          50:  "#eef9f4",
-          100: "#d1f0e3",
-          200: "#a3e1c7",
-          300: "#6dcfaa",
-          400: "#45bc8e",
-          500: "#3aaa78",
-          600: "#2e8f63",
-          700: "#247551",
-          800: "#1c5c40",
-          900: "#144330",
+          50:  "#e6f0ea",
+          100: "#c8ddd5",
+          200: "#a8c5b8",
+          300: "#84ab9b",
+          400: "#648f81",
+          500: "#4d776a",
+          600: "#3c6356",
+          700: "#2f5e4e",
+          800: "#244a3d",
+          900: "#19372d",
         },
         // Corail rosé — CTAs, inscription, upgrade
         coral: {
