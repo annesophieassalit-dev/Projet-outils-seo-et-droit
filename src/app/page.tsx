@@ -4,7 +4,6 @@ import {
   Search,
   AlertTriangle,
   CheckCircle2,
-  XCircle,
   ArrowRight,
   Sparkles,
   Scale,
@@ -154,43 +153,36 @@ export default function LandingPage() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-zen-50 border border-zen-200 rounded-xl p-4 text-center">
                       <p className="text-2xl font-extrabold text-zen-700">74</p>
-                      <p className="text-xs text-zen-600 mt-0.5">Score SEO</p>
+                      <p className="text-xs text-zen-600 mt-0.5 font-medium">Score visibilité</p>
                     </div>
                     <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
                       <p className="text-2xl font-extrabold text-red-600">42</p>
-                      <p className="text-xs text-red-500 mt-0.5">Score juridique</p>
+                      <p className="text-xs text-red-500 mt-0.5 font-medium">Score conformité</p>
                     </div>
                   </div>
 
-                  {/* Alertes */}
+                  {/* Formulations à surveiller */}
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Termes détectés</p>
-                    <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2.5">
-                      <span className="text-sm">🔴</span>
-                      <span className="text-sm font-semibold text-red-800">« je traite »</span>
-                      <span className="ml-auto text-xs text-red-500">Critique</span>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Formulations à surveiller</p>
+                    <div className="border border-red-200 rounded-lg px-3 py-2.5 bg-red-50">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-bold text-red-700">« je traite »</span>
+                        <span className="ml-auto text-xs bg-red-100 text-red-600 px-1.5 py-0.5 rounded font-medium">Critique</span>
+                      </div>
+                      <p className="text-xs text-red-600 leading-relaxed">Formulation susceptible d&apos;être assimilée à un acte médical</p>
                     </div>
-                    <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2.5">
-                      <span className="text-sm">🟠</span>
-                      <span className="text-sm font-semibold text-orange-800">« thérapeute »</span>
-                      <span className="ml-auto text-xs text-orange-500">Vigilance</span>
+                    <div className="border border-amber-200 rounded-lg px-3 py-2.5 bg-amber-50">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-bold text-amber-800">« résultats garantis »</span>
+                        <span className="ml-auto text-xs bg-amber-100 text-amber-600 px-1.5 py-0.5 rounded font-medium">Vigilance</span>
+                      </div>
+                      <p className="text-xs text-amber-700 leading-relaxed">Formulation pouvant être interprétée comme une promesse de résultat</p>
                     </div>
-                    <div className="flex items-center gap-3 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2.5">
-                      <span className="text-sm">🟠</span>
-                      <span className="text-sm font-semibold text-orange-800">« résultats garantis »</span>
-                      <span className="ml-auto text-xs text-orange-500">Vigilance</span>
-                    </div>
-                  </div>
-
-                  {/* Mention check */}
-                  <div className="grid grid-cols-2 gap-2 pt-1">
-                    <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-xs text-red-700">
-                      <XCircle className="h-3.5 w-3.5 shrink-0" />
-                      Mentions légales
-                    </div>
-                    <div className="flex items-center gap-2 bg-zen-50 border border-zen-200 rounded-lg px-3 py-2 text-xs text-zen-700">
-                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
-                      SIRET présent
+                    <div className="border border-zen-200 rounded-lg px-3 py-2.5 bg-zen-50">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-zen-600 shrink-0" />
+                        <span className="text-xs text-zen-700 font-medium">Mentions légales détectées</span>
+                      </div>
                     </div>
                   </div>
                 </div>

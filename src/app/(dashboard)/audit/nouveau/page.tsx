@@ -84,7 +84,7 @@ export default function NouvelAuditPage() {
       <div className="grid grid-cols-2 gap-4 mb-8">
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
           <TrendingUp className="h-6 w-6 text-blue-600 mb-2" />
-          <h3 className="font-semibold text-blue-900 text-sm mb-1">Audit SEO</h3>
+          <h3 className="font-semibold text-blue-900 text-sm mb-1">Audit visibilité</h3>
           <ul className="text-xs text-blue-700 space-y-0.5">
             <li>· Balises title et meta</li>
             <li>· Structure H1/H2/H3</li>
@@ -94,9 +94,9 @@ export default function NouvelAuditPage() {
         </div>
         <div className="bg-zen-50 border border-zen-200 rounded-xl p-4">
           <ShieldCheck className="h-6 w-6 text-zen-700 mb-2" />
-          <h3 className="font-semibold text-zen-900 text-sm mb-1">Audit juridique</h3>
+          <h3 className="font-semibold text-zen-900 text-sm mb-1">Audit conformité</h3>
           <ul className="text-xs text-zen-700 space-y-0.5">
-            <li>· Termes médicaux interdits</li>
+            <li>· Formulations à risque juridique</li>
             <li>· Mentions légales, RGPD</li>
             <li>· Confusion professionnelle</li>
             <li>· Protection consommateur</li>

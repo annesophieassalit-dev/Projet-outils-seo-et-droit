@@ -135,11 +135,19 @@ function IssueCard({ issue }: { issue: AuditIssue }) {
 
 function LegalMatchCard({ match }: { match: LegalRuleMatch }) {
   const categoryLabels: Record<string, string> = {
-    exercice_illegal: "Exercice illégal de la médecine",
-    confusion_professionnelle: "Confusion professionnelle",
-    mentions_obligatoires: "Mentions obligatoires",
-    publicite_mensongere: "Publicité trompeuse",
-    protection_consommateur: "Protection consommateur",
+    exercice_illegal: "Risque d'assimilation à un acte médical réglementé",
+    confusion_professionnelle: "Risque de confusion avec un titre protégé",
+    mentions_obligatoires: "Mention obligatoire",
+    publicite_mensongere: "Formulation pouvant être perçue comme trompeuse",
+    protection_consommateur: "Vigilance protection du consommateur",
+  };
+
+  const termLabel: Record<string, string> = {
+    exercice_illegal: "Formulation susceptible d'être assimilée à un acte médical",
+    confusion_professionnelle: "Terme pouvant créer une confusion avec un titre réglementé",
+    publicite_mensongere: "Formulation pouvant être interprétée comme une promesse de résultat",
+    protection_consommateur: "Formulation pouvant être considérée comme une pression commerciale",
+    mentions_obligatoires: "Élément réglementaire à vérifier",
   };
 
   return (
@@ -149,12 +157,12 @@ function LegalMatchCard({ match }: { match: LegalRuleMatch }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <p className="text-sm font-semibold text-gray-900">
-              Terme détecté : «&nbsp;{match.term}&nbsp;»
+              «&nbsp;{match.term}&nbsp;»
             </p>
             <SeverityBadge severity={match.severity} />
           </div>
           <p className="text-xs text-gray-500 mt-0.5">
-            {categoryLabels[match.category] || match.category}
+            {termLabel[match.category] || categoryLabels[match.category] || match.category}
           </p>
         </div>
       </div>
@@ -288,7 +296,7 @@ export default async function AuditResultPage({
           {seo && (
             <ScoreRing
               score={seo.score}
-              label="Score SEO"
+              label="Score visibilité"
               color={
                 seo.score >= 80
                   ? "#16a34a"
@@ -301,7 +309,7 @@ export default async function AuditResultPage({
           {legal && (
             <ScoreRing
               score={legal.score}
-              label="Score juridique"
+              label="Score conformité"
               color={
                 legal.score >= 80
                   ? "#16a34a"
@@ -348,7 +356,7 @@ export default async function AuditResultPage({
           <div className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-blue-600" />
             <h2 className="text-lg font-bold text-gray-900">
-              Audit SEO
+              Audit visibilité
             </h2>
             <span className="text-sm text-gray-400">
               {seoErrors.length} critique{seoErrors.length !== 1 ? "s" : ""} ·{" "}
@@ -417,7 +425,7 @@ export default async function AuditResultPage({
           <div className="flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-zen-700" />
             <h2 className="text-lg font-bold text-gray-900">
-              Audit juridique
+              Audit conformité
             </h2>
             <span className="text-sm text-gray-400">
               {legalErrors.length} critique{legalErrors.length !== 1 ? "s" : ""} ·{" "}
@@ -462,7 +470,7 @@ export default async function AuditResultPage({
           {uniqueMatches.length > 0 && (
             <div className="space-y-2">
               <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
-                Termes à risque détectés ({uniqueMatches.length})
+                Formulations à surveiller ({uniqueMatches.length})
               </h3>
               {uniqueMatches
                 .filter((m) => isPro || visibleMatchIds.has(m.ruleId))
@@ -574,8 +582,8 @@ export default async function AuditResultPage({
             Votre plan gratuit inclut uniquement l&apos;audit SEO.
           </p>
           <p className="text-gray-500 text-sm mb-6">
-            Passez au plan Essentiel pour vérifier les termes interdits,
-            les mentions obligatoires, et les risques juridiques de votre site.
+            Passez au plan Essentiel pour identifier les formulations à risque,
+            vérifier les mentions obligatoires et obtenir des recommandations personnalisées.
           </p>
           <Link
             href="/abonnement"

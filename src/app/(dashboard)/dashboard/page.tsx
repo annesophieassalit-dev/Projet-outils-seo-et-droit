@@ -133,7 +133,7 @@ export default async function DashboardPage() {
         </div>
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <p className="text-xs text-gray-500 mb-1 flex items-center gap-1">
-            <TrendingUp className="h-3 w-3" /> Score SEO moyen
+            <TrendingUp className="h-3 w-3" /> Score visibilité moyen
           </p>
           <p className="text-2xl font-bold text-gray-900">
             {avgSeo !== null ? `${avgSeo}` : "—"}
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
         </div>
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <p className="text-xs text-gray-500 mb-1 flex items-center gap-1">
-            <ShieldCheck className="h-3 w-3" /> Score juridique moyen
+            <ShieldCheck className="h-3 w-3" /> Score conformité moyen
           </p>
           {plan === "expired" ? (
             <p className="text-sm text-gray-400">Abonnement requis</p>
