@@ -22,6 +22,7 @@ const config: Config = {
           700: "#2f5e4e",
           800: "#244a3d",
           900: "#19372d",
+          950: "#1f2d28",
         },
         // Corail rosé — CTAs, inscription, upgrade
         coral: {

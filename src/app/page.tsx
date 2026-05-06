@@ -23,7 +23,7 @@ export default function LandingPage() {
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl text-gray-900">Visible & Conforme</span>
+            <span className="font-bold text-xl text-zen-950">Visible & Conforme</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#fonctionnalites" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
@@ -54,7 +54,7 @@ export default function LandingPage() {
       </header>
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
-      <section className="relative pt-20 pb-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-br from-white via-zen-50/60 to-white">
+      <section className="relative pt-28 pb-36 px-4 sm:px-6 overflow-hidden bg-gradient-to-br from-white via-zen-50/60 to-white">
 
         {/* Cercles décoratifs */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-zen-100 to-zen-200 rounded-full blur-3xl opacity-30 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
@@ -63,33 +63,33 @@ export default function LandingPage() {
         <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-coral-100 rounded-full blur-2xl opacity-25 pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
 
             {/* ── Colonne texte ── */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-8 border border-zen-200 font-medium">
+              <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-10 border border-zen-200 font-medium">
                 Pensé pour les professionnels du bien-être
               </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.2] tracking-tight mb-6">
-                <span className="text-zen-400 font-semibold block mb-1">
+              <h1 className="text-[2.1rem] sm:text-[2.6rem] font-bold leading-[1.25] tracking-tight mb-8">
+                <span className="text-zen-500 font-semibold block mb-3 text-2xl sm:text-3xl">
                   Certains mots améliorent votre visibilité.
                 </span>
-                <span className="text-gray-900 block">
+                <span className="text-zen-950 block">
                   D&apos;autres peuvent{" "}
-                  <span className="text-coral-500">vous exposer.</span>
+                  <span className="text-coral-500 font-extrabold">vous exposer.</span>
                 </span>
               </h1>
 
-              <p className="text-xl font-bold text-gray-900 mb-3 leading-snug">
+              <p className="text-lg font-semibold text-zen-950 mb-4 leading-snug">
                 Publiez des contenus visibles et conformes.
               </p>
 
-              <p className="text-base text-zen-500 italic mb-3">
+              <p className="text-base text-zen-500 italic mb-4">
                 Parce que certains mots n&apos;ont pas les mêmes conséquences pour vous.
               </p>
 
-              <p className="text-sm text-gray-600 mb-10 leading-relaxed">
+              <p className="text-sm text-gray-500 mb-12 leading-relaxed">
                 Identifiez les formulations pouvant poser problème dans votre communication en quelques secondes.
               </p>
 
@@ -183,10 +183,10 @@ export default function LandingPage() {
                     </div>
                     <div className="border-l-[3px] border-amber-400 pl-3 py-2 rounded-r-lg bg-amber-50/60">
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-xs font-bold text-amber-800">« résultats garantis »</span>
+                        <span className="text-xs font-bold text-amber-800">« méthode efficace contre l&apos;anxiété »</span>
                         <span className="ml-auto text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">Vigilance</span>
                       </div>
-                      <p className="text-xs text-amber-700 leading-relaxed">Formulation pouvant être interprétée comme une promesse</p>
+                      <p className="text-xs text-amber-700 leading-relaxed">Formulation pouvant être interprétée comme une promesse implicite de résultat</p>
                     </div>
                   </div>
 
@@ -217,7 +217,7 @@ export default function LandingPage() {
       <section id="pourquoi" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-zen-50/40 to-white border-y border-zen-100">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
               Les types de risques que Visible & Conforme aide à repérer
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
@@ -258,7 +258,7 @@ export default function LandingPage() {
             ].map((item) => (
               <div key={item.title} className={`p-6 rounded-xl border ${item.bg}`}>
                 <item.icon className={`h-7 w-7 ${item.color} mb-3`} />
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <h3 className="font-semibold text-zen-950 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -270,7 +270,7 @@ export default function LandingPage() {
       <section id="fonctionnalites" className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
               Tous les outils pour communiquer avec plus de vigilance
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -284,7 +284,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
                 <TrendingUp className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnostic visibilité</h3>
+              <h3 className="text-xl font-bold text-zen-950 mb-3">Diagnostic visibilité</h3>
               <ul className="space-y-2.5 text-sm text-gray-600">
                 {[
                   "Balises title et meta description",
@@ -309,7 +309,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
                 <ShieldCheck className="h-6 w-6 text-zen-700" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Diagnostic conformité</h3>
+              <h3 className="text-xl font-bold text-zen-950 mb-3">Diagnostic conformité</h3>
               <ul className="space-y-2.5 text-sm text-gray-600">
                 {[
                   "Formulations à risque (soigner, traiter, guérir...)",
@@ -334,7 +334,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-5">
                 <ScanText className="h-6 w-6 text-amber-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Scanner de texte</h3>
+              <h3 className="text-xl font-bold text-zen-950 mb-3">Scanner de texte</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Collez n&apos;importe quel texte — bio Instagram, post, page de site —
                 et détectez instantanément les formulations à risque avec alertes
@@ -346,7 +346,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
                 <BookOpen className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Bibliothèque & Générateur</h3>
+              <h3 className="text-xl font-bold text-zen-950 mb-3">Bibliothèque & Générateur</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Accédez à une bibliothèque de formulations validées par thème
                 (stress, sommeil, émotions...). Le plan Pro débloque la génération
@@ -361,7 +361,7 @@ export default function LandingPage() {
       {/* ─── Pour qui ──────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-50/50 via-white to-zen-50/30 border-y border-zen-100">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-zen-950 mb-4">
             Fait pour vous si vous êtes…
           </h2>
           <p className="text-gray-500 mb-10">
@@ -435,7 +435,7 @@ export default function LandingPage() {
       <section id="tarifs" className="py-24 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
               Des tarifs adaptés à votre activité
             </h2>
             <p className="text-gray-600">Sans engagement · Résiliable à tout moment</p>
@@ -515,7 +515,7 @@ export default function LandingPage() {
       <section id="faq" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-zen-50/30 to-white border-t border-zen-100">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Questions fréquentes</h2>
+            <h2 className="text-3xl font-bold text-zen-950 mb-3">Questions fréquentes</h2>
             <p className="text-gray-500 text-sm">Tout ce que vous devez savoir avant de commencer.</p>
           </div>
 
@@ -563,7 +563,7 @@ export default function LandingPage() {
                 className="group bg-white border border-gray-200 rounded-xl overflow-hidden"
               >
                 <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none hover:bg-zen-50/50 transition-colors">
-                  <span className="font-semibold text-gray-900 text-sm leading-snug">{item.q}</span>
+                  <span className="font-semibold text-zen-950 text-sm leading-snug">{item.q}</span>
                   <ChevronDown className="h-4 w-4 text-zen-600 shrink-0 transition-transform group-open:rotate-180" />
                 </summary>
                 <div className="px-5 pb-5">
