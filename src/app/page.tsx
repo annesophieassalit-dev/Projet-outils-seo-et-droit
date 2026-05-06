@@ -49,62 +49,140 @@ export default function LandingPage() {
       </header>
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
-      <section className="pt-24 pb-28 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="pt-20 pb-24 px-4 sm:px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-10 border border-zen-200 font-medium">
-            Pensé pour les professionnels du bien-être
-          </div>
+            {/* ── Colonne texte ── */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-zen-50 text-zen-700 text-sm px-4 py-1.5 rounded-full mb-8 border border-zen-200 font-medium">
+                Pensé pour les professionnels du bien-être
+              </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-extrabold leading-[1.25] tracking-tight mb-8">
-            <span className="text-gray-400 font-semibold block mb-2">
-              Certains mots améliorent votre visibilité.
-            </span>
-            <span className="text-gray-900 block">
-              D&apos;autres peuvent{" "}
-              <span className="text-coral-500 italic">vous exposer.</span>
-            </span>
-          </h1>
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.2] tracking-tight mb-6">
+                <span className="text-gray-400 font-semibold block mb-1">
+                  Certains mots améliorent votre visibilité.
+                </span>
+                <span className="text-gray-900 block">
+                  D&apos;autres peuvent{" "}
+                  <span className="text-coral-500">vous exposer.</span>
+                </span>
+              </h1>
 
-          <p className="text-xl sm:text-2xl font-bold text-gray-900 max-w-2xl mx-auto mb-5 leading-snug">
-            L&apos;outil qui améliore votre visibilité et vous aide à publier des contenus conformes.
-          </p>
+              <p className="text-xl font-bold text-gray-900 mb-3 leading-snug">
+                Publiez des contenus visibles et conformes.
+              </p>
 
-          <p className="text-base text-gray-400 italic mb-12">
-            Parce que vous ne pouvez pas communiquer comme tout le monde.
-          </p>
+              <p className="text-base text-gray-400 italic mb-3">
+                Parce que vous ne pouvez pas communiquer comme tout le monde.
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-            <Link
-              href="/inscription"
-              className="bg-coral-500 text-white px-8 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2"
-            >
-              Analyser mes contenus gratuitement
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href="#fonctionnalites"
-              className="border border-gray-200 text-gray-600 px-8 py-3.5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-base"
-            >
-              Voir comment ça marche
-            </a>
-          </div>
+              <p className="text-sm text-zen-700 font-medium mb-10">
+                → Identifiez ce qui peut vous exposer en quelques secondes.
+              </p>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              Résultat en moins de 2 minutes
+              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <Link
+                  href="/inscription"
+                  className="bg-coral-500 text-white px-7 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2 shadow-sm"
+                >
+                  Analyser mes contenus gratuitement
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href="#fonctionnalites"
+                  className="border border-gray-200 text-gray-600 px-7 py-3.5 rounded-xl hover:bg-gray-50 transition-colors font-medium text-base text-center"
+                >
+                  Voir comment ça marche
+                </a>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-400">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  14 jours gratuits, sans carte bancaire
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  Résultats en moins de 2 minutes
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  Règles actualisées régulièrement
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              Des corrections adaptées à votre activité
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-zen-500" />
-              14 jours gratuits, sans carte bancaire
-            </div>
-          </div>
 
+            {/* ── Colonne mockup ── */}
+            <div className="relative">
+              {/* Halo décoratif */}
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-zen-100 rounded-full blur-3xl opacity-60 pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-coral-100 rounded-full blur-2xl opacity-40 pointer-events-none" />
+
+              {/* Carte navigateur */}
+              <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+                {/* Barre navigateur */}
+                <div className="bg-zen-700 px-4 py-3 flex items-center gap-3">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-zen-500" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-zen-500" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-zen-500" />
+                  </div>
+                  <div className="flex-1 bg-zen-600/60 rounded-md px-3 py-1 text-xs text-zen-200 font-mono">
+                    visibleetconforme.fr/scanner
+                  </div>
+                </div>
+
+                {/* Contenu scanner */}
+                <div className="p-5 space-y-4">
+                  {/* Texte analysé */}
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                    <p className="text-xs text-gray-400 mb-2 font-medium uppercase tracking-wide">Votre texte</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      Je{" "}
+                      <span className="bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-medium">soigne</span>
+                      {" "}l&apos;anxiété et les troubles du sommeil.
+                    </p>
+                  </div>
+
+                  {/* Alerte critique */}
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-base">🔴</span>
+                      <span className="font-semibold text-red-800 text-sm">« soigne »</span>
+                      <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-medium">Critique</span>
+                    </div>
+                    <p className="text-xs text-red-700 leading-relaxed">
+                      Terme médical interdit — implique un acte thérapeutique réglementé.
+                    </p>
+                  </div>
+
+                  {/* Suggestion */}
+                  <div className="bg-zen-50 border border-zen-200 rounded-xl p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CheckCircle2 className="h-4 w-4 text-zen-600" />
+                      <span className="text-xs font-semibold text-zen-700 uppercase tracking-wide">Suggestion</span>
+                    </div>
+                    <p className="text-sm text-zen-900 leading-relaxed">
+                      J&apos;accompagne les personnes qui traversent l&apos;anxiété et les troubles du sommeil.
+                    </p>
+                  </div>
+
+                  {/* Score */}
+                  <div className="flex items-center justify-between pt-1">
+                    <span className="text-xs text-gray-400">Score de vigilance</span>
+                    <div className="flex items-center gap-3 flex-1 ml-4">
+                      <div className="flex-1 bg-gray-100 rounded-full h-1.5">
+                        <div className="bg-zen-500 h-1.5 rounded-full" style={{ width: "78%" }} />
+                      </div>
+                      <span className="text-xs font-semibold text-zen-700">78 / 100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
