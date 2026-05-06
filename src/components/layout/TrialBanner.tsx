@@ -15,7 +15,7 @@ export default function TrialBanner({ isTrialing, trialDaysLeft, trialExpired }:
       <div className="bg-red-600 text-white px-4 py-2.5 flex items-center justify-between gap-4 shrink-0">
         <div className="flex items-center gap-2 text-sm">
           <AlertTriangle className="h-4 w-4 shrink-0" />
-          <span>Votre essai gratuit est terminé. Abonnez-vous pour continuer à utiliser Visible & Conforme.</span>
+          <span>Votre période d&apos;essai est terminée. Continuez avec un abonnement à 19€/mois.</span>
         </div>
         <Link
           href="/abonnement"
@@ -35,7 +35,7 @@ export default function TrialBanner({ isTrialing, trialDaysLeft, trialExpired }:
         <div className="flex items-center gap-2 text-sm">
           <Clock className="h-4 w-4 shrink-0" />
           <span>
-            Plus que <strong>{trialDaysLeft} jour{trialDaysLeft > 1 ? "s" : ""}</strong> dans votre essai gratuit.
+            Plus que <strong>{trialDaysLeft} jour{trialDaysLeft > 1 ? "s" : ""}</strong> dans votre essai.
           </span>
         </div>
         <Link
@@ -53,7 +53,7 @@ export default function TrialBanner({ isTrialing, trialDaysLeft, trialExpired }:
       <div className="flex items-center gap-2 text-sm">
         <Sparkles className="h-4 w-4 shrink-0" />
         <span>
-          Essai gratuit — <strong>{trialDaysLeft} jours restants</strong>. Accès complet à toutes les fonctionnalités.
+          Essai en cours — <strong>{trialDaysLeft} jour{trialDaysLeft > 1 ? "s" : ""} restant{trialDaysLeft > 1 ? "s" : ""}</strong>. Accès complet. Un email vous préviendra avant le renouvellement.
         </span>
       </div>
       <Link

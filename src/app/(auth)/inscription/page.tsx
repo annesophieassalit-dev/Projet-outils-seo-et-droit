@@ -125,8 +125,8 @@ export default function InscriptionPage() {
           <h1 className="text-2xl font-bold text-gray-900">Créer un compte</h1>
           <p className="text-gray-500 text-sm mt-1">
             {initialPlan !== "gratuit"
-              ? `Plan ${initialPlan} · 7 jours d'essai gratuit`
-              : "1 audit gratuit · Sans carte bancaire"}
+              ? `7 jours pour 1€ · Puis 19€/mois · Résiliable`
+              : "Essai 7 jours · 1€ · Accès complet"}
           </p>
         </div>
 

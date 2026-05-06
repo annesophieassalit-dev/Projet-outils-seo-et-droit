@@ -171,7 +171,7 @@ export default async function DashboardPage() {
           <div>
             <p className="font-semibold flex items-center gap-2">
               <ShieldCheck className="h-5 w-5" />
-              Votre essai gratuit est terminé
+              Votre période d&apos;essai est terminée
             </p>
             <p className="text-zen-100 text-sm mt-0.5">
               Abonnez-vous pour continuer à utiliser tous les outils.

@@ -112,15 +112,15 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-3 text-sm text-zen-600">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  14 jours gratuits, sans carte bancaire
+                  7 jours pour 1€ — accès complet
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Résultats en moins de 2 minutes
+                  Puis 19€/mois, résiliable à tout moment
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Règles actualisées régulièrement
+                  Email de rappel avant renouvellement
                 </div>
               </div>
             </div>
@@ -445,20 +445,24 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Essai 14 jours */}
-            <div className="border border-gray-200 rounded-2xl p-8">
-              <h3 className="font-bold text-xl mb-1">Essai gratuit</h3>
-              <p className="text-gray-500 text-sm mb-4">14 jours — accès complet</p>
-              <div className="text-4xl font-bold mb-1">0 €</div>
-              <p className="text-xs text-gray-400 mb-6">Sans carte bancaire</p>
+            {/* Essai 7 jours à 1€ */}
+            <div className="border-2 border-zen-700 rounded-2xl p-8 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-700 text-white text-xs px-3 py-1 rounded-full font-medium">
+                Commencer ici
+              </div>
+              <h3 className="font-bold text-xl mb-1">Essai 7 jours</h3>
+              <p className="text-gray-500 text-sm mb-4">Accès complet · Sans engagement</p>
+              <div className="text-4xl font-bold mb-1">1 €</div>
+              <p className="text-xs text-gray-400 mb-1">Pour 7 jours d&apos;accès complet</p>
+              <p className="text-xs text-zen-600 font-medium mb-6">Puis 19€/mois · Résiliable avant renouvellement</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "Accès à toutes les fonctionnalités Pro",
+                  "Accès immédiat à toutes les fonctionnalités",
                   "Diagnostics visibilité + conformité illimités",
                   "Scanner de texte illimité",
                   "Générateur de contenus",
                   "Bibliothèque complète de formulations",
-                  "Export PDF des rapports",
+                  "Email de rappel avant renouvellement",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -468,9 +472,9 @@ export default function LandingPage() {
               </ul>
               <Link
                 href="/inscription"
-                className="block text-center border border-gray-300 text-gray-700 py-3 rounded-xl hover:bg-gray-50 transition-colors font-medium"
+                className="block text-center bg-zen-700 text-white py-3 rounded-xl hover:bg-zen-800 transition-colors font-semibold"
               >
-                Démarrer l&apos;essai gratuit
+                Démarrer pour 1€
               </Link>
             </div>
 
@@ -507,7 +511,7 @@ export default function LandingPage() {
                 href="/inscription"
                 className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
               >
-                Commencer l&apos;essai gratuit
+                Démarrer pour 1€
               </Link>
             </div>
           </div>
@@ -558,7 +562,7 @@ export default function LandingPage() {
               },
               {
                 q: "L'accès est-il gratuit ?",
-                a: "Visible & Conforme propose un essai gratuit de 14 jours, sans carte bancaire. La version Pro vous donne ensuite accès à l'ensemble des fonctionnalités, sans limitation d'utilisation.",
+                a: "Visible & Conforme propose un essai de 7 jours pour 1€, avec accès complet à toutes les fonctionnalités. À l'issue de l'essai, l'abonnement passe à 19€/mois. Vous pouvez résilier à tout moment avant le renouvellement. Un email de rappel vous est envoyé avant chaque renouvellement.",
               },
             ].map((item) => (
               <details
@@ -586,16 +590,19 @@ export default function LandingPage() {
             Identifiez ce qui peut vous exposer
           </h2>
           <p className="text-coral-100 mb-8 text-lg">
-            14 jours gratuits, accès complet, aucune carte bancaire requise.
-            Découvrez en 2 minutes les risques de votre site actuel.
+            7 jours pour 1€, accès complet, résiliable à tout moment.
+            Découvrez en 2 minutes les zones de risque de votre site.
           </p>
           <Link
             href="/inscription"
             className="inline-flex items-center gap-2 bg-white text-coral-700 px-8 py-4 rounded-xl hover:bg-coral-50 transition-colors font-bold text-lg"
           >
-            Analyser mon site maintenant
+            Démarrer pour 1€
             <ArrowRight className="h-5 w-5" />
           </Link>
+          <p className="text-coral-200 text-sm mt-5">
+            Puis 19€/mois · Sans engagement · Email avant renouvellement
+          </p>
         </div>
       </section>
 
@@ -612,6 +619,9 @@ export default function LandingPage() {
           <div className="flex gap-4 text-sm text-gray-500">
             <Link href="/mentions-legales" className="hover:text-gray-900 transition-colors">
               Mentions légales
+            </Link>
+            <Link href="/cgv" className="hover:text-gray-900 transition-colors">
+              CGV
             </Link>
             <Link href="/confidentialite" className="hover:text-gray-900 transition-colors">
               Confidentialité

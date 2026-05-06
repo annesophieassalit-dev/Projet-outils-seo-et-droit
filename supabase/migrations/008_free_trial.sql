@@ -1,16 +1,15 @@
 -- ============================================================
 -- Visible & Conforme — Migration 008
--- Modèle essai gratuit 14 jours (sans CB)
--- Remplace le freemium permanent
+-- Modèle essai 7 jours à 1€ (avec CB requise)
 -- ============================================================
 
 -- Ajouter la colonne trial_ends_at
 ALTER TABLE public.profiles
   ADD COLUMN IF NOT EXISTS trial_ends_at TIMESTAMPTZ;
 
--- Donner un essai de 14 jours aux utilisateurs existants sans abonnement payant
+-- Donner un essai de 7 jours aux utilisateurs existants sans abonnement payant
 UPDATE public.profiles
-SET trial_ends_at = NOW() + interval '14 days'
+SET trial_ends_at = NOW() + interval '7 days'
 WHERE trial_ends_at IS NULL
   AND plan = 'gratuit'
   AND subscription_status IN ('inactive', NULL);
@@ -25,7 +24,7 @@ BEGIN
     NEW.email,
     NEW.raw_user_meta_data->>'full_name',
     NEW.raw_user_meta_data->>'profession',
-    NOW() + interval '14 days'
+    NOW() + interval '7 days'
   )
   ON CONFLICT (id) DO NOTHING;
   RETURN NEW;

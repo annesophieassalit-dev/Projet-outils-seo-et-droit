@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { stripe, PLANS } from "@/lib/stripe";
+import { stripe, PLANS, TRIAL_PRICE_ID } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
 
 export async function POST(request: NextRequest) {
@@ -40,25 +40,35 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id);
   }
 
+  // Essai 7 jours à 1€ : trial_period_days démarre l'abonnement après 7 jours.
+  // Le 1€ est facturé immédiatement via add_invoice_items sur la première facture.
+  const trialInvoiceItems = TRIAL_PRICE_ID
+    ? [{ price: TRIAL_PRICE_ID, quantity: 1 }]
+    : undefined;
+
   const session = await stripe.checkout.sessions.create({
     customer: customerId,
     mode: "subscription",
     payment_method_types: ["card"],
-    line_items: [
-      {
-        price: planConfig.priceId,
-        quantity: 1,
-      },
-    ],
+    payment_method_collection: "always",
+    line_items: [{ price: planConfig.priceId, quantity: 1 }],
+    subscription_data: {
+      trial_period_days: 7,
+      trial_settings: { end_behavior: { missing_payment_method: "cancel" } },
+      metadata: { supabase_user_id: user.id, plan },
+      ...(trialInvoiceItems ? { add_invoice_items: trialInvoiceItems } : {}),
+    },
     success_url: absoluteUrl(`/dashboard?checkout=success&plan=${plan}`),
     cancel_url: absoluteUrl("/abonnement?checkout=canceled"),
-    metadata: {
-      supabase_user_id: user.id,
-      plan,
-    },
+    metadata: { supabase_user_id: user.id, plan },
     locale: "fr",
     billing_address_collection: "auto",
     allow_promotion_codes: true,
+    custom_text: {
+      submit: {
+        message: "7 jours d'essai pour 1€, puis 19€/mois. Résiliable à tout moment. Un email vous sera envoyé avant le renouvellement.",
+      },
+    },
   });
 
   return NextResponse.json({ url: session.url });
