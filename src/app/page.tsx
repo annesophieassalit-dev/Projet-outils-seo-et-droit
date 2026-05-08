@@ -259,7 +259,7 @@ export default function LandingPage() {
           {/* ── 3 cartes overview ── */}
           <div className="grid md:grid-cols-3 gap-5 mb-10">
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow flex flex-col gap-4">
+            <div className="rounded-xl border border-gray-200 bg-white p-5 hover:shadow-sm transition-shadow flex flex-col gap-3">
 
               {/* En-tête */}
               <div className="flex items-start justify-between gap-3">
@@ -305,7 +305,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50/30 to-white p-6 hover:shadow-sm transition-shadow flex flex-col gap-4">
+            <div className="rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50/30 to-white p-5 hover:shadow-sm transition-shadow flex flex-col gap-3">
 
               {/* En-tête */}
               <div className="flex items-start justify-between gap-3">
@@ -323,7 +323,7 @@ export default function LandingPage() {
 
               {/* Description */}
               <p className="text-sm text-gray-500 leading-relaxed">
-                Saisissez votre URL pour obtenir une analyse globale de votre visibilité, de vos formulations et de votre cohérence éditoriale.
+                Obtenez une vue claire de votre visibilité, de votre positionnement et des points sensibles de votre présence en ligne.
               </p>
 
               {/* Tags + analyse incluse */}
@@ -351,7 +351,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-purple-200 bg-gradient-to-br from-purple-50/30 to-white p-6 hover:shadow-md transition-all duration-200 flex flex-col gap-4">
+            <div className="rounded-xl border border-purple-200 bg-gradient-to-br from-purple-50/30 to-white p-5 hover:shadow-md transition-all duration-200 flex flex-col gap-3">
 
               {/* En-tête */}
               <div className="flex items-start justify-between gap-3">
