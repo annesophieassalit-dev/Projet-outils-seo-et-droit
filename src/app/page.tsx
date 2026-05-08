@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Lock,
   ChevronDown,
+  Clock,
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -388,34 +389,34 @@ export default function LandingPage() {
               En quelques clics, passez de l&apos;incertitude à la publication sereine.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-4 gap-5 items-start">
 
-            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">01</div>
-              <div className="w-10 h-10 bg-zen-50 rounded-xl flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-gradient-to-br from-white to-zen-50/60 border border-zen-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+              <div className="text-[10px] font-bold text-zen-400 uppercase tracking-widest mb-4">01</div>
+              <div className="w-10 h-10 bg-zen-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-zen-100">
                 <FileText className="h-5 w-5 text-zen-600" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Ajoutez un texte ou une URL</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-3">
-                Collez votre contenu ou saisissez votre adresse web.
+                Collez votre contenu ou saisissez l&apos;adresse de votre site.
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {["Post", "Bio", "Page web", "Google..."].map((tag) => (
-                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-400 text-[10px] px-2 py-0.5 rounded-full">
+                  <span key={tag} className="bg-zen-50 border border-zen-200 text-zen-600 text-[10px] px-2 py-0.5 rounded-full">
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">02</div>
-              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-gradient-to-br from-white to-amber-50/60 border border-amber-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+              <div className="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-4">02</div>
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-100">
                 <ShieldCheck className="h-5 w-5 text-amber-600" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">L&apos;outil analyse votre communication</h3>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">Détection des formulations sensibles</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-3">
-                Détection des formulations sensibles et des points de visibilité.
+                L&apos;outil identifie les points de vigilance dans vos textes.
               </p>
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center gap-1.5">
@@ -433,31 +434,31 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">03</div>
-              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
+            <div className="rounded-2xl bg-gradient-to-br from-white to-orange-50/40 border border-orange-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+              <div className="text-[10px] font-bold text-orange-400 uppercase tracking-widest mb-4">03</div>
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-100">
                 <AlertTriangle className="h-5 w-5 text-amber-500" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Recevez des explications claires</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-3">
-                Chaque point est expliqué sans jargon, avec une reformulation adaptée.
+                Chaque point est expliqué sans jargon, avec une reformulation proposée.
               </p>
-              <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+              <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 shadow-sm">
                 <p className="text-[10px] font-semibold text-amber-700 mb-0.5">Vigilance</p>
                 <p className="text-[10px] text-amber-600">«&nbsp;je soigne&nbsp;» → promesse implicite</p>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-purple-50/40 border border-purple-200 p-6 shadow-sm">
+            <div className="rounded-2xl bg-gradient-to-br from-purple-50/70 to-purple-100/50 border border-purple-200 p-6 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
               <div className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-4">04</div>
-              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-purple-200">
                 <Sparkles className="h-5 w-5 text-purple-500" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">Créez vos contenus sereinement</h3>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">Générez des contenus prêts à publier</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-3">
-                Utilisez l&apos;assistant de rédaction pour générer des contenus adaptés.
+                L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
               </p>
-              <div className="bg-white border border-purple-200 rounded-lg px-3 py-2">
+              <div className="bg-white border border-purple-200 rounded-lg px-3 py-2 shadow-sm">
                 <p className="text-[10px] font-semibold text-purple-600 mb-0.5">Générateur</p>
                 <p className="text-[10px] text-purple-500">Bio · Post · Page de présentation...</p>
               </div>
@@ -521,68 +522,113 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-50/50 via-white to-zen-50/30 border-y border-zen-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
-              Un seul outil pour publier avec plus de sérénité
+      <section className="py-24 px-4 sm:px-6 bg-[#f7f8f7] border-y border-gray-100">
+        <div className="max-w-5xl mx-auto">
+
+          {/* En-tête */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center bg-coral-50 text-coral-600 text-[10px] font-bold uppercase tracking-[0.15em] px-4 py-1.5 rounded-full border border-coral-200 mb-6">
+              Visible & Conforme
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-4">
+              Publier ne devrait pas être une source de doute
             </h2>
-            <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Pensé pour les professionnels qui veulent prendre soin de leur communication, sans expertise technique particulière.
+            <p className="text-gray-500 text-sm max-w-lg mx-auto leading-relaxed">
+              Visible & Conforme vous aide à publier avec clarté, tout en restant aligné avec les règles de votre activité.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+
+          {/* Cartes */}
+          <div className="relative grid md:grid-cols-2 gap-6 items-start">
+
+            {/* Flèche centrale */}
+            <div className="hidden md:flex absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center">
+                <ArrowRight className="h-4 w-4 text-gray-400" />
+              </div>
+            </div>
 
             {/* Sans */}
-            <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 shadow-sm">
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-8">
+            <div className="rounded-2xl bg-white border border-gray-200 p-8 shadow-sm opacity-90">
+              <div className="inline-flex items-center bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full mb-8">
                 Sans Visible & Conforme
-              </p>
+              </div>
               <ul className="space-y-5">
                 {[
-                  "Vérifier chaque formulation manuellement",
-                  "Chercher des réponses contradictoires sur internet",
-                  "Réécrire ses contenus plusieurs fois",
-                  "Mélanger conseils SEO, IA et règles juridiques",
-                  "Perdre du temps à douter avant de publier",
+                  "Ne plus savoir quoi publier",
+                  "Douter avant chaque contenu",
+                  "Réécrire ses textes plusieurs fois",
+                  "Chercher des réponses contradictoires",
+                  "Manquer de clarté dans sa présence en ligne",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3.5">
-                    <span className="mt-0.5 flex items-center justify-center w-[18px] h-[18px] rounded-full border border-gray-300 shrink-0">
+                    <span className="mt-0.5 flex items-center justify-center w-5 h-5 rounded-full bg-coral-50 border border-coral-200 shrink-0">
                       <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
-                        <path d="M1 1l5 5M6 1L1 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M1 1l5 5M6 1L1 6" stroke="#f43f5e" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </span>
-                    <span className="text-[13px] text-gray-700 leading-snug">{item}</span>
+                    <span className="text-sm text-gray-600 leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
+              <div className="mt-8 pt-6 border-t border-gray-100 flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                  <Clock className="h-4 w-4 text-gray-400" />
+                </div>
+                <p className="text-sm text-gray-500 leading-snug">
+                  <strong className="text-gray-700 font-semibold">Résultat : </strong>
+                  beaucoup de temps perdu, et une présence en ligne incertaine.
+                </p>
+              </div>
             </div>
 
             {/* Avec */}
-            <div className="rounded-2xl bg-gradient-to-br from-zen-50 to-zen-100/80 border border-zen-200 p-8 md:p-10 shadow-sm">
-              <p className="text-[11px] font-bold text-zen-600 uppercase tracking-[0.12em] mb-8">
+            <div className="rounded-2xl bg-gradient-to-br from-zen-50 to-zen-100/70 border border-zen-200 p-8 shadow-[0_8px_40px_rgba(47,94,78,0.15),0_2px_10px_rgba(47,94,78,0.08)] relative">
+              <div className="absolute -top-3 -right-3 w-10 h-10 bg-zen-700 rounded-full flex items-center justify-center shadow-md">
+                <ShieldCheck className="h-5 w-5 text-white" />
+              </div>
+              <div className="inline-flex items-center bg-zen-700 text-white text-[10px] font-bold uppercase tracking-[0.14em] px-3 py-1 rounded-full mb-8">
                 Avec Visible & Conforme
-              </p>
+              </div>
               <ul className="space-y-5">
                 {[
-                  "Analyse visibilité + conformité",
-                  "Alertes sur les formulations sensibles",
-                  "Suggestions de reformulation adaptées",
-                  "Générateur de contenus pensé pour votre activité",
-                  "Un seul outil pour publier avec plus de clarté",
+                  "Vérification des formulations sensibles",
+                  "Vision globale visibilité + conformité",
+                  "Génération de contenus adaptés",
+                  "Recommandations claires et contextualisées",
+                  "Une publication plus sereine",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3.5">
-                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
-                    <span className="text-[13px] text-zen-900 leading-snug">{item}</span>
+                    <CheckCircle2 className="h-5 w-5 text-zen-600 shrink-0 mt-0.5" />
+                    <span className="text-sm text-zen-900 leading-snug font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
+              <div className="mt-8 pt-6 border-t border-zen-200 flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-zen-600 flex items-center justify-center shrink-0 shadow-sm">
+                  <Sparkles className="h-4 w-4 text-white" />
+                </div>
+                <p className="text-sm text-zen-800 leading-snug">
+                  <strong className="text-zen-950 font-semibold">Résultat : </strong>
+                  plus de sérénité, de clarté et une présence en ligne alignée.
+                </p>
+              </div>
             </div>
 
           </div>
-          <p className="text-center mt-8 text-[13px] text-gray-500">
-            <strong className="text-zen-950 font-semibold">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
-          </p>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+            <Link
+              href="/inscription"
+              className="bg-coral-500 text-white px-7 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center gap-2 shadow-sm"
+            >
+              Essayer pour 1€
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <p className="text-sm text-gray-400">Sans engagement · Résiliable à tout moment</p>
+          </div>
+
         </div>
       </section>
 
