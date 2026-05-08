@@ -590,48 +590,59 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
-              Les types de risques que Visible & Conforme aide à repérer
+              Ces formulations peuvent exposer votre activité
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Visible & Conforme repère des formulations sensibles et zones de vigilance dans vos contenus.
+              Visible & Conforme les détecte dans vos textes et vous explique pourquoi elles méritent vigilance.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             {[
               {
                 icon: AlertTriangle,
-                title: "Promesses pouvant poser problème",
-                desc: "Certaines formulations peuvent être interprétées comme des promesses difficiles à vérifier ou trompeuses au regard du Code de la consommation.",
+                title: "Promesse implicite de résultat",
+                desc: "Des formulations laissant entendre un effet garanti peuvent être interprétées comme des promesses trompeuses au regard du Code de la consommation.",
+                example: "« Je vous aide à éliminer définitivement le stress »",
                 color: "text-amber-600",
+                exColor: "text-amber-700 bg-amber-100/70 border-amber-200",
                 bg: "bg-amber-50 border-amber-200",
               },
               {
                 icon: Scale,
-                title: "Confusion sur la qualification",
-                desc: "Certaines formulations peuvent créer une confusion sur le cadre réel de votre activité ou votre statut professionnel.",
+                title: "Assimilation à un acte médical",
+                desc: "Certains verbes ou expressions issus du vocabulaire médical peuvent créer une confusion sur la nature réelle de votre pratique.",
+                example: "« Je traite les douleurs chroniques »",
                 color: "text-red-600",
+                exColor: "text-red-700 bg-red-100/70 border-red-200",
                 bg: "bg-red-50 border-red-200",
               },
               {
                 icon: FileText,
-                title: "Vocabulaire sensible",
-                desc: "Certains termes issus du vocabulaire médical ou thérapeutique nécessitent une vigilance particulière dans une communication en ligne.",
+                title: "Confusion sur votre qualification",
+                desc: "Certains titres ou formulations peuvent laisser croire que vous exercez une profession réglementée alors que ce n'est pas le cas.",
+                example: "« Thérapeute certifiée en psychothérapie »",
                 color: "text-orange-600",
+                exColor: "text-orange-700 bg-orange-100/70 border-orange-200",
                 bg: "bg-orange-50 border-orange-200",
               },
               {
                 icon: Search,
-                title: "Positionnement peu clair",
-                desc: "Des textes imprécis ou mal formulés peuvent nuire à la compréhension de votre activité et à votre visibilité en ligne.",
+                title: "Risque de communication trompeuse",
+                desc: "Des affirmations imprécises sur votre approche peuvent nuire à votre crédibilité et à la clarté de votre positionnement en ligne.",
+                example: "« Méthode scientifiquement prouvée »",
                 color: "text-zen-700",
+                exColor: "text-zen-700 bg-zen-100/60 border-zen-200",
                 bg: "bg-zen-50 border-zen-200",
               },
             ].map((item) => (
               <div key={item.title} className={`p-6 rounded-xl border ${item.bg}`}>
-                <item.icon className={`h-7 w-7 ${item.color} mb-3`} />
-                <h3 className="font-semibold text-zen-950 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <item.icon className={`h-6 w-6 ${item.color} mb-3`} />
+                <h3 className="font-semibold text-zen-950 text-base mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{item.desc}</p>
+                <div className={`text-xs italic px-3 py-2 rounded-lg border ${item.exColor}`}>
+                  {item.example}
+                </div>
               </div>
             ))}
           </div>
