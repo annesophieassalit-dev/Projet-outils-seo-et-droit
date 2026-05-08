@@ -601,8 +601,8 @@ export default function LandingPage() {
             {[
               {
                 icon: AlertTriangle,
-                title: "Promesse implicite de résultat",
-                desc: "Des formulations laissant entendre un effet garanti peuvent être interprétées comme des promesses trompeuses au regard du Code de la consommation.",
+                title: "Promesses pouvant poser problème",
+                desc: "Certaines formulations peuvent être perçues comme des promesses difficiles à vérifier ou trompeuses selon le contexte de votre activité.",
                 example: "« Je vous aide à éliminer définitivement le stress »",
                 color: "text-amber-600",
                 exColor: "text-amber-700 bg-amber-100/70 border-amber-200",
@@ -610,8 +610,8 @@ export default function LandingPage() {
               },
               {
                 icon: Scale,
-                title: "Assimilation à un acte médical",
-                desc: "Certains verbes ou expressions issus du vocabulaire médical peuvent créer une confusion sur la nature réelle de votre pratique.",
+                title: "Confusion sur la qualification",
+                desc: "Certaines expressions peuvent créer une confusion sur votre rôle, votre qualification ou la nature réelle de votre accompagnement.",
                 example: "« Je traite les douleurs chroniques »",
                 color: "text-red-600",
                 exColor: "text-red-700 bg-red-100/70 border-red-200",
@@ -619,8 +619,8 @@ export default function LandingPage() {
               },
               {
                 icon: FileText,
-                title: "Confusion sur votre qualification",
-                desc: "Certains titres ou formulations peuvent laisser croire que vous exercez une profession réglementée alors que ce n'est pas le cas.",
+                title: "Vocabulaire sensible",
+                desc: "Certains termes issus du vocabulaire médical ou thérapeutique nécessitent une vigilance particulière dans une communication en ligne.",
                 example: "« Thérapeute certifiée en psychothérapie »",
                 color: "text-orange-600",
                 exColor: "text-orange-700 bg-orange-100/70 border-orange-200",
@@ -628,8 +628,8 @@ export default function LandingPage() {
               },
               {
                 icon: Search,
-                title: "Risque de communication trompeuse",
-                desc: "Des affirmations imprécises sur votre approche peuvent nuire à votre crédibilité et à la clarté de votre positionnement en ligne.",
+                title: "Positionnement peu clair",
+                desc: "Des formulations imprécises ou trop affirmatives peuvent nuire à la compréhension de votre activité et à votre crédibilité.",
                 example: "« Méthode scientifiquement prouvée »",
                 color: "text-zen-700",
                 exColor: "text-zen-700 bg-zen-100/60 border-zen-200",
