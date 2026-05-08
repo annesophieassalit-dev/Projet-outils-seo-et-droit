@@ -66,7 +66,7 @@ export default function CGVPage() {
 
           <section>
             <h2 className="text-base font-semibold text-zen-950 mb-3">Article 4 — Offre d&apos;essai payant</h2>
-            <div className="bg-zen-50 border border-zen-200 rounded-xl p-5 space-y-3">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 space-y-3">
               <p>
                 Visible & Conforme propose un accès d&apos;essai de <strong>7 jours au tarif de 1€ TTC</strong>,
                 donnant accès à l&apos;intégralité des fonctionnalités du Service.
@@ -80,15 +80,6 @@ export default function CGVPage() {
                   sauf résiliation préalable par l&apos;Utilisateur.
                 </li>
               </ul>
-              <p className="text-zen-700 font-medium">
-                Un email de rappel est envoyé au moins 3 jours avant la fin de la période d&apos;essai
-                et avant chaque renouvellement mensuel.
-              </p>
-              <p>
-                Le 1€ versé au titre de l&apos;essai n&apos;est pas remboursé en cas de résiliation
-                dans le délai d&apos;essai, sauf exercice du droit de rétractation dans les
-                conditions prévues à l&apos;article 6.
-              </p>
             </div>
           </section>
 

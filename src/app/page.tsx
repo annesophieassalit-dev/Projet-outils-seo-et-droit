@@ -67,7 +67,7 @@ export default function LandingPage() {
 
             {/* ── Colonne texte ── */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-zen-950 text-zen-100 text-sm px-5 py-2 rounded-full mb-10 font-semibold shadow-lg tracking-wide">
+              <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm text-zen-700 text-sm px-5 py-2.5 rounded-full mb-10 font-semibold border border-zen-200/80 shadow-[0_4px_24px_rgba(47,94,78,0.13),0_1px_4px_rgba(0,0,0,0.05)]">
                 Pensé pour les professionnels du bien-être
               </div>
 
@@ -276,16 +276,16 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 bg-white">
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div className="grid md:grid-cols-2 gap-6">
 
             {/* Sans */}
-            <div className="bg-gray-50 p-8">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+            <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 shadow-sm">
+              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-8">
                 Sans Visible & Conforme
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {[
                   "Vérifier chaque formulation manuellement",
                   "Chercher des réponses contradictoires sur internet",
@@ -293,24 +293,24 @@ export default function LandingPage() {
                   "Mélanger conseils SEO, IA et règles juridiques",
                   "Perdre du temps à douter avant de publier",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex items-center justify-center w-4 h-4 rounded-full border border-gray-300 shrink-0">
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M1 1l6 6M7 1L1 7" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round"/>
+                  <li key={item} className="flex items-start gap-3.5">
+                    <span className="mt-0.5 flex items-center justify-center w-[18px] h-[18px] rounded-full border border-gray-300 shrink-0">
+                      <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
+                        <path d="M1 1l5 5M6 1L1 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </span>
-                    <span className="text-sm text-gray-500">{item}</span>
+                    <span className="text-[13px] text-gray-700 leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Avec */}
-            <div className="bg-white p-8">
-              <p className="text-xs font-bold text-zen-700 uppercase tracking-widest mb-6">
+            <div className="rounded-2xl bg-zen-950 p-8 md:p-10 shadow-md">
+              <p className="text-[11px] font-bold text-zen-300 uppercase tracking-[0.12em] mb-8">
                 Avec Visible & Conforme
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {[
                   "Analyse visibilité + conformité",
                   "Alertes sur les formulations sensibles",
@@ -318,17 +318,17 @@ export default function LandingPage() {
                   "Générateur de contenus pensé pour votre activité",
                   "Un seul outil pour publier avec plus de clarté",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0 mt-0.5" />
-                    <span className="text-sm text-zen-950">{item}</span>
+                  <li key={item} className="flex items-start gap-3.5">
+                    <CheckCircle2 className="h-4 w-4 text-zen-300 shrink-0 mt-0.5" />
+                    <span className="text-[13px] text-zen-100 leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
           </div>
-          <p className="text-center mt-6 text-sm text-gray-500">
-            👉 <strong className="text-zen-950">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
+          <p className="text-center mt-8 text-[13px] text-gray-400">
+            <strong className="text-zen-950 font-semibold">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
           </p>
         </div>
       </section>
@@ -478,6 +478,9 @@ export default function LandingPage() {
 
             {/* Texte */}
             <div>
+              <p className="text-[11px] font-semibold text-zen-300 uppercase tracking-[0.12em] mb-3">
+                Anne-Sophie Assalit · Fondatrice de Visible & Conforme
+              </p>
               <h2 className="text-2xl font-bold text-white mb-5">
                 Pourquoi Visible & Conforme ?
               </h2>
@@ -497,9 +500,6 @@ export default function LandingPage() {
                   adaptés à leur activité.
                 </p>
               </div>
-              <p className="mt-5 text-zen-300 text-xs font-medium">
-                Anne-Sophie Assalit · Juriste, diplômée en marketing digital & fondatrice de Visible & Conforme
-              </p>
             </div>
           </div>
         </div>
@@ -672,7 +672,7 @@ export default function LandingPage() {
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="text-coral-200 text-sm mt-5">
-            Puis 19€/mois · Sans engagement · Email avant renouvellement
+            Puis 19€/mois · Sans engagement
           </p>
         </div>
       </section>
