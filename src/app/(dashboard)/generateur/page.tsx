@@ -18,6 +18,7 @@ const CONTENT_TYPES: ContentType[] = [
   "post_facebook",
   "post_tiktok",
   "post_threads",
+  "script_youtube",
   "bio_instagram",
   "presentation_activite",
   "article_blog",

@@ -53,7 +53,7 @@ export default function TrialBanner({ isTrialing, trialDaysLeft, trialExpired }:
       <div className="flex items-center gap-2 text-sm">
         <Sparkles className="h-4 w-4 shrink-0" />
         <span>
-          Essai en cours — <strong>{trialDaysLeft} jour{trialDaysLeft > 1 ? "s" : ""} restant{trialDaysLeft > 1 ? "s" : ""}</strong>. Accès complet. Un email vous préviendra avant le renouvellement.
+          Essai en cours — <strong>{trialDaysLeft} jour{trialDaysLeft > 1 ? "s" : ""} restant{trialDaysLeft > 1 ? "s" : ""}</strong>. Accès complet à toutes les fonctionnalités.
         </span>
       </div>
       <Link

@@ -38,6 +38,7 @@ export type ContentType =
   | "post_facebook"
   | "post_tiktok"
   | "post_threads"
+  | "script_youtube"
   | "fiche_google"
   | "accroche_site"
   | "hook_reseaux";
@@ -88,6 +89,7 @@ export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
   post_facebook: "Post Facebook",
   post_tiktok: "Script TikTok",
   post_threads: "Post Threads",
+  script_youtube: "Script YouTube",
   fiche_google: "Fiche Google My Business",
   accroche_site: "Accroche site web",
   hook_reseaux: "Hooks / Accroches réseaux",

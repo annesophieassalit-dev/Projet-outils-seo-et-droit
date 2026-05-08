@@ -307,11 +307,11 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-zen-950 text-sm">3. Générer des contenus</h3>
                 <span className="text-[9px] font-bold bg-purple-100 text-purple-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Sur-mesure</span>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Créez des contenus adaptés à votre activité grâce à la bibliothèque de formulations validées et à l&apos;assistant de rédaction.
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {["Posts", "Bios", "Pages", "Scripts", "Fiches..."].map((tag) => (
+                {["LinkedIn", "Instagram", "Facebook", "YouTube", "Posts", "Bios", "Scripts..."].map((tag) => (
                   <span key={tag} className="bg-purple-50 border border-purple-200 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
                     {tag}
                   </span>
@@ -389,9 +389,10 @@ export default function LandingPage() {
               En quelques clics, passez de l&apos;incertitude à la publication sereine.
             </p>
           </div>
-          <div className="grid md:grid-cols-4 gap-5 items-start">
+          <div className="flex flex-col md:flex-row gap-3 items-start">
 
-            <div className="rounded-2xl bg-gradient-to-br from-white to-zen-50/60 border border-zen-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            {/* Carte 01 */}
+            <div className="flex-1 rounded-2xl bg-gradient-to-br from-white to-zen-50/60 border border-zen-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <div className="text-[10px] font-bold text-zen-400 uppercase tracking-widest mb-4">01</div>
               <div className="w-10 h-10 bg-zen-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-zen-100">
                 <FileText className="h-5 w-5 text-zen-600" />
@@ -409,9 +410,13 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-white to-amber-50/60 border border-amber-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-              <div className="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-4">02</div>
-              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-100">
+            {/* Flèche 01→02 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 mt-12 text-gray-300 select-none text-sm">→</div>
+
+            {/* Carte 02 — cœur du produit */}
+            <div className="flex-1 rounded-2xl bg-gradient-to-br from-white to-amber-50/80 border border-amber-200 p-6 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+              <div className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-4">02</div>
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-200">
                 <ShieldCheck className="h-5 w-5 text-amber-600" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Détection des formulations sensibles</h3>
@@ -421,27 +426,31 @@ export default function LandingPage() {
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
-                  <span className="text-[10px] text-gray-500">Formulation critique</span>
+                  <span className="text-[10px] text-gray-600 font-medium">Formulation critique</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
-                  <span className="text-[10px] text-gray-500">Vigilance requise</span>
+                  <span className="text-[10px] text-gray-600 font-medium">Vigilance requise</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-zen-500 shrink-0" />
-                  <span className="text-[10px] text-gray-500">Conforme</span>
+                  <span className="text-[10px] text-gray-600 font-medium">Conforme</span>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-white to-orange-50/40 border border-orange-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            {/* Flèche 02→03 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 mt-12 text-gray-300 select-none text-sm">→</div>
+
+            {/* Carte 03 */}
+            <div className="flex-1 rounded-2xl bg-gradient-to-br from-white to-orange-50/40 border border-orange-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <div className="text-[10px] font-bold text-orange-400 uppercase tracking-widest mb-4">03</div>
               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-100">
                 <AlertTriangle className="h-5 w-5 text-amber-500" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Recevez des explications claires</h3>
               <p className="text-xs text-gray-500 leading-relaxed mb-3">
-                Chaque point est expliqué sans jargon, avec une reformulation proposée.
+                Chaque point est expliqué clairement avec une reformulation adaptée.
               </p>
               <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 shadow-sm">
                 <p className="text-[10px] font-semibold text-amber-700 mb-0.5">Vigilance</p>
@@ -449,7 +458,11 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-purple-50/70 to-purple-100/50 border border-purple-200 p-6 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+            {/* Flèche 03→04 */}
+            <div className="hidden md:flex items-center justify-center shrink-0 mt-12 text-gray-300 select-none text-sm">→</div>
+
+            {/* Carte 04 */}
+            <div className="flex-1 rounded-2xl bg-gradient-to-br from-purple-50/70 to-purple-100/50 border border-purple-200 p-6 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
               <div className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-4">04</div>
               <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-purple-200">
                 <Sparkles className="h-5 w-5 text-purple-500" />
@@ -459,12 +472,24 @@ export default function LandingPage() {
                 L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
               </p>
               <div className="bg-white border border-purple-200 rounded-lg px-3 py-2 shadow-sm">
-                <p className="text-[10px] font-semibold text-purple-600 mb-0.5">Générateur</p>
-                <p className="text-[10px] text-purple-500">Bio · Post · Page de présentation...</p>
+                <p className="text-[10px] font-semibold text-purple-600 mb-0.5">Réseaux sociaux</p>
+                <p className="text-[10px] text-purple-500">LinkedIn · Instagram · YouTube · Bio...</p>
               </div>
             </div>
 
           </div>
+
+          {/* Mini CTA */}
+          <div className="flex justify-center mt-10">
+            <Link
+              href="/inscription"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-zen-700 border border-zen-200 bg-zen-50 px-5 py-2.5 rounded-xl hover:bg-zen-100 transition-colors shadow-sm"
+            >
+              Analyser un contenu
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
         </div>
       </section>
 
