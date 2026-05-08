@@ -272,7 +272,7 @@ export default function LandingPage() {
               {/* Titre */}
               <div>
                 <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">1.</p>
-                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Vérifier un texte</h3>
+                <h3 className="font-semibold text-zen-950 text-base leading-snug">Vérifier un texte</h3>
               </div>
 
               {/* Description */}
@@ -298,7 +298,7 @@ export default function LandingPage() {
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-2">
                       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
-                      <span className="text-[10px] text-gray-500">{item.label}</span>
+                      <span className="text-xs text-gray-500">{item.label}</span>
                     </div>
                   ))}
                 </div>
@@ -318,7 +318,7 @@ export default function LandingPage() {
               {/* Titre */}
               <div>
                 <p className="text-[10px] font-semibold text-blue-300 uppercase tracking-widest mb-1">2.</p>
-                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Analyser un site</h3>
+                <h3 className="font-semibold text-zen-950 text-base leading-snug">Analyser un site</h3>
               </div>
 
               {/* Description */}
@@ -344,7 +344,7 @@ export default function LandingPage() {
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-2">
                       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
-                      <span className="text-[10px] text-gray-500">{item.label}</span>
+                      <span className="text-xs text-gray-500">{item.label}</span>
                     </div>
                   ))}
                 </div>
@@ -366,7 +366,7 @@ export default function LandingPage() {
               {/* Titre */}
               <div>
                 <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1">3.</p>
-                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Générer des contenus</h3>
+                <h3 className="font-semibold text-zen-950 text-base leading-snug">Générer des contenus</h3>
               </div>
 
               {/* Description */}
@@ -489,7 +489,7 @@ export default function LandingPage() {
               <div className="w-10 h-10 bg-zen-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-zen-100">
                 <FileText className="h-5 w-5 text-zen-600" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">Ajoutez un texte ou une URL</h3>
+              <h3 className="font-semibold text-zen-950 text-base mb-2">Ajoutez un texte ou une URL</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Collez votre contenu ou saisissez l&apos;adresse de votre site.
               </p>
@@ -511,22 +511,22 @@ export default function LandingPage() {
               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-200">
                 <ShieldCheck className="h-5 w-5 text-amber-600" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">Détection des formulations sensibles</h3>
+              <h3 className="font-semibold text-zen-950 text-base mb-2">Détection des formulations sensibles</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 L&apos;outil identifie les points de vigilance dans vos textes.
               </p>
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
-                  <span className="text-[10px] text-gray-600 font-medium">Formulation critique</span>
+                  <span className="text-xs text-gray-600 font-medium">Formulation critique</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
-                  <span className="text-[10px] text-gray-600 font-medium">Vigilance requise</span>
+                  <span className="text-xs text-gray-600 font-medium">Vigilance requise</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-zen-500 shrink-0" />
-                  <span className="text-[10px] text-gray-600 font-medium">Conforme</span>
+                  <span className="text-xs text-gray-600 font-medium">Conforme</span>
                 </div>
               </div>
             </div>
@@ -540,7 +540,7 @@ export default function LandingPage() {
               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-amber-100">
                 <AlertTriangle className="h-5 w-5 text-amber-500" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">Recevez des explications claires</h3>
+              <h3 className="font-semibold text-zen-950 text-base mb-2">Recevez des explications claires</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Chaque point est expliqué clairement avec une reformulation adaptée.
               </p>
@@ -559,7 +559,7 @@ export default function LandingPage() {
               <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4 shadow-sm ring-1 ring-purple-200">
                 <Sparkles className="h-5 w-5 text-purple-500" />
               </div>
-              <h3 className="font-semibold text-zen-950 text-sm mb-2">Générez des contenus prêts à publier</h3>
+              <h3 className="font-semibold text-zen-950 text-base mb-2">Générez des contenus prêts à publier</h3>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
               </p>
