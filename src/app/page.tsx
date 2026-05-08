@@ -259,43 +259,95 @@ export default function LandingPage() {
           {/* ── 3 cartes overview ── */}
           <div className="grid md:grid-cols-3 gap-5 mb-10">
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow">
-              <div className="w-9 h-9 bg-zen-50 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="h-5 w-5 text-zen-600" />
+            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow flex flex-col gap-4">
+
+              {/* En-tête */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-9 h-9 bg-zen-50 rounded-lg flex items-center justify-center shrink-0">
+                  <FileText className="h-5 w-5 text-zen-600" />
+                </div>
+                <span className="text-[9px] font-bold bg-gray-100 text-gray-500 px-1.5 py-1 rounded-full uppercase tracking-wide shrink-0">Rapide</span>
               </div>
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-semibold text-zen-950 text-sm">1. Vérifier un texte</h3>
-                <span className="text-[9px] font-bold bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Rapide</span>
+
+              {/* Titre */}
+              <div>
+                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">1.</p>
+                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Vérifier un texte</h3>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed mb-3">
+
+              {/* Description */}
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Collez un texte (post, bio, description...) et obtenez instantanément une analyse des formulations à risque et des reformulations adaptées.
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {["Bio Instagram", "Post LinkedIn", "Description Google", "Avis..."].map((tag) => (
-                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full">
-                    {tag}
-                  </span>
-                ))}
+
+              {/* Tags + mini résultat */}
+              <div className="space-y-3 pt-1 border-t border-gray-100">
+                <div className="flex flex-wrap gap-1.5">
+                  {["Bio Instagram", "Post LinkedIn", "Description Google", "Avis..."].map((tag) => (
+                    <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="space-y-1.5">
+                  <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Vous obtenez</p>
+                  {[
+                    { dot: "bg-amber-400", label: "Alertes sur les formulations sensibles" },
+                    { dot: "bg-zen-500", label: "Reformulations adaptées à votre activité" },
+                    { dot: "bg-zen-500", label: "Score de conformité instantané" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center gap-2">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
+                      <span className="text-[10px] text-gray-500">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow">
-              <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-5 w-5 text-blue-500" />
+            <div className="rounded-xl border border-blue-100 bg-gradient-to-br from-blue-50/30 to-white p-6 hover:shadow-sm transition-shadow flex flex-col gap-4">
+
+              {/* En-tête */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center shrink-0 ring-1 ring-blue-100">
+                  <TrendingUp className="h-5 w-5 text-blue-500" />
+                </div>
+                <span className="text-[9px] font-bold bg-blue-50 text-blue-500 px-1.5 py-1 rounded-full uppercase tracking-wide shrink-0">Global</span>
               </div>
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-semibold text-zen-950 text-sm">2. Analyser un site</h3>
-                <span className="text-[9px] font-bold bg-blue-50 text-blue-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Global</span>
+
+              {/* Titre */}
+              <div>
+                <p className="text-[10px] font-semibold text-blue-300 uppercase tracking-widest mb-1">2.</p>
+                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Analyser un site</h3>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed mb-3">
-                Saisissez votre URL pour obtenir une vue d&apos;ensemble de votre visibilité et de votre cohérence éditoriale.
+
+              {/* Description */}
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Saisissez votre URL pour obtenir une analyse globale de votre visibilité, de vos formulations et de votre cohérence éditoriale.
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {["Site web", "Fiche Google", "Page de présentation"].map((tag) => (
-                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full">
-                    {tag}
-                  </span>
-                ))}
+
+              {/* Tags + analyse incluse */}
+              <div className="space-y-3 pt-1 border-t border-blue-100">
+                <div className="flex flex-wrap gap-1.5">
+                  {["Site web", "Fiche Google", "Page service", "Page de présentation"].map((tag) => (
+                    <span key={tag} className="bg-white border border-blue-100 text-blue-500 text-[10px] px-2 py-0.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="space-y-1.5">
+                  <p className="text-[10px] font-semibold text-blue-300 uppercase tracking-widest">Analyse incluse</p>
+                  {[
+                    { dot: "bg-zen-500", label: "Visibilité et positionnement éditorial" },
+                    { dot: "bg-amber-400", label: "Détection des formulations sensibles" },
+                    { dot: "bg-zen-500", label: "Conformité RGPD et mentions légales" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center gap-2">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
+                      <span className="text-[10px] text-gray-500">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -319,7 +371,7 @@ export default function LandingPage() {
 
               {/* Description */}
               <p className="text-sm text-gray-500 leading-relaxed">
-                Créez des contenus adaptés à votre activité grâce à une bibliothèque de formulations validées et à un assistant de rédaction pensé pour les professionnels du bien-être.
+                Créez des contenus adaptés à votre activité grâce à une bibliothèque de formulations validées et à un assistant de rédaction pensé pour les professionnels du bien-être non réglementés.
               </p>
 
               {/* Deux catégories */}
@@ -350,6 +402,15 @@ export default function LandingPage() {
               </div>
             </div>
 
+          </div>
+
+          {/* ── Transition ── */}
+          <div className="flex items-center gap-5 my-10">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-gray-200" />
+            <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.15em] shrink-0">
+              Diagnostics inclus
+            </p>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-gray-200 to-gray-200" />
           </div>
 
           {/* ── Diagnostics détaillés ── */}
