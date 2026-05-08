@@ -67,7 +67,8 @@ export default function LandingPage() {
 
             {/* ── Colonne texte ── */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-white text-zen-700 text-sm px-5 py-2.5 rounded-full mb-10 font-semibold border border-zen-100 shadow-[0_0_22px_rgba(47,94,78,0.18),0_0_0_1px_rgba(47,94,78,0.07),0_2px_8px_rgba(0,0,0,0.04)]">
+              <div className="inline-flex items-center gap-2.5 bg-zen-50 text-zen-800 text-sm px-5 py-2.5 rounded-full mb-10 font-semibold border border-zen-200 shadow-[0_0_28px_rgba(47,94,78,0.22),0_2px_12px_rgba(47,94,78,0.10)]">
+                <span className="w-2 h-2 rounded-full bg-zen-500 shrink-0" />
                 Pensé pour les professionnels du bien-être
               </div>
 
@@ -240,117 +241,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ─── Types de risques ───────────────────────────────────────────── */}
-      <section id="pourquoi" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-zen-50/40 to-white border-y border-zen-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
-              Les types de risques que Visible & Conforme aide à repérer
-            </h2>
-            <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              Visible & Conforme repère des formulations sensibles et zones de vigilance dans vos contenus.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: AlertTriangle,
-                title: "Promesses pouvant poser problème",
-                desc: "Certaines formulations peuvent être interprétées comme des promesses difficiles à vérifier ou trompeuses au regard du Code de la consommation.",
-                color: "text-amber-600",
-                bg: "bg-amber-50 border-amber-200",
-              },
-              {
-                icon: Scale,
-                title: "Confusion sur la qualification",
-                desc: "Certaines formulations peuvent créer une confusion sur le cadre réel de votre activité ou votre statut professionnel.",
-                color: "text-red-600",
-                bg: "bg-red-50 border-red-200",
-              },
-              {
-                icon: FileText,
-                title: "Vocabulaire sensible",
-                desc: "Certains termes issus du vocabulaire médical ou thérapeutique nécessitent une vigilance particulière dans une communication en ligne.",
-                color: "text-orange-600",
-                bg: "bg-orange-50 border-orange-200",
-              },
-              {
-                icon: Search,
-                title: "Positionnement peu clair",
-                desc: "Des textes imprécis ou mal formulés peuvent nuire à la compréhension de votre activité et à votre visibilité en ligne.",
-                color: "text-zen-700",
-                bg: "bg-zen-50 border-zen-200",
-              },
-            ].map((item) => (
-              <div key={item.title} className={`p-6 rounded-xl border ${item.bg}`}>
-                <item.icon className={`h-7 w-7 ${item.color} mb-3`} />
-                <h3 className="font-semibold text-zen-950 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-50/50 via-white to-zen-50/30 border-y border-zen-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {/* Sans */}
-            <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 shadow-sm">
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-8">
-                Sans Visible & Conforme
-              </p>
-              <ul className="space-y-5">
-                {[
-                  "Vérifier chaque formulation manuellement",
-                  "Chercher des réponses contradictoires sur internet",
-                  "Réécrire ses contenus plusieurs fois",
-                  "Mélanger conseils SEO, IA et règles juridiques",
-                  "Perdre du temps à douter avant de publier",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3.5">
-                    <span className="mt-0.5 flex items-center justify-center w-[18px] h-[18px] rounded-full border border-gray-300 shrink-0">
-                      <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
-                        <path d="M1 1l5 5M6 1L1 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round"/>
-                      </svg>
-                    </span>
-                    <span className="text-[13px] text-gray-700 leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Avec */}
-            <div className="rounded-2xl bg-gradient-to-br from-zen-50 to-zen-100/80 border border-zen-200 p-8 md:p-10 shadow-sm">
-              <p className="text-[11px] font-bold text-zen-600 uppercase tracking-[0.12em] mb-8">
-                Avec Visible & Conforme
-              </p>
-              <ul className="space-y-5">
-                {[
-                  "Analyse visibilité + conformité",
-                  "Alertes sur les formulations sensibles",
-                  "Suggestions de reformulation adaptées",
-                  "Générateur de contenus pensé pour votre activité",
-                  "Un seul outil pour publier avec plus de clarté",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3.5">
-                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
-                    <span className="text-[13px] text-zen-900 leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-          <p className="text-center mt-8 text-[13px] text-gray-500">
-            <strong className="text-zen-950 font-semibold">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
-          </p>
-        </div>
-      </section>
-
       {/* ─── Fonctionnalités ────────────────────────────────────────────── */}
       <section id="fonctionnalites" className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
@@ -446,9 +336,9 @@ export default function LandingPage() {
                   "Structure et lisibilité des contenus",
                   "Cohérence des titres et des textes",
                   "Lisibilité et clarté du positionnement",
-                  "Présence des éléments essentiels",
+                  "Présence des éléments importants pour la visibilité",
                   "Cohérence sémantique globale",
-                  "Compatibilité mobile et accessibilité de base",
+                  "Compatibilité mobile et accessibilité",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -484,6 +374,215 @@ export default function LandingPage() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* ─── Comment ça marche ──────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-zen-50/30 to-white border-y border-zen-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
+              Comment ça marche ?
+            </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              En quelques clics, passez de l&apos;incertitude à la publication sereine.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-5">
+
+            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">01</div>
+              <div className="w-10 h-10 bg-zen-50 rounded-xl flex items-center justify-center mb-4">
+                <FileText className="h-5 w-5 text-zen-600" />
+              </div>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">Ajoutez un texte ou une URL</h3>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Collez votre contenu ou saisissez votre adresse web.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Post", "Bio", "Page web", "Google..."].map((tag) => (
+                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-400 text-[10px] px-2 py-0.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">02</div>
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
+                <ShieldCheck className="h-5 w-5 text-amber-600" />
+              </div>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">L&apos;outil analyse votre communication</h3>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Détection des formulations sensibles et des points de visibilité.
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
+                  <span className="text-[10px] text-gray-500">Formulation critique</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+                  <span className="text-[10px] text-gray-500">Vigilance requise</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-zen-500 shrink-0" />
+                  <span className="text-[10px] text-gray-500">Conforme</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">03</div>
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
+                <AlertTriangle className="h-5 w-5 text-amber-500" />
+              </div>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">Recevez des explications claires</h3>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Chaque point est expliqué sans jargon, avec une reformulation adaptée.
+              </p>
+              <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+                <p className="text-[10px] font-semibold text-amber-700 mb-0.5">Vigilance</p>
+                <p className="text-[10px] text-amber-600">«&nbsp;je soigne&nbsp;» → promesse implicite</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-purple-50/40 border border-purple-200 p-6 shadow-sm">
+              <div className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-4">04</div>
+              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <Sparkles className="h-5 w-5 text-purple-500" />
+              </div>
+              <h3 className="font-semibold text-zen-950 text-sm mb-2">Créez vos contenus sereinement</h3>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Utilisez l&apos;assistant de rédaction pour générer des contenus adaptés.
+              </p>
+              <div className="bg-white border border-purple-200 rounded-lg px-3 py-2">
+                <p className="text-[10px] font-semibold text-purple-600 mb-0.5">Générateur</p>
+                <p className="text-[10px] text-purple-500">Bio · Post · Page de présentation...</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Types de risques ───────────────────────────────────────────── */}
+      <section id="pourquoi" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-zen-50/40 to-white border-y border-zen-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
+              Les types de risques que Visible & Conforme aide à repérer
+            </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              Visible & Conforme repère des formulations sensibles et zones de vigilance dans vos contenus.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: AlertTriangle,
+                title: "Promesses pouvant poser problème",
+                desc: "Certaines formulations peuvent être interprétées comme des promesses difficiles à vérifier ou trompeuses au regard du Code de la consommation.",
+                color: "text-amber-600",
+                bg: "bg-amber-50 border-amber-200",
+              },
+              {
+                icon: Scale,
+                title: "Confusion sur la qualification",
+                desc: "Certaines formulations peuvent créer une confusion sur le cadre réel de votre activité ou votre statut professionnel.",
+                color: "text-red-600",
+                bg: "bg-red-50 border-red-200",
+              },
+              {
+                icon: FileText,
+                title: "Vocabulaire sensible",
+                desc: "Certains termes issus du vocabulaire médical ou thérapeutique nécessitent une vigilance particulière dans une communication en ligne.",
+                color: "text-orange-600",
+                bg: "bg-orange-50 border-orange-200",
+              },
+              {
+                icon: Search,
+                title: "Positionnement peu clair",
+                desc: "Des textes imprécis ou mal formulés peuvent nuire à la compréhension de votre activité et à votre visibilité en ligne.",
+                color: "text-zen-700",
+                bg: "bg-zen-50 border-zen-200",
+              },
+            ].map((item) => (
+              <div key={item.title} className={`p-6 rounded-xl border ${item.bg}`}>
+                <item.icon className={`h-7 w-7 ${item.color} mb-3`} />
+                <h3 className="font-semibold text-zen-950 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-50/50 via-white to-zen-50/30 border-y border-zen-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
+              Un seul outil pour publier avec plus de sérénité
+            </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              Pensé pour les professionnels qui veulent prendre soin de leur communication, sans expertise technique particulière.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+
+            {/* Sans */}
+            <div className="rounded-2xl bg-white border border-gray-200 p-8 md:p-10 shadow-sm">
+              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.12em] mb-8">
+                Sans Visible & Conforme
+              </p>
+              <ul className="space-y-5">
+                {[
+                  "Vérifier chaque formulation manuellement",
+                  "Chercher des réponses contradictoires sur internet",
+                  "Réécrire ses contenus plusieurs fois",
+                  "Mélanger conseils SEO, IA et règles juridiques",
+                  "Perdre du temps à douter avant de publier",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3.5">
+                    <span className="mt-0.5 flex items-center justify-center w-[18px] h-[18px] rounded-full border border-gray-300 shrink-0">
+                      <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
+                        <path d="M1 1l5 5M6 1L1 6" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-[13px] text-gray-700 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Avec */}
+            <div className="rounded-2xl bg-gradient-to-br from-zen-50 to-zen-100/80 border border-zen-200 p-8 md:p-10 shadow-sm">
+              <p className="text-[11px] font-bold text-zen-600 uppercase tracking-[0.12em] mb-8">
+                Avec Visible & Conforme
+              </p>
+              <ul className="space-y-5">
+                {[
+                  "Analyse visibilité + conformité",
+                  "Alertes sur les formulations sensibles",
+                  "Suggestions de reformulation adaptées",
+                  "Générateur de contenus pensé pour votre activité",
+                  "Un seul outil pour publier avec plus de clarté",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3.5">
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
+                    <span className="text-[13px] text-zen-900 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+          <p className="text-center mt-8 text-[13px] text-gray-500">
+            <strong className="text-zen-950 font-semibold">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
+          </p>
         </div>
       </section>
 
