@@ -11,8 +11,6 @@ import {
   FileText,
   TrendingUp,
   Lock,
-  ScanText,
-  BookOpen,
   ChevronDown,
 } from "lucide-react";
 
@@ -54,20 +52,22 @@ export default function LandingPage() {
       </header>
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
-      <section className="relative pt-28 pb-36 px-4 sm:px-6 overflow-hidden bg-gradient-to-br from-white via-zen-50/60 to-white">
+      <section className="relative pt-28 pb-36 px-4 sm:px-6 bg-gradient-to-br from-white via-zen-50/60 to-white">
 
         {/* Cercles décoratifs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-zen-100 to-zen-200 rounded-full blur-3xl opacity-30 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-zen-200 rounded-full blur-2xl opacity-20 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-zen-100 to-zen-50 rounded-full blur-3xl opacity-40 translate-y-1/3 -translate-x-1/4 pointer-events-none" />
-        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-coral-100 rounded-full blur-2xl opacity-25 pointer-events-none" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-zen-100 to-zen-200 rounded-full blur-3xl opacity-30 -translate-y-1/4 translate-x-1/4" />
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-zen-200 rounded-full blur-2xl opacity-20" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-zen-100 to-zen-50 rounded-full blur-3xl opacity-40 translate-y-1/3 -translate-x-1/4" />
+          <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-coral-100 rounded-full blur-2xl opacity-25" />
+        </div>
 
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
 
             {/* ── Colonne texte ── */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm text-zen-700 text-sm px-5 py-2.5 rounded-full mb-10 font-semibold border border-zen-200/80 shadow-[0_4px_24px_rgba(47,94,78,0.13),0_1px_4px_rgba(0,0,0,0.05)]">
+              <div className="inline-flex items-center gap-2 bg-white text-zen-700 text-sm px-5 py-2.5 rounded-full mb-10 font-semibold border border-zen-100 shadow-[0_0_22px_rgba(47,94,78,0.18),0_0_0_1px_rgba(47,94,78,0.07),0_2px_8px_rgba(0,0,0,0.04)]">
                 Pensé pour les professionnels du bien-être
               </div>
 
@@ -89,16 +89,31 @@ export default function LandingPage() {
                 Parce que certains mots n&apos;ont pas les mêmes conséquences pour vous.
               </p>
 
-              <p className="text-sm text-gray-500 mb-12 leading-relaxed">
-                Analysez vos contenus, repérez les formulations sensibles et créez des textes mieux adaptés à votre activité.
+              <p className="text-sm text-gray-500 mb-8 leading-relaxed">
+                Analysez <strong className="text-gray-700 font-medium">vos contenus</strong>, repérez les formulations à risque et créez des textes adaptés à votre activité.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-wrap gap-x-5 gap-y-2.5 mb-8 text-sm text-zen-700">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  Évitez les formulations à risque
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  Gagnez en visibilité et en clarté
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
+                  Publiez sereinement et en confiance
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link
                   href="/inscription"
                   className="bg-coral-500 text-white px-7 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2 shadow-sm"
                 >
-                  Analyser mes contenus gratuitement
+                  Essayer 7 jours pour 1€
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -109,20 +124,9 @@ export default function LandingPage() {
                 </a>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 text-sm text-zen-600">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Essai 7 jours pour 1€ · Sans engagement
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Résultats en moins de 2 minutes
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-zen-500 shrink-0" />
-                  Règles actualisées régulièrement
-                </div>
-              </div>
+              <p className="text-xs text-gray-400">
+                Sans engagement · Résiliable à tout moment · Accès immédiat
+              </p>
             </div>
 
             {/* ── Colonne mockup ── */}
@@ -216,6 +220,20 @@ export default function LandingPage() {
 
                 </div>
               </div>
+
+              {/* Annotation décorative */}
+              <div
+                className="absolute top-1/3 hidden xl:flex flex-col items-start gap-2 pointer-events-none"
+                style={{ left: "calc(100% + 2rem)" }}
+              >
+                <p className="text-zen-400 text-[12px] italic leading-snug whitespace-nowrap">
+                  Un rapport clair,<br />et actionnable
+                </p>
+                <svg width="44" height="40" viewBox="0 0 44 40" fill="none">
+                  <path d="M 40 4 C 32 12, 16 26, 4 36" stroke="#84ab9b" strokeWidth="1.2" strokeLinecap="round"/>
+                  <path d="M 4 36 L 14 31 M 4 36 L 8 26" stroke="#84ab9b" strokeWidth="1.2" strokeLinecap="round"/>
+                </svg>
+              </div>
             </div>
 
           </div>
@@ -276,7 +294,7 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Sans / Avec ────────────────────────────────────────────────── */}
-      <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-50/50 via-white to-zen-50/30 border-y border-zen-100">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
 
@@ -306,8 +324,8 @@ export default function LandingPage() {
             </div>
 
             {/* Avec */}
-            <div className="rounded-2xl bg-zen-950 p-8 md:p-10 shadow-md">
-              <p className="text-[11px] font-bold text-zen-300 uppercase tracking-[0.12em] mb-8">
+            <div className="rounded-2xl bg-gradient-to-br from-zen-50 to-zen-100/80 border border-zen-200 p-8 md:p-10 shadow-sm">
+              <p className="text-[11px] font-bold text-zen-600 uppercase tracking-[0.12em] mb-8">
                 Avec Visible & Conforme
               </p>
               <ul className="space-y-5">
@@ -319,15 +337,15 @@ export default function LandingPage() {
                   "Un seul outil pour publier avec plus de clarté",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3.5">
-                    <CheckCircle2 className="h-4 w-4 text-zen-300 shrink-0 mt-0.5" />
-                    <span className="text-[13px] text-zen-100 leading-snug">{item}</span>
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
+                    <span className="text-[13px] text-zen-900 leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
           </div>
-          <p className="text-center mt-8 text-[13px] text-gray-400">
+          <p className="text-center mt-8 text-[13px] text-gray-500">
             <strong className="text-zen-950 font-semibold">19€/mois</strong> · Essai 7 jours pour 1€ · Résiliable à tout moment
           </p>
         </div>
@@ -336,110 +354,135 @@ export default function LandingPage() {
       {/* ─── Fonctionnalités ────────────────────────────────────────────── */}
       <section id="fonctionnalites" className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
-              Un seul outil pour publier avec plus de sérénité
+
+          {/* ── Titre ── */}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
+              Trois fonctionnalités complémentaires,{" "}
+              <br className="hidden sm:block" />
+              un objectif :{" "}
+              <span className="text-coral-500">publier sereinement</span>
             </h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Pensé pour les professionnels qui veulent prendre soin de leur communication,
-              sans expertise technique particulière.
-            </p>
           </div>
 
-          <div className="space-y-6">
+          {/* ── 3 cartes overview ── */}
+          <div className="grid md:grid-cols-3 gap-5 mb-10">
 
-            {/* ── Vérifier un texte — carte principale ── */}
-            <div className="rounded-2xl border-2 border-zen-200 bg-zen-50/30 p-8 md:p-10 hover:shadow-md transition-shadow">
-              <div className="grid md:grid-cols-2 gap-10 items-start">
-                <div>
-                  <span className="inline-block text-[10px] font-bold text-zen-600 uppercase tracking-widest mb-5 bg-zen-100 px-2.5 py-1 rounded-full">
-                    Fonctionnalité principale
+            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow">
+              <div className="w-9 h-9 bg-zen-50 rounded-lg flex items-center justify-center mb-4">
+                <FileText className="h-5 w-5 text-zen-600" />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-semibold text-zen-950 text-sm">1. Vérifier un texte</h3>
+                <span className="text-[9px] font-bold bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Rapide</span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Collez un texte (post, bio, description...) et obtenez instantanément une analyse des formulations à risque et des reformulations adaptées.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Bio Instagram", "Post LinkedIn", "Description Google", "Avis..."].map((tag) => (
+                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full">
+                    {tag}
                   </span>
-                  <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
-                    <FileText className="h-6 w-6 text-zen-700" />
-                  </div>
-                  <h3 className="text-xl font-bold text-zen-950 mb-3">Vérifier un texte</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                    Collez n&apos;importe quel texte et obtenez en quelques secondes une analyse
-                    des formulations à surveiller, des points d&apos;attention expliqués clairement
-                    et des reformulations adaptées à votre activité.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Post LinkedIn", "Bio Instagram", "Page de site", "Description Google", "Texte de vente", "Newsletter"].map((tag) => (
-                      <span key={tag} className="bg-white border border-zen-200 text-zen-700 text-xs px-2.5 py-1 rounded-full font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-zen-950/40 uppercase tracking-widest mb-4">Ce que vous obtenez</p>
-                  <ul className="space-y-3 text-sm text-gray-600">
-                    {[
-                      "Formulations sensibles identifiées et expliquées",
-                      "Points d'attention contextualisés",
-                      "Reformulations adaptées à votre secteur",
-                      "Analyse du ton et de la clarté éditoriale",
-                      "Vérification des points de vigilance",
-                    ].map((f) => (
-                      <li key={f} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* ── Cartes secondaires ── */}
-            <div className="grid md:grid-cols-2 gap-6">
-
-              <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
-                  <TrendingUp className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-zen-950 mb-2">Analyse du site</h3>
-                <p className="text-sm text-gray-500 mb-5 leading-relaxed">
-                  Une vue d&apos;ensemble de votre communication en ligne à partir de votre URL.
-                </p>
-                <ul className="space-y-2.5 text-sm text-gray-600">
-                  {[
-                    "Structure et lisibilité des contenus",
-                    "Formulations sensibles détectées",
-                    "Cohérence du positionnement",
-                    "Clarté des titres et des textes",
-                    "Points de vigilance identifiés",
-                    "Présence des mentions légales et RGPD",
-                  ].map((f) => (
-                    <li key={f} className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+            <div className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-sm transition-shadow">
+              <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="h-5 w-5 text-blue-500" />
               </div>
-
-              <div className="rounded-2xl border-2 border-purple-200 bg-purple-50/20 p-8 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
-                  <Sparkles className="h-6 w-6 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-bold text-zen-950 mb-2">Assistant de rédaction</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                  Une aide à la rédaction de contenus adaptés à votre activité.
-                  Des modèles vérifiés, pensés pour les professionnels du bien-être,
-                  pour publier plus sereinement.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Bio Instagram", "Post LinkedIn", "Page de présentation", "Script TikTok", "Fiche Google"].map((tag) => (
-                    <span key={tag} className="bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-semibold text-zen-950 text-sm">2. Analyser un site</h3>
+                <span className="text-[9px] font-bold bg-blue-50 text-blue-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Global</span>
               </div>
-
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Saisissez votre URL pour obtenir une vue d&apos;ensemble de votre visibilité et de votre cohérence éditoriale.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Site web", "Fiche Google", "Page de présentation"].map((tag) => (
+                  <span key={tag} className="bg-gray-50 border border-gray-200 text-gray-500 text-[10px] px-2 py-0.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
+
+            <div className="rounded-xl border border-purple-200 bg-purple-50/20 p-6 hover:shadow-sm transition-shadow">
+              <div className="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <Sparkles className="h-5 w-5 text-purple-500" />
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-semibold text-zen-950 text-sm">3. Générer des contenus</h3>
+                <span className="text-[9px] font-bold bg-purple-100 text-purple-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Sur-mesure</span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                Créez des contenus adaptés à votre activité grâce à la bibliothèque de formulations validées et à l&apos;assistant de rédaction.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Posts", "Bios", "Pages", "Scripts", "Fiches..."].map((tag) => (
+                  <span key={tag} className="bg-purple-50 border border-purple-200 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* ── Diagnostics détaillés ── */}
+          <div className="grid md:grid-cols-2 gap-6">
+
+            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
+                <TrendingUp className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-zen-950 mb-2">Diagnostic visibilité</h3>
+              <p className="text-sm text-gray-500 mb-5 leading-relaxed">
+                Analyse de la clarté, de la structure et de la lisibilité de votre site.
+              </p>
+              <ul className="space-y-2.5 text-sm text-gray-600">
+                {[
+                  "Structure et lisibilité des contenus",
+                  "Cohérence des titres et des textes",
+                  "Lisibilité et clarté du positionnement",
+                  "Présence des éléments essentiels",
+                  "Cohérence sémantique globale",
+                  "Compatibilité mobile et accessibilité de base",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-zen-200 bg-zen-50/30 p-8 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
+                <ShieldCheck className="h-6 w-6 text-zen-700" />
+              </div>
+              <h3 className="text-xl font-bold text-zen-950 mb-2">Diagnostic conformité</h3>
+              <p className="text-sm text-gray-500 mb-5 leading-relaxed">
+                Détection des formulations sensibles et des points de vigilance éditoriaux.
+              </p>
+              <ul className="space-y-2.5 text-sm text-gray-600">
+                {[
+                  "Formulations à risque détectées et expliquées",
+                  "Confusion possible avec les professions de santé",
+                  "Promesses pouvant être perçues comme trompeuses",
+                  "Présence des mentions légales",
+                  "Conformité RGPD et politique de confidentialité",
+                  "Reformulations adaptées proposées",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
