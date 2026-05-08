@@ -299,23 +299,54 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-purple-200 bg-purple-50/20 p-6 hover:shadow-sm transition-shadow">
-              <div className="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Sparkles className="h-5 w-5 text-purple-500" />
+            <div className="rounded-xl border border-purple-200 bg-gradient-to-br from-purple-50/30 to-white p-6 hover:shadow-md transition-all duration-200 flex flex-col gap-4">
+
+              {/* En-tête */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center shadow-sm ring-1 ring-purple-200 shrink-0">
+                  <Sparkles className="h-4.5 w-4.5 text-purple-500" />
+                </div>
+                <span className="text-[9px] font-bold bg-purple-100 text-purple-600 px-2 py-1 rounded-full uppercase tracking-[0.12em] shrink-0">
+                  Sur-mesure
+                </span>
               </div>
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-semibold text-zen-950 text-sm">3. Générer des contenus</h3>
-                <span className="text-[9px] font-bold bg-purple-100 text-purple-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Sur-mesure</span>
+
+              {/* Titre */}
+              <div>
+                <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1">3.</p>
+                <h3 className="font-semibold text-zen-950 text-sm leading-snug">Générer des contenus</h3>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed mb-3">
-                Créez des contenus adaptés à votre activité grâce à la bibliothèque de formulations validées et à l&apos;assistant de rédaction.
+
+              {/* Description */}
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Créez des contenus adaptés à votre activité grâce à une bibliothèque de formulations validées et à un assistant de rédaction pensé pour les professionnels du bien-être.
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {["LinkedIn", "Instagram", "Facebook", "YouTube", "Posts", "Bios", "Scripts..."].map((tag) => (
-                  <span key={tag} className="bg-purple-50 border border-purple-200 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
-                    {tag}
-                  </span>
-                ))}
+
+              {/* Deux catégories */}
+              <div className="space-y-3 pt-1 border-t border-purple-100">
+
+                <div>
+                  <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1.5">Réseaux</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["LinkedIn", "Instagram", "Facebook", "Google Business"].map((tag) => (
+                      <span key={tag} className="bg-white border border-purple-200 text-purple-600 text-[10px] font-medium px-2 py-0.5 rounded-full shadow-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1.5">Formats</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Posts", "Bios", "Descriptions", "Scripts"].map((tag) => (
+                      <span key={tag} className="bg-purple-50 border border-purple-100 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             </div>
 
