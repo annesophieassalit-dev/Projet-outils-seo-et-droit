@@ -204,6 +204,24 @@ Règles :
 - Ne PAS inclure de suite ou développement — juste la première phrase d'accroche
 
 Après les 5 hooks, ajoute une ligne : "💡 Conseil d'usage : combinez l'accroche avec un développement en 3–4 paragraphes courts."`,
+
+    script_youtube: `Rédige un script de vidéo YouTube pour ${profession} sur les thèmes : ${themesText}.
+
+Format script YouTube (5 à 8 minutes, environ 600–900 mots parlés) :
+
+[0–30 sec] INTRODUCTION : accroche forte + annonce du sujet + promesse de valeur ("Dans cette vidéo, vous allez comprendre…")
+[30 sec–5 min] DÉVELOPPEMENT : 3 points principaux, chacun structuré en : point clé → explication simple → exemple ou anecdote
+[5–7 min] APPROFONDISSEMENT : conseils pratiques, ce que le spectateur peut faire concrètement
+[7–8 min] CONCLUSION : résumé en 2-3 phrases + invitation à s'abonner ou commenter ("Dites-moi en commentaire…")
+
+Format de rédaction :
+- Écris comme on parle, phrases courtes et naturelles
+- Indique entre crochets les intentions visuelles : [sourire], [montrer un document], [coupe], [texte à l'écran : "…"]
+- Chaque paragraphe = une idée, maximum 3 phrases
+- Inclure 1–2 moments de pause ("Prenez le temps d'y réfléchir…")
+- Titre suggéré en fin + description courte pour YouTube (150 mots SEO-friendly)
+
+Ton : ${toneInstruction}`,
   };
 
   const specificitesText = specificites
