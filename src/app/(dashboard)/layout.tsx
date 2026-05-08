@@ -6,6 +6,7 @@ import { getEffectivePlan } from "@/lib/trial";
 import Sidebar from "@/components/layout/Sidebar";
 import TopBar from "@/components/layout/TopBar";
 import TrialBanner from "@/components/layout/TrialBanner";
+import DashboardFooter from "@/components/layout/DashboardFooter";
 
 export default async function DashboardLayout({
   children,
@@ -51,6 +52,7 @@ export default async function DashboardLayout({
           />
         )}
         <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <DashboardFooter />
       </div>
     </div>
   );

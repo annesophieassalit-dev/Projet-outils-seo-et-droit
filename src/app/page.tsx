@@ -267,7 +267,7 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-zen-950 text-sm">1. Vérifier un texte</h3>
                 <span className="text-[9px] font-bold bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Rapide</span>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Collez un texte (post, bio, description...) et obtenez instantanément une analyse des formulations à risque et des reformulations adaptées.
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -287,7 +287,7 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-zen-950 text-sm">2. Analyser un site</h3>
                 <span className="text-[9px] font-bold bg-blue-50 text-blue-500 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Global</span>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Saisissez votre URL pour obtenir une vue d&apos;ensemble de votre visibilité et de votre cohérence éditoriale.
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -398,7 +398,7 @@ export default function LandingPage() {
                 <FileText className="h-5 w-5 text-zen-600" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Ajoutez un texte ou une URL</h3>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Collez votre contenu ou saisissez l&apos;adresse de votre site.
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -420,7 +420,7 @@ export default function LandingPage() {
                 <ShieldCheck className="h-5 w-5 text-amber-600" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Détection des formulations sensibles</h3>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 L&apos;outil identifie les points de vigilance dans vos textes.
               </p>
               <div className="flex flex-col gap-1.5">
@@ -449,7 +449,7 @@ export default function LandingPage() {
                 <AlertTriangle className="h-5 w-5 text-amber-500" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Recevez des explications claires</h3>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Chaque point est expliqué clairement avec une reformulation adaptée.
               </p>
               <div className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 shadow-sm">
@@ -468,7 +468,7 @@ export default function LandingPage() {
                 <Sparkles className="h-5 w-5 text-purple-500" />
               </div>
               <h3 className="font-semibold text-zen-950 text-sm mb-2">Générez des contenus prêts à publier</h3>
-              <p className="text-xs text-gray-500 leading-relaxed mb-3">
+              <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
               </p>
               <div className="bg-white border border-purple-200 rounded-lg px-3 py-2 shadow-sm">
