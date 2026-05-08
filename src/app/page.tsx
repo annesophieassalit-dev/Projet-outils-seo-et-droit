@@ -338,94 +338,107 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
-              Analysez, corrigez et créez — depuis un seul outil
+              Un seul outil pour publier avec plus de sérénité
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Le seul outil pensé spécifiquement pour les praticiens du bien-être non réglementés,
-              avec des règles adaptées à votre secteur.
+              Pensé pour les professionnels qui veulent prendre soin de leur communication,
+              sans expertise technique particulière.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
-                <TrendingUp className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-zen-950 mb-3">Diagnostic visibilité</h3>
-              <ul className="space-y-2.5 text-sm text-gray-600">
-                {[
-                  "Balises title et meta description",
-                  "Structure H1/H2/H3 des titres",
-                  "Images sans texte alternatif",
-                  "Compatibilité mobile (viewport)",
-                  "Sécurité HTTPS",
-                  "Maillage interne",
-                  "Sémantique et positionnement",
-                  "Données structurées Schema.org",
-                  "Open Graph pour les réseaux sociaux",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="space-y-6">
 
-            <div className="rounded-2xl border border-zen-200 bg-zen-50/30 p-8 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
-                <ShieldCheck className="h-6 w-6 text-zen-700" />
-              </div>
-              <h3 className="text-xl font-bold text-zen-950 mb-3">Diagnostic conformité</h3>
-              <ul className="space-y-2.5 text-sm text-gray-600">
-                {[
-                  "Formulations à risque (soigner, traiter, guérir...)",
-                  "Risque d'exercice illégal de la médecine",
-                  "Confusion avec professions de santé réglementées",
-                  "Présence des mentions légales (LCEN)",
-                  "Conformité RGPD et politique de confidentialité",
-                  "Publicité mensongère et allégations non prouvées",
-                  "Scanner de texte avec alertes colorées",
-                  "Reformulations validées proposées",
-                  "Analyse nuancée par IA (plan Pro)",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-5">
-                <ScanText className="h-6 w-6 text-amber-600" />
-              </div>
-              <h3 className="text-xl font-bold text-zen-950 mb-3">Scanner de texte</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Collez n&apos;importe quel texte — bio Instagram, post, page de site —
-                et détectez instantanément les formulations à risque avec alertes
-                colorées et reformulations validées.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-purple-200 bg-purple-50/20 p-8 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
-                <Sparkles className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-zen-950 mb-3">Bibliothèque & Générateur</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                Accédez à une bibliothèque de formulations validées par thème
-                (stress, sommeil, émotions...) et générez automatiquement des contenus
-                adaptés à votre activité et à votre secteur.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Bio Instagram", "Post LinkedIn", "Page de présentation", "Script TikTok", "Fiche Google"].map((tag) => (
-                  <span key={tag} className="bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">
-                    {tag}
+            {/* ── Vérifier un texte — carte principale ── */}
+            <div className="rounded-2xl border-2 border-zen-200 bg-zen-50/30 p-8 md:p-10 hover:shadow-md transition-shadow">
+              <div className="grid md:grid-cols-2 gap-10 items-start">
+                <div>
+                  <span className="inline-block text-[10px] font-bold text-zen-600 uppercase tracking-widest mb-5 bg-zen-100 px-2.5 py-1 rounded-full">
+                    Fonctionnalité principale
                   </span>
-                ))}
+                  <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
+                    <FileText className="h-6 w-6 text-zen-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-zen-950 mb-3">Vérifier un texte</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                    Collez n&apos;importe quel texte et obtenez en quelques secondes une analyse
+                    des formulations à surveiller, des points d&apos;attention expliqués clairement
+                    et des reformulations adaptées à votre activité.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Post LinkedIn", "Bio Instagram", "Page de site", "Description Google", "Texte de vente", "Newsletter"].map((tag) => (
+                      <span key={tag} className="bg-white border border-zen-200 text-zen-700 text-xs px-2.5 py-1 rounded-full font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-zen-950/40 uppercase tracking-widest mb-4">Ce que vous obtenez</p>
+                  <ul className="space-y-3 text-sm text-gray-600">
+                    {[
+                      "Formulations sensibles identifiées et expliquées",
+                      "Points d'attention contextualisés",
+                      "Reformulations adaptées à votre secteur",
+                      "Analyse du ton et de la clarté éditoriale",
+                      "Vérification des points de vigilance",
+                    ].map((f) => (
+                      <li key={f} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0 mt-0.5" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
+            </div>
+
+            {/* ── Cartes secondaires ── */}
+            <div className="grid md:grid-cols-2 gap-6">
+
+              <div className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
+                  <TrendingUp className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-zen-950 mb-2">Analyse du site</h3>
+                <p className="text-sm text-gray-500 mb-5 leading-relaxed">
+                  Une vue d&apos;ensemble de votre communication en ligne à partir de votre URL.
+                </p>
+                <ul className="space-y-2.5 text-sm text-gray-600">
+                  {[
+                    "Structure et lisibilité des contenus",
+                    "Formulations sensibles détectées",
+                    "Cohérence du positionnement",
+                    "Clarté des titres et des textes",
+                    "Points de vigilance identifiés",
+                    "Présence des mentions légales et RGPD",
+                  ].map((f) => (
+                    <li key={f} className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border-2 border-purple-200 bg-purple-50/20 p-8 hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
+                  <Sparkles className="h-6 w-6 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold text-zen-950 mb-2">Assistant de rédaction</h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                  Une aide à la rédaction de contenus adaptés à votre activité.
+                  Des modèles vérifiés, pensés pour les professionnels du bien-être,
+                  pour publier plus sereinement.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Bio Instagram", "Post LinkedIn", "Page de présentation", "Script TikTok", "Fiche Google"].map((tag) => (
+                    <span key={tag} className="bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -529,11 +542,10 @@ export default function LandingPage() {
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
                   "Accès immédiat à toutes les fonctionnalités",
-                  "Diagnostics visibilité + conformité illimités",
-                  "Scanner de texte illimité",
-                  "Générateur de contenus",
-                  "Bibliothèque complète de formulations",
-                  "Email de rappel avant renouvellement",
+                  "Vérification de texte avant publication",
+                  "Analyse de site complète",
+                  "Assistant de rédaction inclus",
+                  "Bibliothèque de formulations validées",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -565,9 +577,9 @@ export default function LandingPage() {
               <p className="text-xs text-gray-400 mb-6">Sans engagement · Résiliable à tout moment</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "Diagnostics illimités (visibilité + conformité)",
-                  "Scans de texte illimités",
-                  "Générez posts, bios et contenus adaptés à votre activité",
+                  "Analyses de site illimitées",
+                  "Vérifications de texte illimitées",
+                  "Contenus rédigés adaptés à votre activité",
                   "LinkedIn, Instagram, TikTok, page de présentation…",
                   "Bibliothèque complète + historique",
                   "Export PDF des rapports",
@@ -605,15 +617,15 @@ export default function LandingPage() {
               },
               {
                 q: "Que fait l'outil ?",
-                a: "Visible & Conforme analyse vos contenus afin de détecter certains points pouvant poser problème dans votre communication. L'outil permet notamment de repérer des formulations sensibles, identifier certains termes à risque, proposer des reformulations plus adaptées, analyser certains éléments liés à votre visibilité, détecter des points d'amélioration SEO, et vous aider à publier des contenus plus visibles et plus cohérents avec votre activité.",
+                a: "Visible & Conforme vous aide à vérifier vos contenus avant publication, analyser globalement votre communication en ligne, et créer des textes mieux adaptés à votre activité. L'outil repère les formulations sensibles, explique les points de vigilance dans un langage clair, propose des reformulations adaptées à votre secteur, et vous accompagne dans la rédaction de vos contenus professionnels.",
               },
               {
                 q: "Est-ce un outil juridique ?",
                 a: "Non. Visible & Conforme ne remplace pas un avocat et ne constitue pas un conseil juridique personnalisé. L'outil propose une analyse automatisée orientée vigilance éditoriale et prévention du risque dans les contenus publiés en ligne.",
               },
               {
-                q: "Quels contenus puis-je analyser ?",
-                a: "Vous pouvez analyser votre site internet, une page de présentation, une bio Instagram, une fiche Google Business Profile, un post LinkedIn ou Instagram, une page de vente, une newsletter, ou tout autre contenu destiné à être publié.",
+                q: "Quels contenus puis-je vérifier ?",
+                a: "Vous pouvez vérifier votre site internet, une page de présentation, une bio Instagram, une fiche Google Business Profile, un post LinkedIn ou Instagram, une page de vente, une newsletter, ou tout autre contenu destiné à être publié.",
               },
               {
                 q: "Pourquoi certains mots peuvent-ils poser problème ?",
@@ -633,7 +645,7 @@ export default function LandingPage() {
               },
               {
                 q: "L'accès est-il gratuit ?",
-                a: "Visible & Conforme propose un essai de 7 jours pour 1€, avec accès complet à toutes les fonctionnalités. À l'issue de l'essai, l'abonnement passe à 19€/mois. Vous pouvez résilier à tout moment avant le renouvellement. Un email de rappel vous est envoyé avant chaque renouvellement.",
+                a: "Visible & Conforme propose un essai de 7 jours pour 1€, avec accès complet à toutes les fonctionnalités. À l'issue de l'essai, l'abonnement passe à 19€/mois. Vous pouvez résilier à tout moment avant le renouvellement.",
               },
             ].map((item) => (
               <details
