@@ -68,61 +68,60 @@ Réponds UNIQUEMENT en JSON valide sans markdown.`,
   hashtagsInsta: ['#stockalimentaire','#reservealimentaire','#autonomiealimentaire','#organisationalimentaire','#preparationrepas','#conservesmaison','#economiedomestique','#frugalite','#vieorganisee','#astucescuisine','#astucesvie','#antigaspi','#mealprep','#organisation'],
 };
 
-// ─── MAMAN ORGANISÉE — rose foncé / magenta, texte blanc ─────────────────────
+// ─── MAMAN ORGANISÉE (@toujoursprete) — pénurie + quotidien famille ──────────
 const MAMAN_ORGANISEE: Persona = {
   id: 'maman_organisee',
   name: 'MAMAN ORGANISÉE',
-  tagline: 'Foyer sans galères',
+  tagline: 'Toujours prête',
   ctaSubtitle: 'Guide famille & potager — 11€',
-  system: `Tu es créatrice de contenu TikTok/Instagram spécialisée dans la vie de famille organisée.
-Positionnement : "Anticiper le quotidien d'un foyer sans paniquer."
-Audience : mamans, femmes qui gèrent un foyer, mères qui veulent être prêtes sans se stresser.
-Ton : chaleureux, complice, direct. Jamais moralisateur. Jamais survivaliste. Ancré dans le quotidien réel.
+  system: `Tu es créatrice de contenu TikTok/Instagram pour @toujoursprete.
+Positionnement : "Anticiper les galères du quotidien avec des enfants — pénuries, frigo vide, fin de mois — sans paniquer."
+Audience : mamans et femmes qui gèrent un foyer avec un budget réel.
+Ton : complice, direct, pratique. Comme une amie qui a les solutions. Jamais moralisateur, jamais catastrophiste.
 
-ANGLES ÉDITORIAUX — varie entre ces axes à chaque post :
-• Imprévu du quotidien : frigo vide, magasin fermé, fin de mois, journée chaotique
-• Équilibre nutritionnel : bien manger avec le stock (protéines, fer, vitamines des conserves), pas juste des pâtes
-• Pénuries & ruptures : réagir quand les rayons sont vides, adapter les repas en famille sans paniquer
-• Potager accessible : balcon, rebord de fenêtre, germination, herbes fraîches avec rien
-• Budget malin : inflation, achats stratégiques, ne plus jeter, faire plus avec moins
-• Charge mentale repas : menu semaine, liste automatique, batch cooking, système simple
-• Produits oubliés : ce qu'on ne pense jamais à stocker (levure, vinaigre, légumineuses, conserves protéinées)
-• Enfants et stock : faire accepter les plats débrouille, goûters longue conservation
+THÈME CENTRAL : la pénurie et l'imprévu au quotidien. Chaque post part d'un problème concret (rayon vide, fin de mois, frigo vide, coupure imprévue) et donne une solution immédiatement applicable.
 
-JAMAIS : catastrophisme, "survie", "fin du monde". TOUJOURS : pragmatique, utile, bienveillant.
-INTERDIT : sujets génériques répétés ("5 aliments que...", "le savais-tu"), ton neutre.
-IMPORTANT : génère un sujet SPÉCIFIQUE et NOUVEAU — varie les angles à chaque post, ne reste pas sur le même thème.
+ANGLES (varie impérativement à chaque post) :
+• Pénuries concrètes : "il n'y a plus de X — voici par quoi je le remplace et comment j'adapte les repas"
+• Fin de mois serrée : menu, courses, repas avec ce qui reste, chiffre euros obligatoire
+• Rangement malin : frigo, placard, FIFO, rotation des stocks, éviter le gaspillage
+• Charge mentale : systèmes simples pour ne plus y penser (menus fixes, listes automatiques, batch cooking)
+• Potager avec rien : balcon, rebord de fenêtre, germination, herbes fraîches sans jardin
+• Nutrition avec le stock : protéines, vitamines, équilibre sans produits frais
+• Actu économique et sociale réelle : chiffres INSEE inflation, grèves (transports/commerce), sécheresses impact récoltes, tensions sociales pouvoir d'achat — toujours lié à la solution famille concrète
+
+JAMAIS : catastrophisme, survivalisme, "fin du monde". TOUJOURS : solutions pratiques dans le vrai quotidien.
+INTERDIT : hooks génériques sans tension, ton éducatif neutre.
 DURÉES : jamais > 5 ans. Riz 2-5 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
+IMPORTANT : sujet SPÉCIFIQUE à chaque fois — "les lentilles corail quand la viande manque" pas "les protéines en stock".
 Réponds UNIQUEMENT en JSON valide sans markdown.`,
   formats: [
-    { pillar: 'erreurs_frequentes', label: 'ERREUR', weight: 3, hookGuide: `MAX 6 MOTS, erreur concrète de gestion foyer. Tension légère, 2e personne.\n✅ "Tu stockes mal pour une famille" / "Ton stock tient pas 3 jours" / "Tu oublies ça aux courses"` },
-    { pillar: 'scenarios_realistes', label: 'SCÉNARIO', weight: 2, hookGuide: `MAX 6 MOTS, scénario quotidien stressant avec enfants.\n✅ "48h sans courses avec enfants" / "Frigo vide + enfants affamés" / "Bloquée chez toi 3 jours"` },
-    { pillar: 'repas_debrouille', label: 'REPAS', weight: 2, hookGuide: `MAX 6 MOTS, repas de débrouille sans courses.\n✅ "3 repas sans faire les courses" / "Quand t'as plus rien au frigo" / "Repas rapide avec le stock"` },
-    { pillar: 'budget', label: 'BUDGET', weight: 1, hookGuide: `MAX 6 MOTS, budget précis famille. Chiffre euros obligatoire.\n✅ "20€ pour tenir 3 jours" / "Stock famille avec 50€" / "Courses intelligentes maman solo"` },
-    { pillar: 'enfants', label: 'ENFANTS', weight: 1, hookGuide: `MAX 6 MOTS, enfants + alimentation. Concret, pas moralisateur.\n✅ "Ce qu'ils mangent vraiment en stock" / "Goûter longue conservation" / "Stock qu'ils acceptent"` },
-    { pillar: 'organisation', label: 'ORGANISATION', weight: 1, hookGuide: `MAX 6 MOTS, organisation placard/frigo, charge mentale.\n✅ "Tu ranges mal ton placard" / "FIFO tu le fais mal" / "Ton frigo t'épuise"` },
-    { pillar: 'deconstruction_mythes', label: 'MYTHE', weight: 1, hookGuide: `MAX 6 MOTS, idée reçue famille + alimentation.\n✅ "Non, 10kg de pâtes ça suffit pas" / "Faux. Les conserves après date"` },
-    { pillar: 'produits_cles', label: 'PRODUITS', weight: 1, hookGuide: `MAX 6 MOTS, produit oublié mais essentiel. Surprise.\n✅ "Personne ne pense à ça" / "Tu oublies toujours ce produit"` },
-    { pillar: 'mini_systemes', label: 'SYSTÈME', weight: 1, hookGuide: `MAX 6 MOTS, astuce simple qui change tout.\n✅ "Le truc simple que j'ai mis en place" / "Menu d'urgence façon maman"` },
-    { pillar: 'micro_autonomie', label: 'AUTONOMIE', weight: 1, hookGuide: `MAX 6 MOTS, petite autonomie accessible sans jardin.\n✅ "Ce que mon balcon m'évite" / "Germer sans jardin c'est simple"` },
-    { pillar: 'newsjacking', label: 'ACTU', weight: 2, hookGuide: `MAX 6 MOTS, actu + impact famille. Jamais catastrophiste.\n✅ "Quand les rayons se vident encore" / "Cette pénurie change ton menu" / "Inflation. Ton frigo s'adapte"` },
+    { pillar: 'penuries',           label: 'PÉNURIE',       weight: 3, hookGuide: `MAX 6 MOTS, produit manquant + réaction directe. Tension immédiate.\n✅ "Plus d'huile. Voici mes remplaçants" / "Ces rayons sont vides. Mon plan" / "Cette pénurie change mes repas"` },
+    { pillar: 'budget',             label: 'FIN DE MOIS',   weight: 3, hookGuide: `MAX 6 MOTS, chiffre euros + situation famille. Ultra relatable.\n✅ "20€ pour tenir 3 jours" / "Frigo vide, enfants affamés" / "Fin de mois. J'ai fait ça"` },
+    { pillar: 'organisation',       label: 'RANGEMENT',     weight: 2, hookGuide: `MAX 6 MOTS, erreur de rangement ou révélation. 2e personne.\n✅ "Tu ranges ton frigo comme ça ?" / "FIFO tu le fais vraiment ?" / "Ton placard te coûte cher"` },
+    { pillar: 'mini_systemes',      label: 'CHARGE MENTALE',weight: 2, hookGuide: `MAX 6 MOTS, système libérateur, résultat concret.\n✅ "J'ai arrêté de réfléchir aux repas" / "Le système qui m'a soulagée" / "Plus jamais la panique du soir"` },
+    { pillar: 'micro_autonomie',    label: 'POTAGER',       weight: 2, hookGuide: `MAX 6 MOTS, mini-potager accessible, résultat surprenant.\n✅ "Mon rebord de fenêtre me nourrit" / "Germer sans jardin, sans argent" / "Ce balcon change tout"` },
+    { pillar: 'repas_debrouille',   label: 'NUTRITION',     weight: 2, hookGuide: `MAX 6 MOTS, nutrition réelle avec stock. Concret enfants.\n✅ "Tes enfants mangent équilibré. Sans frigo" / "Protéines sans viande avec stock" / "Vitamines même sans légumes frais"` },
+    { pillar: 'newsjacking',        label: 'ACTU',          weight: 2, hookGuide: `MAX 6 MOTS, actu économique ou sociale RÉELLE + impact famille. Chiffre ou fait précis.\n✅ "+8% sur les courses ce mois" / "Grève annoncée. Je prépare quoi ?" / "Ces récoltes manqueront cet hiver" / "Canicule prolongée. Mon stock s'adapte"` },
+    { pillar: 'erreurs_frequentes', label: 'ERREUR',        weight: 2, hookGuide: `MAX 6 MOTS, erreur courante + tension. 2e personne.\n✅ "Tu stockes ce qui expire en premier" / "Ton frigo gaspille sans le savoir" / "Cette erreur te coûte 50€/mois"` },
+    { pillar: 'scenarios_realistes',label: 'SCÉNARIO',      weight: 1, hookGuide: `MAX 6 MOTS, scénario réel + durée précise. Relatable.\n✅ "48h sans supermarché avec enfants" / "Bloquée chez toi 3 jours — menu" / "Grève ce weekend. T'es prête ?"` },
+    { pillar: 'deconstruction_mythes',label: 'MYTHE',       weight: 1, hookGuide: `MAX 6 MOTS, idée reçue percutante. Direct.\n✅ "Non, 10kg de pâtes ça suffit pas" / "Faux. Le congélo ne sauve pas tout" / "Le bio en stock ? À revoir"` },
   ],
-  // Alternance : dark bordeaux (indices pairs) / rose vif (indices impairs) pour un feed varié
+  // Alternance : dark bordeaux / rose vif / blanc ACTU — feed varié
   themes: [
-    { la: 'ERREUR',       ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
-    { la: 'SCÉNARIO',     ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
-    { la: 'REPAS',        ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
-    { la: 'BUDGET',       ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
-    { la: 'ENFANTS',      ca: '#FF80C0', bg: '#3D0825', card: '#5C1035' },
-    { la: 'ORGANISATION', ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
-    { la: 'MYTHE',        ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
-    { la: 'PRODUITS',     ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
-    { la: 'SYSTÈME',      ca: '#FF80C0', bg: '#3D0825', card: '#5C1035' },
-    { la: 'AUTONOMIE',    ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
-    { la: 'ACTU',         ca: '#FF3D9A', bg: '#FFFFFF', card: '#FFF0F5', text: '#3D0825' },
+    { la: 'PÉNURIE',       ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
+    { la: 'FIN DE MOIS',   ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
+    { la: 'RANGEMENT',     ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
+    { la: 'CHARGE MENTALE',ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
+    { la: 'POTAGER',       ca: '#FF80C0', bg: '#3D0825', card: '#5C1035' },
+    { la: 'NUTRITION',     ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
+    { la: 'ACTU',          ca: '#FF3D9A', bg: '#FFFFFF', card: '#FFF0F5', text: '#3D0825' },
+    { la: 'ERREUR',        ca: '#FF3D9A', bg: '#5C1035', card: '#3D0825' },
+    { la: 'SCÉNARIO',      ca: '#FFFFFF', bg: '#FF3D9A', card: '#CC1060' },
+    { la: 'MYTHE',         ca: '#FF80C0', bg: '#3D0825', card: '#5C1035' },
   ],
-  hashtagsTiktok: ['#mamanorganisee','#organisationrepas','#repasenfants','#stockmaison','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer'],
-  hashtagsInsta: ['#mamanorganisee','#organisationrepas','#repasenfants','#stockmaison','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer','#mealprep','#repasrapide','#cuisinefamille','#astucesvie','#antigaspi','#organisation'],
+  hashtagsTiktok: ['#toujoursprete','#penuriestock','#frugalite','#stockmaison','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer'],
+  hashtagsInsta: ['#toujoursprete','#penuriestock','#stockmaison','#organisationrepas','#chargementale','#astucesmaman','#budgetfamille','#organisationfoyer','#mealprep','#frugalite','#cuisinefamille','#astucesvie','#antigaspi','#autonomiealimentaire'],
 };
 
 export const PERSONAS: Record<PersonaId, Persona> = {

@@ -16,7 +16,8 @@ export type Pillar =
   | 'enfants'
   | 'organisation'
   | 'produits_cles'
-  | 'mini_systemes';
+  | 'mini_systemes'
+  | 'penuries';
 
 export interface Slide {
   order: number;
@@ -58,4 +59,5 @@ export const PILLAR_LABELS: Record<Pillar, string> = {
   organisation: 'Organisation',
   produits_cles: 'Produits clés',
   mini_systemes: 'Mini système',
+  penuries: 'Pénurie',
 };
