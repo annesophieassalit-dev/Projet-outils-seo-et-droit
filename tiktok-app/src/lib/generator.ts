@@ -75,19 +75,20 @@ FORMAT VISUEL : "${fmt.label}"
 STYLE DU HOOK : ${fmt.hookGuide}
 
 RÈGLES STRICTES :
-- Slide 1 (hook) : MAX 6 MOTS — slogan percutant, pas un titre. Couper impitoyablement.
+- Slide 1 (visuel) : MAX 6 MOTS — slogan choc affiché sur l'image. Court, percutant, coupé impitoyablement.
+- "hook" JSON : phrase d'accroche pour la légende — DIFFÉRENTE du texte slide 1, plus narrative. Question ou tension forte, 10-15 mots max. Ex: "Tu sais pas par quoi remplacer l'huile d'olive en ce moment ?" ou "Cette semaine les rayons étaient encore vides — voilà ce que j'ai fait."
 - Slides 2 à ${isVideo ? '9' : '4'} : 1 phrase courte, max 90 caractères, chiffre si possible, info concrète et originale
 - Dernière slide info : conseil actionnable ou question directe en 1 phrase (pas "conclusion")
 - Highlights : max 2 mots par slide (chiffres ou mots-clés forts uniquement)
 - DURÉES INTERDITES : jamais > 5 ans. Riz 2-4 ans, pâtes 2-3 ans, conserves 2-5 ans, huile 1-2 ans.
-- Caption : 3-4 phrases avec emojis. Commence par la tension ou promesse du hook, ajoute 1-2 tips concrets, finis par un CTA ou question. 280-350 caractères.
+- Caption SEO : 450-550 caractères avec emojis. Structure : hook (repris ou reformulé) → 2-3 phrases avec mots-clés naturels que les gens cherchent (ex: stock alimentaire famille, pénurie courses, repas sans courses, frigo vide enfants, budget courses) → tip concret → question qui invite les commentaires. Optimisé pour être trouvé dans la recherche TikTok/Instagram.
 
 JSON exact :
 {
   "title": "titre interne court",
-  "hook": "hook direct max 6 mots",
-  "slides": [{"order":1,"type":"hook","text":"texte","highlight":["mot"]}],
-  "caption": "légende TikTok 3-4 phrases emojis 280-350 chars",
+  "hook": "phrase accroche légende 10-15 mots différente du slide 1",
+  "slides": [{"order":1,"type":"hook","text":"MAX 6 MOTS visuel","highlight":["mot"]}],
+  "caption": "légende SEO 450-550 chars avec emojis et mots-clés recherchés",
   "hashtags": ["tag1","tag2","tag3"]
 }`,
     }],
