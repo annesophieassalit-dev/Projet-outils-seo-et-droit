@@ -65,7 +65,7 @@ Réponds UNIQUEMENT en JSON valide sans markdown.`,
     { pillar: 'newsjacking', label: 'ACTU',             weight: 2, hookGuide: `MAX 6 MOTS, actu économique ou géopolitique précise + anticipation concrète. Chiffre ou fait réel.\n✅ "+8% sur les courses. Mon ajustement" / "Ces récoltes vont manquer cet hiver" / "Grève annoncée. Ce que je fais"` },
     { pillar: 'scenarios_realistes', label: 'URGENCE',  weight: 2, hookGuide: `MAX 6 MOTS, scénario imminent, 2e personne, tension immédiate.\n✅ "Si les rayons se vident demain" / "Ton stock est fragile" / "T'as 3 jours de vraies réserves ?"` },
     { pillar: 'experience_personnelle', label: "J'AI TESTÉ", weight: 1, hookGuide: `MAX 6 MOTS, 1ère personne, résultat surprenant ou contre-intuitif.\n✅ "J'ai vécu 1 mois sur mon stock" / "J'ai mal acheté ça" / "Ce test m'a surpris"` },
-    { pillar: 'micro_autonomie', label: 'AUTONOMIE',    weight: 1, hookGuide: `MAX 6 MOTS, autonomie accessible en appartement, résultat concret.\n✅ "Ton balcon peut faire ça" / "Germer sans jardin. Le résultat" / "Mes conserves maison. Bilan"` },
+    { pillar: 'micro_autonomie', label: 'AUTONOMIE',    weight: 5, hookGuide: `MAX 6 MOTS, autonomie accessible en appartement, résultat concret.\n✅ "Ton balcon peut faire ça" / "Germer sans jardin. Le résultat" / "Mes conserves maison. Bilan"` },
   ],
   themes: [
     { la: 'ERREUR',      ca: '#C25B42', bg: '#141414', card: '#252525' },
