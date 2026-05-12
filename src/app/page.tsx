@@ -786,16 +786,16 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Pourquoi Visible & Conforme — encart Anne-Sophie ───────────── */}
-      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zen-700 via-zen-600 to-zen-800 relative overflow-hidden">
-        {/* Cercles décoratifs */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-zen-500 rounded-full blur-3xl opacity-20 pointer-events-none -translate-y-1/4 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-zen-900 rounded-full blur-3xl opacity-30 pointer-events-none translate-y-1/4 -translate-x-1/4" />
+      <section className="py-24 px-4 sm:px-6 bg-gradient-to-br from-zen-700 via-zen-600 to-zen-800 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-zen-500 rounded-full blur-3xl opacity-15 pointer-events-none -translate-y-1/4 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-zen-900 rounded-full blur-3xl opacity-25 pointer-events-none translate-y-1/4 -translate-x-1/4" />
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start gap-10">
-            {/* Photo */}
-            <div className="shrink-0 mx-auto md:mx-0">
-              <div className="w-28 h-28 rounded-2xl overflow-hidden border-4 border-zen-500/30 shadow-xl">
+        <div className="relative max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+
+            {/* Photo + identité */}
+            <div className="shrink-0 mx-auto lg:mx-0 flex flex-col items-center lg:items-start gap-5">
+              <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-zen-500/20 border-2 border-zen-500/30">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/anne-sophie.jpg"
@@ -803,33 +803,43 @@ export default function LandingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
-
-            {/* Texte */}
-            <div>
-              <p className="text-[11px] font-semibold text-zen-300 uppercase tracking-[0.12em] mb-3">
-                Anne-Sophie Assalit · Fondatrice de Visible & Conforme
-              </p>
-              <h2 className="text-2xl font-bold text-white mb-5">
-                Pourquoi Visible & Conforme ?
-              </h2>
-              <div className="space-y-4 text-zen-100 text-sm leading-relaxed">
-                <p>
-                  Je suis juriste de formation, diplômée en marketing digital et consultante en visibilité conforme.
-                </p>
-                <p>
-                  J&apos;ai créé Visible & Conforme parce que beaucoup de praticiens du bien-être peinent
-                  à trouver les bons mots en ligne : comment être visible sans se mettre en risque ?
-                  Comment créer du contenu régulièrement quand on ne sait pas ce qu&apos;on peut — ou ne peut pas — écrire ?
-                </p>
-                <p>
-                  L&apos;outil est né de cette question. Pensé à la croisée du SEO local, de la vigilance
-                  éditoriale et de la création de contenus, il aide les professionnels du bien-être
-                  à analyser leurs textes, corriger les formulations sensibles et générer des contenus
-                  adaptés à leur activité.
+              <div className="text-center lg:text-left">
+                <p className="text-white font-semibold text-sm leading-tight">Anne-Sophie Assalit</p>
+                <p className="text-zen-300 text-xs mt-1 leading-relaxed">
+                  Juriste · Diplômée en marketing digital<br />
+                  Fondatrice de Visible & Conforme
                 </p>
               </div>
             </div>
+
+            {/* Texte */}
+            <div className="flex-1">
+              <p className="text-[11px] font-semibold text-zen-400 uppercase tracking-[0.14em] mb-4">
+                Pourquoi Visible & Conforme ?
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 leading-snug">
+                Un outil né d&apos;un constat simple.
+              </h2>
+
+              <div className="space-y-5 text-base leading-relaxed">
+                <p className="text-zen-100/90">
+                  Le droit et le SEO local, ce sont deux disciplines que tout sépare — sauf quand on accompagne des professionnels du bien-être.
+                  D&apos;un côté, les textes de loi, les rapports DGCCRF, la jurisprudence. De l&apos;autre, les algorithmes Google, les fiches Google Business, les contenus qui convertissent.
+                </p>
+                <p className="text-zen-100/90">
+                  Ce que j&apos;ai constaté en analysant des dizaines de sites de praticiens : les professionnels du bien-être ne manquent pas de bonne volonté.
+                  Ils manquent d&apos;outils adaptés. Pas de formation juridique, pas de repères clairs sur ce qu&apos;ils peuvent ou ne peuvent pas écrire —
+                  et pourtant une vraie envie d&apos;être visibles, de trouver les bons mots, de communiquer sans se mettre en danger.
+                </p>
+                <p className="text-white font-medium">
+                  Visible & Conforme est né de là. Un outil qui analyse vos textes, repère les formulations sensibles,
+                  propose des reformulations conformes et génère des contenus adaptés à votre pratique.
+                  Pensé pour les sophrologues, naturopathes, hypnothérapeutes et tous les praticiens non réglementés
+                  qui veulent être trouvés sur Google — sans mettre leur activité en danger.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
