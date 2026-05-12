@@ -391,7 +391,7 @@ export default function LandingPage() {
                 <div>
                   <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1.5">Formats</p>
                   <div className="flex flex-wrap gap-1.5">
-                    {["Posts", "Bios", "Descriptions", "Scripts"].map((tag) => (
+                    {["Posts", "Articles de blog", "Descriptions", "Scripts"].map((tag) => (
                       <span key={tag} className="bg-purple-50 border border-purple-100 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
                         {tag}
                       </span>
