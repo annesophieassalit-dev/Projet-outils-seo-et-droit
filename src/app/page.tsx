@@ -803,13 +803,7 @@ export default function LandingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-center lg:text-left">
-                <p className="text-white font-semibold text-sm leading-tight">Anne-Sophie Assalit</p>
-                <p className="text-zen-300 text-xs mt-1 leading-relaxed">
-                  Juriste · Diplômée en marketing digital<br />
-                  Fondatrice de Visible & Conforme
-                </p>
-              </div>
+              <p className="text-white font-semibold text-sm text-center lg:text-left">Anne-Sophie Assalit</p>
             </div>
 
             {/* Texte */}
@@ -829,7 +823,7 @@ export default function LandingPage() {
                 <p className="text-zen-100/90">
                   Ce que j&apos;ai constaté en analysant des dizaines de sites de praticiens : les professionnels du bien-être ne manquent pas de bonne volonté.
                   Ils manquent d&apos;outils adaptés. Pas de formation juridique, pas de repères clairs sur ce qu&apos;ils peuvent ou ne peuvent pas écrire —
-                  et pourtant une vraie envie d&apos;être visibles, de trouver les bons mots, de communiquer sans se mettre en danger.
+                  et pourtant une vraie envie d&apos;être visibles, de trouver les bons mots, de communiquer sans s&apos;exposer.
                 </p>
                 <p className="text-white font-medium">
                   Visible & Conforme est né de là. Un outil qui analyse vos textes, repère les formulations sensibles,
