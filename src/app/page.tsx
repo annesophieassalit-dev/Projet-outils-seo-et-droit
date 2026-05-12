@@ -803,7 +803,10 @@ export default function LandingPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-white font-semibold text-sm text-center lg:text-left">Anne-Sophie Assalit</p>
+              <div className="text-center lg:text-left">
+                <p className="text-white font-semibold text-sm leading-tight">Anne-Sophie Assalit</p>
+                <p className="text-zen-300 text-xs mt-1">Fondatrice de Visible &amp; Conforme</p>
+              </div>
             </div>
 
             {/* Texte */}
