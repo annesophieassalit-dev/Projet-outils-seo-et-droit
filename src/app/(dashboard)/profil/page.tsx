@@ -1,15 +1,15 @@
 import { createClient } from "@/lib/supabase/server";
-import GenerateurClient from "./GenerateurClient";
+import ProfilClient from "./ProfilClient";
 
-export default async function GenerateurPage() {
+export default async function ProfilPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("profession, themes_recurrents, ton_prefere, specificites")
+    .select("full_name, profession, ville, themes_recurrents, ton_prefere, specificites")
     .eq("id", user!.id)
     .single();
 
-  return <GenerateurClient profile={profile ?? {}} />;
+  return <ProfilClient profile={profile ?? {}} />;
 }

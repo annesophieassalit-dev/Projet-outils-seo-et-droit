@@ -13,6 +13,7 @@ import {
   ScanText,
   BookOpen,
   CalendarDays,
+  User,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +52,11 @@ const navItems = [
     href: "/rapports",
     label: "Mes rapports",
     icon: FileText,
+  },
+  {
+    href: "/profil",
+    label: "Mon profil",
+    icon: User,
   },
   {
     href: "/abonnement",
