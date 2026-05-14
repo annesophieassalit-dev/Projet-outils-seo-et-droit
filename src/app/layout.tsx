@@ -4,11 +4,11 @@ import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   title: {
-    default: "Visible & Conforme — Conformité éditoriale pour praticiens bien-être",
+    default: "Visible & Conforme — L'outil SEO et conformité pour praticiens bien-être",
     template: "%s | Visible & Conforme",
   },
   description:
-    "Visible & Conforme analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique. Conçu pour les praticiens du bien-être non réglementés en France.",
+    "Communication pour praticiens bien-être. Visible & Conforme analyse vos contenus pour repérer les formulations à risque et générer des textes conformes, visibles sur Google.",
   keywords: [
     "conformité juridique bien-être",
     "risque exercice illégal médecine",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "hypnothérapeute site internet",
   ],
   openGraph: {
-    title: "Visible & Conforme — Conformité éditoriale pour praticiens bien-être",
+    title: "Visible & Conforme — L'outil SEO et conformité pour praticiens bien-être",
     description:
-      "Analyse vos contenus pour repérer certaines formulations pouvant présenter un risque juridique.",
+      "Communication pour praticiens bien-être. Analysez vos contenus, repérez les formulations à risque et générez des textes conformes visibles sur Google.",
     type: "website",
     locale: "fr_FR",
   },

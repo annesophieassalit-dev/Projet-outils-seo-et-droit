@@ -242,6 +242,16 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ─── Bande stat DGCCRF ──────────────────────────────────────────── */}
+      <div className="bg-zen-950 py-7 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center sm:text-left">
+          <span className="text-4xl font-extrabold text-coral-400 shrink-0">66 %</span>
+          <p className="text-zen-200 text-sm leading-relaxed max-w-xl">
+            des établissements contrôlés présentaient au moins une non-conformité lors des enquêtes DGCCRF sur les pratiques commerciales dans le secteur du bien-être.
+          </p>
+        </div>
+      </div>
+
       {/* ─── Fonctionnalités ────────────────────────────────────────────── */}
       <section id="fonctionnalites" className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
@@ -391,7 +401,7 @@ export default function LandingPage() {
                 <div>
                   <p className="text-[10px] font-semibold text-purple-400 uppercase tracking-widest mb-1.5">Formats</p>
                   <div className="flex flex-wrap gap-1.5">
-                    {["Posts", "Articles de blog", "Descriptions", "Scripts"].map((tag) => (
+                    {["Posts", "Articles de blog", "Descriptions"].map((tag) => (
                       <span key={tag} className="bg-purple-50 border border-purple-100 text-purple-500 text-[10px] px-2 py-0.5 rounded-full">
                         {tag}
                       </span>
@@ -590,7 +600,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-zen-950 mb-3">
-              Ces formulations peuvent exposer votre activité
+              Ce que vos mots laissent entendre — sans que vous l&apos;ayez voulu
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
               Visible & Conforme les détecte dans vos textes et vous explique pourquoi elles méritent vigilance.
