@@ -76,21 +76,23 @@ Optimisation SEO + clarté :
 - Phrases courtes, lisibles, sans jargon
 - Ton : ${toneInstruction}`,
 
-    article_blog: `Rédige un article de blog pour ${profession}.
+    article_blog: `Rédige un article de blog COMPLET pour ${profession}.
 
 Thèmes : ${themesText}
-Longueur : 400–600 mots
+Longueur obligatoire : 450–600 mots (rédige l'article en entier, pas un plan, pas un résumé)
 
-Structure :
-- Titre accrocheur et naturel (optimisé SEO, sans majuscules excessives)
-- Introduction : situation vécue par le lecteur (pas de promesse)
-- Développement : 3-4 paragraphes courts, pédagogiques, accessibles
-- Conclusion : invitation douce à en savoir plus ou à prendre contact
+Structure à respecter dans l'ordre :
+1. TITRE : 1 ligne, accrocheur, optimisé SEO, sans majuscules excessives
+2. INTRODUCTION (1 paragraphe) : situation vécue par le lecteur, pas de promesse
+3. DÉVELOPPEMENT : 3 paragraphes distincts, pédagogiques, accessibles, chacun avec une idée principale
+4. CONCLUSION (1 paragraphe) : synthèse + invitation douce à en savoir plus ou à prendre contact
 
 Optimisation SEO :
 - Utiliser naturellement les mots-clés de la profession
 - Phrases courtes, lisibles, sans jargon
-- Ton : ${toneInstruction}`,
+- Ton : ${toneInstruction}
+
+Important : écris l'article complet du titre à la conclusion. Ne t'arrête pas au milieu.`,
 
     post_linkedin: `Rédige un post LinkedIn optimisé pour la portée organique, pour ${profession}.
 
@@ -108,17 +110,21 @@ Structure optimisée pour l'algorithme LinkedIn :
 
 Ton : ${toneInstruction}`,
 
-    fiche_google: `Rédige la description pour une fiche Google My Business pour ${profession}.
+    fiche_google: `Rédige la description complète pour une fiche Google Business Profile pour ${profession}.
 
-Longueur : 250 caractères maximum (Google tronque au-delà)
+Longueur : 600–750 caractères (Google autorise 750 caractères — utilise cet espace pour être complet et convaincant)
+
+Structure en 3 temps :
+1. Présentation de l'activité et de l'approche (2-3 phrases)
+2. Public accompagné et thèmes traités : ${themesText} (1-2 phrases)
+3. Appel à l'action local (1 phrase, ex : "Consultations à [ville] et en ligne. Prenez rendez-vous.")
 
 Optimisation locale :
-- Mentionner la spécialité + l'approche + le public accompagné (thèmes : ${themesText})
-- Si des informations de localisation sont fournies, les inclure naturellement
-- Mots-clés locaux en priorité (ville + activité)
-- Finir par un appel à l'action simple (ex : "Prenez rendez-vous.")
+- Intégrer naturellement la spécialité + ville si fournie
+- Mots-clés locaux : activité + lieu
+- Ton sobre et professionnel, inspire confiance
 
-Objectif : apparaître dans les recherches locales + donner envie de cliquer.`,
+Objectif : apparaître dans les recherches locales + donner envie de cliquer sur la fiche.`,
 
     post_instagram: `Rédige un post Instagram pour ${profession}.
 
@@ -160,18 +166,25 @@ Format Facebook :
 - Pas d'emojis excessifs : 1 à 3 maximum, naturels
 - Ton : ${toneInstruction}`,
 
-    post_tiktok: `Rédige un script de vidéo courte TikTok pour ${profession} sur les thèmes : ${themesText}.
+    post_tiktok: `Rédige le script COMPLET d'une vidéo courte TikTok pour ${profession} sur les thèmes : ${themesText}.
 
-Format script TikTok (60 à 90 secondes) :
-- Structure en 3 temps clairement marqués :
-  [0–5 sec] ACCROCHE : 1 phrase choc ou question qui stoppe le scroll — doit créer une curiosité immédiate
-  [5–55 sec] CONTENU : 3 à 4 points courts, énoncés simplement, parlés naturellement — pas de jargon
-  [55–90 sec] FIN : message fort + invitation douce à s'abonner ou découvrir le lien en bio
-- Écris comme on parle, pas comme on écrit
-- Chaque phrase = maximum 10 mots — le montage TikTok est rapide
-- Indique entre crochets les intentions visuelles si pertinent : [sourire], [montrer les mains], [texte à l'écran]
-- Suggestion de 3 hashtags niche en fin : 1 activité + 1 thème + 1 local ou situation
-- Ton : ${toneInstruction}`,
+Format script TikTok (60 à 90 secondes) — rédige les 3 parties en entier :
+
+[0–5 sec] ACCROCHE
+1 phrase choc ou question qui stoppe le scroll. Doit créer une curiosité immédiate.
+
+[5–55 sec] CONTENU
+3 à 4 points numérotés, chacun sur 1-2 phrases courtes. Écrits comme on parle, pas comme on écrit. Maximum 10 mots par phrase.
+Indique entre crochets les intentions visuelles : [sourire], [montrer les mains], [texte à l'écran : "…"]
+
+[55–90 sec] FIN
+1 message fort de conclusion + invitation douce à s'abonner ou découvrir le lien en bio.
+
+Puis sur une nouvelle ligne : 3 hashtags niche (1 activité + 1 thème + 1 local ou situation)
+
+Ton : ${toneInstruction}
+
+Important : rédige les 3 parties en entier, du début à la fin du script.`,
 
     post_threads: `Rédige un post Threads pour ${profession} sur les thèmes : ${themesText}.
 
@@ -233,12 +246,26 @@ Ton : ${toneInstruction}`,
 Intention : ${intentionInstruction}${specificitesText}
 
 RÈGLES DE FORMAT (impératives) :
-- Ne commence PAS par un titre, un label ou un header (ex: "POST INSTAGRAM —", "**TITRE**", "Voici votre post", etc.)
-- Commence DIRECTEMENT par le contenu (première phrase du post, de la bio, de l'article…)
-- Aucun markdown de titre (**texte** en début de contenu)
+- Ne commence PAS par un label ou une étiquette de type (ex: "POST INSTAGRAM —", "SCRIPT TIKTOK :", "Voici votre contenu", etc.)
+- Commence DIRECTEMENT par le contenu lui-même
+- Exception : pour un article de blog ou un script YouTube, commence par le titre du contenu (pas par un label technique)
 
 Après le contenu, ajoute sur une nouvelle ligne séparée par "---" :
 Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;
+}
+
+// ─── Tokens par type de contenu ───────────────────────────────────────────────
+
+const MAX_TOKENS_BY_TYPE: Record<string, number> = {
+  article_blog: 2500,
+  script_youtube: 3500,
+  post_tiktok: 1500,
+  presentation_activite: 1200,
+  fiche_google: 800,
+};
+
+function maxTokensFor(contentType: string): number {
+  return MAX_TOKENS_BY_TYPE[contentType] ?? 1000;
 }
 
 // ─── Générateur principal ─────────────────────────────────────────────────────
@@ -248,7 +275,7 @@ export async function generateContent(input: GeneratorInput): Promise<GeneratedC
 
   const message = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 1500,
+    max_tokens: maxTokensFor(input.contentType),
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: buildPrompt(input) }],
   });
