@@ -276,6 +276,9 @@ Ton : ${toneInstruction}`,
 
 Intention : ${intentionInstruction}${specificitesText}
 
+RÈGLE DE FOCUS (impérative) :
+Ce contenu doit traiter UN SEUL angle ou sujet précis. Si plusieurs thèmes sont listés, choisis celui qui semble le plus pertinent pour ce type de contenu et développe-le en profondeur. Ne cherche pas à tout couvrir. Un contenu ciblé sur une seule idée est toujours plus efficace qu'un contenu qui survole plusieurs sujets.
+
 RÈGLES DE FORMAT (impératives) :
 - Ne commence PAS par un label ou une étiquette de type (ex: "POST INSTAGRAM —", "SCRIPT TIKTOK :", "Voici votre contenu", etc.)
 - Commence DIRECTEMENT par le contenu lui-même
