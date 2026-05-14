@@ -247,7 +247,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-center sm:text-left">
           <span className="text-6xl font-extrabold text-coral-500 shrink-0">66 %</span>
           <p className="text-zen-900 text-lg leading-relaxed max-w-xl">
-            des établissements contrôlés présentaient au moins une non-conformité lors des enquêtes DGCCRF dans le secteur du bien-être.
+            des établissements contrôlés présentaient au moins une <span className="whitespace-nowrap">non-conformité</span> lors des enquêtes DGCCRF dans le secteur du bien-être.
           </p>
         </div>
       </div>
