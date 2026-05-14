@@ -284,8 +284,8 @@ RÈGLES DE FORMAT (impératives) :
 - Commence DIRECTEMENT par le contenu lui-même
 - Exception : pour un article de blog ou un script YouTube, commence par le titre du contenu (pas par un label technique)
 
-Après le contenu, ajoute sur une nouvelle ligne séparée par "---" :
-Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;
+Après le contenu, ajoute sur une nouvelle ligne le marqueur exactement ainsi : %%NOTE%%
+Puis la note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce contenu est safe juridiquement.`;
 }
 
 // ─── Tokens par type de contenu ───────────────────────────────────────────────
@@ -316,11 +316,12 @@ export async function generateContent(input: GeneratorInput): Promise<GeneratedC
   });
 
   const raw = (message.content[0] as { type: "text"; text: string }).text;
-  const parts = raw.split("---");
-  const rawContent = parts[0].trim();
-  // Strip any residual markdown title line at the start (e.g. "**POST INSTAGRAM — …**")
+  const separatorIndex = raw.indexOf("%%NOTE%%");
+  const rawContent = (separatorIndex !== -1 ? raw.slice(0, separatorIndex) : raw).trim();
   const content = rawContent.replace(/^\*\*[^\n]+\*\*\s*\n?/, "").trim();
-  const complianceNote = parts[1]?.trim() || "Contenu rédigé en respectant les règles applicables aux praticiens du bien-être non réglementés.";
+  const complianceNote = separatorIndex !== -1
+    ? raw.slice(separatorIndex + 8).trim()
+    : "Contenu rédigé en respectant les règles applicables aux praticiens du bien-être non réglementés.";
 
   return { contentType: input.contentType, content, complianceNote };
 }
