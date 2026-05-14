@@ -23,6 +23,7 @@ const CONTENT_TYPES: ContentType[] = [
   "presentation_activite",
   "article_blog",
   "fiche_google",
+  "post_google",
   "accroche_site",
 ];
 

@@ -76,23 +76,36 @@ Optimisation SEO + clarté :
 - Phrases courtes, lisibles, sans jargon
 - Ton : ${toneInstruction}`,
 
-    article_blog: `Rédige un article de blog COMPLET pour ${profession}.
+    article_blog: `Rédige un article de blog COMPLET et SEO-friendly pour ${profession}.
 
 Thèmes : ${themesText}
-Longueur obligatoire : 450–600 mots (rédige l'article en entier, pas un plan, pas un résumé)
+Longueur obligatoire : 850–1000 mots rédigés (pas un plan, pas un résumé — du texte complet)
 
-Structure à respecter dans l'ordre :
-1. TITRE : 1 ligne, accrocheur, optimisé SEO, sans majuscules excessives
-2. INTRODUCTION (1 paragraphe) : situation vécue par le lecteur, pas de promesse
-3. DÉVELOPPEMENT : 3 paragraphes distincts, pédagogiques, accessibles, chacun avec une idée principale
-4. CONCLUSION (1 paragraphe) : synthèse + invitation douce à en savoir plus ou à prendre contact
+Structure sémantique SEO à respecter — indique chaque balise Hn explicitement :
 
-Optimisation SEO :
-- Utiliser naturellement les mots-clés de la profession
-- Phrases courtes, lisibles, sans jargon
+H1 (titre principal) : accrocheur, contient le mot-clé principal de la profession, 55–65 caractères
+Méta-description suggérée : 1 phrase de 140–155 caractères, résume l'article et donne envie de cliquer
+
+Introduction (sans balise) : 80–100 mots — situation vécue par le lecteur, accroche empathique, annonce du plan. Pas de promesse de résultat.
+
+H2 — Première section : présente le contexte ou le problème (150–180 mots)
+  H3 — Sous-point si pertinent (60–80 mots)
+
+H2 — Deuxième section : l'approche ou les solutions pratiques (150–180 mots)
+  H3 — Sous-point si pertinent (60–80 mots)
+
+H2 — Troisième section : conseils concrets ou ce que l'accompagnement apporte (150–180 mots)
+  H3 — Sous-point si pertinent (60–80 mots)
+
+H2 — Conclusion : synthèse en 2-3 phrases + invitation douce à prendre contact ou en savoir plus
+
+Optimisation SEO sémantique :
+- Champ lexical riche autour du thème principal : utiliser des synonymes, expressions proches, termes associés
+- Mots-clés secondaires intégrés naturellement dans les H2 et H3
+- Phrases courtes et lisibles (max 20 mots), pas de jargon
 - Ton : ${toneInstruction}
 
-Important : écris l'article complet du titre à la conclusion. Ne t'arrête pas au milieu.`,
+Important : rédige tout le texte de chaque section en entier. Indique les balises entre crochets : [H1], [H2], [H3], [Méta-description].`,
 
     post_linkedin: `Rédige un post LinkedIn optimisé pour la portée organique, pour ${profession}.
 
@@ -235,6 +248,24 @@ Format de rédaction :
 - Titre suggéré en fin + description courte pour YouTube (150 mots SEO-friendly)
 
 Ton : ${toneInstruction}`,
+
+    post_google: `Rédige un post Google Business Profile pour ${profession} sur les thèmes : ${themesText}.
+
+Un post Google Business est une courte publication visible directement sur la fiche Google — c'est un contenu éphémère (7 jours) qui sert à montrer que la fiche est active et à attirer des clics.
+
+Longueur : 200–300 mots (Google affiche les 100 premiers mots, le reste est visible en cliquant "voir plus")
+
+Structure :
+- Ligne d'accroche (les 100 premiers mots doivent être autonomes et donner envie de lire la suite)
+- Corps : 2-3 paragraphes courts sur le thème, pédagogiques, accessibles
+- Appel à l'action final clair et sobre : "Prenez rendez-vous", "Contactez-moi", "En savoir plus"
+
+Optimisation locale :
+- Mentionner naturellement la profession + ville si fournie
+- Intégrer 1-2 mots-clés de recherche locale (ex: "naturopathe Lyon", "sophrologie en ligne")
+- Ton communautaire et de proximité
+
+Ton : ${toneInstruction}`,
   };
 
   const specificitesText = specificites
@@ -257,11 +288,12 @@ Note de conformité en 1 phrase (pour le praticien uniquement) : pourquoi ce con
 // ─── Tokens par type de contenu ───────────────────────────────────────────────
 
 const MAX_TOKENS_BY_TYPE: Record<string, number> = {
-  article_blog: 2500,
+  article_blog: 3500,
   script_youtube: 3500,
   post_tiktok: 1500,
   presentation_activite: 1200,
   fiche_google: 800,
+  post_google: 900,
 };
 
 function maxTokensFor(contentType: string): number {
