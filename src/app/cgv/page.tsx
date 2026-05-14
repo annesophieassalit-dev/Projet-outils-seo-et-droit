@@ -95,8 +95,8 @@ export default function CGVPage() {
               <li>son espace client Stripe (accessible depuis la section &quot;Abonnement&quot; de l&apos;application),</li>
               <li>
                 ou en contactant le support à{" "}
-                <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-                  contact@visibleetconforme.fr
+                <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+                  annesophieassalit@gmail.com
                 </a>.
               </li>
             </ul>
@@ -126,8 +126,8 @@ export default function CGVPage() {
             </p>
             <p className="mt-2">
               Pour exercer ce droit dans le délai légal :{" "}
-              <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-                contact@visibleetconforme.fr
+              <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+                annesophieassalit@gmail.com
               </a>.
             </p>
           </section>
@@ -188,8 +188,8 @@ export default function CGVPage() {
             <p>Anne-Sophie Assalit — Antibes (06)</p>
             <p>SIRET : 852 586 791 00018</p>
             <p className="mt-1">
-              <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-                contact@visibleetconforme.fr
+              <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+                annesophieassalit@gmail.com
               </a>
             </p>
           </section>

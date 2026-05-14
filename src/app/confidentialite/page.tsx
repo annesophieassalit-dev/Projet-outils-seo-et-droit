@@ -37,8 +37,8 @@ export default function ConfidentialitePage() {
           <p className="text-sm text-gray-600">
             Le responsable du traitement des données collectées via Visible & Conforme est l&apos;éditeur du service,
             joignable à l&apos;adresse :{" "}
-            <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-              contact@visibleetconforme.fr
+            <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+              annesophieassalit@gmail.com
             </a>
           </p>
         </section>
@@ -129,8 +129,8 @@ export default function ConfidentialitePage() {
             </ul>
             <p>
               Pour exercer ces droits, contactez-nous à :{" "}
-              <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-                contact@visibleetconforme.fr
+              <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+                annesophieassalit@gmail.com
               </a>
             </p>
             <p>
@@ -164,8 +164,8 @@ export default function ConfidentialitePage() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Contact</h2>
           <p className="text-sm text-gray-600">
             Pour toute question relative à la présente politique :{" "}
-            <a href="mailto:contact@visibleetconforme.fr" className="text-zen-700 hover:underline">
-              contact@visibleetconforme.fr
+            <a href="mailto:annesophieassalit@gmail.com" className="text-zen-700 hover:underline">
+              annesophieassalit@gmail.com
             </a>
           </p>
         </section>
