@@ -245,8 +245,8 @@ export default function LandingPage() {
       {/* ─── Bande stat DGCCRF ──────────────────────────────────────────── */}
       <div className="bg-zen-50 border-y border-zen-200 py-8 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-center sm:text-left">
-          <span className="text-5xl font-extrabold text-coral-500 shrink-0">66 %</span>
-          <p className="text-zen-900 text-base leading-relaxed max-w-xl">
+          <span className="text-6xl font-extrabold text-coral-500 shrink-0">66 %</span>
+          <p className="text-zen-900 text-lg leading-relaxed max-w-xl">
             des établissements contrôlés présentaient au moins une non-conformité lors des enquêtes DGCCRF dans le secteur du bien-être.
           </p>
         </div>
