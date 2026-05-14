@@ -155,17 +155,10 @@ export default function ScannerPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Scanner de texte</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Collez n'importe quel texte — bio Instagram, post, article de blog, page de site, présentation d'activité —
-          et détectez les formulations à risque instantanément.
+          Collez n'importe quel texte — bio Instagram, post, article de blog, page de site, présentation d'activité — et détectez les formulations à risque instantanément.
         </p>
-      </div>
-
-      {/* Note contextuelle */}
-      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-start gap-2.5">
-        <span className="text-lg shrink-0">💡</span>
-        <p className="text-xs text-amber-800 leading-relaxed">
-          <strong>Important :</strong> aucun mot n'est interdit seul — c'est le <strong>contexte et l'interprétation</strong> qui créent le risque juridique.
-          Le scanner signale les termes à surveiller ; à vous d'évaluer si votre formulation globale est problématique.
+        <p className="text-gray-400 text-sm mt-1">
+          Le risque peut venir du mot lui-même, du contexte, ou des deux.
         </p>
       </div>
 
