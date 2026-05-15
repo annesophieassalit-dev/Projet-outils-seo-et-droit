@@ -374,6 +374,7 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
   const seoWarnings = seo?.issues.filter((i) => i.severity === "warning") || [];
   const seoInfos    = seo?.issues.filter((i) => i.severity === "info" || i.severity === "success") || [];
 
+  // Comptages pour l'en-tête accordéon
   const legalErrors   = legal?.issues.filter((i) => i.severity === "error")   || [];
   const legalWarnings = legal?.issues.filter((i) => i.severity === "warning") || [];
 
@@ -381,8 +382,13 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
     ? Array.from(new Map(legal.matches.map((m) => [m.ruleId, m])).values())
     : [];
 
+  // Issues mention uniquement (pas les doublons des matches déjà affichés en LegalMatchCard)
+  const mentionIssues = legal?.issues.filter((i) => i.id.startsWith("legal-mention-")) || [];
+  const mentionErrors   = mentionIssues.filter((i) => i.severity === "error");
+  const mentionWarnings = mentionIssues.filter((i) => i.severity === "warning");
+
   const LEGAL_FREE_LIMIT = 3;
-  const legalAllItems    = [...uniqueMatches, ...legalErrors, ...legalWarnings];
+  const legalAllItems    = [...uniqueMatches, ...mentionErrors, ...mentionWarnings];
   const legalVisibleItems = isPro ? legalAllItems : legalAllItems.slice(0, LEGAL_FREE_LIMIT);
   const legalHiddenCount  = isPro ? 0 : Math.max(0, legalAllItems.length - LEGAL_FREE_LIMIT);
 
@@ -393,7 +399,7 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
   );
   const visibleIssueIds = new Set(
     legalVisibleItems
-      .filter((i): i is (typeof legalErrors)[number] => "id" in i)
+      .filter((i): i is (typeof mentionErrors)[number] => "id" in i)
       .map((i) => i.id),
   );
 
@@ -625,11 +631,11 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
               </p>
             </div>
 
-            {/* Formulations à surveiller */}
+            {/* Formulations à risque détectées */}
             {uniqueMatches.length > 0 && (
               <div className="space-y-2">
-                <h3 className="text-[11px] font-semibold text-red-500 uppercase tracking-wider">
-                  Formulations à surveiller ({uniqueMatches.length})
+                <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
+                  Formulations à risque ({uniqueMatches.length})
                 </h3>
                 {uniqueMatches
                   .filter((m) => isPro || visibleMatchIds.has(m.ruleId))
@@ -637,25 +643,13 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
               </div>
             )}
 
-            {/* Points critiques (mentions manquantes) */}
-            {legalErrors.length > 0 && (
+            {/* Points à corriger (mentions légales manquantes, SIRET, etc.) */}
+            {(mentionErrors.length > 0 || mentionWarnings.length > 0) && (
               <div className="space-y-2">
-                <h3 className="text-[11px] font-semibold text-red-500 uppercase tracking-wider">
-                  Points critiques
+                <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
+                  Pages et mentions à compléter
                 </h3>
-                {legalErrors
-                  .filter((i) => isPro || visibleIssueIds.has(i.id))
-                  .map((issue) => <IssueCard key={issue.id} issue={issue} />)}
-              </div>
-            )}
-
-            {/* Points à améliorer */}
-            {legalWarnings.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-[11px] font-semibold text-amber-500 uppercase tracking-wider">
-                  Points à améliorer
-                </h3>
-                {legalWarnings
+                {[...mentionErrors, ...mentionWarnings]
                   .filter((i) => isPro || visibleIssueIds.has(i.id))
                   .map((issue) => <IssueCard key={issue.id} issue={issue} />)}
               </div>

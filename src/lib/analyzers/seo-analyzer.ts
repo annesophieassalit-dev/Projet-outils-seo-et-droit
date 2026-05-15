@@ -311,6 +311,31 @@ function detectFakeHeadings($: cheerio.CheerioAPI): string[] {
 
 // ─── Champ lexical ────────────────────────────────────────────────────────────
 
+// Familles de termes : si un terme de la famille est présent, son pair est pertinent à suggérer
+const KEYWORD_PAIRS: Record<string, string> = {
+  "naturopathe":     "naturopathie",
+  "naturopathie":    "naturopathe",
+  "sophrologue":     "sophrologie",
+  "sophrologie":     "sophrologue",
+  "hypnothérapeute": "hypnose",
+  "hypnose":         "hypnothérapeute",
+  "coach":           "coaching",
+  "coaching":        "coach",
+  "réflexologue":    "réflexologie",
+  "réflexologie":    "réflexologue",
+  "kinésiologue":    "kinésiologie",
+  "kinésiologie":    "kinésiologue",
+  "énergéticien":    "reiki",
+  "reiki":           "énergéticien",
+  "praticien":       "praticienne",
+  "praticienne":     "praticien",
+};
+
+// Termes génériques toujours pertinents pour un site bien-être
+const GENERIC_WELLNESS = new Set([
+  "bien-être", "bien être", "accompagnement", "holistique", "aromathérapie",
+]);
+
 function computeLexicalField(
   bodyText: string,
   titleText: string,
@@ -325,7 +350,7 @@ function computeLexicalField(
 
   const seen = new Set<string>();
   const present: LexicalTerm[] = [];
-  const absent: string[] = [];
+  const rawAbsent: string[] = [];
 
   for (const kw of ACTIVITY_KEYWORDS) {
     const kwLower = kw.toLowerCase();
@@ -345,14 +370,23 @@ function computeLexicalField(
         inH2: h2.includes(kwLower),
       });
     } else {
-      absent.push(kw);
+      rawAbsent.push(kw);
     }
   }
 
   present.sort((a, b) => b.count - a.count);
+
+  // Ne garder que les absents pertinents : pair d'un terme présent OU terme générique
+  const presentSet = new Set(present.map((t) => t.term.toLowerCase()));
+  const absent = rawAbsent.filter((kw) => {
+    const kwLower = kw.toLowerCase();
+    const pair = KEYWORD_PAIRS[kwLower];
+    return GENERIC_WELLNESS.has(kwLower) || (pair !== undefined && presentSet.has(pair));
+  });
+
   const hasLocalSignal = LOCAL_SIGNALS.some((p) => p.test(allTextLower));
 
-  return { present, absent: absent.slice(0, 10), hasLocalSignal };
+  return { present, absent, hasLocalSignal };
 }
 
 // ─── Génération des issues ────────────────────────────────────────────────────
