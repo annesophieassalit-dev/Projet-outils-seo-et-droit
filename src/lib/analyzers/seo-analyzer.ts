@@ -1,4 +1,5 @@
 import * as cheerio from "cheerio";
+import Anthropic from "@anthropic-ai/sdk";
 import type {
   SeoScore,
   SeoMetaResult,
@@ -575,68 +576,106 @@ function generateIssues(
     });
   }
 
-  // Champ sémantique SEO + GEO (apparaître dans les résultats IA)
-  const SEO_GEO_WORDS: { word: string; category: string }[] = [
-    // Activité
-    { word: "séance", category: "activité" },
-    { word: "accompagnement", category: "activité" },
-    { word: "consultation", category: "activité" },
-    { word: "praticien", category: "activité" },
-    { word: "approche", category: "activité" },
-    // Bien-être sémantique
-    { word: "bien-être", category: "sémantique" },
-    { word: "équilibre", category: "sémantique" },
-    { word: "holistique", category: "sémantique" },
-    { word: "écoute", category: "sémantique" },
-    { word: "naturel", category: "sémantique" },
-    // GEO (réponses IA)
-    { word: "comment", category: "GEO" },
-    { word: "pourquoi", category: "GEO" },
-    { word: "qu'est-ce", category: "GEO" },
-    { word: "résultats", category: "GEO" },
-    { word: "tarif", category: "GEO" },
-    { word: "durée", category: "GEO" },
-    { word: "déroulement", category: "GEO" },
-    { word: "en ligne", category: "GEO" },
-    { word: "prise en charge", category: "GEO" },
-    { word: "première séance", category: "GEO" },
-  ];
-
-  const foundWords = SEO_GEO_WORDS.filter(w => allText.includes(w.word));
-  const missingWords = SEO_GEO_WORDS.filter(w => !allText.includes(w.word));
-  const semanticScore = foundWords.length;
-  const total = SEO_GEO_WORDS.length;
-
-  const foundList = foundWords.map(w => w.word).join(", ");
-  const missingSeoList = missingWords.filter(w => w.category !== "GEO").map(w => w.word).join(", ");
-  const missingGeoList = missingWords.filter(w => w.category === "GEO").map(w => w.word).join(", ");
-
-  if (semanticScore < 6) {
+  // ── STRUCTURE H2 / H3 ────────────────────────────────────────────────────
+  if (content.h2Count === 0 && content.wordCount > 200) {
     issues.push({
-      id: id(), category: "Sémantique & GEO", severity: "warning",
-      title: "Champ sémantique insuffisant — SEO et IA",
-      description: `${semanticScore}/${total} mots-clés sémantiques détectés. Google et les moteurs IA (ChatGPT, Perplexity, Gemini) associent votre page à votre domaine grâce à la richesse du vocabulaire.${foundList ? ` Présents : ${foundList}.` : ""}`,
-      recommendation: `Mots SEO à intégrer : ${missingSeoList || "aucun manquant"}. Expressions pour le GEO (apparaître dans les réponses IA) : ${missingGeoList || "aucune manquante"}. Répondez aux questions "Comment se déroule une séance ?", "Quels sont vos tarifs ?", "Combien de temps dure la première séance ?" sur votre page.`,
+      id: id(), category: "Structure Hn", severity: "warning",
+      title: "Aucun H2 — page sans structure",
+      description: "Votre page n'a pas de titres secondaires H2. Google utilise la hiérarchie des titres pour comprendre et indexer le contenu. Une page sans H2 semble plate et difficile à lire.",
+      recommendation: "Ajoutez 3 à 5 H2 pour structurer votre page. Exemples : « Mon approche », « Pour qui est fait cet accompagnement ? », « Comment se déroule une séance ? », « Tarifs », « Questions fréquentes ».",
       url,
     });
-  } else if (semanticScore >= 14) {
+  } else if (content.h2Count === 1 && content.wordCount > 400) {
     issues.push({
-      id: id(), category: "Sémantique & GEO", severity: "success",
-      title: "Excellent champ sémantique",
-      description: `${semanticScore}/${total} mots-clés détectés — votre page est bien positionnée pour Google et les réponses IA.${foundList ? ` Présents : ${foundList}.` : ""}`,
+      id: id(), category: "Structure Hn", severity: "info",
+      title: "Un seul H2 pour beaucoup de contenu",
+      description: `Votre page contient ${content.wordCount} mots mais un seul H2. Les grandes sections de texte sans titre sont difficiles à lire et à indexer.`,
+      recommendation: "Visez 3 à 5 H2 pour découper le contenu en sections claires. Chaque H2 devrait introduire un thème distinct.",
+      url,
+    });
+  } else if (content.h2Count >= 3) {
+    issues.push({
+      id: id(), category: "Structure Hn", severity: "success",
+      title: `${content.h2Count} titres H2 — bonne structure`,
+      description: "Votre page est bien structurée avec plusieurs sections titrées.",
       recommendation: "", url,
     });
-  } else {
+  }
+
+  if (content.h2Count > 0 && content.h3Count === 0 && content.wordCount > 500) {
     issues.push({
-      id: id(), category: "Sémantique & GEO", severity: "info",
-      title: "Champ sémantique correct, à enrichir pour le GEO",
-      description: `${semanticScore}/${total} mots-clés détectés.${foundList ? ` Présents : ${foundList}.` : ""}`,
-      recommendation: `Pour apparaître dans les réponses des IA (ChatGPT, Perplexity…) : ajoutez ${missingGeoList || "plus de questions/réponses"} à votre page sous forme de FAQ ou de paragraphes explicatifs.`,
+      id: id(), category: "Structure Hn", severity: "info",
+      title: "Aucun H3 — sous-sections absentes",
+      description: "Les H3 permettent d'approfondir chaque section H2 avec des sous-titres. Ils améliorent la lisibilité et aident Google à comprendre la profondeur du contenu.",
+      recommendation: "Sous chaque H2 dense, ajoutez 1 à 3 H3. Ex. sous « Comment se déroule une séance ? » → « La première séance », « Le déroulement type », « En ligne ou en présentiel ».",
       url,
     });
   }
 
+  // Note : pour une analyse sémantique et Hn approfondie et personnalisée,
+  // l'analyse IA (plan Pro) examine le contenu réel de la page et donne
+  // des recommandations adaptées à votre profession et votre vocabulaire.
+
   return issues;
+}
+
+// ─── Analyse IA SEO (sémantique + Hn + GEO) ──────────────────────────────────
+
+async function analyzeSeoWithAI(
+  text: string,
+  profession: string,
+  hnStructure: HnStructureSuggestion,
+  content: SeoContentResult
+): Promise<string> {
+  const client = new Anthropic();
+
+  const currentHn = hnStructure.current.length > 0
+    ? hnStructure.current.map(h => `${h.level} : « ${h.text} »`).join("\n")
+    : "Aucun titre H2/H3 détecté.";
+
+  const excerpt = text.slice(0, 3000);
+
+  const prompt = `Tu es experte en SEO et en GEO (optimisation pour les moteurs de recherche IA comme ChatGPT, Perplexity, Gemini) pour les sites web de praticiens du bien-être en France.
+
+Profession analysée : ${profession || "praticien bien-être"}
+Nombre de mots : ${content.wordCount}
+Titres H1 : ${content.h1Count} | H2 : ${content.h2Count} | H3 : ${content.h3Count}
+
+Titres H2/H3 actuellement présents sur la page :
+${currentHn}
+
+Extrait du contenu de la page :
+---
+${excerpt}
+---
+
+Rédige une analyse SEO et GEO en 4 parties claires, concises et actionnables :
+
+**1. Champ sémantique — mots présents et manquants**
+Liste les 5-8 mots/expressions clés de la profession qui sont présents sur la page.
+Liste les 5-8 mots/expressions importants pour le SEO local qui manquent, en les adaptant à la profession détectée (ex : pour une naturopathe, citer des termes spécifiques à la naturopathie).
+
+**2. Structure H2/H3 — évaluation et suggestions**
+Évalue chaque titre H2/H3 existant : est-il optimisé (contient un mot-clé, est clair) ou trop générique ?
+Propose 3-4 titres H2 améliorés ou manquants, formulés avec des mots-clés naturels.
+Indique si des H3 seraient utiles et lesquels.
+
+**3. GEO — questions à ajouter pour apparaître dans les réponses IA**
+Identifie 4-5 questions que les internautes posent aux IA (ChatGPT, Perplexity…) sur cette profession/ces thèmes.
+Ces questions sont absentes de la page mais devraient être traitées sous forme de FAQ ou de paragraphes explicatifs pour apparaître dans les réponses générées par l'IA.
+
+**4. Priorité n°1**
+Une seule action concrète à faire en premier pour améliorer le référencement de cette page.
+
+Réponse en français, ton professionnel et actionnable, pas de mise en forme excessive.`;
+
+  const message = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 1500,
+    messages: [{ role: "user", content: prompt }],
+  });
+
+  return (message.content[0] as { type: "text"; text: string }).text;
 }
 
 // ─── Score ────────────────────────────────────────────────────────────────────
@@ -653,11 +692,15 @@ function calculateScore(issues: AuditIssue[]): number {
 
 // ─── Export ───────────────────────────────────────────────────────────────────
 
-export async function analyzeSeo(url: string, profession = ""): Promise<SeoScore & {
+export async function analyzeSeo(
+  url: string,
+  options: { profession?: string; useAI?: boolean } = {}
+): Promise<SeoScore & {
   hnStructure: HnStructureSuggestion;
   semantic: SemanticAnalysis;
   linking: InternalLinkingAnalysis;
 }> {
+  const profession = options.profession ?? "";
   const { html, loadTimeMs } = await fetchPage(url);
   const $ = cheerio.load(html);
 
@@ -673,6 +716,15 @@ export async function analyzeSeo(url: string, profession = ""): Promise<SeoScore
   const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url, allText, titleText, h1TextSem, firstParagraph);
   const score = calculateScore(issues);
 
+  let seoAiAnalysis: string | undefined;
+  if (options.useAI) {
+    try {
+      seoAiAnalysis = await analyzeSeoWithAI(allText, profession, hnStructure, content);
+    } catch (err) {
+      console.error("SEO AI analysis failed:", err);
+    }
+  }
+
   return {
     score,
     grade: scoreToGrade(score),
@@ -682,5 +734,6 @@ export async function analyzeSeo(url: string, profession = ""): Promise<SeoScore
     hnStructure,
     semantic,
     linking,
+    seoAiAnalysis,
   };
 }

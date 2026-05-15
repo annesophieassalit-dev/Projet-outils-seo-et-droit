@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
     ]);
 
     const [seoResult, legalResult] = await Promise.allSettled([
-      analyzeSeo(url),
+      analyzeSeo(url, { profession, useAI: canDoAI && includeAI }),
       includeLegal
         ? analyzeLegal(url, { useAI: canDoAI && includeAI, profession })
         : Promise.resolve(null),

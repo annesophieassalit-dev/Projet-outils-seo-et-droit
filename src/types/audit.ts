@@ -46,6 +46,7 @@ export interface SeoScore {
   issues: AuditIssue[];
   meta: SeoMetaResult;
   content: SeoContentResult;
+  seoAiAnalysis?: string;
 }
 
 // ─── LEGAL ────────────────────────────────────────────────────────────────────

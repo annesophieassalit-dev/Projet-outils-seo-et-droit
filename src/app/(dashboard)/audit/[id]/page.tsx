@@ -416,6 +416,19 @@ export default async function AuditResultPage({
               ))}
             </div>
           )}
+
+          {/* Analyse IA SEO */}
+          {seo.seoAiAnalysis && (
+            <div className="bg-gray-900 rounded-xl p-6 text-white space-y-3">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-yellow-400" />
+                <h3 className="font-semibold">Analyse SEO & GEO approfondie</h3>
+              </div>
+              <div className="text-gray-300 text-sm leading-relaxed whitespace-pre-line">
+                {seo.seoAiAnalysis}
+              </div>
+            </div>
+          )}
         </section>
       )}
       </div>
