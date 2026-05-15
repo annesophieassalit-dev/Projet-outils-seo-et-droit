@@ -16,6 +16,7 @@ export default function AbonnementPage() {
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
   const [portalError, setPortalError] = useState("");
+  const [checkoutError, setCheckoutError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function AbonnementPage() {
 
   async function subscribe(planId: string) {
     setLoadingPlan(planId);
+    setCheckoutError("");
     try {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
@@ -35,8 +37,12 @@ export default function AbonnementPage() {
       const data = await res.json();
       if (data.url) {
         window.location.href = data.url;
+      } else {
+        setCheckoutError(data.error || "Impossible d'ouvrir la page de paiement. Réessayez.");
+        setLoadingPlan(null);
       }
     } catch {
+      setCheckoutError("Erreur réseau. Vérifiez votre connexion et réessayez.");
       setLoadingPlan(null);
     }
   }
@@ -151,6 +157,11 @@ export default function AbonnementPage() {
               </>
             )}
           </button>
+          {checkoutError && (
+            <p className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2 mt-2">
+              {checkoutError}
+            </p>
+          )}
         </div>
       </div>
 
