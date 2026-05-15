@@ -34,15 +34,23 @@ export default function AbonnementPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan: planId }),
       });
-      const data = await res.json();
+      let data: { url?: string; error?: string };
+      try {
+        data = await res.json();
+      } catch {
+        const text = await res.text().catch(() => "");
+        setCheckoutError(`Erreur serveur ${res.status} — ${text.slice(0, 200) || "réponse non-JSON"}`);
+        setLoadingPlan(null);
+        return;
+      }
       if (data.url) {
         window.location.href = data.url;
       } else {
-        setCheckoutError(data.error || "Impossible d'ouvrir la page de paiement. Réessayez.");
+        setCheckoutError(data.error || `Erreur ${res.status} — aucune URL retournée`);
         setLoadingPlan(null);
       }
-    } catch {
-      setCheckoutError("Erreur réseau. Vérifiez votre connexion et réessayez.");
+    } catch (err) {
+      setCheckoutError(`Erreur réseau : ${err instanceof Error ? err.message : String(err)}`);
       setLoadingPlan(null);
     }
   }
