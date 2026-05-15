@@ -365,12 +365,14 @@ export default async function AuditResultPage({
           </div>
 
           {/* Stats rapides SEO */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
             {[
-              { label: "Mots de contenu", value: seo.content.wordCount },
-              { label: "Images sans alt", value: seo.content.imagesWithoutAlt },
+              { label: "Mots", value: seo.content.wordCount },
               { label: "H1", value: seo.content.h1Count },
-              { label: "Liens internes", value: seo.content.internalLinks },
+              { label: "H2", value: seo.content.h2Count },
+              { label: "H3", value: seo.content.h3Count },
+              { label: "Sans alt", value: seo.content.imagesWithoutAlt },
+              { label: "Liens int.", value: seo.content.internalLinks },
             ].map((stat) => (
               <div key={stat.label} className="bg-gray-50 rounded-lg p-3 text-center">
                 <p className="text-lg font-bold text-gray-900">{stat.value}</p>
@@ -464,6 +466,9 @@ export default async function AuditResultPage({
                 </div>
               ))}
             </div>
+            <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+              La présence des pages légales est vérifiée par lien. Pour analyser leur <strong>contenu</strong> (SIRET, adresse, clauses…), lancez un diagnostic directement sur l&apos;URL de chaque page.
+            </p>
           </div>
 
           {/* Termes détectés */}
@@ -476,21 +481,6 @@ export default async function AuditResultPage({
                 .filter((m) => isPro || visibleMatchIds.has(m.ruleId))
                 .map((match) => (
                   <LegalMatchCard key={match.ruleId} match={match} />
-                ))}
-            </div>
-          )}
-
-          {/* Issues de mentions */}
-          {legalErrors.length > 0 && (
-            <div className="space-y-2">
-              <h3 className="text-sm font-semibold text-red-600 uppercase tracking-wide">
-                Points critiques
-              </h3>
-              {legalErrors
-                .filter((i) => !i.id.startsWith("legal-EI") && !i.id.startsWith("legal-CP"))
-                .filter((i) => isPro || visibleIssueIds.has(i.id))
-                .map((issue) => (
-                  <IssueCard key={issue.id} issue={issue} />
                 ))}
             </div>
           )}

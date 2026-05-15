@@ -575,23 +575,64 @@ function generateIssues(
     });
   }
 
-  // Champ sémantique bien-être
-  const SEMANTIC_FIELD = ["séance", "accompagnement", "consultation", "bien-être", "équilibre", "naturel", "holistique", "approche", "écoute"];
-  const semanticScore = SEMANTIC_FIELD.filter(w => allText.includes(w)).length;
-  if (semanticScore < 3) {
+  // Champ sémantique SEO + GEO (apparaître dans les résultats IA)
+  const SEO_GEO_WORDS: { word: string; category: string }[] = [
+    // Activité
+    { word: "séance", category: "activité" },
+    { word: "accompagnement", category: "activité" },
+    { word: "consultation", category: "activité" },
+    { word: "praticien", category: "activité" },
+    { word: "approche", category: "activité" },
+    // Bien-être sémantique
+    { word: "bien-être", category: "sémantique" },
+    { word: "équilibre", category: "sémantique" },
+    { word: "holistique", category: "sémantique" },
+    { word: "écoute", category: "sémantique" },
+    { word: "naturel", category: "sémantique" },
+    // GEO (réponses IA)
+    { word: "comment", category: "GEO" },
+    { word: "pourquoi", category: "GEO" },
+    { word: "qu'est-ce", category: "GEO" },
+    { word: "résultats", category: "GEO" },
+    { word: "tarif", category: "GEO" },
+    { word: "durée", category: "GEO" },
+    { word: "déroulement", category: "GEO" },
+    { word: "en ligne", category: "GEO" },
+    { word: "prise en charge", category: "GEO" },
+    { word: "première séance", category: "GEO" },
+  ];
+
+  const foundWords = SEO_GEO_WORDS.filter(w => allText.includes(w.word));
+  const missingWords = SEO_GEO_WORDS.filter(w => !allText.includes(w.word));
+  const semanticScore = foundWords.length;
+  const total = SEO_GEO_WORDS.length;
+
+  const foundList = foundWords.map(w => w.word).join(", ");
+  const missingSeoList = missingWords.filter(w => w.category !== "GEO").map(w => w.word).join(", ");
+  const missingGeoList = missingWords.filter(w => w.category === "GEO").map(w => w.word).join(", ");
+
+  if (semanticScore < 6) {
     issues.push({
-      id: id(), category: "Sémantique", severity: "warning",
-      title: "Champ sémantique trop pauvre",
-      description: `Seulement ${semanticScore}/9 mots du champ sémantique bien-être détectés. Google associe votre page à votre domaine grâce à la richesse du vocabulaire utilisé.`,
-      recommendation: "Enrichissez votre contenu avec des termes comme : séance, accompagnement, écoute, équilibre, approche naturelle, bien-être, holistique.",
+      id: id(), category: "Sémantique & GEO", severity: "warning",
+      title: "Champ sémantique insuffisant — SEO et IA",
+      description: `${semanticScore}/${total} mots-clés sémantiques détectés. Google et les moteurs IA (ChatGPT, Perplexity, Gemini) associent votre page à votre domaine grâce à la richesse du vocabulaire.${foundList ? ` Présents : ${foundList}.` : ""}`,
+      recommendation: `Mots SEO à intégrer : ${missingSeoList || "aucun manquant"}. Expressions pour le GEO (apparaître dans les réponses IA) : ${missingGeoList || "aucune manquante"}. Répondez aux questions "Comment se déroule une séance ?", "Quels sont vos tarifs ?", "Combien de temps dure la première séance ?" sur votre page.`,
       url,
     });
-  } else if (semanticScore >= 6) {
+  } else if (semanticScore >= 14) {
     issues.push({
-      id: id(), category: "Sémantique", severity: "success",
-      title: "Bon champ sémantique",
-      description: `${semanticScore}/9 mots du champ sémantique bien-être détectés — votre page communique clairement votre domaine.`,
+      id: id(), category: "Sémantique & GEO", severity: "success",
+      title: "Excellent champ sémantique",
+      description: `${semanticScore}/${total} mots-clés détectés — votre page est bien positionnée pour Google et les réponses IA.${foundList ? ` Présents : ${foundList}.` : ""}`,
       recommendation: "", url,
+    });
+  } else {
+    issues.push({
+      id: id(), category: "Sémantique & GEO", severity: "info",
+      title: "Champ sémantique correct, à enrichir pour le GEO",
+      description: `${semanticScore}/${total} mots-clés détectés.${foundList ? ` Présents : ${foundList}.` : ""}`,
+      recommendation: `Pour apparaître dans les réponses des IA (ChatGPT, Perplexity…) : ajoutez ${missingGeoList || "plus de questions/réponses"} à votre page sous forme de FAQ ou de paragraphes explicatifs.`,
+      url,
     });
   }
 
