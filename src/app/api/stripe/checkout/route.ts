@@ -57,6 +57,11 @@ export async function POST(request: NextRequest) {
     locale: "fr",
     billing_address_collection: "auto",
     allow_promotion_codes: true,
+    custom_text: {
+      submit: {
+        message: "Après 7 jours, votre abonnement Visible & Conforme Pro sera automatiquement activé à 19€/mois. Résiliable à tout moment depuis votre espace client.",
+      },
+    },
   });
 
   return NextResponse.json({ url: session.url });
