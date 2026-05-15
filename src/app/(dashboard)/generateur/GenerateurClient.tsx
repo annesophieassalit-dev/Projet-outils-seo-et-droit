@@ -220,6 +220,10 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
         setUpgradeRequired(true);
         return;
       }
+      if (data.trialLimitReached) {
+        setError("trialLimitReached");
+        return;
+      }
       if (!res.ok) throw new Error(data.error);
       setResult(data.result);
     } catch (err) {
@@ -449,7 +453,17 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
 
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-xl">
-              {error}
+              {error === "trialLimitReached" ? (
+                <>
+                  Vous avez utilisé vos 10 générations incluses dans l&apos;essai.{" "}
+                  <a href="/abonnement" className="underline font-medium">
+                    Passez au plan Pro
+                  </a>{" "}
+                  pour des générations illimitées.
+                </>
+              ) : (
+                error
+              )}
             </div>
           )}
         </div>
