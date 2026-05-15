@@ -89,9 +89,10 @@ export default function Sidebar({ plan }: SidebarProps) {
       {/* Plan badge */}
       {plan !== "gratuit" && (
         <div className="mx-4 mt-3">
-          <span
+          <Link
+            href="/abonnement"
             className={cn(
-              "inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium",
+              "inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium transition-opacity hover:opacity-80",
               plan === "pro"
                 ? "bg-gray-900 text-yellow-300"
                 : "bg-zen-100 text-zen-800"
@@ -99,7 +100,7 @@ export default function Sidebar({ plan }: SidebarProps) {
           >
             {plan === "pro" && <Sparkles className="h-3 w-3" />}
             Plan {plan.charAt(0).toUpperCase() + plan.slice(1)}
-          </span>
+          </Link>
         </div>
       )}
 
