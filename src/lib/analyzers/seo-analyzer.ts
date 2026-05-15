@@ -251,6 +251,62 @@ function analyzeHnStructure($: cheerio.CheerioAPI, profession: string): HnStruct
   return { current, suggestion };
 }
 
+// ─── Détection des faux titres (texte visuellement titre, sans balise Hn) ─────
+
+function detectFakeHeadings($: cheerio.CheerioAPI): string[] {
+  const fakes: string[] = [];
+
+  // Patterns de classes CSS courantes qui simulent un titre
+  const headingClassPatterns = [
+    /\btitle\b/i, /\bheading\b/i, /\bsubtitle\b/i, /\bsection[-_]?title\b/i,
+    /\bh[1-6]\b/, /\btitre\b/i, /\bsous[-_]?titre\b/i,
+  ];
+
+  // 1. <p> ou <div> ou <span> avec une classe qui ressemble à un titre
+  $("p, div, span").each((_, el) => {
+    const classes = $(el).attr("class") || "";
+    const isHeadingClass = headingClassPatterns.some(p => p.test(classes));
+    if (!isHeadingClass) return;
+
+    const text = $(el).text().trim();
+    if (text.length > 3 && text.length < 120 && !text.includes("\n")) {
+      fakes.push(text.slice(0, 60));
+    }
+  });
+
+  // 2. <p> avec font-size en inline style > 18px
+  $("p[style], span[style], div[style]").each((_, el) => {
+    const style = $(el).attr("style") || "";
+    const fontSizeMatch = style.match(/font-size\s*:\s*(\d+(?:\.\d+)?)(px|rem|em)/i);
+    if (!fontSizeMatch) return;
+    const size = parseFloat(fontSizeMatch[1]);
+    const unit = fontSizeMatch[2].toLowerCase();
+    const isLarge = (unit === "px" && size >= 18) || (unit === "rem" && size >= 1.2) || (unit === "em" && size >= 1.2);
+    if (!isLarge) return;
+    const text = $(el).text().trim();
+    if (text.length > 3 && text.length < 120) {
+      fakes.push(text.slice(0, 60));
+    }
+  });
+
+  // 3. <p> contenant uniquement un <strong> ou <b> standalone (faux titre gras)
+  $("p").each((_, el) => {
+    const children = $(el).children();
+    if (children.length === 1) {
+      const child = children.first();
+      if (child.is("strong, b")) {
+        const text = child.text().trim();
+        if (text.length > 5 && text.length < 100 && !text.includes(".")) {
+          fakes.push(text.slice(0, 60));
+        }
+      }
+    }
+  });
+
+  // Dédupliquer et limiter
+  return Array.from(new Set(fakes)).slice(0, 5);
+}
+
 // ─── Génération des issues ────────────────────────────────────────────────────
 
 function generateIssues(
@@ -264,6 +320,7 @@ function generateIssues(
   titleText: string,
   h1Text2: string,
   firstParagraph: string,
+  $: cheerio.CheerioAPI,
 ): AuditIssue[] {
   const issues: AuditIssue[] = [];
   let i = 0;
@@ -612,9 +669,18 @@ function generateIssues(
     });
   }
 
-  // Note : pour une analyse sémantique et Hn approfondie et personnalisée,
-  // l'analyse IA (plan Pro) examine le contenu réel de la page et donne
-  // des recommandations adaptées à votre profession et votre vocabulaire.
+  // ── FAUX TITRES (texte visuellement mis en forme comme titre, sans Hn) ─────
+  const fakeHeadings = detectFakeHeadings($);
+  if (fakeHeadings.length > 0) {
+    const examples = fakeHeadings.map(t => `« ${t} »`).join(", ");
+    issues.push({
+      id: id(), category: "Structure Hn", severity: "warning",
+      title: `${fakeHeadings.length} texte(s) visuellement mis en titre, sans balise Hn`,
+      description: `Ces textes sont stylisés comme des titres (gras, grande taille, classe CSS) mais ne sont pas balisés H2/H3. Google les traite comme du texte ordinaire et ne les prend pas en compte pour la structure. Détectés : ${examples}.`,
+      recommendation: "Remplacez le style visuel par une vraie balise H2 ou H3. Exemple : au lieu de <p class=\"titre\">Mon approche</p>, utilisez <h2>Mon approche</h2>. Sur WordPress/Wix, sélectionnez le texte et choisissez « Titre 2 » dans le menu de formatage.",
+      url,
+    });
+  }
 
   return issues;
 }
@@ -713,7 +779,7 @@ export async function analyzeSeo(
   const titleText = ($("title").text() || "").toLowerCase();
   const h1TextSem = ($("h1").text() || "").toLowerCase();
   const firstParagraph = ($("p").first().text() || "").toLowerCase();
-  const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url, allText, titleText, h1TextSem, firstParagraph);
+  const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url, allText, titleText, h1TextSem, firstParagraph, $);
   const score = calculateScore(issues);
 
   let seoAiAnalysis: string | undefined;
