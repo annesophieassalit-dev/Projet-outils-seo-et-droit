@@ -278,6 +278,7 @@ function LexicalFieldPanel({ lexicalField }: { lexicalField: LexicalField }) {
 // ─── Accordion Section ────────────────────────────────────────────────────────
 
 interface AccordionProps {
+  id?: string;
   title: string;
   icon: React.ReactNode;
   accentBg: string;
@@ -291,11 +292,11 @@ interface AccordionProps {
 }
 
 function AccordionSection({
-  title, icon, accentBg, score, errorCount, warningCount,
+  id, title, icon, accentBg, score, errorCount, warningCount,
   isOpen, onToggle, children, subtitle,
 }: AccordionProps) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+    <div id={id} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-4 px-5 py-4 hover:bg-gray-50/80 transition-colors text-left"
@@ -398,8 +399,79 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
 
   const lexicalField = (seo as SeoScore & { lexicalField?: LexicalField })?.lexicalField;
 
+  function scrollTo(id: string, open: () => void) {
+    open();
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+
   return (
-    <div className="space-y-4">
+    <div className="xl:grid xl:grid-cols-[120px_1fr] xl:gap-5 xl:items-start">
+
+      {/* ── Nav sticky latérale (xl+) ───────────────────────────────────────── */}
+      <nav className="hidden xl:flex flex-col gap-2 sticky top-4">
+        {seo && (
+          <button
+            onClick={() => scrollTo("seo-section", () => setSeoOpen(true))}
+            className={`w-full text-left p-3 rounded-xl border transition-all ${
+              seoOpen
+                ? "bg-blue-50 border-blue-200 shadow-sm"
+                : "bg-white border-gray-200 hover:bg-gray-50"
+            }`}
+          >
+            <div className="flex items-center gap-1.5 mb-2">
+              <TrendingUp className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+              <span className="text-[11px] font-semibold text-gray-700 leading-tight">Visibilité</span>
+            </div>
+            <span className={`text-xl font-bold block ${
+              seo.score >= 80 ? "text-green-600" : seo.score >= 60 ? "text-amber-500" : "text-red-500"
+            }`}>
+              {seo.score}
+            </span>
+            <span className="text-[10px] text-gray-400">/100</span>
+            {seoErrors.length > 0 && (
+              <div className="mt-1.5 text-[10px] text-red-500 font-medium">
+                {seoErrors.length} critique{seoErrors.length > 1 ? "s" : ""}
+              </div>
+            )}
+          </button>
+        )}
+
+        <button
+          onClick={() => scrollTo("legal-section", () => setLegalOpen(true))}
+          className={`w-full text-left p-3 rounded-xl border transition-all ${
+            legalOpen
+              ? "bg-zen-50 border-zen-200 shadow-sm"
+              : "bg-white border-gray-200 hover:bg-gray-50"
+          }`}
+        >
+          <div className="flex items-center gap-1.5 mb-2">
+            <ShieldCheck className="h-3.5 w-3.5 text-zen-700 shrink-0" />
+            <span className="text-[11px] font-semibold text-gray-700 leading-tight">Conformité</span>
+          </div>
+          {legal ? (
+            <>
+              <span className={`text-xl font-bold block ${
+                legal.score >= 80 ? "text-green-600" : legal.score >= 60 ? "text-amber-500" : "text-red-500"
+              }`}>
+                {legal.score}
+              </span>
+              <span className="text-[10px] text-gray-400">/100</span>
+              {legalErrors.length > 0 && (
+                <div className="mt-1.5 text-[10px] text-red-500 font-medium">
+                  {legalErrors.length} critique{legalErrors.length > 1 ? "s" : ""}
+                </div>
+              )}
+            </>
+          ) : (
+            <span className="text-[10px] text-gray-400 mt-1 block">Non inclus</span>
+          )}
+        </button>
+      </nav>
+
+      {/* ── Contenu principal ───────────────────────────────────────────────── */}
+      <div className="space-y-4 min-w-0">
 
       {/* ── Scores ─────────────────────────────────────────────────────────── */}
       <div className="bg-white rounded-2xl border border-gray-200 p-6">
@@ -427,6 +499,7 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
       {/* ── Audit visibilité ────────────────────────────────────────────────── */}
       {seo && (
         <AccordionSection
+          id="seo-section"
           title="Audit visibilité"
           icon={<TrendingUp className="h-5 w-5 text-blue-600" />}
           accentBg="bg-blue-50"
@@ -503,6 +576,7 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
 
       {/* ── Audit conformité ────────────────────────────────────────────────── */}
       <AccordionSection
+        id="legal-section"
         title="Audit conformité"
         icon={<ShieldCheck className="h-5 w-5 text-zen-700" />}
         accentBg="bg-zen-50"
@@ -671,6 +745,7 @@ export default function AuditResultClient({ seo, legal, globalScore, auditId, is
           </div>
         )}
       </AccordionSection>
+      </div>{/* fin contenu principal */}
     </div>
   );
 }
