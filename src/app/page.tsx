@@ -871,17 +871,17 @@ export default function LandingPage() {
                 Commencer ici
               </div>
               <h3 className="font-bold text-xl mb-1">Essai 7 jours</h3>
-              <p className="text-gray-500 text-sm mb-4">Accès complet · Sans engagement</p>
+              <p className="text-gray-500 text-sm mb-4">Pour tester l&apos;outil · Sans engagement</p>
               <div className="text-4xl font-bold mb-1">1 €</div>
-              <p className="text-xs text-gray-400 mb-1">Pour 7 jours d&apos;accès complet</p>
+              <p className="text-xs text-gray-400 mb-1">Pour 7 jours d&apos;accès</p>
               <p className="text-xs text-zen-600 font-medium mb-6">Puis 19€/mois · Résiliable avant renouvellement</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "Accès immédiat à toutes les fonctionnalités",
-                  "Vérification de texte avant publication",
-                  "Analyse de site complète",
-                  "Assistant de rédaction inclus",
-                  "Bibliothèque de formulations validées",
+                  "10 générations de contenus incluses",
+                  "Diagnostics site illimités",
+                  "Vérifications de texte illimitées",
+                  "Bibliothèque de formulations",
+                  "Accès à toutes les fonctionnalités",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -981,7 +981,7 @@ export default function LandingPage() {
               },
               {
                 q: "L'accès est-il gratuit ?",
-                a: "Visible & Conforme propose un essai de 7 jours pour 1€, avec accès complet à toutes les fonctionnalités. À l'issue de l'essai, l'abonnement passe à 19€/mois. Vous pouvez résilier à tout moment avant le renouvellement.",
+                a: "Visible & Conforme propose un essai de 7 jours pour 1€, incluant 10 générations de contenus et des diagnostics illimités. À l'issue de l'essai, l'abonnement passe à 19€/mois avec des générations illimitées. Vous pouvez résilier à tout moment avant le renouvellement.",
               },
             ].map((item) => (
               <details
@@ -1009,7 +1009,7 @@ export default function LandingPage() {
             Identifiez ce qui peut vous exposer
           </h2>
           <p className="text-coral-100 mb-8 text-lg">
-            7 jours pour 1€, accès complet, résiliable à tout moment.
+            7 jours pour 1€ · 10 générations incluses · Résiliable à tout moment.
             Découvrez en 2 minutes les zones de risque de votre site.
           </p>
           <Link

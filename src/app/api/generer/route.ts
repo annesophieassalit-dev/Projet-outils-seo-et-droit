@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     .eq("id", user.id)
     .single();
 
-  const { effectivePlan } = getEffectivePlan({
+  const { effectivePlan, isTrialing } = getEffectivePlan({
     plan: profile?.plan || "gratuit",
     trial_ends_at: profile?.trial_ends_at,
   });
@@ -45,6 +45,17 @@ export async function POST(request: NextRequest) {
   if (effectivePlan === "expired") {
     return NextResponse.json(
       { error: "Votre essai gratuit est terminé. Abonnez-vous pour continuer.", trialExpired: true },
+      { status: 403 }
+    );
+  }
+
+  const TRIAL_GENERATION_LIMIT = 10;
+  if (isTrialing && (profile?.posts_generated_this_month || 0) >= TRIAL_GENERATION_LIMIT) {
+    return NextResponse.json(
+      {
+        error: `Vous avez utilisé vos ${TRIAL_GENERATION_LIMIT} générations incluses dans l'essai. Passez au plan Pro pour des générations illimitées.`,
+        trialLimitReached: true,
+      },
       { status: 403 }
     );
   }
