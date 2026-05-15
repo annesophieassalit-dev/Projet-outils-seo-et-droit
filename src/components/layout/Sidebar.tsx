@@ -151,10 +151,10 @@ export default function Sidebar({ plan }: SidebarProps) {
       {/* Footer nav */}
       <div className="px-3 py-3 border-t border-gray-100">
         <Link
-          href="/compte"
+          href="/profil"
           className={cn(
             "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
-            pathname === "/compte"
+            pathname === "/profil"
               ? "bg-zen-50 text-zen-800"
               : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
           )}

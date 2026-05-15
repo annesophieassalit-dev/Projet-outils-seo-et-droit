@@ -15,6 +15,7 @@ export default function AbonnementPage() {
   const searchParams = useSearchParams();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
+  const [portalError, setPortalError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
@@ -42,13 +43,18 @@ export default function AbonnementPage() {
 
   async function openPortal() {
     setPortalLoading(true);
+    setPortalError("");
     try {
       const res = await fetch("/api/stripe/portal", { method: "POST" });
       const data = await res.json();
       if (data.url) {
         window.location.href = data.url;
+      } else {
+        setPortalError("Aucun abonnement actif trouvé. Souscrivez un plan ci-dessus pour accéder à la gestion.");
+        setPortalLoading(false);
       }
     } catch {
+      setPortalError("Une erreur est survenue. Réessayez dans quelques instants.");
       setPortalLoading(false);
     }
   }
@@ -149,30 +155,37 @@ export default function AbonnementPage() {
       </div>
 
       {/* Gestion abonnement existant */}
-      <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 flex items-center justify-between">
-        <div>
-          <p className="font-medium text-gray-900 flex items-center gap-2 text-sm">
-            <ShieldCheck className="h-4 w-4 text-gray-500" />
-            Déjà abonné ?
-          </p>
-          <p className="text-gray-400 text-xs mt-0.5">
-            Gérez votre abonnement, consultez vos factures ou résiliez via le portail Stripe.
-          </p>
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 space-y-3">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="font-medium text-gray-900 flex items-center gap-2 text-sm">
+              <ShieldCheck className="h-4 w-4 text-gray-500" />
+              Déjà abonné ?
+            </p>
+            <p className="text-gray-400 text-xs mt-0.5">
+              Gérez votre abonnement, consultez vos factures ou résiliez.
+            </p>
+          </div>
+          <button
+            onClick={openPortal}
+            disabled={portalLoading}
+            className="shrink-0 border border-gray-300 text-gray-700 text-sm px-4 py-2 rounded-lg hover:bg-white transition-colors flex items-center gap-1.5 font-medium disabled:opacity-50"
+          >
+            {portalLoading ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <>
+                Gérer mon abonnement
+                <ArrowRight className="h-4 w-4" />
+              </>
+            )}
+          </button>
         </div>
-        <button
-          onClick={openPortal}
-          disabled={portalLoading}
-          className="shrink-0 border border-gray-300 text-gray-700 text-sm px-4 py-2 rounded-lg hover:bg-white transition-colors flex items-center gap-1.5 font-medium disabled:opacity-50"
-        >
-          {portalLoading ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            <>
-              Gérer mon abonnement
-              <ArrowRight className="h-4 w-4" />
-            </>
-          )}
-        </button>
+        {portalError && (
+          <p className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
+            {portalError}
+          </p>
+        )}
       </div>
 
       <p className="text-xs text-gray-400 text-center">
