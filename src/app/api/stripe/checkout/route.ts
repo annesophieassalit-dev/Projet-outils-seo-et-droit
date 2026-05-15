@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { stripe, PLANS, TRIAL_PRICE_ID } from "@/lib/stripe";
+import { stripe, TRIAL_PRICE_ID } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
 
 export async function POST(request: NextRequest) {
@@ -17,12 +17,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Plan invalide" }, { status: 400 });
   }
 
-  const planConfig = PLANS[plan as keyof typeof PLANS];
+  if (!TRIAL_PRICE_ID) {
+    return NextResponse.json({ error: "Configuration Stripe incomplète" }, { status: 500 });
+  }
 
-  // Récupérer ou créer le customer Stripe
   const { data: profile } = await supabase
     .from("profiles")
-    .select("stripe_customer_id, email")
+    .select("stripe_customer_id")
     .eq("id", user.id)
     .single();
 
@@ -40,21 +41,14 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id);
   }
 
-  // Le 1€ est facturé immédiatement comme line_item supplémentaire.
-  const lineItems = [
-    { price: planConfig.priceId, quantity: 1 },
-    ...(TRIAL_PRICE_ID ? [{ price: TRIAL_PRICE_ID, quantity: 1 }] : []),
-  ];
-
+  // Paiement simple 1€ — la carte est sauvegardée pour créer l'abonnement ensuite via webhook
   const session = await stripe.checkout.sessions.create({
     customer: customerId,
-    mode: "subscription",
+    mode: "payment",
     payment_method_types: ["card"],
-    payment_method_collection: "always",
-    line_items: lineItems,
-    subscription_data: {
-      trial_period_days: 7,
-      trial_settings: { end_behavior: { missing_payment_method: "cancel" } },
+    line_items: [{ price: TRIAL_PRICE_ID, quantity: 1 }],
+    payment_intent_data: {
+      setup_future_usage: "off_session",
       metadata: { supabase_user_id: user.id, plan },
     },
     success_url: absoluteUrl(`/dashboard?checkout=success&plan=${plan}`),
@@ -63,11 +57,6 @@ export async function POST(request: NextRequest) {
     locale: "fr",
     billing_address_collection: "auto",
     allow_promotion_codes: true,
-    custom_text: {
-      submit: {
-        message: "7 jours d'essai pour 1€, puis 19€/mois. Résiliable à tout moment. Un email vous sera envoyé avant le renouvellement.",
-      },
-    },
   });
 
   return NextResponse.json({ url: session.url });

@@ -4,8 +4,6 @@ import { createClient } from "@supabase/supabase-js";
 import type Stripe from "stripe";
 
 export async function POST(request: NextRequest) {
-  // Client Supabase avec service role pour les webhooks (contournement RLS)
-  // Créé à l'intérieur de la fonction pour éviter les erreurs de build
   const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -38,10 +36,44 @@ export async function POST(request: NextRequest) {
   switch (event.type) {
     case "checkout.session.completed": {
       const session = event.data.object as Stripe.Checkout.Session;
-      const userId = (session.metadata as Record<string, string>)?.supabase_user_id;
-      const plan = (session.metadata as Record<string, string>)?.plan || "essentiel";
+      const userId = session.metadata?.supabase_user_id;
+      const plan = session.metadata?.plan || "pro";
 
-      if (userId) {
+      if (!userId) break;
+
+      if (session.mode === "payment") {
+        // Paiement 1€ : récupérer la carte et créer l'abonnement avec 7 jours d'essai
+        const paymentIntent = await stripe.paymentIntents.retrieve(
+          session.payment_intent as string
+        );
+        const paymentMethodId = typeof paymentIntent.payment_method === "string"
+          ? paymentIntent.payment_method
+          : paymentIntent.payment_method?.id;
+
+        if (paymentMethodId && session.customer) {
+          await stripe.customers.update(session.customer as string, {
+            invoice_settings: { default_payment_method: paymentMethodId },
+          });
+
+          const trialEnd = Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60;
+          const priceId = process.env.STRIPE_PRICE_PRO!;
+
+          const subscription = await stripe.subscriptions.create({
+            customer: session.customer as string,
+            items: [{ price: priceId }],
+            trial_end: trialEnd,
+            default_payment_method: paymentMethodId,
+            metadata: { supabase_user_id: userId, plan },
+          });
+
+          await supabaseAdmin.from("profiles").update({
+            trial_ends_at: new Date(trialEnd * 1000).toISOString(),
+            stripe_subscription_id: subscription.id,
+            subscription_status: "trialing",
+          }).eq("id", userId);
+        }
+      } else {
+        // Abonnement direct (sans essai)
         await supabaseAdmin.from("profiles").update({
           plan,
           stripe_subscription_id: session.subscription as string,
