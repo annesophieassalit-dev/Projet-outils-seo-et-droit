@@ -328,14 +328,14 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
             />
           </div>
 
-          {/* Upsell ebook */}
+          {/* Upsell kit PDF */}
           <div className="bg-gradient-to-br from-zen-50 to-amber-50 border border-zen-200 rounded-2xl p-5 space-y-3">
             <div className="flex items-start gap-3">
               <span className="text-2xl shrink-0">📖</span>
               <div>
-                <p className="text-sm font-semibold text-gray-900">Allez plus loin avec le guide</p>
+                <p className="text-sm font-semibold text-gray-900">Allez plus loin avec le kit PDF — 37€</p>
                 <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                  Le générateur écrit pour vous. Le guide <em>Visible & Conforme</em> vous explique <strong>pourquoi</strong> certaines formulations sont risquées juridiquement — pour comprendre, pas seulement copier-coller.
+                  La bibliothèque vous donne les formulations prêtes à l&apos;emploi. Le kit <em>Visible & Conforme</em> explique <strong>pourquoi</strong> certains termes sont risqués juridiquement — pour ne pas juste copier, mais vraiment comprendre.
                 </p>
               </div>
             </div>
@@ -345,7 +345,7 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 bg-zen-700 text-white px-4 py-2.5 rounded-xl text-xs font-semibold hover:bg-zen-800 transition-colors"
             >
-              Découvrir le guide
+              Découvrir le kit PDF
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>

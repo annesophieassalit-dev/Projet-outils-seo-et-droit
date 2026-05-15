@@ -303,13 +303,13 @@ export default function BibliothequeClient({ plan }: { plan: string }) {
         En cas de doute sur une situation particulière, consultez un professionnel du droit.
       </div>
 
-      {/* Lien ebook */}
+      {/* Lien kit PDF */}
       <div className="bg-gradient-to-br from-zen-50 to-amber-50 border border-zen-200 rounded-2xl p-5 flex items-start gap-4">
         <span className="text-2xl shrink-0">📖</span>
         <div className="flex-1 space-y-2">
-          <p className="text-sm font-semibold text-gray-900">Comprendre le pourquoi avec le guide</p>
+          <p className="text-sm font-semibold text-gray-900">Découvrir le kit PDF — 37€</p>
           <p className="text-xs text-gray-600 leading-relaxed">
-            La bibliothèque vous donne les formulations prêtes à l&apos;emploi. Le guide <em>Visible & Conforme</em> explique <strong>pourquoi</strong> certains termes sont risqués juridiquement — pour ne pas juste copier, mais vraiment comprendre.
+            La bibliothèque vous donne les formulations prêtes à l&apos;emploi. Le kit <em>Visible & Conforme</em> complète l&apos;outil : 51 mots analysés avec leur base légale, 12 fiches métier avec les techniques à éviter selon votre pratique, 30 phrases corrigées et des exercices pour auditer vos contenus.
           </p>
           <a
             href="https://annesophieassalit.systeme.io/visibleetconforme"
@@ -317,7 +317,7 @@ export default function BibliothequeClient({ plan }: { plan: string }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-zen-700 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-zen-800 transition-colors"
           >
-            Découvrir le guide PDF
+            Découvrir le kit PDF
           </a>
         </div>
       </div>
