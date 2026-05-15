@@ -762,16 +762,6 @@ export const TEMOIGNAGES_RULES: LegalRule[] = [
 
 export const PROTECTION_CONSO_RULES: LegalRule[] = [
   {
-    id: "PC-001",
-    category: "protection_consommateur",
-    severity: "warning",
-    pattern: /\b(tarif[s]?|prix|honoraires?|consultation\s+à)\b/gi,
-    term: "tarifs affichés (à vérifier TTC)",
-    recommendation:
-      "Les prix affichés doivent être TTC (toutes taxes comprises) conformément à l'arrêté du 3 décembre 1987. Indiquez clairement si vos prestations sont exonérées de TVA.",
-    legalReference: "Arrêté du 3 décembre 1987 + Art. L113-3 Code de la consommation",
-  },
-  {
     id: "PC-002",
     category: "protection_consommateur",
     severity: "error",
