@@ -214,7 +214,6 @@ export default function AuditPrintPage() {
                 { label: "Mentions légales", ok: legal.mentionsCheck.hasMentionsLegales },
                 { label: "Politique RGPD", ok: legal.mentionsCheck.hasPolitiqueConfidentialite },
                 { label: "CGV", ok: legal.mentionsCheck.hasCGV },
-                { label: "Droit de rétractation", ok: legal.mentionsCheck.hasDroitRetractation },
                 { label: "Gestion cookies", ok: legal.mentionsCheck.hasCookiePolicy },
                 { label: "Numéro SIRET", ok: legal.mentionsCheck.hasSiret },
               ].map((item) => (
