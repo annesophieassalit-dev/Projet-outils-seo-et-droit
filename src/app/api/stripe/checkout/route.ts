@@ -52,11 +52,11 @@ export async function POST(request: NextRequest) {
     payment_method_types: ["card"],
     payment_method_collection: "always",
     line_items: [{ price: planConfig.priceId, quantity: 1 }],
+    ...(trialInvoiceItems ? { add_invoice_items: trialInvoiceItems } : {}),
     subscription_data: {
       trial_period_days: 7,
       trial_settings: { end_behavior: { missing_payment_method: "cancel" } },
       metadata: { supabase_user_id: user.id, plan },
-      ...(trialInvoiceItems ? { add_invoice_items: trialInvoiceItems } : {}),
     },
     success_url: absoluteUrl(`/dashboard?checkout=success&plan=${plan}`),
     cancel_url: absoluteUrl("/abonnement?checkout=canceled"),
