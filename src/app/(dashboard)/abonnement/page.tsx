@@ -170,9 +170,6 @@ export default function AbonnementPage() {
               {checkoutError}
             </p>
           )}
-          <p className="text-xs text-gray-400 text-center mt-3 leading-relaxed">
-            Après votre période d&apos;essai de 7 jours, votre abonnement sera automatiquement renouvelé à 19€/mois. Résiliable à tout moment avant la fin de l&apos;essai depuis votre espace client.
-          </p>
         </div>
       </div>
 
