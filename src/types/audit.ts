@@ -40,6 +40,20 @@ export interface SeoContentResult {
   hasMobileViewport: boolean;
 }
 
+export interface LexicalTerm {
+  term: string;
+  count: number;
+  inTitle: boolean;
+  inH1: boolean;
+  inH2: boolean;
+}
+
+export interface LexicalField {
+  present: LexicalTerm[];
+  absent: string[];
+  hasLocalSignal: boolean;
+}
+
 export interface SeoScore {
   score: number; // 0–100
   grade: "A" | "B" | "C" | "D" | "F";
@@ -47,6 +61,7 @@ export interface SeoScore {
   meta: SeoMetaResult;
   content: SeoContentResult;
   seoAiAnalysis?: string;
+  lexicalField?: LexicalField;
 }
 
 // ─── LEGAL ────────────────────────────────────────────────────────────────────

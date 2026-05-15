@@ -5,6 +5,8 @@ import type {
   SeoMetaResult,
   SeoContentResult,
   AuditIssue,
+  LexicalField,
+  LexicalTerm,
 } from "@/types/audit";
 import { scoreToGrade } from "@/lib/utils";
 
@@ -305,6 +307,52 @@ function detectFakeHeadings($: cheerio.CheerioAPI): string[] {
 
   // Dédupliquer et limiter
   return Array.from(new Set(fakes)).slice(0, 5);
+}
+
+// ─── Champ lexical ────────────────────────────────────────────────────────────
+
+function computeLexicalField(
+  bodyText: string,
+  titleText: string,
+  h1Text: string,
+  h2Texts: string[],
+  allTextLower: string,
+): LexicalField {
+  const body = bodyText.toLowerCase();
+  const title = titleText.toLowerCase();
+  const h1 = h1Text.toLowerCase();
+  const h2 = h2Texts.join(" ").toLowerCase();
+
+  const seen = new Set<string>();
+  const present: LexicalTerm[] = [];
+  const absent: string[] = [];
+
+  for (const kw of ACTIVITY_KEYWORDS) {
+    const kwLower = kw.toLowerCase();
+    const normalized = kwLower.replace(/[-\s]/g, "");
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+
+    const escaped = kwLower.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const count = (body.match(new RegExp(escaped, "g")) || []).length;
+
+    if (count > 0) {
+      present.push({
+        term: kw,
+        count,
+        inTitle: title.includes(kwLower),
+        inH1: h1.includes(kwLower),
+        inH2: h2.includes(kwLower),
+      });
+    } else {
+      absent.push(kw);
+    }
+  }
+
+  present.sort((a, b) => b.count - a.count);
+  const hasLocalSignal = LOCAL_SIGNALS.some((p) => p.test(allTextLower));
+
+  return { present, absent: absent.slice(0, 10), hasLocalSignal };
 }
 
 // ─── Génération des issues ────────────────────────────────────────────────────
@@ -779,8 +827,17 @@ export async function analyzeSeo(
   const titleText = ($("title").text() || "").toLowerCase();
   const h1TextSem = ($("h1").text() || "").toLowerCase();
   const firstParagraph = ($("p").first().text() || "").toLowerCase();
+  const h2Texts = $("h2").map((_, el) => $(el).text().trim()).get();
   const issues = generateIssues(meta, content, semantic, linking, loadTimeMs, url, allText, titleText, h1TextSem, firstParagraph, $);
   const score = calculateScore(issues);
+
+  const lexicalField = computeLexicalField(
+    $("body").text(),
+    meta.titleTag || "",
+    content.h1Text.join(" "),
+    h2Texts,
+    allText,
+  );
 
   let seoAiAnalysis: string | undefined;
   if (options.useAI) {
@@ -801,5 +858,6 @@ export async function analyzeSeo(
     semantic,
     linking,
     seoAiAnalysis,
+    lexicalField,
   };
 }
