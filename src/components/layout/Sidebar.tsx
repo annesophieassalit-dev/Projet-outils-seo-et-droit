@@ -14,6 +14,7 @@ import {
   BookOpen,
   CalendarDays,
   User,
+  ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -132,6 +133,20 @@ export default function Sidebar({ plan }: SidebarProps) {
           );
         })}
       </nav>
+
+      {/* Kit PDF */}
+      <div className="px-3 pb-2">
+        <a
+          href="https://annesophieassalit.systeme.io/visibleetconforme"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-amber-700 bg-amber-50 hover:bg-amber-100"
+        >
+          <BookOpen className="h-4 w-4 shrink-0 text-amber-600" />
+          <span className="flex-1">Le kit Visible & Conforme</span>
+          <ExternalLink className="h-3 w-3 shrink-0 text-amber-500" />
+        </a>
+      </div>
 
       {/* Footer nav */}
       <div className="px-3 py-3 border-t border-gray-100">
