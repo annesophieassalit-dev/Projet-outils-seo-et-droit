@@ -40,19 +40,18 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id);
   }
 
-  // Essai 7 jours à 1€ : trial_period_days démarre l'abonnement après 7 jours.
-  // Le 1€ est facturé immédiatement via add_invoice_items sur la première facture.
-  const trialInvoiceItems = TRIAL_PRICE_ID
-    ? [{ price: TRIAL_PRICE_ID, quantity: 1 }]
-    : undefined;
+  // Le 1€ est facturé immédiatement comme line_item supplémentaire.
+  const lineItems = [
+    { price: planConfig.priceId, quantity: 1 },
+    ...(TRIAL_PRICE_ID ? [{ price: TRIAL_PRICE_ID, quantity: 1 }] : []),
+  ];
 
   const session = await stripe.checkout.sessions.create({
     customer: customerId,
     mode: "subscription",
     payment_method_types: ["card"],
     payment_method_collection: "always",
-    line_items: [{ price: planConfig.priceId, quantity: 1 }],
-    ...(trialInvoiceItems ? { add_invoice_items: trialInvoiceItems } : {}),
+    line_items: lineItems,
     subscription_data: {
       trial_period_days: 7,
       trial_settings: { end_behavior: { missing_payment_method: "cancel" } },
