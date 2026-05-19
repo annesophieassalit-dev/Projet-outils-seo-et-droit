@@ -902,10 +902,10 @@ export default function LandingPage() {
               </Link>
             </div>
 
-            {/* Pro */}
-            <div className="border-2 border-zen-600 rounded-2xl p-8 relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-600 text-white text-xs px-3 py-1 rounded-full font-medium">
-                Après l&apos;essai
+            {/* Pro direct */}
+            <div className="border border-gray-200 rounded-2xl p-8 relative bg-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-3 py-1 rounded-full font-medium">
+                Sans période d&apos;essai
               </div>
               <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
                 Pro
@@ -932,10 +932,10 @@ export default function LandingPage() {
                 ))}
               </ul>
               <Link
-                href="/inscription"
+                href="/inscription?plan=pro_direct"
                 className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
               >
-                Démarrer pour 1€
+                S&apos;abonner à 19€/mois
               </Link>
             </div>
           </div>

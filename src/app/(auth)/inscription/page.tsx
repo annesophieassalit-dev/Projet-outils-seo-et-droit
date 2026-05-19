@@ -103,11 +103,10 @@ export default function InscriptionPage() {
             <strong>{email}</strong>.
           </p>
           <p className="text-gray-500 text-sm mb-6">
-            Cliquez sur le lien dans l&apos;email pour activer votre compte et commencer
-            votre premier audit gratuit.
+            Cliquez sur le lien dans l&apos;email pour activer votre compte, puis connectez-vous pour finaliser votre abonnement.
           </p>
           <Link
-            href="/connexion"
+            href={initialPlan === "pro_direct" ? "/connexion?redirect=abonnement" : "/connexion"}
             className="block w-full bg-zen-700 text-white py-2.5 rounded-lg font-medium hover:bg-zen-800 transition-colors text-center"
           >
             Aller à la connexion

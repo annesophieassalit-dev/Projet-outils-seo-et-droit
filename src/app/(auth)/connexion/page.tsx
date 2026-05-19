@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { ShieldCheck, Eye, EyeOff, Loader2 } from "lucide-react";
 
 export default function ConnexionPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createClient();
 
   const [email, setEmail] = useState("");
@@ -36,7 +37,8 @@ export default function ConnexionPage() {
       return;
     }
 
-    router.push("/dashboard");
+    const redirect = searchParams.get("redirect");
+    router.push(redirect === "abonnement" ? "/abonnement" : "/dashboard");
     router.refresh();
   }
 
