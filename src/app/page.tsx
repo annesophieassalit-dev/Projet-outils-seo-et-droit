@@ -582,7 +582,7 @@ export default function LandingPage() {
                 ⚡ Gagnez du temps
               </span>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
-                L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
+                Des textes adaptés à votre activité et votre positionnement, prêts à copier-coller.
               </p>
               <div className="bg-white border border-purple-200 rounded-lg px-3 py-2 shadow-sm">
                 <p className="text-[10px] font-semibold text-purple-600 mb-0.5">Réseaux sociaux</p>
