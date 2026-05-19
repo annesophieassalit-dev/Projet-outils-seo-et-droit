@@ -382,6 +382,11 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-zen-950 text-base leading-snug">Générer des contenus</h3>
               </div>
 
+              {/* Badge */}
+              <span className="inline-block bg-purple-50 text-purple-500 text-[10px] font-medium px-2.5 py-1 rounded-full border border-purple-100">
+                Gagnez du temps sans improviser vos textes
+              </span>
+
               {/* Description */}
               <p className="text-sm text-gray-500 leading-relaxed">
                 Créez des contenus adaptés à votre activité grâce à une bibliothèque de formulations validées et à un assistant de rédaction pensé pour les professionnels du bien-être non réglementés.
