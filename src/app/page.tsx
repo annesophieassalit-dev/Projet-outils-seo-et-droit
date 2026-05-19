@@ -905,7 +905,7 @@ export default function LandingPage() {
             {/* Pro direct */}
             <div className="border border-gray-200 rounded-2xl p-8 relative bg-white">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-3 py-1 rounded-full font-medium">
-                Sans période d&apos;essai
+                Accès illimité
               </div>
               <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
                 Pro
