@@ -90,37 +90,7 @@ export default function AbonnementPage() {
       )}
 
       {/* Plans */}
-      <div className="grid md:grid-cols-2 gap-6">
-
-        {/* Gratuit */}
-        <div className="border border-gray-200 rounded-2xl p-6 bg-white">
-          <h3 className="font-bold text-lg mb-1">Gratuit</h3>
-          <p className="text-gray-400 text-sm mb-4">Pour découvrir l&apos;outil</p>
-          <div className="text-3xl font-bold mb-5">0 €</div>
-          <ul className="space-y-2 text-sm text-gray-600 mb-6">
-            {[
-              { label: "1 diagnostic par mois", ok: true },
-              { label: "5 scans de texte par mois", ok: true },
-              { label: "Diagnostic SEO + conformité", ok: true },
-              { label: "Bibliothèque de formulations", ok: true },
-              { label: "Scanner avec analyse IA", ok: false },
-              { label: "Générateur de contenus", ok: false },
-              { label: "Export PDF", ok: false },
-            ].map((f) => (
-              <li key={f.label} className="flex items-center gap-2">
-                {f.ok ? (
-                  <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
-                ) : (
-                  <div className="h-4 w-4 shrink-0 rounded-full border-2 border-gray-200" />
-                )}
-                <span className={f.ok ? "" : "text-gray-400"}>{f.label}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="text-center text-sm text-gray-400 py-2 border border-gray-100 rounded-lg">
-            Plan actuel
-          </div>
-        </div>
+      <div className="max-w-sm mx-auto">
 
         {/* Pro */}
         <div className="border-2 border-zen-600 rounded-2xl p-6 bg-white relative">
@@ -132,10 +102,11 @@ export default function AbonnementPage() {
             <Sparkles className="h-4 w-4 text-amber-500" />
           </h3>
           <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
-          <div className="text-3xl font-bold mb-5">
+          <div className="text-3xl font-bold mb-1">
             19 €
             <span className="text-base font-normal text-gray-500">/mois</span>
           </div>
+          <p className="text-xs text-zen-700 font-medium mb-5">Essai 7 jours pour 1€ · Puis 19€/mois</p>
           <ul className="space-y-2 text-sm text-gray-600 mb-6">
             {[
               "3 diagnostics par mois (SEO + conformité)",
