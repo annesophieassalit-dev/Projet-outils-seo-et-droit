@@ -578,6 +578,9 @@ export default function LandingPage() {
                 <Sparkles className="h-5 w-5 text-purple-500" />
               </div>
               <h3 className="font-semibold text-zen-950 text-base mb-2">Générez des contenus prêts à publier</h3>
+              <span className="inline-block bg-purple-100 text-purple-600 text-[10px] font-semibold px-2.5 py-1 rounded-full mb-2">
+                ⚡ Gagnez du temps
+              </span>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 L&apos;assistant crée des textes adaptés à votre activité et votre positionnement.
               </p>
