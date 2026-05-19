@@ -90,28 +90,56 @@ export default function AbonnementPage() {
       )}
 
       {/* Plans */}
-      <div className="max-w-sm mx-auto">
+      <div className="grid md:grid-cols-2 gap-6">
 
-        {/* Pro */}
+        {/* Essai */}
         <div className="border-2 border-zen-600 rounded-2xl p-6 bg-white relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-600 text-white text-xs px-3 py-1 rounded-full font-medium">
             Recommandé
           </div>
+          <h3 className="font-bold text-lg mb-1">Essai 7 jours</h3>
+          <p className="text-gray-500 text-sm mb-4">Pour tester l&apos;outil · Sans engagement</p>
+          <div className="text-3xl font-bold mb-1">1 €</div>
+          <p className="text-xs text-gray-500 mb-5">Pour 7 jours d&apos;accès · Puis 19€/mois</p>
+          <ul className="space-y-2 text-sm text-gray-600 mb-6">
+            {[
+              "10 générations de contenus incluses",
+              "Diagnostics site illimités",
+              "Vérifications de texte illimitées",
+              "Bibliothèque de formulations",
+              "Accès à toutes les fonctionnalités",
+            ].map((f) => (
+              <li key={f} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
+          <button
+            onClick={() => subscribe("pro")}
+            disabled={loadingPlan !== null}
+            className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 bg-zen-700 text-white hover:bg-zen-800"
+          >
+            {loadingPlan === "pro" ? <Loader2 className="h-4 w-4 animate-spin" /> : "Démarrer pour 1€"}
+          </button>
+        </div>
+
+        {/* Pro direct */}
+        <div className="border border-gray-200 rounded-2xl p-6 bg-white">
           <h3 className="font-bold text-lg mb-1 flex items-center gap-2">
             Pro
             <Sparkles className="h-4 w-4 text-amber-500" />
           </h3>
           <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
           <div className="text-3xl font-bold mb-1">
-            19 €
-            <span className="text-base font-normal text-gray-500">/mois</span>
+            19 €<span className="text-base font-normal text-gray-500">/mois</span>
           </div>
-          <p className="text-xs text-zen-700 font-medium mb-5">Essai 7 jours pour 1€ · Puis 19€/mois</p>
+          <p className="text-xs text-gray-500 mb-5">Sans engagement · Résiliable à tout moment</p>
           <ul className="space-y-2 text-sm text-gray-600 mb-6">
             {[
-              "3 diagnostics par mois (SEO + conformité)",
+              "Diagnostics illimités (SEO + conformité)",
               "Scans de texte illimités avec IA",
-              "Générateur de contenus safe illimité",
+              "Générateur de contenus illimité",
               "Bibliothèque de formulations complète",
               "Export PDF des rapports",
               "Historique illimité",
@@ -123,18 +151,11 @@ export default function AbonnementPage() {
             ))}
           </ul>
           <button
-            onClick={() => subscribe("pro")}
-            disabled={loadingPlan === "pro"}
+            onClick={() => subscribe("pro_direct")}
+            disabled={loadingPlan !== null}
             className="w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-colors text-sm disabled:opacity-50 bg-coral-500 text-white hover:bg-coral-600"
           >
-            {loadingPlan === "pro" ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <>
-                <CreditCard className="h-4 w-4" />
-                Passer au plan Pro
-              </>
-            )}
+            {loadingPlan === "pro_direct" ? <Loader2 className="h-4 w-4 animate-spin" /> : <><CreditCard className="h-4 w-4" />S&apos;abonner à 19€/mois</>}
           </button>
           {checkoutError && (
             <p className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2 mt-2">

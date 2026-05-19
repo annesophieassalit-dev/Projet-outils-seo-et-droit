@@ -13,11 +13,11 @@ export async function POST(request: NextRequest) {
 
   const { plan } = await request.json();
 
-  if (!["essentiel", "pro"].includes(plan)) {
+  if (!["essentiel", "pro", "pro_direct"].includes(plan)) {
     return NextResponse.json({ error: "Plan invalide" }, { status: 400 });
   }
 
-  if (!TRIAL_PRICE_ID) {
+  if (!TRIAL_PRICE_ID && plan !== "pro_direct") {
     return NextResponse.json({ error: "Configuration Stripe incomplète" }, { status: 500 });
   }
 
@@ -41,28 +41,48 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id);
   }
 
-  // Paiement simple 1€ — la carte est sauvegardée pour créer l'abonnement ensuite via webhook
-  const session = await stripe.checkout.sessions.create({
-    customer: customerId,
-    mode: "payment",
-    payment_method_types: ["card"],
-    line_items: [{ price: TRIAL_PRICE_ID, quantity: 1 }],
-    payment_intent_data: {
-      setup_future_usage: "off_session",
-      metadata: { supabase_user_id: user.id, plan },
-    },
-    success_url: absoluteUrl(`/dashboard?checkout=success&plan=${plan}`),
-    cancel_url: absoluteUrl("/abonnement?checkout=canceled"),
-    metadata: { supabase_user_id: user.id, plan },
-    locale: "fr",
-    billing_address_collection: "auto",
-    allow_promotion_codes: true,
-    custom_text: {
-      submit: {
-        message: "Après votre période d'essai de 7 jours, votre abonnement sera automatiquement renouvelé à 19€/mois. Résiliable à tout moment avant la fin de l'essai depuis votre espace client.",
+  const proPriceId = process.env.STRIPE_PRICE_PRO!;
+
+  let session;
+
+  if (plan === "pro_direct") {
+    // Abonnement direct sans essai
+    session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      mode: "subscription",
+      payment_method_types: ["card"],
+      line_items: [{ price: proPriceId, quantity: 1 }],
+      success_url: absoluteUrl("/dashboard?checkout=success&plan=pro"),
+      cancel_url: absoluteUrl("/abonnement?checkout=canceled"),
+      metadata: { supabase_user_id: user.id, plan: "pro" },
+      locale: "fr",
+      billing_address_collection: "auto",
+      allow_promotion_codes: true,
+    });
+  } else {
+    // Essai 7 jours à 1€
+    session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      mode: "payment",
+      payment_method_types: ["card"],
+      line_items: [{ price: TRIAL_PRICE_ID!, quantity: 1 }],
+      payment_intent_data: {
+        setup_future_usage: "off_session",
+        metadata: { supabase_user_id: user.id, plan: "pro" },
       },
-    },
-  });
+      success_url: absoluteUrl("/dashboard?checkout=success&plan=pro"),
+      cancel_url: absoluteUrl("/abonnement?checkout=canceled"),
+      metadata: { supabase_user_id: user.id, plan: "pro" },
+      locale: "fr",
+      billing_address_collection: "auto",
+      allow_promotion_codes: true,
+      custom_text: {
+        submit: {
+          message: "Après votre période d'essai de 7 jours, votre abonnement sera automatiquement renouvelé à 19€/mois. Résiliable à tout moment avant la fin de l'essai depuis votre espace client.",
+        },
+      },
+    });
+  }
 
   return NextResponse.json({ url: session.url });
 }
