@@ -44,11 +44,12 @@ export default async function DashboardLayout({
             trialDaysLeft,
           }}
         />
-        {(isTrialing || trialExpired) && (
+        {(isTrialing || trialExpired || effectivePlan === "expired") && (
           <TrialBanner
             isTrialing={isTrialing}
             trialDaysLeft={trialDaysLeft}
             trialExpired={trialExpired}
+            noAccess={effectivePlan === "expired" && !trialExpired}
           />
         )}
         <main className="flex-1 overflow-y-auto p-6">{children}</main>
