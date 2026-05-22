@@ -19,11 +19,20 @@ export const metadata: Metadata = {
     "hypnothérapeute site internet",
   ],
   openGraph: {
-    title: "Visible & Conforme — L'outil SEO et conformité pour praticiens bien-être",
+    title: "Visible & Conforme — Analysez, corrigez, créez",
     description:
-      "Communication pour praticiens bien-être. Analysez vos contenus, repérez les formulations à risque et générez des textes conformes visibles sur Google.",
+      "L'outil pour les praticiens bien-être qui veulent communiquer sans s'exposer et rester visibles sur Google.",
     type: "website",
     locale: "fr_FR",
+    url: "https://www.visibleetconforme.fr/",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/annesophieassalit-dev/Projet-outils-seo-et-droit/main/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Visible & Conforme",
+      },
+    ],
   },
 };
 
