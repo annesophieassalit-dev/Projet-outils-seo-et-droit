@@ -40,7 +40,7 @@ Si vous n'utilisez aucun outil de tracking, vous n'avez pas besoin de bandeau co
 Vous n'avez pas besoin d'être ingénieur pour respecter ce principe :
 - Utilisez un mot de passe fort pour votre messagerie professionnelle
 - Stockez les fiches clients sur un appareil protégé par mot de passe
-- Utilisez des outils professionnels reconnus pour la prise de RDV (Doctolib, Calendly avec RGPD activé, etc.)
+- Utilisez des outils professionnels reconnus pour la prise de RDV (Calendly, Koalendar, Acuity Scheduling, etc.)
 - Ne transmettez jamais de données clients par email non chiffré (ou du moins, évitez de le faire inutilement)
 
 ### 4. Ne pas conserver les données plus longtemps que nécessaire
@@ -89,13 +89,13 @@ Ce document n'est pas à envoyer à la CNIL, mais doit être disponible sur dema
 
 ## Vos outils de prise de RDV sont-ils conformes RGPD ?
 
-Calendly, Doctolib, Koalendar, Google Agenda partagé... ces outils traitent les données de vos clients en votre nom. Pour être conforme, vous devez :
+Calendly, Koalendar, Acuity Scheduling, Google Agenda partagé... ces outils traitent les données de vos clients en votre nom. Pour être conforme, vous devez :
 
 - Vérifier que l'outil dispose d'un **accord de traitement des données (DPA)** accessible
 - Préférer des serveurs hébergés en Europe quand c'est possible
 - Informer vos clients que leurs données transitent par cet outil dans votre politique de confidentialité
 
-Doctolib et Calendly disposent de DPA conformes. Un Google Agenda non configuré pour le partage professionnel est à éviter pour les données clients.
+Calendly et Koalendar disposent de DPA conformes. Un Google Agenda non configuré pour le partage professionnel est à éviter pour les données clients. Doctolib est réservé aux professionnels de santé réglementés (médecins, kinésithérapeutes...) et n'est pas accessible aux praticiens bien-être non réglementés.
 
 ## Par où commencer si vous partez de zéro ?
 

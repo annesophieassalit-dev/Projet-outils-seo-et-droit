@@ -36,7 +36,7 @@ Si vous proposez des séances en ligne avec paiement directement depuis votre si
 
 ## 5. Un formulaire de contact ou un système de prise de RDV
 
-Rendez le passage à l'action simple. Un formulaire de contact ou un lien vers votre agenda en ligne (Doctolib, Calendly, etc.) doit être visible sur chaque page, pas seulement sur la page contact.
+Rendez le passage à l'action simple. Un formulaire de contact ou un lien vers votre agenda en ligne (Calendly, Koalendar, Acuity Scheduling...) doit être visible sur chaque page, pas seulement sur la page contact.
 
 Si vous collectez des données via ce formulaire, le RGPD s'applique : politique de confidentialité, consentement explicite, durée de conservation des données. [Notre guide RGPD pour praticiens bien-être](/blog/rgpd-praticien-bien-etre) détaille ce que ça implique.
 
