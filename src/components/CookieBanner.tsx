@@ -15,6 +15,9 @@ export default function CookieBanner() {
 
   function accept() {
     localStorage.setItem("cookie_consent", JSON.stringify({ analytics, date: new Date().toISOString() }));
+    if (analytics) {
+      window.dispatchEvent(new Event("ga_consent_granted"));
+    }
     setVisible(false);
   }
 

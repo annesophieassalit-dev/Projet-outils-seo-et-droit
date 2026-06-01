@@ -158,11 +158,17 @@ export default function ConfidentialitePage() {
         {/* Cookies */}
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Cookies</h2>
-          <div className="text-sm text-gray-600 space-y-2">
+          <div className="text-sm text-gray-600 space-y-3">
+            <p><strong className="text-gray-700">Cookies essentiels</strong> — nécessaires au fonctionnement du service (session d&apos;authentification). Ils ne peuvent pas être refusés.</p>
             <p>
-              Visible & Conforme utilise uniquement des cookies strictement nécessaires au fonctionnement
-              du service (session d&apos;authentification). Aucun cookie publicitaire ou de tracking tiers n&apos;est déposé.
+              <strong className="text-gray-700">Cookies de mesure d&apos;audience (optionnels)</strong> — avec votre consentement,
+              nous utilisons Google Analytics 4 (Google LLC) pour mesurer la fréquentation du site
+              (pages visitées, durée, provenance). Ces données sont anonymisées et ne permettent pas
+              de vous identifier. Vous pouvez refuser ces cookies via le bandeau affiché lors de votre
+              première visite, ou retirer votre consentement à tout moment en vidant les données de
+              votre navigateur pour ce site.
             </p>
+            <p>Aucun cookie publicitaire ou de ciblage n&apos;est utilisé.</p>
           </div>
         </section>
 

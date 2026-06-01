@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import { Analytics } from "@vercel/analytics/next";
+import GAConsentLoader from "@/components/GAConsentLoader";
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <CookieBanner />
+        <GAConsentLoader />
         <Analytics />
       </body>
     </html>
