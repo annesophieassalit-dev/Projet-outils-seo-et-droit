@@ -37,6 +37,9 @@ export default function LandingPage() {
             <a href="#faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
               FAQ
             </a>
+            <Link href="/blog" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              Blog
+            </Link>
           </nav>
           <div className="flex items-center gap-3">
             <Link href="/connexion" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">

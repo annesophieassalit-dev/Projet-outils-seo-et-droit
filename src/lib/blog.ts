@@ -12,6 +12,13 @@ export interface BlogPost {
   description: string;
   date: string;
   content: string;
+  tags: string[];
+  readingTime: number;
+}
+
+function calculateReadingTime(content: string): number {
+  const wordCount = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(wordCount / 200));
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -27,6 +34,8 @@ export function getAllPosts(): BlogPost[] {
         description: data.description || "",
         date: data.date || "",
         content,
+        tags: data.tags || [],
+        readingTime: calculateReadingTime(content),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -38,6 +47,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
 }
 
 export async function renderMarkdown(content: string): Promise<string> {
-  const result = await remark().use(remarkHtml).process(content);
+  const result = await remark().use(remarkHtml, { sanitize: false }).process(content);
   return result.toString();
 }
