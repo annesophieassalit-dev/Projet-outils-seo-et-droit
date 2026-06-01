@@ -16,7 +16,7 @@ Le Règlement Général sur la Protection des Données (RGPD) encadre la collect
 
 Dès que vous avez **un formulaire de contact**, **un agenda de prise de RDV en ligne**, **une newsletter** ou **un système de caisse qui enregistre les noms de vos clients**, vous traitez des données personnelles. Le RGPD vous oblige alors à respecter plusieurs principes.
 
-## Les 5 obligations concrètes pour un praticien bien-être
+## Les 5 obligations essentielles pour un praticien bien-être
 
 ### 1. Publier une politique de confidentialité sur votre site
 

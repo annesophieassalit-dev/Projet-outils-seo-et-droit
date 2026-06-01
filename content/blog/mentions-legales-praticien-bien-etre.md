@@ -1,6 +1,6 @@
 ---
 title: "Mentions légales pour praticien bien-être : ce qui est vraiment obligatoire"
-description: "Sophrologue, naturopathe, coach bien-être : quelles mentions légales mettre sur votre site ? Tour complet de ce que la loi impose, avec des exemples concrets."
+description: "Sophrologue, naturopathe, coach bien-être : quelles mentions légales mettre sur votre site ? Tour complet de ce que la loi impose, avec des exemples pratiques."
 date: "2026-05-20"
 slug: "mentions-legales-praticien-bien-etre"
 tags: ["Juridique", "Site internet", "Conformité"]

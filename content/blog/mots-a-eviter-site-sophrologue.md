@@ -36,7 +36,7 @@ La confusion entre sophrologue et psychothérapeute, ou entre accompagnement et 
 
 Quelques mots suffisent à brouiller cette frontière sur votre site, souvent sans que vous en ayez conscience.
 
-## Ce que ça change concrètement
+## Ce que ça change dans votre communication
 
 Un site qui utilise un vocabulaire adapté ne perd pas en impact. Au contraire : une communication précise et honnête **inspire davantage confiance** à vos visiteurs. Elle montre que vous connaissez votre cadre d'exercice et que vous le respectez.
 
@@ -53,6 +53,12 @@ Deux approches :
 **Utiliser un outil dédié** — c'est exactement ce que fait **Visible & Conforme** : l'outil analyse vos textes et signale automatiquement les formulations à risque, avec des suggestions de reformulation adaptées à votre activité.
 
 [Analyser mon site →](/inscription)
+
+---
+
+**Envie d'aller plus loin ?** Le kit PDF *Visible & Conforme* recense les 51 termes les plus risqués avec leur base légale, 12 fiches métier par pratique (sophrologie, naturopathie, hypnose...) et 30 phrases corrigées prêtes à adapter. Une ressource pour comprendre le pourquoi, pas juste copier.
+
+[Découvrir le kit PDF — 37€ →](https://annesophieassalit.systeme.io/visibleetconforme)
 
 ---
 
