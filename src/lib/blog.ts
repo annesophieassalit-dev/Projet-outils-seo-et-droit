@@ -23,6 +23,7 @@ function calculateReadingTime(content: string): number {
 
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
+  const today = new Date().toISOString().slice(0, 10);
   const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md"));
   return files
     .map((file) => {
@@ -38,6 +39,7 @@ export function getAllPosts(): BlogPost[] {
         readingTime: calculateReadingTime(content),
       };
     })
+    .filter((p) => p.date <= today)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
