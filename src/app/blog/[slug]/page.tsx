@@ -173,8 +173,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <Link href="/mentions-legales" className="hover:text-gray-600">
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-gray-600">
+            <Link href="/confidentialite" className="hover:text-gray-600">
               Confidentialité
+            </Link>
+            <Link href="/cgv" className="hover:text-gray-600">
+              CGV
             </Link>
           </div>
         </div>
