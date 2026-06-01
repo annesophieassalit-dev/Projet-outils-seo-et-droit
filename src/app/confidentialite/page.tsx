@@ -89,28 +89,35 @@ export default function ConfidentialitePage() {
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Sous-traitants et hébergement</h2>
           <div className="text-sm text-gray-600 space-y-3">
-            <p>Visible & Conforme fait appel aux sous-traitants suivants :</p>
+            <p>
+              Pour assurer le fonctionnement du Service, Visible & Conforme fait appel à des prestataires techniques
+              tiers agissant en qualité de sous-traitants :
+            </p>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li>
-                <strong className="text-gray-700">Supabase</strong> (base de données et authentification) —{" "}
-                hébergé en Europe (région EU West)
+                <strong className="text-gray-700">Hébergement et infrastructure</strong> —
+                prestataires dont les serveurs sont situés en Europe ou aux États-Unis,
+                dans le cadre de Clauses Contractuelles Types approuvées par la Commission européenne.
               </li>
               <li>
-                <strong className="text-gray-700">Vercel</strong> (hébergement de l&apos;application) —
-                Vercel Inc., 440 N Barranca Ave, Covina, CA, États-Unis
+                <strong className="text-gray-700">Base de données et authentification</strong> —
+                infrastructure hébergée en Europe.
               </li>
               <li>
-                <strong className="text-gray-700">Anthropic</strong> (génération de contenus IA) —
-                les textes soumis au générateur transitent par l&apos;API Anthropic pour produire les suggestions
+                <strong className="text-gray-700">Traitement des paiements</strong> —
+                établissement financier européen agréé, certifié PCI-DSS. Aucune donnée bancaire
+                n&apos;est stockée par Visible & Conforme.
               </li>
               <li>
-                <strong className="text-gray-700">Stripe</strong> (paiement) —
-                Stripe Payments Europe Ltd, 1 Grand Canal Street Lower, Dublin 2, Irlande
+                <strong className="text-gray-700">Génération de contenus par intelligence artificielle</strong> —
+                les textes soumis au générateur sont transmis à un prestataire tiers aux fins de production
+                des suggestions. Ces données transitent vers des serveurs situés hors de l&apos;Union européenne,
+                dans le cadre de Clauses Contractuelles Types.
               </li>
             </ul>
             <p>
-              Chacun de ces prestataires est soumis à des obligations contractuelles de confidentialité et de
-              sécurité conformes au RGPD.
+              Chaque prestataire est lié par un accord de traitement des données (DPA) garantissant
+              la confidentialité et la sécurité des informations traitées, conformément au RGPD.
             </p>
           </div>
         </section>
