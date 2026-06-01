@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
+import BlogHeader from "@/components/blog/BlogHeader";
 
 export const metadata: Metadata = {
   title: "Blog — Conseils SEO et conformité pour praticiens bien-être",
@@ -32,24 +33,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-gray-100 bg-white/95 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="font-bold text-zen-950">
-            Visible &amp; Conforme
-          </Link>
-          <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-500">
-            <Link href="/blog" className="text-zen-700 font-medium">
-              Blog
-            </Link>
-          </nav>
-          <Link
-            href="/inscription"
-            className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg font-medium hover:bg-coral-600 transition-colors"
-          >
-            Démarrer pour 1€
-          </Link>
-        </div>
-      </header>
+      <BlogHeader />
 
       <main className="max-w-5xl mx-auto px-4 py-16">
         {/* Hero */}
