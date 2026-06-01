@@ -64,16 +64,38 @@ Beaucoup de praticiens croient qu'ils doivent :
 - **S'enregistrer auprès de la CNIL** → Non, cet enregistrement préalable a été supprimé avec le RGPD.
 - **Rédiger un registre de traitement ultra-détaillé** → Oui, vous devez en tenir un, mais sous une forme simplifiée pour les petites structures. Un tableur avec vos types de traitement suffit.
 
-## La donnée de santé : un cas particulier
+## La donnée de santé : un cas particulier (article 9 RGPD)
 
-Les notes que vous prenez sur vos clients (motifs de consultation, difficultés évoquées, évolution...) peuvent constituer des **données de santé**, une catégorie spécialement protégée par le RGPD.
+Les notes que vous prenez sur vos clients (motifs de consultation, difficultés évoquées, évolution...) peuvent constituer des **données de santé** au sens de l'article 9 du RGPD — une catégorie spécialement protégée qui exige un niveau de sécurité renforcé et un **consentement explicite** de la personne concernée pour être traitée.
 
 Cela ne signifie pas que vous ne pouvez pas les tenir — mais vous devez :
-- Les conserver de manière sécurisée
-- Ne pas les partager sans consentement explicite
-- Permettre à vos clients de demander leur accès ou leur suppression
+- Les conserver de manière sécurisée (appareil protégé par mot de passe, pas de cloud non sécurisé)
+- Ne pas les partager sans consentement explicite écrit
+- Permettre à vos clients de demander leur accès, rectification ou suppression
+- Les mentionner dans votre **registre des activités de traitement (RAT)**
 
 En pratique : gardez vos notes de séance sur un carnet ou un ordinateur protégé, et ne les partagez avec personne (sauf obligation légale).
+
+## Votre registre des activités de traitement (RAT)
+
+Toute organisation qui traite des données personnelles doit tenir un registre des activités de traitement. Pour un praticien bien-être indépendant, ce registre peut prendre la forme d'un simple tableau qui liste :
+
+- La nature des données collectées (fiches clients, emails, RDV...)
+- La finalité du traitement (gestion des séances, newsletter, facturation...)
+- La durée de conservation
+- Les personnes ou outils qui y ont accès
+
+Ce document n'est pas à envoyer à la CNIL, mais doit être disponible sur demande en cas de contrôle.
+
+## Vos outils de prise de RDV sont-ils conformes RGPD ?
+
+Calendly, Doctolib, Koalendar, Google Agenda partagé... ces outils traitent les données de vos clients en votre nom. Pour être conforme, vous devez :
+
+- Vérifier que l'outil dispose d'un **accord de traitement des données (DPA)** accessible
+- Préférer des serveurs hébergés en Europe quand c'est possible
+- Informer vos clients que leurs données transitent par cet outil dans votre politique de confidentialité
+
+Doctolib et Calendly disposent de DPA conformes. Un Google Agenda non configuré pour le partage professionnel est à éviter pour les données clients.
 
 ## Par où commencer si vous partez de zéro ?
 

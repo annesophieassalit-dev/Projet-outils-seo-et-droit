@@ -35,11 +35,19 @@ Poser un "diagnostic" à votre client même informel ("vous avez un problème de
 **Dans vos supports de communication :**
 Témoignages non nuancés ("grâce à X, ma maladie a disparu"), articles de blog qui affirment qu'une technique guérit une pathologie.
 
+## Les autres infractions connexes à connaître
+
+L'exercice illégal de la médecine (article L. 4161-1) n'est pas le seul risque. Deux autres textes s'appliquent fréquemment aux praticiens bien-être :
+
+**L'article L. 121-2 du Code de la consommation** — les pratiques commerciales trompeuses. Une **allégation thérapeutique** (promettre de soigner, guérir ou traiter une maladie sans les qualifications correspondantes) constitue une pratique commerciale trompeuse, même sans intention de tromper. Les sanctions peuvent atteindre 300 000 € d'amende.
+
+**La MIVILUDES** — la Mission interministérielle de vigilance et de lutte contre les dérives sectaires publie régulièrement des rapports sur les pratiques de santé non conventionnelles. Un signalement à la MIVILUDES peut déclencher une enquête et des poursuites, indépendamment de la DGCCRF.
+
 ## Les erreurs les plus courantes sur les sites de praticiens
 
 Les signalements ne viennent pas toujours d'un concurrent malveillant ou d'un contrôle inopiné. Ils viennent parfois d'un client insatisfait, d'un médecin qui tombe sur votre site, ou d'une autorité qui réalise une veille sur les pratiques de santé non conventionnelles.
 
-Les formulations les plus problématiques appartiennent à des catégories identifiables : verbes de traitement, vocabulaire de diagnostic, promesses de guérison, titres réservés. Ce ne sont pas des détails — ce sont des signaux que les autorités compétentes sont formées à repérer.
+Les formulations les plus problématiques appartiennent à des catégories identifiables : verbes de traitement, vocabulaire de diagnostic, **allégations thérapeutiques**, promesses de guérison, titres réservés. Ce ne sont pas des détails — ce sont des signaux que les autorités compétentes (DGCCRF, ordres professionnels, MIVILUDES) sont formées à repérer.
 
 ## Comment se protéger sans brider sa communication
 

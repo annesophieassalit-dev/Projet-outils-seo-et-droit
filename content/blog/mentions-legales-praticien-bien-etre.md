@@ -1,6 +1,6 @@
 ---
-title: "Mentions légales sophrologue et thérapeute bien-être : ce que la loi impose"
-description: "Quelles mentions légales obligatoires sur votre site de sophrologue, naturopathe ou hypnothérapeute ? Ce que dit la loi, ce que vous risquez sans elles, et comment vous conformer."
+title: "Mentions légales sophrologue, naturopathe, hypnothérapeute : guide complet 2026"
+description: "Mentions légales obligatoires pour un praticien bien-être : ce que la LCEN impose, ce que vous risquez sans elles, et la structure complète à mettre en place sur votre site."
 date: "2026-05-20"
 slug: "mentions-legales-praticien-bien-etre"
 tags: ["Juridique", "Site internet", "Conformité"]
@@ -83,7 +83,20 @@ Les textes, images et contenus de ce site sont protégés par le droit d'auteur.
 Toute reproduction est interdite sans autorisation préalable.
 ```
 
-## La politique de confidentialité : séparée mais tout aussi obligatoire
+## La médiation de la consommation : une obligation souvent oubliée
+
+Si vous exercez auprès de particuliers (clients non professionnels), vous avez une obligation supplémentaire souvent ignorée : **informer vos clients de l'existence d'un médiateur de la consommation** auquel ils peuvent recourir gratuitement en cas de litige.
+
+Cette obligation, issue de l'ordonnance du 20 août 2015, s'applique à tous les professionnels qui vendent des biens ou des services à des particuliers. Elle concerne donc la quasi-totalité des sophrologues, naturopathes et hypnothérapeutes.
+
+Vous devez mentionner vos coordonnées de médiateur :
+- Sur votre site internet
+- Dans vos conditions générales de vente
+- Dans vos réponses écrites en cas de réclamation
+
+Le médiateur pour les professionnels libéraux du bien-être est généralement le **Médiateur de la consommation de votre fédération professionnelle**, ou à défaut un médiateur sectoriel référencé sur le site de la Commission d'évaluation et de contrôle de la médiation de la consommation (CECMC).
+
+
 
 Les mentions légales ne suffisent pas si vous collectez des données personnelles (formulaire de contact, newsletter, prise de rendez-vous en ligne). Le **RGPD** impose alors une politique de confidentialité distincte, qui explique :
 - Quelles données vous collectez
