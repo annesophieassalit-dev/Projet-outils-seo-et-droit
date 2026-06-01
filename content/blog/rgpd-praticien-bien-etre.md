@@ -1,6 +1,6 @@
 ---
-title: "RGPD et praticiens bien-être : ce que vous devez vraiment faire"
-description: "Formulaire de contact, prise de RDV en ligne, newsletter : comment un sophrologue ou naturopathe se met en conformité RGPD sans se noyer dans le juridique."
+title: "RGPD pour sophrologue et thérapeute bien-être : guide pratique"
+description: "Formulaire de contact, newsletter, prise de RDV en ligne : ce que le RGPD impose à un sophrologue ou naturopathe. Guide pratique sans jargon pour se mettre en conformité."
 date: "2026-05-14"
 slug: "rgpd-praticien-bien-etre"
 tags: ["RGPD", "Juridique", "Données personnelles"]

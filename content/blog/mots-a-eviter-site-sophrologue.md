@@ -1,6 +1,6 @@
 ---
-title: "Les mots à éviter sur votre site de sophrologue (et comment les remplacer)"
-description: "Certaines formulations courantes sur les sites de soprologues peuvent créer des risques juridiques. Voici les catégories à surveiller et comment adapter votre communication."
+title: "Que mettre sur son site de sophrologue : communication sans risque juridique"
+description: "Vous créez ou retravaillez votre site de sophrologue ? Voici ce qu'il faut dire, ce qu'il vaut mieux éviter et comment présenter votre activité pour rester visible sur Google."
 date: "2026-05-26"
 slug: "mots-a-eviter-site-sophrologue"
 tags: ["Conformité", "Sophrologue", "Communication"]
