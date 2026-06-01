@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description:
     "Communication pour praticiens bien-être. Visible & Conforme analyse vos contenus pour repérer les formulations à risque et générer des textes conformes, visibles sur Google.",
+  verification: {
+    google: "qf5PjwyLK-Yxmklaqxemx6l8OKbVgu97CKt1stQvXto",
+  },
   keywords: [
     "conformité juridique bien-être",
     "risque exercice illégal médecine",
