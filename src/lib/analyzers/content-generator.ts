@@ -32,7 +32,7 @@ Posé, professionnel, humain, crédible. Le contenu doit inspirer confiance, pas
 // ─── Prompts par type de contenu ──────────────────────────────────────────────
 
 function buildPrompt(input: GeneratorInput): string {
-  const { contentType, profession, themes, specificites, tone, intention } = input;
+  const { contentType, profession, themes, specificites, tone, intention, targetKeyword } = input;
 
   const toneDescriptions: Record<string, string> = {
     professionnel: "professionnel et posé, sobre, inspire la crédibilité",
@@ -79,12 +79,13 @@ Optimisation SEO + clarté :
     article_blog: `Rédige un article de blog COMPLET et SEO-friendly pour ${profession}.
 
 Thèmes : ${themesText}
+${targetKeyword ? `Requête SEO cible : "${targetKeyword}" — intègre-la naturellement dans le H1, la méta-description et au moins un H2. C'est la recherche Google que les futurs clients tapent pour trouver cet article.` : ""}
 Longueur obligatoire : 850–1000 mots rédigés (pas un plan, pas un résumé — du texte complet)
 
 Structure sémantique SEO à respecter — indique chaque balise Hn explicitement :
 
-H1 (titre principal) : accrocheur, contient le mot-clé principal de la profession, 55–65 caractères
-Méta-description suggérée : 1 phrase de 140–155 caractères, résume l'article et donne envie de cliquer
+H1 (titre principal) : accrocheur, contient ${targetKeyword ? `la requête cible "${targetKeyword}"` : "le mot-clé principal de la profession"}, 55–65 caractères
+Méta-description suggérée : 1 phrase de 140–155 caractères, ${targetKeyword ? `contient la requête cible "${targetKeyword}", ` : ""}résume l'article et donne envie de cliquer
 
 Introduction (sans balise) : 80–100 mots — situation vécue par le lecteur, accroche empathique, annonce du plan. Pas de promesse de résultat.
 

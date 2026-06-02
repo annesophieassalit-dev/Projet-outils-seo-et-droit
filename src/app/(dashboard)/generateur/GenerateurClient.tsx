@@ -42,6 +42,41 @@ const THEMES = [
   { id: "enfants", label: "Accompagnement enfants" },
 ];
 
+const THEME_KEYWORD_SUGGESTIONS: Record<string, string[]> = {
+  stress:      ["gérer le stress au quotidien", "sophrologie et gestion du stress", "techniques naturelles contre l'anxiété", "accompagnement stress et surmenage"],
+  sommeil:     ["mieux dormir naturellement", "sophrologie pour l'insomnie", "retrouver un sommeil de qualité", "troubles du sommeil solutions"],
+  fatigue:     ["fatigue chronique accompagnement", "retrouver de l'énergie naturellement", "épuisement et vitalité", "comment se sentir moins fatigué"],
+  emotions:    ["gestion des émotions adultes", "accompagnement émotionnel bien-être", "mieux gérer ses émotions", "hypnose et régulation émotionnelle"],
+  confiance:   ["retrouver confiance en soi", "manque d'estime de soi accompagnement", "développer sa confiance", "sophrologie estime de soi"],
+  douleurs:    ["tensions corporelles relaxation", "douleurs chroniques accompagnement naturel", "soulager les tensions musculaires", "réflexologie et douleurs"],
+  digestion:   ["bien-être digestif naturopathie", "troubles digestifs solutions naturelles", "améliorer sa digestion", "naturopathe et digestion"],
+  burn_out:    ["accompagnement burn-out", "se reconstruire après un burn-out", "épuisement professionnel et bien-être", "burn-out et retour au travail"],
+  parentalite: ["accompagnement parentalité et stress", "sophrologie pour les parents", "bien-être parental", "gérer le stress avec des enfants"],
+  transition:  ["accompagnement transitions de vie", "changement de vie et bien-être", "traverser une reconversion", "sophrologie et transitions"],
+  feminite:    ["accompagnement cycle féminin", "bien-être féminin naturel", "santé hormonale et naturopathie", "règles douloureuses accompagnement"],
+  enfants:     ["sophrologie enfants anxieux", "accompagnement enfants et ados", "gestion du stress chez les enfants", "bien-être enfant et famille"],
+};
+
+function getKeywordSuggestions(themes: string[], profession: string): string[] {
+  if (themes.length === 0) return [];
+  const base = themes.flatMap((t) => THEME_KEYWORD_SUGGESTIONS[t] ?? []).slice(0, 4);
+  // Si la profession contient un mot reconnu, proposer aussi une variante avec profession
+  const profLower = profession.toLowerCase();
+  const profWord =
+    profLower.includes("sophro") ? "sophrologie" :
+    profLower.includes("naturo") ? "naturopathie" :
+    profLower.includes("hypno") ? "hypnothérapie" :
+    profLower.includes("réflex") || profLower.includes("reflex") ? "réflexologie" :
+    profLower.includes("kiné") || profLower.includes("kine") ? "kinésiologie" :
+    profLower.includes("coach") ? "coaching bien-être" :
+    null;
+  if (profWord && themes[0]) {
+    const themeLabel = THEMES.find((t) => t.id === themes[0])?.label.split(" ")[0].toLowerCase() ?? "";
+    if (themeLabel) base.unshift(`${profWord} et ${themeLabel}`);
+  }
+  return base.slice(0, 4);
+}
+
 const TONES = [
   { id: "chaleureux", label: "Chaleureux", description: "Humain et proche" },
   { id: "professionnel", label: "Professionnel", description: "Sobre et crédible" },
@@ -180,6 +215,7 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
   const [variant, setVariant] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [upgradeRequired, setUpgradeRequired] = useState(false);
+  const [selectedKeyword, setSelectedKeyword] = useState<string>("");
   const resultRef = useRef<HTMLDivElement>(null);
 
   function toggleTheme(id: string) {
@@ -212,6 +248,7 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
           tone,
           intention,
           specificites: specificites || undefined,
+          targetKeyword: contentType === "article_blog" && selectedKeyword ? selectedKeyword : undefined,
         }),
       });
       const data = await res.json();
@@ -380,6 +417,52 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
               ))}
             </div>
           </div>
+
+          {/* Requête SEO cible — uniquement pour article_blog */}
+          {contentType === "article_blog" && (
+            <div className="bg-white rounded-2xl border border-zen-200 p-5 space-y-3">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 flex items-center gap-1.5">
+                  <span>🎯</span> Requête SEO cible
+                </h3>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  La recherche Google que vos futurs clients tapent. Choisissez-en une — ou écrivez la vôtre.
+                </p>
+              </div>
+
+              {/* Suggestions automatiques */}
+              {selectedThemes.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {getKeywordSuggestions(selectedThemes, profession).map((kw) => (
+                    <button
+                      key={kw}
+                      onClick={() => setSelectedKeyword(kw === selectedKeyword ? "" : kw)}
+                      className={`px-3 py-1.5 rounded-full text-xs border transition-colors ${
+                        selectedKeyword === kw
+                          ? "bg-zen-700 text-white border-zen-700"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-zen-400"
+                      }`}
+                    >
+                      {kw}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Champ libre */}
+              <input
+                type="text"
+                value={selectedKeyword}
+                onChange={(e) => setSelectedKeyword(e.target.value)}
+                placeholder="Ex : sophrologie pour mieux dormir à Lyon…"
+                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zen-600"
+              />
+
+              {selectedThemes.length === 0 && (
+                <p className="text-xs text-amber-600">Sélectionnez au moins un thème pour voir les suggestions.</p>
+              )}
+            </div>
+          )}
 
           {/* Ton */}
           <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-3">

@@ -51,6 +51,7 @@ export interface GeneratorInput {
   specificites?: string;  // infos supplémentaires libres
   tone?: "professionnel" | "chaleureux" | "sobre";
   intention?: "faire_connaitre" | "inviter_contact" | "expliquer";
+  targetKeyword?: string; // requête SEO cible pour les articles de blog
 }
 
 export interface GeneratedContent {
