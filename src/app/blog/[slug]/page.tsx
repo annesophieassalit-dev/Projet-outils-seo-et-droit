@@ -5,6 +5,9 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import type { Metadata } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
 
+export const revalidate = 3600;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }

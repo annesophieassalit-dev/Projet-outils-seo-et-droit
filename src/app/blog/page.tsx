@@ -4,6 +4,8 @@ import { ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Blog — Conseils SEO et conformité pour praticiens bien-être",
   description:
