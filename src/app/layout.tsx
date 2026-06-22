@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.visibleetconforme.fr/",
+    images: [
+      {
+        url: "https://www.visibleetconforme.fr/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Visible & Conforme",
+      },
+    ],
   },
 };
 
