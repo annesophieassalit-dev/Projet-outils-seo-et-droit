@@ -182,7 +182,7 @@ export default function InscriptionPage() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Email professionnel
+              Email
             </label>
             <input
               id="email"
