@@ -14,46 +14,13 @@ import {
   ChevronDown,
   Clock,
 } from "lucide-react";
+import HomeHeader from "@/components/HomeHeader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* ─── Navigation ─────────────────────────────────────────────────── */}
-      <header className="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl text-zen-950">Visible & Conforme</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#fonctionnalites" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Fonctionnalités
-            </a>
-            <a href="#pourquoi" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Pourquoi l&apos;utiliser
-            </a>
-            <a href="#tarifs" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Tarifs
-            </a>
-            <a href="#faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              FAQ
-            </a>
-            <Link href="/blog" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Blog
-            </Link>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Link href="/connexion" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              Connexion
-            </Link>
-            <Link
-              href="/inscription"
-              className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-coral-600 transition-colors font-medium"
-            >
-              Démarrer pour 1€
-            </Link>
-          </div>
-        </div>
-      </header>
+      <HomeHeader />
 
       {/* ─── Hero ────────────────────────────────────────────────────────── */}
       <section className="relative pt-28 pb-36 px-4 sm:px-6 bg-gradient-to-br from-white via-zen-50/60 to-white">
@@ -1059,6 +1026,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 }

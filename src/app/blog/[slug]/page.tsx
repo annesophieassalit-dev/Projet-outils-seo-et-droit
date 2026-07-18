@@ -4,6 +4,7 @@ import { getAllPosts, getPostBySlug, renderMarkdown } from "@/lib/blog";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import type { Metadata } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const revalidate = 3600;
 export const dynamicParams = true;
@@ -185,6 +186,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 }

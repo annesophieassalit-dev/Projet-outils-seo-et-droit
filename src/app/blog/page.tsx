@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import BlogHeader from "@/components/blog/BlogHeader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const revalidate = 3600;
 
@@ -175,6 +176,7 @@ export default function BlogPage() {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </div>
   );
 }
