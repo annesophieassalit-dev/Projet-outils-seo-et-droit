@@ -1,6 +1,6 @@
 ---
-title: "Signalement DGCCRF : comment un praticien bien-être peut se retrouver mis en cause"
-description: "Personne ne prévient avant. Pas d'email officiel, pas de délai de grâce. Comment se déclenche un signalement contre un praticien bien-être, et comment l'anticiper."
+title: "Contrôle DGCCRF praticien bien-être : comment ça se déclenche et comment s'y préparer"
+description: "Un contrôle DGCCRF peut viser n'importe quel praticien bien-être — sans préavis. Comment se déclenche une procédure, ce que les agents cherchent, et comment sécuriser sa communication avant qu'il ne soit trop tard."
 date: "2026-08-07"
 slug: "signalement-dgccrf-praticien-bien-etre"
 tags: ["DGCCRF", "Juridique", "Conformité"]

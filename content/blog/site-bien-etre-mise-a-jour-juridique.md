@@ -1,6 +1,6 @@
 ---
-title: "Votre site bien-être a plus de 2 ans : 3 points juridiques à vérifier d'urgence"
-description: "Un site qui vieillit bien techniquement peut vieillir mal juridiquement. Voici les 3 points à vérifier en priorité sur un site de praticien bien-être de plus de 2 ans."
+title: "Obligations légales site sophrologue 2026 : 3 points à vérifier si votre site a plus de 2 ans"
+description: "Mentions légales, politique de confidentialité, formulations : les obligations légales d'un site de praticien bien-être évoluent avec votre activité. Ce qui change quand vous ne relisez plus votre site depuis 2 ans."
 date: "2026-07-27"
 slug: "site-bien-etre-mise-a-jour-juridique"
 tags: ["Site internet", "Juridique", "Conformité"]

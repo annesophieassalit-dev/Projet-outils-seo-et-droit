@@ -1,6 +1,6 @@
 ---
-title: "Comment afficher ses tarifs de sophrologue sur son site (et quoi préciser)"
-description: "Afficher ses tarifs sur son site de sophrologue : obligatoire ou non ? Ce qu'il faut mentionner, comment présenter ses prix sans se compliquer la vie."
+title: "Afficher ses tarifs de sophrologue : obligation légale ou choix stratégique ?"
+description: "Un sophrologue est-il légalement obligé d'afficher ses tarifs ? Ce que dit le droit de la consommation selon votre mode d'exercice, et comment présenter vos prix pour être conforme et convaincant."
 date: "2026-06-22"
 slug: "afficher-tarifs-sophrologue"
 tags: ["Sophrologue", "Site internet", "Juridique"]
