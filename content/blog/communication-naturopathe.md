@@ -1,6 +1,6 @@
 ---
-title: "Comment présenter son activité de naturopathe en ligne sans risque"
-description: "Naturopathe : comment parler de votre activité sur votre site sans vous exposer à un risque juridique ? Les règles de communication à connaître avant de publier."
+title: "Communication naturopathe : présenter son activité en ligne sans risque juridique"
+description: "Naturopathe : quelles formulations utiliser sur votre site, vos réseaux et vos flyers ? Les règles de communication à connaître avant de publier, avec des exemples conformes."
 date: "2026-06-15"
 slug: "communication-naturopathe"
 tags: ["Naturopathe", "Communication", "Conformité"]

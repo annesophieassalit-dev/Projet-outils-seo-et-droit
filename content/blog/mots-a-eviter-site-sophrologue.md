@@ -1,6 +1,6 @@
 ---
-title: "Que mettre sur son site de sophrologue : communication sans risque juridique"
-description: "Vous créez ou retravaillez votre site de sophrologue ? Voici ce qu'il faut dire, ce qu'il vaut mieux éviter et comment présenter votre activité pour rester visible sur Google."
+title: "Mots à éviter sur son site de sophrologue : les formulations à risque et leurs alternatives"
+description: "Sophrologie, naturopathie, hypnose : quels mots vous exposent à la DGCCRF sur votre site ? La liste des formulations à risque et les alternatives conformes prêtes à l'emploi."
 date: "2026-05-26"
 slug: "mots-a-eviter-site-sophrologue"
 tags: ["Conformité", "Sophrologue", "Communication"]

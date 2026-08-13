@@ -1,6 +1,6 @@
 ---
-title: "Rédiger les textes de son site bien-être : le guide page par page"
-description: "Que mettre sur chaque page de son site de sophrologue, naturopathe ou hypnothérapeute ? Un guide page par page pour rédiger des textes qui attirent vos clients et restent dans le cadre légal."
+title: "Rédiger les textes de son site sophrologue ou naturopathe : guide pratique page par page"
+description: "Que mettre sur chaque page de son site de sophrologue, naturopathe ou hypnothérapeute ? Un guide page par page pour rédiger des textes qui attirent vos clients et restent conformes."
 date: "2026-07-03"
 slug: "rediger-textes-site-praticien-bien-etre"
 tags: ["Site internet", "Communication", "Contenu"]

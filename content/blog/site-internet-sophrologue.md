@@ -1,6 +1,6 @@
 ---
-title: "Créer son site internet de sophrologue : les 7 points essentiels"
-description: "Que mettre sur son site de sophrologue pour attirer des clients et rester dans les clous ? Les 7 éléments indispensables, de la page d'accueil aux mentions légales."
+title: "Création site internet sophrologue : les 7 points essentiels en 2026"
+description: "Créer son site internet de sophrologue en 2026 : les 7 éléments indispensables, des pages obligatoires aux formulations qui ne vous exposent pas à un contrôle DGCCRF."
 date: "2026-06-08"
 slug: "site-internet-sophrologue"
 tags: ["Sophrologue", "Site internet", "Communication"]

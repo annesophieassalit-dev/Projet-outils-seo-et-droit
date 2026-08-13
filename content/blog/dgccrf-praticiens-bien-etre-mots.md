@@ -1,6 +1,6 @@
 ---
-title: "DGCCRF et praticiens bien-être : pourquoi vos mots comptent plus que vos intentions"
-description: "La DGCCRF ne contrôle pas vos intentions. Elle contrôle vos mots. Ce que les praticiens bien-être doivent savoir sur les contrôles éditoriaux et comment s'y préparer."
+title: "DGCCRF praticiens bien-être : les mots qui déclenchent un contrôle"
+description: "La DGCCRF ne contrôle pas vos intentions. Elle contrôle vos mots. Ce que les praticiens bien-être doivent savoir sur les contrôles éditoriaux, les termes surveillés et comment s'y préparer."
 date: "2026-07-13"
 slug: "dgccrf-praticiens-bien-etre-mots"
 tags: ["DGCCRF", "Conformité", "Juridique"]

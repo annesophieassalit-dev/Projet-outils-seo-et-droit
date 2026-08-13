@@ -1,6 +1,6 @@
 ---
-title: "Audit conformité site bien-être : les points que personne ne vérifie vraiment"
-description: "La plupart des praticiens bien-être pensent que leur site est conforme. La réalité d'un premier audit est souvent différente. Voici les points à vérifier en priorité."
+title: "Audit conformité site bien-être : les points oubliés qui exposent au contrôle DGCCRF"
+description: "La plupart des praticiens bien-être pensent que leur site est conforme. La réalité d'un premier audit révèle souvent le contraire. Les points à vérifier en priorité avant un contrôle DGCCRF."
 date: "2026-07-20"
 slug: "audit-conformite-site-bien-etre"
 tags: ["Conformité", "Site internet", "Audit"]

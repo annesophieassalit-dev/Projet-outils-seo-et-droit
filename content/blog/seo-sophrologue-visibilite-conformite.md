@@ -1,6 +1,6 @@
 ---
-title: "SEO pour sophrologue : pourquoi la visibilité sans conformité est un risque en 2026"
-description: "Être bien référencé sur Google est une victoire. Mais plus vous êtes visible, plus vos contenus sont lisibles — y compris par ceux qui surveillent ce que les praticiens bien-être publient."
+title: "SEO sophrologue 2026 : être visible sur Google sans risque juridique"
+description: "Être bien référencé sur Google amplifie votre activité — et votre exposition. Ce que les sophrologues et praticiens bien-être doivent savoir pour combiner visibilité et conformité en 2026."
 date: "2026-07-31"
 slug: "seo-sophrologue-visibilite-conformite"
 tags: ["SEO", "Sophrologue", "Conformité"]

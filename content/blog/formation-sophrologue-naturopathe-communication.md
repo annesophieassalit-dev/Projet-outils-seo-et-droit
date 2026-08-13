@@ -1,6 +1,6 @@
 ---
-title: "Ce qu'on ne vous apprend pas en formation de sophrologue ou naturopathe"
-description: "En formation, on vous enseigne votre pratique. Rarement votre communication. Pourtant, ce que vous avez le droit de dire — et comment le dire — est une compétence professionnelle à part entière."
+title: "Formation sophrologue ou naturopathe : ce qu'on ne vous dit pas sur la communication légale"
+description: "La communication conforme ne fait pas partie des programmes de formation. Pourtant, ce que vous pouvez dire — et comment le dire — conditionne directement votre exposition juridique."
 date: "2026-07-24"
 slug: "formation-sophrologue-naturopathe-communication"
 tags: ["Formation", "Communication", "Conformité"]

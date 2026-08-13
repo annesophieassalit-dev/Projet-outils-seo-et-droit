@@ -1,6 +1,6 @@
 ---
 title: "Un sophrologue peut-il afficher des témoignages clients sur son site ?"
-description: "Témoignages clients et avis sur le site d'un sophrologue ou naturopathe : ce qui est autorisé, ce qui est risqué, et comment les présenter pour qu'ils travaillent pour vous."
+description: "Avis clients et témoignages sur le site d'un sophrologue ou naturopathe : ce que la loi autorise, ce qui est risqué, et comment les formuler pour rester conforme et convaincant."
 date: "2026-08-17"
 slug: "temoignages-clients-sophrologue"
 tags: ["Sophrologue", "Communication", "Juridique"]
