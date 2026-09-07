@@ -14,7 +14,7 @@ Pour les sophrologues, naturopathes et hypnothérapeutes, la responsabilité civ
 
 Pour les sophrologues, naturopathes, hypnothérapeutes et praticiens bien-être en général : **il n'existe pas de texte de loi qui impose spécifiquement une assurance professionnelle** pour exercer ces activités.
 
-À la différence des professions de santé réglementées — médecins, kinésithérapeutes, infirmiers — qui ont une obligation légale d'assurance en responsabilité civile professionnelle, les praticiens bien-être exercent dans un cadre non réglementé où cette obligation n'est pas formalisée par la loi.
+À la différence des professions de santé réglementées, médecins, kinésithérapeutes, infirmiers, qui ont une obligation légale d'assurance en responsabilité civile professionnelle, les praticiens bien-être exercent dans un cadre non réglementé où cette obligation n'est pas formalisée par la loi.
 
 En revanche, certains organismes de formation ou certaines fédérations professionnelles l'exigent de leurs membres. Et surtout, l'absence d'assurance n'est pas une protection : c'est une exposition directe en cas d'incident.
 
@@ -32,9 +32,9 @@ C'est le point que beaucoup de praticiens ignorent.
 
 **La RCP ne couvre pas les sanctions liées à votre communication.**
 
-Si vous faites l'objet d'une procédure de la DGCCRF pour pratiques commerciales trompeuses — parce que votre site contient des allégations qui promettent des résultats médicaux — ce n'est pas votre assurance professionnelle qui intervient. Ce sont vos propres ressources qui absorbent les frais de procédure, les éventuelles amendes, et le temps perdu.
+Si vous faites l'objet d'une procédure de la DGCCRF pour pratiques commerciales trompeuses, parce que votre site contient des allégations qui promettent des résultats médicaux, ce n'est pas votre assurance professionnelle qui intervient. Ce sont vos propres ressources qui absorbent les frais de procédure, les éventuelles amendes, et le temps perdu.
 
-De même, si un client porte plainte en s'appuyant sur des textes de votre site qui semblaient promettre un résultat précis, la RCP peut intervenir sur le fond du litige — mais pas sur la responsabilité éditoriale de votre communication.
+De même, si un client porte plainte en s'appuyant sur des textes de votre site qui semblaient promettre un résultat précis, la RCP peut intervenir sur le fond du litige, mais pas sur la responsabilité éditoriale de votre communication.
 
 **La RCP ne remplace pas la vigilance sur vos contenus publiés.**
 
@@ -50,7 +50,7 @@ Les deux protections répondent à des risques différents. Elles ne se substitu
 
 Plusieurs assureurs proposent des contrats spécialement conçus pour les praticiens bien-être. Des courtiers spécialisés dans le secteur des thérapeutes et professions libérales connaissent les spécificités de ces activités.
 
-Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclarée — certains contrats excluent des pratiques spécifiques ou conditionnent la couverture à une certification reconnue.
+Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclarée, certains contrats excluent des pratiques spécifiques ou conditionnent la couverture à une certification reconnue.
 
 ## Questions fréquentes
 
@@ -74,7 +74,7 @@ Oui, les deux protections répondent à des risques distincts. La RCP protège c
 
 L'assurance protège contre les incidents. La conformité de votre communication protège contre les procédures liées à ce que vous publiez.
 
-**Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à un signalement ou à une procédure — indépendamment de votre couverture assurantielle.
+**Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à un signalement ou à une procédure, indépendamment de votre couverture assurantielle.
 
 [Analyser mon site →](/inscription)
 

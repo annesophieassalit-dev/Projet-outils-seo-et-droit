@@ -6,17 +6,17 @@ slug: "site-internet-coach-bien-etre"
 tags: ["Coach bien-être", "Site internet", "Communication"]
 ---
 
-Le coaching bien-être connaît une expansion rapide, portée par une demande croissante d'accompagnement dans les transitions de vie, la gestion du stress et le développement personnel. Et comme pour toutes les pratiques du secteur, la question du site internet — ce qu'on y met, comment on le présente — est centrale.
+Le coaching bien-être connaît une expansion rapide, portée par une demande croissante d'accompagnement dans les transitions de vie, la gestion du stress et le développement personnel. Et comme pour toutes les pratiques du secteur, la question du site internet, ce qu'on y met, comment on le présente, est centrale.
 
 ## Le coaching bien-être : un titre non protégé
 
-Contrairement à "médecin" ou "psychologue", le titre de "coach bien-être" n'est pas protégé par la loi. N'importe qui peut se présenter ainsi. C'est une liberté — et c'est aussi là que naissent les risques.
+Contrairement à "médecin" ou "psychologue", le titre de "coach bien-être" n'est pas protégé par la loi. N'importe qui peut se présenter ainsi. C'est une liberté, et c'est aussi là que naissent les risques.
 
-Justement parce que le titre est non protégé, vos clients ne savent pas exactement ce qu'ils peuvent attendre de vous. Votre site doit donc être particulièrement précis sur ce que vous proposez — et ce que vous ne proposez pas.
+Justement parce que le titre est non protégé, vos clients ne savent pas exactement ce qu'ils peuvent attendre de vous. Votre site doit donc être particulièrement précis sur ce que vous proposez, et ce que vous ne proposez pas.
 
 ## Ce qui distingue la communication d'un coach de celle d'un thérapeute
 
-Un coach bien-être travaille sur les comportements, les habitudes et les ressources de ses clients. Il n'accompagne pas des pathologies, ne pose pas de diagnostic, ne traite pas de troubles. Cette distinction — simple dans son principe — est souvent floue dans la communication réelle des coachs.
+Un coach bien-être travaille sur les comportements, les habitudes et les ressources de ses clients. Il n'accompagne pas des pathologies, ne pose pas de diagnostic, ne traite pas de troubles. Cette distinction, simple dans son principe, est souvent floue dans la communication réelle des coachs.
 
 Le vocabulaire du coaching peut rapidement glisser vers le vocabulaire thérapeutique : "aider les personnes en difficulté", "travailler sur les blocages", "surmonter les traumatismes". Ces formulations ne sont pas toutes problématiques, mais certaines franchissent une ligne que le cadre juridique trace clairement.
 
@@ -24,13 +24,13 @@ Le vocabulaire du coaching peut rapidement glisser vers le vocabulaire thérapeu
 
 ### 1. La page d'accueil
 
-Elle doit répondre à une question précise : pourquoi vous, pour qui, pour quoi faire. Ne commencez pas par une définition du coaching ou par votre biographie — commencez par l'intention de votre visiteur.
+Elle doit répondre à une question précise : pourquoi vous, pour qui, pour quoi faire. Ne commencez pas par une définition du coaching ou par votre biographie, commencez par l'intention de votre visiteur.
 
-Une page d'accueil efficace identifie le profil de vos clients idéaux et décrit le changement qu'ils vivent après avoir travaillé avec vous — dans un registre d'expérience, pas de résultat garanti.
+Une page d'accueil efficace identifie le profil de vos clients idéaux et décrit le changement qu'ils vivent après avoir travaillé avec vous, dans un registre d'expérience, pas de résultat garanti.
 
 ### 2. La page "À propos"
 
-C'est ici que vous présentez votre parcours, vos formations, vos certifications. Mentionnez précisément votre titre et vos accréditations — certifications ICF, école de coaching, formation spécialisée.
+C'est ici que vous présentez votre parcours, vos formations, vos certifications. Mentionnez précisément votre titre et vos accréditations, certifications ICF, école de coaching, formation spécialisée.
 
 Évitez les titres auto-proclamés : "spécialiste du bonheur", "expert en épanouissement", "guérisseur des âmes". Même avec une intention poétique, ces formulations peuvent créer une attente excessive.
 
@@ -42,11 +42,11 @@ C'est sur cette page que les formulations les plus exposées apparaissent. La fr
 
 ### 4. Les témoignages
 
-Les retours clients sont parmi les éléments les plus décisifs pour convaincre un nouveau visiteur. Un coach bien-être peut tout à fait en afficher — avec les précautions habituelles : témoignages réels, non modifiés substantiellement, exprimés comme des expériences personnelles plutôt que comme des garanties de résultats.
+Les retours clients sont parmi les éléments les plus décisifs pour convaincre un nouveau visiteur. Un coach bien-être peut tout à fait en afficher, avec les précautions habituelles : témoignages réels, non modifiés substantiellement, exprimés comme des expériences personnelles plutôt que comme des garanties de résultats.
 
 ### 5. Les pages légales
 
-Mentions légales, politique de confidentialité, CGV si vous vendez en ligne : ces pages sont obligatoires. Elles sont aussi l'occasion de clarifier le cadre de vos accompagnements — en particulier la clause de limitation de responsabilité qui précise que votre coaching ne se substitue pas à un suivi médical ou psychologique.
+Mentions légales, politique de confidentialité, CGV si vous vendez en ligne : ces pages sont obligatoires. Elles sont aussi l'occasion de clarifier le cadre de vos accompagnements, en particulier la clause de limitation de responsabilité qui précise que votre coaching ne se substitue pas à un suivi médical ou psychologique.
 
 ## Les formulations à surveiller dans le coaching bien-être
 
@@ -59,7 +59,7 @@ Le coaching bien-être est un secteur où certains registres de vocabulaire sont
 
 ## Si vous travaillez aussi avec des entreprises
 
-Le coaching d'entreprise obéit à des règles similaires. Si vous proposez des prestations de coaching aux professionnels (gestion du stress au travail, accompagnement des équipes), vos CGV sont obligatoires dès que votre client les demande — et les mêmes règles sur les allégations s'appliquent.
+Le coaching d'entreprise obéit à des règles similaires. Si vous proposez des prestations de coaching aux professionnels (gestion du stress au travail, accompagnement des équipes), vos CGV sont obligatoires dès que votre client les demande, et les mêmes règles sur les allégations s'appliquent.
 
 ## Avant de mettre votre site en ligne
 

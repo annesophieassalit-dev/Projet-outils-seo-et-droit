@@ -6,31 +6,31 @@ slug: "massage-bien-etre-communication-site-interdit"
 tags: ["Massage", "Communication", "Juridique"]
 ---
 
-Un praticien en massage bien-être peut décrire ses séances en termes de détente, de relâchement des tensions et de mieux-être global. Il ne peut en revanche pas utiliser un vocabulaire médical — "traitement", "thérapeutique", "rééducation" — ni affirmer soigner des pathologies. Cette limite tient à la frontière légale entre la pratique de bien-être et l'acte médical réservé aux professionnels de santé.
+Un praticien en massage bien-être peut décrire ses séances en termes de détente, de relâchement des tensions et de mieux-être global. Il ne peut en revanche pas utiliser un vocabulaire médical, "traitement", "thérapeutique", "rééducation", ni affirmer soigner des pathologies. Cette limite tient à la frontière légale entre la pratique de bien-être et l'acte médical réservé aux professionnels de santé.
 
 > **En bref :** Sur votre site, restez dans le registre de la détente et du confort ; les termes médicaux comme "thérapeutique", "traitement" ou "rééducation" exposent un praticien non médical à une procédure pour pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation.
 
 ## Pourquoi la communication est particulièrement sensible pour les masseurs bien-être
 
-Le massage est un terme qui couvre deux réalités juridiquement très différentes : l'acte médical (réservé aux masseurs-kinésithérapeutes) et la pratique de bien-être (ouverte aux praticiens non médicaux). Cette frontière est floue dans l'esprit du grand public — et c'est précisément pour ça que votre communication doit être précise.
+Le massage est un terme qui couvre deux réalités juridiquement très différentes : l'acte médical (réservé aux masseurs-kinésithérapeutes) et la pratique de bien-être (ouverte aux praticiens non médicaux). Cette frontière est floue dans l'esprit du grand public, et c'est précisément pour ça que votre communication doit être précise.
 
-Quand un client lit votre site, il ne fait pas nécessairement la distinction entre "massage thérapeutique" et "massage de relaxation". Si vos textes laissent croire que vous traitez des pathologies ou que vous remplacez un kiné, vous avez créé une confusion — et potentiellement une pratique commerciale trompeuse.
+Quand un client lit votre site, il ne fait pas nécessairement la distinction entre "massage thérapeutique" et "massage de relaxation". Si vos textes laissent croire que vous traitez des pathologies ou que vous remplacez un kiné, vous avez créé une confusion, et potentiellement une pratique commerciale trompeuse.
 
 ## Les termes qui créent un risque
 
-**"Massage thérapeutique"** — c'est l'un des termes les plus répandus dans la communication des masseurs bien-être, et l'un des plus risqués. "Thérapeutique" signifie qui traite une maladie ou un trouble. Utilisé sans qualification médicale, ce terme laisse entendre que vous exercez une activité médicale.
+**"Massage thérapeutique"**, c'est l'un des termes les plus répandus dans la communication des masseurs bien-être, et l'un des plus risqués. "Thérapeutique" signifie qui traite une maladie ou un trouble. Utilisé sans qualification médicale, ce terme laisse entendre que vous exercez une activité médicale.
 
-**"Traitement" des douleurs, tensions, pathologies** — les verbes "traiter", "soigner", "guérir" appliqués à des symptômes ou pathologies identifiées entrent dans le périmètre des actes médicaux réservés.
+**"Traitement" des douleurs, tensions, pathologies**, les verbes "traiter", "soigner", "guérir" appliqués à des symptômes ou pathologies identifiées entrent dans le périmètre des actes médicaux réservés.
 
-**"Drainage lymphatique"** — quand il est présenté comme un acte à visée thérapeutique (traitement des œdèmes post-opératoires, rééducation après cancer du sein), c'est un acte de kinésithérapie. Une séance de drainage présentée comme un soin de bien-être et de drainage naturel est dans une zone différente — mais la formulation compte énormément.
+**"Drainage lymphatique"**, quand il est présenté comme un acte à visée thérapeutique (traitement des œdèmes post-opératoires, rééducation après cancer du sein), c'est un acte de kinésithérapie. Une séance de drainage présentée comme un soin de bien-être et de drainage naturel est dans une zone différente, mais la formulation compte énormément.
 
-**"Rééducation"** — ce terme appartient au champ médical. Un masseur bien-être ne rééduque pas.
+**"Rééducation"**, ce terme appartient au champ médical. Un masseur bien-être ne rééduque pas.
 
-**"Prescription"** ou **"sur ordonnance"** — vous ne recevez pas de clients sur ordonnance médicale. Si vous l'écrivez ou le sous-entendez, vous créez une confusion sur votre statut.
+**"Prescription"** ou **"sur ordonnance"**, vous ne recevez pas de clients sur ordonnance médicale. Si vous l'écrivez ou le sous-entendez, vous créez une confusion sur votre statut.
 
 ## Les formulations sécurisées
 
-La règle est simple : restez dans le registre de la détente, du confort, du bien-être, des sensations — pas du traitement médical.
+La règle est simple : restez dans le registre de la détente, du confort, du bien-être, des sensations, pas du traitement médical.
 
 **Pour décrire vos séances**, privilégiez des formulations comme : "Massage de relaxation pour relâcher les tensions musculaires liées au stress ou à la fatigue", "Séance de massage bien-être pour retrouver un état de détente profonde", "Massage californien pour favoriser la détente du corps et de l'esprit", ou "Accompagnement par le toucher pour soutenir le bien-être global".
 
@@ -42,13 +42,13 @@ La règle est simple : restez dans le registre de la détente, du confort, du bi
 
 La DGCCRF ne regarde pas seulement votre site. Elle peut consulter votre fiche Google Business Profile, vos posts Instagram, votre page Facebook, vos brochures PDF en ligne.
 
-Une formulation risquée sur un post Instagram de 2023 reste accessible et peut être utilisée dans une procédure — même si votre site principal est parfaitement rédigé. La cohérence de l'ensemble de votre communication compte.
+Une formulation risquée sur un post Instagram de 2023 reste accessible et peut être utilisée dans une procédure, même si votre site principal est parfaitement rédigé. La cohérence de l'ensemble de votre communication compte.
 
 ## Questions fréquentes
 
 **Le terme "massage bien-être" est-il suffisant pour éviter tout risque légal ?**
 
-L'intitulé seul ne suffit pas. Si le reste de votre site utilise des termes médicaux — "traitement", "pathologie", "rééducation" — l'étiquette "bien-être" ne protège pas. C'est la cohérence de l'ensemble de votre communication qui est évaluée, et non un seul mot.
+L'intitulé seul ne suffit pas. Si le reste de votre site utilise des termes médicaux, "traitement", "pathologie", "rééducation", l'étiquette "bien-être" ne protège pas. C'est la cohérence de l'ensemble de votre communication qui est évaluée, et non un seul mot.
 
 **La DGCCRF peut-elle contrôler mes réseaux sociaux en plus de mon site ?**
 

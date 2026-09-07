@@ -12,7 +12,7 @@ Proposer des séances de sophrologie en visioconférence crée des obligations l
 
 ## Les séances en ligne sont des contrats à distance
 
-Du point de vue du droit de la consommation, une séance vendue et réalisée à distance — que ce soit par visioconférence, téléphone, ou tout autre moyen numérique — est un **contrat à distance** au sens de l'article L.221-1 du Code de la consommation.
+Du point de vue du droit de la consommation, une séance vendue et réalisée à distance, que ce soit par visioconférence, téléphone, ou tout autre moyen numérique, est un **contrat à distance** au sens de l'article L.221-1 du Code de la consommation.
 
 Ce statut entraîne des obligations supplémentaires par rapport aux séances conclues en cabinet.
 
@@ -22,15 +22,15 @@ Dès lors que vous vendez des prestations à distance à des consommateurs, vous
 
 Ces CGV doivent préciser l'identité du prestataire (nom, SIRET, adresse), la description de la prestation et ses modalités, le tarif TTC avec la mention de franchise de TVA si applicable, les conditions d'annulation et de report, ainsi que les informations sur le droit de rétractation.
 
-Si votre site permet la réservation et le paiement en ligne, l'accès aux CGV doit être possible avant la validation de la commande — pas seulement dans un lien de pied de page.
+Si votre site permet la réservation et le paiement en ligne, l'accès aux CGV doit être possible avant la validation de la commande, pas seulement dans un lien de pied de page.
 
 ## Le droit de rétractation s'applique
 
-Pour les contrats à distance, votre client dispose d'un **droit de rétractation de 14 jours** à compter de la conclusion du contrat — sans avoir à se justifier.
+Pour les contrats à distance, votre client dispose d'un **droit de rétractation de 14 jours** à compter de la conclusion du contrat, sans avoir à se justifier.
 
 Vous pouvez déroger à ce droit pour une séance réalisée avant la fin du délai de 14 jours, à condition que le client en ait fait la demande expresse et ait accepté de renoncer à son droit de rétractation pour cette prestation. Ces deux éléments doivent être actés avant la séance.
 
-Sans cette clause dans vos CGV et sans cet accord explicite, vous ne pouvez pas refuser le remboursement si le client se rétracte dans les 14 jours — même si la séance a déjà eu lieu.
+Sans cette clause dans vos CGV et sans cet accord explicite, vous ne pouvez pas refuser le remboursement si le client se rétracte dans les 14 jours, même si la séance a déjà eu lieu.
 
 ## Les données personnelles et le RGPD
 
@@ -46,7 +46,7 @@ Quelques points à vérifier :
 
 ## Le territoire et les règles applicables
 
-Si vous recevez des clients hors de France — en Belgique, en Suisse, au Canada — les règles applicables peuvent varier. En règle générale, le droit français s'applique dès lors que vous êtes établie en France et que votre communication est en français.
+Si vous recevez des clients hors de France, en Belgique, en Suisse, au Canada, les règles applicables peuvent varier. En règle générale, le droit français s'applique dès lors que vous êtes établie en France et que votre communication est en français.
 
 Mais si vous développez une offre internationale, il peut être utile de vérifier les règles spécifiques aux pays où vous exercez.
 
@@ -70,7 +70,7 @@ Ces outils collectent des données et sont majoritairement hébergés hors de l'
 
 **Dois-je établir une facture pour chaque séance en ligne ?**
 
-Oui. Chaque séance en ligne doit faire l'objet d'une facture comportant votre SIRET, la date, la nature de la prestation, le montant, et la mention « TVA non applicable — art. 293B CGI » si vous bénéficiez de la franchise en base. Cette obligation s'applique de la même façon qu'en présentiel, quelle que soit la modalité de paiement (virement, carte, plateforme en ligne).
+Oui. Chaque séance en ligne doit faire l'objet d'une facture comportant votre SIRET, la date, la nature de la prestation, le montant, et la mention « TVA non applicable, art. 293B CGI » si vous bénéficiez de la franchise en base. Cette obligation s'applique de la même façon qu'en présentiel, quelle que soit la modalité de paiement (virement, carte, plateforme en ligne).
 
 ## Mettez votre site à jour avant de vendre en ligne
 

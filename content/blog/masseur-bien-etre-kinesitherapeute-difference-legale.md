@@ -6,7 +6,7 @@ slug: "masseur-bien-etre-kinesitherapeute-difference-legale"
 tags: ["Massage", "Juridique", "Conformité"]
 ---
 
-Le masseur-kinésithérapeute est un professionnel de santé titulaire d'un diplôme d'État après 5 ans d'études, inscrit à l'Ordre des masseurs-kinésithérapeutes et autorisé à pratiquer des actes de rééducation. Le masseur bien-être exerce une pratique non réglementée centrée sur la détente et le confort, sans actes médicaux et sans titre légalement protégé. Aux yeux de la loi, la différence n'est pas dans le geste — elle est dans l'objet de l'acte.
+Le masseur-kinésithérapeute est un professionnel de santé titulaire d'un diplôme d'État après 5 ans d'études, inscrit à l'Ordre des masseurs-kinésithérapeutes et autorisé à pratiquer des actes de rééducation. Le masseur bien-être exerce une pratique non réglementée centrée sur la détente et le confort, sans actes médicaux et sans titre légalement protégé. Aux yeux de la loi, la différence n'est pas dans le geste, elle est dans l'objet de l'acte.
 
 > **En bref :** Le masseur-kinésithérapeute est un professionnel de santé réglementé par le Code de la santé publique ; le masseur bien-être pratique des massages de détente dans un secteur non réglementé, sans titre légalement protégé ni ordre professionnel.
 
@@ -16,11 +16,11 @@ Le titre de masseur-kinésithérapeute est protégé par la loi. Il ne peut êtr
 
 Les masseurs-kinésithérapeutes sont des professionnels de santé au sens du Code de la santé publique. Ils sont inscrits à l'Ordre des masseurs-kinésithérapeutes, soumis à un Code de déontologie, et autorisés à réaliser des actes de rééducation et de réadaptation fonctionnelle.
 
-Utiliser le titre de masseur-kinésithérapeute sans ce diplôme constitue une usurpation de titre — une infraction pénale passible d'un an d'emprisonnement et de 15 000 euros d'amende (art. L.4314-4 du Code de la santé publique).
+Utiliser le titre de masseur-kinésithérapeute sans ce diplôme constitue une usurpation de titre, une infraction pénale passible d'un an d'emprisonnement et de 15 000 euros d'amende (art. L.4314-4 du Code de la santé publique).
 
 ## Le masseur bien-être : une pratique non réglementée
 
-Le massage bien-être — aussi appelé massage de relaxation, massage ayurvédique, massage suédois, massage californien — n'est pas une profession réglementée. Il n'existe pas de diplôme d'État spécifique, pas d'ordre professionnel, pas de titre protégé légalement.
+Le massage bien-être, aussi appelé massage de relaxation, massage ayurvédique, massage suédois, massage californien, n'est pas une profession réglementée. Il n'existe pas de diplôme d'État spécifique, pas d'ordre professionnel, pas de titre protégé légalement.
 
 Ce qui définit le massage bien-être, c'est son objet : la détente, le confort, le mieux-être de la personne. Il ne vise pas à traiter une pathologie, à rééduquer une fonction, ou à agir sur un symptôme médical.
 
@@ -34,19 +34,19 @@ En revanche, il ne peut légalement ni se présenter comme masseur-kinésithéra
 
 ## Ce qui crée un risque dans la communication
 
-La confusion entre les deux professions se joue souvent dans le vocabulaire utilisé — pas dans les gestes eux-mêmes.
+La confusion entre les deux professions se joue souvent dans le vocabulaire utilisé, pas dans les gestes eux-mêmes.
 
 Un masseur bien-être qui décrit ses séances avec les termes d'un kinésithérapeute s'expose : "traitement des douleurs dorsales", "rééducation musculaire", "drainage lymphatique" présenté comme un acte médical, "massage thérapeutique" sans précision.
 
-Ces formulations appartiennent au champ médical. Employées par un praticien non médical, elles peuvent constituer une pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation — et, dans les cas les plus graves, un exercice illégal de la médecine ou de la masso-kinésithérapie.
+Ces formulations appartiennent au champ médical. Employées par un praticien non médical, elles peuvent constituer une pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation, et, dans les cas les plus graves, un exercice illégal de la médecine ou de la masso-kinésithérapie.
 
 ## Comment se présenter clairement
 
-La clarté protège. Un masseur bien-être qui décrit précisément ce qu'il fait — dans le registre du bien-être et de la relaxation — ne crée pas de confusion et ne s'expose pas.
+La clarté protège. Un masseur bien-être qui décrit précisément ce qu'il fait, dans le registre du bien-être et de la relaxation, ne crée pas de confusion et ne s'expose pas.
 
 "Je propose des massages de relaxation pour les personnes qui cherchent à relâcher les tensions liées au stress ou à la fatigue" est juste, utile, et sans risque.
 
-"Je traite les douleurs musculaires et les tensions chroniques grâce au massage" positionne la prestation dans le champ médical — et crée un risque.
+"Je traite les douleurs musculaires et les tensions chroniques grâce au massage" positionne la prestation dans le champ médical, et crée un risque.
 
 ## Questions fréquentes
 

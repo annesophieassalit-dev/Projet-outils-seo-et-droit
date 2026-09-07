@@ -6,7 +6,7 @@ slug: "instagram-stories-praticien-bien-etre"
 tags: ["Instagram", "Communication", "Juridique"]
 ---
 
-Les stories Instagram sont devenues le format de communication principal de beaucoup de praticiens bien-être. Elles humanisent votre activité, montrent votre quotidien, entretiennent le lien avec votre audience. Mais elles concentrent aussi les risques juridiques les plus courants — parce qu'on les publie vite, sans relire, et parce que leur format informel pousse à l'improvisation.
+Les stories Instagram sont devenues le format de communication principal de beaucoup de praticiens bien-être. Elles humanisent votre activité, montrent votre quotidien, entretiennent le lien avec votre audience. Mais elles concentrent aussi les risques juridiques les plus courants, parce qu'on les publie vite, sans relire, et parce que leur format informel pousse à l'improvisation.
 
 ## Pourquoi les stories sont plus risquées que votre site
 
@@ -26,15 +26,15 @@ Vous pouvez partager :
 
 ## Les formulations qui posent problème
 
-La story n'est pas un format neutre. Certaines formulations reviennent très souvent — et méritent d'être réexaminées.
+La story n'est pas un format neutre. Certaines formulations reviennent très souvent, et méritent d'être réexaminées.
 
-**"La sophrologie m'a aidé à guérir de..."** — si vous partagez votre propre vécu, c'est votre témoignage personnel. Mais si c'est la story d'un client ou une promesse implicite faite à votre audience, la formulation "guérir" place votre pratique sur le terrain médical.
+**"La sophrologie m'a aidé à guérir de..."**, si vous partagez votre propre vécu, c'est votre témoignage personnel. Mais si c'est la story d'un client ou une promesse implicite faite à votre audience, la formulation "guérir" place votre pratique sur le terrain médical.
 
-**"Séance pour traiter les migraines / l'insomnie / la dépression..."** — le mot "traiter" est réservé aux actes médicaux. Même pour des troubles fonctionnels, il crée une confusion préjudiciable.
+**"Séance pour traiter les migraines / l'insomnie / la dépression..."**, le mot "traiter" est réservé aux actes médicaux. Même pour des troubles fonctionnels, il crée une confusion préjudiciable.
 
-**"100% de mes clients ont..."** — les résultats chiffrés présentés comme garantis, même avec une intention humoristique ou rhétorique, peuvent être qualifiés de pratique commerciale trompeuse.
+**"100% de mes clients ont..."**, les résultats chiffrés présentés comme garantis, même avec une intention humoristique ou rhétorique, peuvent être qualifiés de pratique commerciale trompeuse.
 
-**Avant/après sur des états de santé** — comparer deux états ("avant je souffrais de X, maintenant...") en liant ce changement directement à vos séances crée une promesse implicite. C'est le format qui génère le plus de signalements dans le secteur du bien-être.
+**Avant/après sur des états de santé**, comparer deux états ("avant je souffrais de X, maintenant...") en liant ce changement directement à vos séances crée une promesse implicite. C'est le format qui génère le plus de signalements dans le secteur du bien-être.
 
 ## Les stickers à utiliser avec prudence
 
@@ -42,27 +42,27 @@ La story n'est pas un format neutre. Certaines formulations reviennent très sou
 
 **Le lien vers une offre** : si votre story renvoie vers une offre payante, vous êtes dans le champ commercial. Les règles sur les allégations s'appliquent avec encore plus de force, car la finalité commerciale est explicite.
 
-**La mention "solution"** — "la solution naturelle pour...", "la vraie solution contre le stress..." — est une formulation très scrutée par Meta et par les autorités de contrôle.
+**La mention "solution"**, "la solution naturelle pour...", "la vraie solution contre le stress...", est une formulation très scrutée par Meta et par les autorités de contrôle.
 
 ## Les témoignages clients dans vos stories
 
-Repartager les messages ou les retours de clients dans vos stories est une pratique courante. Elle est autorisée — avec des précautions.
+Repartager les messages ou les retours de clients dans vos stories est une pratique courante. Elle est autorisée, avec des précautions.
 
 La règle est la même que pour les témoignages sur votre site : le témoignage doit décrire une expérience personnelle, pas promettre un résultat médical. "Je me sens beaucoup mieux depuis nos séances" est différent de "Sophie m'a guérie de ma maladie".
 
-Si vous republier un message client, ne le modifiez pas pour le rendre plus percutant — c'est ce qu'on appelle un témoignage altéré, qui relève de la tromperie commerciale.
+Si vous republier un message client, ne le modifiez pas pour le rendre plus percutant, c'est ce qu'on appelle un témoignage altéré, qui relève de la tromperie commerciale.
 
 ## Les lives et vidéos longues
 
 Un live ou une vidéo de 20 minutes sur Instagram suit les mêmes règles qu'une story de 15 secondes. Avec une contrainte supplémentaire : vous ne pouvez pas vous relire avant de publier.
 
-Si vous faites des lives, ayez quelques lignes mentales claires sur ce que vous ne direz pas — pas pour vous censurer, mais pour éviter de formuler spontanément ce qui pourrait vous exposer.
+Si vous faites des lives, ayez quelques lignes mentales claires sur ce que vous ne direz pas, pas pour vous censurer, mais pour éviter de formuler spontanément ce qui pourrait vous exposer.
 
 ## Construire une communication Instagram solide
 
 La clé n'est pas d'éviter Instagram ni de ne poster que des contenus vides de sens. C'est de savoir ce qui relève du registre de l'accompagnement (votre terrain) et ce qui relève du registre médical (pas le vôtre).
 
-Cette ligne est parfois fine, surtout dans le format stories où tout va vite. **Visible & Conforme** analyse votre site et vous aide à identifier les formulations à risque — une base utile pour calibrer votre communication sur tous vos canaux.
+Cette ligne est parfois fine, surtout dans le format stories où tout va vite. **Visible & Conforme** analyse votre site et vous aide à identifier les formulations à risque, une base utile pour calibrer votre communication sur tous vos canaux.
 
 [Analyser mon site →](/inscription)
 

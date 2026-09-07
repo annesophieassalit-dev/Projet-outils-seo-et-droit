@@ -6,13 +6,13 @@ slug: "mentions-legales-praticien-bien-etre"
 tags: ["Juridique", "Site internet", "Conformité"]
 ---
 
-Votre site internet est une vitrine professionnelle, mais aussi un support légalement encadré. En tant que praticien bien-être — sophrologue, naturopathe, hypnothérapeute, coach, réflexologue — vous avez des obligations précises en matière de mentions légales.
+Votre site internet est une vitrine professionnelle, mais aussi un support légalement encadré. En tant que praticien bien-être, sophrologue, naturopathe, hypnothérapeute, coach, réflexologue, vous avez des obligations précises en matière de mentions légales.
 
 Le manquement à ces obligations peut entraîner des sanctions (jusqu'à 75 000 € d'amende pour les personnes morales) et fragiliser votre crédibilité auprès des clients. Voici ce qui est réellement obligatoire, sans jargon juridique inutile.
 
 ## Pourquoi les mentions légales sont obligatoires
 
-La loi pour la confiance dans l'économie numérique (LCEN) du 21 juin 2004 impose à tout professionnel qui édite un site internet de mentionner certaines informations. Cette obligation s'applique à vous dès lors que vous avez un site professionnel — même sans vente en ligne.
+La loi pour la confiance dans l'économie numérique (LCEN) du 21 juin 2004 impose à tout professionnel qui édite un site internet de mentionner certaines informations. Cette obligation s'applique à vous dès lors que vous avez un site professionnel, même sans vente en ligne.
 
 L'objectif : permettre à n'importe quelle personne d'identifier qui est derrière le site et de vous contacter en cas de besoin.
 
@@ -40,7 +40,7 @@ Vous devez mentionner le nom, l'adresse et le contact de la société qui héber
 
 ### Votre numéro de TVA intracommunautaire
 
-Uniquement si vous êtes assujetti à la TVA. La plupart des auto-entrepreneurs sous le régime de la franchise en base de TVA ne le sont pas — dans ce cas, rien à mentionner.
+Uniquement si vous êtes assujetti à la TVA. La plupart des auto-entrepreneurs sous le régime de la franchise en base de TVA ne le sont pas, dans ce cas, rien à mentionner.
 
 ## Ce qui s'ajoute si vous vendez en ligne
 
@@ -53,7 +53,7 @@ Si vous proposez des séances en ligne ou des prestations payables directement d
 
 ## Les mentions spécifiques aux professions bien-être
 
-Certaines professions réglementées ont des obligations supplémentaires. Pour les praticiens bien-être non réglementés (sophrologie, naturopathie, hypnose, réflexologie, etc.), aucune mention spécifique de diplôme n'est légalement imposée — mais la **transparence sur votre formation** est fortement recommandée.
+Certaines professions réglementées ont des obligations supplémentaires. Pour les praticiens bien-être non réglementés (sophrologie, naturopathie, hypnose, réflexologie, etc.), aucune mention spécifique de diplôme n'est légalement imposée, mais la **transparence sur votre formation** est fortement recommandée.
 
 En revanche, vous **ne devez pas** laisser croire que vous exercez une profession réglementée. Évitez donc sur votre page de mentions légales des formulations comme "Membre de l'Ordre..." ou "Inscrit à l'ARS..." si ce n'est pas le cas.
 
@@ -108,7 +108,7 @@ Les mentions légales ne suffisent pas si vous collectez des données personnell
 
 ## Comment s'assurer que votre site est complet ?
 
-Vérifier manuellement chaque point prend du temps — et on oublie toujours quelque chose.
+Vérifier manuellement chaque point prend du temps, et on oublie toujours quelque chose.
 
 **Visible & Conforme** vérifie automatiquement la conformité de votre site : présence des mentions légales, formulations à risque juridique, et bien d'autres points. En quelques minutes, vous avez un rapport clair.
 

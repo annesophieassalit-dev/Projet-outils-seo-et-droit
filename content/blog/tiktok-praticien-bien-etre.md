@@ -6,9 +6,9 @@ slug: "tiktok-praticien-bien-etre"
 tags: ["TikTok", "Communication", "Juridique"]
 ---
 
-TikTok est devenu en quelques années le réseau qui offre la croissance organique la plus rapide pour les créateurs de contenus indépendants — dont beaucoup de praticiens bien-être. Des sophrologues, des naturopathes, des hypnothérapeutes y ont gagné des milliers d'abonnés en quelques semaines avec des vidéos tournées avec un smartphone.
+TikTok est devenu en quelques années le réseau qui offre la croissance organique la plus rapide pour les créateurs de contenus indépendants, dont beaucoup de praticiens bien-être. Des sophrologues, des naturopathes, des hypnothérapeutes y ont gagné des milliers d'abonnés en quelques semaines avec des vidéos tournées avec un smartphone.
 
-Mais TikTok concentre aussi les risques de communication les plus élevés du secteur bien-être. Voici pourquoi — et comment s'y positionner avec lucidité.
+Mais TikTok concentre aussi les risques de communication les plus élevés du secteur bien-être. Voici pourquoi, et comment s'y positionner avec lucidité.
 
 ## Ce qui fonctionne sur TikTok en bien-être
 
@@ -24,11 +24,11 @@ L'algorithme TikTok valorise les contenus qui génèrent de l'engagement rapide 
 
 TikTok récompense les contenus qui provoquent une forte réaction émotionnelle ou une curiosité suffisante pour que l'utilisateur regarde jusqu'au bout. Ce biais algorithmique crée une tentation : formuler des promesses fortes, utiliser des titres accrocheurs du type "La technique secrète pour ne plus jamais avoir d'insomnies".
 
-Ce type d'accroche fait grimper les vues — et peut aussi vous exposer juridiquement. La DGCCRF surveille les réseaux sociaux, TikTok compris.
+Ce type d'accroche fait grimper les vues, et peut aussi vous exposer juridiquement. La DGCCRF surveille les réseaux sociaux, TikTok compris.
 
 ## TikTok modère plus agressivement que Meta
 
-Meta (Instagram, Facebook) applique des politiques de modération sur les contenus relatifs à la santé. TikTok aussi — et de façon potentiellement plus agressive pour les comptes qui ne sont pas des professionnels de santé vérifiés.
+Meta (Instagram, Facebook) applique des politiques de modération sur les contenus relatifs à la santé. TikTok aussi, et de façon potentiellement plus agressive pour les comptes qui ne sont pas des professionnels de santé vérifiés.
 
 Un compte praticien bien-être sur TikTok peut être :
 - **Shadowbanné** (ses contenus ne sont plus distribués sans explication) pour des formulations relatives à la santé mentale ou au traitement de pathologies
@@ -54,13 +54,13 @@ La ligne de réponse sûre : orienter vers votre pratique comme un accompagnemen
 - "Voici une technique de relaxation que j'enseigne à mes clients..."
 - "Beaucoup de personnes qui viennent me voir me parlent de [problème courant]..."
 
-La différence entre "je traite" et "j'accompagne", entre "je soigne" et "je travaille avec", n'est pas une question de style — c'est une limite juridique que vous franchissez ou non.
+La différence entre "je traite" et "j'accompagne", entre "je soigne" et "je travaille avec", n'est pas une question de style, c'est une limite juridique que vous franchissez ou non.
 
 ## Construire une présence TikTok durable
 
-Les praticiens qui durent sur TikTok ne sont pas ceux qui ont eu le plus grand buzz — ce sont ceux qui ont une ligne éditoriale claire, un ton cohérent et une communication qui ne les expose pas.
+Les praticiens qui durent sur TikTok ne sont pas ceux qui ont eu le plus grand buzz, ce sont ceux qui ont une ligne éditoriale claire, un ton cohérent et une communication qui ne les expose pas.
 
-Avant de vous lancer activement sur TikTok, vérifiez que votre site et vos autres supports sont conformes. C'est la base de votre communication — et TikTok dirige des personnes vers votre site.
+Avant de vous lancer activement sur TikTok, vérifiez que votre site et vos autres supports sont conformes. C'est la base de votre communication, et TikTok dirige des personnes vers votre site.
 
 **Visible & Conforme** analyse votre site et identifie les formulations à risque avant que votre visibilité s'étende.
 

@@ -14,7 +14,7 @@ Publier la photo ou la vidéo d'un client identifiable sans son autorisation éc
 
 Chaque personne dispose d'un droit exclusif sur son image. Ce droit est protégé par l'article 9 du Code civil, qui garantit le respect de la vie privée, et par le droit à la protection des données personnelles au titre du RGPD.
 
-Publier la photo ou la vidéo d'une personne identifiable sans son autorisation est une atteinte à son droit à l'image — même si la photo a été prise dans un lieu public, même si la personne souriait, même si elle vous avait dit "oui, tu peux prendre une photo".
+Publier la photo ou la vidéo d'une personne identifiable sans son autorisation est une atteinte à son droit à l'image, même si la photo a été prise dans un lieu public, même si la personne souriait, même si elle vous avait dit "oui, tu peux prendre une photo".
 
 Une autorisation verbale ne suffit pas. L'autorisation doit être expresse, informée, et idéalement écrite.
 
@@ -22,29 +22,29 @@ Une autorisation verbale ne suffit pas. L'autorisation doit être expresse, info
 
 Quelques situations ne nécessitent pas d'autorisation individuelle :
 
-**Les photos de foule** où les personnes ne sont pas identifiables individuellement — par exemple, une vue d'ensemble d'un atelier de groupe avec plusieurs dizaines de personnes, où personne n'est reconnaissable.
+**Les photos de foule** où les personnes ne sont pas identifiables individuellement, par exemple, une vue d'ensemble d'un atelier de groupe avec plusieurs dizaines de personnes, où personne n'est reconnaissable.
 
-**Les contenus publiés par le client lui-même** qui vous identifient et qui sont visiblement destinés à être partagés — un post public où votre client vous tague et témoigne de son expérience. Vous pouvez republier ce post dans son intégralité (en le citant comme tel) sans avoir besoin d'une autorisation supplémentaire. En revanche, extraire la photo seule et la republier hors contexte peut poser problème.
+**Les contenus publiés par le client lui-même** qui vous identifient et qui sont visiblement destinés à être partagés, un post public où votre client vous tague et témoigne de son expérience. Vous pouvez republier ce post dans son intégralité (en le citant comme tel) sans avoir besoin d'une autorisation supplémentaire. En revanche, extraire la photo seule et la republier hors contexte peut poser problème.
 
 ## Ce qui nécessite une autorisation écrite
 
 **Les photos individuelles** de clients ou participants à vos ateliers, même avec leur accord verbal.
 
-**Les témoignages accompagnés d'une photo** — le témoignage seul peut être republié avec l'accord du client, mais associer une photo au témoignage nécessite une autorisation explicite pour les deux.
+**Les témoignages accompagnés d'une photo**, le témoignage seul peut être republié avec l'accord du client, mais associer une photo au témoignage nécessite une autorisation explicite pour les deux.
 
 **Les vidéos de séances ou d'ateliers** dans lesquelles des clients sont identifiables.
 
 ## Comment obtenir une autorisation en règle
 
-Une cession de droit à l'image peut être simple. Elle doit préciser le nom de la personne concernée, la nature du support concerné (photo, vidéo, témoignage), les supports de diffusion visés (site internet, Instagram, newsletter), la durée de l'autorisation, et indiquer si la cession est à titre gratuit — ce qui est généralement le cas dans ce contexte.
+Une cession de droit à l'image peut être simple. Elle doit préciser le nom de la personne concernée, la nature du support concerné (photo, vidéo, témoignage), les supports de diffusion visés (site internet, Instagram, newsletter), la durée de l'autorisation, et indiquer si la cession est à titre gratuit, ce qui est généralement le cas dans ce contexte.
 
 Un formulaire court suffit. Vous pouvez l'envoyer par email et conserver la réponse écrite comme preuve.
 
-Pour vos ateliers, une clause dans le formulaire d'inscription suffit — à condition qu'elle soit visible, lisible, et que les participants puissent refuser sans que cela affecte leur participation.
+Pour vos ateliers, une clause dans le formulaire d'inscription suffit, à condition qu'elle soit visible, lisible, et que les participants puissent refuser sans que cela affecte leur participation.
 
 ## Le cas particulier des témoignages écrits
 
-Un témoignage écrit — qu'il soit publié sur Google, envoyé par email ou laissé sur votre site — peut en principe être republié si la personne l'a publié volontairement dans un espace public.
+Un témoignage écrit, qu'il soit publié sur Google, envoyé par email ou laissé sur votre site, peut en principe être republié si la personne l'a publié volontairement dans un espace public.
 
 Mais deux précautions s'imposent :
 
@@ -74,11 +74,11 @@ Ajoutez une clause visible dans votre formulaire d'inscription, rédigée simple
 
 **Un témoignage Google peut-il être republié sur mon site ?**
 
-Oui, en principe, si la personne l'a publié volontairement dans un espace public. Mais ne le modifiez pas — même pour corriger une faute — sans l'accord de la personne, et n'associez pas ce témoignage à une photo sans autorisation explicite. Si vous souhaitez mettre un prénom complet et une photo, demandez une confirmation écrite distincte.
+Oui, en principe, si la personne l'a publié volontairement dans un espace public. Mais ne le modifiez pas, même pour corriger une faute, sans l'accord de la personne, et n'associez pas ce témoignage à une photo sans autorisation explicite. Si vous souhaitez mettre un prénom complet et une photo, demandez une confirmation écrite distincte.
 
 ## Intégrez ces règles dans votre communication
 
-**Visible & Conforme** analyse votre communication en ligne — site, réseaux, newsletter — et identifie les points qui pourraient vous exposer juridiquement.
+**Visible & Conforme** analyse votre communication en ligne, site, réseaux, newsletter, et identifie les points qui pourraient vous exposer juridiquement.
 
 [Analyser mon site →](/inscription)
 

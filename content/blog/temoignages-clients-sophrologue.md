@@ -12,7 +12,7 @@ Oui, un sophrologue peut légalement afficher des témoignages clients sur son s
 
 ## Oui, un sophrologue peut afficher des témoignages clients
 
-Contrairement aux médecins et aux professions de santé réglementées — soumis au Code de déontologie médicale qui encadre très strictement toute forme de publicité et de témoignage — **les sophrologues, naturopathes et hypnothérapeutes exercent dans un cadre non réglementé** qui leur permet de collecter et d'afficher des avis clients.
+Contrairement aux médecins et aux professions de santé réglementées, soumis au Code de déontologie médicale qui encadre très strictement toute forme de publicité et de témoignage, **les sophrologues, naturopathes et hypnothérapeutes exercent dans un cadre non réglementé** qui leur permet de collecter et d'afficher des avis clients.
 
 Il n'existe pas de texte qui interdit les témoignages pour les praticiens bien-être. Au contraire, le droit de la consommation encourage la transparence et les preuves sociales.
 
@@ -26,7 +26,7 @@ La liberté d'afficher des témoignages ne signifie pas qu'on peut tout publier.
 
 ### 1. Ne pas créer d'allégation thérapeutique trompeuse
 
-Un témoignage peut devenir problématique s'il affirme une guérison ou un résultat médical de façon catégorique — surtout si vous le mettez en avant comme preuve que votre méthode "traite" ou "soigne" une maladie identifiée.
+Un témoignage peut devenir problématique s'il affirme une guérison ou un résultat médical de façon catégorique, surtout si vous le mettez en avant comme preuve que votre méthode "traite" ou "soigne" une maladie identifiée.
 
 **Exemple à risque :** "Grâce à la sophrologie d'Anne-Sophie, mon anxiété généralisée a complètement disparu en 3 séances."
 
@@ -34,7 +34,7 @@ Ce témoignage, présenté sans nuance, peut être interprété comme une promes
 
 **Formulation plus sécurisée :** "Depuis mes séances de sophrologie, je me sens beaucoup plus sereine face aux situations stressantes. J'ai retrouvé des outils que j'utilise au quotidien."
 
-Le ressenti est réel, l'effet est décrit — mais il reste dans le registre de l'expérience personnelle, pas de la garantie médicale.
+Le ressenti est réel, l'effet est décrit, mais il reste dans le registre de l'expérience personnelle, pas de la garantie médicale.
 
 ### 2. Ne pas publier de faux témoignages
 
@@ -54,7 +54,7 @@ Les sanctions sont importantes, et les plateformes d'avis disposent aujourd'hui 
 
 ## Et les avis négatifs ?
 
-Vous ne pouvez pas supprimer un avis Google négatif (sauf s'il est manifestement injurieux ou faux, auquel cas vous pouvez le signaler à Google). Mais vous pouvez répondre publiquement — et une réponse professionnelle à un avis négatif est souvent perçue très positivement par les futurs clients.
+Vous ne pouvez pas supprimer un avis Google négatif (sauf s'il est manifestement injurieux ou faux, auquel cas vous pouvez le signaler à Google). Mais vous pouvez répondre publiquement, et une réponse professionnelle à un avis négatif est souvent perçue très positivement par les futurs clients.
 
 ## Vérifiez que vos témoignages s'intègrent dans une communication globalement cohérente
 
@@ -64,7 +64,7 @@ Les témoignages sont une partie de votre communication. Ils doivent être cohé
 
 **Un témoignage client peut-il me créer un risque juridique même si je ne l'ai pas écrit ?**
 
-Oui. Du moment que vous choisissez de publier un témoignage et de le mettre en avant sur votre site, vous en assumez la responsabilité éditoriale. Si ce témoignage contient une allégation thérapeutique — par exemple que votre méthode a guéri une pathologie identifiée — et que vous le présentez sans nuance, il peut être retenu contre vous dans le cadre d'un contrôle de la DGCCRF.
+Oui. Du moment que vous choisissez de publier un témoignage et de le mettre en avant sur votre site, vous en assumez la responsabilité éditoriale. Si ce témoignage contient une allégation thérapeutique, par exemple que votre méthode a guéri une pathologie identifiée, et que vous le présentez sans nuance, il peut être retenu contre vous dans le cadre d'un contrôle de la DGCCRF.
 
 **Puis-je modifier la formulation d'un témoignage pour qu'il soit mieux écrit ?**
 
@@ -76,7 +76,7 @@ Ce n'est pas une obligation légale au sens strict, mais c'est vivement recomman
 
 **Comment réagir face à un avis négatif publié sur Google ?**
 
-Vous ne pouvez pas supprimer un avis négatif sauf s'il est manifestement injurieux, faux ou contraire aux conditions d'utilisation de la plateforme — auquel cas vous pouvez le signaler à Google. La meilleure stratégie reste de répondre publiquement avec professionnalisme : une réponse calme et factuelle rassure les futurs clients et montre que vous gérez les situations difficiles avec sérieux.
+Vous ne pouvez pas supprimer un avis négatif sauf s'il est manifestement injurieux, faux ou contraire aux conditions d'utilisation de la plateforme, auquel cas vous pouvez le signaler à Google. La meilleure stratégie reste de répondre publiquement avec professionnalisme : une réponse calme et factuelle rassure les futurs clients et montre que vous gérez les situations difficiles avec sérieux.
 
 **Visible & Conforme** analyse l'ensemble de votre communication pour identifier les incohérences et les formulations à risque.
 

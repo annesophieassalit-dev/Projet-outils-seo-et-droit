@@ -6,7 +6,7 @@ slug: "sophrologue-auto-entrepreneur-obligations"
 tags: ["Juridique", "Sophrologue", "Conformité"]
 ---
 
-La sophrologie et les autres pratiques bien-être sont entièrement compatibles avec le statut de micro-entrepreneur, sans restriction légale. Ce statut impose un plafond de chiffre d'affaires de 77 700 euros hors taxes par an pour les prestations de services (seuil 2026, révisé chaque année), une déclaration de chiffre d'affaires régulière à l'URSSAF, et la mention obligatoire « TVA non applicable — art. 293B CGI » sur les factures. Il ne dispense pas d'une assurance responsabilité civile professionnelle.
+La sophrologie et les autres pratiques bien-être sont entièrement compatibles avec le statut de micro-entrepreneur, sans restriction légale. Ce statut impose un plafond de chiffre d'affaires de 77 700 euros hors taxes par an pour les prestations de services (seuil 2026, révisé chaque année), une déclaration de chiffre d'affaires régulière à l'URSSAF, et la mention obligatoire « TVA non applicable, art. 293B CGI » sur les factures. Il ne dispense pas d'une assurance responsabilité civile professionnelle.
 
 > **En bref :** Le statut micro-entrepreneur est compatible avec la sophrologie, avec un plafond de 77 700 € de chiffre d'affaires annuel pour les services (2026), une déclaration obligatoire à l'URSSAF même à zéro, et des obligations de conformité identiques à tout autre statut.
 
@@ -14,7 +14,7 @@ La sophrologie et les autres pratiques bien-être sont entièrement compatibles 
 
 Oui. La sophrologie, la naturopathie, l'hypnothérapie et la plupart des pratiques bien-être sont compatibles avec le statut de micro-entrepreneur. Il n'existe pas de restriction légale qui l'interdirait pour ces activités non réglementées.
 
-La création se fait en ligne sur le site de l'INPI (guichet unique), en déclarant votre activité sous le code APE correspondant — généralement le 86.90F (Activités de santé humaine non classées ailleurs) ou le 96.09Z (Autres services personnels), selon la nature exacte de votre pratique.
+La création se fait en ligne sur le site de l'INPI (guichet unique), en déclarant votre activité sous le code APE correspondant, généralement le 86.90F (Activités de santé humaine non classées ailleurs) ou le 96.09Z (Autres services personnels), selon la nature exacte de votre pratique.
 
 ## Le plafond de chiffre d'affaires
 
@@ -26,9 +26,9 @@ Si vous approchez de ce seuil, anticipez : le changement de statut prend du temp
 
 ## TVA : la franchise et ses conditions
 
-En micro-entreprise, vous bénéficiez par défaut de la **franchise en base de TVA** — c'est-à-dire que vous ne facturez pas la TVA à vos clients et ne la récupérez pas sur vos achats.
+En micro-entreprise, vous bénéficiez par défaut de la **franchise en base de TVA**, c'est-à-dire que vous ne facturez pas la TVA à vos clients et ne la récupérez pas sur vos achats.
 
-Vous devez mentionner sur vos factures : **"TVA non applicable — art. 293B CGI"**.
+Vous devez mentionner sur vos factures : **"TVA non applicable, art. 293B CGI"**.
 
 Cette franchise s'applique tant que votre chiffre d'affaires reste sous un seuil de tolérance (différent du seuil de basculement de régime). Si vous le dépassez en cours d'année, vous devenez redevable de la TVA à partir du premier jour du mois suivant le dépassement.
 
@@ -46,11 +46,11 @@ Si vous ne déclarez pas (même un mois à zéro), vous pouvez faire l'objet d'u
 
 **La conformité de votre communication.** Le statut juridique de votre activité n'a aucune influence sur vos obligations de communication. Que vous soyez auto-entrepreneur, en SASU ou en portage salarial, les règles sur les allégations trompeuses, les mentions légales et le RGPD s'appliquent de la même façon.
 
-**Les droits sociaux.** En micro-entreprise, vous cotisez pour votre retraite et votre maladie — mais à des niveaux souvent insuffisants pour une couverture comparable à un salarié. Si vous exercez à titre principal, pensez à compléter avec des contrats prévoyance et mutuelle adaptés.
+**Les droits sociaux.** En micro-entreprise, vous cotisez pour votre retraite et votre maladie, mais à des niveaux souvent insuffisants pour une couverture comparable à un salarié. Si vous exercez à titre principal, pensez à compléter avec des contrats prévoyance et mutuelle adaptés.
 
 ## La question du passage à une autre structure
 
-Si votre activité se développe et que vous approchez du plafond, les alternatives les plus courantes sont l'entreprise individuelle au réel (EI), la SASU ou l'EURL. Chacune a des implications fiscales et sociales différentes — un expert-comptable est le mieux placé pour vous conseiller selon votre situation spécifique.
+Si votre activité se développe et que vous approchez du plafond, les alternatives les plus courantes sont l'entreprise individuelle au réel (EI), la SASU ou l'EURL. Chacune a des implications fiscales et sociales différentes, un expert-comptable est le mieux placé pour vous conseiller selon votre situation spécifique.
 
 ## Vérifiez vos mentions légales
 
@@ -60,7 +60,7 @@ Sur votre site, vos mentions légales doivent indiquer votre SIRET, votre statut
 
 **Quel code APE déclarer pour une activité de sophrologie en micro-entreprise ?**
 
-Le code APE le plus fréquemment attribué aux sophrologues est le 86.90F (Activités de santé humaine non classées ailleurs). Certains praticiens se voient attribuer le 96.09Z (Autres services personnels) selon la nature exacte de leur activité. C'est l'INPI qui attribue ce code lors de la création de l'entreprise — vous pouvez le demander en précisant votre activité lors de la déclaration sur le guichet unique.
+Le code APE le plus fréquemment attribué aux sophrologues est le 86.90F (Activités de santé humaine non classées ailleurs). Certains praticiens se voient attribuer le 96.09Z (Autres services personnels) selon la nature exacte de leur activité. C'est l'INPI qui attribue ce code lors de la création de l'entreprise, vous pouvez le demander en précisant votre activité lors de la déclaration sur le guichet unique.
 
 **Que se passe-t-il si je dépasse le plafond de chiffre d'affaires en cours d'année ?**
 
@@ -68,7 +68,7 @@ Si votre chiffre d'affaires dépasse 77 700 euros (seuil 2026) pendant deux ann�
 
 **Dois-je quand même déclarer à l'URSSAF si je n'ai eu aucun client ce mois-ci ?**
 
-Oui. La déclaration de chiffre d'affaires à l'URSSAF est obligatoire même si votre chiffre est à zéro. Ne pas déclarer — même pour une période sans encaissement — peut entraîner une régularisation ou une pénalité. La déclaration à zéro se fait en quelques secondes sur le site URSSAF ou via l'application AutoEntrepreneur.
+Oui. La déclaration de chiffre d'affaires à l'URSSAF est obligatoire même si votre chiffre est à zéro. Ne pas déclarer, même pour une période sans encaissement, peut entraîner une régularisation ou une pénalité. La déclaration à zéro se fait en quelques secondes sur le site URSSAF ou via l'application AutoEntrepreneur.
 
 **Le statut auto-entrepreneur me protège-t-il en cas de litige avec un client ?**
 

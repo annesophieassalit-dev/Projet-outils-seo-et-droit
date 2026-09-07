@@ -8,11 +8,11 @@ tags: ["Réflexologue", "Site internet", "Communication"]
 
 La réflexologie est l'une des pratiques de bien-être dont la communication est la plus délicate à calibrer. Entre la précision anatomique de ses concepts (zones réflexes, cartographie des pieds ou des mains) et les attentes thérapeutiques que ces termes évoquent chez les clients potentiels, le réflexologue marche sur une ligne fine.
 
-Voici comment construire un site qui présente votre pratique de façon attractive — et dans le cadre légal.
+Voici comment construire un site qui présente votre pratique de façon attractive, et dans le cadre légal.
 
 ## La réflexologie : entre bien-être et médecine douce
 
-La réflexologie n'est pas une profession de santé réglementée en France. Elle n'est pas encadrée par un ordre professionnel ni par un code de déontologie légal. Cela signifie que vous êtes libre d'exercer — mais aussi que vous ne bénéficiez d'aucune protection institutionnelle en cas de litige.
+La réflexologie n'est pas une profession de santé réglementée en France. Elle n'est pas encadrée par un ordre professionnel ni par un code de déontologie légal. Cela signifie que vous êtes libre d'exercer, mais aussi que vous ne bénéficiez d'aucune protection institutionnelle en cas de litige.
 
 Votre communication doit donc être précise sur ce que la réflexologie est (une pratique de bien-être qui stimule des zones du corps) et ce qu'elle n'est pas (un traitement médical ou un acte de diagnostic).
 
@@ -20,7 +20,7 @@ Votre communication doit donc être précise sur ce que la réflexologie est (un
 
 ### 1. La page d'accueil : répondre à l'intention de recherche
 
-Vos visiteurs cherchent souvent une aide pour quelque chose de précis : mieux gérer le stress, soulager une tension, se détendre profondément. Votre page d'accueil doit répondre à cette intention — pas par une promesse médicale, mais par une description claire de l'expérience que vous proposez.
+Vos visiteurs cherchent souvent une aide pour quelque chose de précis : mieux gérer le stress, soulager une tension, se détendre profondément. Votre page d'accueil doit répondre à cette intention, pas par une promesse médicale, mais par une description claire de l'expérience que vous proposez.
 
 ### 2. La présentation de votre pratique
 
@@ -30,7 +30,7 @@ Attention au vocabulaire technique : des termes comme "libérer les toxines", "r
 
 ### 3. La page de séance
 
-Décrivez le déroulé d'une séance : durée, installation du client, déroulement du soin, recommandations post-séance. Cette page rassure et prépare vos futurs clients — et vous protège aussi en définissant clairement le cadre de votre intervention.
+Décrivez le déroulé d'une séance : durée, installation du client, déroulement du soin, recommandations post-séance. Cette page rassure et prépare vos futurs clients, et vous protège aussi en définissant clairement le cadre de votre intervention.
 
 ### 4. Les tarifs affichés clairement
 
@@ -44,7 +44,7 @@ Obligatoires pour tout professionnel qui édite un site internet. Vos mentions l
 
 Rendez le passage à l'action visible. Un bouton de prise de RDV accessible depuis chaque page vaut mieux qu'un formulaire caché en bas de page contact.
 
-## Ce qu'on peut dire sur la réflexologie — et comment le dire
+## Ce qu'on peut dire sur la réflexologie, et comment le dire
 
 Vous pouvez décrire la réflexologie comme :
 - Une pratique de bien-être

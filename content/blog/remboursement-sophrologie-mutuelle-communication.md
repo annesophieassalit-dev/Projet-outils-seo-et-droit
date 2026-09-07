@@ -14,7 +14,7 @@ La sophrologie n'est pas prise en charge par l'Assurance Maladie (Sécurité soc
 
 La sophrologie n'est pas prise en charge par l'Assurance Maladie (Sécurité sociale). Ce point est important à ne jamais laisser dans le flou.
 
-En revanche, certaines mutuelles (complémentaires santé) ont créé des forfaits "médecines douces" ou "bien-être" dans lesquels les séances de sophrologie peuvent être remboursées — partiellement, dans la limite d'un plafond annuel, et sous conditions (le praticien doit parfois figurer sur une liste agréée, ou justifier d'une certification spécifique).
+En revanche, certaines mutuelles (complémentaires santé) ont créé des forfaits "médecines douces" ou "bien-être" dans lesquels les séances de sophrologie peuvent être remboursées, partiellement, dans la limite d'un plafond annuel, et sous conditions (le praticien doit parfois figurer sur une liste agréée, ou justifier d'une certification spécifique).
 
 Ces conditions varient selon la mutuelle, le contrat, et parfois l'année. Ce qui est remboursé en 2026 peut changer en 2027.
 
@@ -22,9 +22,9 @@ Ces conditions varient selon la mutuelle, le contrat, et parfois l'année. Ce qu
 
 Le risque vient de la combinaison de deux facteurs : une information vraie, mais présentée comme une promesse.
 
-**"Séances remboursées par votre mutuelle"** — c'est faux pour la plupart des clients (tout le monde n'a pas une mutuelle qui rembourse, et les conditions varient). Présenté sans nuance, c'est une allégation trompeuse au sens du Code de la consommation.
+**"Séances remboursées par votre mutuelle"**, c'est faux pour la plupart des clients (tout le monde n'a pas une mutuelle qui rembourse, et les conditions varient). Présenté sans nuance, c'est une allégation trompeuse au sens du Code de la consommation.
 
-**"Vos séances peuvent être remboursées par certaines mutuelles"** — c'est exact, mais si un client choisit de travailler avec vous en partie sur cette base et que sa mutuelle ne rembourse pas, le malaise est garanti.
+**"Vos séances peuvent être remboursées par certaines mutuelles"**, c'est exact, mais si un client choisit de travailler avec vous en partie sur cette base et que sa mutuelle ne rembourse pas, le malaise est garanti.
 
 La DGCCRF est attentive aux arguments commerciaux qui surestiment un avantage pour attirer le client. Le remboursement mutuelle peut facilement devenir cet argument.
 
@@ -54,9 +54,9 @@ Votre responsabilité s'arrête là. La décision de remboursement appartient à
 
 ## Une opportunité de contenu utile
 
-Sur votre site, une page ou un paragraphe consacré à la question du remboursement — bien rédigé — peut être un atout SEO et un service réel à vos clients. Les gens recherchent "sophrologie remboursée mutuelle" ou "séance sophrologue prise en charge".
+Sur votre site, une page ou un paragraphe consacré à la question du remboursement, bien rédigé, peut être un atout SEO et un service réel à vos clients. Les gens recherchent "sophrologie remboursée mutuelle" ou "séance sophrologue prise en charge".
 
-Si votre page répond honnêtement à cette question, vous captez ces visiteurs tout en vous positionnant comme un praticien transparent — ce qui inspire davantage confiance qu'une promesse vague.
+Si votre page répond honnêtement à cette question, vous captez ces visiteurs tout en vous positionnant comme un praticien transparent, ce qui inspire davantage confiance qu'une promesse vague.
 
 ## Questions fréquentes
 

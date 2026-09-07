@@ -12,11 +12,11 @@ Un client insatisfait peut porter plainte contre un sophrologue ou un naturopath
 
 ## La plainte auprès de la DGCCRF
 
-Un client peut signaler un praticien bien-être à la DGCCRF s'il estime avoir été trompé sur la nature de la prestation. C'est notamment le cas quand vos textes — site internet, brochures, réseaux sociaux — laissaient entendre un résultat que vous n'avez pas pu tenir.
+Un client peut signaler un praticien bien-être à la DGCCRF s'il estime avoir été trompé sur la nature de la prestation. C'est notamment le cas quand vos textes, site internet, brochures, réseaux sociaux, laissaient entendre un résultat que vous n'avez pas pu tenir.
 
 La DGCCRF enquête sur les pratiques commerciales, pas sur la qualité de l'accompagnement en lui-même. Ce qu'elle examine : est-ce que votre communication était honnête sur ce que vous proposiez ?
 
-Si le signalement est jugé recevable, les agents peuvent diligenter une enquête, demander des documents, et engager une procédure pour pratique commerciale trompeuse. Les sanctions prévues par le Code de la consommation vont jusqu'à 2 ans d'emprisonnement et 300 000 euros d'amende pour les cas les plus graves — même si ces maximums s'appliquent à des situations bien au-delà du praticien bien-être standard.
+Si le signalement est jugé recevable, les agents peuvent diligenter une enquête, demander des documents, et engager une procédure pour pratique commerciale trompeuse. Les sanctions prévues par le Code de la consommation vont jusqu'à 2 ans d'emprisonnement et 300 000 euros d'amende pour les cas les plus graves, même si ces maximums s'appliquent à des situations bien au-delà du praticien bien-être standard.
 
 ## La plainte au civil : action en responsabilité
 
@@ -24,7 +24,7 @@ Un client peut engager une action civile en responsabilité contractuelle s'il e
 
 Pour qu'une telle action aboutisse, il devra démontrer trois éléments : une faute de votre part, un préjudice qu'il a subi, et un lien de causalité entre les deux.
 
-Dans le contexte du bien-être, la difficulté pour le client est souvent de prouver le préjudice. Mais si vos textes ou votre communication créaient une attente précise — un résultat, une amélioration mesurable — ces éléments peuvent être utilisés comme preuve d'un engagement que vous n'auriez pas tenu.
+Dans le contexte du bien-être, la difficulté pour le client est souvent de prouver le préjudice. Mais si vos textes ou votre communication créaient une attente précise, un résultat, une amélioration mesurable, ces éléments peuvent être utilisés comme preuve d'un engagement que vous n'auriez pas tenu.
 
 C'est pourquoi la formulation de vos prestations dans vos CGV et sur votre site est aussi importante que la qualité de votre accompagnement.
 
@@ -46,15 +46,15 @@ Plusieurs éléments renforcent la position du client plaignant.
 
 **Des témoignages présentés comme des garanties.** Un témoignage client mal encadré peut être interprété comme une promesse de résultat reproductible.
 
-**L'absence de documentation.** Pas de CGV, pas de contrat, pas de description précise de la prestation — en cas de litige, vous n'avez rien pour attester de ce qui a été convenu.
+**L'absence de documentation.** Pas de CGV, pas de contrat, pas de description précise de la prestation, en cas de litige, vous n'avez rien pour attester de ce qui a été convenu.
 
 ## Ce qui réduit le risque
 
 La protection la plus efficace est éditoriale autant que juridique.
 
-Une communication qui décrit honnêtement ce que vous proposez — sans surestimer les effets, sans promettre de résultat médical, en situant clairement votre rôle dans le registre de l'accompagnement — réduit drastiquement le risque qu'un client se sente trompé.
+Une communication qui décrit honnêtement ce que vous proposez, sans surestimer les effets, sans promettre de résultat médical, en situant clairement votre rôle dans le registre de l'accompagnement, réduit drastiquement le risque qu'un client se sente trompé.
 
-Des CGV claires, une politique d'annulation connue d'avance, une trace écrite des conditions acceptées : ces éléments construisent un cadre dans lequel les malentendus sont moins probables — et plus faciles à gérer si malgré tout ils surviennent.
+Des CGV claires, une politique d'annulation connue d'avance, une trace écrite des conditions acceptées : ces éléments construisent un cadre dans lequel les malentendus sont moins probables, et plus faciles à gérer si malgré tout ils surviennent.
 
 ## Questions fréquentes
 

@@ -18,7 +18,7 @@ En théorie, n'importe qui peut se présenter comme thérapeute. En pratique, c'
 
 ## Ce que la loi regarde vraiment
 
-Le droit français ne protège pas le titre en lui-même — il protège les actes et les représentations associées.
+Le droit français ne protège pas le titre en lui-même, il protège les actes et les représentations associées.
 
 Deux risques principaux s'appliquent à quiconque utilise le terme "thérapeute".
 
@@ -32,21 +32,21 @@ La nuance se joue souvent dans l'association de mots.
 
 "Thérapeute" seul, sans autre qualification, est ambigu. Il n'implique pas de formation spécifique, ni de pratique précise. Il peut être perçu comme une tentative d'élever son statut sans en justifier les compétences.
 
-"Sophrologue thérapeute", "thérapeute en approche systémique", "thérapeute EFT certifié" — ces formulations ajoutent une précision. Elles n'éliminent pas tous les risques, mais elles situent mieux votre cadre d'intervention.
+"Sophrologue thérapeute", "thérapeute en approche systémique", "thérapeute EFT certifié", ces formulations ajoutent une précision. Elles n'éliminent pas tous les risques, mais elles situent mieux votre cadre d'intervention.
 
-Ce qui protège davantage : se présenter avec votre titre exact, issu de votre formation réelle. "Sophrologue certifié RNCP", "naturopathe diplômé", "praticien EFT certifié" — ces formulations décrivent ce que vous êtes, sans surestimer ni sous-estimer.
+Ce qui protège davantage : se présenter avec votre titre exact, issu de votre formation réelle. "Sophrologue certifié RNCP", "naturopathe diplômé", "praticien EFT certifié", ces formulations décrivent ce que vous êtes, sans surestimer ni sous-estimer.
 
 ## Ce qu'il ne faut pas faire
 
 **Se présenter comme "psychothérapeute" sans être inscrit au registre national des psychothérapeutes.** Le titre de psychothérapeute, lui, est protégé depuis 2010. L'utiliser sans inscription est une infraction pénale, même si vous avez une formation en psychologie.
 
-**Associer "thérapeute" à des pathologies reconnues.** "Thérapeute spécialisé dans les troubles anxieux", "thérapeute pour dépression" — ce type de formulation situe votre activité dans le champ médical, avec tout ce que cela implique en termes de responsabilité et de risque réglementaire.
+**Associer "thérapeute" à des pathologies reconnues.** "Thérapeute spécialisé dans les troubles anxieux", "thérapeute pour dépression", ce type de formulation situe votre activité dans le champ médical, avec tout ce que cela implique en termes de responsabilité et de risque réglementaire.
 
 ## Comment se présenter avec clarté
 
 La bonne approche : décrire ce que vous faites, pas ce que vous êtes dans l'absolu.
 
-"J'accompagne les personnes qui traversent des périodes de stress ou de transition" est plus juste — et plus protecteur — que "je suis thérapeute spécialisé en gestion du stress".
+"J'accompagne les personnes qui traversent des périodes de stress ou de transition" est plus juste, et plus protecteur, que "je suis thérapeute spécialisé en gestion du stress".
 
 La description de votre pratique, de votre approche, et des situations que vous accompagnez crée plus de confiance qu'un titre générique. Et elle vous positionne clairement dans le registre de l'accompagnement, pas du soin médical.
 
@@ -70,7 +70,7 @@ Le titre de psychothérapeute est protégé depuis 2010 et réservé aux personn
 
 ## Vérifiez comment vous vous présentez
 
-La façon dont vous vous nommez sur votre site, votre fiche Google, vos réseaux sociaux, vos supports print — tout cela forme un ensemble que la DGCCRF peut consulter en cas de contrôle.
+La façon dont vous vous nommez sur votre site, votre fiche Google, vos réseaux sociaux, vos supports print, tout cela forme un ensemble que la DGCCRF peut consulter en cas de contrôle.
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient créer une confusion sur votre rôle ou vos qualifications.
 

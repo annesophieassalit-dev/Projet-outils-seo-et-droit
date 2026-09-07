@@ -6,7 +6,7 @@ slug: "formation-massage-bien-etre-reconnaissance-communication"
 tags: ["Massage", "Formation", "Juridique"]
 ---
 
-Il n'existe pas de diplôme d'État en massage bien-être : le secteur est non réglementé, et aucune formation ne confère de titre légalement protégé. Ce que vous avez appris influence en revanche directement la façon dont vous pouvez en parler — certaines formulations sont trompeuses, d'autres sont conformes et valorisantes.
+Il n'existe pas de diplôme d'État en massage bien-être : le secteur est non réglementé, et aucune formation ne confère de titre légalement protégé. Ce que vous avez appris influence en revanche directement la façon dont vous pouvez en parler, certaines formulations sont trompeuses, d'autres sont conformes et valorisantes.
 
 > **En bref :** Une certification RNCP ou un label fédéral comme la FFMBE atteste du sérieux de votre formation, mais ne vous donne pas de titre légal supplémentaire ni le droit d'utiliser des mentions officielles qui n'existent pas pour le massage bien-être.
 
@@ -14,13 +14,13 @@ Il n'existe pas de diplôme d'État en massage bien-être : le secteur est non r
 
 Contrairement à la kinésithérapie, il n'existe pas de diplôme d'État spécifique au massage bien-être. Le secteur est non réglementé : n'importe quel organisme peut proposer une formation, quelle qu'en soit la durée ou le contenu.
 
-Cela signifie que deux praticiens peuvent légalement utiliser le même intitulé "praticien en massage bien-être" — l'un après 20 heures de formation, l'autre après 500 heures. La loi ne fait pas la distinction.
+Cela signifie que deux praticiens peuvent légalement utiliser le même intitulé "praticien en massage bien-être", l'un après 20 heures de formation, l'autre après 500 heures. La loi ne fait pas la distinction.
 
-Ce que vous avez appris, la durée de votre formation, le sérieux de l'organisme — tout cela ne vous donne pas de titre légal supplémentaire. Mais cela influence fortement la façon dont vous pouvez présenter votre activité.
+Ce que vous avez appris, la durée de votre formation, le sérieux de l'organisme, tout cela ne vous donne pas de titre légal supplémentaire. Mais cela influence fortement la façon dont vous pouvez présenter votre activité.
 
 ## Ce que signifie une certification RNCP pour le massage
 
-Certains organismes de formation en massage bien-être ont obtenu une certification auprès de France Compétences (anciennement CNCP) — parfois au titre du RNCP (Répertoire National des Certifications Professionnelles), parfois au titre du RS (Répertoire Spécifique).
+Certains organismes de formation en massage bien-être ont obtenu une certification auprès de France Compétences (anciennement CNCP), parfois au titre du RNCP (Répertoire National des Certifications Professionnelles), parfois au titre du RS (Répertoire Spécifique).
 
 Une certification RNCP atteste que la formation répond à un référentiel validé par une autorité publique. Elle permet notamment l'utilisation du CPF (Compte Personnel de Formation) pour financer la formation.
 
@@ -28,7 +28,7 @@ Ce que la certification RNCP ne garantit pas : que seuls les titulaires de ce di
 
 ## Les labels professionnels du secteur
 
-En l'absence de cadre légal unifié, plusieurs fédérations professionnelles ont créé leurs propres référentiels de formation et de certification. La FFMBE (Fédération Française de Massage Bien-Être) est l'une des plus connues — elle exige un minimum de 200 heures de formation pour ses praticiens certifiés.
+En l'absence de cadre légal unifié, plusieurs fédérations professionnelles ont créé leurs propres référentiels de formation et de certification. La FFMBE (Fédération Française de Massage Bien-Être) est l'une des plus connues, elle exige un minimum de 200 heures de formation pour ses praticiens certifiés.
 
 Ces labels sont des gages de sérieux reconnus dans le secteur. Ils peuvent être mentionnés sur votre site et vos supports.
 
@@ -38,7 +38,7 @@ La tentation est grande de valoriser sa formation avec des formulations qui sonn
 
 **À éviter** : écrire "Certifiée par l'État" (il n'existe pas de certification d'État pour le massage bien-être), "Diplômée en massage thérapeutique" (le terme thérapeutique implique une pratique médicale), ou "Formation agréée par le Ministère de la Santé" (sauf si c'est littéralement vrai, cette formulation est trompeuse au sens de l'article L.121-2 du Code de la consommation).
 
-**Formulations justes** : "Praticienne en massage bien-être, titulaire d'une formation de X heures auprès de [nom de l'organisme]", "Certifiée FFMBE" ou "Membre de la FFMBE" — à condition d'être réellement adhérente et certifiée — ou encore "Formation certifiée RNCP niveau 5 en [intitulé exact]" si c'est le cas.
+**Formulations justes** : "Praticienne en massage bien-être, titulaire d'une formation de X heures auprès de [nom de l'organisme]", "Certifiée FFMBE" ou "Membre de la FFMBE", à condition d'être réellement adhérente et certifiée, ou encore "Formation certifiée RNCP niveau 5 en [intitulé exact]" si c'est le cas.
 
 La précision construit la confiance. Elle montre que vous connaissez votre cadre d'exercice et que vous ne cherchez pas à paraître autre chose que ce que vous êtes.
 
@@ -66,7 +66,7 @@ Précisez les éléments factuels vérifiables : le nom de l'organisme formateur
 
 **La durée de ma formation m'autorise-t-elle à utiliser des titres particuliers ?**
 
-Non. Qu'une formation dure 20 heures ou 500 heures, la loi ne réglemente pas le titre de praticien en massage bien-être. En revanche, une formation longue auprès d'un organisme sérieux peut être mentionnée précisément — et c'est cette précision, plus que le titre, qui construit votre crédibilité auprès des clients.
+Non. Qu'une formation dure 20 heures ou 500 heures, la loi ne réglemente pas le titre de praticien en massage bien-être. En revanche, une formation longue auprès d'un organisme sérieux peut être mentionnée précisément, et c'est cette précision, plus que le titre, qui construit votre crédibilité auprès des clients.
 
 ## Vérifiez comment vous présentez vos qualifications
 

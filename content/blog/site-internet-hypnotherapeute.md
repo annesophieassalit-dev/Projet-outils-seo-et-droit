@@ -6,13 +6,13 @@ slug: "site-internet-hypnotherapeute"
 tags: ["Hypnothérapeute", "Site internet", "Conformité"]
 ---
 
-L'hypnose thérapeutique est l'une des pratiques bien-être les plus exposées aux risques de communication. Pourquoi ? Parce que son vocabulaire naturel — "inconscient", "suggestion", "thérapie", "traitement" — chevauche directement le champ médical et psychologique réglementé.
+L'hypnose thérapeutique est l'une des pratiques bien-être les plus exposées aux risques de communication. Pourquoi ? Parce que son vocabulaire naturel, "inconscient", "suggestion", "thérapie", "traitement", chevauche directement le champ médical et psychologique réglementé.
 
 Si vous êtes hypnothérapeute ou praticien en hypnose ericksonienne, votre site internet mérite une attention particulière. Voici les points clés à vérifier.
 
 ## La distinction fondamentale : hypnose et hypnothérapie
 
-En France, le terme **"hypnothérapeute"** n'est pas un titre protégé. Vous pouvez l'utiliser — mais il implique une responsabilité communicationnelle accrue, car il contient le mot "thérapeute" qui renvoie à une notion de soin.
+En France, le terme **"hypnothérapeute"** n'est pas un titre protégé. Vous pouvez l'utiliser, mais il implique une responsabilité communicationnelle accrue, car il contient le mot "thérapeute" qui renvoie à une notion de soin.
 
 La ligne de partage est celle-ci : vous pouvez accompagner des personnes dans leurs ressources, leur bien-être, leur changement. Vous ne pouvez pas diagnostiquer, traiter ou soigner au sens médical du terme.
 
@@ -20,15 +20,15 @@ La ligne de partage est celle-ci : vous pouvez accompagner des personnes dans le
 
 **Le mot "thérapie" et ses dérivés**
 
-"Thérapie par l'hypnose", "hypnothérapie" dans un sens de soin médical, "séance thérapeutique" — ces formulations peuvent être interprétées comme relevant de la psychothérapie, profession réglementée en France depuis 2010. Seuls les praticiens inscrits en ARS peuvent utiliser le titre de psychothérapeute.
+"Thérapie par l'hypnose", "hypnothérapie" dans un sens de soin médical, "séance thérapeutique", ces formulations peuvent être interprétées comme relevant de la psychothérapie, profession réglementée en France depuis 2010. Seuls les praticiens inscrits en ARS peuvent utiliser le titre de psychothérapeute.
 
 **Les promesses liées à l'arrêt de comportements**
 
-L'hypnose est souvent présentée pour accompagner l'arrêt du tabac, la perte de poids, la gestion de phobies. Ces domaines sont légitimes — mais la façon de les présenter peut créer un risque si elle promet un résultat garanti plutôt qu'un accompagnement vers un changement.
+L'hypnose est souvent présentée pour accompagner l'arrêt du tabac, la perte de poids, la gestion de phobies. Ces domaines sont légitimes, mais la façon de les présenter peut créer un risque si elle promet un résultat garanti plutôt qu'un accompagnement vers un changement.
 
 **Le vocabulaire de l'inconscient**
 
-"Reprogrammer l'inconscient", "effacer les croyances limitantes", "guérir les traumatismes" — ces formulations, très répandues dans la communication des hypnothérapeutes, appartiennent au registre médico-psychologique. Elles méritent d'être reformulées.
+"Reprogrammer l'inconscient", "effacer les croyances limitantes", "guérir les traumatismes", ces formulations, très répandues dans la communication des hypnothérapeutes, appartiennent au registre médico-psychologique. Elles méritent d'être reformulées.
 
 **La confusion avec la psychologie clinique**
 
@@ -36,7 +36,7 @@ Si vous n'êtes pas psychologue (titre protégé, bac+5 en psychologie), évitez
 
 ## Ce que vous pouvez mettre en avant
 
-Votre pratique a une vraie valeur — et vous pouvez la présenter avec précision et impact :
+Votre pratique a une vraie valeur, et vous pouvez la présenter avec précision et impact :
 
 - L'hypnose comme état naturel de conscience, accessible à tous
 - L'accompagnement vers plus de ressources, de sérénité, de confiance
@@ -52,7 +52,7 @@ Indiquez clairement, idéalement sur chaque page, que votre pratique :
 - Ne constitue pas une psychothérapie
 - S'adresse à des personnes majeures en dehors de toute urgence psychiatrique
 
-Ce n'est pas légalement obligatoire dans tous les cas, mais c'est une protection réelle — et un signal de sérieux pour vos visiteurs.
+Ce n'est pas légalement obligatoire dans tous les cas, mais c'est une protection réelle, et un signal de sérieux pour vos visiteurs.
 
 ## Vérifiez votre site avant de le partager
 
@@ -64,7 +64,7 @@ Les sites des hypnothérapeutes sont parmi ceux qui présentent le plus de formu
 
 **Pour aller plus loin :** le kit PDF *Visible & Conforme* inclut une fiche métier spécifique aux hypnothérapeutes, avec les termes les plus fréquemment problématiques et leurs alternatives.
 
-[Découvrir le kit PDF — 37€ →](https://annesophieassalit.systeme.io/visibleetconforme)
+[Découvrir le kit PDF, 37€ →](https://annesophieassalit.systeme.io/visibleetconforme)
 
 ---
 

@@ -20,9 +20,9 @@ N'importe qui peut, techniquement, se présenter comme sophrologue sans formatio
 
 La notion de "reconnaissance par l'État" recouvre plusieurs réalités différentes qu'il ne faut pas confondre.
 
-**La certification RNCP (Répertoire National des Certifications Professionnelles)** est le cadre officiel de certification des formations professionnelles en France. Certaines formations en sophrologie ont obtenu une certification RNCP — généralement au niveau 5 (bac +2) ou niveau 6 (bac +3).
+**La certification RNCP (Répertoire National des Certifications Professionnelles)** est le cadre officiel de certification des formations professionnelles en France. Certaines formations en sophrologie ont obtenu une certification RNCP, généralement au niveau 5 (bac +2) ou niveau 6 (bac +3).
 
-Une formation certifiée RNCP signifie que l'organisme de formation a satisfait à un processus d'évaluation par France Compétences. Cela atteste du sérieux de la formation — pas d'une protection légale du titre ou d'une exclusivité d'exercice.
+Une formation certifiée RNCP signifie que l'organisme de formation a satisfait à un processus d'évaluation par France Compétences. Cela atteste du sérieux de la formation, pas d'une protection légale du titre ou d'une exclusivité d'exercice.
 
 Ce que la certification RNCP ne garantit pas : que seuls les titulaires de ce diplôme peuvent exercer la sophrologie. D'autres praticiens sans certification RNCP exercent légalement.
 
@@ -34,7 +34,7 @@ La tentation est grande de valoriser sa formation avec des termes qui sonnent of
 
 **Formulations justes selon votre situation** : "Sophrologue certifiée RNCP niveau 5" si vous avez un diplôme d'un organisme enregistré au RNCP, "Diplômée de [nom de l'école], formation de [durée]" pour une présentation précise et vérifiable, ou "Membre de [fédération professionnelle]" si vous adhérez à une fédération reconnue dans le secteur.
 
-La précision protège. Elle montre que vous connaissez votre cadre d'exercice — et elle ne crée pas d'attente que vous ne pouvez pas tenir.
+La précision protège. Elle montre que vous connaissez votre cadre d'exercice, et elle ne crée pas d'attente que vous ne pouvez pas tenir.
 
 ## Pourquoi l'absence de réglementation ne signifie pas l'absence de règles
 
@@ -42,13 +42,13 @@ L'absence d'ordre professionnel et de titre protégé ne crée pas un vide jurid
 
 La DGCCRF a réalisé des enquêtes dans le secteur des thérapies alternatives et du bien-être, précisément parce que certains praticiens utilisent des termes qui surestiment leur encadrement réglementaire.
 
-Présenter honnêtement sa formation — ce qu'elle est, où elle a été obtenue, ce qu'elle couvre — est la meilleure protection.
+Présenter honnêtement sa formation, ce qu'elle est, où elle a été obtenue, ce qu'elle couvre, est la meilleure protection.
 
 ## Ce que vos clients cherchent vraiment
 
 Un client qui choisit un sophrologue ne cherche pas nécessairement un titre d'État. Il cherche un praticien sérieux, formé, qui sait ce qu'il fait et qui le dit clairement.
 
-Une présentation transparente de votre parcours — formation, durée, approche, spécialités — inspire davantage confiance qu'un titre ambigu.
+Une présentation transparente de votre parcours, formation, durée, approche, spécialités, inspire davantage confiance qu'un titre ambigu.
 
 ## Questions fréquentes
 

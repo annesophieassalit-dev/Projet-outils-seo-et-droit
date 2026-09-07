@@ -1,6 +1,6 @@
 ---
 title: "Formation sophrologue ou naturopathe : ce qu'on ne vous dit pas sur la communication légale"
-description: "La communication conforme ne fait pas partie des programmes de formation. Pourtant, ce que vous pouvez dire — et comment le dire — conditionne directement votre exposition juridique."
+description: "La communication conforme ne fait pas partie des programmes de formation. Pourtant, ce que vous pouvez dire, et comment le dire, conditionne directement votre exposition juridique."
 date: "2026-07-24"
 slug: "formation-sophrologue-naturopathe-communication"
 tags: ["Formation", "Communication", "Conformité"]
@@ -12,13 +12,13 @@ Et pourtant, il y a un angle mort dans la plupart des formations aux métiers du
 
 Pas les techniques marketing. Pas le copywriting. Les règles qui encadrent ce que vous avez le droit de dire, et comment le dire.
 
-## Ce que la formation enseigne — et ce qu'elle n'enseigne pas
+## Ce que la formation enseigne, et ce qu'elle n'enseigne pas
 
 Les organismes de formation aux métiers du bien-être ont un rôle clair : vous transmettre les compétences de votre pratique. C'est leur mission, et beaucoup le font bien.
 
-Certains abordent quelques points légaux — le cadre d'exercice, l'absence de réglementation de la profession, les limites de la pratique. C'est utile et nécessaire.
+Certains abordent quelques points légaux, le cadre d'exercice, l'absence de réglementation de la profession, les limites de la pratique. C'est utile et nécessaire.
 
-Mais la communication en ligne — vos mots, votre positionnement, vos pages de site — reste rarement au programme. Ce n'est pas un reproche : ce n'est pas leur rôle. C'est une réalité.
+Mais la communication en ligne, vos mots, votre positionnement, vos pages de site, reste rarement au programme. Ce n'est pas un reproche : ce n'est pas leur rôle. C'est une réalité.
 
 Le problème : une fois que vous êtes installé, ce vide se comble de façon approximative. On regarde ce que font les confrères. On reprend des formulations qui semblent fonctionner. On s'inspire de sites qu'on trouve bien faits.
 
@@ -30,15 +30,15 @@ Les praticiens bien-être exercent dans un cadre particulier. Pas de titre prot�
 
 Cette absence de cadre peut sembler libératrice. Elle est en réalité exigeante.
 
-Car si personne ne vous dit ce qui est interdit, **vous n'en êtes pas moins responsable de le connaître**. Le Code de la santé publique, le Code de la consommation, le RGPD — ces textes s'appliquent à vous même si votre formation n'en a pas parlé.
+Car si personne ne vous dit ce qui est interdit, **vous n'en êtes pas moins responsable de le connaître**. Le Code de la santé publique, le Code de la consommation, le RGPD, ces textes s'appliquent à vous même si votre formation n'en a pas parlé.
 
-Et si la DGCCRF lance une campagne de contrôle dans le secteur bien-être — ce qu'elle fait périodiquement — et que vos contenus passent à la loupe, l'argument "je ne savais pas que ce mot posait problème" ne constitue pas une défense juridique.
+Et si la DGCCRF lance une campagne de contrôle dans le secteur bien-être, ce qu'elle fait périodiquement, et que vos contenus passent à la loupe, l'argument "je ne savais pas que ce mot posait problème" ne constitue pas une défense juridique.
 
 ## Ce que ça implique dans votre quotidien
 
 La bonne nouvelle : acquérir cette compétence ne demande pas des années d'études juridiques. Elle demande de savoir **où regarder**.
 
-Les risques se concentrent dans quelques catégories bien identifiées. Une fois qu'on les connaît, on les voit rapidement dans ses propres textes — et on peut les corriger.
+Les risques se concentrent dans quelques catégories bien identifiées. Une fois qu'on les connaît, on les voit rapidement dans ses propres textes, et on peut les corriger.
 
 Ce que ça signifie pratiquement :
 - Relire sa page d'accueil et ses pages de services avec un regard différent

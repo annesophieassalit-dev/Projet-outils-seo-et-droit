@@ -6,7 +6,7 @@ slug: "rgpd-praticien-bien-etre"
 tags: ["RGPD", "Juridique", "Données personnelles"]
 ---
 
-Le RGPD fait peur. Beaucoup de praticiens bien-être préfèrent ne pas trop y penser, en espérant rester sous les radars. Mauvaise stratégie : depuis 2018, le règlement européen s'applique à toute personne ou entreprise qui collecte des données personnelles de résidents européens — y compris le sophrologue indépendant avec un simple formulaire de contact.
+Le RGPD fait peur. Beaucoup de praticiens bien-être préfèrent ne pas trop y penser, en espérant rester sous les radars. Mauvaise stratégie : depuis 2018, le règlement européen s'applique à toute personne ou entreprise qui collecte des données personnelles de résidents européens, y compris le sophrologue indépendant avec un simple formulaire de contact.
 
 Bonne nouvelle : la mise en conformité d'un praticien bien-être en activité libérale est beaucoup plus simple que celle d'une grande entreprise. Voici ce que vous devez vraiment faire.
 
@@ -33,7 +33,7 @@ La politique de confidentialité doit être accessible depuis chaque page de vot
 
 Si votre site utilise des cookies (Google Analytics, Meta Pixel, outils de chat...), vous devez demander le consentement des visiteurs **avant** de les déposer. Un simple bandeau qui affiche "Ce site utilise des cookies" et propose d'Accepter/Refuser est généralement suffisant pour un site vitrine de praticien.
 
-Si vous n'utilisez aucun outil de tracking, vous n'avez pas besoin de bandeau cookies — mais mentionnez-le dans votre politique de confidentialité.
+Si vous n'utilisez aucun outil de tracking, vous n'avez pas besoin de bandeau cookies, mais mentionnez-le dans votre politique de confidentialité.
 
 ### 3. Sécuriser les données de vos clients
 
@@ -66,9 +66,9 @@ Beaucoup de praticiens croient qu'ils doivent :
 
 ## La donnée de santé : un cas particulier (article 9 RGPD)
 
-Les notes que vous prenez sur vos clients (motifs de consultation, difficultés évoquées, évolution...) peuvent constituer des **données de santé** au sens de l'article 9 du RGPD — une catégorie spécialement protégée qui exige un niveau de sécurité renforcé et un **consentement explicite** de la personne concernée pour être traitée.
+Les notes que vous prenez sur vos clients (motifs de consultation, difficultés évoquées, évolution...) peuvent constituer des **données de santé** au sens de l'article 9 du RGPD, une catégorie spécialement protégée qui exige un niveau de sécurité renforcé et un **consentement explicite** de la personne concernée pour être traitée.
 
-Cela ne signifie pas que vous ne pouvez pas les tenir — mais vous devez :
+Cela ne signifie pas que vous ne pouvez pas les tenir, mais vous devez :
 - Les conserver de manière sécurisée (appareil protégé par mot de passe, pas de cloud non sécurisé)
 - Ne pas les partager sans consentement explicite écrit
 - Permettre à vos clients de demander leur accès, rectification ou suppression
