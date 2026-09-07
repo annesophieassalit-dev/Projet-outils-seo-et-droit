@@ -137,7 +137,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             prose-a:text-zen-700 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
             prose-strong:text-zen-950
             prose-ul:space-y-1 prose-li:text-gray-700
-            prose-blockquote:border-l-zen-400 prose-blockquote:bg-zen-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-blockquote:not-italic"
+            prose-blockquote:border-l-zen-400 prose-blockquote:bg-zen-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-blockquote:not-italic
+            prose-h4:bg-zen-50 prose-h4:text-zen-900 prose-h4:font-semibold prose-h4:text-sm prose-h4:px-4 prose-h4:py-2.5 prose-h4:rounded-lg prose-h4:mt-6 prose-h4:mb-2"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
