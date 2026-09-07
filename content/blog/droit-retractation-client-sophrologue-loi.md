@@ -62,20 +62,16 @@ En revanche, si la première séance du programme a lieu après les 14 jours, le
 
 ## Questions fréquentes
 
-**Un client peut-il annuler une séance de sophrologie payée en ligne et être remboursé ?**
-
+#### Un client peut-il annuler une séance de sophrologie payée en ligne et être remboursé ?
 Oui, si la séance a été achetée en ligne (contrat à distance) et que le délai de 14 jours ne s'est pas écoulé depuis l'achat, le client dispose d'un droit de rétractation légal prévu par l'article L.221-18 du Code de la consommation. Ce droit s'applique même si vous ne l'avez pas mentionné dans vos CGV, dans ce cas, le délai est porté à 12 mois au lieu de 14 jours.
 
-**Comment un sophrologue peut-il réaliser une séance avant le délai de rétractation de 14 jours ?**
-
+#### Comment un sophrologue peut-il réaliser une séance avant le délai de rétractation de 14 jours ?
 C'est possible sous deux conditions cumulatives prévues par l'article L.221-28 12° du Code de la consommation : le client doit expressément demander que la prestation commence avant la fin du délai de 14 jours, et il doit être informé qu'il renonce à son droit de rétractation si la prestation est entièrement réalisée. Ces deux éléments doivent figurer dans vos CGV et être acceptés avant la prestation.
 
-**Le droit de rétractation s'applique-t-il pour une séance réservée directement en cabinet ?**
-
+#### Le droit de rétractation s'applique-t-il pour une séance réservée directement en cabinet ?
 Non. Le droit de rétractation prévu par le Code de la consommation s'applique uniquement aux contrats conclus à distance (achat en ligne, réservation par email avec paiement à distance) ou hors établissement (salon, événement, domicile). Les séances conclues directement en cabinet lors d'un rendez-vous ne sont pas soumises à ce régime.
 
-**Que risque un sophrologue qui ne mentionne pas le droit de rétractation dans ses CGV ?**
-
+#### Que risque un sophrologue qui ne mentionne pas le droit de rétractation dans ses CGV ?
 Si le droit de rétractation n'est pas mentionné dans les CGV, le délai légal est automatiquement porté à 12 mois au lieu de 14 jours pour tous les achats à distance. Cela signifie que le client peut se rétracter jusqu'à un an après l'achat et exiger un remboursement. L'absence d'information sur ce droit peut également être relevée par la DGCCRF et fragilise votre position en cas de litige.
 
 ## Mettez vos CGV à jour

@@ -58,20 +58,16 @@ Sur votre site, vos mentions légales doivent indiquer votre SIRET, votre statut
 
 ## Questions fréquentes
 
-**Quel code APE déclarer pour une activité de sophrologie en micro-entreprise ?**
-
+#### Quel code APE déclarer pour une activité de sophrologie en micro-entreprise ?
 Le code APE le plus fréquemment attribué aux sophrologues est le 86.90F (Activités de santé humaine non classées ailleurs). Certains praticiens se voient attribuer le 96.09Z (Autres services personnels) selon la nature exacte de leur activité. C'est l'INPI qui attribue ce code lors de la création de l'entreprise, vous pouvez le demander en précisant votre activité lors de la déclaration sur le guichet unique.
 
-**Que se passe-t-il si je dépasse le plafond de chiffre d'affaires en cours d'année ?**
-
+#### Que se passe-t-il si je dépasse le plafond de chiffre d'affaires en cours d'année ?
 Si votre chiffre d'affaires dépasse 77 700 euros (seuil 2026) pendant deux années civiles consécutives, vous sortez automatiquement du régime micro-entrepreneur et basculez vers le régime réel d'imposition. Si vous dépassez les seuils de tolérance TVA en cours d'année, vous devenez redevable de la TVA dès le premier jour du mois suivant le dépassement. Anticipez ce changement en consultant un expert-comptable avant d'atteindre ces seuils.
 
-**Dois-je quand même déclarer à l'URSSAF si je n'ai eu aucun client ce mois-ci ?**
-
+#### Dois-je quand même déclarer à l'URSSAF si je n'ai eu aucun client ce mois-ci ?
 Oui. La déclaration de chiffre d'affaires à l'URSSAF est obligatoire même si votre chiffre est à zéro. Ne pas déclarer, même pour une période sans encaissement, peut entraîner une régularisation ou une pénalité. La déclaration à zéro se fait en quelques secondes sur le site URSSAF ou via l'application AutoEntrepreneur.
 
-**Le statut auto-entrepreneur me protège-t-il en cas de litige avec un client ?**
-
+#### Le statut auto-entrepreneur me protège-t-il en cas de litige avec un client ?
 Non. Le statut juridique ne vous protège pas contre les risques liés à votre activité. Une assurance responsabilité civile professionnelle (RCP) reste nécessaire indépendamment de votre statut. Sans RCP, vous êtes personnellement exposé en cas de demande d'indemnisation d'un client, y compris pour un préjudice moral ou un accident survenu lors d'une séance.
 
 **Visible & Conforme** vérifie la cohérence de vos mentions légales et identifie les éléments manquants ou obsolètes.

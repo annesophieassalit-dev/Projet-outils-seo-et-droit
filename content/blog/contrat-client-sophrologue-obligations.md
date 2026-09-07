@@ -60,20 +60,16 @@ Un contrat bien rédigé protège les deux parties. Il n'est pas un signe de mé
 
 ## Questions fréquentes
 
-**Un sophrologue est-il obligé d'avoir un contrat avec ses clients ?**
-
+#### Un sophrologue est-il obligé d'avoir un contrat avec ses clients ?
 Cela dépend du mode d'exercice. Pour les séances conclues en cabinet, il n'existe pas d'obligation légale de remettre un contrat écrit. En revanche, les CGV sont obligatoires dès que vous vendez des séances ou forfaits via un site internet ou que vous concluez un contrat à distance. Dans tous les cas, une information précontractuelle sur les tarifs et les modalités de la prestation est requise par le Code de la consommation.
 
-**Que doit contenir un contrat ou des CGV pour un praticien bien-être ?**
-
+#### Que doit contenir un contrat ou des CGV pour un praticien bien-être ?
 Les mentions essentielles sont votre identité professionnelle (nom, SIRET, adresse), la description précise de la prestation, le tarif TTC avec mention de la franchise de TVA si applicable (art. 293B CGI), les modalités de paiement, la politique d'annulation et de report, et, pour les contrats à distance, l'information sur le droit de rétractation de 14 jours prévu par l'article L.221-18 du Code de la consommation.
 
-**Que se passe-t-il si un client conteste une séance et qu'il n'y a pas de contrat ?**
-
+#### Que se passe-t-il si un client conteste une séance et qu'il n'y a pas de contrat ?
 Sans document écrit, la parole est contre la parole. En présence de CGV acceptées ou d'un contrat signé, vous disposez d'une base claire pour défendre votre position. Un contrat bien rédigé protège les deux parties : il ne traduit pas une méfiance envers vos clients, mais un professionnalisme qui rassure et prévient les malentendus.
 
-**La description de la prestation dans les CGV doit-elle mentionner que la sophrologie n'est pas un acte médical ?**
-
+#### La description de la prestation dans les CGV doit-elle mentionner que la sophrologie n'est pas un acte médical ?
 Oui, c'est une bonne pratique fortement recommandée. Une formulation du type "les séances ne constituent pas un acte médical et ne se substituent pas à un suivi médical ou psychologique" situe clairement votre rôle et évite toute confusion sur la nature de votre accompagnement, ce qui réduit le risque de litige ou de qualification de pratique trompeuse.
 
 ## Vérifiez que vos CGV sont en règle

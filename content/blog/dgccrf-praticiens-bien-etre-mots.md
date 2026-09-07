@@ -46,20 +46,16 @@ La bonne nouvelle : ces ajustements ne réduisent pas l'impact de votre communic
 
 ## Questions fréquentes
 
-**La DGCCRF peut-elle vraiment contrôler un sophrologue indépendant ?**
-
+#### La DGCCRF peut-elle vraiment contrôler un sophrologue indépendant ?
 Oui. La DGCCRF peut contrôler tout professionnel qui communique auprès du public, quelle que soit la taille de son activité. Le secteur des pratiques de bien-être et des thérapies alternatives fait partie de ses axes de surveillance documentés. Ses agents peuvent effectuer des visites de contrôle, consulter vos supports publiés en ligne et demander des explications sur vos formulations.
 
-**Qu'est-ce qu'une allégation trompeuse selon la réglementation ?**
-
+#### Qu'est-ce qu'une allégation trompeuse selon la réglementation ?
 Une allégation trompeuse est une formulation qui crée chez le lecteur une impression inexacte sur ce que vous pouvez faire. Elle peut affirmer une capacité que vous n'avez pas légalement, exagérer les effets de votre pratique, ou promettre un résultat médical sans base établie. Le Code de la consommation interdit les pratiques commerciales trompeuses, une allégation peut être qualifiée de trompeuse même si elle est formulée avec les meilleures intentions.
 
-**Mon intention compte-t-elle dans une procédure DGCCRF ?**
-
+#### Mon intention compte-t-elle dans une procédure DGCCRF ?
 Non. L'intention ne constitue pas un élément de l'infraction en matière de pratiques commerciales trompeuses. Ce qui est évalué, c'est l'effet que le message peut produire sur un lecteur ordinaire. Si votre formulation peut raisonnablement amener un consommateur à croire que vous traitez une pathologie, cette formulation est à risque, indépendamment de ce que vous avez voulu dire en l'écrivant.
 
-**Comment savoir si mes textes contiennent des formulations à risque ?**
-
+#### Comment savoir si mes textes contiennent des formulations à risque ?
 La difficulté avec ses propres écrits est que l'on relit avec la même intention que celle avec laquelle on a écrit, ce qui rend les formulations problématiques invisibles. Un regard extérieur, que ce soit un outil d'analyse ou une relecture informée, est beaucoup plus efficace que l'auto-évaluation. Les termes les plus fréquemment problématiques appartiennent à trois familles : les verbes d'action médicale (traiter, soigner, guérir, soulager), les noms de pathologies présentés comme des cibles de votre pratique, et les promesses de résultats chiffrés ou garantis.
 
 ## Comment vérifier vos propres textes

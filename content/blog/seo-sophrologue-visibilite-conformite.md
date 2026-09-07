@@ -48,20 +48,16 @@ Un visiteur qui comprend exactement ce que vous proposez, sans se sentir promis 
 
 ## Questions fréquentes
 
-**Pourquoi le SEO crée-t-il un risque juridique pour un sophrologue ?**
-
+#### Pourquoi le SEO crée-t-il un risque juridique pour un sophrologue ?
 Plus un site est bien référencé, plus ses contenus sont accessibles et indexés. Si ces contenus contiennent des formulations qui constituent des allégations trompeuses au sens du Code de la consommation, leur large diffusion augmente mécaniquement l'exposition au contrôle. Un site peu visité avec des textes à risque est moins susceptible d'être signalé qu'un site qui remonte en première page sur des requêtes ciblées.
 
-**Qui peut signaler un site de sophrologue à la DGCCRF ?**
-
+#### Qui peut signaler un site de sophrologue à la DGCCRF ?
 Tout le monde peut signaler un site à la DGCCRF : un client insatisfait, un concurrent, un ordre de santé voisin, ou un contrôleur qui effectue une veille sectorielle de façon proactive. La DGCCRF réalise régulièrement des campagnes de contrôle ciblant des secteurs spécifiques, et les pratiques de bien-être font partie de ses axes de surveillance documentés.
 
-**Comment être visible sur Google tout en restant conforme ?**
-
+#### Comment être visible sur Google tout en restant conforme ?
 La conformité et le référencement ne sont pas opposés. Les textes précis, qui décrivent avec exactitude ce que vous proposez et à qui vous vous adressez, sont généralement mieux lus par Google et plus convaincants pour vos clients que les promesses vagues. La précision du vocabulaire, "j'accompagne les personnes qui traversent" plutôt que "je traite", est à la fois une bonne pratique SEO et une protection juridique.
 
-**La sophrologie est-elle soumise au Code de la santé publique ?**
-
+#### La sophrologie est-elle soumise au Code de la santé publique ?
 La sophrologie n'est pas une profession de santé réglementée, et ses praticiens ne sont pas soumis au Code de la santé publique au titre de leur profession. En revanche, le Code de la santé publique définit les actes médicaux réservés aux professionnels de santé habilités, poser un diagnostic, prescrire un traitement, pratiquer des actes de soin. Si un sophrologue décrit son activité dans ces termes, il peut se voir reprocher un exercice illégal de la médecine, indépendamment de ce qu'il pratique réellement en séance.
 
 ## Vérifiez que votre visibilité est une force, pas un risque

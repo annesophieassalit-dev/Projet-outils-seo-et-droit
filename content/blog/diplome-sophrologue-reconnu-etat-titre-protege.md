@@ -52,20 +52,16 @@ Une présentation transparente de votre parcours, formation, durée, approche, s
 
 ## Questions fréquentes
 
-**Existe-t-il un diplôme d'État en sophrologie en France ?**
-
+#### Existe-t-il un diplôme d'État en sophrologie en France ?
 Non. Il n'existe pas de diplôme d'État en sophrologie en France. La sophrologie est une profession non réglementée, ce qui signifie qu'aucun texte de loi n'impose de formation spécifique pour exercer ni ne définit de titre officiel protégé. Certaines formations sont cependant certifiées RNCP (Répertoire National des Certifications Professionnelles), ce qui atteste de leur sérieux mais ne confère pas d'exclusivité d'exercice.
 
-**Que signifie une formation en sophrologie "certifiée RNCP" ?**
-
+#### Que signifie une formation en sophrologie "certifiée RNCP" ?
 La certification RNCP signifie que l'organisme de formation a satisfait à un processus d'évaluation par France Compétences. Elle atteste du niveau et du contenu de la formation, généralement au niveau 5 (bac +2) ou niveau 6 (bac +3). Elle ne protège pas le titre ni ne réserve l'exercice de la sophrologie aux seuls titulaires de cette certification.
 
-**Peut-on se présenter comme "sophrologue diplômé de l'État" ?**
-
+#### Peut-on se présenter comme "sophrologue diplômé de l'État" ?
 Non, cette formulation est incorrecte et trompeuse au sens du Code de la consommation, car elle laisse croire à l'existence d'un diplôme d'État qui n'existe pas. Cela peut être qualifié de pratique commerciale trompeuse. Il faut indiquer précisément l'organisme qui a délivré la certification et le niveau de formation obtenu.
 
-**Comment présenter sa formation de sophrologue sans risque juridique ?**
-
+#### Comment présenter sa formation de sophrologue sans risque juridique ?
 La règle est la précision. Indiquez le nom exact de l'organisme de formation, la durée de la formation, et éventuellement la certification RNCP si vous l'avez obtenue. Des formulations comme "Sophrologue certifiée RNCP niveau 5" ou "Diplômée de [nom de l'école], formation de [durée]" sont exactes, vérifiables, et ne créent pas de fausse impression sur votre cadre réglementaire.
 
 ## Vérifiez comment vous présentez vos qualifications

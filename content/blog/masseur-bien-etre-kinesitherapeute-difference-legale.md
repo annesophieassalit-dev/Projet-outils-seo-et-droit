@@ -50,20 +50,16 @@ La clarté protège. Un masseur bien-être qui décrit précisément ce qu'il fa
 
 ## Questions fréquentes
 
-**Un masseur bien-être peut-il utiliser le mot "kiné" sur son site ?**
-
+#### Un masseur bien-être peut-il utiliser le mot "kiné" sur son site ?
 Non. L'abréviation "kiné" renvoie directement au titre de masseur-kinésithérapeute, protégé par l'article L.4314-4 du Code de la santé publique. Son utilisation par un praticien non titulaire du diplôme d'État constitue une usurpation de titre passible d'un an d'emprisonnement et de 15 000 euros d'amende.
 
-**Quelle est la différence concrète entre un massage bien-être et un acte de kinésithérapie ?**
-
+#### Quelle est la différence concrète entre un massage bien-être et un acte de kinésithérapie ?
 L'objet est différent. Le massage bien-être vise la détente et le confort ; la kinésithérapie vise à prévenir, traiter ou rééduquer des troubles de santé, généralement sur prescription médicale. Un kinésithérapeute agit sur des patients dans un cadre thérapeutique réglementé. Un praticien bien-être accueille des clients dans un cadre de mieux-être.
 
-**Un masseur bien-être peut-il accueillir quelqu'un qui a mal au dos ?**
-
+#### Un masseur bien-être peut-il accueillir quelqu'un qui a mal au dos ?
 Oui, à condition de ne pas positionner sa prestation comme un traitement médical. Il peut proposer une séance pour relâcher les tensions musculaires liées au stress ou à la fatigue, mais il ne peut pas affirmer traiter une lombalgie ni se présenter comme un substitut au kinésithérapeute.
 
-**Quelles sanctions risque un praticien qui utilise le vocabulaire de la kinésithérapie ?**
-
+#### Quelles sanctions risque un praticien qui utilise le vocabulaire de la kinésithérapie ?
 Il s'expose à une procédure pour pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation. Dans les cas les plus graves, des formulations qui laissent entendre un acte médical peuvent relever de l'exercice illégal de la médecine ou de la masso-kinésithérapie, infractions pénales passibles de sanctions importantes.
 
 **Visible & Conforme** analyse la façon dont vous présentez votre pratique de massage et identifie les formulations qui pourraient créer une confusion sur votre rôle.

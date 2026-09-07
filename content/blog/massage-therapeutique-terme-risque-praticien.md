@@ -55,20 +55,16 @@ Corriger ce terme sur votre site et vos supports prend dix minutes. Gérer une p
 
 ## Questions fréquentes
 
-**"Massage thérapeutique" est-il totalement interdit pour un praticien bien-être ?**
-
+#### "Massage thérapeutique" est-il totalement interdit pour un praticien bien-être ?
 Il n'y a pas d'interdiction explicite formulée dans un texte unique, mais le terme crée une présomption de pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation dès lors qu'il laisse croire à un acte médical. Le risque est réel, documenté et disproportionné par rapport aux quelques mots à changer.
 
-**Puis-je décrire mon massage comme ayant des effets bénéfiques sur la santé ?**
-
+#### Puis-je décrire mon massage comme ayant des effets bénéfiques sur la santé ?
 Vous pouvez décrire des effets de bien-être ressentis, relâchement des tensions, détente musculaire, sensation de légèreté. Ce qui est risqué, c'est d'affirmer un résultat sur une pathologie ou un trouble de santé identifié. "Mon massage aide à se sentir mieux" est différent de "mon massage traite les douleurs chroniques".
 
-**Comment distinguer ce qui relève du bien-être de ce qui relève du médical ?**
-
+#### Comment distinguer ce qui relève du bien-être de ce qui relève du médical ?
 La distinction tient à l'objet de l'acte. Si votre prestation vise la détente, le confort et le mieux-être d'une personne en bonne santé, elle relève du bien-être. Si elle vise à prévenir, traiter ou rééduquer un trouble de santé identifié, elle relève du médical. Le vocabulaire que vous utilisez doit refléter cet objet.
 
-**Que risque concrètement un praticien qui utilise "massage thérapeutique" sur son site ?**
-
+#### Que risque concrètement un praticien qui utilise "massage thérapeutique" sur son site ?
 En cas de signalement ou de contrôle, la DGCCRF peut qualifier la formulation de pratique commerciale trompeuse (art. L.121-2 du Code de la consommation) et engager une procédure. Dans les cas où la communication implique clairement un acte de soin sur une pathologie, le risque peut s'étendre à celui de l'exercice illégal de la masso-kinésithérapie.
 
 **Visible & Conforme** identifie ce terme et les formulations apparentées dans vos textes, et propose des alternatives adaptées à votre pratique spécifique.

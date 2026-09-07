@@ -54,20 +54,16 @@ Vérifiez aussi la couverture géographique si vous vous déplacez chez vos clie
 
 ## Questions fréquentes
 
-**La RCP est-elle obligatoire pour un masseur bien-être ?**
-
+#### La RCP est-elle obligatoire pour un masseur bien-être ?
 Non, aucun texte de loi ne l'impose aux praticiens en massage bien-être. En revanche, certaines fédérations comme la FFMBE la conditionnent à leur certification, et la plupart des bailleurs de locaux professionnels exigent une attestation avant la signature d'un bail. L'absence d'assurance expose surtout vos biens personnels en cas d'accident.
 
-**Que se passe-t-il si un client se blesse lors d'une séance sans que j'aie d'assurance ?**
-
+#### Que se passe-t-il si un client se blesse lors d'une séance sans que j'aie d'assurance ?
 Votre responsabilité civile peut être engagée sur vos biens personnels. Le client lésé peut vous réclamer des dommages et intérêts devant les tribunaux civils, et en l'absence de RCP, c'est votre patrimoine qui répond de la condamnation, épargne, véhicule, immobilier si vous en possédez.
 
-**Mon assurance professionnelle me protège-t-elle si la DGCCRF ouvre une procédure contre moi à cause de mon site ?**
-
+#### Mon assurance professionnelle me protège-t-elle si la DGCCRF ouvre une procédure contre moi à cause de mon site ?
 Non. La RCP couvre les accidents physiques et matériels survenus dans le cadre de votre activité. Une procédure pour pratique commerciale trompeuse, engagée à cause de formulations problématiques sur votre site ou vos réseaux sociaux (art. L.121-2 du Code de la consommation), n'entre pas dans le périmètre de la responsabilité civile professionnelle.
 
-**Comment vérifier que mon contrat d'assurance couvre toutes mes techniques ?**
-
+#### Comment vérifier que mon contrat d'assurance couvre toutes mes techniques ?
 Demandez à votre assureur une confirmation écrite listant les techniques couvertes. Certains contrats excluent des pratiques spécifiques, massages avec déambulation sur le dos, utilisation d'huiles essentielles, accueil de mineurs. Si vous vous déplacez chez vos clients, vérifiez également que la couverture géographique s'étend au domicile de vos clients.
 
 ## Mettez aussi votre communication en règle

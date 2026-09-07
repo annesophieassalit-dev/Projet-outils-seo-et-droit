@@ -52,20 +52,16 @@ Ce que vous évitez : les superlatifs non vérifiables, les titres approximatifs
 
 ## Questions fréquentes
 
-**Une certification RNCP garantit-elle que je peux exercer légalement le massage bien-être ?**
-
+#### Une certification RNCP garantit-elle que je peux exercer légalement le massage bien-être ?
 Non. La certification RNCP atteste que votre formation répond à un référentiel validé par France Compétences. Elle ne vous confère pas de monopole d'exercice : d'autres praticiens sans certification RNCP exercent légalement la même activité, car le secteur du massage bien-être est non réglementé.
 
-**Puis-je écrire "certifiée par l'État" sur mon site si j'ai une formation RNCP ?**
-
+#### Puis-je écrire "certifiée par l'État" sur mon site si j'ai une formation RNCP ?
 Non. Une certification RNCP est reconnue par France Compétences, qui est un organisme public, mais cela ne se traduit pas par une "certification par l'État" du praticien lui-même. Cette formulation est trompeuse et peut engager votre responsabilité au titre des pratiques commerciales trompeuses (art. L.121-2 du Code de la consommation).
 
-**Comment présenter ma formation sans induire mes clients en erreur ?**
-
+#### Comment présenter ma formation sans induire mes clients en erreur ?
 Précisez les éléments factuels vérifiables : le nom de l'organisme formateur, la durée en heures, l'intitulé exact du certificat obtenu, et votre appartenance à une fédération si c'est le cas. Évitez les qualificatifs vagues comme "formation reconnue" ou "diplôme officiel" sans préciser de quoi il s'agit exactement.
 
-**La durée de ma formation m'autorise-t-elle à utiliser des titres particuliers ?**
-
+#### La durée de ma formation m'autorise-t-elle à utiliser des titres particuliers ?
 Non. Qu'une formation dure 20 heures ou 500 heures, la loi ne réglemente pas le titre de praticien en massage bien-être. En revanche, une formation longue auprès d'un organisme sérieux peut être mentionnée précisément, et c'est cette précision, plus que le titre, qui construit votre crédibilité auprès des clients.
 
 ## Vérifiez comment vous présentez vos qualifications

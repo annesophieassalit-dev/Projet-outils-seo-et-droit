@@ -48,20 +48,16 @@ Cette précision rassure les parents potentiels et dissuade les demandes qui met
 
 ## Questions fréquentes
 
-**Faut-il un accord écrit ou un accord verbal suffit-il ?**
-
+#### Faut-il un accord écrit ou un accord verbal suffit-il ?
 Un accord verbal est insuffisant en cas de litige. Conservez toujours une trace écrite : un formulaire signé par les deux parents, ou a minima un email de confirmation de la prise de rendez-vous avec l'accord du parent. En cas de séparation ou de garde partagée, la signature des deux titulaires de l'autorité parentale est indispensable.
 
-**Que se passe-t-il si un seul parent donne son accord ?**
-
+#### Que se passe-t-il si un seul parent donne son accord ?
 En cas de séparation ou de divorce, les deux parents exercent conjointement l'autorité parentale. Si un seul parent vous a donné son accord, vous êtes exposé à une contestation de l'autre parent. La bonne pratique est de demander systématiquement la signature ou l'accord écrit des deux parents dès la première séance, et de le conserver dans votre dossier client.
 
-**Un adolescent peut-il demander la confidentialité totale de ses séances ?**
-
+#### Un adolescent peut-il demander la confidentialité totale de ses séances ?
 Non, pas au détriment de votre responsabilité légale. Vous pouvez expliquer à l'adolescent que vous respectez la confidentialité des échanges, mais que son accompagnement se déroule avec l'accord de ses parents. Vous pouvez convenir avec les parents que le contenu précis des séances ne leur sera pas rapporté, mais cet accord doit lui-même être acté par écrit avec toutes les parties dès le départ.
 
-**Dois-je mentionner sur mon site que je reçois des mineurs ?**
-
+#### Dois-je mentionner sur mon site que je reçois des mineurs ?
 Oui, c'est recommandé. Si vous travaillez avec des enfants ou des adolescents, précisez-le sur votre page de services ou dans votre FAQ, en indiquant que vous recevez les mineurs avec l'accord préalable des parents ou représentants légaux. Cette mention rassure les parents qui cherchent un praticien sérieux et dissuade les demandes qui pourraient mettre votre pratique en difficulté.
 
 **Visible & Conforme** analyse la cohérence de votre communication avec votre pratique réelle, y compris pour les accompagnements spécifiques comme les mineurs.

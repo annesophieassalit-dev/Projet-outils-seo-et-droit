@@ -73,20 +73,16 @@ Un article par semaine pendant quelques mois crée une dynamique de trafic qui d
 
 ## Questions fréquentes
 
-**Que mettre absolument dans les mentions légales d'un site de sophrologue ?**
-
+#### Que mettre absolument dans les mentions légales d'un site de sophrologue ?
 Les mentions légales doivent indiquer votre nom ou dénomination sociale, votre adresse, votre numéro SIRET, votre numéro de téléphone et adresse email, ainsi que les coordonnées de votre hébergeur. Ces obligations découlent de la loi pour la confiance dans l'économie numérique (LCEN). Si vous avez changé de statut, d'adresse ou d'hébergeur depuis la création du site, vos mentions légales sont peut-être obsolètes et doivent être mises à jour.
 
-**Peut-on vendre des accompagnements en ligne sans CGV ?**
-
+#### Peut-on vendre des accompagnements en ligne sans CGV ?
 Non. Dès lors que vous proposez une vente en ligne, paiement d'une séance ou d'un programme directement depuis votre site, vous entrez dans le champ du droit de la consommation. Les conditions générales de vente (CGV) deviennent obligatoires et doivent mentionner notamment le droit de rétractation de 14 jours prévu à l'article L. 221-18 du Code de la consommation.
 
-**Comment rédiger une page de services sans risque juridique ?**
-
+#### Comment rédiger une page de services sans risque juridique ?
 La règle essentielle est de décrire sans promettre. Décrivez ce que votre accompagnement propose, comment il se déroule et à qui il s'adresse en termes de situations vécues, pas de pathologies. Utilisez des verbes comme "accompagner", "explorer", "soutenir" plutôt que "traiter", "soigner" ou "guérir". Évitez de garantir un résultat précis ou de chiffrer une amélioration attendue.
 
-**Dois-je avoir un blog sur mon site de sophrologue ?**
-
+#### Dois-je avoir un blog sur mon site de sophrologue ?
 Ce n'est pas une obligation légale, mais c'est un levier de visibilité déterminant. Google valorise les sites qui publient régulièrement du contenu utile et pertinent. Un blog qui répond aux vraies questions de vos futurs clients vous positionne progressivement sur des requêtes ciblées sans budget publicitaire, à condition que vos articles respectent les mêmes règles de formulation que vos pages de services.
 
 ## Rédiger vos textes sans risque juridique

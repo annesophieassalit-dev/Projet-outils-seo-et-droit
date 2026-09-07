@@ -52,20 +52,16 @@ La description de votre pratique, de votre approche, et des situations que vous 
 
 ## Questions fréquentes
 
-**Le titre de thérapeute est-il protégé en France ?**
-
+#### Le titre de thérapeute est-il protégé en France ?
 Non. Contrairement à des titres comme médecin, psychologue ou kinésithérapeute, le mot "thérapeute" ne fait l'objet d'aucune protection légale en droit français. Il n'existe pas de texte qui réserve ce terme à une profession particulière ni qui impose une qualification précise pour l'utiliser.
 
-**Que risque-t-on à se présenter comme thérapeute sans diplôme ?**
-
+#### Que risque-t-on à se présenter comme thérapeute sans diplôme ?
 Le risque n'est pas lié au titre lui-même mais à son contexte d'usage. Si votre communication laisse entendre que vous diagnostiquez des maladies, prescrivez des traitements ou soignez des pathologies, vous entrez dans le champ de l'exercice illégal de la médecine. Si elle crée une fausse impression sur vos qualifications réelles, vous pouvez être sanctionné pour pratique commerciale trompeuse au sens du Code de la consommation.
 
-**Peut-on utiliser "thérapeute" sur son site ou ses réseaux sociaux ?**
-
+#### Peut-on utiliser "thérapeute" sur son site ou ses réseaux sociaux ?
 Oui, à condition que le reste de votre communication soit cohérent et honnête. "Sophrologue thérapeute" ou "thérapeute en approche systémique" sont des formulations plus précises que "thérapeute" seul. La meilleure protection reste de décrire exactement votre titre de formation et de détailler les situations que vous accompagnez, sans revendiquer d'actes médicaux.
 
-**Quelle est la différence entre "thérapeute" et "psychothérapeute" ?**
-
+#### Quelle est la différence entre "thérapeute" et "psychothérapeute" ?
 Le titre de psychothérapeute est protégé depuis 2010 et réservé aux personnes inscrites au registre national des psychothérapeutes. Son usage sans inscription est une infraction pénale, même en ayant suivi une formation en psychologie. "Thérapeute", en revanche, ne fait l'objet d'aucune restriction légale de ce type.
 
 ## Vérifiez comment vous vous présentez

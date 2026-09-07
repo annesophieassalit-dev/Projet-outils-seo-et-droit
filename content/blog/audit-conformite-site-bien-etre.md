@@ -54,20 +54,16 @@ C'est pourquoi un outil d'analyse externe, ou une relecture par un pair informé
 
 ## Questions fréquentes
 
-**Mon site a été fait par un professionnel, est-il forcément conforme ?**
-
+#### Mon site a été fait par un professionnel, est-il forcément conforme ?
 Non. Votre webmaster gère la partie technique du site, hébergement, design, performance. Il n'est pas juriste et ne connaît pas les règles spécifiques qui s'appliquent aux praticiens bien-être en matière de formulations, d'allégations ou de mentions obligatoires. La conformité de vos contenus relève de votre responsabilité éditoriale, pas de celle de votre prestataire technique.
 
-**Quelle loi oblige les sites professionnels à avoir des mentions légales ?**
-
+#### Quelle loi oblige les sites professionnels à avoir des mentions légales ?
 La loi pour la confiance dans l'économie numérique (LCEN) du 21 juin 2004 impose à tout éditeur de site professionnel d'afficher des informations précises sur son identité : nom ou dénomination sociale, adresse, numéro SIRET, coordonnées de contact et coordonnées de l'hébergeur. L'absence de ces mentions constitue une infraction passible de sanctions.
 
-**Que risque-t-on si ses pages de services contiennent des allégations trompeuses ?**
-
+#### Que risque-t-on si ses pages de services contiennent des allégations trompeuses ?
 Les pratiques commerciales trompeuses sont sanctionnées par le Code de la consommation. Elles peuvent entraîner une amende pouvant aller jusqu'à 300 000 euros et une peine d'emprisonnement jusqu'à deux ans dans les cas les plus graves, en plus de l'obligation de mettre ses contenus en conformité. En pratique, les premières procédures aboutissent souvent à une mise en demeure assortie d'un délai pour corriger, mais les frais de procédure et la perturbation de l'activité sont réels même dans ce cas.
 
-**À quelle fréquence faut-il réauditer son site ?**
-
+#### À quelle fréquence faut-il réauditer son site ?
 Un audit annuel est une bonne pratique. Il est également recommandé d'en effectuer un à chaque changement significatif de votre activité : ajout d'un nouveau service, modification de vos tarifs, intégration d'un nouvel outil de prise de RDV ou de paiement en ligne, ou encore déménagement. Les pages créées à l'occasion d'un événement ponctuel, un atelier, un programme spécial, doivent être vérifiées avant publication.
 
 **Visible & Conforme** réalise cet audit automatiquement sur vos textes et pages : présence des éléments obligatoires, formulations à surveiller, suggestions de correction adaptées à votre activité.

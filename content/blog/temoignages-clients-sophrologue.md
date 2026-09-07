@@ -62,20 +62,16 @@ Les témoignages sont une partie de votre communication. Ils doivent être cohé
 
 ## Questions fréquentes
 
-**Un témoignage client peut-il me créer un risque juridique même si je ne l'ai pas écrit ?**
-
+#### Un témoignage client peut-il me créer un risque juridique même si je ne l'ai pas écrit ?
 Oui. Du moment que vous choisissez de publier un témoignage et de le mettre en avant sur votre site, vous en assumez la responsabilité éditoriale. Si ce témoignage contient une allégation thérapeutique, par exemple que votre méthode a guéri une pathologie identifiée, et que vous le présentez sans nuance, il peut être retenu contre vous dans le cadre d'un contrôle de la DGCCRF.
 
-**Puis-je modifier la formulation d'un témoignage pour qu'il soit mieux écrit ?**
-
+#### Puis-je modifier la formulation d'un témoignage pour qu'il soit mieux écrit ?
 Vous pouvez corriger des fautes d'orthographe ou reformuler légèrement, à condition de ne pas changer le sens du témoignage ni de lui faire dire quelque chose que votre client n'a pas exprimé. Une modification substantielle du sens ou de la portée d'un avis constituerait une pratique commerciale trompeuse au titre de l'article L. 121-2 du Code de la consommation.
 
-**Dois-je demander une autorisation écrite à mes clients avant de publier leur témoignage ?**
-
+#### Dois-je demander une autorisation écrite à mes clients avant de publier leur témoignage ?
 Ce n'est pas une obligation légale au sens strict, mais c'est vivement recommandé. Un accord écrit vous protège en cas de litige et témoigne d'une démarche professionnelle sérieuse. Si le témoignage est accompagné d'une photo ou d'un prénom complet, l'accord écrit devient indispensable au titre du droit à l'image et de la protection des données personnelles.
 
-**Comment réagir face à un avis négatif publié sur Google ?**
-
+#### Comment réagir face à un avis négatif publié sur Google ?
 Vous ne pouvez pas supprimer un avis négatif sauf s'il est manifestement injurieux, faux ou contraire aux conditions d'utilisation de la plateforme, auquel cas vous pouvez le signaler à Google. La meilleure stratégie reste de répondre publiquement avec professionnalisme : une réponse calme et factuelle rassure les futurs clients et montre que vous gérez les situations difficiles avec sérieux.
 
 **Visible & Conforme** analyse l'ensemble de votre communication pour identifier les incohérences et les formulations à risque.

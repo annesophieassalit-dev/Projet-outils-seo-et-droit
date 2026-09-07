@@ -54,20 +54,16 @@ Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclar
 
 ## Questions fréquentes
 
-**La RCP est-elle obligatoire pour un sophrologue ?**
-
+#### La RCP est-elle obligatoire pour un sophrologue ?
 Non, aucun texte de loi n'impose spécifiquement la souscription d'une responsabilité civile professionnelle aux sophrologues, naturopathes ou hypnothérapeutes. Certaines fédérations professionnelles ou organismes de formation peuvent l'exiger de leurs membres, mais il n'existe pas d'obligation légale générale pour ces professions non réglementées.
 
-**Que se passe-t-il si un client est blessé lors d'une séance sans que j'aie de RCP ?**
-
+#### Que se passe-t-il si un client est blessé lors d'une séance sans que j'aie de RCP ?
 En l'absence de RCP, vous êtes personnellement responsable des frais d'indemnisation et de défense juridique en cas de dommage corporel, matériel ou moral causé à un client. Ces frais peuvent être très élevés et impacter directement votre situation financière personnelle.
 
-**Ma RCP peut-elle couvrir une procédure de la DGCCRF pour allégations trompeuses ?**
-
+#### Ma RCP peut-elle couvrir une procédure de la DGCCRF pour allégations trompeuses ?
 Non. La RCP couvre les dommages causés à des tiers lors de votre activité professionnelle, pas les sanctions administratives liées à votre communication publiée. Si la DGCCRF engage une procédure pour pratiques commerciales trompeuses en raison de textes figurant sur votre site, votre assurance professionnelle n'intervient pas pour couvrir les amendes ou les frais de procédure associés.
 
-**Faut-il une RCP en plus de la conformité de son site ?**
-
+#### Faut-il une RCP en plus de la conformité de son site ?
 Oui, les deux protections répondent à des risques distincts. La RCP protège contre les incidents qui surviennent en séance ou dans votre espace de travail. La conformité de vos contenus vous protège contre les risques éditoriaux et administratifs liés à ce que vous publiez. Aucune des deux ne remplace l'autre.
 
 ## Vérifiez aussi votre communication

@@ -56,20 +56,16 @@ Si vous tenez des notes de séance, précisez comment elles sont conservées, pe
 
 ## Questions fréquentes
 
-**Un sophrologue est-il tenu au secret professionnel ?**
-
+#### Un sophrologue est-il tenu au secret professionnel ?
 Non, au sens légal strict. L'article 226-13 du Code pénal réserve cette obligation aux professions expressément désignées par la loi, médecins, avocats, psychologues, notaires, travailleurs sociaux. Un sophrologue n'en fait pas partie. Cela ne l'exonère pas pour autant de ses obligations de protection des données au titre du RGPD ni de sa responsabilité contractuelle envers ses clients.
 
-**Puis-je transmettre des informations sur un client à un médecin ou à un employeur ?**
-
+#### Puis-je transmettre des informations sur un client à un médecin ou à un employeur ?
 Seulement avec l'accord explicite de votre client. Sans base légale ni consentement, la transmission d'informations à un tiers, même un professionnel de santé, peut constituer une violation du RGPD et engager votre responsabilité civile. En cas de doute, demandez toujours l'accord écrit de votre client avant tout partage d'information.
 
-**Que faire si un mineur me révèle une situation de maltraitance ?**
-
+#### Que faire si un mineur me révèle une situation de maltraitance ?
 Même sans être soumis au secret professionnel légal, vous êtes, comme tout citoyen, tenu à l'obligation de signalement en cas de danger grave pour un enfant, conformément à l'article 434-3 du Code pénal. Omettre ce signalement peut être pénalement répréhensible. En cas de doute, consultez votre fédération professionnelle ou le numéro national de l'enfance en danger (119).
 
-**Comment formuler la confidentialité sur mon site sans induire mes clients en erreur ?**
-
+#### Comment formuler la confidentialité sur mon site sans induire mes clients en erreur ?
 Préférez une formulation précise du type : « Les informations partagées lors de nos séances restent strictement confidentielles et ne sont pas transmises à des tiers. » Évitez d'écrire que vous êtes soumis au secret professionnel si ce n'est pas le cas légalement, cette formulation inexacte pourrait induire votre client en erreur sur votre statut et vous exposer en cas de litige.
 
 **Visible & Conforme** vérifie la cohérence de votre politique de confidentialité avec votre pratique réelle.

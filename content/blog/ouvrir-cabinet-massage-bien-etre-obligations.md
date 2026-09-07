@@ -66,20 +66,16 @@ Vous pouvez affiner progressivement votre site internet. Vous ne pouvez pas le l
 
 ## Questions fréquentes
 
-**Dois-je obligatoirement créer une société pour exercer en tant que masseur bien-être ?**
-
+#### Dois-je obligatoirement créer une société pour exercer en tant que masseur bien-être ?
 Non. La micro-entreprise (auto-entrepreneur) est la forme la plus simple et la plus courante pour démarrer. Elle ne nécessite pas de capital social, et les formalités de création se font en ligne sur le guichet unique de l'INPI. Une structure en société (SASU, EURL) ne devient pertinente qu'en cas de développement significatif de l'activité ou d'association avec d'autres praticiens.
 
-**Quelles sont les mentions obligatoires sur mon site internet de praticien ?**
-
+#### Quelles sont les mentions obligatoires sur mon site internet de praticien ?
 Votre site doit comporter les mentions légales prévues par l'article 6 de la loi pour la confiance dans l'économie numérique : votre nom ou raison sociale, votre numéro SIRET, votre adresse professionnelle et les coordonnées de votre hébergeur. Si vous collectez des données via un formulaire de contact ou une prise de RDV en ligne, une politique de confidentialité conforme au RGPD est également obligatoire.
 
-**Le massage bien-être est-il soumis à des normes d'hygiène particulières ?**
-
+#### Le massage bien-être est-il soumis à des normes d'hygiène particulières ?
 Oui, des normes s'appliquent même si elles ne sont pas aussi contraignantes que pour les établissements médicaux. Selon le règlement sanitaire départemental de votre commune, des exigences peuvent porter sur l'entretien du local, la gestion du linge, l'hygiène des mains et des équipements. Renseignez-vous auprès de votre ARS ou de votre mairie avant l'ouverture.
 
-**Suis-je obligé de souscrire une assurance professionnelle pour exercer ?**
-
+#### Suis-je obligé de souscrire une assurance professionnelle pour exercer ?
 Aucune loi ne l'impose spécifiquement aux masseurs bien-être. En revanche, exercer sans responsabilité civile professionnelle expose vos biens personnels en cas d'accident en séance. Certaines fédérations professionnelles (comme la FFMBE) conditionnent leur certification à la souscription d'une assurance, et la plupart des bailleurs de locaux professionnels l'exigent.
 
 **Visible & Conforme** vérifie que vos premières publications, site, fiche Google, réseaux sociaux, sont conformes dès le départ.

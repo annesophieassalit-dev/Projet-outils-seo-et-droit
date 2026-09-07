@@ -56,20 +56,16 @@ Les séances en ligne doivent faire l'objet d'une facture comme les séances en 
 
 ## Questions fréquentes
 
-**Mes CGV en cabinet sont-elles suffisantes pour proposer des séances en ligne ?**
-
+#### Mes CGV en cabinet sont-elles suffisantes pour proposer des séances en ligne ?
 Non. Les CGV destinées aux séances en cabinet ne couvrent pas automatiquement les obligations spécifiques aux contrats à distance. Vous devez ajouter au minimum les informations sur le droit de rétractation de 14 jours, les modalités de remboursement, et les conditions dans lesquelles ce droit peut être écarté si la séance a lieu avant l'expiration du délai. Si votre site permet la réservation et le paiement en ligne, vos CGV doivent être accessibles avant la validation de la commande.
 
-**Un client peut-il réclamer le remboursement d'une séance en ligne déjà effectuée ?**
-
+#### Un client peut-il réclamer le remboursement d'une séance en ligne déjà effectuée ?
 Oui, s'il se rétracte dans les 14 jours suivant la conclusion du contrat et que vous n'avez pas obtenu son accord exprès pour renoncer à ce droit avant la séance. Pour éviter ce risque, insérez dans vos CGV une clause demandant au client de faire la demande expresse de commencer la prestation avant la fin du délai de rétractation, et obtenez sa confirmation écrite avant chaque séance réalisée dans ce délai.
 
-**Puis-je utiliser Zoom ou Google Meet sans obligation particulière ?**
-
+#### Puis-je utiliser Zoom ou Google Meet sans obligation particulière ?
 Ces outils collectent des données et sont majoritairement hébergés hors de l'Union européenne. Vous devez le mentionner dans votre politique de confidentialité, indiquer la base légale du transfert de données, et préciser les garanties en place (clauses contractuelles types, décision d'adéquation). Si vous préférez éviter cette complexité, des outils hébergés en Europe comme Whereby ou Jitsi simplifient votre conformité RGPD.
 
-**Dois-je établir une facture pour chaque séance en ligne ?**
-
+#### Dois-je établir une facture pour chaque séance en ligne ?
 Oui. Chaque séance en ligne doit faire l'objet d'une facture comportant votre SIRET, la date, la nature de la prestation, le montant, et la mention « TVA non applicable, art. 293B CGI » si vous bénéficiez de la franchise en base. Cette obligation s'applique de la même façon qu'en présentiel, quelle que soit la modalité de paiement (virement, carte, plateforme en ligne).
 
 ## Mettez votre site à jour avant de vendre en ligne

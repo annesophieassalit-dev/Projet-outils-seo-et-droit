@@ -46,20 +46,16 @@ Une formulation risquée sur un post Instagram de 2023 reste accessible et peut 
 
 ## Questions fréquentes
 
-**Le terme "massage bien-être" est-il suffisant pour éviter tout risque légal ?**
-
+#### Le terme "massage bien-être" est-il suffisant pour éviter tout risque légal ?
 L'intitulé seul ne suffit pas. Si le reste de votre site utilise des termes médicaux, "traitement", "pathologie", "rééducation", l'étiquette "bien-être" ne protège pas. C'est la cohérence de l'ensemble de votre communication qui est évaluée, et non un seul mot.
 
-**La DGCCRF peut-elle contrôler mes réseaux sociaux en plus de mon site ?**
-
+#### La DGCCRF peut-elle contrôler mes réseaux sociaux en plus de mon site ?
 Oui. La DGCCRF peut consulter votre fiche Google Business Profile, vos posts Instagram, votre page Facebook et tout document publié en ligne. Un post ancien contenant une formulation risquée reste accessible et peut être cité dans une procédure, même si votre site principal est rédigé correctement.
 
-**Puis-je mentionner que mon massage aide à soulager le stress ?**
-
+#### Puis-je mentionner que mon massage aide à soulager le stress ?
 Oui, c'est une formulation conforme. Le stress n'est pas une pathologie médicale au sens du Code de la santé publique. Décrire votre massage comme un accompagnement pour les personnes en situation de stress ou de fatigue reste dans le registre du bien-être. En revanche, écrire que vous "traitez l'anxiété" ou les "troubles du sommeil" bascule vers le médical.
 
-**Que risque-t-on si l'on utilise le terme "massage thérapeutique" sur son site ?**
-
+#### Que risque-t-on si l'on utilise le terme "massage thérapeutique" sur son site ?
 On s'expose à une procédure pour pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation, engagée par la DGCCRF ou à la suite d'un signalement. Dans les cas où la formulation laisse entendre un acte médical sur une pathologie identifiée, le risque peut s'étendre à celui de l'exercice illégal de la masso-kinésithérapie.
 
 ## Vérifiez l'ensemble de votre présence en ligne
