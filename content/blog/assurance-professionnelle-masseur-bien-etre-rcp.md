@@ -6,7 +6,9 @@ slug: "assurance-professionnelle-masseur-bien-etre-rcp"
 tags: ["Massage", "Juridique", "Conformité"]
 ---
 
-La question de l'assurance professionnelle revient systématiquement quand on s'installe en tant que masseur bien-être. Et pour cause : le massage implique un contact physique direct, ce qui crée des risques spécifiques que d'autres pratiques bien-être ne partagent pas.
+Aucune loi n'impose spécifiquement une assurance professionnelle aux masseurs bien-être, mais le contact physique direct avec le client crée des risques réels — accidents en séance, réactions allergiques, aggravations ressenties — qui engagent la responsabilité civile du praticien sur ses biens personnels en l'absence de couverture. La responsabilité civile professionnelle (RCP) couvre ces accidents, mais elle ne protège pas contre les procédures liées à la communication.
+
+> **En bref :** La RCP couvre les accidents physiques et matériels survenus en séance ; elle ne couvre pas les procédures DGCCRF engagées à cause de formulations trompeuses sur votre site ou vos réseaux sociaux.
 
 ## Est-ce obligatoire pour un masseur bien-être ?
 
@@ -18,7 +20,7 @@ Mais l'argument principal n'est pas l'obligation légale. C'est le risque.
 
 ## Les risques spécifiques au massage
 
-Le contact physique direct crée des risques que d'autres praticiens bien-être ont moins fréquemment :
+Le contact physique direct crée des risques que d'autres praticiens bien-être ont moins fréquemment.
 
 **Les accidents physiques.** Un client qui glisse en montant ou descendant de la table de massage, une pression trop forte sur une zone fragilisée, une réaction à une huile essentielle utilisée lors du soin — ces situations peuvent engager votre responsabilité civile.
 
@@ -32,10 +34,7 @@ Le contact physique direct crée des risques que d'autres praticiens bien-être 
 
 La responsabilité civile professionnelle (RCP) intervient quand un tiers subit un dommage dans le cadre de votre activité professionnelle et que vous en êtes tenu responsable.
 
-Elle couvre généralement :
-- Les frais de défense juridique en cas de mise en cause
-- Les indemnités versées au tiers lésé si votre responsabilité est établie
-- Les dommages corporels, matériels et immatériels selon les contrats
+Elle couvre généralement les frais de défense juridique en cas de mise en cause, les indemnités versées au tiers lésé si votre responsabilité est établie, ainsi que les dommages corporels, matériels et immatériels selon les termes du contrat.
 
 ## Ce que la RCP ne couvre pas — le point que les masseurs bien-être ignorent souvent
 
@@ -52,6 +51,24 @@ L'assurance protège contre les accidents. La conformité de votre communication
 Avant de souscrire, vérifiez que le contrat couvre bien votre type d'activité. Certains assureurs excluent des techniques spécifiques (massages avec déambulation sur le dos, massages avec accès aux zones génitales dans certains protocoles bien-être — même non sexuels). Listez précisément les techniques que vous pratiquez et demandez une confirmation écrite de leur couverture.
 
 Vérifiez aussi la couverture géographique si vous vous déplacez chez vos clients, et la couverture des dommages subis par les mineurs si vous accueillez des enfants.
+
+## Questions fréquentes
+
+**La RCP est-elle obligatoire pour un masseur bien-être ?**
+
+Non, aucun texte de loi ne l'impose aux praticiens en massage bien-être. En revanche, certaines fédérations comme la FFMBE la conditionnent à leur certification, et la plupart des bailleurs de locaux professionnels exigent une attestation avant la signature d'un bail. L'absence d'assurance expose surtout vos biens personnels en cas d'accident.
+
+**Que se passe-t-il si un client se blesse lors d'une séance sans que j'aie d'assurance ?**
+
+Votre responsabilité civile peut être engagée sur vos biens personnels. Le client lésé peut vous réclamer des dommages et intérêts devant les tribunaux civils, et en l'absence de RCP, c'est votre patrimoine qui répond de la condamnation — épargne, véhicule, immobilier si vous en possédez.
+
+**Mon assurance professionnelle me protège-t-elle si la DGCCRF ouvre une procédure contre moi à cause de mon site ?**
+
+Non. La RCP couvre les accidents physiques et matériels survenus dans le cadre de votre activité. Une procédure pour pratique commerciale trompeuse, engagée à cause de formulations problématiques sur votre site ou vos réseaux sociaux (art. L.121-2 du Code de la consommation), n'entre pas dans le périmètre de la responsabilité civile professionnelle.
+
+**Comment vérifier que mon contrat d'assurance couvre toutes mes techniques ?**
+
+Demandez à votre assureur une confirmation écrite listant les techniques couvertes. Certains contrats excluent des pratiques spécifiques — massages avec déambulation sur le dos, utilisation d'huiles essentielles, accueil de mineurs. Si vous vous déplacez chez vos clients, vérifiez également que la couverture géographique s'étend au domicile de vos clients.
 
 ## Mettez aussi votre communication en règle
 
