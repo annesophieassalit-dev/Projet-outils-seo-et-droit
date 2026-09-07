@@ -6,13 +6,13 @@ slug: "dgccrf-praticiens-bien-etre-mots"
 tags: ["DGCCRF", "Conformité", "Juridique"]
 ---
 
-Vous exercez avec soin. Vous accompagnez vos clients avec sincérité. Vous choisissez vos pratiques avec discernement. Et pourtant, votre site internet pourrait vous exposer en ce moment — non pas à cause de ce que vous faites, mais à cause de ce que vous écrivez.
+La DGCCRF (Direction Générale de la Concurrence, de la Consommation et de la Répression des Fraudes) peut contrôler tout praticien bien-être qui communique auprès du public — y compris un sophrologue indépendant ou un naturopathe en cabinet. Elle ne contrôle pas vos intentions ni la qualité de votre pratique : elle analyse les mots publiés sur vos supports de communication et cherche des allégations trompeuses. Comprendre cette mécanique permet d'ajuster sa communication avant d'être contrôlé.
 
-C'est l'un des points les plus mal compris par les praticiens du bien-être : **la DGCCRF ne contrôle pas les intentions. Elle contrôle les mots.**
+> **En bref :** La DGCCRF peut contrôler tout praticien bien-être qui communique auprès du public, et ses agents cherchent des allégations trompeuses dans les textes publiés — pas dans les intentions de l'auteur.
 
 ## Ce que fait vraiment la DGCCRF
 
-La Direction Générale de la Concurrence, de la Consommation et de la Répression des Fraudes (DGCCRF) est l'autorité qui surveille les pratiques commerciales en France. Ses agents peuvent enquêter sur n'importe quel professionnel qui communique auprès du public — y compris un sophrologue indépendant, un naturopathe ou un hypnothérapeute.
+La DGCCRF est l'autorité qui surveille les pratiques commerciales en France. Ses agents peuvent enquêter sur n'importe quel professionnel qui communique auprès du public — y compris un sophrologue indépendant, un naturopathe ou un hypnothérapeute.
 
 Ce qu'ils cherchent lors d'un contrôle : des **allégations trompeuses**. C'est-à-dire des formulations qui laissent croire à un consommateur que vous pouvez faire quelque chose que vous n'êtes pas légalement autorisé à faire — ou qui exagèrent les effets de votre pratique.
 
@@ -44,9 +44,25 @@ Et c'est une compétence qui s'acquiert. Une fois qu'on sait ce qu'on cherche, o
 
 La bonne nouvelle : ces ajustements ne réduisent pas l'impact de votre communication. Une formulation précise et honnête inspire davantage confiance qu'une promesse vague. Elle montre que vous connaissez votre cadre d'exercice.
 
-## Comment vérifier vos propres textes
+## Questions fréquentes
 
-La difficulté avec ses propres écrits : on ne voit pas facilement ce qui pourrait poser problème. On a écrit avec une intention précise, on relit avec cette même intention — et les formulations risquées restent invisibles.
+**La DGCCRF peut-elle vraiment contrôler un sophrologue indépendant ?**
+
+Oui. La DGCCRF peut contrôler tout professionnel qui communique auprès du public, quelle que soit la taille de son activité. Le secteur des pratiques de bien-être et des thérapies alternatives fait partie de ses axes de surveillance documentés. Ses agents peuvent effectuer des visites de contrôle, consulter vos supports publiés en ligne et demander des explications sur vos formulations.
+
+**Qu'est-ce qu'une allégation trompeuse selon la réglementation ?**
+
+Une allégation trompeuse est une formulation qui crée chez le lecteur une impression inexacte sur ce que vous pouvez faire. Elle peut affirmer une capacité que vous n'avez pas légalement, exagérer les effets de votre pratique, ou promettre un résultat médical sans base établie. Le Code de la consommation interdit les pratiques commerciales trompeuses — une allégation peut être qualifiée de trompeuse même si elle est formulée avec les meilleures intentions.
+
+**Mon intention compte-t-elle dans une procédure DGCCRF ?**
+
+Non. L'intention ne constitue pas un élément de l'infraction en matière de pratiques commerciales trompeuses. Ce qui est évalué, c'est l'effet que le message peut produire sur un lecteur ordinaire. Si votre formulation peut raisonnablement amener un consommateur à croire que vous traitez une pathologie, cette formulation est à risque — indépendamment de ce que vous avez voulu dire en l'écrivant.
+
+**Comment savoir si mes textes contiennent des formulations à risque ?**
+
+La difficulté avec ses propres écrits est que l'on relit avec la même intention que celle avec laquelle on a écrit — ce qui rend les formulations problématiques invisibles. Un regard extérieur, que ce soit un outil d'analyse ou une relecture informée, est beaucoup plus efficace que l'auto-évaluation. Les termes les plus fréquemment problématiques appartiennent à trois familles : les verbes d'action médicale (traiter, soigner, guérir, soulager), les noms de pathologies présentés comme des cibles de votre pratique, et les promesses de résultats chiffrés ou garantis.
+
+## Comment vérifier vos propres textes
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui appartiennent aux catégories surveillées par les autorités, avec des suggestions de reformulation adaptées à votre activité.
 

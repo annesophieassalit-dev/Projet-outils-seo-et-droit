@@ -6,9 +6,9 @@ slug: "sophrologue-auto-entrepreneur-obligations"
 tags: ["Juridique", "Sophrologue", "Conformité"]
 ---
 
-Quand on s'installe en tant que sophrologue ou naturopathe, le statut d'auto-entrepreneur (officiellement : micro-entrepreneur) est souvent la première option envisagée. Il est simple à créer, rapide à mettre en place, et ses obligations administratives sont légères.
+La sophrologie et les autres pratiques bien-être sont entièrement compatibles avec le statut de micro-entrepreneur, sans restriction légale. Ce statut impose un plafond de chiffre d'affaires de 77 700 euros hors taxes par an pour les prestations de services (seuil 2026, révisé chaque année), une déclaration de chiffre d'affaires régulière à l'URSSAF, et la mention obligatoire « TVA non applicable — art. 293B CGI » sur les factures. Il ne dispense pas d'une assurance responsabilité civile professionnelle.
 
-Mais ce statut a des limites — et quelques obligations spécifiques que les praticiens bien-être ignorent souvent.
+> **En bref :** Le statut micro-entrepreneur est compatible avec la sophrologie, avec un plafond de 77 700 € de chiffre d'affaires annuel pour les services (2026), une déclaration obligatoire à l'URSSAF même à zéro, et des obligations de conformité identiques à tout autre statut.
 
 ## Peut-on exercer la sophrologie en auto-entrepreneur ?
 
@@ -50,11 +50,29 @@ Si vous ne déclarez pas (même un mois à zéro), vous pouvez faire l'objet d'u
 
 ## La question du passage à une autre structure
 
-Si votre activité se développe et que vous approchez du plafond, les alternatives les plus courantes sont l'entreprise individuelle au réel (EI), la SASU ou la EURL. Chacune a des implications fiscales et sociales différentes — un expert-comptable est le mieux placé pour vous conseiller selon votre situation spécifique.
+Si votre activité se développe et que vous approchez du plafond, les alternatives les plus courantes sont l'entreprise individuelle au réel (EI), la SASU ou l'EURL. Chacune a des implications fiscales et sociales différentes — un expert-comptable est le mieux placé pour vous conseiller selon votre situation spécifique.
 
 ## Vérifiez vos mentions légales
 
 Sur votre site, vos mentions légales doivent indiquer votre SIRET, votre statut (micro-entrepreneur), et votre adresse professionnelle. Si ces informations ont changé depuis la création du site, mettez-les à jour.
+
+## Questions fréquentes
+
+**Quel code APE déclarer pour une activité de sophrologie en micro-entreprise ?**
+
+Le code APE le plus fréquemment attribué aux sophrologues est le 86.90F (Activités de santé humaine non classées ailleurs). Certains praticiens se voient attribuer le 96.09Z (Autres services personnels) selon la nature exacte de leur activité. C'est l'INPI qui attribue ce code lors de la création de l'entreprise — vous pouvez le demander en précisant votre activité lors de la déclaration sur le guichet unique.
+
+**Que se passe-t-il si je dépasse le plafond de chiffre d'affaires en cours d'année ?**
+
+Si votre chiffre d'affaires dépasse 77 700 euros (seuil 2026) pendant deux années civiles consécutives, vous sortez automatiquement du régime micro-entrepreneur et basculez vers le régime réel d'imposition. Si vous dépassez les seuils de tolérance TVA en cours d'année, vous devenez redevable de la TVA dès le premier jour du mois suivant le dépassement. Anticipez ce changement en consultant un expert-comptable avant d'atteindre ces seuils.
+
+**Dois-je quand même déclarer à l'URSSAF si je n'ai eu aucun client ce mois-ci ?**
+
+Oui. La déclaration de chiffre d'affaires à l'URSSAF est obligatoire même si votre chiffre est à zéro. Ne pas déclarer — même pour une période sans encaissement — peut entraîner une régularisation ou une pénalité. La déclaration à zéro se fait en quelques secondes sur le site URSSAF ou via l'application AutoEntrepreneur.
+
+**Le statut auto-entrepreneur me protège-t-il en cas de litige avec un client ?**
+
+Non. Le statut juridique ne vous protège pas contre les risques liés à votre activité. Une assurance responsabilité civile professionnelle (RCP) reste nécessaire indépendamment de votre statut. Sans RCP, vous êtes personnellement exposé en cas de demande d'indemnisation d'un client, y compris pour un préjudice moral ou un accident survenu lors d'une séance.
 
 **Visible & Conforme** vérifie la cohérence de vos mentions légales et identifie les éléments manquants ou obsolètes.
 

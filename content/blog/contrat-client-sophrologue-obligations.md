@@ -6,9 +6,9 @@ slug: "contrat-client-sophrologue-obligations"
 tags: ["Juridique", "Sophrologue", "CGV"]
 ---
 
-La question revient régulièrement chez les praticiens bien-être qui s'installent ou qui professionnalisent leur activité : faut-il un contrat avec ses clients ? Et si oui, que doit-il contenir ?
+Un sophrologue ou un naturopathe n'est pas toujours obligé d'avoir un contrat écrit signé avec ses clients, mais les conditions générales de vente (CGV) sont obligatoires dès qu'une prestation est vendue en ligne ou à distance, au titre du Code de la consommation. Pour les séances conclues directement en cabinet, aucun contrat écrit n'est imposé par la loi, mais une information précontractuelle sur les tarifs et les modalités reste obligatoire.
 
-La réponse dépend de votre mode d'exercice — mais dans la majorité des cas, la réponse est oui.
+> **En bref :** Les CGV sont obligatoires pour toute vente de prestations en ligne ou à distance ; pour les séances en présentiel, un contrat n'est pas imposé par la loi mais est fortement recommandé pour prévenir tout litige.
 
 ## La distinction de base : séances en cabinet vs vente en ligne
 
@@ -24,17 +24,13 @@ Cependant, vous restez soumis à l'obligation générale d'information précontr
 
 Les conditions générales de vente (CGV) sont obligatoires dès lors que vous vendez des prestations à des consommateurs — c'est-à-dire à des personnes qui n'agissent pas dans le cadre de leur activité professionnelle.
 
-Pour un sophrologue ou un naturopathe, cela couvre :
-
-- La vente de séances ou de forfaits depuis votre site internet
-- Les programmes d'accompagnement avec paiement en ligne
-- Les ateliers ou stages vendus à distance
+Pour un sophrologue ou un naturopathe, cela couvre la vente de séances ou de forfaits depuis votre site internet, les programmes d'accompagnement avec paiement en ligne, et les ateliers ou stages vendus à distance.
 
 Même pour les séances en cabinet, avoir des CGV disponibles (sur votre site ou sur demande) est une bonne pratique qui protège en cas de litige.
 
 ## Ce que doit contenir un contrat client
 
-Qu'il prenne la forme de CGV publiées sur votre site ou d'un document signé, voici les éléments que la loi impose ou que la bonne pratique recommande :
+Qu'il prenne la forme de CGV publiées sur votre site ou d'un document signé, voici les éléments que la loi impose ou que la bonne pratique recommande.
 
 **Identité du prestataire** — votre nom, votre SIRET, votre adresse professionnelle.
 
@@ -46,7 +42,7 @@ Qu'il prenne la forme de CGV publiées sur votre site ou d'un document signé, v
 
 **Politique d'annulation et de report** — vos conditions en cas d'annulation de la part du client, en cas d'annulation de votre part, le délai de prévenance que vous exigez.
 
-**Droit de rétractation** — pour les contrats à distance, vous devez informer le client de son droit de rétractation de 14 jours. Si votre prestation est entièrement exécutée avant ce délai et que le client a demandé l'exécution immédiate, le droit de rétractation ne s'applique pas — mais vous devez l'avoir explicitement mentionné et le client doit l'avoir accepté.
+**Droit de rétractation** — pour les contrats à distance, vous devez informer le client de son droit de rétractation de 14 jours prévu par l'article L.221-18 du Code de la consommation. Si votre prestation est entièrement exécutée avant ce délai et que le client a demandé l'exécution immédiate, le droit de rétractation ne s'applique pas — mais vous devez l'avoir explicitement mentionné et le client doit l'avoir accepté.
 
 ## La clause qui protège sans promettre
 
@@ -61,6 +57,24 @@ Cette phrase ne promet rien de médical — elle situe clairement votre rôle.
 C'est dans ce moment que l'existence d'un contrat clair fait toute la différence. Sans document écrit, la parole est contre la parole. Avec des CGV acceptées ou un contrat signé, vous avez une base pour défendre votre position — et le client aussi.
 
 Un contrat bien rédigé protège les deux parties. Il n'est pas un signe de méfiance envers vos clients : c'est un signe de professionnalisme.
+
+## Questions fréquentes
+
+**Un sophrologue est-il obligé d'avoir un contrat avec ses clients ?**
+
+Cela dépend du mode d'exercice. Pour les séances conclues en cabinet, il n'existe pas d'obligation légale de remettre un contrat écrit. En revanche, les CGV sont obligatoires dès que vous vendez des séances ou forfaits via un site internet ou que vous concluez un contrat à distance. Dans tous les cas, une information précontractuelle sur les tarifs et les modalités de la prestation est requise par le Code de la consommation.
+
+**Que doit contenir un contrat ou des CGV pour un praticien bien-être ?**
+
+Les mentions essentielles sont votre identité professionnelle (nom, SIRET, adresse), la description précise de la prestation, le tarif TTC avec mention de la franchise de TVA si applicable (art. 293B CGI), les modalités de paiement, la politique d'annulation et de report, et — pour les contrats à distance — l'information sur le droit de rétractation de 14 jours prévu par l'article L.221-18 du Code de la consommation.
+
+**Que se passe-t-il si un client conteste une séance et qu'il n'y a pas de contrat ?**
+
+Sans document écrit, la parole est contre la parole. En présence de CGV acceptées ou d'un contrat signé, vous disposez d'une base claire pour défendre votre position. Un contrat bien rédigé protège les deux parties : il ne traduit pas une méfiance envers vos clients, mais un professionnalisme qui rassure et prévient les malentendus.
+
+**La description de la prestation dans les CGV doit-elle mentionner que la sophrologie n'est pas un acte médical ?**
+
+Oui, c'est une bonne pratique fortement recommandée. Une formulation du type "les séances ne constituent pas un acte médical et ne se substituent pas à un suivi médical ou psychologique" situe clairement votre rôle et évite toute confusion sur la nature de votre accompagnement, ce qui réduit le risque de litige ou de qualification de pratique trompeuse.
 
 ## Vérifiez que vos CGV sont en règle
 

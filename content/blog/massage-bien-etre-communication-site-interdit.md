@@ -6,7 +6,9 @@ slug: "massage-bien-etre-communication-site-interdit"
 tags: ["Massage", "Communication", "Juridique"]
 ---
 
-Vous avez suivi une formation, vous maîtrisez vos techniques, vous accueillez vos clients avec soin. Mais les mots que vous utilisez sur votre site pour décrire ce que vous faites — c'est là que beaucoup de praticiens en massage bien-être s'exposent sans le savoir.
+Un praticien en massage bien-être peut décrire ses séances en termes de détente, de relâchement des tensions et de mieux-être global. Il ne peut en revanche pas utiliser un vocabulaire médical — "traitement", "thérapeutique", "rééducation" — ni affirmer soigner des pathologies. Cette limite tient à la frontière légale entre la pratique de bien-être et l'acte médical réservé aux professionnels de santé.
+
+> **En bref :** Sur votre site, restez dans le registre de la détente et du confort ; les termes médicaux comme "thérapeutique", "traitement" ou "rééducation" exposent un praticien non médical à une procédure pour pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation.
 
 ## Pourquoi la communication est particulièrement sensible pour les masseurs bien-être
 
@@ -30,27 +32,35 @@ Quand un client lit votre site, il ne fait pas nécessairement la distinction en
 
 La règle est simple : restez dans le registre de la détente, du confort, du bien-être, des sensations — pas du traitement médical.
 
-**Pour décrire vos séances :**
-- "Massage de relaxation pour relâcher les tensions musculaires liées au stress ou à la fatigue"
-- "Séance de massage bien-être pour retrouver un état de détente profonde"
-- "Massage californien pour favoriser la détente du corps et de l'esprit"
-- "Accompagnement par le toucher pour soutenir le bien-être global"
+**Pour décrire vos séances**, privilégiez des formulations comme : "Massage de relaxation pour relâcher les tensions musculaires liées au stress ou à la fatigue", "Séance de massage bien-être pour retrouver un état de détente profonde", "Massage californien pour favoriser la détente du corps et de l'esprit", ou "Accompagnement par le toucher pour soutenir le bien-être global".
 
-**Pour décrire à qui vous vous adressez :**
-- "Personnes en situation de stress ou de fatigue"
-- "Personnes qui cherchent un moment de détente et de déconnexion"
-- "Personnes souhaitant prendre soin de leur corps dans un cadre de bien-être"
+**Pour décrire à qui vous vous adressez**, parlez de "personnes en situation de stress ou de fatigue", de "personnes qui cherchent un moment de détente et de déconnexion", ou de "personnes souhaitant prendre soin de leur corps dans un cadre de bien-être".
 
-**Ce que vous ne pouvez pas écrire :**
-- "Pour les personnes souffrant de lombalgies" — vous positionnez le massage comme traitement d'une pathologie
-- "Efficace contre les douleurs chroniques" — promesse de résultat médical
-- "Recommandé après une opération" — acte médical post-chirurgical
+**Ce que vous ne pouvez pas écrire** : "Pour les personnes souffrant de lombalgies" positionne le massage comme traitement d'une pathologie. "Efficace contre les douleurs chroniques" constitue une promesse de résultat médical. "Recommandé après une opération" relève de l'acte médical post-chirurgical.
 
 ## La cohérence entre votre site, vos réseaux et votre fiche Google
 
 La DGCCRF ne regarde pas seulement votre site. Elle peut consulter votre fiche Google Business Profile, vos posts Instagram, votre page Facebook, vos brochures PDF en ligne.
 
 Une formulation risquée sur un post Instagram de 2023 reste accessible et peut être utilisée dans une procédure — même si votre site principal est parfaitement rédigé. La cohérence de l'ensemble de votre communication compte.
+
+## Questions fréquentes
+
+**Le terme "massage bien-être" est-il suffisant pour éviter tout risque légal ?**
+
+L'intitulé seul ne suffit pas. Si le reste de votre site utilise des termes médicaux — "traitement", "pathologie", "rééducation" — l'étiquette "bien-être" ne protège pas. C'est la cohérence de l'ensemble de votre communication qui est évaluée, et non un seul mot.
+
+**La DGCCRF peut-elle contrôler mes réseaux sociaux en plus de mon site ?**
+
+Oui. La DGCCRF peut consulter votre fiche Google Business Profile, vos posts Instagram, votre page Facebook et tout document publié en ligne. Un post ancien contenant une formulation risquée reste accessible et peut être cité dans une procédure, même si votre site principal est rédigé correctement.
+
+**Puis-je mentionner que mon massage aide à soulager le stress ?**
+
+Oui, c'est une formulation conforme. Le stress n'est pas une pathologie médicale au sens du Code de la santé publique. Décrire votre massage comme un accompagnement pour les personnes en situation de stress ou de fatigue reste dans le registre du bien-être. En revanche, écrire que vous "traitez l'anxiété" ou les "troubles du sommeil" bascule vers le médical.
+
+**Que risque-t-on si l'on utilise le terme "massage thérapeutique" sur son site ?**
+
+On s'expose à une procédure pour pratique commerciale trompeuse au sens des articles L.121-2 et suivants du Code de la consommation, engagée par la DGCCRF ou à la suite d'un signalement. Dans les cas où la formulation laisse entendre un acte médical sur une pathologie identifiée, le risque peut s'étendre à celui de l'exercice illégal de la masso-kinésithérapie.
 
 ## Vérifiez l'ensemble de votre présence en ligne
 

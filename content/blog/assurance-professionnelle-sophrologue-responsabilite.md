@@ -6,9 +6,9 @@ slug: "assurance-professionnelle-sophrologue-responsabilite"
 tags: ["Juridique", "Sophrologue", "Conformité"]
 ---
 
-Quand on s'installe en tant que sophrologue ou naturopathe, la question de l'assurance professionnelle finit par arriver — parfois à la création de l'activité, parfois à la suite d'un incident, parfois parce qu'un organisme de formation l'a mentionné en passant.
+Pour les sophrologues, naturopathes et hypnothérapeutes, la responsabilité civile professionnelle (RCP) n'est pas imposée par une loi spécifique, contrairement aux professions de santé réglementées comme les médecins ou les kinésithérapeutes. Elle couvre les dommages causés à des tiers dans le cadre de l'activité professionnelle, mais elle ne protège pas contre les risques liés à votre communication publiée en ligne. Ce guide clarifie ce que la RCP couvre réellement, ses limites souvent ignorées, et pourquoi elle doit être combinée à la conformité de vos contenus.
 
-Voici ce que dit la règle, ce que couvre vraiment une assurance professionnelle, et — point souvent ignoré — ce qu'elle ne couvre pas.
+> **En bref :** La RCP n'est pas légalement obligatoire pour les praticiens bien-être non réglementés, mais son absence crée une exposition directe en cas d'incident, et elle ne couvre pas les procédures liées à votre communication publiée.
 
 ## Est-ce obligatoire d'avoir une assurance professionnelle ?
 
@@ -22,13 +22,7 @@ En revanche, certains organismes de formation ou certaines fédérations profess
 
 La RCP (responsabilité civile professionnelle) couvre les dommages que vous pourriez causer à un tiers dans le cadre de votre activité professionnelle.
 
-Pour un praticien bien-être, cela inclut typiquement :
-
-**Les dommages corporels accidentels** — une chute dans votre cabinet, un incident lors d'une séance en groupe, un accident lié à une technique mal appliquée.
-
-**Les dommages matériels** — vous cassez quelque chose appartenant à un client dans votre espace de travail.
-
-**Les préjudices moraux** — dans certaines circonstances, un client qui s'estime lésé par votre accompagnement peut engager votre responsabilité.
+Pour un praticien bien-être, cela inclut typiquement plusieurs catégories de dommages. Les dommages corporels accidentels concernent une chute dans votre cabinet, un incident lors d'une séance en groupe ou un accident lié à une technique mal appliquée. Les dommages matériels couvrent par exemple le cas où vous brisez un objet appartenant à un client dans votre espace de travail. Les préjudices moraux s'appliquent dans certaines circonstances, lorsqu'un client qui s'estime lésé par votre accompagnement engage votre responsabilité.
 
 La RCP intervient alors pour couvrir les frais de défense juridique et les éventuelles indemnisations.
 
@@ -57,6 +51,24 @@ Les deux protections répondent à des risques différents. Elles ne se substitu
 Plusieurs assureurs proposent des contrats spécialement conçus pour les praticiens bien-être. Des courtiers spécialisés dans le secteur des thérapeutes et professions libérales connaissent les spécificités de ces activités.
 
 Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclarée — certains contrats excluent des pratiques spécifiques ou conditionnent la couverture à une certification reconnue.
+
+## Questions fréquentes
+
+**La RCP est-elle obligatoire pour un sophrologue ?**
+
+Non, aucun texte de loi n'impose spécifiquement la souscription d'une responsabilité civile professionnelle aux sophrologues, naturopathes ou hypnothérapeutes. Certaines fédérations professionnelles ou organismes de formation peuvent l'exiger de leurs membres, mais il n'existe pas d'obligation légale générale pour ces professions non réglementées.
+
+**Que se passe-t-il si un client est blessé lors d'une séance sans que j'aie de RCP ?**
+
+En l'absence de RCP, vous êtes personnellement responsable des frais d'indemnisation et de défense juridique en cas de dommage corporel, matériel ou moral causé à un client. Ces frais peuvent être très élevés et impacter directement votre situation financière personnelle.
+
+**Ma RCP peut-elle couvrir une procédure de la DGCCRF pour allégations trompeuses ?**
+
+Non. La RCP couvre les dommages causés à des tiers lors de votre activité professionnelle, pas les sanctions administratives liées à votre communication publiée. Si la DGCCRF engage une procédure pour pratiques commerciales trompeuses en raison de textes figurant sur votre site, votre assurance professionnelle n'intervient pas pour couvrir les amendes ou les frais de procédure associés.
+
+**Faut-il une RCP en plus de la conformité de son site ?**
+
+Oui, les deux protections répondent à des risques distincts. La RCP protège contre les incidents qui surviennent en séance ou dans votre espace de travail. La conformité de vos contenus vous protège contre les risques éditoriaux et administratifs liés à ce que vous publiez. Aucune des deux ne remplace l'autre.
 
 ## Vérifiez aussi votre communication
 

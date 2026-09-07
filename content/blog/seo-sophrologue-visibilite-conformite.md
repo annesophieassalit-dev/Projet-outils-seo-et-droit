@@ -6,11 +6,9 @@ slug: "seo-sophrologue-visibilite-conformite"
 tags: ["SEO", "Sophrologue", "Conformité"]
 ---
 
-Vous avez travaillé votre référencement. Votre site remonte sur Google. Votre fiche Google Business Profile est bien renseignée. Les clients arrivent.
+Le référencement naturel est indispensable pour un sophrologue, mais une meilleure visibilité signifie aussi une plus grande exposition de vos contenus. En 2026, les sites de praticiens bien-être bien référencés sont lus par leurs clients potentiels, mais aussi par la DGCCRF et d'autres organismes qui surveillent les allégations publiées en ligne. Combiner SEO et conformité juridique n'est pas un choix mais une nécessité pour construire une présence durable sur Google.
 
-C'est une vraie victoire — et elle mérite d'être reconnue.
-
-Mais voilà ce que peu de consultants SEO diront à leurs clients sophrologues : **plus vous êtes visible, plus vous êtes lisible**. Par vos clients. Par Google. Et aussi par ceux qui surveillent ce que les praticiens bien-être publient en ligne.
+> **En bref :** Pour un sophrologue, être bien référencé sur Google amplifie la portée de ses contenus dans les deux sens : vers ses clients potentiels, mais aussi vers les autorités qui contrôlent les allégations des praticiens bien-être.
 
 ## La sophrologie dans un angle mort réglementaire
 
@@ -22,7 +20,7 @@ Car l'absence d'ordre professionnel ne signifie pas l'absence de règles. Le Cod
 
 ## Qui peut lire vos contenus ?
 
-Un site bien référencé est indexé, archivé, consultable par tous. Ce "tous" inclut :
+Un site bien référencé est indexé, archivé, consultable par tous. Ce "tous" inclut plusieurs types de lecteurs qu'il est utile d'anticiper.
 
 **La DGCCRF** — la Direction générale de la concurrence, de la consommation et de la répression des fraudes réalise des campagnes de contrôle sectorielles. Le secteur des pratiques de bien-être et des thérapies alternatives fait partie de ses axes de surveillance.
 
@@ -47,6 +45,24 @@ Les praticiens qui construisent une présence en ligne durable sur Google ne son
 Cette précision n'est pas une contrainte de communication. C'est ce qui crée la confiance durable.
 
 Un visiteur qui comprend exactement ce que vous proposez, sans se sentir promis plus que ce que vous pouvez offrir, est un visiteur qui devient client. Et un client qui revient.
+
+## Questions fréquentes
+
+**Pourquoi le SEO crée-t-il un risque juridique pour un sophrologue ?**
+
+Plus un site est bien référencé, plus ses contenus sont accessibles et indexés. Si ces contenus contiennent des formulations qui constituent des allégations trompeuses au sens du Code de la consommation, leur large diffusion augmente mécaniquement l'exposition au contrôle. Un site peu visité avec des textes à risque est moins susceptible d'être signalé qu'un site qui remonte en première page sur des requêtes ciblées.
+
+**Qui peut signaler un site de sophrologue à la DGCCRF ?**
+
+Tout le monde peut signaler un site à la DGCCRF : un client insatisfait, un concurrent, un ordre de santé voisin — ou un contrôleur qui effectue une veille sectorielle de façon proactive. La DGCCRF réalise régulièrement des campagnes de contrôle ciblant des secteurs spécifiques, et les pratiques de bien-être font partie de ses axes de surveillance documentés.
+
+**Comment être visible sur Google tout en restant conforme ?**
+
+La conformité et le référencement ne sont pas opposés. Les textes précis, qui décrivent avec exactitude ce que vous proposez et à qui vous vous adressez, sont généralement mieux lus par Google et plus convaincants pour vos clients que les promesses vagues. La précision du vocabulaire — "j'accompagne les personnes qui traversent" plutôt que "je traite" — est à la fois une bonne pratique SEO et une protection juridique.
+
+**La sophrologie est-elle soumise au Code de la santé publique ?**
+
+La sophrologie n'est pas une profession de santé réglementée, et ses praticiens ne sont pas soumis au Code de la santé publique au titre de leur profession. En revanche, le Code de la santé publique définit les actes médicaux réservés aux professionnels de santé habilités — poser un diagnostic, prescrire un traitement, pratiquer des actes de soin. Si un sophrologue décrit son activité dans ces termes, il peut se voir reprocher un exercice illégal de la médecine, indépendamment de ce qu'il pratique réellement en séance.
 
 ## Vérifiez que votre visibilité est une force, pas un risque
 

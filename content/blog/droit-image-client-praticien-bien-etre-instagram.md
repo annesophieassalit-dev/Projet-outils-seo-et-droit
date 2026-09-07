@@ -6,9 +6,9 @@ slug: "droit-image-client-praticien-bien-etre-instagram"
 tags: ["Juridique", "Communication", "Réseaux sociaux"]
 ---
 
-Un client vous laisse un commentaire enthousiaste sur Instagram. Une participante à votre atelier vous envoie une photo souriante après la séance. Un client partage spontanément un post en vous identifiant.
+Publier la photo ou la vidéo d'un client identifiable sans son autorisation écrite préalable constitue une atteinte au droit à l'image, protégé par l'article 9 du Code civil. Une autorisation verbale ne suffit pas : elle doit être expresse, informée et idéalement écrite. Cette règle s'applique même si la photo a été prise dans un lieu public, même si la personne souriait, ou si elle vous a donné un accord oral sur le moment.
 
-Peut-on republier tout ça ? Pas sans conditions.
+> **En bref :** Le droit à l'image, protégé par l'article 9 du Code civil, interdit de publier la photo d'un client identifiable sans autorisation écrite préalable, quel que soit le contexte de la prise de vue.
 
 ## Le droit à l'image : un droit fondamental
 
@@ -36,13 +36,7 @@ Quelques situations ne nécessitent pas d'autorisation individuelle :
 
 ## Comment obtenir une autorisation en règle
 
-Une cession de droit à l'image peut être simple. Elle doit préciser :
-
-- Le nom de la personne concernée
-- La nature du support (photo, vidéo, témoignage)
-- Les supports de diffusion (site internet, Instagram, newsletter)
-- La durée de l'autorisation
-- Si la cession est à titre gratuit (ce qui est généralement le cas dans ce contexte)
+Une cession de droit à l'image peut être simple. Elle doit préciser le nom de la personne concernée, la nature du support concerné (photo, vidéo, témoignage), les supports de diffusion visés (site internet, Instagram, newsletter), la durée de l'autorisation, et indiquer si la cession est à titre gratuit — ce qui est généralement le cas dans ce contexte.
 
 Un formulaire court suffit. Vous pouvez l'envoyer par email et conserver la réponse écrite comme preuve.
 
@@ -63,6 +57,24 @@ Mais deux précautions s'imposent :
 Une publication sans autorisation peut entraîner une mise en demeure de retrait, des dommages et intérêts en cas de préjudice avéré, et une atteinte à votre réputation si l'affaire devient publique.
 
 La personne dont l'image a été utilisée sans accord peut également saisir la CNIL si la publication implique des données personnelles.
+
+## Questions fréquentes
+
+**Un client qui m'a dit "oui" verbalement peut-il se retourner contre moi après publication ?**
+
+Oui. Une autorisation verbale ne suffit pas : le droit à l'image exige une autorisation expresse et idéalement écrite. Si votre client conteste avoir donné son accord, c'est à vous de prouver qu'il l'a fait. Sans trace écrite, vous êtes en position de faiblesse. Prenez l'habitude de confirmer les autorisations par email ou via un formulaire signé, même simple.
+
+**Puis-je republier un post Instagram dans lequel un client me cite ?**
+
+Si votre client a publié un post public en vous identifiant et en témoignant de son expérience, vous pouvez le republier dans son intégralité, en le citant comme tel. En revanche, extraire uniquement la photo de ce post pour la publier hors contexte pose problème, car vous perdez le cadre de l'autorisation implicite que représente le partage public original.
+
+**Comment intégrer une autorisation droit à l'image dans mes formulaires d'atelier ?**
+
+Ajoutez une clause visible dans votre formulaire d'inscription, rédigée simplement : précisez que des photos ou vidéos pourront être prises lors de l'atelier, les supports sur lesquels elles pourront être publiées (site internet, Instagram, newsletter), et que toute personne souhaitant ne pas être photographiée peut le signaler à l'organisateur. Cette clause doit être lisible et ne pas conditionner la participation au consentement photographique.
+
+**Un témoignage Google peut-il être republié sur mon site ?**
+
+Oui, en principe, si la personne l'a publié volontairement dans un espace public. Mais ne le modifiez pas — même pour corriger une faute — sans l'accord de la personne, et n'associez pas ce témoignage à une photo sans autorisation explicite. Si vous souhaitez mettre un prénom complet et une photo, demandez une confirmation écrite distincte.
 
 ## Intégrez ces règles dans votre communication
 

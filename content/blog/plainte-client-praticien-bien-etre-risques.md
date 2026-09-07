@@ -6,9 +6,9 @@ slug: "plainte-client-praticien-bien-etre-risques"
 tags: ["Juridique", "Conformité", "Risques"]
 ---
 
-La question est rarement posée en formation. Pourtant, elle finit par traverser l'esprit de la plupart des praticiens bien-être à un moment ou à un autre : qu'est-ce qu'il se passe vraiment si un client se plaint de moi ?
+Un client insatisfait peut porter plainte contre un sophrologue ou un naturopathe selon plusieurs voies : signalement à la DGCCRF pour pratique commerciale trompeuse, action civile en responsabilité contractuelle, ou plainte pénale pour exercice illégal de la médecine dans les cas les plus graves. Chaque procédure suppose des conditions différentes et entraîne des conséquences distinctes.
 
-Voici les différentes voies qu'un client insatisfait peut emprunter — et ce que chacune implique pour vous.
+> **En bref :** Un praticien bien-être s'expose à trois types de procédures en cas de plainte d'un client : un contrôle DGCCRF, une action civile en responsabilité contractuelle, ou une plainte pénale pour exercice illégal de la médecine.
 
 ## La plainte auprès de la DGCCRF
 
@@ -32,15 +32,15 @@ C'est pourquoi la formulation de vos prestations dans vos CGV et sur votre site 
 
 C'est la voie la plus grave, mais aussi celle qui suppose des faits les plus sérieux.
 
-Si un client estime que vous avez posé un diagnostic médical, prescrit un traitement, ou affirmé avoir soigné une maladie — il peut déposer une plainte pénale pour exercice illégal de la médecine. L'ordre des médecins peut se joindre à cette procédure.
+Si un client estime que vous avez posé un diagnostic médical, prescrit un traitement, ou affirmé avoir soigné une maladie, il peut déposer une plainte pénale pour exercice illégal de la médecine. L'ordre des médecins peut se joindre à cette procédure.
 
-L'exercice illégal de la médecine est un délit passible de 2 ans d'emprisonnement et de 30 000 euros d'amende.
+L'exercice illégal de la médecine est un délit passible de 2 ans d'emprisonnement et de 30 000 euros d'amende, prévu par le Code de la santé publique.
 
 Ce risque concerne moins souvent ce que vous faites en séance que ce que vous écrivez en ligne. Une formulation qui affirme "traiter", "soigner" ou "guérir" une pathologie identifiée dans vos contenus peut suffire à étayer une plainte.
 
 ## Ce qui aggrave le risque
 
-Plusieurs éléments renforcent la position du client plaignant :
+Plusieurs éléments renforcent la position du client plaignant.
 
 **Des textes qui promettent un résultat.** Si votre site affiche "guérissez votre anxiété en 6 séances" et que le client n'a pas constaté de résultat, le contrat implicite est rompu à ses yeux.
 
@@ -55,6 +55,24 @@ La protection la plus efficace est éditoriale autant que juridique.
 Une communication qui décrit honnêtement ce que vous proposez — sans surestimer les effets, sans promettre de résultat médical, en situant clairement votre rôle dans le registre de l'accompagnement — réduit drastiquement le risque qu'un client se sente trompé.
 
 Des CGV claires, une politique d'annulation connue d'avance, une trace écrite des conditions acceptées : ces éléments construisent un cadre dans lequel les malentendus sont moins probables — et plus faciles à gérer si malgré tout ils surviennent.
+
+## Questions fréquentes
+
+**Un client peut-il vraiment porter plainte contre un sophrologue ou un naturopathe ?**
+
+Oui, et selon plusieurs voies. Il peut signaler un praticien à la DGCCRF si la communication lui a semblé trompeuse, engager une action civile en responsabilité contractuelle s'il estime que les engagements n'ont pas été tenus, ou déposer une plainte pénale pour exercice illégal de la médecine si le praticien a formulé un diagnostic ou affirmé soigner une pathologie identifiée.
+
+**Quel est le principal risque pénal pour un praticien bien-être ?**
+
+L'exercice illégal de la médecine, prévu par le Code de la santé publique, est le risque pénal le plus sérieux. Il est passible de 2 ans d'emprisonnement et de 30 000 euros d'amende. Ce risque ne concerne pas uniquement ce qui se passe en séance : des formulations en ligne affirmant "traiter", "soigner" ou "guérir" une pathologie reconnue peuvent suffire à étayer une plainte pénale.
+
+**Quel est le rôle de la DGCCRF dans une plainte contre un praticien ?**
+
+La DGCCRF (Direction générale de la concurrence, de la consommation et de la répression des fraudes) enquête sur les pratiques commerciales, pas sur la qualité intrinsèque de l'accompagnement. Elle examine si votre communication était honnête sur ce que vous proposiez. En cas de pratique commerciale trompeuse, les sanctions prévues par le Code de la consommation peuvent aller jusqu'à 2 ans d'emprisonnement et 300 000 euros d'amende dans les cas les plus graves.
+
+**Comment réduire concrètement le risque de plainte ?**
+
+La protection la plus efficace est à la fois éditoriale et juridique. Une communication honnête qui décrit votre accompagnement sans promettre de résultat médical, des CGV claires avec une politique d'annulation connue d'avance, et une trace écrite des conditions acceptées par le client constituent les protections les plus solides. Ces éléments réduisent les malentendus en amont et fournissent un cadre solide en cas de litige.
 
 ## Vérifiez votre exposition avant qu'une plainte ne le fasse
 

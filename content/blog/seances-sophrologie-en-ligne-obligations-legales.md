@@ -6,9 +6,9 @@ slug: "seances-sophrologie-en-ligne-obligations-legales"
 tags: ["Juridique", "Site internet", "Conformité"]
 ---
 
-La sophrologie en ligne s'est généralisée depuis quelques années. Beaucoup de praticiens proposent désormais des séances en visioconférence, des programmes d'accompagnement à distance, ou des ateliers en groupe en ligne.
+Proposer des séances de sophrologie en visioconférence crée des obligations légales supplémentaires par rapport aux séances en cabinet. Une séance vendue et réalisée à distance est un contrat à distance au sens de l'article L.221-1 du Code de la consommation, ce qui impose des CGV accessibles avant la réservation et un droit de rétractation de 14 jours pour le client. Le RGPD s'applique également aux données personnelles transmises via vos outils numériques.
 
-Ce mode d'exercice crée des obligations juridiques spécifiques que les praticiens installés en présentiel n'ont pas toujours anticipées.
+> **En bref :** La sophrologie en ligne est soumise au droit des contrats à distance (article L.221-1 du Code de la consommation), ce qui rend les CGV obligatoires et ouvre un droit de rétractation de 14 jours au client.
 
 ## Les séances en ligne sont des contrats à distance
 
@@ -20,12 +20,7 @@ Ce statut entraîne des obligations supplémentaires par rapport aux séances co
 
 Dès lors que vous vendez des prestations à distance à des consommateurs, vous avez l'obligation légale de rendre accessibles vos **conditions générales de vente** avant la conclusion du contrat.
 
-Ces CGV doivent préciser :
-- L'identité du prestataire (nom, SIRET, adresse)
-- La description de la prestation et ses modalités
-- Le tarif TTC avec la mention de franchise de TVA si applicable
-- Les conditions d'annulation et de report
-- Les informations sur le droit de rétractation
+Ces CGV doivent préciser l'identité du prestataire (nom, SIRET, adresse), la description de la prestation et ses modalités, le tarif TTC avec la mention de franchise de TVA si applicable, les conditions d'annulation et de report, ainsi que les informations sur le droit de rétractation.
 
 Si votre site permet la réservation et le paiement en ligne, l'accès aux CGV doit être possible avant la validation de la commande — pas seulement dans un lien de pied de page.
 
@@ -58,6 +53,24 @@ Mais si vous développez une offre internationale, il peut être utile de vérif
 ## La facturation des séances en ligne
 
 Les séances en ligne doivent faire l'objet d'une facture comme les séances en présentiel. La facture doit indiquer votre SIRET, la date, la nature de la prestation, le montant, et la mention de franchise de TVA si applicable.
+
+## Questions fréquentes
+
+**Mes CGV en cabinet sont-elles suffisantes pour proposer des séances en ligne ?**
+
+Non. Les CGV destinées aux séances en cabinet ne couvrent pas automatiquement les obligations spécifiques aux contrats à distance. Vous devez ajouter au minimum les informations sur le droit de rétractation de 14 jours, les modalités de remboursement, et les conditions dans lesquelles ce droit peut être écarté si la séance a lieu avant l'expiration du délai. Si votre site permet la réservation et le paiement en ligne, vos CGV doivent être accessibles avant la validation de la commande.
+
+**Un client peut-il réclamer le remboursement d'une séance en ligne déjà effectuée ?**
+
+Oui, s'il se rétracte dans les 14 jours suivant la conclusion du contrat et que vous n'avez pas obtenu son accord exprès pour renoncer à ce droit avant la séance. Pour éviter ce risque, insérez dans vos CGV une clause demandant au client de faire la demande expresse de commencer la prestation avant la fin du délai de rétractation, et obtenez sa confirmation écrite avant chaque séance réalisée dans ce délai.
+
+**Puis-je utiliser Zoom ou Google Meet sans obligation particulière ?**
+
+Ces outils collectent des données et sont majoritairement hébergés hors de l'Union européenne. Vous devez le mentionner dans votre politique de confidentialité, indiquer la base légale du transfert de données, et préciser les garanties en place (clauses contractuelles types, décision d'adéquation). Si vous préférez éviter cette complexité, des outils hébergés en Europe comme Whereby ou Jitsi simplifient votre conformité RGPD.
+
+**Dois-je établir une facture pour chaque séance en ligne ?**
+
+Oui. Chaque séance en ligne doit faire l'objet d'une facture comportant votre SIRET, la date, la nature de la prestation, le montant, et la mention « TVA non applicable — art. 293B CGI » si vous bénéficiez de la franchise en base. Cette obligation s'applique de la même façon qu'en présentiel, quelle que soit la modalité de paiement (virement, carte, plateforme en ligne).
 
 ## Mettez votre site à jour avant de vendre en ligne
 
