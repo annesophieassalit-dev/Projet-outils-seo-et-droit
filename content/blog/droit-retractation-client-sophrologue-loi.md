@@ -6,9 +6,9 @@ slug: "droit-retractation-client-sophrologue-loi"
 tags: ["Juridique", "CGV", "Conformité"]
 ---
 
-Un client a réservé et payé une séance en ligne. Il change d'avis le lendemain. A-t-il le droit d'être remboursé ?
+En France, le droit de rétractation de 14 jours s'applique aux contrats conclus à distance ou hors établissement, ce qui inclut toute réservation et paiement en ligne de séances de sophrologie. Si le client n'est pas informé de ce droit dans vos CGV, ce délai est porté à 12 mois de plein droit, en application de l'article L.221-18 du Code de la consommation.
 
-La réponse dépend du type de contrat que vous avez conclu — et de ce que vous avez mentionné dans vos conditions générales.
+> **En bref :** Un client qui achète une séance de sophrologie en ligne dispose d'un droit de rétractation de 14 jours sans justification, sauf s'il a expressément demandé l'exécution immédiate et renoncé à ce droit en connaissance de cause avant la prestation.
 
 ## Le droit de rétractation : de quoi parle-t-on ?
 
@@ -38,9 +38,9 @@ Ces deux éléments doivent figurer dans vos CGV et être acceptés avant la pre
 
 ## Ce que vous devez mentionner dans vos CGV
 
-Si vous vendez des séances ou des forfaits en ligne, vos CGV doivent contenir :
+Si vous vendez des séances ou des forfaits en ligne, vos CGV doivent contenir trois éléments essentiels.
 
-**L'information sur le droit de rétractation** — que ce droit existe, son délai de 14 jours, et les modalités pour l'exercer (formulaire, email, délai de remboursement).
+**L'information sur le droit de rétractation** — que ce droit existe, son délai de 14 jours prévu par l'article L.221-18 du Code de la consommation, et les modalités pour l'exercer (formulaire, email, délai de remboursement).
 
 **La clause d'exécution immédiate** — si vous souhaitez pouvoir réaliser la prestation avant le délai de 14 jours, indiquez que le client peut demander l'exécution immédiate, qu'il reconnaît renoncer à son droit de rétractation si la prestation est entièrement réalisée dans ce délai, et qu'il en a été informé avant la commande.
 
@@ -48,7 +48,7 @@ Si vous vendez des séances ou des forfaits en ligne, vos CGV doivent contenir :
 
 ## Ce qui se passe si vous ne le mentionnez pas
 
-Oublier d'informer le client de son droit de rétractation a des conséquences concrètes :
+Oublier d'informer le client de son droit de rétractation a des conséquences concrètes.
 
 Le délai de rétractation est porté à 12 mois au lieu de 14 jours. Votre client peut donc se rétracter jusqu'à un an après l'achat — et vous n'avez pas de base légale pour refuser le remboursement.
 
@@ -59,6 +59,24 @@ En cas de litige, l'absence d'information sur le droit de rétractation fragilis
 La logique est la même, mais appliquée à l'ensemble du programme. Si le programme commence avant la fin du délai de 14 jours, vous devez recueillir l'accord exprès du client et l'informer de la renonciation.
 
 En revanche, si la première séance du programme a lieu après les 14 jours, le client conserve son droit de rétractation jusqu'à cette date.
+
+## Questions fréquentes
+
+**Un client peut-il annuler une séance de sophrologie payée en ligne et être remboursé ?**
+
+Oui, si la séance a été achetée en ligne (contrat à distance) et que le délai de 14 jours ne s'est pas écoulé depuis l'achat, le client dispose d'un droit de rétractation légal prévu par l'article L.221-18 du Code de la consommation. Ce droit s'applique même si vous ne l'avez pas mentionné dans vos CGV — dans ce cas, le délai est porté à 12 mois au lieu de 14 jours.
+
+**Comment un sophrologue peut-il réaliser une séance avant le délai de rétractation de 14 jours ?**
+
+C'est possible sous deux conditions cumulatives prévues par l'article L.221-28 12° du Code de la consommation : le client doit expressément demander que la prestation commence avant la fin du délai de 14 jours, et il doit être informé qu'il renonce à son droit de rétractation si la prestation est entièrement réalisée. Ces deux éléments doivent figurer dans vos CGV et être acceptés avant la prestation.
+
+**Le droit de rétractation s'applique-t-il pour une séance réservée directement en cabinet ?**
+
+Non. Le droit de rétractation prévu par le Code de la consommation s'applique uniquement aux contrats conclus à distance (achat en ligne, réservation par email avec paiement à distance) ou hors établissement (salon, événement, domicile). Les séances conclues directement en cabinet lors d'un rendez-vous ne sont pas soumises à ce régime.
+
+**Que risque un sophrologue qui ne mentionne pas le droit de rétractation dans ses CGV ?**
+
+Si le droit de rétractation n'est pas mentionné dans les CGV, le délai légal est automatiquement porté à 12 mois au lieu de 14 jours pour tous les achats à distance. Cela signifie que le client peut se rétracter jusqu'à un an après l'achat et exiger un remboursement. L'absence d'information sur ce droit peut également être relevée par la DGCCRF et fragilise votre position en cas de litige.
 
 ## Mettez vos CGV à jour
 

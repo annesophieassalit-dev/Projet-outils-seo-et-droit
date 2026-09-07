@@ -6,23 +6,15 @@ slug: "derives-sectaires-bien-etre-miviludes"
 tags: ["Juridique", "Conformité", "DGCCRF"]
 ---
 
-Le secteur du bien-être est régulièrement cité dans les rapports de la MIVILUDES — la Mission interministérielle de vigilance et de lutte contre les dérives sectaires. Ce n'est pas un hasard, et ce n'est pas une attaque contre les praticiens sérieux.
+Un praticien bien-être peut être mis en cause par la MIVILUDES non pas à raison de sa pratique, mais à raison de comportements qui créent une emprise sur des personnes vulnérables. La MIVILUDES — Mission interministérielle de vigilance et de lutte contre les dérives sectaires — surveille des comportements précis : rupture avec le suivi médical, dépendance financière, promesses de guérison exceptionnelles. Comprendre ces critères permet à tout praticien sérieux de s'en distinguer clairement dans sa communication.
 
-C'est un signal que certaines pratiques, certaines formulations, et certains modèles d'accompagnement créent des risques réels pour les personnes vulnérables.
-
-Un praticien bien-être sérieux a tout intérêt à comprendre ces critères — non pas pour se défendre, mais pour s'assurer que sa pratique s'en distingue clairement.
+> **En bref :** La MIVILUDES ne cible pas les pratiques bien-être en elles-mêmes, mais les comportements créant une emprise sur des personnes vulnérables — promesses de guérison, isolement, dépendance financière.
 
 ## Ce que surveille vraiment la MIVILUDES
 
 La MIVILUDES ne cible pas les pratiques bien-être en elles-mêmes. Elle surveille les **comportements** qui créent une emprise sur des personnes vulnérables.
 
-Les critères qu'elle utilise pour identifier une dérive sectaire incluent notamment :
-
-- La **rupture avec l'environnement médical et familial** — encourager un client à arrêter ses traitements, à s'éloigner de ses proches, à méfier de ses médecins
-- La **dépendance financière** — tarifs excessifs, programmes très longs vendus comme indispensables, pression à l'achat
-- La **promesse de résultats exceptionnels** — guérir des maladies graves, résoudre des problèmes que la médecine "n'a pas pu régler"
-- L'**isolement progressif** — le praticien comme seul recours, découragement de toute aide extérieure
-- La **manipulation des personnes en situation de fragilité** — cibler des personnes qui traversent un deuil, une maladie grave, une dépression
+Les critères qu'elle utilise pour identifier une dérive sectaire incluent la rupture avec l'environnement médical et familial (encourager un client à arrêter ses traitements, à s'éloigner de ses proches ou à se méfier de ses médecins), la dépendance financière (tarifs excessifs, programmes très longs vendus comme indispensables, pression à l'achat), la promesse de résultats exceptionnels (guérir des maladies graves, résoudre des problèmes que la médecine « n'a pas pu régler »), l'isolement progressif du client (le praticien comme seul recours, découragement de toute aide extérieure), et la manipulation de personnes en situation de fragilité — personnes traversant un deuil, une maladie grave ou une dépression.
 
 Aucun de ces critères ne vise la sophrologie, la naturopathie ou l'hypnose en tant que pratiques. Mais des praticiens de toutes disciplines peuvent glisser vers ces comportements — parfois sans en avoir conscience.
 
@@ -53,6 +45,24 @@ La meilleure protection n'est pas juridique en premier lieu. C'est la clarté de
 Vous pouvez tout à fait aborder la question des dérives sectaires dans votre communication — en expliquant votre approche éthique, vos principes de travail, votre positionnement par rapport au suivi médical.
 
 C'est même un contenu utile : les personnes qui cherchent un praticien sérieux apprécient cette transparence.
+
+## Questions fréquentes
+
+**Un sophrologue peut-il être signalé à la MIVILUDES ?**
+
+Oui. N'importe quel particulier peut signaler un praticien à la MIVILUDES, quelle que soit sa discipline. La MIVILUDES ne dispose pas de pouvoir de sanction direct, mais elle peut transmettre les signalements aux autorités compétentes (DGCCRF, parquet) et publier des rapports qui citent des pratiques ou secteurs à risque. Un signalement peut déclencher un contrôle ou une enquête, même si le praticien n'a commis aucun manquement légal.
+
+**Quelles formulations sont à éviter absolument dans ma communication ?**
+
+Évitez toute formulation qui promet des résultats que la médecine n'aurait pas obtenus, qui décourage le suivi médical, ou qui conditionne les résultats à un nombre précis de séances accompagné d'une pression à l'achat. Des expressions comme « pour ceux qui ont tout essayé », « la méthode qui réussit là où les autres ont échoué » ou « les médicaments ne font que masquer les symptômes » sont des signaux de risque directs, indépendamment de votre intention.
+
+**Mention « en complément d'un suivi médical » : est-ce obligatoire ?**
+
+Non, ce n'est pas une obligation légale formelle. Mais c'est une précaution fortement recommandée. Cette mention positionne clairement votre pratique dans le registre de l'accompagnement, non du soin médical, et vous protège en cas de signalement ou de litige avec un client qui aurait interprété votre accompagnement comme un substitut à un traitement médical.
+
+**Comment aborder la question des dérives sectaires sur mon site sans que cela paraisse défensif ?**
+
+Expliquez positivement votre approche éthique : vos principes de travail, votre positionnement par rapport au suivi médical, la façon dont vous construisez la durée d'un accompagnement avec chaque client. Ce type de contenu est apprécié des personnes qui cherchent un praticien sérieux et crédibilise votre démarche, sans prendre un ton défensif ou apologétique.
 
 ## Vérifiez votre communication sous cet angle
 
