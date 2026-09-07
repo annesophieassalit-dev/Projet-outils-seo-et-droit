@@ -50,5 +50,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export async function renderMarkdown(content: string): Promise<string> {
   const result = await remark().use(remarkHtml, { sanitize: false }).process(content);
-  return result.toString();
+  // Style standalone CTA links (alone in their <p>) as buttons
+  const html = result
+    .toString()
+    .replace(
+      /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
+      (_, href, text) =>
+        `<p><a href="${href}" class="cta-btn">${text}</a></p>`
+    );
+  return html;
 }

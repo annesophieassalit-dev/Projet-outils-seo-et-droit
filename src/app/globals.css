@@ -21,3 +21,9 @@
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .cta-btn {
+    @apply inline-block bg-coral-500 text-white font-semibold text-sm px-6 py-3 rounded-xl no-underline hover:bg-coral-600 transition-colors;
+  }
+}

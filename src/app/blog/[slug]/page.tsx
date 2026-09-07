@@ -135,6 +135,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             prose-h3:text-base prose-h3:mt-6 prose-h3:mb-2
             prose-p:text-gray-700 prose-p:leading-relaxed
             prose-a:text-zen-700 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            [&_.cta-btn]:text-white [&_.cta-btn]:no-underline hover:[&_.cta-btn]:no-underline
             prose-strong:text-zen-950
             prose-ul:space-y-1 prose-li:text-gray-700
             prose-blockquote:border-l-zen-400 prose-blockquote:bg-zen-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-blockquote:not-italic
