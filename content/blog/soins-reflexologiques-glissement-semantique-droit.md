@@ -38,8 +38,8 @@ C'est pour cela qu'une lecture faite à travers un autre prisme, plus proche du 
 
 Ce n'est pas une question d'intention. C'est une question de perception réglementaire.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

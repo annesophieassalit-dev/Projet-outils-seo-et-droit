@@ -46,7 +46,7 @@ Cette précision n'est pas une contrainte de communication. C'est ce qui crée l
 
 Un visiteur qui comprend exactement ce que vous proposez, sans se sentir promis plus que ce que vous pouvez offrir, est un visiteur qui devient client. Et un client qui revient.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -66,7 +66,7 @@ La sophrologie n'est pas une profession de santé réglementée, et ses praticie
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer, précisément parce que vous êtes visible.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

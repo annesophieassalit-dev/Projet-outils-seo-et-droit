@@ -71,7 +71,7 @@ Un site statique est peu valorisé par Google. Un blog avec des articles qui ré
 
 Un article par semaine pendant quelques mois crée une dynamique de trafic qui dure.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
@@ -95,7 +95,7 @@ La difficulté quand on rédige ses propres textes : on ne sait pas toujours que
 
 **Visible & Conforme** propose un générateur de contenus calibré pour les praticiens bien-être : il crée vos textes de pages de services, vos accroches de page d'accueil, vos posts réseaux sociaux, conformes juridiquement et optimisés pour être trouvés sur Google.
 
-[Générer mes textes →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

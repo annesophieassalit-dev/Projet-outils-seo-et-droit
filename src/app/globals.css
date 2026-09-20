@@ -23,7 +23,10 @@
 }
 
 @layer components {
+  .cta-block {
+    @apply my-10 p-6 bg-coral-50 border border-coral-200 rounded-2xl text-center not-prose;
+  }
   .cta-btn {
-    @apply inline-block bg-coral-500 text-white font-semibold text-sm px-6 py-3 rounded-xl no-underline hover:bg-coral-600 transition-colors;
+    @apply inline-block bg-coral-500 text-white font-bold text-base px-8 py-4 rounded-xl no-underline hover:bg-coral-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
 }

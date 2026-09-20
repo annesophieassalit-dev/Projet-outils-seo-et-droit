@@ -64,9 +64,9 @@ La clé n'est pas d'éviter Instagram ni de ne poster que des contenus vides de 
 
 Cette ligne est parfois fine, surtout dans le format stories où tout va vite. **Visible & Conforme** analyse votre site et vous aide à identifier les formulations à risque, une base utile pour calibrer votre communication sur tous vos canaux.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

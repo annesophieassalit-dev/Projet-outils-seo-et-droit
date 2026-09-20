@@ -52,7 +52,7 @@ On ne voit pas facilement ses propres textes avec le regard d'un contrôleur ou 
 
 C'est pourquoi un outil d'analyse externe, ou une relecture par un pair informé, est beaucoup plus efficace que l'auto-évaluation.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -70,7 +70,7 @@ Un audit annuel est une bonne pratique. Il est également recommandé d'en effec
 
 **Visible & Conforme** réalise cet audit automatiquement sur vos textes et pages : présence des éléments obligatoires, formulations à surveiller, suggestions de correction adaptées à votre activité.
 
-[Faire auditer mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

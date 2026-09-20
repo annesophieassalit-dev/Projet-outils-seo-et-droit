@@ -62,9 +62,9 @@ Une page tarifaire peut aussi contenir des formulations à risque, notamment si 
 
 **Visible & Conforme** analyse l'ensemble de votre site, y compris votre page tarifaire, et vous signale les points de vigilance.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

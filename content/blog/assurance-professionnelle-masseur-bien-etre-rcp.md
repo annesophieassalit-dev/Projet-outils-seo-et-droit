@@ -52,7 +52,7 @@ Avant de souscrire, vérifiez que le contrat couvre bien votre type d'activité.
 
 Vérifiez aussi la couverture géographique si vous vous déplacez chez vos clients, et la couverture des dommages subis par les mineurs si vous accueillez des enfants.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -72,7 +72,7 @@ Demandez à votre assureur une confirmation écrite listant les techniques couve
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à une procédure que votre assurance ne couvrirait pas.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

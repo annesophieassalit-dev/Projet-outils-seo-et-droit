@@ -38,6 +38,6 @@ Avant de déployer un chatbot, plusieurs points méritent d'être vérifiés : l
 
 La conformité d'un chatbot n'est pas un réglage initial. C'est un suivi.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Vérifier votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

@@ -46,7 +46,7 @@ Si vous travaillez avec des mineurs, précisez-le sur votre page de services ou 
 
 Cette précision rassure les parents potentiels et dissuade les demandes qui mettraient votre pratique en difficulté.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -64,7 +64,7 @@ Oui, c'est recommandé. Si vous travaillez avec des enfants ou des adolescents, 
 
 **Visible & Conforme** analyse la cohérence de votre communication avec votre pratique réelle, y compris pour les accompagnements spécifiques comme les mineurs.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

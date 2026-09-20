@@ -64,7 +64,7 @@ Vous pouvez attendre d'avoir votre premier client pour affiner votre communicati
 
 Vous pouvez affiner progressivement votre site internet. Vous ne pouvez pas le lancer sans mentions légales.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -82,7 +82,7 @@ Aucune loi ne l'impose spécifiquement aux masseurs bien-être. En revanche, exe
 
 **Visible & Conforme** vérifie que vos premières publications, site, fiche Google, réseaux sociaux, sont conformes dès le départ.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

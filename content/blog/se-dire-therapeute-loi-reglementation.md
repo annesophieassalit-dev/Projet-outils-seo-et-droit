@@ -50,7 +50,7 @@ La bonne approche : décrire ce que vous faites, pas ce que vous êtes dans l'ab
 
 La description de votre pratique, de votre approche, et des situations que vous accompagnez crée plus de confiance qu'un titre générique. Et elle vous positionne clairement dans le registre de l'accompagnement, pas du soin médical.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -72,7 +72,7 @@ La façon dont vous vous nommez sur votre site, votre fiche Google, vos réseaux
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient créer une confusion sur votre rôle ou vos qualifications.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

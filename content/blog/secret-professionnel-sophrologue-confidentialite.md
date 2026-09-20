@@ -54,7 +54,7 @@ Votre politique de confidentialité doit indiquer quelles informations vous coll
 
 Si vous tenez des notes de séance, précisez comment elles sont conservées, pendant combien de temps, et ce que vous faites en cas de demande d'accès par le client.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -72,7 +72,7 @@ Préférez une formulation précise du type : « Les informations partagées lor
 
 **Visible & Conforme** vérifie la cohérence de votre politique de confidentialité avec votre pratique réelle.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

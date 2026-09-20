@@ -61,11 +61,11 @@ Les formations à l'EFT se concentrent sur la pratique, les séquences de tapote
 
 **Visible & Conforme** analyse votre site et vous aide à identifier les formulations à risque spécifiques à votre pratique.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

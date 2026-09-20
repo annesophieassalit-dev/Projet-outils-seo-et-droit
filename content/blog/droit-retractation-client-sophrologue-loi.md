@@ -60,7 +60,7 @@ La logique est la même, mais appliquée à l'ensemble du programme. Si le progr
 
 En revanche, si la première séance du programme a lieu après les 14 jours, le client conserve son droit de rétractation jusqu'à cette date.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -82,7 +82,7 @@ Si vous vendez des prestations en ligne et que vos CGV ne mentionnent pas le dro
 
 **Visible & Conforme** vérifie la présence et la conformité de vos éléments contractuels, et identifie les mentions manquantes dans vos CGV et sur votre site.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

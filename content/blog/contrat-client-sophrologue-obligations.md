@@ -58,7 +58,7 @@ C'est dans ce moment que l'existence d'un contrat clair fait toute la différenc
 
 Un contrat bien rédigé protège les deux parties. Il n'est pas un signe de méfiance envers vos clients : c'est un signe de professionnalisme.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -78,7 +78,7 @@ Oui, c'est une bonne pratique fortement recommandée. Une formulation du type "l
 
 **Visible & Conforme** vérifie la présence et la cohérence de vos éléments contractuels, CGV, mentions légales, politique de confidentialité, et identifie ce qui manque ou ce qui mériterait d'être mis à jour.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -58,7 +58,7 @@ Sur votre site, une page ou un paragraphe consacré à la question du remboursem
 
 Si votre page répond honnêtement à cette question, vous captez ces visiteurs tout en vous positionnant comme un praticien transparent, ce qui inspire davantage confiance qu'une promesse vague.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -80,7 +80,7 @@ Si vous avez déjà mentionné le remboursement mutuelle sur votre site ou vos r
 
 **Visible & Conforme** analyse ce type de formulation et propose des reformulations qui restent utiles pour vos clients sans vous exposer.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

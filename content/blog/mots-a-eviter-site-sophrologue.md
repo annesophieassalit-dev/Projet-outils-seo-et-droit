@@ -52,7 +52,7 @@ Deux approches :
 
 **Utiliser un outil dédié**, c'est exactement ce que fait **Visible & Conforme** : l'outil analyse vos textes et signale automatiquement les formulations à risque, avec des suggestions de reformulation adaptées à votre activité.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

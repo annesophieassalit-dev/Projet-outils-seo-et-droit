@@ -34,7 +34,7 @@ Ces glissements sont souvent involontaires. On reprend des formulations vues che
 
 **Visible & Conforme** analyse votre site et identifie ces catégories de formulations dans vos textes, avec des suggestions de reformulation adaptées à la naturopathie.
 
-[Analyser mes textes →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## La mention "ne se substitue pas à un avis médical"
 
@@ -54,7 +54,7 @@ Beaucoup de naturopathes cumulent plusieurs approches : réflexologie, aromathé
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Vérifier la conformité de mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

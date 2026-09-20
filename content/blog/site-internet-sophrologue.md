@@ -58,9 +58,9 @@ Une fois votre site créé, avant de le mettre en ligne ou de le partager, prene
 
 **Visible & Conforme** vérifie la présence des éléments obligatoires (mentions légales, politique de confidentialité) et les formulations dans vos textes qui pourraient vous exposer juridiquement, avec des suggestions adaptées à votre activité de sophrologue.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

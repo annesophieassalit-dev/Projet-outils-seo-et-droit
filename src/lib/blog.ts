@@ -56,7 +56,7 @@ export async function renderMarkdown(content: string): Promise<string> {
     .replace(
       /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
       (_, href, text) =>
-        `<p><a href="${href}" class="cta-btn">${text}</a></p>`
+        `<div class="cta-block"><a href="${href}" class="cta-btn">${text}</a></div>`
     );
   return html;
 }

@@ -66,7 +66,7 @@ Un client qui choisit un sophrologue ne cherche pas nécessairement un titre d'�
 
 Une présentation transparente de votre parcours, formation, durée, approche, spécialités, inspire davantage confiance qu'un titre ambigu.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -92,7 +92,7 @@ La règle est la précision. Indiquez le nom exact de l'organisme de formation, 
 
 **Visible & Conforme** analyse la façon dont vous décrivez votre formation et vos titres, et identifie les formulations qui pourraient créer une confusion sur votre statut.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

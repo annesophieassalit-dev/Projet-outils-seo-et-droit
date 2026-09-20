@@ -55,9 +55,9 @@ Le **QCM gratuit Visible & Conforme** vous pose 10 questions sur votre communica
 
 Pour aller plus loin, **Visible & Conforme** analyse directement vos textes et vous propose des corrections adaptées à votre pratique.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

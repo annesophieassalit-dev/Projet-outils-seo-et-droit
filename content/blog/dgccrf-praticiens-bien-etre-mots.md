@@ -62,7 +62,7 @@ La difficulté avec ses propres écrits est que l'on relit avec la même intenti
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui appartiennent aux catégories surveillées par les autorités, avec des suggestions de reformulation adaptées à votre activité.
 
-[Analyser mes contenus →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 Pour aller plus loin, le kit *Visible & Conforme* recense les termes les plus fréquemment problématiques dans la communication bien-être, avec le niveau de vigilance pour chacun et les reformulations qui protègent sans sacrifier votre visibilité.
 

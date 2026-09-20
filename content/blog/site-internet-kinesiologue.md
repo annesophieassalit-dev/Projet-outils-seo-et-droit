@@ -61,9 +61,9 @@ Plus vous êtes visible, réseaux sociaux, Google, bouche à oreille —, plus v
 
 **Visible & Conforme** analyse votre site de kinésiologue et identifie les formulations qui pourraient vous exposer.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

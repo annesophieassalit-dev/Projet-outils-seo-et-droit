@@ -54,6 +54,6 @@ Ce n'est pas le dentiste qui est en cause ici. C'est le nombre de professionnels
 
 La conformité d'une communication ne se joue pas sur un seul texte. Elle se joue sur l'ensemble des règles applicables à votre activité, votre profession et vos outils de communication.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

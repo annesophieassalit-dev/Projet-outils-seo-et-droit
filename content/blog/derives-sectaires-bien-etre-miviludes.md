@@ -46,7 +46,7 @@ Vous pouvez tout à fait aborder la question des dérives sectaires dans votre c
 
 C'est même un contenu utile : les personnes qui cherchent un praticien sérieux apprécient cette transparence.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -66,7 +66,7 @@ Expliquez positivement votre approche éthique : vos principes de travail, votre
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient être interprétées comme des signaux de risque, y compris celles qui relèvent de cet angle.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

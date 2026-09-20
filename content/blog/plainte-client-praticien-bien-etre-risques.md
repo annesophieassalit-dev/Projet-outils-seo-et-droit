@@ -56,7 +56,7 @@ Une communication qui décrit honnêtement ce que vous proposez, sans surestimer
 
 Des CGV claires, une politique d'annulation connue d'avance, une trace écrite des conditions acceptées : ces éléments construisent un cadre dans lequel les malentendus sont moins probables, et plus faciles à gérer si malgré tout ils surviennent.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -76,7 +76,7 @@ La protection la plus efficace est à la fois éditoriale et juridique. Une comm
 
 **Visible & Conforme** analyse vos contenus et identifie les formulations qui pourraient être utilisées contre vous en cas de litige ou de procédure.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -52,7 +52,7 @@ Plusieurs assureurs proposent des contrats spécialement conçus pour les pratic
 
 Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclarée, certains contrats excluent des pratiques spécifiques ou conditionnent la couverture à une certification reconnue.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -74,7 +74,7 @@ L'assurance protège contre les incidents. La conformité de votre communication
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à un signalement ou à une procédure, indépendamment de votre couverture assurantielle.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

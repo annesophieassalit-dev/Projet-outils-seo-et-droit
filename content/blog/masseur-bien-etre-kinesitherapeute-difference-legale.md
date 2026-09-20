@@ -48,7 +48,7 @@ La clarté protège. Un masseur bien-être qui décrit précisément ce qu'il fa
 
 "Je traite les douleurs musculaires et les tensions chroniques grâce au massage" positionne la prestation dans le champ médical, et crée un risque.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -66,7 +66,7 @@ Il s'expose à une procédure pour pratique commerciale trompeuse au sens des ar
 
 **Visible & Conforme** analyse la façon dont vous présentez votre pratique de massage et identifie les formulations qui pourraient créer une confusion sur votre rôle.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

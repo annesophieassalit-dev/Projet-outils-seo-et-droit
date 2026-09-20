@@ -44,6 +44,6 @@ Certains mots du vocabulaire bien-être sont surveillés parce qu'ils créent un
 
 Cette vigilance ne s'improvise pas. Elle demande une lecture différente de ses propres textes, plus proche du regard d'un contrôleur que de celui d'un praticien.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

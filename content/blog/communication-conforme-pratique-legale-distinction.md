@@ -50,7 +50,7 @@ Mais elle vient en second. Elle s'appuie sur une pratique déjà clarifiée dans
 
 La communication doit être conforme. Elle ne peut jamais rendre légale une pratique qui ne l'est pas.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
@@ -71,7 +71,7 @@ La vérification porte sur deux points : l'activité relève-t-elle d'un acte r�
 #### Ma communication peut-elle être conforme si ma pratique ne l'est pas ?
 Techniquement, oui : on peut rédiger des textes irréprochables et exercer une activité illégale. Mais la conformité de la communication ne compense pas l'illégalité de la pratique. En cas de contrôle ou de plainte, les deux seront examinés séparément. Une communication conforme peut réduire certains risques liés à la communication, elle ne protège pas contre une poursuite portant sur les actes eux-mêmes.
 
-[Vérifier votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

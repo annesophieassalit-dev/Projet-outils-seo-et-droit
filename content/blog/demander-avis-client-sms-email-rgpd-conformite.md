@@ -42,6 +42,6 @@ Si la réponse est non ou incertaine, le message ne devrait pas partir.
 
 Construire une stratégie d'avis clients solide passe donc d'abord par la mise en place d'un recueil de consentement adapté, avant de réfléchir au message lui-même. C'est à cette condition que la démarche est à la fois efficace pour le référencement local et respectueuse de la réglementation.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Vérifier votre conformité](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

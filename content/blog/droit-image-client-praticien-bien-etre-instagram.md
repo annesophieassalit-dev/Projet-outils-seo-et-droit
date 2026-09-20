@@ -58,7 +58,7 @@ Une publication sans autorisation peut entraîner une mise en demeure de retrait
 
 La personne dont l'image a été utilisée sans accord peut également saisir la CNIL si la publication implique des données personnelles.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -78,7 +78,7 @@ Oui, en principe, si la personne l'a publié volontairement dans un espace publi
 
 **Visible & Conforme** analyse votre communication en ligne, site, réseaux, newsletter, et identifie les points qui pourraient vous exposer juridiquement.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -112,9 +112,9 @@ Vérifier manuellement chaque point prend du temps, et on oublie toujours quelqu
 
 **Visible & Conforme** vérifie automatiquement la conformité de votre site : présence des mentions légales, formulations à risque juridique, et bien d'autres points. En quelques minutes, vous avez un rapport clair.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Vérifier mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

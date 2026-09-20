@@ -54,7 +54,7 @@ Mais si vous développez une offre internationale, il peut être utile de vérif
 
 Les séances en ligne doivent faire l'objet d'une facture comme les séances en présentiel. La facture doit indiquer votre SIRET, la date, la nature de la prestation, le montant, et la mention de franchise de TVA si applicable.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -76,7 +76,7 @@ Si vous venez de lancer des séances en ligne, ou si vous avez développé cette
 
 **Visible & Conforme** identifie les éléments manquants ou inadaptés dans votre cadre légal.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

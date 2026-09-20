@@ -60,7 +60,7 @@ Vous ne pouvez pas supprimer un avis Google négatif (sauf s'il est manifestemen
 
 Les témoignages sont une partie de votre communication. Ils doivent être cohérents avec le reste de vos textes. Si vos témoignages restent dans le registre de l'accompagnement mais que vos pages de services utilisent un vocabulaire médical, c'est l'ensemble qui pose problème.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -78,7 +78,7 @@ Vous ne pouvez pas supprimer un avis négatif sauf s'il est manifestement injuri
 
 **Visible & Conforme** analyse l'ensemble de votre communication pour identifier les incohérences et les formulations à risque.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

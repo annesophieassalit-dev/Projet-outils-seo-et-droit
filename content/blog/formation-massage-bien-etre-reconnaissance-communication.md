@@ -50,7 +50,7 @@ Précisez le nom de l'organisme, la durée de la formation, l'intitulé exact du
 
 Ce que vous évitez : les superlatifs non vérifiables, les titres approximatifs, et toute formulation qui laisse croire à une accréditation officielle inexistante.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -70,7 +70,7 @@ Non. Qu'une formation dure 20 heures ou 500 heures, la loi ne réglemente pas le
 
 **Visible & Conforme** analyse les mentions de formation et de qualification sur votre site et identifie celles qui pourraient induire vos clients en erreur.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

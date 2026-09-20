@@ -60,7 +60,7 @@ Les sites des hypnothérapeutes sont parmi ceux qui présentent le plus de formu
 
 **Visible & Conforme** analyse vos textes et identifie les formulations à adapter, avec des suggestions de reformulation pensées pour les praticiens en hypnose.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 **Pour aller plus loin :** le kit PDF *Visible & Conforme* inclut une fiche métier spécifique aux hypnothérapeutes, avec les termes les plus fréquemment problématiques et leurs alternatives.
 

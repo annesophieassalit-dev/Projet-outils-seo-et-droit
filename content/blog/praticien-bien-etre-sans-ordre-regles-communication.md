@@ -38,8 +38,8 @@ Le second : ce qui constitue une allégation commerciale trompeuse. Les promesse
 
 Ces deux périmètres ne se recoupent pas toujours. Mais ils méritent d'être connus l'un et l'autre avant de publier quoi que ce soit.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser votre communication](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)

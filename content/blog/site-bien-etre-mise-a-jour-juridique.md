@@ -50,9 +50,9 @@ Ces trois points peuvent être vérifiés en moins d'une heure si vous savez quo
 
 **Visible & Conforme** réalise cette vérification automatiquement : présence et cohérence des mentions légales, formulations à surveiller dans vos textes, couverture de la politique de confidentialité.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
-[Vérifier mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 Si vous préférez commencer par un auto-diagnostic rapide, le QCM gratuit vous donne une première évaluation en 5 minutes.
 

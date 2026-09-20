@@ -56,7 +56,7 @@ Si votre activité se développe et que vous approchez du plafond, les alternati
 
 Sur votre site, vos mentions légales doivent indiquer votre SIRET, votre statut (micro-entrepreneur), et votre adresse professionnelle. Si ces informations ont changé depuis la création du site, mettez-les à jour.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
 
@@ -74,7 +74,7 @@ Non. Le statut juridique ne vous protège pas contre les risques liés à votre 
 
 **Visible & Conforme** vérifie la cohérence de vos mentions légales et identifie les éléments manquants ou obsolètes.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

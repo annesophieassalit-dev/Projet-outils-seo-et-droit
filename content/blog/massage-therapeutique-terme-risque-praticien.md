@@ -53,7 +53,7 @@ Ces formulations décrivent l'expérience et l'effet ressenti, pas un traitement
 
 Corriger ce terme sur votre site et vos supports prend dix minutes. Gérer une procédure DGCCRF en prend beaucoup plus.
 
-[Vérifier votre communication →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
@@ -73,7 +73,7 @@ En cas de signalement ou de contrôle, la DGCCRF peut qualifier la formulation d
 
 **Visible & Conforme** identifie ce terme et les formulations apparentées dans vos textes, et propose des alternatives adaptées à votre pratique spécifique.
 
-[Analyser mon site →](/inscription)
+[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 
