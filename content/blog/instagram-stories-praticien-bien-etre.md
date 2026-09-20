@@ -66,7 +66,6 @@ Cette ligne est parfois fine, surtout dans le format stories où tout va vite. *
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

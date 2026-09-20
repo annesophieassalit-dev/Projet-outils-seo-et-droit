@@ -77,7 +77,6 @@ Une réponse sobre et factuelle : reconnaître que l'accompagnement n'a pas prod
 #### Un concurrent peut-il laisser de faux avis négatifs sur mon profil ?
 Oui, c'est une pratique qui existe. Si vous avez des raisons sérieuses de penser qu'un avis est laissé par une personne qui n'est pas votre cliente, une concurrente, une personne mal intentionnée, vous pouvez le signaler à Google avec ces éléments. La pratique de dépôt de faux avis peut également constituer un acte de concurrence déloyale, qui ouvre une voie civile distincte de la diffamation.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

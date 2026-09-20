@@ -54,7 +54,6 @@ Beaucoup de naturopathes cumulent plusieurs approches : réflexologie, aromathé
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

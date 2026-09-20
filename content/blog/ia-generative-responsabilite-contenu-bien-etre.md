@@ -50,7 +50,6 @@ C'est une forme de conformité algorithmique à la portée de tous : soigner ses
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -44,4 +44,3 @@ Construire une stratégie d'avis clients solide passe donc d'abord par la mise e
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)

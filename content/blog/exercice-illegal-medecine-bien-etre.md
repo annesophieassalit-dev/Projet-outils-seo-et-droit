@@ -67,9 +67,6 @@ Quelques principes qui font la différence :
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
-
-Pour une analyse plus approfondie de votre situation, un avocat spécialisé en droit de la santé reste la référence.
 
 ---
 

@@ -80,7 +80,6 @@ Si vous avez déjà mentionné le remboursement mutuelle sur votre site ou vos r
 
 **Visible & Conforme** analyse ce type de formulation et propose des reformulations qui restent utiles pour vos clients sans vous exposer.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

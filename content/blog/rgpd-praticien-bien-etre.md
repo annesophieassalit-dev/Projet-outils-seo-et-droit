@@ -110,7 +110,6 @@ Calendly et Koalendar disposent de DPA conformes. Un Google Agenda non configur�
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

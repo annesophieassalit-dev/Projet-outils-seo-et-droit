@@ -85,7 +85,6 @@ Avant de commencer à envoyer des newsletters, vérifiez que votre formulaire d'
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

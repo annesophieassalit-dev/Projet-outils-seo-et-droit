@@ -72,7 +72,6 @@ La façon dont vous vous nommez sur votre site, votre fiche Google, vos réseaux
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient créer une confusion sur votre rôle ou vos qualifications.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

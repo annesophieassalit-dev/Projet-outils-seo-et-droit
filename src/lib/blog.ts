@@ -50,13 +50,37 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export async function renderMarkdown(content: string): Promise<string> {
   const result = await remark().use(remarkHtml, { sanitize: false }).process(content);
-  // Style standalone CTA links (alone in their <p>) as buttons
-  const html = result
-    .toString()
-    .replace(
-      /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
-      (_, href, text) =>
-        `<div class="cta-block"><a href="${href}" class="cta-btn">${text}</a></div>`
-    );
+
+  // Tag standalone CTA links with null-byte delimiters for safe grouping
+  const tagged = result.toString().replace(
+    /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
+    (_, href, text) => `\x00${href}\x01${text.trim()}\x00`
+  );
+
+  // Merge consecutive tagged CTAs into one visual block
+  const html = tagged.replace(
+    /(\x00[^\x00]+\x00\n?)+/g,
+    (group) => {
+      const parts = [...group.matchAll(/\x00([^\x01]+)\x01([^\x00]+)\x00/g)];
+      const hasKit = parts.some(([, href]) => href.includes("systeme.io"));
+      const hasTool = parts.some(([, href]) => href.includes("/inscription"));
+
+      const lead = hasTool && hasKit
+        ? "Visible & Conforme analyse vos textes et génère des posts conformes. Le Guide des 51 mots pour identifier les termes à risque dans vos propres textes."
+        : hasKit
+          ? "51 mots qui peuvent changer la qualification juridique de votre communication. Identifiez-les dans vos propres textes."
+          : "Visible & Conforme analyse vos textes, repère les formulations à risque et génère des posts conformes pour vos réseaux.";
+
+      const buttons = parts
+        .map(([, href, text]) => {
+          const cls = href.includes("systeme.io") ? "cta-btn cta-btn-secondary" : "cta-btn";
+          return `<a href="${href}" class="${cls}">${text}</a>`;
+        })
+        .join("");
+
+      return `<div class="cta-block"><p class="cta-lead">${lead}</p><div class="cta-buttons">${buttons}</div></div>`;
+    }
+  );
+
   return html;
 }

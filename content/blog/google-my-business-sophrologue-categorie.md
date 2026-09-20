@@ -68,7 +68,6 @@ Votre fiche Google dirige les visiteurs vers votre site. Si ce site contient des
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

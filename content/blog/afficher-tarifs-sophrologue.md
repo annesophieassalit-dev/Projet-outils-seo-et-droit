@@ -64,7 +64,6 @@ Une page tarifaire peut aussi contenir des formulations à risque, notamment si 
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

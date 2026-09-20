@@ -67,7 +67,6 @@ Le coaching d'entreprise obéit à des règles similaires. Si vous proposez des 
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -71,7 +71,6 @@ Vos CGV, votre page de présentation, vos pages de services et vos mentions lég
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

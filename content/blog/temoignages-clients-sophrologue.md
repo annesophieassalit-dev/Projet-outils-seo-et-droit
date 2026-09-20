@@ -78,7 +78,6 @@ Vous ne pouvez pas supprimer un avis négatif sauf s'il est manifestement injuri
 
 **Visible & Conforme** analyse l'ensemble de votre communication pour identifier les incohérences et les formulations à risque.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

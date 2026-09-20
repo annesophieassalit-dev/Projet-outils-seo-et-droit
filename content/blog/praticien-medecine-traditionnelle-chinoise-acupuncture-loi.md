@@ -48,4 +48,3 @@ Elle ne peut pas rendre légale une pratique qui ne l'est pas.
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)

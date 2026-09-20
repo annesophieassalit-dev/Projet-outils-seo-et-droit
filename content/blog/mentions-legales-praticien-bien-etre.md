@@ -114,7 +114,6 @@ Vérifier manuellement chaque point prend du temps, et on oublie toujours quelqu
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -66,7 +66,6 @@ On s'expose à une procédure pour pratique commerciale trompeuse au sens des ar
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui sortent du registre du bien-être pour entrer dans celui du médical.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

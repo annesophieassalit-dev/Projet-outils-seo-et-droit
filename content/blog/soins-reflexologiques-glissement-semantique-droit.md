@@ -42,4 +42,3 @@ Ce n'est pas une question d'intention. C'est une question de perception régleme
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)

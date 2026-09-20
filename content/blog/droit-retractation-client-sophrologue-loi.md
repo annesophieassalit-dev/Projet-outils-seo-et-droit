@@ -82,7 +82,6 @@ Si vous vendez des prestations en ligne et que vos CGV ne mentionnent pas le dro
 
 **Visible & Conforme** vérifie la présence et la conformité de vos éléments contractuels, et identifie les mentions manquantes dans vos CGV et sur votre site.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

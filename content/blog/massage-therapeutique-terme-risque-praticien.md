@@ -73,7 +73,6 @@ En cas de signalement ou de contrôle, la DGCCRF peut qualifier la formulation d
 
 **Visible & Conforme** identifie ce terme et les formulations apparentées dans vos textes, et propose des alternatives adaptées à votre pratique spécifique.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -60,7 +60,6 @@ Une fois votre site créé, avant de le mettre en ligne ou de le partager, prene
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

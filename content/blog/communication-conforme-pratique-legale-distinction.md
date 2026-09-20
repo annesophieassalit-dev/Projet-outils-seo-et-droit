@@ -71,7 +71,6 @@ La vérification porte sur deux points : l'activité relève-t-elle d'un acte r�
 #### Ma communication peut-elle être conforme si ma pratique ne l'est pas ?
 Techniquement, oui : on peut rédiger des textes irréprochables et exercer une activité illégale. Mais la conformité de la communication ne compense pas l'illégalité de la pratique. En cas de contrôle ou de plainte, les deux seront examinés séparément. Une communication conforme peut réduire certains risques liés à la communication, elle ne protège pas contre une poursuite portant sur les actes eux-mêmes.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -74,7 +74,6 @@ Votre profil LinkedIn et votre site doivent être cohérents, mêmes titres, mê
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

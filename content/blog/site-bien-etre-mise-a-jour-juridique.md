@@ -52,7 +52,6 @@ Ces trois points peuvent être vérifiés en moins d'une heure si vous savez quo
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 Si vous préférez commencer par un auto-diagnostic rapide, le QCM gratuit vous donne une première évaluation en 5 minutes.
 

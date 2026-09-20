@@ -72,7 +72,6 @@ Demandez à votre assureur une confirmation écrite listant les techniques couve
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à une procédure que votre assurance ne couvrirait pas.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -82,7 +82,6 @@ Aucune loi ne l'impose spécifiquement aux masseurs bien-être. En revanche, exe
 
 **Visible & Conforme** vérifie que vos premières publications, site, fiche Google, réseaux sociaux, sont conformes dès le départ.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

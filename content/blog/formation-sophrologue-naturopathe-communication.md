@@ -57,7 +57,6 @@ Pour aller plus loin, **Visible & Conforme** analyse directement vos textes et v
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

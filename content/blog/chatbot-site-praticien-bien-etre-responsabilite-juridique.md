@@ -40,4 +40,3 @@ La conformité d'un chatbot n'est pas un réglage initial. C'est un suivi.
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)

@@ -74,7 +74,6 @@ Non. Le statut juridique ne vous protège pas contre les risques liés à votre 
 
 **Visible & Conforme** vérifie la cohérence de vos mentions légales et identifie les éléments manquants ou obsolètes.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

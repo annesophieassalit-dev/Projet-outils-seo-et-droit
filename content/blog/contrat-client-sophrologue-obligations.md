@@ -78,7 +78,6 @@ Oui, c'est une bonne pratique fortement recommandée. Une formulation du type "l
 
 **Visible & Conforme** vérifie la présence et la cohérence de vos éléments contractuels, CGV, mentions légales, politique de confidentialité, et identifie ce qui manque ou ce qui mériterait d'être mis à jour.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

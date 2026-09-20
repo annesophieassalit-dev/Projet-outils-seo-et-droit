@@ -46,4 +46,3 @@ Cette vigilance ne s'improvise pas. Elle demande une lecture différente de ses 
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)

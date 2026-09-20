@@ -64,7 +64,6 @@ Oui, c'est recommandé. Si vous travaillez avec des enfants ou des adolescents, 
 
 **Visible & Conforme** analyse la cohérence de votre communication avec votre pratique réelle, y compris pour les accompagnements spécifiques comme les mineurs.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

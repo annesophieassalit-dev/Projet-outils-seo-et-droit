@@ -66,7 +66,6 @@ La différence avec d'autres pratiques : la vigilance sur le vocabulaire doit ê
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

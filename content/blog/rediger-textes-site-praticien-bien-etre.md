@@ -95,7 +95,6 @@ La difficulté quand on rédige ses propres textes : on ne sait pas toujours que
 
 **Visible & Conforme** propose un générateur de contenus calibré pour les praticiens bien-être : il crée vos textes de pages de services, vos accroches de page d'accueil, vos posts réseaux sociaux, conformes juridiquement et optimisés pour être trouvés sur Google.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

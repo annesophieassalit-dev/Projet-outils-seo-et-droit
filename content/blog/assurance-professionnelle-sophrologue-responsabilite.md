@@ -74,7 +74,6 @@ L'assurance protège contre les incidents. La conformité de votre communication
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer à un signalement ou à une procédure, indépendamment de votre couverture assurantielle.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

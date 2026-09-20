@@ -59,7 +59,6 @@ Pour une analyse complète de vos textes et pages, **Visible & Conforme** identi
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

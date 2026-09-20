@@ -70,7 +70,6 @@ Non. Qu'une formation dure 20 heures ou 500 heures, la loi ne réglemente pas le
 
 **Visible & Conforme** analyse les mentions de formation et de qualification sur votre site et identifie celles qui pourraient induire vos clients en erreur.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

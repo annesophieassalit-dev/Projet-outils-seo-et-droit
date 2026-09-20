@@ -68,7 +68,6 @@ Un blog qui répond aux questions de vos futurs clients (comment se déroule une
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -76,7 +76,6 @@ La protection la plus efficace est à la fois éditoriale et juridique. Une comm
 
 **Visible & Conforme** analyse vos contenus et identifie les formulations qui pourraient être utilisées contre vous en cas de litige ou de procédure.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

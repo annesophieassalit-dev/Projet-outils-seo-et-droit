@@ -40,4 +40,3 @@ Un seul terme peut suffire à changer la qualification de l'ensemble d'un conten
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)

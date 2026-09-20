@@ -78,7 +78,6 @@ Oui, en principe, si la personne l'a publié volontairement dans un espace publi
 
 **Visible & Conforme** analyse votre communication en ligne, site, réseaux, newsletter, et identifie les points qui pourraient vous exposer juridiquement.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

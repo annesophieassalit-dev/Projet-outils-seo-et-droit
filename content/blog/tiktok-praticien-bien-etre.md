@@ -66,7 +66,6 @@ Avant de vous lancer activement sur TikTok, vérifiez que votre site et vos autr
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

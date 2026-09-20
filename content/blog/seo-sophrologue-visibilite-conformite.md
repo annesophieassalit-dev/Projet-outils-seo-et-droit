@@ -66,7 +66,6 @@ La sophrologie n'est pas une profession de santé réglementée, et ses praticie
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui pourraient vous exposer, précisément parce que vous êtes visible.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -63,7 +63,6 @@ Plus vous êtes visible, réseaux sociaux, Google, bouche à oreille —, plus v
 
 [Analyser mes textes et créer mes posts →](/inscription)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

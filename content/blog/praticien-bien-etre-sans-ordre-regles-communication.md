@@ -42,4 +42,3 @@ Ces deux périmètres ne se recoupent pas toujours. Mais ils méritent d'être c
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)

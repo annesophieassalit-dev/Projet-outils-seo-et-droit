@@ -66,7 +66,6 @@ Il s'expose à une procédure pour pratique commerciale trompeuse au sens des ar
 
 **Visible & Conforme** analyse la façon dont vous présentez votre pratique de massage et identifie les formulations qui pourraient créer une confusion sur votre rôle.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

@@ -76,7 +76,6 @@ Si vous venez de lancer des séances en ligne, ou si vous avez développé cette
 
 **Visible & Conforme** identifie les éléments manquants ou inadaptés dans votre cadre légal.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

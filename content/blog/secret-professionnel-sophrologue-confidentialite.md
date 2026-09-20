@@ -72,7 +72,6 @@ Préférez une formulation précise du type : « Les informations partagées lor
 
 **Visible & Conforme** vérifie la cohérence de votre politique de confidentialité avec votre pratique réelle.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

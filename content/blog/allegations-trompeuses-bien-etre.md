@@ -54,7 +54,6 @@ C'est précisément pour cela qu'un regard extérieur, outillé et formé à ide
 
 [Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 

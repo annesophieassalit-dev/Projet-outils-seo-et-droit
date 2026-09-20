@@ -70,7 +70,6 @@ Un audit annuel est une bonne pratique. Il est également recommandé d'en effec
 
 **Visible & Conforme** réalise cet audit automatiquement sur vos textes et pages : présence des éléments obligatoires, formulations à surveiller, suggestions de correction adaptées à votre activité.
 
-[Analyser mes textes et créer mes posts →](/inscription)
 
 ---
 
