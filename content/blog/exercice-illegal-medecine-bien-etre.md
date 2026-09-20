@@ -65,6 +65,8 @@ Quelques principes qui font la différence :
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui appartiennent aux catégories à risque, avec des suggestions adaptées à votre pratique spécifique. C'est un premier niveau de vérification accessible et rapide.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 Pour une analyse plus approfondie de votre situation, un avocat spécialisé en droit de la santé reste la référence.

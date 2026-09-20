@@ -69,6 +69,8 @@ Vos CGV, votre page de présentation, vos pages de services et vos mentions lég
 
 **Visible & Conforme** analyse vos textes et vous aide à identifier ces incohérences.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

@@ -54,6 +54,8 @@ Votre politique de confidentialité doit indiquer quelles informations vous coll
 
 Si vous tenez des notes de séance, précisez comment elles sont conservées, pendant combien de temps, et ce que vous faites en cas de demande d'accès par le client.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un sophrologue est-il tenu au secret professionnel ?

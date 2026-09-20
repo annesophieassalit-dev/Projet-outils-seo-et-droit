@@ -56,6 +56,8 @@ Si votre activité se développe et que vous approchez du plafond, les alternati
 
 Sur votre site, vos mentions légales doivent indiquer votre SIRET, votre statut (micro-entrepreneur), et votre adresse professionnelle. Si ces informations ont changé depuis la création du site, mettez-les à jour.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Quel code APE déclarer pour une activité de sophrologie en micro-entreprise ?

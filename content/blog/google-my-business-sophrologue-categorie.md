@@ -66,6 +66,8 @@ Votre fiche Google dirige les visiteurs vers votre site. Si ce site contient des
 
 **Visible & Conforme** vérifie vos textes et vous aide à construire une communication qui supporte votre référencement sans vous exposer.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

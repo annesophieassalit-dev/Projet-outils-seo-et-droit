@@ -52,6 +52,8 @@ On ne voit pas facilement ses propres textes avec le regard d'un contrôleur ou 
 
 C'est pourquoi un outil d'analyse externe, ou une relecture par un pair informé, est beaucoup plus efficace que l'auto-évaluation.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Mon site a été fait par un professionnel, est-il forcément conforme ?

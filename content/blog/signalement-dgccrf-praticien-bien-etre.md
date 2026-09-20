@@ -57,6 +57,8 @@ Commencez par le test gratuit pour avoir un premier aperçu de votre situation :
 
 Pour une analyse complète de vos textes et pages, **Visible & Conforme** identifie les formulations à adapter avant qu'elles ne posent problème.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

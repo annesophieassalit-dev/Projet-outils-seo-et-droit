@@ -58,6 +58,8 @@ Sur votre site, une page ou un paragraphe consacré à la question du remboursem
 
 Si votre page répond honnêtement à cette question, vous captez ces visiteurs tout en vous positionnant comme un praticien transparent, ce qui inspire davantage confiance qu'une promesse vague.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### La sophrologie est-elle remboursée par la Sécurité sociale ?

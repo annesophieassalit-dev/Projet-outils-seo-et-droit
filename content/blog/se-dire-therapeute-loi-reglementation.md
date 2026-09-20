@@ -50,6 +50,8 @@ La bonne approche : décrire ce que vous faites, pas ce que vous êtes dans l'ab
 
 La description de votre pratique, de votre approche, et des situations que vous accompagnez crée plus de confiance qu'un titre générique. Et elle vous positionne clairement dans le registre de l'accompagnement, pas du soin médical.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Le titre de thérapeute est-il protégé en France ?

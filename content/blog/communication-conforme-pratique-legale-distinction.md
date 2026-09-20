@@ -50,6 +50,10 @@ Mais elle vient en second. Elle s'appuie sur une pratique déjà clarifiée dans
 
 La communication doit être conforme. Elle ne peut jamais rendre légale une pratique qui ne l'est pas.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 ## Questions fréquentes
 
 #### Une communication conforme protège-t-elle d'une poursuite pour exercice illégal ?

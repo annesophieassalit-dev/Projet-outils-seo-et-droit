@@ -72,6 +72,8 @@ Votre profil LinkedIn et votre site doivent être cohérents, mêmes titres, mê
 
 **Visible & Conforme** analyse votre site pour vous aider à calibrer votre communication globale.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

@@ -58,6 +58,8 @@ C'est dans ce moment que l'existence d'un contrat clair fait toute la différenc
 
 Un contrat bien rédigé protège les deux parties. Il n'est pas un signe de méfiance envers vos clients : c'est un signe de professionnalisme.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un sophrologue est-il obligé d'avoir un contrat avec ses clients ?

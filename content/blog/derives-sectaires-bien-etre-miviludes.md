@@ -46,6 +46,8 @@ Vous pouvez tout à fait aborder la question des dérives sectaires dans votre c
 
 C'est même un contenu utile : les personnes qui cherchent un praticien sérieux apprécient cette transparence.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un sophrologue peut-il être signalé à la MIVILUDES ?

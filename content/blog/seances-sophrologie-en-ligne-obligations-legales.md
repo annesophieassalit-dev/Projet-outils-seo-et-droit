@@ -54,6 +54,8 @@ Mais si vous développez une offre internationale, il peut être utile de vérif
 
 Les séances en ligne doivent faire l'objet d'une facture comme les séances en présentiel. La facture doit indiquer votre SIRET, la date, la nature de la prestation, le montant, et la mention de franchise de TVA si applicable.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Mes CGV en cabinet sont-elles suffisantes pour proposer des séances en ligne ?

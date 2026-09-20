@@ -83,6 +83,8 @@ Avant de commencer à envoyer des newsletters, vérifiez que votre formulaire d'
 
 **Visible & Conforme** analyse votre site et identifie les éléments de conformité RGPD manquants sur vos pages de collecte d'email.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

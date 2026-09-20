@@ -64,6 +64,8 @@ Vous pouvez attendre d'avoir votre premier client pour affiner votre communicati
 
 Vous pouvez affiner progressivement votre site internet. Vous ne pouvez pas le lancer sans mentions légales.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Dois-je obligatoirement créer une société pour exercer en tant que masseur bien-être ?

@@ -60,6 +60,8 @@ La logique est la même, mais appliquée à l'ensemble du programme. Si le progr
 
 En revanche, si la première séance du programme a lieu après les 14 jours, le client conserve son droit de rétractation jusqu'à cette date.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un client peut-il annuler une séance de sophrologie payée en ligne et être remboursé ?

@@ -48,6 +48,8 @@ La clarté protège. Un masseur bien-être qui décrit précisément ce qu'il fa
 
 "Je traite les douleurs musculaires et les tensions chroniques grâce au massage" positionne la prestation dans le champ médical, et crée un risque.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un masseur bien-être peut-il utiliser le mot "kiné" sur son site ?

@@ -62,6 +62,10 @@ La différence avec d'autres pratiques : la vigilance sur le vocabulaire doit ê
 
 **Visible & Conforme** analyse votre site et identifie les formulations à risque dans votre communication, avec des suggestions adaptées à votre pratique énergétique.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 [Analyser mon site →](/inscription)
 
 ---

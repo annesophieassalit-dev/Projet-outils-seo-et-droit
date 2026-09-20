@@ -44,6 +44,10 @@ La DGCCRF ne regarde pas seulement votre site. Elle peut consulter votre fiche G
 
 Une formulation risquée sur un post Instagram de 2023 reste accessible et peut être utilisée dans une procédure, même si votre site principal est parfaitement rédigé. La cohérence de l'ensemble de votre communication compte.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 ## Questions fréquentes
 
 #### Le terme "massage bien-être" est-il suffisant pour éviter tout risque légal ?

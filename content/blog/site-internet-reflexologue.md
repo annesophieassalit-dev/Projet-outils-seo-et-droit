@@ -66,6 +66,8 @@ Un blog qui répond aux questions de vos futurs clients (comment se déroule une
 
 **Visible & Conforme** analyse les textes de votre site de réflexologue et identifie les formulations qui pourraient vous exposer juridiquement, ainsi que les éléments légaux manquants.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

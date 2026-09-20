@@ -58,6 +58,8 @@ Une publication sans autorisation peut entraîner une mise en demeure de retrait
 
 La personne dont l'image a été utilisée sans accord peut également saisir la CNIL si la publication implique des données personnelles.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un client qui m'a dit "oui" verbalement peut-il se retourner contre moi après publication ?

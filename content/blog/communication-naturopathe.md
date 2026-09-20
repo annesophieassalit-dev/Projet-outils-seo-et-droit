@@ -52,6 +52,8 @@ En revanche, veillez à ne pas utiliser de termes qui pourraient laisser croire 
 
 Beaucoup de naturopathes cumulent plusieurs approches : réflexologie, aromathérapie, iridologie, etc. Chacune a ses propres zones de vigilance communicationnelle. Si vous présentez plusieurs pratiques sur votre site, chacune mérite une relecture avec le même niveau d'attention.
 
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 [Vérifier la conformité de mon site →](/inscription)
 
 ---

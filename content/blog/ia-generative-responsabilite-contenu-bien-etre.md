@@ -48,6 +48,8 @@ C'est une forme de conformité algorithmique à la portée de tous : soigner ses
 
 **Visible & Conforme** analyse vos textes existants et vous aide à identifier les formulations qui pourraient être mal reprises ou amplifiées de façon problématique.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mes contenus →](/inscription)
 
 ---

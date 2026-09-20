@@ -65,6 +65,8 @@ Le coaching d'entreprise obéit à des règles similaires. Si vous proposez des 
 
 **Visible & Conforme** analyse votre site de coach bien-être et identifie les formulations à risque, les éléments légaux manquants et les incohérences de communication.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

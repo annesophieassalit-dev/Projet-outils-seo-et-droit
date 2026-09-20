@@ -50,6 +50,8 @@ Précisez le nom de l'organisme, la durée de la formation, l'intitulé exact du
 
 Ce que vous évitez : les superlatifs non vérifiables, les titres approximatifs, et toute formulation qui laisse croire à une accréditation officielle inexistante.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Une certification RNCP garantit-elle que je peux exercer légalement le massage bien-être ?

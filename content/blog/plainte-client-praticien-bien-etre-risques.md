@@ -56,6 +56,8 @@ Une communication qui décrit honnêtement ce que vous proposez, sans surestimer
 
 Des CGV claires, une politique d'annulation connue d'avance, une trace écrite des conditions acceptées : ces éléments construisent un cadre dans lequel les malentendus sont moins probables, et plus faciles à gérer si malgré tout ils surviennent.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un client peut-il vraiment porter plainte contre un sophrologue ou un naturopathe ?

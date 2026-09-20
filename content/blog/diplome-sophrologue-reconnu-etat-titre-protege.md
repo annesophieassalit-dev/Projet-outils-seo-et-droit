@@ -66,6 +66,8 @@ Un client qui choisit un sophrologue ne cherche pas nécessairement un titre d'�
 
 Une présentation transparente de votre parcours, formation, durée, approche, spécialités, inspire davantage confiance qu'un titre ambigu.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Existe-t-il un diplôme d'État en sophrologie en France ?

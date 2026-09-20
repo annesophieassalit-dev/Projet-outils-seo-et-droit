@@ -52,6 +52,8 @@ Avant de souscrire, vérifiez que le contrat couvre bien votre type d'activité.
 
 Vérifiez aussi la couverture géographique si vous vous déplacez chez vos clients, et la couverture des dommages subis par les mineurs si vous accueillez des enfants.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### La RCP est-elle obligatoire pour un masseur bien-être ?

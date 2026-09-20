@@ -46,4 +46,6 @@ Dans les activités qui touchent au corps, à la santé ou à des actes techniqu
 
 Elle ne peut pas rendre légale une pratique qui ne l'est pas.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser votre communication](/inscription)

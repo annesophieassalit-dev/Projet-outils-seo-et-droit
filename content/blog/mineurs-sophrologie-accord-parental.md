@@ -46,6 +46,8 @@ Si vous travaillez avec des mineurs, précisez-le sur votre page de services ou 
 
 Cette précision rassure les parents potentiels et dissuade les demandes qui mettraient votre pratique en difficulté.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Faut-il un accord écrit ou un accord verbal suffit-il ?

@@ -46,6 +46,8 @@ Cette précision n'est pas une contrainte de communication. C'est ce qui crée l
 
 Un visiteur qui comprend exactement ce que vous proposez, sans se sentir promis plus que ce que vous pouvez offrir, est un visiteur qui devient client. Et un client qui revient.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Pourquoi le SEO crée-t-il un risque juridique pour un sophrologue ?

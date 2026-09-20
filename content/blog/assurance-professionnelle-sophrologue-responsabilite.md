@@ -52,6 +52,8 @@ Plusieurs assureurs proposent des contrats spécialement conçus pour les pratic
 
 Avant de souscrire, vérifiez que le contrat couvre bien votre activité déclarée, certains contrats excluent des pratiques spécifiques ou conditionnent la couverture à une certification reconnue.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### La RCP est-elle obligatoire pour un sophrologue ?

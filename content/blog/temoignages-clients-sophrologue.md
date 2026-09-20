@@ -60,6 +60,8 @@ Vous ne pouvez pas supprimer un avis Google négatif (sauf s'il est manifestemen
 
 Les témoignages sont une partie de votre communication. Ils doivent être cohérents avec le reste de vos textes. Si vos témoignages restent dans le registre de l'accompagnement mais que vos pages de services utilisent un vocabulaire médical, c'est l'ensemble qui pose problème.
 
+[Vérifier votre communication →](/inscription)
+
 ## Questions fréquentes
 
 #### Un témoignage client peut-il me créer un risque juridique même si je ne l'ai pas écrit ?

@@ -36,4 +36,8 @@ La question n'est pas de savoir si vous vous reconnaissez dans le contenu décri
 
 Un seul terme peut suffire à changer la qualification de l'ensemble d'un contenu. C'est pour cela que la relecture de ses propres textes avec un prisme réglementaire est différente d'une relecture ordinaire.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 [Analyser votre communication](/inscription)

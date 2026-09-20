@@ -64,6 +64,8 @@ Avant de vous lancer activement sur TikTok, vérifiez que votre site et vos autr
 
 **Visible & Conforme** analyse votre site et identifie les formulations à risque avant que votre visibilité s'étende.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site →](/inscription)
 
 ---

@@ -71,6 +71,10 @@ Un site statique est peu valorisé par Google. Un blog avec des articles qui ré
 
 Un article par semaine pendant quelques mois crée une dynamique de trafic qui dure.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 ## Questions fréquentes
 
 #### Que mettre absolument dans les mentions légales d'un site de sophrologue ?

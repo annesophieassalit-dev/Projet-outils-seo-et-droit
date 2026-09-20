@@ -50,6 +50,10 @@ C'est précisément pour cela qu'un regard extérieur, outillé et formé à ide
 
 **Visible & Conforme** analyse vos textes et identifie les formulations qui appartiennent aux catégories surveillées, avec des suggestions adaptées à votre activité.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 [Analyser mes contenus →](/inscription)
 
 ---

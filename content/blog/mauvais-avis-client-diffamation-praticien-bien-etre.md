@@ -56,6 +56,10 @@ Une communication qui décrit honnêtement ce que vous proposez sans promettre d
 
 Un avis négatif sur dix dit rarement quelque chose de faux sur vous. Il dit souvent quelque chose de vrai sur l'écart entre ce que le client attendait et ce qu'il a vécu.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 ## Questions fréquentes
 
 #### Un avis négatif sans preuve peut-il être de la diffamation ?

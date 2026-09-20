@@ -108,6 +108,8 @@ Calendly et Koalendar disposent de DPA conformes. Un Google Agenda non configur�
 
 **Visible & Conforme** analyse votre site et vérifie la présence des éléments de conformité (mentions légales, politique de confidentialité, bandeau cookies) et les formulations à risque juridique dans vos textes.
 
+[Vérifier votre communication →](/inscription)
+
 [Analyser mon site gratuitement →](/inscription)
 
 ---

@@ -53,6 +53,10 @@ Ces formulations décrivent l'expérience et l'effet ressenti, pas un traitement
 
 Corriger ce terme sur votre site et vos supports prend dix minutes. Gérer une procédure DGCCRF en prend beaucoup plus.
 
+[Vérifier votre communication →](/inscription)
+
+[Obtenir le Guide des 51 mots à haut risque →](https://annesophieassalit.systeme.io/visibleetconforme)
+
 ## Questions fréquentes
 
 #### "Massage thérapeutique" est-il totalement interdit pour un praticien bien-être ?
