@@ -33,9 +33,9 @@
     @apply flex flex-col sm:flex-row gap-3 justify-center items-center;
   }
   .cta-btn {
-    @apply inline-block bg-coral-500 text-white font-bold text-base px-8 py-4 rounded-xl no-underline hover:bg-coral-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-block bg-coral-500 text-white font-bold text-base px-8 py-5 rounded-xl no-underline hover:bg-coral-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
   .cta-btn-secondary {
-    @apply inline-block bg-coral-100 text-coral-700 font-semibold text-base px-8 py-4 rounded-xl no-underline border-2 border-coral-200 hover:bg-coral-200 hover:border-coral-300 transition-all;
+    @apply inline-block bg-coral-100 text-coral-700 font-semibold text-base px-8 py-5 rounded-xl no-underline border-2 border-coral-200 hover:bg-coral-200 hover:border-coral-300 transition-all;
   }
 }

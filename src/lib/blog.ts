@@ -66,18 +66,18 @@ export async function renderMarkdown(content: string): Promise<string> {
       const hasTool = parts.some(([, href]) => href.includes("/inscription"));
 
       const lead = hasTool && hasKit
-        ? "Visible & Conforme analyse vos textes et génère des posts conformes. Le Guide des 51 mots pour identifier les termes à risque dans vos propres textes."
+        ? "Visible & Conforme analyse vos textes et génère des posts ajustés. Le Guide des 51 mots pour identifier les termes à risque dans vos propres textes."
         : hasKit
           ? "51 mots qui peuvent changer la qualification juridique de votre communication. Identifiez-les dans vos propres textes."
-          : "Visible & Conforme analyse vos textes, repère les formulations à risque et génère des posts conformes pour vos réseaux.";
+          : "Visible & Conforme analyse vos textes, repère les formulations à risque et génère des posts ajustés pour vos réseaux.";
 
       const buttons = parts
         .map(([, href, text]) => {
           const isKit = href.includes("systeme.io");
           const cls = isKit ? "cta-btn cta-btn-secondary" : "cta-btn";
           const style = isKit
-            ? "background-color:#fde0e2;color:#b33c46;text-decoration:none;"
-            : "background-color:#e86870;color:#ffffff;text-decoration:none;";
+            ? "background-color:#fde0e2;color:#b33c46;text-decoration:none;padding:1.25rem 2rem;border:2px solid #fbc4c8;"
+            : "background-color:#e86870;color:#ffffff;text-decoration:none;padding:1.25rem 2rem;";
           return `<a href="${href}" class="${cls}" style="${style}">${text}</a>`;
         })
         .join("");
@@ -85,6 +85,25 @@ export async function renderMarkdown(content: string): Promise<string> {
       return `<div class="cta-block not-prose"><p class="cta-lead">${lead}</p><div class="cta-buttons">${buttons}</div></div>`;
     }
   );
+
+  // Reposition CTA block to the middle of the article (before the middle H2)
+  const ctaMarker = '<div class="cta-block not-prose">';
+  const ctaIdx = html.indexOf(ctaMarker);
+  if (ctaIdx !== -1) {
+    const ctaEndStr = '</div></div>';
+    const ctaEndIdx = html.indexOf(ctaEndStr, ctaIdx) + ctaEndStr.length;
+    const ctaBlock = html.slice(ctaIdx, ctaEndIdx);
+    const body = html.slice(0, ctaIdx) + html.slice(ctaEndIdx);
+
+    const h2Pos: number[] = [];
+    let p = 0;
+    while ((p = body.indexOf('<h2', p)) !== -1) { h2Pos.push(p); p++; }
+
+    const insertAt = h2Pos.length >= 2
+      ? h2Pos[Math.ceil(h2Pos.length / 2)]
+      : Math.floor(body.length / 2);
+    return body.slice(0, insertAt) + ctaBlock + body.slice(insertAt);
+  }
 
   return html;
 }
