@@ -24,10 +24,10 @@
 
 @layer components {
   .cta-block {
-    @apply my-10 p-7 bg-coral-50 border border-coral-200 rounded-2xl text-center;
+    @apply my-10 p-7 bg-coral-50 border border-coral-200 rounded-2xl text-center flex flex-col items-center gap-5;
   }
   .cta-lead {
-    @apply text-gray-600 text-sm mb-5 leading-relaxed;
+    @apply text-gray-600 text-sm leading-relaxed;
   }
   .cta-buttons {
     @apply flex flex-col sm:flex-row gap-3 justify-center items-center;
