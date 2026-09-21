@@ -24,7 +24,7 @@
 
 @layer components {
   .cta-block {
-    @apply my-10 p-7 bg-coral-50 border border-coral-200 rounded-2xl text-center not-prose;
+    @apply my-10 p-7 bg-coral-50 border border-coral-200 rounded-2xl text-center;
   }
   .cta-lead {
     @apply text-gray-600 text-sm mb-5 leading-relaxed;

@@ -78,7 +78,7 @@ export async function renderMarkdown(content: string): Promise<string> {
         })
         .join("");
 
-      return `<div class="cta-block"><p class="cta-lead">${lead}</p><div class="cta-buttons">${buttons}</div></div>`;
+      return `<div class="cta-block not-prose"><p class="cta-lead">${lead}</p><div class="cta-buttons">${buttons}</div></div>`;
     }
   );
 
