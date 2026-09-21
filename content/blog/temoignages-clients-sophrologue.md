@@ -20,6 +20,8 @@ Il n'existe pas de texte qui interdit les témoignages pour les praticiens bien-
 
 Vous pouvez afficher des témoignages de clients satisfaits sur votre site, votre page Google Business Profile et vos réseaux sociaux. Vous pouvez collecter des avis via des plateformes tierces comme Google, Trustpilot ou Pages Jaunes, republier des avis laissés spontanément sur vos réseaux sociaux, et créer une page dédiée intitulée "Témoignages" ou "Ils m'ont fait confiance" sur votre site.
 
+**Cas particulier des avis Google.** Intégrer des avis Google sur votre site via un widget officiel (Google Maps embed, outil tiers utilisant l'API Google) est techniquement possible et respecte les conditions d'utilisation de Google. En revanche, copier-coller le texte d'un avis Google directement sur votre site sort cet avis de son contexte original et peut entrer en conflit avec les CGU de Google, qui réservent certains droits sur le contenu publié sur leur plateforme. Sans le widget, il est préférable de demander l'autorisation explicite du client avant de reproduire son avis.
+
 ## Les limites à respecter
 
 La liberté d'afficher des témoignages ne signifie pas qu'on peut tout publier. Deux limites principales s'appliquent.
@@ -63,6 +65,10 @@ Les témoignages sont une partie de votre communication. Ils doivent être cohé
 [Analyser mes textes et créer mes posts →](/inscription)
 
 ## Questions fréquentes
+
+#### Un témoignage Google peut-il être republié sur mon site ?
+
+Oui, avec une nuance importante. Si vous utilisez un widget officiel (intégration via l'API Google ou un outil tiers agréé), l'avis reste dans son contexte d'origine et les conditions d'utilisation de Google sont respectées. Si vous copiez-collez le texte directement sur votre site, vous sortez l'avis de son contexte. Cela peut entrer en conflit avec les CGU de Google et nécessite, au minimum, l'accord explicite du client qui a rédigé l'avis. La voie la plus sûre reste le widget ou une demande de témoignage directe auprès de vos clients, en dehors de Google.
 
 #### Un témoignage client peut-il me créer un risque juridique même si je ne l'ai pas écrit ?
 Oui. Du moment que vous choisissez de publier un témoignage et de le mettre en avant sur votre site, vous en assumez la responsabilité éditoriale. Si ce témoignage contient une allégation thérapeutique, par exemple que votre méthode a guéri une pathologie identifiée, et que vous le présentez sans nuance, il peut être retenu contre vous dans le cadre d'un contrôle de la DGCCRF.
