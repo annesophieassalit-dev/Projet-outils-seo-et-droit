@@ -73,8 +73,12 @@ export async function renderMarkdown(content: string): Promise<string> {
 
       const buttons = parts
         .map(([, href, text]) => {
-          const cls = href.includes("systeme.io") ? "cta-btn cta-btn-secondary" : "cta-btn";
-          return `<a href="${href}" class="${cls}">${text}</a>`;
+          const isKit = href.includes("systeme.io");
+          const cls = isKit ? "cta-btn cta-btn-secondary" : "cta-btn";
+          const style = isKit
+            ? "background-color:#fde0e2;color:#b33c46;text-decoration:none;"
+            : "background-color:#e86870;color:#ffffff;text-decoration:none;";
+          return `<a href="${href}" class="${cls}" style="${style}">${text}</a>`;
         })
         .join("");
 
