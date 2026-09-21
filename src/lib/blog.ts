@@ -61,7 +61,7 @@ export async function renderMarkdown(content: string): Promise<string> {
   const html = tagged.replace(
     /(\x00[^\x00]+\x00\n?)+/g,
     (group) => {
-      const parts = [...group.matchAll(/\x00([^\x01]+)\x01([^\x00]+)\x00/g)];
+      const parts = Array.from(group.matchAll(/\x00([^\x01]+)\x01([^\x00]+)\x00/g));
       const hasKit = parts.some(([, href]) => href.includes("systeme.io"));
       const hasTool = parts.some(([, href]) => href.includes("/inscription"));
 
