@@ -48,8 +48,7 @@ export default function BlogPage() {
             Communiquer sans risque,<br className="hidden sm:block" /> être visible sur Google
           </h1>
           <p className="text-gray-500 max-w-xl mx-auto text-base">
-            Guides pratiques pour les sophrologues, naturopathes et praticiens bien-être qui veulent
-            développer leur activité en toute conformité.
+            Ce que vous pouvez dire, ce qui vous expose, comment être trouvée. Articles de fond sur le droit, la communication et le SEO pour les praticiens bien-être.
           </p>
         </div>
 

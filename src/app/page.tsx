@@ -49,7 +49,7 @@ export default function LandingPage() {
                 </span>
                 <span className="text-zen-950 block">
                   D&apos;autres peuvent{" "}
-                  <span className="text-coral-500 font-extrabold">vous exposer.</span>
+                  <span className="text-coral-500 font-extrabold">vous exposer à des sanctions.</span>
                 </span>
               </h1>
 
