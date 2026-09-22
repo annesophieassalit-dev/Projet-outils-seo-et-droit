@@ -10,6 +10,8 @@ Un soir, je reçois un SMS du dentiste de ma fille. Il organise une tombola. Pou
 
 Rien d'alarmant en apparence. Et pourtant, une seule opération, une seule initiative marketing, cumule quatre problèmes juridiques distincts.
 
+> **En bref :** conditionner la participation à une tombola à la publication d'un avis Google cumule quatre infractions distinctes : détournement de finalité au sens du RGPD, pratique commerciale trompeuse au sens du Code de la consommation, violation des CGU de Google Business Profile, et manquement à la déontologie professionnelle pour les professions réglementées. Une initiative marketing, quatre textes violés.
+
 ## Problème n°1 : le détournement de finalité (RGPD)
 
 Je n'ai jamais donné mon accord pour être contactée à des fins promotionnelles. Mon numéro de téléphone a été communiqué dans le cadre de soins dentaires, pas pour recevoir des offres commerciales.
