@@ -23,6 +23,18 @@
 }
 
 @layer components {
+  .toc-block {
+    @apply my-8 p-5 bg-zen-50 border border-zen-200 rounded-xl;
+  }
+  .toc-title {
+    @apply text-xs font-semibold text-zen-700 uppercase tracking-widest mb-3;
+  }
+  .toc-list {
+    @apply pl-5 space-y-1.5 list-decimal;
+  }
+  .toc-list a:hover {
+    @apply underline;
+  }
   .cta-block {
     @apply my-10 p-7 bg-coral-50 border border-coral-200 rounded-2xl text-center flex flex-col items-center gap-5;
   }

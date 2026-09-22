@@ -21,6 +21,16 @@ function calculateReadingTime(content: string): number {
   return Math.max(1, Math.ceil(wordCount / 200));
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
   const today = new Date().toISOString().slice(0, 10);
@@ -51,14 +61,23 @@ export function getPostBySlug(slug: string): BlogPost | null {
 export async function renderMarkdown(content: string): Promise<string> {
   const result = await remark().use(remarkHtml, { sanitize: false }).process(content);
 
+  // Add IDs to H2 headings and collect for TOC
+  const headings: { id: string; text: string }[] = [];
+  const withIds = result.toString().replace(/<h2>(.*?)<\/h2>/g, (_, inner) => {
+    const text = inner.replace(/<[^>]+>/g, "").trim();
+    const id = slugify(text);
+    headings.push({ id, text });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+
   // Tag standalone CTA links with null-byte delimiters for safe grouping
-  const tagged = result.toString().replace(
+  const tagged = withIds.replace(
     /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
     (_, href, text) => `\x00${href}\x01${text.trim()}\x00`
   );
 
   // Merge consecutive tagged CTAs into one visual block
-  const html = tagged.replace(
+  let html = tagged.replace(
     /(\x00[^\x00]+\x00\n?)+/g,
     (group) => {
       const parts = Array.from(group.matchAll(/\x00([^\x01]+)\x01([^\x00]+)\x00/g));
@@ -90,19 +109,33 @@ export async function renderMarkdown(content: string): Promise<string> {
   const ctaMarker = '<div class="cta-block not-prose">';
   const ctaIdx = html.indexOf(ctaMarker);
   if (ctaIdx !== -1) {
-    const ctaEndStr = '</div></div>';
+    const ctaEndStr = "</div></div>";
     const ctaEndIdx = html.indexOf(ctaEndStr, ctaIdx) + ctaEndStr.length;
     const ctaBlock = html.slice(ctaIdx, ctaEndIdx);
     const body = html.slice(0, ctaIdx) + html.slice(ctaEndIdx);
 
     const h2Pos: number[] = [];
     let p = 0;
-    while ((p = body.indexOf('<h2', p)) !== -1) { h2Pos.push(p); p++; }
+    while ((p = body.indexOf("<h2", p)) !== -1) { h2Pos.push(p); p++; }
 
     const insertAt = h2Pos.length >= 2
       ? h2Pos[Math.ceil(h2Pos.length / 2)]
       : Math.floor(body.length / 2);
-    return body.slice(0, insertAt) + ctaBlock + body.slice(insertAt);
+    html = body.slice(0, insertAt) + ctaBlock + body.slice(insertAt);
+  }
+
+  // Insert TOC before the first H2 if 3+ sections
+  if (headings.length >= 3) {
+    const tocItems = headings
+      .map(({ id, text }) =>
+        `<li><a href="#${id}" style="color:#2f5e4e;text-decoration:none;">${text}</a></li>`
+      )
+      .join("");
+    const toc = `<nav class="toc-block not-prose" aria-label="Sommaire"><p class="toc-title">Sommaire</p><ol class="toc-list">${tocItems}</ol></nav>`;
+    const firstH2 = html.indexOf("<h2");
+    if (firstH2 > 0) {
+      html = html.slice(0, firstH2) + toc + html.slice(firstH2);
+    }
   }
 
   return html;
