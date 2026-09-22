@@ -38,27 +38,35 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white">
       <BlogHeader />
 
-      <main className="max-w-5xl mx-auto px-4 py-16">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <span className="inline-block bg-zen-50 text-zen-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+      {/* Hero — pleine largeur */}
+      <section className="bg-zen-50 border-b border-zen-100 text-center py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-6xl sm:text-8xl font-black text-zen-950 tracking-tight mb-4">
             Blog
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-5">
-            Communiquer sans risque,<br className="hidden sm:block" /> être visible sur Google
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-7">
-            Droit de la santé, allégations thérapeutiques, avis clients et SEO local : ce que chaque sophrologue, naturopathe ou thérapeute doit savoir pour communiquer sans risque et être trouvée sur Google.
+          <p className="text-lg sm:text-xl font-semibold text-zen-700 mb-5 leading-snug">
+            Communiquer sans risque et être visible sur Google
           </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {["Droit & conformité", "Avis clients", "SEO local", "Allégations", "Mentions légales", "Communication"].map((tag) => (
-              <span key={tag} className="text-xs bg-white border border-zen-200 text-zen-600 px-3 py-1.5 rounded-full font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
+          <p className="text-gray-600 text-base leading-relaxed mb-8">
+            Droit de la santé, allégations thérapeutiques, avis clients et SEO : ce que chaque sophrologue, naturopathe, thérapeute ou praticien bien-être doit savoir avant de publier.
+          </p>
+          <Link
+            href="/inscription"
+            className="inline-block bg-coral-500 text-white font-semibold px-8 py-4 rounded-xl hover:bg-coral-600 transition-colors text-base mb-10"
+          >
+            Analyser mes textes →
+          </Link>
         </div>
+        <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
+          {["Droit & conformité", "Avis clients", "SEO", "Allégations", "Mentions légales", "Communication"].map((tag) => (
+            <span key={tag} className="text-xs bg-white border border-zen-200 text-zen-600 px-3 py-1.5 rounded-full font-medium">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </section>
 
+      <main className="max-w-5xl mx-auto px-4 py-16">
         {posts.length === 0 && (
           <p className="text-center text-gray-400">Aucun article pour l&apos;instant.</p>
         )}
