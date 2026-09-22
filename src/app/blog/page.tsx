@@ -44,12 +44,19 @@ export default function BlogPage() {
           <span className="inline-block bg-zen-50 text-zen-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
             Blog
           </span>
-          <h1 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-zen-950 mb-5">
             Communiquer sans risque,<br className="hidden sm:block" /> être visible sur Google
           </h1>
-          <p className="text-gray-500 max-w-xl mx-auto text-base">
-            Ce que vous pouvez dire, ce qui vous expose, comment être trouvée. Articles de fond sur le droit, la communication et le SEO pour les praticiens bien-être.
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-7">
+            Droit de la santé, allégations thérapeutiques, avis clients et SEO local : ce que chaque sophrologue, naturopathe ou thérapeute doit savoir pour communiquer sans risque et être trouvée sur Google.
           </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Droit & conformité", "Avis clients", "SEO local", "Allégations", "Mentions légales", "Communication"].map((tag) => (
+              <span key={tag} className="text-xs bg-white border border-zen-200 text-zen-600 px-3 py-1.5 rounded-full font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {posts.length === 0 && (
