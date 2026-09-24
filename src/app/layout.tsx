@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Visible & Conforme — Analysez, corrigez, créez",
     description:
-      "L'outil pour les praticiens bien-être qui veulent communiquer sans s'exposer et rester visibles sur Google.",
+      "Le service pour les praticiens bien-être qui veulent communiquer sans s'exposer et rester visibles sur Google.",
     type: "website",
     locale: "fr_FR",
     url: "https://www.visibleetconforme.fr/",
     images: [
       {
-        url: "https://www.visibleetconforme.fr/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.visibleetconforme.fr/og-image.webp",
+        width: 1080,
+        height: 1080,
         alt: "Visible & Conforme",
       },
     ],
