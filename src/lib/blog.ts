@@ -99,16 +99,18 @@ export async function renderMarkdown(content: string): Promise<string> {
         .map(([, href, text]) => {
           const isKit = href.includes("systeme.io");
           const style = isKit
-            ? "display:block;width:100%;box-sizing:border-box;text-align:center;background-color:#fde0e2;color:#b33c46 !important;text-decoration:none !important;padding:0.875rem 1.5rem;border:2px solid #fbc4c8;border-radius:0.75rem;font-weight:600;font-size:0.9375rem;font-family:inherit;line-height:1.4;"
-            : "display:block;width:100%;box-sizing:border-box;text-align:center;background-color:#e86870;color:#ffffff !important;text-decoration:none !important;padding:0.875rem 1.5rem;border-radius:0.75rem;font-weight:700;font-size:0.9375rem;font-family:inherit;line-height:1.4;";
+            ? "display:block;box-sizing:border-box;width:100%;text-align:center;background-color:#fde0e2;color:#b33c46;text-decoration:none;padding:14px 24px;border-radius:12px;font-weight:600;font-size:15px;border:2px solid #fbc4c8;margin-top:12px;"
+            : "display:block;box-sizing:border-box;width:100%;text-align:center;background-color:#e86870;color:#ffffff;text-decoration:none;padding:14px 24px;border-radius:12px;font-weight:700;font-size:15px;margin-top:12px;";
           return `<a href="${href}" style="${style}">${text}</a>`;
         })
         .join("");
 
-      const wrapStyle = "margin:2.5rem 0;padding:1.75rem;background-color:#fff5f5;border:1px solid #fdd;border-radius:1rem;text-align:center;";
-      const leadStyle = "color:#4b5563;font-size:0.875rem;line-height:1.6;margin:0 0 1.25rem 0;";
-      const btnWrapStyle = "display:flex;flex-direction:column;gap:0.75rem;max-width:22rem;margin:0 auto;";
-      return `<div style="${wrapStyle}"><p style="${leadStyle}">${lead}</p><div style="${btnWrapStyle}">${buttons}</div></div>`;
+      return (
+        `<div style="margin:2.5rem 0;padding:1.75rem;background-color:#fff5f5;border:1px solid #fbc4c8;border-radius:1rem;text-align:center;">` +
+        `<p style="color:#4b5563;font-size:14px;line-height:1.6;margin:0 0 4px 0;">${lead}</p>` +
+        `<div style="max-width:22rem;margin:0 auto;">${buttons}</div>` +
+        `</div>`
+      );
     }
   );
 
