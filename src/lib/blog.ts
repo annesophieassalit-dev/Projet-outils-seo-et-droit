@@ -83,7 +83,7 @@ export async function renderMarkdown(content: string): Promise<string> {
 
   // Merge consecutive tagged CTAs into one visual block
   let html = tagged.replace(
-    /(\x00[^\x00]+\x00\n?)+/g,
+    /(\x00[^\x00]+\x00\s*)+/g,
     (group) => {
       const parts = Array.from(group.matchAll(/\x00([^\x01]+)\x01([^\x00]+)\x00/g));
       const hasKit = parts.some(([, href]) => href.includes("systeme.io"));
