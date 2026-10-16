@@ -70,10 +70,15 @@ export async function renderMarkdown(content: string): Promise<string> {
     return `<h2 id="${id}">${inner}</h2>`;
   });
 
-  // Tag standalone CTA links with null-byte delimiters for safe grouping
+  // Tag only CTA links (inscription or kit) with null-byte delimiters
   const tagged = withIds.replace(
     /<p><a href="([^"]+)">([^<]+)<\/a><\/p>/g,
-    (_, href, text) => `\x00${href}\x01${text.trim()}\x00`
+    (match, href, text) => {
+      if (href.includes("/inscription") || href.includes("systeme.io")) {
+        return `\x00${href}\x01${text.trim()}\x00`;
+      }
+      return match;
+    }
   );
 
   // Merge consecutive tagged CTAs into one visual block
