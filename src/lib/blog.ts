@@ -100,8 +100,8 @@ export async function renderMarkdown(content: string): Promise<string> {
           const isKit = href.includes("systeme.io");
           const cls = isKit ? "cta-btn cta-btn-secondary" : "cta-btn";
           const style = isKit
-            ? "background-color:#fde0e2;color:#b33c46;text-decoration:none;padding:1.25rem 2rem;border:2px solid #fbc4c8;"
-            : "background-color:#e86870;color:#ffffff;text-decoration:none;padding:1.25rem 2rem;";
+            ? "display:block;width:100%;text-align:center;background-color:#fde0e2;color:#b33c46;text-decoration:none;padding:1rem 1.5rem;border:2px solid #fbc4c8;box-sizing:border-box;"
+            : "display:block;width:100%;text-align:center;background-color:#e86870;color:#ffffff;text-decoration:none;padding:1rem 1.5rem;box-sizing:border-box;";
           return `<a href="${href}" class="${cls}" style="${style}">${text}</a>`;
         })
         .join("");
