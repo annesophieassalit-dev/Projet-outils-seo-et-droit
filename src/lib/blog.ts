@@ -110,25 +110,6 @@ export async function renderMarkdown(content: string): Promise<string> {
     }
   );
 
-  // Reposition CTA block to the middle of the article (before the middle H2)
-  const ctaMarker = '<div class="cta-block not-prose">';
-  const ctaIdx = html.indexOf(ctaMarker);
-  if (ctaIdx !== -1) {
-    const ctaEndStr = "</div></div>";
-    const ctaEndIdx = html.indexOf(ctaEndStr, ctaIdx) + ctaEndStr.length;
-    const ctaBlock = html.slice(ctaIdx, ctaEndIdx);
-    const body = html.slice(0, ctaIdx) + html.slice(ctaEndIdx);
-
-    const h2Pos: number[] = [];
-    let p = 0;
-    while ((p = body.indexOf("<h2", p)) !== -1) { h2Pos.push(p); p++; }
-
-    const insertAt = h2Pos.length >= 2
-      ? h2Pos[Math.ceil(h2Pos.length / 2)]
-      : Math.floor(body.length / 2);
-    html = body.slice(0, insertAt) + ctaBlock + body.slice(insertAt);
-  }
-
   // Insert TOC before the first H2 if 3+ sections
   if (headings.length >= 3) {
     const tocItems = headings
