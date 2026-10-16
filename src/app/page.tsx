@@ -843,23 +843,58 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Essai 7 jours à 1€ */}
-            <div className="border-2 border-zen-700 rounded-2xl p-8 relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-700 text-white text-xs px-3 py-1 rounded-full font-medium">
+            {/* Gratuit */}
+            <div className="border-2 border-coral-400 rounded-2xl p-8 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-coral-500 text-white text-xs px-3 py-1 rounded-full font-medium">
                 Commencer ici
               </div>
-              <h3 className="font-bold text-xl mb-1">Essai 7 jours</h3>
-              <p className="text-gray-500 text-sm mb-4">Pour tester l&apos;outil · Sans engagement</p>
-              <div className="text-4xl font-bold mb-1">1 €</div>
-              <p className="text-xs text-gray-400 mb-1">Pour 7 jours d&apos;accès</p>
-              <p className="text-xs text-zen-600 font-medium mb-6">Puis 19€/mois · Résiliable avant renouvellement</p>
+              <h3 className="font-bold text-xl mb-1">Gratuit</h3>
+              <p className="text-gray-500 text-sm mb-4">Sans carte bancaire · Accès immédiat</p>
+              <div className="text-4xl font-bold mb-1">0 €</div>
+              <p className="text-xs text-gray-400 mb-6">3 posts de réseaux sociaux inclus</p>
               <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
                 {[
-                  "10 générations de contenus incluses",
+                  "3 posts réseaux sociaux (LinkedIn, Instagram…)",
+                  "Sans carte bancaire",
+                  "Accès immédiat à la création de compte",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-coral-500 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/inscription"
+                className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
+              >
+                Essayer gratuitement
+              </Link>
+            </div>
+
+            {/* Pro */}
+            <div className="border-2 border-zen-700 rounded-2xl p-8 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-zen-700 text-white text-xs px-3 py-1 rounded-full font-medium">
+                Accès complet
+              </div>
+              <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
+                Pro
+                <Sparkles className="h-4 w-4 text-amber-500" />
+              </h3>
+              <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
+              <div className="text-4xl font-bold mb-1">
+                19 €<span className="text-lg font-normal text-gray-500">/mois</span>
+              </div>
+              <p className="text-xs text-zen-600 font-medium mb-1">Essai 7 jours pour 1€</p>
+              <p className="text-xs text-gray-400 mb-6">Sans engagement · Résiliable à tout moment</p>
+              <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
+                {[
                   "Diagnostics site illimités",
                   "Vérifications de texte illimitées",
-                  "Bibliothèque de formulations",
-                  "Accès à toutes les fonctionnalités",
+                  "Génération de contenus illimitée",
+                  "LinkedIn, Instagram, TikTok, page de présentation…",
+                  "Bibliothèque complète + historique",
+                  "Export PDF des rapports",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
@@ -873,43 +908,7 @@ export default function LandingPage() {
               >
                 Démarrer pour 1€
               </Link>
-            </div>
-
-            {/* Pro direct */}
-            <div className="border border-gray-200 rounded-2xl p-8 relative bg-white">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-3 py-1 rounded-full font-medium">
-                Accès illimité
-              </div>
-              <h3 className="font-bold text-xl mb-1 flex items-center gap-2">
-                Pro
-                <Sparkles className="h-4 w-4 text-amber-500" />
-              </h3>
-              <p className="text-gray-500 text-sm mb-4">Tous les outils, sans limite</p>
-              <div className="text-4xl font-bold mb-1">
-                19 €<span className="text-lg font-normal text-gray-500">/mois</span>
-              </div>
-              <p className="text-xs text-gray-400 mb-6">Sans engagement · Résiliable à tout moment</p>
-              <ul className="space-y-2.5 text-sm text-gray-600 mb-8">
-                {[
-                  "Analyses de site illimitées",
-                  "Vérifications de texte illimitées",
-                  "Contenus rédigés adaptés à votre activité",
-                  "LinkedIn, Instagram, TikTok, page de présentation…",
-                  "Bibliothèque complète + historique",
-                  "Export PDF des rapports",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-zen-600 shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/inscription?plan=pro_direct"
-                className="block text-center bg-coral-500 text-white py-3 rounded-xl hover:bg-coral-600 transition-colors font-semibold"
-              >
-                S&apos;abonner à 19€/mois
-              </Link>
+              <p className="text-center text-xs text-gray-400 mt-3">Puis 19€/mois · Résiliable avant renouvellement</p>
             </div>
           </div>
         </div>
