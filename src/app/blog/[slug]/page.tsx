@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               href="/inscription"
               className="shrink-0 bg-coral-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-coral-600 transition-colors text-sm whitespace-nowrap"
             >
-              Essayer pour 1€
+            Essayer gratuitement
             </Link>
           </div>
         </div>

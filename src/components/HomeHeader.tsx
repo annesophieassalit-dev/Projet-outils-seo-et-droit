@@ -41,7 +41,7 @@ export default function HomeHeader() {
             href="/inscription"
             className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-coral-600 transition-colors font-medium"
           >
-            Démarrer pour 1€
+            Essayer gratuitement
           </Link>
 
           {/* Hamburger mobile */}

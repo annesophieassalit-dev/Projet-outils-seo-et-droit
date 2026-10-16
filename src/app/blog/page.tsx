@@ -169,7 +169,7 @@ export default function BlogPage() {
             href="/inscription"
             className="inline-block bg-coral-500 text-white px-7 py-3 rounded-xl font-semibold hover:bg-coral-600 transition-colors text-sm"
           >
-            Essayer pour 1€
+            Essayer gratuitement
           </Link>
         </div>
       </main>

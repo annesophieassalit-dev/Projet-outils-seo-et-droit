@@ -35,7 +35,7 @@ export default function BlogHeader() {
             href="/inscription"
             className="bg-coral-500 text-white text-sm px-4 py-2 rounded-lg font-medium hover:bg-coral-600 transition-colors"
           >
-            Démarrer pour 1€
+            Essayer gratuitement
           </Link>
 
           {/* Hamburger mobile */}

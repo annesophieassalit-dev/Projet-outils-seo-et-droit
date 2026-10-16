@@ -85,7 +85,7 @@ export default function LandingPage() {
                   href="/inscription"
                   className="bg-coral-500 text-white px-7 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center justify-center gap-2 shadow-sm"
                 >
-                  Essayer 7 jours pour 1€
+                  Essayer gratuitement
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -742,10 +742,10 @@ export default function LandingPage() {
               href="/inscription"
               className="bg-coral-500 text-white px-7 py-3.5 rounded-xl hover:bg-coral-600 transition-colors font-semibold text-base flex items-center gap-2 shadow-sm"
             >
-              Essayer pour 1€
+              Essayer gratuitement
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <p className="text-sm text-gray-400">Sans engagement · Résiliable à tout moment</p>
+            <p className="text-sm text-gray-400">3 posts gratuits · Sans carte bancaire</p>
           </div>
 
         </div>
@@ -987,18 +987,18 @@ export default function LandingPage() {
             Identifiez ce qui peut vous exposer
           </h2>
           <p className="text-coral-100 mb-8 text-lg">
-            7 jours pour 1€ · 10 générations incluses · Résiliable à tout moment.
+            3 posts gratuits sans carte bancaire. Puis 1€ pour 7 jours d&apos;accès complet.
             Découvrez en 2 minutes les zones de risque de votre site.
           </p>
           <Link
             href="/inscription"
             className="inline-flex items-center gap-2 bg-white text-coral-700 px-8 py-4 rounded-xl hover:bg-coral-50 transition-colors font-bold text-lg"
           >
-            Démarrer pour 1€
+            Essayer gratuitement
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="text-coral-200 text-sm mt-5">
-            Puis 19€/mois · Sans engagement
+            Sans carte bancaire · Puis 1€ pour 7 jours · 19€/mois ensuite
           </p>
         </div>
       </section>
