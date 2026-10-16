@@ -321,7 +321,7 @@ export default function LandingPage() {
                 <div className="space-y-1.5">
                   <p className="text-[10px] font-semibold text-blue-300 uppercase tracking-widest">Analyse incluse</p>
                   {[
-                    { dot: "bg-zen-500", label: "Visibilité et positionnement éditorial" },
+                    { dot: "bg-zen-500", label: "Clarté de votre positionnement pour Google" },
                     { dot: "bg-amber-400", label: "Détection des formulations sensibles" },
                     { dot: "bg-zen-500", label: "Conformité RGPD et mentions légales" },
                   ].map((item) => (
@@ -418,7 +418,7 @@ export default function LandingPage() {
                   "Cohérence des titres et des textes",
                   "Lisibilité et clarté du positionnement",
                   "Présence des éléments importants pour la visibilité",
-                  "Cohérence sémantique globale",
+                  "Cohérence entre vos titres, textes et balises",
                   "Compatibilité mobile et accessibilité",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
@@ -466,7 +466,7 @@ export default function LandingPage() {
               Comment ça marche ?
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto">
-              En quelques clics, passez de l&apos;incertitude à la publication sereine.
+              Collez un texte ou une URL. En quelques minutes, vous savez ce qui pose problème et comment le reformuler.
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-3 items-start">
@@ -549,7 +549,7 @@ export default function LandingPage() {
               </div>
               <h3 className="font-semibold text-zen-950 text-base mb-2">Générez des contenus prêts à publier</h3>
               <span className="inline-block bg-purple-100 text-purple-600 text-[10px] font-semibold px-2.5 py-1 rounded-full mb-2">
-                ⚡ Gagnez du temps
+                Posts et pages de présentation
               </span>
               <p className="text-sm text-gray-500 leading-relaxed mb-3">
                 Créez des textes adaptés à votre activité et votre positionnement.
@@ -712,10 +712,10 @@ export default function LandingPage() {
               <ul className="space-y-5">
                 {[
                   "Vérification des formulations sensibles",
-                  "Vision globale visibilité + conformité",
-                  "Génération de contenus adaptés",
-                  "Recommandations claires et contextualisées",
-                  "Une publication plus sereine",
+                  "Vue d’ensemble : visibilité et conformité au même endroit",
+                  "Génération de contenus adaptés à votre pratique",
+                  "Reformulations proposées pour chaque point signalé",
+                  "Vous savez ce que vous pouvez publier",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3.5">
                     <CheckCircle2 className="h-5 w-5 text-zen-600 shrink-0 mt-0.5" />
@@ -729,7 +729,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-sm text-zen-800 leading-snug">
                   <strong className="text-zen-950 font-semibold">Résultat : </strong>
-                  plus de sérénité, de clarté et une présence en ligne alignée.
+                  vous publiez en sachant ce que vous avez vérifié.
                 </p>
               </div>
             </div>
@@ -959,7 +959,7 @@ export default function LandingPage() {
               },
               {
                 q: "L'accès est-il gratuit ?",
-                a: "Visible & Conforme propose un essai de 7 jours pour 1€, incluant 10 générations de contenus et des diagnostics illimités. À l'issue de l'essai, l'abonnement passe à 19€/mois avec des générations illimitées. Vous pouvez résilier à tout moment avant le renouvellement.",
+                a: "Visible & Conforme propose 3 générations de posts gratuites, sans carte bancaire, dès la création de votre compte. Pour accéder aux diagnostics et à l'ensemble des fonctionnalités, l'essai est à 1€ pour 7 jours, puis 19€/mois. Résiliable à tout moment avant le renouvellement.",
               },
             ].map((item) => (
               <details
