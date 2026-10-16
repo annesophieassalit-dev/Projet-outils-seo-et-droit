@@ -103,7 +103,7 @@ export default function InscriptionPage() {
             <strong>{email}</strong>.
           </p>
           <p className="text-gray-500 text-sm mb-6">
-            Cliquez sur le lien dans l&apos;email pour activer votre compte, puis connectez-vous pour finaliser votre abonnement.
+            Cliquez sur le lien dans l&apos;email pour activer votre compte et accéder à vos 3 posts gratuits.
           </p>
           <Link
             href={initialPlan === "pro_direct" ? "/connexion?redirect=abonnement" : "/connexion"}
@@ -125,7 +125,7 @@ export default function InscriptionPage() {
           <p className="text-gray-500 text-sm mt-1">
             {initialPlan !== "gratuit"
               ? `7 jours pour 1€ · Puis 19€/mois · Résiliable`
-              : "Essai 7 jours · 1€ · Accès complet"}
+              : "3 posts gratuits · Sans carte bancaire · Accès immédiat"}
           </p>
         </div>
 

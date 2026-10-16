@@ -200,7 +200,7 @@ interface ProfileProps {
   specificites?: string;
 }
 
-export default function GenerateurClient({ profile }: { profile: ProfileProps }) {
+export default function GenerateurClient({ profile, freePostsLeft }: { profile: ProfileProps; freePostsLeft: number | null }) {
   const [contentType, setContentType] = useState<ContentType>("post_instagram");
   const [selectedThemes, setSelectedThemes] = useState<string[]>(profile.themes_recurrents ?? []);
   const [tone, setTone] = useState<"chaleureux" | "professionnel" | "sobre">(
@@ -216,6 +216,7 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
   const [error, setError] = useState("");
   const [upgradeRequired, setUpgradeRequired] = useState(false);
   const [selectedKeyword, setSelectedKeyword] = useState<string>("");
+  const [freePostsRemaining, setFreePostsRemaining] = useState(freePostsLeft);
   const resultRef = useRef<HTMLDivElement>(null);
 
   function toggleTheme(id: string) {
@@ -261,8 +262,15 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
         setError("trialLimitReached");
         return;
       }
+      if (data.freePostsExhausted) {
+        setError("freePostsExhausted");
+        return;
+      }
       if (!res.ok) throw new Error(data.error);
       setResult(data.result);
+      if (freePostsRemaining !== null) {
+        setFreePostsRemaining((n) => Math.max(0, (n ?? 0) - 1));
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur lors de la génération.");
     } finally {
@@ -314,6 +322,39 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
           {profile.profession ? "Modifier mon profil" : "Configurer mon profil"}
         </Link>
       </div>
+
+      {/* Bannière tier gratuit */}
+      {freePostsRemaining !== null && (
+        <div className={`rounded-2xl border p-4 flex items-center justify-between gap-4 ${
+          freePostsRemaining === 0
+            ? "bg-coral-50 border-coral-200"
+            : "bg-zen-50 border-zen-200"
+        }`}>
+          <div>
+            {freePostsRemaining > 0 ? (
+              <>
+                <p className="text-sm font-semibold text-zen-900">
+                  {freePostsRemaining} post{freePostsRemaining > 1 ? "s" : ""} gratuit{freePostsRemaining > 1 ? "s" : ""} restant{freePostsRemaining > 1 ? "s" : ""}
+                </p>
+                <p className="text-xs text-zen-600 mt-0.5">Sans carte bancaire. Pour continuer après, c&apos;est 1€ pour 7 jours.</p>
+              </>
+            ) : (
+              <>
+                <p className="text-sm font-semibold text-coral-800">Vous avez utilisé vos 3 posts gratuits</p>
+                <p className="text-xs text-coral-600 mt-0.5">Continuez pour 1€ — accès complet pendant 7 jours, puis 19€/mois.</p>
+              </>
+            )}
+          </div>
+          {freePostsRemaining === 0 && (
+            <Link
+              href="/abonnement"
+              className="shrink-0 inline-flex items-center gap-1.5 bg-coral-500 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-coral-600 transition-colors"
+            >
+              Continuer <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          )}
+        </div>
+      )}
 
       {/* Mise à niveau requise */}
       {upgradeRequired && (
@@ -539,10 +580,14 @@ export default function GenerateurClient({ profile }: { profile: ProfileProps })
               {error === "trialLimitReached" ? (
                 <>
                   Vous avez utilisé vos 10 générations incluses dans l&apos;essai.{" "}
-                  <a href="/abonnement" className="underline font-medium">
-                    Passez au plan Pro
-                  </a>{" "}
+                  <a href="/abonnement" className="underline font-medium">Passez au plan Pro</a>{" "}
                   pour des générations illimitées.
+                </>
+              ) : error === "freePostsExhausted" ? (
+                <>
+                  Vous avez utilisé vos 3 posts gratuits.{" "}
+                  <a href="/abonnement" className="underline font-medium">Continuez pour 1€</a>{" "}
+                  — 7 jours d&apos;accès complet, puis 19€/mois.
                 </>
               ) : (
                 error

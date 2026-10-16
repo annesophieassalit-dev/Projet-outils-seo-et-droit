@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, trial_ends_at, profession, posts_generated_this_month, audits_reset_date")
+    .select("plan, trial_ends_at, profession, posts_generated_this_month, audits_reset_date, free_posts_used")
     .eq("id", user.id)
     .single();
 
@@ -47,6 +47,16 @@ export async function POST(request: NextRequest) {
       { error: "Votre essai gratuit est terminé. Abonnez-vous pour continuer.", trialExpired: true },
       { status: 403 }
     );
+  }
+
+  if (effectivePlan === "gratuit") {
+    const freePostsUsed = profile?.free_posts_used ?? 0;
+    if (freePostsUsed >= 3) {
+      return NextResponse.json(
+        { error: "Vous avez utilisé vos 3 posts gratuits. Abonnez-vous pour continuer.", freePostsExhausted: true },
+        { status: 403 }
+      );
+    }
   }
 
   const TRIAL_GENERATION_LIMIT = 10;
@@ -100,10 +110,17 @@ export async function POST(request: NextRequest) {
 
   const result = await generateContent(input);
 
-  await Promise.all([
-    supabase.from("profiles").update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 }).eq("id", user.id),
-    supabase.from("usage_events").insert({ user_id: user.id, type: "post" }),
-  ]);
+  if (effectivePlan === "gratuit") {
+    await Promise.all([
+      supabase.from("profiles").update({ free_posts_used: (profile?.free_posts_used ?? 0) + 1 }).eq("id", user.id),
+      supabase.from("usage_events").insert({ user_id: user.id, type: "post" }),
+    ]);
+  } else {
+    await Promise.all([
+      supabase.from("profiles").update({ posts_generated_this_month: (profile?.posts_generated_this_month || 0) + 1 }).eq("id", user.id),
+      supabase.from("usage_events").insert({ user_id: user.id, type: "post" }),
+    ]);
+  }
 
   return NextResponse.json({ result });
 }

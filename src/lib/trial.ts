@@ -21,9 +21,15 @@ export function getEffectivePlan(profile: {
   }
 
   const hasPaidPlan = profile.plan === "essentiel" || profile.plan === "pro";
-  if (!hasPaidPlan) {
-    return { effectivePlan: "expired", isTrialing: false, trialDaysLeft: 0, trialExpired: !!trialEnd };
+  if (hasPaidPlan) {
+    return { effectivePlan: profile.plan, isTrialing: false, trialDaysLeft: 0, trialExpired: false };
   }
 
-  return { effectivePlan: profile.plan, isTrialing: false, trialDaysLeft: 0, trialExpired: false };
+  // Trial expired (had a trial date in the past)
+  if (trialEnd) {
+    return { effectivePlan: "expired", isTrialing: false, trialDaysLeft: 0, trialExpired: true };
+  }
+
+  // Free tier: never started a trial, no payment
+  return { effectivePlan: "gratuit", isTrialing: false, trialDaysLeft: 0, trialExpired: false };
 }
