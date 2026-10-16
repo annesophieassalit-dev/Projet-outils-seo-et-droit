@@ -133,7 +133,7 @@ export default function LandingPage() {
                     </div>
                     <div className="bg-coral-50 border border-coral-200 rounded-xl p-4">
                       <p className="text-3xl font-extrabold text-coral-500">42</p>
-                      <p className="text-xs text-coral-500 font-semibold mt-0.5">Score conformité</p>
+                      <p className="text-xs text-coral-500 font-semibold mt-0.5">Score vigilance</p>
                       <div className="mt-2.5 h-1.5 bg-coral-100 rounded-full overflow-hidden">
                         <div className="h-full bg-coral-400 rounded-full" style={{ width: "42%" }} />
                       </div>
@@ -277,7 +277,7 @@ export default function LandingPage() {
                   {[
                     { dot: "bg-amber-400", label: "Alertes sur les formulations sensibles" },
                     { dot: "bg-zen-500", label: "Reformulations adaptées à votre activité" },
-                    { dot: "bg-zen-500", label: "Score de conformité instantané" },
+                    { dot: "bg-zen-500", label: "Score de vigilance instantané" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-2">
                       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
@@ -323,7 +323,7 @@ export default function LandingPage() {
                   {[
                     { dot: "bg-zen-500", label: "Clarté de votre positionnement pour Google" },
                     { dot: "bg-amber-400", label: "Détection des formulations sensibles" },
-                    { dot: "bg-zen-500", label: "Conformité RGPD et mentions légales" },
+                    { dot: "bg-zen-500", label: "Vérification RGPD et mentions légales" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-2">
                       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${item.dot}`} />
@@ -433,7 +433,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-zen-100 rounded-xl flex items-center justify-center mb-5">
                 <ShieldCheck className="h-6 w-6 text-zen-700" />
               </div>
-              <h3 className="text-xl font-bold text-zen-950 mb-2">Diagnostic conformité</h3>
+              <h3 className="text-xl font-bold text-zen-950 mb-2">Vigilance éditoriale</h3>
               <p className="text-sm text-gray-500 mb-5 leading-relaxed">
                 Détection des formulations sensibles et des points de vigilance éditoriaux.
               </p>
@@ -443,7 +443,7 @@ export default function LandingPage() {
                   "Confusion possible avec les professions de santé",
                   "Promesses pouvant être perçues comme trompeuses",
                   "Présence des mentions légales",
-                  "Conformité RGPD et politique de confidentialité",
+                  "Vérification RGPD et politique de confidentialité",
                   "Reformulations adaptées proposées",
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
@@ -712,7 +712,7 @@ export default function LandingPage() {
               <ul className="space-y-5">
                 {[
                   "Vérification des formulations sensibles",
-                  "Vue d’ensemble : visibilité et conformité au même endroit",
+                  "Vue d’ensemble : visibilité et vigilance éditoriale",
                   "Génération de contenus adaptés à votre pratique",
                   "Reformulations proposées pour chaque point signalé",
                   "Vous savez ce que vous pouvez publier",
@@ -947,7 +947,7 @@ export default function LandingPage() {
               },
               {
                 q: "L'outil aide-t-il aussi à améliorer la visibilité ?",
-                a: "Oui. Visible & Conforme ne se limite pas à la conformité éditoriale. L'outil analyse également certains éléments liés à votre visibilité en ligne : structure des contenus, lisibilité, cohérence des textes, formulations utilisées, présence de certains éléments importants pour le référencement local. L'objectif est de vous aider à publier des contenus à la fois visibles et adaptés à votre activité.",
+                a: "Oui. Visible & Conforme ne se limite pas à la vigilance éditoriale. L'outil analyse également certains éléments liés à votre visibilité en ligne : structure des contenus, lisibilité, cohérence des textes, formulations utilisées, présence de certains éléments importants pour le référencement local. L'objectif est de vous aider à publier des contenus à la fois visibles et adaptés à votre activité.",
               },
               {
                 q: "Dois-je avoir des connaissances juridiques ou SEO pour utiliser l'outil ?",

@@ -8,12 +8,12 @@ import ScrollToTop from "@/components/ScrollToTop";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog — Conseils SEO et conformité pour praticiens bien-être",
+  title: "Blog — Conseils SEO et vigilance éditoriale pour praticiens bien-être",
   description:
     "Articles pratiques pour aider les sophrologues, naturopathes et thérapeutes à communiquer sans risque juridique et être visibles sur Google.",
   alternates: { canonical: "https://www.visibleetconforme.fr/blog" },
   openGraph: {
-    title: "Blog Visible & Conforme — SEO et conformité pour praticiens bien-être",
+    title: "Blog Visible & Conforme — SEO et vigilance éditoriale pour praticiens bien-être",
     description:
       "Articles pratiques pour aider les sophrologues, naturopathes et thérapeutes à communiquer sans risque juridique.",
     url: "https://www.visibleetconforme.fr/blog",
@@ -58,7 +58,7 @@ export default function BlogPage() {
           </Link>
         </div>
         <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
-          {["Droit & conformité", "Avis clients", "SEO", "Allégations", "Mentions légales", "Communication"].map((tag) => (
+          {["Droit & vigilance", "Avis clients", "SEO", "Allégations", "Mentions légales", "Communication"].map((tag) => (
             <span key={tag} className="text-xs bg-white border border-zen-200 text-zen-600 px-3 py-1.5 rounded-full font-medium">
               {tag}
             </span>
